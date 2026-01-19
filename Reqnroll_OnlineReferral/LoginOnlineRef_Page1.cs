@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FC_OnlineReferral
 {
-    public class LoginOnlineRefPage1 : BaseSettings
+    public class LoginOnlineRef_Page1 : BaseSettings
     {
-        public LoginOnlineRefPage1(IWebDriver driver) : base(driver) { }
+        public LoginOnlineRef_Page1(IWebDriver driver) : base(driver) { }
 
         protected readonly WebDriverWait Wait;
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
