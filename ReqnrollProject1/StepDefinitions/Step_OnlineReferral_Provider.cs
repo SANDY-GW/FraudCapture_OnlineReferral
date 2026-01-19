@@ -26,10 +26,10 @@ namespace ReqnrollProject1.StepDefinitions
         [Given("the second number is {int}")]
         public void GivenTheSecondNumberIs(int number)
         {
-            var PG1 = new LoginOnlineRefPage1(Driver);
+            var PG1 = new LoginOnlineRef_Page1(Driver);
             PG1.EnterUserFName("TestFirstName");
 
-            var xxx = _scenarioContext["FirstNumber"];
+            ///var xxx = _scenarioContext["FirstNumber"];
         }
 
         [When("the two numbers are added")]

@@ -19,10 +19,18 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
+        [Given("I enter the {string} on the Initial User Data Page for this demo")]
+        public void GivenIEnterTheOnTheInitialUserDataPageForThisDemo(string userFirstName)
+        {
+            throw new PendingStepException();
+        }
+
+
+
         [Given("I enter the {string} on the Initial User Data Page")]
         public void GivenIEnterTheOnTheInitialUserDataPage(string userName)
         {
-            var PG1 = new LoginOnlineRefPage1(Driver);
+            var PG1 = new LoginOnlineRef_Page1(Driver);
             PG1.EnterUserFName(userName);
 
             var xxx = _scenarioContext["FirstNumber"];
@@ -31,7 +39,7 @@ namespace ReqnrollProject1.StepDefinitions
         [Given("I enter the {string},{string},{string},{string}  filled on the Initial User Data Page")]
         public void GivenIEnterTheFilledOnTheInitialUserDataPage(string userFName, string usersName, string orgAgency, string userEmail)
         {
-            var PG1 = new LoginOnlineRefPage1(Driver);
+            var PG1 = new LoginOnlineRef_Page1(Driver);
             PG1.EnterUserFName(userFName);
             PG1.EnterUserLastName(usersName);
             PG1.SelectOrgAgency(orgAgency);
