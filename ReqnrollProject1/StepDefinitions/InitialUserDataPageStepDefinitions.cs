@@ -1,4 +1,5 @@
 using System;
+using FC_OnlineReferral.OnlineReferral_Pages;
 using OpenQA.Selenium;
 using Reqnroll;
 
@@ -16,7 +17,6 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var Ol = new OnlineReferral(Driver);
             Ol.Login();
-
         }
 
         [Given("I enter the {string} on the Initial User Data Page for this demo")]
