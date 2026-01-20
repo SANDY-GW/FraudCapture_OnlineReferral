@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FC_OnlineReferral
+namespace FC_OnlineReferral.OnlineReferral_Pages
 {
     public class InvolvedPartyTypeInfo_Page4 : BaseSettings
     {

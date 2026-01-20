@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FC_OnlineReferral
+namespace FC_OnlineReferral.FraudCapture_Pages
 {
-    internal class FraudCapture_Core:BaseSettings
+    internal class FraudCapture_Core : BaseSettings
     {
         public FraudCapture_Core(IWebDriver driver) : base(driver) { }
 
