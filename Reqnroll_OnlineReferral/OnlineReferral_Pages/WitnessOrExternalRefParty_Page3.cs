@@ -18,6 +18,19 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         #region Elements
 
         private readonly By isExtRefDropdn = By.XPath("//select[@id='isExternalReferal']");
+        private readonly By witnessFirstNameField = By.XPath("//input[@id='wFirstName']");
+        private readonly By witnessLastNameField = By.XPath("//input[@id='wFirstName']");
+        private readonly By witnessorg_Or_AgencyNameField = By.XPath("//input[@id='wAgencyName']");
+        private readonly By witnessRelationshipField = By.XPath("//input[@id='wRelationShip']");
+        private readonly By witnessPhoneNumberField = By.XPath("//input[@id='phone']");
+        private readonly By witnessEmailField = By.XPath("//input[@id='email']");
+        private readonly By witnessAddress1 = By.XPath("//input[@id='wAddress1']");
+        private readonly By witnessAddress2 = By.XPath("//input[@id='wAddress2']");
+        private readonly By witnessCity = By.XPath("//input[@id='city']");
+        private readonly By witnessState = By.XPath("//select[@id='state']");
+        private readonly By witnessZipCode = By.XPath("//input[@id='zip']");
+       
+
 
 
 
@@ -31,5 +44,56 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         }
 
+        public void EnterWitnessFirstName(string firstName)
+        {
+            Driver.FindElement(witnessFirstNameField).SendKeys(firstName);
+        }
+
+
+        public void EnterWitnessLastName(string lastName)
+        {
+            Driver.FindElement(witnessLastNameField).SendKeys(lastName);
+
+        }
+        public void EnterWitnessOrgAgencyName(string orgAgencyName)
+        {
+            Driver.FindElement(witnessorg_Or_AgencyNameField).SendKeys(orgAgencyName);
+        }
+        public void EnterWitnessRelationship(string relationship)
+        {
+            Driver.FindElement(witnessRelationshipField).SendKeys(relationship);
+        }
+        public void EnterWitnessPhoneNumber(string phoneNumber)
+        {
+            Driver.FindElement(witnessPhoneNumberField).SendKeys(phoneNumber);
+        }
+        public void EnterWitnessEmail(string email)
+        {
+            Driver.FindElement(witnessEmailField).SendKeys(email);
+        }
+        public void EnterWitnessAddress1(string address1)
+        {
+            Driver.FindElement(witnessAddress1).SendKeys(address1);
+        }
+        public void EnterWitnessAddress2(string address2)
+        {
+            Driver.FindElement(witnessAddress2).SendKeys(address2);
+
+        }
+        public void EnterWitnessCity(string city)
+        {
+            Driver.FindElement(witnessCity).SendKeys(city);
+        }
+
+        public void SelectWitnessState(string state)
+        {
+            CommonHelpers.selectOptionByValue(Driver.FindElement(witnessState), state);
+
+        }
+        public void EnterWitnessZipCode(string zipCode)
+        {
+            Driver.FindElement(witnessZipCode).SendKeys(zipCode);
+        }
     }
+
 }
