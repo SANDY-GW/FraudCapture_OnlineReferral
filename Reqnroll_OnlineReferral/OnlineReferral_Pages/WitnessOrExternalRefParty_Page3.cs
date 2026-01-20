@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FC_OnlineReferral
+namespace FC_OnlineReferral.OnlineReferral_Pages
 {
     public class WitnessOrExternalRefParty_Page3 : BaseSettings
     {
@@ -18,7 +18,7 @@ namespace FC_OnlineReferral
         #region Elements
 
         private readonly By isExtRefDropdn = By.XPath("//select[@id='isExternalReferal']");
-       
+
 
 
 

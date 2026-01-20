@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FC_OnlineReferral
+namespace FC_OnlineReferral.OnlineReferral_Pages
 {
     public class LoginOnlineRef_Page1 : BaseSettings
     {
@@ -16,7 +16,7 @@ namespace FC_OnlineReferral
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
 
         #region Elements
-        
+
         private readonly By userFnameField = By.XPath("//input[@id='firstName']");
         private readonly By userLnameField = By.XPath("//input[@id='lastName']");
         private readonly By orgAgencyDropdn = By.XPath("//select[@id='orgName']");
@@ -38,15 +38,15 @@ namespace FC_OnlineReferral
 
         }
         public void EnterUserLastName(string UserLN)
-        {           
-            Driver.FindElement(userLnameField).SendKeys(UserLN);           
+        {
+            Driver.FindElement(userLnameField).SendKeys(UserLN);
 
         }
 
         public void SelectOrgAgency(string OrgAgency)
         {
             CommonHelpers.selectOptionByValue(Driver.FindElement(orgAgencyDropdn), OrgAgency);
-           
+
         }
 
         public void EnterUserEmailName(string emailValue)

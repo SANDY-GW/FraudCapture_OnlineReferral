@@ -3,11 +3,11 @@ using FC_OnlineReferral;
 
 
 
-namespace Reqnroll_OnlineReferral
+namespace FC_OnlineReferral.OnlineReferral_Pages
 {
-    public class OnlineReferral: BaseSettings
+    public class OnlineReferral : BaseSettings
     {
-       // private readonly IWebDriver Driver;
+        // private readonly IWebDriver Driver;
         public OnlineReferral(IWebDriver driver) : base(driver) { }
         //public OnlineReferral()
         //{
@@ -25,7 +25,7 @@ namespace Reqnroll_OnlineReferral
 
         }
 
-        
+
 
 
 

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FC_OnlineReferral
+namespace FC_OnlineReferral.OnlineReferral_Pages
 {
     public class OnlineReferral_Referral_Page2 : BaseSettings
     {
@@ -23,17 +23,17 @@ namespace FC_OnlineReferral
         private readonly By detectedField = By.XPath("//input[@id='detected']");
         private readonly By referralSummaryField = By.XPath("//input[@id='referralSummary']");
 
-       
+
 
         #endregion
 
-       
+
         public void SelectRefType(string RefType)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, refTypeDropdn, 10);
             CommonHelpers.selectOptionByValue(Driver.FindElement(refTypeDropdn), RefType);
 
         }
-       
+
     }
 }
