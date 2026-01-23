@@ -22,6 +22,13 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By orgAgencyDropdn = By.XPath("//select[@id='orgName']");
         private readonly By emailtxtbx = By.XPath("//input[@id='email']");
         private readonly By emailVerificationBtn = By.XPath("//button[contains(.,'Email Address Verification')]");
+        private readonly By titletxtbx = By.XPath("//input[@id='title']");
+        private readonly By phonenumber_And_ExtensionField = By.XPath("//input[@id='phone']");
+        private readonly By mailingStreetAddress1Field = By.XPath("//input[@id='address1']");
+        private readonly By mailingStreetAddress2Field = By.XPath("//input[@id='address2']");
+        private readonly By mailingAddressCityField = By.XPath("//input[@id='city']");
+        private readonly By mailingAddressstate_Or_Territorydropdown = By.XPath("//select[@id='state']");
+        private readonly By mailingAddresszipCodeField = By.XPath("//input[@id='zip']");
 
         #endregion
 
@@ -54,9 +61,39 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             Driver.FindElement(emailtxtbx).SendKeys(emailValue);
 
         }
-        public void ClickEmailAddressVerification()
+        public void EnterUserTitle(string UserTitle)
         {
-            Driver.FindElement(By.XPath("//button[contains(.,'Email Address Verification')]")).Click();
+            Driver.FindElement(titletxtbx).SendKeys(UserTitle);
+        }
+
+        public void EnterPhoneNumberAndExtension(string PhoneNumber)
+        {
+            Driver.FindElement(phonenumber_And_ExtensionField).SendKeys(PhoneNumber);
+        }
+        public void EnterMailingStreetAddress1(string StreetAddress1)
+        {
+            Driver.FindElement(mailingStreetAddress1Field).SendKeys(StreetAddress1);
+        }
+        public void EnterMailingStreetAddress2(string StreetAddress2)
+        {
+            Driver.FindElement(mailingStreetAddress2Field).SendKeys(StreetAddress2);
+        }
+        public void EnterMailingAddressCity(string CityName)
+        {
+            Driver.FindElement(mailingAddressCityField).SendKeys(CityName);
+        }
+        public void SelectState_Or_Territory(string StateName)
+        {
+            CommonHelpers.selectOptionByValue(Driver.FindElement(mailingAddressstate_Or_Territorydropdown), StateName);
+        }
+        public void EnterMailingAddressZipCode(string ZipCode)
+        {
+            Driver.FindElement(mailingAddresszipCodeField).SendKeys(ZipCode);
+        }
+
+        public void clickEmailAddressVerificationButton()
+        {
+            Driver.FindElement(emailVerificationBtn).Click();
         }
     }
 }
