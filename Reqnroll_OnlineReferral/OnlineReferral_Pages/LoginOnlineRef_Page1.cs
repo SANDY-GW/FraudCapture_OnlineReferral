@@ -95,5 +95,13 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             Driver.FindElement(emailVerificationBtn).Click();
         }
+
+
+        public void checkElementBackgroundColor()
+        {
+            Driver.FindElement(userFnameField);
+            CommonHelpers.checkElementBackgroundColor(Driver, userFnameField);
+
+        }
     }
 }

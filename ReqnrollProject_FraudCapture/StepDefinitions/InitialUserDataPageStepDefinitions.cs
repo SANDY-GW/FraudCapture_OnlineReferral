@@ -1,17 +1,16 @@
+using System;
 using FC_OnlineReferral.OnlineReferral_Pages;
 using OpenQA.Selenium;
-using FC_OnlineReferral;
+using Reqnroll;
 
 namespace ReqnrollProject1.StepDefinitions
 {
     [Binding]
     public class InitialUserDataPageStepDefinitions
     {
-        FC_OnlineReferral.CommonData.UserCredentials userCredentials = new FC_OnlineReferral.CommonData.UserCredentials();
         private readonly ScenarioContext _scenarioContext;
         private IWebDriver Driver => _scenarioContext.Get<IWebDriver>(nameof(IWebDriver));
         public InitialUserDataPageStepDefinitions(ScenarioContext scenarioContext) => _scenarioContext = scenarioContext;
-        private List<CommonData.UserCredentials> _users = new List<CommonData.UserCredentials>();
 
         [Given("when I open the Online referral application")]
         public void GivenWhenIOpenTheOnlineReferralApplication()
@@ -41,7 +40,6 @@ namespace ReqnrollProject1.StepDefinitions
         public void GivenIEnterTheFilledOnTheInitialUserDataPage(string userFName, string usersName, string orgAgency, string userEmail)
         {
             var PG1 = new LoginOnlineRef_Page1(Driver);
-            PG1.checkElementBackgroundColor();
             PG1.EnterUserFName(userFName);
             PG1.EnterUserLastName(usersName);
             PG1.SelectOrgAgency(orgAgency);
@@ -69,31 +67,10 @@ namespace ReqnrollProject1.StepDefinitions
             throw new PendingStepException();
         }
 
-        [Given("I enter the <Value> , <Key> on the Initial User Data Page")]
-        public void GivenIEnterTheValueKeyOnTheInitialUserDataPage(DataTable dataTable)
+        [Given("I enter the {string},{string},{string},{string} filled on the Initial User Data Page")]
+        public void GivenIEnterTheFilledOnTheInitialUserDataPage(string userFName, string userLastName, string p2, string p3, DataTable dataTable)
         {
-            var PG1 = new LoginOnlineRef_Page1(Driver);
-            //var dtValueKey = dataTable.CreateSet<ValueKey>();
-            //_users.Add(new UserCredentials { Username = username, Password = password });
-            //foreach (var item in dtValueKey)
-            //{
-            //    if (item.Key.Equals("UserFName", StringComparison.OrdinalIgnoreCase))
-            //    {
-            //        PG1.EnterUserFName(item.Value);
-            //    }
-            //    else if (item.Key.Equals("UserLName", StringComparison.OrdinalIgnoreCase))
-            //    {
-            //        PG1.EnterUserLastName(item.Value);
-            //    }
-            //    else if (item.Key.Equals("OrgAgency", StringComparison.OrdinalIgnoreCase))
-            //    {
-            //        PG1.SelectOrgAgency(item.Value);
-            //    }
-            //    else if (item.Key.Equals("UserEmail", StringComparison.OrdinalIgnoreCase))
-            //    {
-            //        PG1.EnterUserEmailName(item.Value);
-            //    }
-            //}
+            
             throw new PendingStepException();
         }
 

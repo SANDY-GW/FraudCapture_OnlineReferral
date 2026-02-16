@@ -66,5 +66,19 @@ namespace FC_OnlineReferral
             }
             driver.SwitchTo().Window(originalWindow); // Switch back if not found
         }
+
+        public static string checkElementBackgroundColor(IWebDriver driver,By element)
+        {
+            var eleColorChk = driver.FindElement(element);
+            var colorOfEle = eleColorChk.GetCssValue("border-color");
+            if (colorOfEle != null)
+            {
+                //with highlight-rgb(0, 134, 113)
+                //no highlight-rgb(206, 212, 218)
+                return colorOfEle;
+            }
+            else { return null; }
+
+        }
     }
 }

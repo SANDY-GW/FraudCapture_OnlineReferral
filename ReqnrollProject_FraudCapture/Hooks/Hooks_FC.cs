@@ -51,7 +51,6 @@ namespace ReqnrollProject1.Hooks
         {
             _scenarioContext.Set(loc_driver, nameof(IWebDriver));
             var xxx = _featureContext.Get<IWebDriver>(nameof(IWebDriver));
-            
 
         }
 
