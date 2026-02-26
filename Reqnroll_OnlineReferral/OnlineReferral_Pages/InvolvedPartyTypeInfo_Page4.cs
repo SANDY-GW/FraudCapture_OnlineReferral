@@ -17,30 +17,40 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         #region Elements
         private readonly By witness_Or_ExternalReferringPartydrp = By.XPath("//select[@id='isExternalReferal']");
-        private readonly By orgNameField = By.XPath("//input[@id='nepOrgName']");
-        private readonly By namePrefixField = By.XPath("//input[@id='nepNamePrefix']");
-        private readonly By firstNameField = By.XPath("//input[@id='nepFirstName']");
-        private readonly By middleNameField = By.XPath("//input[@id='nepMiddleName']");
-        private readonly By lastNameField = By.XPath("//input[@id='nepLastName']");
-        private readonly By nameSuffixField = By.XPath("//input[@id='nepNameSuffix']");
-        private readonly By Designation_or_TitleField = By.XPath("//input[@id='nepDesignation']");
+        private readonly By orgNameField = By.XPath("//input[@id='pOrgName']");
+        private readonly By namePrefixField = By.XPath("//input[@id='pNamePrefix']");
+        private readonly By firstNameField = By.XPath("//input[@id='pFirstName']");
+        private readonly By middleNameField = By.XPath("//input[@id='pMiddleName']");
+        private readonly By lastNameField = By.XPath("//input[@id='pLastName']");
+        private readonly By nameSuffixField = By.XPath("//input[@id='pNameSuffix']");
+        private readonly By Designation_or_TitleField = By.XPath("//input[@id='pDesignation']");
         private readonly By dobField = By.XPath("//input[@placeholder='MM/DD/YYYY']");
-        private readonly By SSNField = By.XPath("//input[@id='nepSsn']");
-        private readonly By otherIDField = By.XPath("//input[@id='nepOtherId']");
-        private readonly By otherField = By.XPath("//input[@id='nepOther']");
-        private readonly By primaryPhoneNumberField = By.XPath("//input[@id='nepPrimaryPhone']");
-        private readonly By secondaryPhoneNumberField = By.XPath("//input[@id='nepSecondaryPhone']");
-        private readonly By faxField = By.XPath("//input[@id='nepFax']");
-        private readonly By emailField = By.XPath("//input[@id='nepEmail']");
-        private readonly By address1Field = By.XPath("//input[@id='nepStreetAddress1']");
-        private readonly By address2Field = By.XPath("//input[@id='nepStreetAddress2']");
-        private readonly By cityField = By.XPath("//input[@id='nepCity']");
-        private readonly By stateDropdown = By.XPath("//select[@id='nepState']");
-        private readonly By countyDropdown = By.XPath("//select[@id='nepCounty']");
-        private readonly By zipCodeField = By.XPath("//input[@id='nepZip']");
-        private readonly By countryField = By.XPath("//input[@id='nepCountry']");
-       
+        private readonly By SSNField = By.XPath("//input[@id='pSsn']");
+        private readonly By LicenseNofield = By.XPath("//input[@id='pLicenseNo']");
+        private readonly By IDTestfield = By.XPath("//input[@id='pProviderID']");
+        private readonly By NPIfield = By.XPath("//input[@id='pNPInumber']");
+        private readonly By TINfield = By.XPath("//input[@id='pTIN']");
+        private readonly By MedicaidIDfield = By.XPath("//input[@id='pMedicaidId']");
+        private readonly By MedicareIDfield = By.XPath("//input[@id='pMedicareId']");
+        private readonly By otherIDField = By.XPath("//input[@id='pOtherId']");
+        private readonly By ProviderTypeField = By.XPath("//input[@id='pType']");
+        private readonly By ProviderSpecialtyField = By.XPath("//input[@id='pSpecialty']");
+        private readonly By TaxonomyField = By.XPath("//input[@id='pTaxonomy']");
+        private readonly By otherField = By.XPath("//input[@id='pOther'] ");
+        private readonly By PhoneNumberField = By.XPath("//input[@id='pPhone']");
+        private readonly By faxField = By.XPath("//input[@id='pFax']");
+        private readonly By emailField = By.XPath("//input[@id='pEmail']");
+        private readonly By address1Field = By.XPath("//input[@id='pStreetAddress1']");
+        private readonly By address2Field = By.XPath("//input[@id='pStreetAddress2']");
+        private readonly By cityField = By.XPath("//input[@id='pCity']");
+        private readonly By stateDropdown = By.XPath("//select[@id='pState']");
+        private readonly By countyDropdown = By.XPath("//select[@id='pCounty']");
+        private readonly By zipCodeField = By.XPath("//input[@id='pZip']");
+        private readonly By countryField = By.XPath("//input[@id='pCountry']");
+        private readonly By Go_To_Previous_SectionButton = By.XPath("//button[text()='Go To Previous Section']");
+        private readonly By proceed_To_Next_SectionButton = By.XPath("//button[text()='Proceed to Next Section']");
 
+        private readonly DateTime dateTime = DateTime.Now;
 
 
 
@@ -48,14 +58,20 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         #endregion
 
-        public void SelectWitness_Or_ExternalReferringParty(string witness_Or_ExternalReferringParty)
-        {
-            CommonHelpers.WaitForElementVisiblity(Driver, witness_Or_ExternalReferringPartydrp, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(witness_Or_ExternalReferringPartydrp), witness_Or_ExternalReferringParty);
-        }
+        //public void SelectWitness_Or_ExternalReferringParty(string witness_Or_ExternalReferringParty)
+        //{
+        //    CommonHelpers.WaitForElementVisiblity(Driver, witness_Or_ExternalReferringPartydrp, 10);
+        //    CommonHelpers.selectOptionByValue(Driver.FindElement(witness_Or_ExternalReferringPartydrp), witness_Or_ExternalReferringParty);
+        //}
         public void EnterOrgName(string orgName)
         {
-            Driver.FindElement(orgNameField).SendKeys(orgName);
+          
+            var latestOrgname = dateTime.ToString("HH:mm ") + dateTime.ToString("MM dd yyyy") + " " + orgName;
+            dateTime.ToString("yyyyMMddHHmmssffff");
+            CommonHelpers.WaitForElementVisiblity(Driver, orgNameField, 10);
+
+            Driver.FindElement(orgNameField).SendKeys(latestOrgname);
+
         }
         public void EnterNamePrefix(string namePrefix)
         {
@@ -64,12 +80,16 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void EnterFirstName(string firstName)
         {
-            Driver.FindElement(firstNameField).SendKeys(firstName);
+           
+            CommonData.UserCredentials.UserFN = dateTime.ToString("HH:mm ") +dateTime.ToString("MM dd yyyy") + " " + firstName;
+            CommonHelpers.WaitForElementVisiblity(Driver, orgNameField, 10);
+            Driver.FindElement(firstNameField).SendKeys(CommonData.UserCredentials.UserFN);
 
 
         }
         public void EnterLastName(string lastName)
         {
+            var latestLastname = dateTime.TimeOfDay.ToString() + dateTime.ToString("MMddyyyy") + " " + lastName;
             Driver.FindElement(lastNameField).SendKeys(lastName);
         }
         public void EnterMiddleName(string middleName)
@@ -101,14 +121,11 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             Driver.FindElement(otherField).SendKeys(other);
         }
-        public void EnterPrimaryPhoneNumber(string primaryPhoneNumber)
+        public void EnterPhoneNumber(string primaryPhoneNumber)
         {
-            Driver.FindElement(primaryPhoneNumberField).SendKeys(primaryPhoneNumber);
+            Driver.FindElement(PhoneNumberField).SendKeys(primaryPhoneNumber);
         }
-        public void EnterSecondaryPhoneNumber(string secondaryPhoneNumber)
-        {
-            Driver.FindElement(secondaryPhoneNumberField).SendKeys(secondaryPhoneNumber);
-        }
+
         public void EnterFax(string fax)
         {
             Driver.FindElement(faxField).SendKeys(fax);
@@ -145,8 +162,58 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             Driver.FindElement(countryField).SendKeys(country);
         }
-       
+
+        public void ClickGoToPreviousSection()
+        {
+            Driver.FindElement(Go_To_Previous_SectionButton).Click();
+        }
+        public void ClickProceedToNextSection()
+        {
+            Driver.FindElement(proceed_To_Next_SectionButton).Click();
+
+        }
+        public void EnterLicenseNo(string licenseNo)
+        {
+            Driver.FindElement(LicenseNofield).SendKeys(licenseNo);
+        }
+        public void EnterIDTest(string idTest)
+        {
+            Driver.FindElement(IDTestfield).SendKeys(idTest);
+        }
+        public void EnterNPI(string npi)
+        {
+            Driver.FindElement(NPIfield).SendKeys(npi);
+        }
+        public void EnterTIN(string tin)
+        {
+            Driver.FindElement(TINfield).SendKeys(tin);
+        }
+
+        public void EnterMedicaidID(string medicaidID)
+        {
+            Driver.FindElement(MedicaidIDfield).SendKeys(medicaidID);
+        }
+        public void EnterMedicareID(string medicareID)
+        {
+            Driver.FindElement(MedicareIDfield).SendKeys(medicareID);
+        }
+
+        public void EnterProviderType(string providerType)
+        {
+            Driver.FindElement(ProviderTypeField).SendKeys(providerType);
+        }
+
+        public void EnterProviderSpecialty(string providerSpecialty)
+        {
+            Driver.FindElement(ProviderSpecialtyField).SendKeys(providerSpecialty);
+        }
+        public void EnterTaxonomy(string taxonomy)
+        {
+            Driver.FindElement(TaxonomyField).SendKeys(taxonomy);
+        }
+
     }
+
 }
 
 

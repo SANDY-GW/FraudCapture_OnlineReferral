@@ -29,7 +29,9 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By witnessCity = By.XPath("//input[@id='city']");
         private readonly By witnessState = By.XPath("//select[@id='state']");
         private readonly By witnessZipCode = By.XPath("//input[@id='zip']");
-
+        private readonly By Go_To_Previous_SectionButton = By.XPath("//button[contains(text(),'Go To Previous Section')]");
+        private readonly By proceed_To_Next_SectionButton = By.XPath("//button[contains(text(),'Proceed to Next Section')]");
+        private readonly By orgNameField = By.XPath("//input[@id='pOrgName']");
 
 
 
@@ -82,18 +84,34 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         }
         public void EnterWitnessCity(string city)
         {
+            CommonHelpers.WaitForElementVisiblity(Driver, witnessCity, 10);
             Driver.FindElement(witnessCity).SendKeys(city);
         }
 
         public void SelectWitnessState(string state)
         {
+            CommonHelpers.WaitForElementVisiblity(Driver, witnessState, 100);
             CommonHelpers.selectOptionByValue(Driver.FindElement(witnessState), state);
 
         }
         public void EnterWitnessZipCode(string zipCode)
         {
+            CommonHelpers.WaitForElementVisiblity(Driver, witnessZipCode, 100);
             Driver.FindElement(witnessZipCode).SendKeys(zipCode);
+
         }
+        public void ClickProceedToNextSectionButton()
+        {
+
+            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 500);
+
+            Driver.FindElement(proceed_To_Next_SectionButton).Click();
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 5000);
+
+        }
+
+
+
     }
 
 }

@@ -29,6 +29,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By mailingAddressCityField = By.XPath("//input[@id='city']");
         private readonly By mailingAddressstate_Or_Territorydropdown = By.XPath("//select[@id='state']");
         private readonly By mailingAddresszipCodeField = By.XPath("//input[@id='zip']");
+        private readonly By emailverification = By.XPath("//div/h4[text()='Email Verification']");
+        private readonly By goToPreviousSectionButton = By.XPath("//button[text()='Go to Previous Section']");
+        private readonly By proceed_To_Next_SectionButton = By.XPath("//button[text()=' Proceed to Next Section ']");
+
 
         #endregion
 
@@ -52,12 +56,14 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void SelectOrgAgency(string OrgAgency)
         {
+            CommonHelpers.WaitForElementVisiblity(Driver, userFnameField, 10);
             CommonHelpers.selectOptionByValue(Driver.FindElement(orgAgencyDropdn), OrgAgency);
 
         }
 
         public void EnterUserEmailName(string emailValue)
         {
+
             Driver.FindElement(emailtxtbx).SendKeys(emailValue);
 
         }
@@ -96,12 +102,14 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             Driver.FindElement(emailVerificationBtn).Click();
         }
 
-
-        public void checkElementBackgroundColor()
+        public void waitForEmailNotification()
         {
-            Driver.FindElement(userFnameField);
-            CommonHelpers.checkElementBackgroundColor(Driver, userFnameField);
+            CommonHelpers.WaitForElementVisiblity(Driver, emailverification, 100);
+
+            CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 20000);
 
         }
+       
+
     }
 }

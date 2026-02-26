@@ -19,8 +19,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         private readonly By refTypeDropdn = By.XPath("//select[@id='referalType']");
         private readonly By involvedPartyTypeDropdn = By.XPath("//select[@id='involvedType']");
-        private readonly By detectedField = By.XPath("//input[@id='detected']");
-        private readonly By referralSummaryField = By.XPath("//input[@id='referralSummary']");
+        private readonly By detectedField = By.XPath("//textarea[@id='detected']");
+        private readonly By referralSummaryField = By.XPath("//textarea[@id='referralSummary']");
         private readonly By case_Or_Reference_Or_TrackingNumberField = By.XPath("//input[@id='trackingNumber']");
         private readonly By estimatedAmountField = By.XPath("//input[@id='estimatedAmount']");
         private readonly By originalDetectionDateField = By.XPath("//input[@name='originalDetectionDt']");
@@ -28,8 +28,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By incidentEndDateField = By.XPath("//input[@name='incidentEndDt']");
         private readonly By state_Or_TerritoryDropdowm = By.XPath("//select[@id='state']");
         private readonly By County_Or_DistrictDropdn = By.XPath("//select[@id='county']");
-        private readonly By Go_To_Previous_SectionButton = By.XPath("//button[text()='Go to Previous Section']");
-        private readonly By proceed_To_Next_SectionButton = By.XPath("//button[text()='Proceed to Next Section']");
+        private readonly By Go_To_Previous_SectionButton = By.XPath("//button[contains(text(),'Go to Previous Section')]");
+        private readonly By proceed_To_Next_SectionButton = By.XPath("//button[contains(text(),'Proceed to Next Section')]");
         private readonly By instructionsButton = By.XPath("//button[text()='Instructions']");
 
         #endregion
@@ -46,9 +46,9 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.selectOptionByValue(Driver.FindElement(involvedPartyTypeDropdn), InvolvedPartyType);
         }
 
-        public void EnterDetectedDate(string DetectedDate)
+        public void EnterHowWasThisDetected(string Detected)
         {
-            Driver.FindElement(detectedField).SendKeys(DetectedDate);
+            Driver.FindElement(detectedField).SendKeys(Detected);
         }
         public void EnterReferralSummary(string ReferralSummary)
         {
@@ -79,24 +79,31 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         }
 
         public void SelectState_Or_Territory(string State_Or_Territory)
+
         {
+            CommonHelpers.WaitForElementVisiblity(Driver, state_Or_TerritoryDropdowm, 10);
             CommonHelpers.selectOptionByValue(Driver.FindElement(state_Or_TerritoryDropdowm), State_Or_Territory);
         }
         public void SelectCounty_Or_District(string County_Or_District)
         {
+            CommonHelpers.WaitForElementVisiblity(Driver, County_Or_DistrictDropdn, 10);
             CommonHelpers.selectOptionByValue(Driver.FindElement(County_Or_DistrictDropdn), County_Or_District);
         }
 
         public void ClickGoToPreviousSectionButton()
         {
-            CommonHelpers.WaitForInstructionsButton(Driver, 10);
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 20);
             Driver.FindElement(Go_To_Previous_SectionButton).Click();
         }
 
         public void ClickProceedToNextSectionButton()
         {
-            CommonHelpers.WaitForInstructionsButton(Driver, 10);
+            CommonHelpers.ScrollUp(Driver);
+            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 500);
+
             Driver.FindElement(proceed_To_Next_SectionButton).Click();
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
+
         }
 
 
