@@ -1,14 +1,16 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FC_OnlineReferral.OnlineReferral_Pages
 {
-    internal class ResponseToQuestions_Page5 : BaseSettings
+    public class ResponseToQuestions_Page5 : BaseSettings
     {
         public ResponseToQuestions_Page5(IWebDriver driver) : base(driver) { }
 
@@ -17,6 +19,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         #region Elements
         private readonly By doesThisReferralInvolveSpecificPatientDropdn = By.XPath("//select[@id='vpIsParticipant']");
+        private readonly By IstheMemberSamePersonAsTheWitnessPartyDropdn = By.XPath("//select[@id='vpIsreferring']");
         private readonly By patientFNfield = By.XPath("//input[@id='paFirstName']");
         private readonly By patientLNfield = By.XPath("//input[@id='paLastName']");
         private readonly By memberIDfield = By.XPath("//input[@id='paID']");
@@ -31,10 +34,18 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By countyDropdown = By.XPath("//select[@id='paCounty']");
         private readonly By zipCodeField = By.XPath("//input[@id='paZip']");
         private readonly By countryField = By.XPath("//input[@id='paCountry']");
-       
-        private readonly By question1 = By.XPath("//textarea[@id='questionTxt1']");
+        private readonly By proceed_To_Next_SectionButton = By.XPath("//button[text()='Proceed to Next Section']");
+        private readonly By Go_To_Previous_SectionButton = By.XPath("//b[text()='Go to Previous Section']");
+
+        private readonly By question1 = By.XPath("//select[@id='questiondDrDown1']");
+        private readonly By question1TextBox = By.XPath("//textarea[@id='questionTxt1']");
+
         private readonly By question2 = By.XPath("//textarea[@id='questionTxt2']");
-        private readonly By question3 = By.XPath("//textarea[@id='questionTxt3']");
+        private readonly By question3 = By.XPath("//select[@id='questiondDrDown3']");
+        private readonly By question3Textbox = By.XPath("//textarea[@id='questionTxt3']");
+        private readonly By question4 = By.XPath("//textarea[@id='questionTxt4']");
+        private readonly By question5 = By.XPath("//select[@id='questiondDrDown5']");
+        private readonly By question6 = By.XPath("//textarea[@id='questionTxt6']");
         private readonly By submitReferralButton = By.XPath("//button[text()=' Submit Referral ']");
 
         #endregion
@@ -44,8 +55,18 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForElementVisiblity(Driver, doesThisReferralInvolveSpecificPatientDropdn, 10);
             CommonHelpers.selectOptionByValue(Driver.FindElement(doesThisReferralInvolveSpecificPatientDropdn), doesThisReferralInvolveSpecificPatient);
         }
+
+        public void SelectIsThisPersonSameASWitness_Or_ExternalParty(string isThePersonsameAswitnessParty)
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, IstheMemberSamePersonAsTheWitnessPartyDropdn, 50);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(IstheMemberSamePersonAsTheWitnessPartyDropdn), isThePersonsameAswitnessParty);
+
+        }
+
+
         public void EnterPatientFirstName(string patientFirstName)
         {
+            CommonHelpers.WaitForElementVisiblity(Driver, patientFNfield, 10);
             Driver.FindElement(patientFNfield).SendKeys(patientFirstName);
         }
         public void EnterPatientLastName(string patientLastName)
@@ -107,23 +128,106 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             Driver.FindElement(countryField).SendKeys(country);
         }
-       
 
-        public void EnterQuestion1Response(string response1)
+        public void SelectQuestion1Dropdown(string answer)
         {
-            Driver.FindElement(question1).SendKeys(response1);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(question1), answer);
         }
-        public void EnterQuestion2Response(string response2)
+        public void SelectQuestion1Test(string answer)
         {
-            Driver.FindElement(question2).SendKeys(response2);
+            CommonHelpers.WaitForElementVisiblity(Driver, question1TextBox, 100);
+            Driver.FindElement(question1TextBox).SendKeys(answer);
         }
-        public void EnterQuestion3Response(string response3)
+
+        public void EnterQuestion2(string answer)
         {
-            Driver.FindElement(question3).SendKeys(response3);
+            CommonHelpers.WaitForElementVisiblity(Driver, question2, 100);
+            Driver.FindElement(question2).SendKeys(answer);
+            
+           
+            
         }
+        public void SelectQuestion3dropdown(string answer)
+        {
+            
+            CommonHelpers.selectOptionByValue(Driver.FindElement(question3), answer);
+        }
+        public void SelectQuestion3Test(string answer)
+        {
+            
+            CommonHelpers.WaitForElementVisiblity(Driver, question3Textbox, 100);
+            Driver.FindElement(question3Textbox).SendKeys(answer);
+
+            
+
+        }
+        public void EnterQuestion4(string answer)
+        {
+            Actions actions = new Actions(Driver);
+           // new Actions(Driver).KeyDown(Keys.Control).SendKeys(Keys.PageDown).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+            js.ExecuteScript("window.scrollBy(0, 500);");
+            CommonHelpers.WaitForElementVisiblity(Driver, question4, 100);
+
+            //Driver.FindElement(question4).Click();
+            Driver.FindElement(question4).SendKeys(answer);
+            Thread.Sleep(5000);
+            
+            //CommonHelpers.WaitForElementVisiblity(Driver, question4, 5000);
+
+        }
+
+        public void SelectQuestion5(string answer)
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, question5, 100);
+
+            CommonHelpers.selectOptionByValue(Driver.FindElement(question5), answer);
+            }
+       
+        public void EnterQuestion6(string answer)
+        {
+            Actions actions = new Actions(Driver);
+            //new Actions(Driver).KeyDown(Keys.Control).SendKeys(Keys.PageDown).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+            js.ExecuteScript("window.scrollBy(0, 500);");
+            CommonHelpers.WaitForElementVisiblity(Driver, question6, 100);
+           // Driver.FindElement(question6).Click();
+            Driver.FindElement(question6).SendKeys(answer);
+            Thread.Sleep(5000);
+
+
+        }
+
+
         public void ClickSubmitReferralButton()
         {
-            Driver.FindElement(submitReferralButton).Click();
+            // Instantiate IJavaScriptExecutor
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+            // Execute script to scroll to the bottom of the page
+            //js.ExecuteScript("window.scrollBy(0, document.body.scrollHeight);");
+
+            Actions actions = new Actions(Driver);
+            new Actions(Driver).KeyDown(Keys.Control).SendKeys(Keys.End).Perform();
+            Thread.Sleep(5000);
+            js.ExecuteScript("window.scrollBy(0, document.body.scrollHeight);");
+            Thread.Sleep(5000);
+            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 5000);
+            Driver.FindElement(submitReferralButton).Submit();
+            Thread.Sleep(10000);
+        }
+
+        public void ClickProceedToNextSectionButton()
+        {
+            CommonHelpers.ScrollUp(Driver);
+            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 5000);
+
+            Driver.FindElement(proceed_To_Next_SectionButton).Click();
+            Thread.Sleep(10000);
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 50000);
+
         }
     }
 }

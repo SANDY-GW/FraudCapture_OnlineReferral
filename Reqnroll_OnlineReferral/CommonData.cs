@@ -21,6 +21,7 @@ namespace FC_OnlineReferral
             public string Password { get; set; }
             //public bool IsActive { get; set; }
             //public UserRole Role { get; set; }
+            public  static string UserFN { get; set; }
         }
 
 

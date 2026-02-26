@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Interactions;
 
 namespace FC_OnlineReferral
 {
@@ -22,10 +23,17 @@ namespace FC_OnlineReferral
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//button[contains(.,'Instructions')]")));
         }
 
-        public static void WaitForElementVisiblity(IWebDriver driver,By element, int timeoutInSeconds)
+        public static void WaitForElementVisiblity(IWebDriver driver, By element, int timeoutInSeconds)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(element));
+        }
+        public static void ScrollUp(IWebDriver driver)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+
+            // Scroll to the top of the page (coordinates 0, 0)
+            js.ExecuteScript("window.scrollTo(0, 0);");
         }
 
         public static void WaitForElementClickable(IWebDriver driver, By element, int timeoutInSeconds)
@@ -34,15 +42,28 @@ namespace FC_OnlineReferral
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
         }
 
-        public static void selectOptionByValue(IWebElement ele,string selectValue)
+        public static void selectOptionByValue(IWebElement ele, string selectText)
         {
+            Thread.Sleep(5000);
             SelectElement selectElement = new SelectElement(ele);
 
             // Select by Visible Text
-            selectElement.SelectByText(selectValue);
+            selectElement.SelectByText(selectText);
 
-            
+
         }
+
+        public static void selectOptionByIndex(IWebElement ele, int index)
+        {
+            Thread.Sleep(5000);
+            SelectElement selectElement = new SelectElement(ele);
+
+            // Select by Visible Text
+            selectElement.SelectByIndex(index);
+
+
+        }
+
 
 
         public static void SwitchtoNewWindow(IWebDriver driver)
@@ -65,20 +86,6 @@ namespace FC_OnlineReferral
                 }
             }
             driver.SwitchTo().Window(originalWindow); // Switch back if not found
-        }
-
-        public static string checkElementBackgroundColor(IWebDriver driver,By element)
-        {
-            var eleColorChk = driver.FindElement(element);
-            var colorOfEle = eleColorChk.GetCssValue("border-color");
-            if (colorOfEle != null)
-            {
-                //with highlight-rgb(0, 134, 113)
-                //no highlight-rgb(206, 212, 218)
-                return colorOfEle;
-            }
-            else { return null; }
-
         }
     }
 }
