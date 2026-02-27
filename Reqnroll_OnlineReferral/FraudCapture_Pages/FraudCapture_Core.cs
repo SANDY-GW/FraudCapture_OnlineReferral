@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FC_OnlineReferral.FraudCapture_Pages
 {
-    internal class FraudCapture_Core : BaseSettings
+    public class FraudCapture_Core : BaseSettings
     {
         public FraudCapture_Core(IWebDriver driver) : base(driver) { }
 
@@ -41,6 +41,17 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             {
                 // Handle exceptions if necessary
             }
+        }
+        public string GetActivityName()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            var common = new CommonHelpers(Driver);
+            common.WaitForPageLoading();
+            var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']/div/div[2]/div[2]/cdk-virtual-scroll-viewport/div[1]/div/table/tbody/tr/td[1]")).Text;
+
+            Console.WriteLine(activityName);
+            return activityName;
+
         }
     }
 }

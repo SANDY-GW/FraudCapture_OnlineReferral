@@ -1,16 +1,24 @@
-﻿using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OpenQA.Selenium.Interactions;
 
 namespace FC_OnlineReferral
 {
-    internal class CommonHelpers
+    public class CommonHelpers
     {
+        public CommonHelpers(IWebDriver driver)
+        {
+            Driver = driver;
+        }
+        protected readonly IWebDriver Driver;
+        protected readonly WebDriverWait Wait;
+        protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
         public static void WaitForPageToLoad(IWebDriver driver, int timeoutInSeconds)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
@@ -86,6 +94,102 @@ namespace FC_OnlineReferral
                 }
             }
             driver.SwitchTo().Window(originalWindow); // Switch back if not found
+        }
+
+        public bool IsLoadingOverlayDisplayed()
+        {
+            var loadingOverlay = By.ClassName("inProgressClass");
+            //var loadingOverlay = By.XPath(".//span[contains(text(),'Loading...')]");
+
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+
+            try
+            {
+                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(loadingOverlay));
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (StaleElementReferenceException)
+            {
+                return false;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
+        }
+        public void WaitForPageLoading()
+        {
+            // var loadingOverlay = By.ClassName("spinner-border ");
+            var loadingOverlay = By.XPath("//*[contains(@class, 'spinner-border')]");
+
+            if (IsElementDisplayed())
+            {
+                new WebDriverWait(Driver, TimeSpan.FromSeconds(120)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
+            }
+        }
+
+        public bool IsElementDisplayed()
+        {
+            var loadingOverlay = By.XPath("//*[contains(@class, 'spinner-border')]");
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+
+            try
+            {
+                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(loadingOverlay));
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (StaleElementReferenceException)
+            {
+                return false;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
+        }
+        public void FC_OnlineLogin(string URL = "https://test.fraudcapture.hms.com/#/")
+        {
+            //Driver.Navigate().GoToUrl("https://dev.fraudcapture.hms.com");
+
+            Driver.Navigate().GoToUrl(URL);
+        }
+        public void WaitForLoadingOverlayToDisappear()
+        {
+            var loadingOverlay = By.ClassName("inProgressClass");
+            //var loadingOverlay = By.XPath(".//span[contains(text(),'Loading...')]");
+
+            if (IsLoadingOverlayDisplayed())
+            {
+                new WebDriverWait(Driver, TimeSpan.FromSeconds(120)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
+            }
+        }
+        public void SwitchWindow()
+        {
+            WaitForPageLoading();
+            String currWindowHandle = Driver.CurrentWindowHandle;
+
+            IList<string> totWindowHandles = new List<string>(Driver.WindowHandles);
+            // WaitForPageLoading();
+            foreach (String WindowHandle in totWindowHandles)
+            {
+                if (!WindowHandle.Equals(currWindowHandle))
+                {
+
+                    Driver.SwitchTo().Window(WindowHandle);
+
+                }
+            }
+            WaitForPageLoading();
+
+
         }
     }
 }

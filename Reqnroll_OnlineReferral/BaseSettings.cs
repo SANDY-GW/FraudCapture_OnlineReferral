@@ -38,6 +38,12 @@ namespace FC_OnlineReferral
             Driver.Navigate().GoToUrl(URL); 
         }
 
+        public void FC_OnlineLogin(string URL = "https://test.fraudcapture.hms.com/#/")
+        {
+            //Driver.Navigate().GoToUrl("https://dev.fraudcapture.hms.com");
+
+            Driver.Navigate().GoToUrl(URL);
+        }
         public static void QuitDriver(IWebDriver driver)
         {
             try
