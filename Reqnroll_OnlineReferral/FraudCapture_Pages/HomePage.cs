@@ -1,0 +1,69 @@
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FC_OnlineReferral.FraudCapture_Pages
+{
+    public class HomePage : BaseSettings
+    {
+        public HomePage(IWebDriver driver) : base(driver) { }
+        protected readonly WebDriverWait Wait;
+        protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
+        private readonly By CloseAlertButton = By.XPath("//*[@id='HelpContentViewForm']//button[contains(text(),'Close')]");
+
+        public void AcceptDisclosure()
+        {
+            var common = new CommonHelpers(Driver);
+            common.WaitForLoadingOverlayToDisappear();
+            //WaitForWidgetLoading();
+            //Driver.WrappedDriver.FindElement(By.XPath("//button[@id='btnAmaEulaAgree']")).Click();
+
+            By acceptAMAButton = By.XPath("//button[@id='btnAmaEulaAgree']");
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(180));
+            wait.Until(ExpectedConditions.ElementToBeClickable(acceptAMAButton));
+            Driver.FindElement(acceptAMAButton).Click();
+
+            // check for Help Content Alerts
+            try
+            {
+                var waitForAlerts = new WebDriverWait(Driver, TimeSpan.FromSeconds(150));
+                waitForAlerts.Until(d =>
+                {
+                    try
+                    {
+                        var waitedAlertButton = d.FindElement(By.XPath("//*[@id='HelpContentViewForm']//button[contains(text(),'Close')]"));
+                        return waitedAlertButton.Displayed;
+                    }
+                    catch (NoSuchElementException)
+                    {
+                        return false;
+                    }
+                });
+
+                try
+                {
+                    while (Driver.FindElement(CloseAlertButton).Displayed)
+                    {
+                       
+                       common.WaitForLoadingOverlayToDisappear();
+
+                        Driver.FindElement(CloseAlertButton).Click();
+                    }
+                }
+                catch (NoSuchElementException)
+                {
+                    // no more alerts found, move along
+                }
+            }
+            catch (WebDriverTimeoutException)
+            {
+                // no Alerts found, move along
+            }
+        }
+    }
+}
