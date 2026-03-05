@@ -1,6 +1,7 @@
 using System;
 using FC_OnlineReferral.OnlineReferral_Pages;
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
 using OpenQA.Selenium;
 
 using Reqnroll;
@@ -182,18 +183,23 @@ namespace ReqnrollProject1.StepDefinitions
         }
 
 
-        [Given("enter associated orgname as {string}, name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string} on the fourth User Data Page")]
-        public void GivenEnterAssociatedOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(string orgname, string nameprefix, string FN, string MN, string LN, string namesuffix)
-        {
-            var PG4 = new InvolvedPartyTypeInfo_Page4(Driver);
-            PG4.EnterOrgName(orgname);
-            PG4.EnterNamePrefix(nameprefix);
-            PG4.EnterFirstName(FN);
-            PG4.EnterMiddleName(MN);
-            PG4.EnterLastName(LN);
-            PG4.EnterNameSuffix(namesuffix);
+        //[Given("enter associated orgname as {string}, name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string} on the fourth User Data Page")]
+        //public void GivenEnterAssociatedOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(string orgname, string nameprefix, string FN, string MN, string LN, string namesuffix)
+        //{
+        //    var PG4 = new InvolvedPartyTypeInfo_Page4(Driver);
+        //    PG4.EnterOrgName(orgname);
+        //    PG4.EnterNamePrefix(nameprefix);
+        //    DateTime dateTime = DateTime.Now;
+        //    FN= FN + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+        //    LN = LN + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+        //    _scenarioContext["UserFN"] = FN;
+        //    _scenarioContext["UserLN"] = LN;
+        //    PG4.EnterFirstName(FN);
+        //    PG4.EnterMiddleName(MN);
+        //    PG4.EnterLastName(LN);
+        //    PG4.EnterNameSuffix(namesuffix);
 
-        }
+        //}
 
         [When("enter associated orgname as {string}, name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string} on the fourth User Data Page")]
         public void WhenEnterAssociatedOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(string orgname, string nameprefix, string FN, string MN, string LN, string namesuffix)
@@ -201,6 +207,11 @@ namespace ReqnrollProject1.StepDefinitions
             var PG4 = new InvolvedPartyTypeInfo_Page4(Driver);
             PG4.EnterOrgName(orgname);
             PG4.EnterNamePrefix(nameprefix);
+            DateTime dateTime = DateTime.Now;
+            FN = FN + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            LN = LN + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            _scenarioContext["UserFN"] = FN;
+            _scenarioContext["UserLN"] = LN;
             PG4.EnterFirstName(FN);
             PG4.EnterMiddleName(MN);
             PG4.EnterLastName(LN);

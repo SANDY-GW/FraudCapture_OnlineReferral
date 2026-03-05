@@ -18,14 +18,17 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         public void AcceptDisclosure()
         {
-            var common = new CommonHelpers(Driver);
-            common.WaitForLoadingOverlayToDisappear();
+            //var common = new CommonHelpers(Driver);
+            //common.WaitForLoadingOverlayToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 1000);
             //WaitForWidgetLoading();
             //Driver.WrappedDriver.FindElement(By.XPath("//button[@id='btnAmaEulaAgree']")).Click();
 
             By acceptAMAButton = By.XPath("//button[@id='btnAmaEulaAgree']");
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(180));
-            wait.Until(ExpectedConditions.ElementToBeClickable(acceptAMAButton));
+            CommonHelpers.WaitForElementClickable(Driver, acceptAMAButton, 120);
+            //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(180));
+
+            //wait.Until(ExpectedConditions.ElementToBeClickable(acceptAMAButton));
             Driver.FindElement(acceptAMAButton).Click();
 
             // check for Help Content Alerts
@@ -49,8 +52,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                 {
                     while (Driver.FindElement(CloseAlertButton).Displayed)
                     {
-                       
-                       common.WaitForLoadingOverlayToDisappear();
+                       CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 1000);
+                        //Common.WaitForLoadingOverlayToDisappear();
 
                         Driver.FindElement(CloseAlertButton).Click();
                     }
