@@ -104,7 +104,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
 
             CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 500);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 500);
+            CommonHelpers.ScrollToElement(Driver, proceed_To_Next_SectionButton);
             Driver.FindElement(proceed_To_Next_SectionButton).Click();
             CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 5000);
 

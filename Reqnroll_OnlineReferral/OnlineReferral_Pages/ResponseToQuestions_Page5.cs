@@ -211,12 +211,13 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             Actions actions = new Actions(Driver);
             new Actions(Driver).KeyDown(Keys.Control).SendKeys(Keys.End).Perform();
-            Thread.Sleep(5000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,120);
             js.ExecuteScript("window.scrollBy(0, document.body.scrollHeight);");
-            Thread.Sleep(5000);
-            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 5000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
+            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 120);
             Driver.FindElement(submitReferralButton).Submit();
-            Thread.Sleep(10000);
+
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
         }
 
         public void ClickProceedToNextSectionButton()

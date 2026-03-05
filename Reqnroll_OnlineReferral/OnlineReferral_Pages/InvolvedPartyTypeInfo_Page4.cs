@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FC_OnlineReferral.CommonData;
 
 namespace FC_OnlineReferral.OnlineReferral_Pages
 {
@@ -80,16 +81,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void EnterFirstName(string firstName)
         {
-           
-            CommonData.UserCredentials.UserFN = dateTime.ToString("HH:mm ") +dateTime.ToString("MM dd yyyy") + " " + firstName;
-            CommonHelpers.WaitForElementVisiblity(Driver, orgNameField, 10);
-            Driver.FindElement(firstNameField).SendKeys(CommonData.UserCredentials.UserFN);
-
-
+            CommonHelpers.WaitForElementVisiblity(Driver, firstNameField, 10);
+            Driver.FindElement(firstNameField).SendKeys(firstName);
         }
         public void EnterLastName(string lastName)
         {
-            var latestLastname = dateTime.TimeOfDay.ToString() + dateTime.ToString("MMddyyyy") + " " + lastName;
+            CommonHelpers.WaitForElementVisiblity(Driver, lastNameField, 10);
             Driver.FindElement(lastNameField).SendKeys(lastName);
         }
         public void EnterMiddleName(string middleName)

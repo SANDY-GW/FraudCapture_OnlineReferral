@@ -21,7 +21,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public void FC_Login(string URL = "https://dev.fraudcapture.hms.com/#/")
         {
             Driver.Navigate().GoToUrl(URL);
-            CommonHelpers.WaitForPageToLoad(Driver, 10);
+            //CommonHelpers.WaitForPageToLoad(Driver, 10);
         }
 
         public void FC_SelectPayor()
@@ -45,8 +45,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public string GetActivityName()
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
+            CommonHelpers.WaitForPageLoading(Driver);
             var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']/div/div[2]/div[2]/cdk-virtual-scroll-viewport/div[1]/div/table/tbody/tr/td[1]")).Text;
 
             Console.WriteLine(activityName);
