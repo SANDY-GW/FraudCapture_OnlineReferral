@@ -1,9 +1,10 @@
-using System;
 using FC_OnlineReferral.OnlineReferral_Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
-
 using Reqnroll;
+using System;
+using System.ComponentModel;
+using System.Runtime.Intrinsics.X86;
 
 namespace ReqnrollProject1.StepDefinitions
 {
@@ -182,6 +183,94 @@ namespace ReqnrollProject1.StepDefinitions
         }
 
 
+        // Page3 new UI online referral changes
+
+        [When("Is thisInvolved Party dropdown is selected as {string} on the third User Data Page")]
+        public void WhenIsThisInvolvedPartyDropdownIsSelectedAsOnTheThirdUserDataPage(string option)
+        {
+            var PG3 = new InvolvedParties_Page3(Driver);
+            
+            PG3.SelectIsExternalReferringPartyFromDropdown(option);
+        }
+
+        [When("enter InvolvedParty orgname as {string}, name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string} on the fourth User Data Page")]
+        public void WhenEnterInvolvedPartyOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(string orgname, string prefix, string fn, string mn, string ln, string suffix)
+        {
+            var PG3 = new InvolvedParties_Page3(Driver);
+            PG3.FillOrganizationField(orgname);
+            PG3.FillNamePrefixField(prefix);
+            PG3.FillFirstNameField(fn);
+            PG3.FillMiddleNameField(mn);
+            PG3.FillLastNameField(ln);
+            PG3.FillNameSuffixField(suffix);
+        }
+        [When("enter InvolvedParty Designation as {string},DOB as {string}, SSN as {string}, licenseNumber as {string}, How witness or external party reported this as {string},any additional info as {string} ID Test as {string}")]
+        public void WhenEnterInvolvedPartyDesignationAsDOBAsSSNAsLicenseNumberAsHowWitnessOrExternalPartyReportedThisAsAnyAdditionalInfoAsIDTestAs(string Designation, string dob, string ssn, string licenseno, string text, string text1, string idTest)
+        {
+            var PG3 = new InvolvedParties_Page3(Driver);
+            PG3.FillDesignationField(Designation);
+            PG3.FillDOBField(dob);
+            PG3.FillSSNField(ssn);
+            PG3.FillLicenseNumberField(licenseno);
+            PG3.FillHowDidThisExternalReferringPartyreportThisTextarea(text);
+            PG3.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(text);
+            PG3.FillIDTestField(idTest);
+        }
+
+
+        [When("enter InvolvedParty NPI as {string}, TIN as {string},medicaid ID as {string},Medicare ID as {string}, otherID as {string} on the fourth User Data Page")]
+        public void WhenEnterInvolvedPartyNPIAsTINAsMedicaidIDAsMedicareIDAsOtherIDAsOnTheFourthUserDataPage(string npi, string Tin, string medicaidID, string medicareID, string OtherID)
+        {
+            var PG3 = new InvolvedParties_Page3(Driver);
+            PG3.FillNPIField(npi);
+            PG3.FillTIN_EINField(Tin);
+            PG3.FillMedicaidIDField(medicaidID);
+            PG3.FillMedicareIDField(medicareID);
+            PG3.FillOtherIDField(OtherID);
+        }
+
+        [When("enter InvolvedParty provider type as {string}, provider specialty as {string},Taxonomy as {string} and other as {string} on the fourth User Data Page")]
+        public void WhenEnterInvolvedPartyProviderTypeAsProviderSpecialtyAsTaxonomyAsAndOtherAsOnTheFourthUserDataPage(string p0, string p1, string tester, string test)
+        {
+            var PG3 = new InvolvedParties_Page3(Driver);
+            PG3.FillProviderTypeField(p0);
+            PG3.FillProviderSpecialtyField(p1);
+            PG3.FillTaxonomyField(tester);
+            PG3.FillOtherField(test);
+        }
+
+        [When("InvolvedParty street_Address_lineone as {string}, street_Address_linetwo as {string}, city as ,{string}, state as {string} , county as {string} and zip code as {string}")]
+        public void WhenInvolvedPartyStreet_Address_LineoneAsStreet_Address_LinetwoAsCityAsStateAsCountyAsAndZipCodeAs(string p0, string p1, string irving, string texas, string washington, string p5)
+        {
+            var PG3 = new InvolvedParties_Page3(Driver);
+            PG3.FillAddress1Field(p0);
+            PG3.FillAddress2Field(p1);
+            PG3.FillCityField(irving);
+            PG3.SelectStateFromDropdown(texas);
+            PG3.SelectCountyFromDropdown(washington);
+            PG3.FillZipCodeField(p5);
+        }
+
+        [When("InvolvedParty country as {string},  phone number as {string}, fax as {string} and email address as {string}")]
+        public void WhenInvolvedPartyCountryAsPhoneNumberAsFaxAsAndEmailAddressAs(string p0, string p1, string p2, string p3)
+        {
+            var PG3 = new InvolvedParties_Page3(Driver);
+            PG3.FillCountryField(p0);
+            PG3.FillPhoneNumberField(p1);
+            PG3.FillFaxField(p2);
+            PG3.FillEmailField(p3);
+        }
+
+        [When("I click on the Next button on the third User Data Page")]
+        public void WhenIClickOnTheNextButtonOnTheThirdUserDataPage()
+        {
+
+            var PG3 = new InvolvedParties_Page3(Driver);
+            PG3.ClickProceedToNextSectionButton();
+        }
+
+
+
         [Given("enter associated orgname as {string}, name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string} on the fourth User Data Page")]
         public void GivenEnterAssociatedOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(string orgname, string nameprefix, string FN, string MN, string LN, string namesuffix)
         {
@@ -201,8 +290,13 @@ namespace ReqnrollProject1.StepDefinitions
             var PG4 = new InvolvedPartyTypeInfo_Page4(Driver);
             PG4.EnterOrgName(orgname);
             PG4.EnterNamePrefix(nameprefix);
+            DateTime dateTime = DateTime.Now;
+            FN = FN + dateTime.ToString("HH:mm ") + dateTime.ToString("MM dd yyyy");
+            _scenarioContext.Set(FN, "FirstName");
             PG4.EnterFirstName(FN);
             PG4.EnterMiddleName(MN);
+            LN = LN + dateTime.ToString("HH:mm ") + dateTime.ToString("MM dd yyyy");
+            _scenarioContext.Set(LN, "LastName");
             PG4.EnterLastName(LN);
             PG4.EnterNameSuffix(namesuffix);
 
@@ -279,6 +373,19 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
+
+        [When("is there anotherinvolved party dropdown is selected as {string} on the fourth User Data Page")]
+        public void WhenIsThereAnotherinvolvedPartyDropdownIsSelectedAsOnTheFourthUserDataPage(string no)
+        {
+           var PG4 = new additionalInvolvedParty_page4(Driver);
+            PG4.SelectisThereAnotherInvolvedParty(no);
+
+            PG4.ClickContinueWithInvolvedPartySelectionButton();
+
+
+        }
+
+
         [When("Does this rederral involve a specific member is selected as {string}")]
         public void WhenDoesThisRederralInvolveASpecificMemberIsSelectedAs(string dropdownOption)
         {
@@ -354,13 +461,31 @@ namespace ReqnrollProject1.StepDefinitions
         [When("Questiontwo as {string}, QuestionThree as {string}, Questionfour as {string}, Questionfive as {string}, Questionsix as {string}")]
         public void WhenQuestiontwoAsQuestionThreeAsQuestionfourAsQuestionfiveAsQuestionsixAs(string test, string no, string test2, string no3, string test4)
         {
-            var PG5 = new ResponseToQuestions_Page5(Driver);
-            PG5.EnterQuestion2(test);
-            PG5.SelectQuestion3dropdown(no);
-            PG5.EnterQuestion4(test2);
-            PG5.SelectQuestion5(no3);
-            PG5.EnterQuestion6(test4);
+            var PG5 = new New_UI_Questions_Page5(Driver);
+            PG5.EnterQuestion2Answer(test);
+            PG5.EnterQuestion3Answer(no);
+            //PG5.EnterQuestion4(test2);
+            //PG5.SelectQuestion5(no3);
+            //PG5.EnterQuestion6(test4);
         }
+
+
+        [When("then uploading a file using file path as {string}")]
+        public void WhenThenUploadingAFileUsingFilePathAs(string filepath)
+        {
+            var PG5 = new New_UI_Questions_Page5(Driver);
+            PG5.ClickUploadFileArrow(filepath);
+        }
+
+        [Then("click on proceed to next session button")]
+        public void ThenClickOnProceedToNextSessionButton()
+        {
+
+
+            var PG5 = new New_UI_Questions_Page5(Driver);
+            PG5.ClickProceedToNextSessionButton();
+        }
+
 
         [Then("submitting a referral")]
         public void ThenSubmittingAReferral()

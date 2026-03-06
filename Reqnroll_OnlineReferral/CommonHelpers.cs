@@ -72,6 +72,93 @@ namespace FC_OnlineReferral
 
         }
 
+        /// <summary>
+        /// Checks to see if the loading spinner is displayed.
+        /// </summary>
+        public bool IsLoadingSpinnerDisplayed()
+        {
+            var loadingOverlay = By.XPath("//span[contains(text(),'Loading...')]");
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+
+            try
+            {
+                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(loadingOverlay));
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (StaleElementReferenceException)
+            {
+                return false;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
+        }
+        /// <summary>
+        /// Closes the displayed alert.
+        /// </summary>
+        public void CloseAlert()
+        {
+            var alert = By.ClassName("close");
+
+            if (IsAlertDisplayed())
+            {
+                Driver.FindElement(alert).Click();
+            }
+        }
+        /// <summary>
+        /// Waits for the page to finish loading.
+        /// </summary>
+        public void WaitForPageLoading()
+        {
+            // var loadingOverlay = By.ClassName("spinner-border ");
+            var loadingOverlay = By.XPath("//*[contains(@class, 'spinner-border')]");
+
+            if (IsElementDisplayed())
+            {
+                new WebDriverWait(Driver, TimeSpan.FromSeconds(120)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
+            }
+        }
+        private void WaitForAttachmentUpload(int seconds)
+        {
+            By alertDismissBtn = By.ClassName("close");
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(seconds));
+            wait.Until(ExpectedConditions.ElementToBeClickable(alertDismissBtn));
+            CloseAlert();
+        }
+
+
+        /// <summary>
+        /// Checks to see if the alert is displayed.
+        /// </summary>
+        public bool IsAlertDisplayed()
+        {
+            var alert = By.ClassName("close");
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+
+            try
+            {
+                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(alert));
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (StaleElementReferenceException)
+            {
+                return false;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
+        }
+
 
 
         public static void SwitchtoNewWindow(IWebDriver driver)
@@ -121,16 +208,7 @@ namespace FC_OnlineReferral
                 return false;
             }
         }
-        public void WaitForPageLoading()
-        {
-            // var loadingOverlay = By.ClassName("spinner-border ");
-            var loadingOverlay = By.XPath("//*[contains(@class, 'spinner-border')]");
-
-            if (IsElementDisplayed())
-            {
-                new WebDriverWait(Driver, TimeSpan.FromSeconds(120)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
-            }
-        }
+       
 
         public bool IsElementDisplayed()
         {

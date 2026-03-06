@@ -132,11 +132,18 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void SelectQuestion1Dropdown(string answer)
         {
             CommonHelpers.selectOptionByValue(Driver.FindElement(question1), answer);
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+            js.ExecuteScript("window.scrollBy(0, 100);");
         }
         public void SelectQuestion1Test(string answer)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, question1TextBox, 100);
             Driver.FindElement(question1TextBox).SendKeys(answer);
+
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+            js.ExecuteScript("window.scrollBy(0, 100);");
         }
 
         public void EnterQuestion2(string answer)

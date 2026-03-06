@@ -66,11 +66,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void EnterOrgName(string orgName)
         {
           
-            var latestOrgname = dateTime.ToString("HH:mm ") + dateTime.ToString("MM dd yyyy") + " " + orgName;
-            dateTime.ToString("yyyyMMddHHmmssffff");
+          
             CommonHelpers.WaitForElementVisiblity(Driver, orgNameField, 10);
 
-            Driver.FindElement(orgNameField).SendKeys(latestOrgname);
+            Driver.FindElement(orgNameField).SendKeys(orgName);
 
         }
         public void EnterNamePrefix(string namePrefix)
@@ -81,15 +80,15 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void EnterFirstName(string firstName)
         {
            
-            CommonData.UserCredentials.UserFN = dateTime.ToString("HH:mm ") +dateTime.ToString("MM dd yyyy") + " " + firstName;
+            
             CommonHelpers.WaitForElementVisiblity(Driver, orgNameField, 10);
-            Driver.FindElement(firstNameField).SendKeys(CommonData.UserCredentials.UserFN);
+            Driver.FindElement(firstNameField).SendKeys(firstName);
 
 
         }
         public void EnterLastName(string lastName)
         {
-            var latestLastname = dateTime.TimeOfDay.ToString() + dateTime.ToString("MMddyyyy") + " " + lastName;
+            
             Driver.FindElement(lastNameField).SendKeys(lastName);
         }
         public void EnterMiddleName(string middleName)
