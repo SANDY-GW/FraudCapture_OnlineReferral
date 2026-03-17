@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,15 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         #endregion
         public void EnterLoginUserEmail(string userEmail)
         {
-            Driver.FindElement(Login_UserEmail).SendKeys(userEmail);
+            //CommonHelpers.WaitForPageToLoad(Driver, 100);
+
+            var emailInput = Driver.FindElement(Login_UserEmail);
+
+            emailInput.Click();
+            emailInput.Clear();
+            emailInput = Driver.FindElement(Login_UserEmail);
+            emailInput.SendKeys(userEmail);
+
         }
         public void EnterPingUsername(string pingUsername)
         {
