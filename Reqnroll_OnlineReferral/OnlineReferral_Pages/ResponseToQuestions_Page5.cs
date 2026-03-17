@@ -47,6 +47,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By question5 = By.XPath("//select[@id='questiondDrDown5']");
         private readonly By question6 = By.XPath("//textarea[@id='questionTxt6']");
         private readonly By submitReferralButton = By.XPath("//button[text()=' Submit Referral ']");
+        private readonly By enterNewReferral = By.XPath("//button[text()='Enter New Referral']");
 
         #endregion
 
@@ -198,7 +199,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             //new Actions(Driver).KeyDown(Keys.Control).SendKeys(Keys.PageDown).Perform();
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
 
-            js.ExecuteScript("window.scrollBy(0, 500);");
+            js.ExecuteScript("window.scrollBy(0, 1000);");
             CommonHelpers.WaitForElementVisiblity(Driver, question6, 100);
            // Driver.FindElement(question6).Click();
             Driver.FindElement(question6).SendKeys(answer);
@@ -223,7 +224,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             Thread.Sleep(5000);
             CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 5000);
             Driver.FindElement(submitReferralButton).Submit();
-            Thread.Sleep(10000);
+            CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 5000);
         }
 
         public void ClickProceedToNextSectionButton()

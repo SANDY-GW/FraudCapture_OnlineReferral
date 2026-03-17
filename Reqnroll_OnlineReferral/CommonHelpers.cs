@@ -60,6 +60,14 @@ namespace FC_OnlineReferral
 
 
         }
+        public static void enterTextValue(IWebElement ele, string selectText)
+        {
+            ele.Clear();
+            ele.SendKeys(selectText);
+
+
+        }
+
 
         public static void selectOptionByIndex(IWebElement ele, int index)
         {

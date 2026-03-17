@@ -45,11 +45,13 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void EnterUserFName(string UserFN)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, userFnameField, 10);
+            Driver.FindElement(userFnameField).Clear();
             Driver.FindElement(userFnameField).SendKeys(UserFN);
 
         }
         public void EnterUserLastName(string UserLN)
         {
+            Driver.FindElement(userLnameField).Clear();
             Driver.FindElement(userLnameField).SendKeys(UserLN);
 
         }
@@ -63,29 +65,34 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void EnterUserEmailName(string emailValue)
         {
-
+            Driver.FindElement(emailtxtbx).Clear();
             Driver.FindElement(emailtxtbx).SendKeys(emailValue);
 
         }
         public void EnterUserTitle(string UserTitle)
         {
+            Driver.FindElement(titletxtbx).Clear();
             Driver.FindElement(titletxtbx).SendKeys(UserTitle);
         }
 
         public void EnterPhoneNumberAndExtension(string PhoneNumber)
         {
+            Driver.FindElement(phonenumber_And_ExtensionField).Clear();
             Driver.FindElement(phonenumber_And_ExtensionField).SendKeys(PhoneNumber);
         }
         public void EnterMailingStreetAddress1(string StreetAddress1)
         {
+            Driver.FindElement(mailingStreetAddress1Field).Clear();
             Driver.FindElement(mailingStreetAddress1Field).SendKeys(StreetAddress1);
         }
         public void EnterMailingStreetAddress2(string StreetAddress2)
         {
+            Driver.FindElement(mailingStreetAddress2Field).Clear();
             Driver.FindElement(mailingStreetAddress2Field).SendKeys(StreetAddress2);
         }
         public void EnterMailingAddressCity(string CityName)
         {
+            Driver.FindElement(mailingAddressCityField).Clear();
             Driver.FindElement(mailingAddressCityField).SendKeys(CityName);
         }
         public void SelectState_Or_Territory(string StateName)
@@ -94,6 +101,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         }
         public void EnterMailingAddressZipCode(string ZipCode)
         {
+            Driver.FindElement(mailingAddresszipCodeField).Clear();
             Driver.FindElement(mailingAddresszipCodeField).SendKeys(ZipCode);
         }
 

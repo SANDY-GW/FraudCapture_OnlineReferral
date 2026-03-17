@@ -26,7 +26,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By uploadFileArrow = By.XPath("//label[@id='fileLabel']//*[local-name()='svg']");
         private readonly By proceedToNextSessionButton = By.XPath("//button[@class='orangeBtn pull-right'][contains(text(),'Proceed to Next Session ')]");
         private readonly By Go_To_Previous_SectionButton = By.XPath("//*[contains(text(),'Go to Previous Section')]");
-        private readonly By submitReferralButton = By.XPath("//button[text()=' Submit Referral ']");
+        private readonly By submitReferralButton = By.XPath("//button[contains(text(), 'Submit Referral')]");
         private readonly By enterNewReferral = By.XPath("//button[text()='Enter New Referral']");
         #endregion
 
@@ -128,13 +128,15 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             
             js.ExecuteScript("window.scrollBy(0, 700);");
              new CommonHelpers(Driver).WaitForPageLoading();
+           
 
-                
+
         }
         public void ClickProceedToNextSessionButton()
         {
             Thread.Sleep(5000);
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
             //js.ExecuteScript("window.scrollTo(0, 0);");
             CommonHelpers.WaitForElementVisiblity(Driver, proceedToNextSessionButton, 10000);
 
@@ -142,17 +144,27 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             new CommonHelpers(Driver).WaitForLoadingOverlayToDisappear();
             //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 50000);
             //new CommonHelpers(Driver).WaitForPageLoading();
-            Thread.Sleep(5000);
+            //Thread.Sleep(5000);
 
-            Actions actions = new Actions(Driver);
-            actions.SendKeys(Keys.PageDown).Perform();
-            Thread.Sleep(5000);
-            js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
-            Thread.Sleep(5000);
-            js.ExecuteScript("window.scrollBy(0, 1000);");
-           
-            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 5000);
+            //Actions actions = new Actions(Driver);
+            //actions.SendKeys(Keys.PageDown).Perform();
+            //Thread.Sleep(5000);
+            //js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
+            //Thread.Sleep(5000);
+            ////js.ExecuteScript("window.scrollBy(0, 1000);");
+            ////new CommonHelpers(Driver).WaitForPageLoading();
+
+            //js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
+
+            
+
+            js.ExecuteScript("window.scrollTo(0, 0);");
+            new CommonHelpers(Driver).WaitForPageLoading();
+
+            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 1000);
             Driver.FindElement(submitReferralButton).Submit();
+            new CommonHelpers(Driver).WaitForPageLoading();
+
             CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 5000);
 
         }

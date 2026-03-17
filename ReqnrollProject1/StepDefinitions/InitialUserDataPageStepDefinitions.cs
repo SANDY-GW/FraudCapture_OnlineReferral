@@ -188,6 +188,7 @@ namespace ReqnrollProject1.StepDefinitions
         [When("Is thisInvolved Party dropdown is selected as {string} on the third User Data Page")]
         public void WhenIsThisInvolvedPartyDropdownIsSelectedAsOnTheThirdUserDataPage(string option)
         {
+
             var PG3 = new InvolvedParties_Page3(Driver);
             
             PG3.SelectIsExternalReferringPartyFromDropdown(option);
@@ -196,6 +197,7 @@ namespace ReqnrollProject1.StepDefinitions
         [When("enter InvolvedParty orgname as {string}, name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string} on the fourth User Data Page")]
         public void WhenEnterInvolvedPartyOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(string orgname, string prefix, string fn, string mn, string ln, string suffix)
         {
+           
             var PG3 = new InvolvedParties_Page3(Driver);
             PG3.FillOrganizationField(orgname);
             PG3.FillNamePrefixField(prefix);
@@ -458,8 +460,8 @@ namespace ReqnrollProject1.StepDefinitions
         }
 
 
-        [When("Questiontwo as {string}, QuestionThree as {string}, Questionfour as {string}, Questionfive as {string}, Questionsix as {string}")]
-        public void WhenQuestiontwoAsQuestionThreeAsQuestionfourAsQuestionfiveAsQuestionsixAs(string test, string no, string test2, string no3, string test4)
+        [When("Questiontwo as {string}, QuestionThree as {string}")]
+        public void WhenQuestiontwoAsQuestionThreeAsQuestionfourAsQuestionfiveAsQuestionsixAs(string test, string no)
         {
             var PG5 = new New_UI_Questions_Page5(Driver);
             PG5.EnterQuestion2Answer(test);
@@ -467,6 +469,17 @@ namespace ReqnrollProject1.StepDefinitions
             //PG5.EnterQuestion4(test2);
             //PG5.SelectQuestion5(no3);
             //PG5.EnterQuestion6(test4);
+        }
+
+        [When("Questiontwo as {string}, QuestionThree as {string}, Questionfour as {string}, Questionfive as {string}, Questionsix as {string}")]
+        public void WhenQuestiontwoAsQuestionThreeAsQuestionfourAsQuestionfiveAsQuestionsixAs(string test, string no, string test2, string no3, string test4)
+        {
+            var PG5 = new ResponseToQuestions_Page5(Driver);
+            PG5.EnterQuestion2(test);
+            PG5.SelectQuestion3dropdown(no);
+            PG5.EnterQuestion4(test2);
+            PG5.SelectQuestion5(no3);
+            PG5.EnterQuestion6(test4);
         }
 
 
@@ -495,11 +508,136 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
+        // member page
+
+        [When("enter InvolvedParty  name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string}")]
+        public void WhenEnterInvolvedPartyNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAs(string nameprefix, string Fn, string Mn, string Ln, string namesuffix)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            PG3.FillNamePrefixField(nameprefix);
+            PG3.FillFirstNameField(Fn);
+            PG3.FillMiddleNameField(Mn);
+            PG3.FillLastNameField(Ln);
+            PG3.FillNameSuffixField(namesuffix);
+        }
+
+
+        [When("enter InvolvedParty DOB as {string}, Gender as {string}, other as {string}, How witness or external party reported this as {string},any additional info as {string}")]
+        public void WhenEnterInvolvedPartyDOBAsGenderAsOtherAsHowWitnessOrExternalPartyReportedThisAsAnyAdditionalInfoAs(string p0, string male, string test, string member, string p4)
+     {
+
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            PG3.FillDOBField(p0);
+            PG3.FillGenderField(male);
+            PG3.FillOtherField(test);
+            PG3.FillHowDidThisExternalReferringPartyreportThisTextarea(member);
+            PG3.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(p4);
+        }
+
+
+
+        [When("enter InvolvedParty ID as {string},ssn as {string} medicaid ID as {string},Medicare ID as {string}, otherID as {string}")]
+        public void WhenEnterInvolvedPartyIDAsSsnAsMedicaidIDAsMedicareIDAsOtherIDAs(string Id, string ssn, string medicaid, string medicare, string otherID)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            PG3.FillIDField(Id);
+            PG3.FillSSNField(ssn);
+            PG3.FillMedicaidIDField(medicaid);
+            PG3.FillMedicareIDField(medicare);
+            PG3.FillOtherIDField(otherID);
+
+        }
+
+        [When("enter InvolvedParty plan as {string}, Program  as {string},LOB as {string} and Group as {string}")]
+        public void WhenEnterInvolvedPartyPlanAsProgramAsLOBAsAndGroupAs(string plan, string program, string lob, string group)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            PG3.FillPlanField(plan);
+            PG3.FillProgramField(program);
+            PG3.FillLOBField(lob);
+            PG3.FillGroupField(group);
+        }
+        [When("InvolvedParty member street_Address_lineone as {string}, street_Address_linetwo as {string}, city as ,{string}, state as {string} , county as {string} and zip code as {string}")]
+        public void WhenInvolvedPartyMemberStreet_Address_LineoneAsStreet_Address_LinetwoAsCityAsStateAsCountyAsAndZipCodeAs(string p0, string p1, string irving, string texas, string washington, string p5)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            PG3.FillAddress1Field(p0);
+            PG3.FillAddress2Field(p1);
+            PG3.FillCityField(irving);
+            PG3.SelectStateFromDropdown(texas);
+            PG3.SelectCountyFromDropdown(washington);
+            PG3.FillZipCodeField(p5);
+        }
+
+        [When("InvolvedParty Primary phoneNo as {string},  Secondary phone number as {string} and email address as {string}")]
+        public void WhenInvolvedPartyPrimaryPhoneNoAsSecondaryPhoneNumberAsAndEmailAddressAs(string primaryphNo, string SeconadryPhno, string email)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            PG3.FillPrimaryPhoneNumberField(primaryphNo);
+            PG3.FillSecondaryPhoneNumberField(SeconadryPhno);
+            PG3.FillEmailField(email);
+        }
+
+
+        // Non-Enumerated provider
+        [When("enter InvolvedParty Non-Enumertaed Provider orgname as {string}, name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string} on the fourth User Data Page")]
+        public void WhenEnterInvolvedPartyNon_EnumertaedProviderOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(string p0, string mr, string p2, string p3, string p4, string jr)
+        {
+            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
+            PG3.EnterOrganization(p0);
+            PG3.EnterNamePrefix(mr);
+            PG3.EnterFirstName(p2);
+            PG3.EnterMiddleName(p3);
+            PG3.EnterLastName(p3);
+            PG3.EnterNameSuffix(jr);
+
+        }
+
+       
+        [When("enter InvolvedParty Designation as {string} ,DOB as {string}, SSN as {string}, How witness or external party reported this as {string},any additional info as {string} licenseNumber as {string},other ID as {string},other as {string}")]
+        public void WhenEnterInvolvedPartyDesignationAsDOBAsSSNAsHowWitnessOrExternalPartyReportedThisAsAnyAdditionalInfoAsLicenseNumberAsOtherIDAsOtherAs(string testDesignation, string dob, string ssn, string referringPartyReport, string additionalwitness, string licenseno, string otherid, string other)
+        {
+            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
+            PG3.EnterDesignation(testDesignation);
+            PG3.EnterDOB(dob);
+            PG3.EnterSSN(ssn);
+            PG3.FillHowDidThisExternalReferringPartyreportThisTextarea(referringPartyReport);
+            PG3.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(additionalwitness);
+            PG3.EnterLicenseNumber(licenseno);
+            PG3.EnterOtherID(otherid);
+            PG3.EnterOther(other);
+        }
+
+
+        [When("enter primary phone number as {string},secondary phone number as {string}, fax as {string} and email address as {string} for the involved party")]
+        public void WhenEnterPrimaryPhoneNumberAsSecondaryPhoneNumberAsFaxAsAndEmailAddressAsForTheInvolvedParty(string p0, string p1, string p2, string p3)
+        {
+            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
+            PG3.EnterPrimaryPhoneNumber(p0);
+            PG3.EnterSecondaryPhoneNumber(p1);
+            PG3.EnterFax(p2);
+            PG3.EnterEmail(p3);
+        }
+
+        [When("street address line one as {string}, street address line two as {string}, city as {string}, state as {string}, county as {string} , zip code as {string} and country as {string} for the involved party")]
+        public void WhenStreetAddressLineOneAsStreetAddressLineTwoAsCityAsStateAsCountyAsZipCodeAsAndCountryAsForTheInvolvedParty(string p0, string p1, string irving, string texas, string washington, string p5, string p6)
+        {
+            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
+            PG3.EnterAddress1(p0);
+            PG3.EnterAddress2(p1);
+            PG3.EnterCity(irving);
+            PG3.SelectState(texas);
+            PG3.SelectCounty(washington);
+            PG3.EnterZipCode(p5);
+            PG3.EnterCountry(p6);
+
+
+        }
 
 
 
     }
 
 
-    
+
 }

@@ -80,7 +80,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void ClickContinueWithInvolvedPartySelectionButton()
         {
-
+            new CommonHelpers(Driver).WaitForLoadingOverlayToDisappear();
             CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 70000);
             Driver.FindElement(continue_with_Involved_Party_Selection_Button).Click();
             Thread.Sleep(5000);

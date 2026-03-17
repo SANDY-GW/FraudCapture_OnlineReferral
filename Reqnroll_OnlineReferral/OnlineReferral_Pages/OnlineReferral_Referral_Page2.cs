@@ -48,33 +48,40 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void EnterHowWasThisDetected(string Detected)
         {
+            Driver.FindElement(detectedField).Clear();
             Driver.FindElement(detectedField).SendKeys(Detected);
         }
         public void EnterReferralSummary(string ReferralSummary)
         {
+            Driver.FindElement(referralSummaryField).Clear();
             Driver.FindElement(referralSummaryField).SendKeys(ReferralSummary);
         }
         public void EnterCase_Or_Reference_Or_TrackingNumber(string Case_Or_Reference_Or_TrackingNumber)
         {
+            Driver.FindElement(case_Or_Reference_Or_TrackingNumberField).Clear();
             Driver.FindElement(case_Or_Reference_Or_TrackingNumberField).SendKeys(Case_Or_Reference_Or_TrackingNumber);
         }
 
         public void EnterEstimatedAmount(string EstimatedAmount)
         {
+            Driver.FindElement(estimatedAmountField).Clear();
             Driver.FindElement(estimatedAmountField).SendKeys(EstimatedAmount);
         }
 
         public void EnterOriginalDetectionDate(string OriginalDetectionDate)
         {
+            Driver.FindElement(originalDetectionDateField).Clear();
             Driver.FindElement(originalDetectionDateField).SendKeys(OriginalDetectionDate);
         }
         public void EnterIncidentStartDate(string IncidentStartDate)
         {
+            Driver.FindElement(incidentStartDateField).Clear();
             Driver.FindElement(incidentStartDateField).SendKeys(IncidentStartDate);
         }
 
         public void EnterIncidentEndDate(string IncidentEndDate)
         {
+            Driver.FindElement(incidentEndDateField).Clear();
             Driver.FindElement(incidentEndDateField).SendKeys(IncidentEndDate);
         }
 
