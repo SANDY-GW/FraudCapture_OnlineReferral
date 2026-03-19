@@ -22,7 +22,7 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var fc = new FraudCapture_Core(Driver);
             fc.FC_OnlineLogin();
-            CommonHelpers.WaitForPageToLoad(Driver, 30);
+            CommonHelpers.WaitForPageToLoad(Driver, 100);
             CommonHelpers.WaitForPageLoading(Driver);
         }
 

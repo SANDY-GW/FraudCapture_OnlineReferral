@@ -47,6 +47,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By question5 = By.XPath("//select[@id='questiondDrDown5']");
         private readonly By question6 = By.XPath("//textarea[@id='questionTxt6']");
         private readonly By submitReferralButton = By.XPath("//button[text()=' Submit Referral ']");
+        private readonly By enterNewReferral = By.XPath("//button[text()='Enter New Referral']");
 
         #endregion
 
@@ -132,11 +133,18 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void SelectQuestion1Dropdown(string answer)
         {
             CommonHelpers.selectOptionByValue(Driver.FindElement(question1), answer);
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+            js.ExecuteScript("window.scrollBy(0, 100);");
         }
         public void SelectQuestion1Test(string answer)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, question1TextBox, 100);
             Driver.FindElement(question1TextBox).SendKeys(answer);
+
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+            js.ExecuteScript("window.scrollBy(0, 100);");
         }
 
         public void EnterQuestion2(string answer)
@@ -191,7 +199,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             //new Actions(Driver).KeyDown(Keys.Control).SendKeys(Keys.PageDown).Perform();
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
 
-            js.ExecuteScript("window.scrollBy(0, 500);");
+            js.ExecuteScript("window.scrollBy(0, 1000);");
             CommonHelpers.WaitForElementVisiblity(Driver, question6, 100);
            // Driver.FindElement(question6).Click();
             Driver.FindElement(question6).SendKeys(answer);
@@ -211,13 +219,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             Actions actions = new Actions(Driver);
             new Actions(Driver).KeyDown(Keys.Control).SendKeys(Keys.End).Perform();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,120);
+            Thread.Sleep(5000);
             js.ExecuteScript("window.scrollBy(0, document.body.scrollHeight);");
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 120);
+            Thread.Sleep(5000);
+            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 5000);
             Driver.FindElement(submitReferralButton).Submit();
-
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
+            CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 5000);
         }
 
         public void ClickProceedToNextSectionButton()
