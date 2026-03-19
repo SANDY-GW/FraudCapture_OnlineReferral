@@ -50,13 +50,13 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         #endregion
         public void ClickLeadTab()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             CommonHelpers.WaitForElementVisiblity(Driver, LeadTab, 120);            
             Driver.FindElement(LeadTab).Click();
         }
         public void SelectLeadSearchCriteria(string searchCriteria)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, LeadSearchCriteria, 10);
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadSearchCriteria, 120);
             CommonHelpers.selectOptionByValue(Driver.FindElement(LeadSearchCriteria), searchCriteria);
 
         }

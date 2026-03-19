@@ -39,36 +39,10 @@ namespace FC_OnlineReferral
         public static void ScrollUp(IWebDriver driver)
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+
+            // Scroll to the top of the page (coordinates 0, 0)
             js.ExecuteScript("window.scrollTo(0, 0);");
         }
-
-        public static void ScrollDown(IWebDriver driver)
-        {
-            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            js.ExecuteScript("window.scrollBy(0, 500)");
-        }
-
-        public static void ScrollByElementCoordinates(IWebDriver driver, IWebElement element)
-        {
-            System.Drawing.Point point = element.Location;
-            int x_coordinate = point.X - 250;
-            int y_coordinate = point.Y - 250;
-            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
-            jsExec.ExecuteScript("window.scrollBy(" + x_coordinate + ", " + y_coordinate + ");");
-        }
-
-        public static void ScrollToElement(IWebDriver driver, By element)
-        {
-            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
-            var webElement = driver.FindElement(element);
-            jsExec.ExecuteScript("arguments[0].scrollIntoView(true);", webElement);
-        }
-        public static void ScrollToEndOfPage(IWebDriver driver)
-        {
-            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
-        }
-        
 
         public static void WaitForElementClickable(IWebDriver driver, By element, int timeoutInSeconds)
         {
@@ -86,6 +60,14 @@ namespace FC_OnlineReferral
 
 
         }
+        public static void enterTextValue(IWebElement ele, string selectText)
+        {
+            ele.Clear();
+            ele.SendKeys(selectText);
+
+
+        }
+
 
         public static void selectOptionByIndex(IWebElement ele, int index)
         {
@@ -98,6 +80,114 @@ namespace FC_OnlineReferral
 
         }
 
+        /// <summary>
+        /// Checks to see if the loading spinner is displayed.
+        /// </summary>
+        public bool IsLoadingSpinnerDisplayed()
+        {
+            var loadingOverlay = By.XPath("//span[contains(text(),'Loading...')]");
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+
+            try
+            {
+                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(loadingOverlay));
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (StaleElementReferenceException)
+            {
+                return false;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
+        }
+        /// <summary>
+        /// Closes the displayed alert.
+        /// </summary>
+        public void CloseAlert()
+        {
+            var alert = By.ClassName("close");
+
+            if (IsAlertDisplayed())
+            {
+                Driver.FindElement(alert).Click();
+            }
+        }
+        /// <summary>
+        /// Waits for the page to finish loading.
+        /// </summary>
+        public static void WaitForPageLoading(IWebDriver Driver)
+
+        {
+
+            // var loadingOverlay = By.ClassName("spinner-border ");
+
+            var loadingOverlay = By.XPath("//*[contains(@class, 'spinner-border')]");
+
+            if (IsElementDisplayed(Driver))
+
+            {
+
+                new WebDriverWait(Driver, TimeSpan.FromSeconds(120)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
+
+            }
+
+        }
+
+        public static void ScrollDown(IWebDriver driver)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("window.scrollBy(0, 500)");
+        }
+
+        public static void ScrollToElement(IWebDriver driver, By element)
+        {
+            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
+            var webElement = driver.FindElement(element);
+            jsExec.ExecuteScript("arguments[0].scrollIntoView(true);", webElement);
+        }
+
+
+        private void WaitForAttachmentUpload(int seconds)
+        {
+            By alertDismissBtn = By.ClassName("close");
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(seconds));
+            wait.Until(ExpectedConditions.ElementToBeClickable(alertDismissBtn));
+            CloseAlert();
+        }
+
+
+        /// <summary>
+        /// Checks to see if the alert is displayed.
+        /// </summary>
+        public bool IsAlertDisplayed()
+        {
+            var alert = By.ClassName("close");
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+
+            try
+            {
+                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(alert));
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (StaleElementReferenceException)
+            {
+                return false;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
+        }
 
 
         public static void SwitchtoNewWindow(IWebDriver driver)
@@ -119,6 +209,7 @@ namespace FC_OnlineReferral
             WaitForPageLoading(driver);
 
         }
+
 
         public static void switchWindowByTitle(IWebDriver driver, string windowTitle)
         {
@@ -159,22 +250,8 @@ namespace FC_OnlineReferral
                 return false;
             }
         }
-        public static void WaitForPageLoading(IWebDriver driver)
-        {
-            // var loadingOverlay = By.ClassName("spinner-border ");
-            var loadingOverlay = By.XPath("//*[contains(@class, 'spinner-border')]");
 
-            if (IsElementDisplayed(driver))
-            {
-                new WebDriverWait(driver, TimeSpan.FromSeconds(120)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
-            }
-        }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="driver"></param>
-        /// <returns></returns>
         public static bool IsElementDisplayed(IWebDriver driver)
         {
             var loadingOverlay = By.XPath("//*[contains(@class, 'spinner-border')]");
@@ -204,13 +281,6 @@ namespace FC_OnlineReferral
 
             Driver.Navigate().GoToUrl(URL);
         }
-
-        /// <summary>
-        /// Waits until the loading overlay (identified by the class name "inProgressClass") is no longer visible on the page, indicating that the loading process has completed.
-        /// </summary>
-        /// 
-        /// <param name="driver">instance of the webdriver.</param>
-        /// <param name="timeout">A number of seconds, accurate to the nearest millisecond.</param>
         public static void WaitForLoadingOverlayToDisappear(IWebDriver driver, int timeout)
         {
             var loadingOverlay = By.ClassName("inProgressClass");
@@ -221,5 +291,14 @@ namespace FC_OnlineReferral
                 new WebDriverWait(driver, TimeSpan.FromSeconds(timeout)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
             }
         }
+        public static void ScrollByElementCoordinates(IWebDriver driver, IWebElement element)
+        {
+            System.Drawing.Point point = element.Location;
+            int x_coordinate = point.X - 250;
+            int y_coordinate = point.Y - 250;
+            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
+            jsExec.ExecuteScript("window.scrollBy(" + x_coordinate + ", " + y_coordinate + ");");
+        }
+
     }
 }
