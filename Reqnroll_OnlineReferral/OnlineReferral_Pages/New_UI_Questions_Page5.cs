@@ -127,7 +127,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             //CommonHelpers.WaitForPageToLoad(Driver, 10000);
             
             js.ExecuteScript("window.scrollBy(0, 700);");
-             new CommonHelpers(Driver).WaitForPageLoading();
+             CommonHelpers.WaitForPageLoading(Driver);
            
 
 
@@ -141,7 +141,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForElementVisiblity(Driver, proceedToNextSessionButton, 10000);
 
             Driver.FindElement(proceedToNextSessionButton).Click();
-            new CommonHelpers(Driver).WaitForLoadingOverlayToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,10);
             //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 50000);
             //new CommonHelpers(Driver).WaitForPageLoading();
             //Thread.Sleep(5000);
@@ -159,11 +159,13 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             
 
             js.ExecuteScript("window.scrollTo(0, 0);");
-            new CommonHelpers(Driver).WaitForPageLoading();
+            CommonHelpers.WaitForPageLoading(Driver);
+
 
             CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 1000);
             Driver.FindElement(submitReferralButton).Submit();
-            new CommonHelpers(Driver).WaitForPageLoading();
+            CommonHelpers.WaitForPageLoading(Driver);
+
 
             CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 5000);
 

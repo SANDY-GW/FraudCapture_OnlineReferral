@@ -199,6 +199,12 @@ namespace ReqnrollProject1.StepDefinitions
         {
            
             var PG3 = new InvolvedParties_Page3(Driver);
+            DateTime dateTime = DateTime.Now;
+            fn = fn + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            ln = ln + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            _scenarioContext["UserFN"] = fn;
+            _scenarioContext["UserLN"] = ln;
+
             PG3.FillOrganizationField(orgname);
             PG3.FillNamePrefixField(prefix);
             PG3.FillFirstNameField(fn);

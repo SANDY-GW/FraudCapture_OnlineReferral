@@ -121,16 +121,38 @@ namespace FC_OnlineReferral
         /// <summary>
         /// Waits for the page to finish loading.
         /// </summary>
-        public void WaitForPageLoading()
+        public static void WaitForPageLoading(IWebDriver Driver)
+
         {
+
             // var loadingOverlay = By.ClassName("spinner-border ");
+
             var loadingOverlay = By.XPath("//*[contains(@class, 'spinner-border')]");
 
-            if (IsElementDisplayed())
+            if (IsElementDisplayed(Driver))
+
             {
+
                 new WebDriverWait(Driver, TimeSpan.FromSeconds(120)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
+
             }
+
         }
+
+        public static void ScrollDown(IWebDriver driver)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("window.scrollBy(0, 500)");
+        }
+
+        public static void ScrollToElement(IWebDriver driver, By element)
+        {
+            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
+            var webElement = driver.FindElement(element);
+            jsExec.ExecuteScript("arguments[0].scrollIntoView(true);", webElement);
+        }
+
+
         private void WaitForAttachmentUpload(int seconds)
         {
             By alertDismissBtn = By.ClassName("close");
@@ -168,14 +190,26 @@ namespace FC_OnlineReferral
         }
 
 
-
         public static void SwitchtoNewWindow(IWebDriver driver)
         {
-            driver.SwitchTo().NewWindow(WindowType.Tab);
+            WaitForPageLoading(driver);
+            String currWindowHandle = driver.CurrentWindowHandle;
 
-            Thread.Sleep(2);
+            IList<string> totWindowHandles = new List<string>(driver.WindowHandles);
+            // WaitForPageLoading();
+            foreach (String WindowHandle in totWindowHandles)
+            {
+                if (!WindowHandle.Equals(currWindowHandle))
+                {
+
+                    driver.SwitchTo().Window(WindowHandle);
+
+                }
+            }
+            WaitForPageLoading(driver);
 
         }
+
 
         public static void switchWindowByTitle(IWebDriver driver, string windowTitle)
         {
@@ -191,12 +225,12 @@ namespace FC_OnlineReferral
             driver.SwitchTo().Window(originalWindow); // Switch back if not found
         }
 
-        public bool IsLoadingOverlayDisplayed()
+        public static bool IsLoadingOverlayDisplayed(IWebDriver driver)
         {
             var loadingOverlay = By.ClassName("inProgressClass");
             //var loadingOverlay = By.XPath(".//span[contains(text(),'Loading...')]");
 
-            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
             try
             {
@@ -216,12 +250,12 @@ namespace FC_OnlineReferral
                 return false;
             }
         }
-       
 
-        public bool IsElementDisplayed()
+
+        public static bool IsElementDisplayed(IWebDriver driver)
         {
             var loadingOverlay = By.XPath("//*[contains(@class, 'spinner-border')]");
-            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
             try
             {
@@ -247,35 +281,24 @@ namespace FC_OnlineReferral
 
             Driver.Navigate().GoToUrl(URL);
         }
-        public void WaitForLoadingOverlayToDisappear()
+        public static void WaitForLoadingOverlayToDisappear(IWebDriver driver, int timeout)
         {
             var loadingOverlay = By.ClassName("inProgressClass");
             //var loadingOverlay = By.XPath(".//span[contains(text(),'Loading...')]");
 
-            if (IsLoadingOverlayDisplayed())
+            if (IsLoadingOverlayDisplayed(driver))
             {
-                new WebDriverWait(Driver, TimeSpan.FromSeconds(120)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
+                new WebDriverWait(driver, TimeSpan.FromSeconds(timeout)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
             }
         }
-        public void SwitchWindow()
+        public static void ScrollByElementCoordinates(IWebDriver driver, IWebElement element)
         {
-            WaitForPageLoading();
-            String currWindowHandle = Driver.CurrentWindowHandle;
-
-            IList<string> totWindowHandles = new List<string>(Driver.WindowHandles);
-            // WaitForPageLoading();
-            foreach (String WindowHandle in totWindowHandles)
-            {
-                if (!WindowHandle.Equals(currWindowHandle))
-                {
-
-                    Driver.SwitchTo().Window(WindowHandle);
-
-                }
-            }
-            WaitForPageLoading();
-
-
+            System.Drawing.Point point = element.Location;
+            int x_coordinate = point.X - 250;
+            int y_coordinate = point.Y - 250;
+            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
+            jsExec.ExecuteScript("window.scrollBy(" + x_coordinate + ", " + y_coordinate + ");");
         }
+
     }
 }
