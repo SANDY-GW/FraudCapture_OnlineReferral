@@ -1,7 +1,5 @@
-using System;
 using FC_OnlineReferral.OnlineReferral_Pages;
 using OpenQA.Selenium;
-using Reqnroll;
 
 namespace ReqnrollProject1.StepDefinitions
 {

@@ -1,11 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace FC_OnlineReferral.FraudCapture_Pages
 {
@@ -202,7 +196,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             catch (NoSuchElementException) { }
           //  var common = new CommonHelpers(Driver);
           //common.WaitForLoadingOverlayToDisappear();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 1000);  
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);  
         }
         
         public void BeginEditingLead()
@@ -214,7 +208,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                 if (Driver.FindElement(BeginEditing).Displayed)
                 {
                     Driver.FindElement(BeginEditing).Click();
-                    // WaitForPageLoading();
+                    CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
                 }
             }
             catch (NoSuchElementException)
@@ -278,9 +272,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
             CommonHelpers.WaitForPageLoading(Driver);
-            var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']/div/div[2]/div[2]/cdk-virtual-scroll-viewport/div[1]/div/table/tbody/tr/td[1]")).Text;
-
-            Console.WriteLine(activityName);
+            var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[1]/td[1]")).Text;
             return activityName;
 
         }

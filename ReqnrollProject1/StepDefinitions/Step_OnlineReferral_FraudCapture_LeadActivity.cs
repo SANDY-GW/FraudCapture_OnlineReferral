@@ -1,16 +1,8 @@
 ﻿using FC_OnlineReferral.FraudCapture_Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using ReqnrollProject1.Support;
-using SeleniumExtras.WaitHelpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using static FC_OnlineReferral.CommonData;
+using NUnitAssert = NUnit.Framework.Assert;
+
 
 
 namespace ReqnrollProject1.StepDefinitions
@@ -32,11 +24,31 @@ namespace ReqnrollProject1.StepDefinitions
             homePage.AcceptDisclosure();
         }
 
+        [When("I click on CaseTracking and select the {string} option on the fraud capture home page")]
+        public void WhenIClickOnCaseTrackingAndSelectTheOptionOnTheFraudCaptureHomePage(string TabToSelect)
+        {
+
+            var navigateBtn = Driver.FindElement(By.XPath("//button[@id='navigationMenuId']"));
+            navigateBtn.Click();
+
+            var caseTrackingLink = Driver.FindElement(By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking']"));
+            caseTrackingLink.Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+
+            var leadsTabBUtton = Driver.FindElement(By.XPath("//a[@id='allLeadsTabId']"));
+            var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'"+TabToSelect+"')]"));
+            tabToSelect.Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+
+
+        }
+
+
         [When("I Verify first and Last Name and click on the Latest created lead")]
         public void WhenIVerifyFirstAndLastNameandclickOnTheLatestCreatedLead()
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
-            fc.ClickLeadTab();
+            //fc.ClickLeadTab();
             CommonHelpers.WaitForPageLoading(Driver);
             fc.ClickLeadcreateDateFilter();
             CommonHelpers.WaitForPageLoading(Driver);
@@ -161,8 +173,18 @@ namespace ReqnrollProject1.StepDefinitions
             try
             {
                 fc.ClickLeadActivityTab();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,50);
+                var ActName = fc.GetActivityName();
 
-                // Assert.AreEqual(fc.GetActivityName(), activityName);
+                //NUnitAssert.Equals(activityName, ActName);
+                Assert.That(ActName, Is.EqualTo(activityName));
+
+               
+                
+
+
+
+
             }
             catch (Exception)
             {
@@ -173,7 +195,7 @@ namespace ReqnrollProject1.StepDefinitions
                 CommonHelpers.SwitchtoNewWindow(Driver);
                 fc.BeginEditingLead();
                 fc.ClickLeadActivityTab();
-                //  Assert.AreEqual(fc.GetActivityName(), activityName);
+                //Assert.AreEqual(fc.GetActivityName(), activityName);
 
 
             }

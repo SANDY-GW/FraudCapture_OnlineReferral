@@ -30,6 +30,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By County_Or_DistrictDropdn = By.XPath("//select[@id='county']");
         private readonly By Go_To_Previous_SectionButton = By.XPath("//button[contains(text(),'Go to Previous Section')]");
         private readonly By proceed_To_Next_SectionButton = By.XPath("//button[contains(text(),'Proceed to Next Section')]");
+        private readonly By proceed_To_Next_SectionButton_end = By.XPath("//form[@class='userForm ng-dirty ng-valid ng-touched']//button[contains(text(),'Proceed to Next Section')]");
         private readonly By instructionsButton = By.XPath("//button[text()='Instructions']");
 
         #endregion
@@ -107,10 +108,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.ScrollUp(Driver);
             //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 500);
-            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 700);
-
+            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 70);
+            CommonHelpers.ScrollToElement(Driver, proceed_To_Next_SectionButton);
             Driver.FindElement(proceed_To_Next_SectionButton).Click();
-            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 70);
 
         }
 

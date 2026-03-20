@@ -21,6 +21,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         #region Elements
         private readonly By Question1Dropdn = By.XPath("//select[@id='questiondDrDown1']");
+        private By QuestionAnswerFieldbyIndex(int a) => By.XPath("//textarea[@id='questionTxt" + a + "']");
+        private By QuestionDropdnbyIndex(int a) => By.XPath("//select[@id='questiondDrDown" + a + "']");
         private readonly By Question2 = By.XPath("//textarea[@id='questionTxt2']");
         private readonly By Question3 = By.XPath("//textarea[@id='questionTxt3']");
         private readonly By uploadFileArrow = By.XPath("//label[@id='fileLabel']//*[local-name()='svg']");
@@ -36,6 +38,36 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.WaitForElementVisiblity(Driver, Question1Dropdn, 10);
             CommonHelpers.selectOptionByValue(Driver.FindElement(Question1Dropdn), option);
+        }
+
+        public void EnterAllQuestionAnswers()
+        {
+            //get all text area elements
+            //Run a for loop for all the elements(count) identified above
+            //if element exists then enter value in the text area
+            var allTextFields= Driver.FindElements(By.XPath("//textarea[starts-with(@id,'questionTxt')]"));
+            var allDropDowns = Driver.FindElements(By.XPath("//select[starts-with(@id,'questiondDrDown')]"));
+            int n = 0;
+
+            foreach (IWebElement ele in allTextFields)
+            {
+                ele.SendKeys("Test Answer"+n+1);
+                               
+            }
+            //for (int i = 10; i >= allTextFields.Count-1; i--)
+            //{
+            //    if (Driver.FindElements(QuestionAnswerFieldbyIndex(i)).Any())
+            //    {
+            //        Driver.FindElement(QuestionAnswerFieldbyIndex(i)).Clear();
+            //        Driver.FindElement(QuestionAnswerFieldbyIndex(i)).SendKeys("Test Answer " + i);
+            //    }
+            //}
+            foreach(IWebElement ele in allDropDowns)
+            {
+                
+                CommonHelpers.selectOptionByValue(ele, "Yes");
+            }
+
         }
 
         public void EnterQuestion2Answer(string answer)

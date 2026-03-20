@@ -82,7 +82,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         }
         public void waitForIAgreeButton()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, Login_AmaIAgree, 30000);
+            CommonHelpers.WaitForElementVisiblity(Driver, Login_AmaIAgree, 100);
 
             // CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 15000);
 

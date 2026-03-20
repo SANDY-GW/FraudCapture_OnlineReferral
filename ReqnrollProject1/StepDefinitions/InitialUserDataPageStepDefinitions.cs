@@ -1,10 +1,5 @@
 using FC_OnlineReferral.OnlineReferral_Pages;
-using NUnit.Framework;
 using OpenQA.Selenium;
-using Reqnroll;
-using System;
-using System.ComponentModel;
-using System.Runtime.Intrinsics.X86;
 
 namespace ReqnrollProject1.StepDefinitions
 {
@@ -34,7 +29,7 @@ namespace ReqnrollProject1.StepDefinitions
         }
         [Given("I enter the email as {string} on the Initial User Data Page")]
         public void GivenIEnterTheEmailAsOnTheInitialUserDataPage(string username)
-        {
+        {           
             var PG1 = new LoginOnlineRef_Page1(Driver);
             PG1.EnterUserEmailName(username);
             ((IJavaScriptExecutor)Driver).ExecuteScript("window.localStorage.setItem('useTestData', 'true');localStorage.setItem('validatedEmail', '" + username + "');localStorage.setItem('emailValidated', 'true')");
@@ -470,8 +465,9 @@ namespace ReqnrollProject1.StepDefinitions
         public void WhenQuestiontwoAsQuestionThreeAsQuestionfourAsQuestionfiveAsQuestionsixAs(string test, string no)
         {
             var PG5 = new New_UI_Questions_Page5(Driver);
-            PG5.EnterQuestion2Answer(test);
-            PG5.EnterQuestion3Answer(no);
+            PG5.EnterAllQuestionAnswers();
+            //PG5.EnterQuestion2Answer(test);
+            //PG5.EnterQuestion3Answer(no);
             //PG5.EnterQuestion4(test2);
             //PG5.SelectQuestion5(no3);
             //PG5.EnterQuestion6(test4);
@@ -490,10 +486,11 @@ namespace ReqnrollProject1.StepDefinitions
 
 
         [When("then uploading a file using file path as {string}")]
-        public void WhenThenUploadingAFileUsingFilePathAs(string filepath)
+        public void WhenThenUploadingAFileUsingFilePathAs(string fileName)
         {
             var PG5 = new New_UI_Questions_Page5(Driver);
-            PG5.ClickUploadFileArrow(filepath);
+            string filePath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + @"\Attachments\";
+            PG5.ClickUploadFileArrow(filePath+ fileName);
         }
 
         [Then("click on proceed to next session button")]

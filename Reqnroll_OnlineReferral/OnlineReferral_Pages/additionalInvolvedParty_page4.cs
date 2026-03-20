@@ -63,7 +63,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.WaitForElementVisiblity(Driver, isThereAnotherInvolvedPartyDropdn, 100);
             CommonHelpers.selectOptionByValue(Driver.FindElement(isThereAnotherInvolvedPartyDropdn), isAnotherInvolvedPartyAvailable);
-            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 100);
         }
 
         //public void SelectPleaseSelectTheAdditionalInvolvedPartyType(string additionalInvolvedPartyType)
@@ -81,10 +81,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void ClickContinueWithInvolvedPartySelectionButton()
         {
              CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,20);
-            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 70000);
+            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 100);
             Driver.FindElement(continue_with_Involved_Party_Selection_Button).Click();
             Thread.Sleep(5000);
-            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 70000);
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
 
         }
     }

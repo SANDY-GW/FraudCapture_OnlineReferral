@@ -1,12 +1,6 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FC_OnlineReferral
 {
@@ -150,6 +144,7 @@ namespace FC_OnlineReferral
             IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
             var webElement = driver.FindElement(element);
             jsExec.ExecuteScript("arguments[0].scrollIntoView(true);", webElement);
+            Thread.Sleep(2000);
         }
 
 

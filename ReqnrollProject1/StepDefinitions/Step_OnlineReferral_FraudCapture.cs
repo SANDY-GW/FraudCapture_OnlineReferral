@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FC_OnlineReferral.FraudCapture_Pages;
+﻿using FC_OnlineReferral.FraudCapture_Pages;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using ReqnrollProject1.Support;
 
 
 namespace ReqnrollProject1.StepDefinitions
@@ -26,7 +19,8 @@ namespace ReqnrollProject1.StepDefinitions
             CommonHelpers.WaitForPageLoading(Driver);
         }
 
-      
+
+
         [When("I enter the {string} on the welcome fraude capture page")]
         public void WhenIEnterTheOnTheWelcomeFraudeCapturePage(string userEmail)
         {
