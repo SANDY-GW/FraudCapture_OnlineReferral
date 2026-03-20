@@ -89,14 +89,14 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         //How did this external referring party report this? 
         public void FillHowDidThisExternalReferringPartyreportThisTextarea(string report)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, HowDidThisExternalReferringPartyreportThisTextarea, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, HowDidThisExternalReferringPartyreportThisTextarea, 100);
             Driver.FindElement(HowDidThisExternalReferringPartyreportThisTextarea).Clear();
             Driver.FindElement(HowDidThisExternalReferringPartyreportThisTextarea).SendKeys(report);
         }
         //Any additional information regarding the witness or external referring party
         public void FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(string additionalInfo)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea, 100);
             Driver.FindElement(AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea).Clear();
             Driver.FindElement(AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea).SendKeys(additionalInfo);
         }
