@@ -1,9 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FC_OnlineReferral
 {
@@ -17,11 +12,11 @@ namespace FC_OnlineReferral
 
         public class UserCredentials
         {
-            public string Username { get; set; }
-            public string Password { get; set; }
-            //public bool IsActive { get; set; }
+            public string? Username { get; set; }
+            public string? Password { get; set; }
+            public bool? IsActive { get; set; }
             //public UserRole Role { get; set; }
-            public  static string UserFN { get; set; }
+            public  string? UserFN { get; set; }
         }
 
 

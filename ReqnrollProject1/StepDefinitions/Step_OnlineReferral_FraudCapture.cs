@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FC_OnlineReferral.FraudCapture_Pages;
+﻿using FC_OnlineReferral.FraudCapture_Pages;
 using OpenQA.Selenium;
-using ReqnrollProject1.Support;
 
 
 namespace ReqnrollProject1.StepDefinitions
@@ -21,14 +15,18 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var fc = new FraudCapture_Core(Driver);
             fc.FC_OnlineLogin();
-
+            CommonHelpers.WaitForPageToLoad(Driver, 100);
+            CommonHelpers.WaitForPageLoading(Driver);
         }
 
-      
+
+
         [When("I enter the {string} on the welcome fraude capture page")]
         public void WhenIEnterTheOnTheWelcomeFraudeCapturePage(string userEmail)
         {
+            
             var fc = new FC_LoginPage(Driver);
+            fc.EnterLoginUserEmail(userEmail);
             fc.EnterLoginUserEmail(userEmail);
         }
         [When("I click on the Procced to login button on the welcome fraude capture page")]

@@ -16,19 +16,22 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         private readonly By LeadSearchTextBox = By.XPath("//input[@id='searchInputField']");
         private readonly By LeadSearchButton = By.XPath("//button[@id='searchStartButton']");
         private readonly By LeadSearchClearButton = By.XPath("//button[@id='searchClearButton']");
-        private readonly By LeadIDLink = By.XPath("//table/tbody/tr[1]/td[2]/small/a");
+        private readonly By LeadIDLink = By.XPath("//*[@id='allLeadlist-wrapper']//div[1]/table/tbody/tr[1]/td[2]/small");
         private readonly By LeadIDsecondLink = By.XPath("//table/tbody/tr[2]/td[2]/small/a");
 
+        private By LeadIDLinkByRow(int row) => By.XPath("//*[@id='allLeadlist-wrapper']//div[1]/table/tbody/tr[" + row + "]/td[2]//a");
 
         //private readonly By LeadIDLink = By.XPath("//table/tbody/tr/td[2]/small");
 
         private readonly By LeadGridSearchInput = By.XPath("//div[@id='allLeads']/descendant::input[@id='searchInputField']");
         private readonly By LeadGridSearchButton = By.XPath("//div[@id='allLeads']/descendant::button[@id='searchStartButton']");
         private readonly By LeadOrgName = By.XPath("//tbody/tr[1]/td[8]/div/small");
-        private readonly By LeadOrgNameSecondRow = By.XPath("//tbody/tr[2]/td[8]/div/small");
+        private readonly By LeadOrgNameSecondRow = By.XPath("//tbody/tr[2]/td[8]/div/small[1]");
+        private readonly By LeadSubFirstNameLastNameFirstRow = By.XPath("//*[@id='allLeadlist-wrapper']//tbody/tr[1]/td[8]/div/small[1]");
+        private readonly By LeadSubFirstNameLastNameSecondRow = By.XPath("//*[@id='allLeadlist-wrapper']//tbody/tr[2]/td[8]/div/small[1]");
 
         //tbody/tr[1]/td[8]/div/small
-        private readonly By LeadCreateDateFilter = By.XPath("//*[@id='headerTableLeads']/thead/tr/th[10]/small/b");
+        private readonly By LeadCreateDateFilter = By.XPath("//*[@id='headerTableLeads']//*[@title='Created Date']");
 
         private readonly By BeginEditing = By.XPath("//*[@id='leadViewEditEndButton']");
         private readonly By ExitLead = By.XPath("//*[@id='closeBtn']");
@@ -41,11 +44,13 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         #endregion
         public void ClickLeadTab()
         {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadTab, 120);            
             Driver.FindElement(LeadTab).Click();
         }
         public void SelectLeadSearchCriteria(string searchCriteria)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, LeadSearchCriteria, 10);
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadSearchCriteria, 120);
             CommonHelpers.selectOptionByValue(Driver.FindElement(LeadSearchCriteria), searchCriteria);
 
         }
@@ -76,32 +81,36 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         }
         public void ClickLeadIDLink()
         {
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
+            CommonHelpers.WaitForPageLoading(Driver);
             Driver.FindElement(LeadIDLink).Click();
         }
+        public void ClickLeadIDLinkbyRow(int row)
+        {
+            CommonHelpers.WaitForPageLoading(Driver);
+            Driver.FindElement(LeadIDLinkByRow(row)).Click();
+            CommonHelpers.SwitchtoNewWindow(Driver);
+        }
+        
         public void ClickLeadIDSecondLink()
         {
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
+            CommonHelpers.WaitForPageLoading(Driver);
             Driver.FindElement(LeadIDsecondLink).Click();
         }
         public void ClickBeginEditing()
         {
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
-
-            /*IJavaScriptExecutor executor = (IJavaScriptExecutor)Driver;
-            executor.ExecuteScript("arguments[0].click();", BeginEditing);*/
+            CommonHelpers.WaitForPageLoading(Driver);
             Driver.FindElement(BeginEditing).Click();
         }
         public void ClickLeadActivitiesAttachment()
         {
+            
             Driver.FindElement(ActivitiesAttachmentTab).Click();
         }
         public void ClickLeadcreateDateFilter()
         {
-
+            CommonHelpers.WaitForPageToLoad(Driver, 3000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 3000);
+            CommonHelpers.ScrollDown(Driver);
             Driver.FindElement(LeadCreateDateFilter).Click();
 
 
@@ -132,11 +141,12 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         public string getLeadFirstRowFirstAndLastNameName()
         {
+            return Driver.FindElement(LeadSubFirstNameLastNameFirstRow).Text;
 
-
-            var subjectname = Driver.FindElement(LeadOrgName).Text.Split(':')[1];
-            var firsRowFLName = subjectname.Split('-')[0];
-            return firsRowFLName;
+            //var subjectname1 = Driver.FindElement(LeadSubFirstNameLastNameFirstRow).Text;
+            //var subjectname = Driver.FindElement(LeadSubFirstNameLastNameFirstRow).Text.Split(':')[1];
+            //var firsRowFLName = subjectname.Split('-')[0];
+            //return firsRowFLName;
 
 
         }
@@ -144,24 +154,25 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
 
 
-
-            var subjectname = Driver.FindElement(LeadOrgNameSecondRow).Text.Split(':')[1];
-            var secondRowFLName = subjectname.Split('-')[0];
-            return secondRowFLName;
+            return Driver.FindElement(LeadSubFirstNameLastNameSecondRow).Text;
+            //var subjectname2 = Driver.FindElement(LeadSubFirstNameLastNameFirstRow).Text;
+            //var subjectname = Driver.FindElement(LeadSubFirstNameLastNameSecondRow).Text.Split(':')[1];
+            //var secondRowFLName = subjectname.Split('-')[0];
+            //return secondRowFLName;
 
 
 
         }
         public void waitForLeadTab()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, LeadTab, 15000);
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadTab, 120);
 
             // CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 15000);
 
         }
         public void waitForLeadLink()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, LeadIDLink, 15000);
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadIDLink, 120);
 
             // CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 15000);
 
@@ -178,23 +189,16 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                     return leadId == selectedLeadId;
                 }).First();
 
-                var viewLeadButton = selectedRow.FindElements(By.TagName("small"))[1];
-                ScrollByElementCoordinates(viewLeadButton);
+                var viewLeadButton = selectedRow.FindElements(By.TagName("small"))[1];                
+                CommonHelpers.ScrollByElementCoordinates(Driver, viewLeadButton);
                 viewLeadButton.Click();
             }
             catch (NoSuchElementException) { }
-            var common = new CommonHelpers(Driver);
-            common.WaitForLoadingOverlayToDisappear();
+          //  var common = new CommonHelpers(Driver);
+          //common.WaitForLoadingOverlayToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);  
         }
-        public void ScrollByElementCoordinates(IWebElement element)
-        {
-            System.Drawing.Point point = element.Location;
-            int x_coordinate = point.X - 250;
-            int y_coordinate = point.Y - 250;
-            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)Driver;
-            jsExec.ExecuteScript("window.scrollBy(" + x_coordinate + ", " + y_coordinate + ");");
-        }
-
+        
         public void BeginEditingLead()
         {
 
@@ -204,7 +208,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                 if (Driver.FindElement(BeginEditing).Displayed)
                 {
                     Driver.FindElement(BeginEditing).Click();
-                    // WaitForPageLoading();
+                    CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
                 }
             }
             catch (NoSuchElementException)
@@ -221,8 +225,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                 if (Driver.FindElement(ExitLead).Displayed)
                 {
                     Driver.FindElement(ExitLead).Click();
-                    var common = new CommonHelpers(Driver);
-                    common.WaitForPageLoading();
+                    CommonHelpers.WaitForPageLoading(Driver);
                 }
             }
             catch (NoSuchElementException)
@@ -230,7 +233,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                 //already in Edit mode, move along
             }
         }
-        public void LeadActivityTab()
+        public void ClickLeadActivityTab()
         {
             //  WaitForPageLoading();
             Driver.FindElement(ActivitiesDetailsTab).Click();
@@ -257,24 +260,19 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public void EnterLeadID(string leadID)
         {
             Driver.FindElement(LeadGridSearchInput).SendKeys(leadID);
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
+            CommonHelpers.WaitForPageLoading(Driver);
         }
         public void ClickSearchButton()
         {
 
             Driver.FindElement(LeadGridSearchButton).Click();
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
+            CommonHelpers.WaitForPageLoading(Driver);
         }
         public string GetActivityName()
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
-            var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']/div/div[2]/div[2]/cdk-virtual-scroll-viewport/div[1]/div/table/tbody/tr/td[1]")).Text;
-
-            Console.WriteLine(activityName);
+            CommonHelpers.WaitForPageLoading(Driver);
+            var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[1]/td[1]")).Text;
             return activityName;
 
         }
