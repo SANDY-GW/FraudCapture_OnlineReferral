@@ -595,8 +595,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 112
- await testRunner.AndAsync("I click on the Activities and selected lead activity name as \"02242026-Lead Activ" +
-                        "ity 1-Auto Close on Creation\" on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("I click on the Activities and selected lead activity name as \" 02242026-Lead Acti" +
+                        "vity 1-Auto Close on Creation \" on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 113
  await testRunner.ThenAsync("I should be navigated to Lead Activities  Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
