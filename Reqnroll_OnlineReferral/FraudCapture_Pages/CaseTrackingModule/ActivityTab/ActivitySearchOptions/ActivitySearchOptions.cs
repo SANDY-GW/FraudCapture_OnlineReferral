@@ -16,6 +16,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.ActivityTab.Ac
         protected readonly WebDriverWait Wait;
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
         #region Elements
+        private readonly By WorkLoadReassignment = By.XPath("//*[@id='reassignUserCaseTabId']/b");
 
         #endregion
     }
