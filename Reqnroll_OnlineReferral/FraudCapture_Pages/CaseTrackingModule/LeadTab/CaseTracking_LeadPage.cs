@@ -1,17 +1,30 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace FC_OnlineReferral.FraudCapture_Pages
+namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
 {
-    public class FC_CaseTracking_LeadPage : BaseSettings
+    public class CaseTracking_LeadPage :BaseSettings
     {
-        public FC_CaseTracking_LeadPage(IWebDriver driver) : base(driver) { }
+        public CaseTracking_LeadPage(IWebDriver driver) : base(driver) { }
 
         protected readonly WebDriverWait Wait;
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
         #region Elements
         //Add xpath here
         private readonly By LeadTab = By.XPath("//a[@id='allLeadsTabId']");
+
+        private readonly By LeadAssignedTo = By.XPath("//*[@id='dropdownLeadListUser']");
+        private readonly By LeadAssignedSupervisor = By.XPath("//*[@id='dropdownLeadListSupervisor']");
+        private readonly By LeadDivisionDepartmentDDL = By.XPath("//*[@id='dropdownDepartmentDivision']");
+        private readonly By LeadTypeDDL = By.XPath("//*[@id='dropDowneadType']");
+        private readonly By LeadStatus = By.XPath("//*[@id='leadStatus']");
+
+
         private readonly By LeadSearchCriteria = By.XPath("//select[@id='leadSearchCriteria']");
         private readonly By LeadSearchTextBox = By.XPath("//input[@id='searchInputField']");
         private readonly By LeadSearchButton = By.XPath("//button[@id='searchStartButton']");
@@ -42,6 +55,32 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public void ClickLeadTab()
         {
             Driver.FindElement(LeadTab).Click();
+        }
+
+        public void SelectLeadAssignedTo(string assignedTo)
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadAssignedTo, 10);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(LeadAssignedTo), assignedTo);
+        }
+        public void SelectLeadAssignedSupervisor(string assignedSupervisor)
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadAssignedSupervisor, 10);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(LeadAssignedSupervisor), assignedSupervisor);
+        }
+        public void SelectLeadDivisionDept(string divDept)
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadDivisionDepartmentDDL, 10);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(LeadDivisionDepartmentDDL), divDept);
+        }
+        public void SelectLeadType(string caseType)
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadTypeDDL, 10);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(LeadTypeDDL), caseType);
+        }
+        public void SelectLeadStatus(string caseStatus)
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadStatus, 10);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(LeadStatus), caseStatus);
         }
         public void SelectLeadSearchCriteria(string searchCriteria)
         {
@@ -280,4 +319,3 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         }
     }
 }
-

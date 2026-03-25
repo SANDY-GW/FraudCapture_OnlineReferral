@@ -109,7 +109,7 @@ Scenario: [Enter use details and latest lead activity refferral in the fraud cap
 	And  I verify  FirstAndLastName  on the fraud capture Page
 	And I click on the leadid link on the fraud capture Lead table Page
 	And I click on the Begin Editing on the fraud capture Lead detials Page
-	And I click on the Activities and selected lead activity name as "02242026-Lead Activity 1-Auto Close on Creation" on the fraud capture Lead detials Page
+	And I click on the Activities and selected lead activity name as " 02242026-Lead Activity 1-Auto Close on Creation " on the fraud capture Lead detials Page
 	Then I should be navigated to Lead Activities  Page
 
 	

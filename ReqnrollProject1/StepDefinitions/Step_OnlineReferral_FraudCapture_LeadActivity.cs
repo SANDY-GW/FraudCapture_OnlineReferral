@@ -115,7 +115,7 @@ namespace ReqnrollProject1.StepDefinitions
             fc.ClickLeadIDLink();
         }
         [When("I click on the Activities and selected lead activity name as {string} on the fraud capture Lead detials Page")]
-        public void WhenIClickOnTheActivitiesAndSelectedLeadActivityNameAsOnTheFraudCaptureLeadDetialsPage(string p0)
+        public void WhenIClickOnTheActivitiesAndSelectedLeadActivityNameAsOnTheFraudCaptureLeadDetialsPage(string activityName)
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
             var common = new CommonHelpers(Driver);
