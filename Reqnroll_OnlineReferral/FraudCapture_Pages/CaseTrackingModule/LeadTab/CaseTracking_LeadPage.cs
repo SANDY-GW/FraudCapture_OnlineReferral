@@ -114,21 +114,18 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
             Driver.FindElement(LeadSearchClearButton).Click();
         }
         public void ClickLeadIDLink()
-        {
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
+        {       
+            CommonHelpers.WaitForPageLoading(Driver);
             Driver.FindElement(LeadIDLink).Click();
         }
         public void ClickLeadIDSecondLink()
         {
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
+            CommonHelpers.WaitForPageLoading(Driver);
             Driver.FindElement(LeadIDsecondLink).Click();
         }
         public void ClickBeginEditing()
         {
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
+            CommonHelpers.WaitForPageLoading(Driver);
 
             /*IJavaScriptExecutor executor = (IJavaScriptExecutor)Driver;
             executor.ExecuteScript("arguments[0].click();", BeginEditing);*/
@@ -222,8 +219,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
                 viewLeadButton.Click();
             }
             catch (NoSuchElementException) { }
-            var common = new CommonHelpers(Driver);
-            common.WaitForLoadingOverlayToDisappear();
+            
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,50);
         }
         public void ScrollByElementCoordinates(IWebElement element)
         {
@@ -260,8 +257,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
                 if (Driver.FindElement(ExitLead).Displayed)
                 {
                     Driver.FindElement(ExitLead).Click();
-                    var common = new CommonHelpers(Driver);
-                    common.WaitForPageLoading();
+                    CommonHelpers.WaitForPageToLoad(Driver, 50);
                 }
             }
             catch (NoSuchElementException)
@@ -296,21 +292,18 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         public void EnterLeadID(string leadID)
         {
             Driver.FindElement(LeadGridSearchInput).SendKeys(leadID);
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
+            CommonHelpers.WaitForPageToLoad(Driver, 50);
         }
         public void ClickSearchButton()
         {
 
             Driver.FindElement(LeadGridSearchButton).Click();
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
+            CommonHelpers.WaitForPageToLoad(Driver, 50);
         }
         public string GetActivityName()
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
-            var common = new CommonHelpers(Driver);
-            common.WaitForPageLoading();
+            CommonHelpers.WaitForPageToLoad(Driver, 50);
             var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']/div/div[2]/div[2]/cdk-virtual-scroll-viewport/div[1]/div/table/tbody/tr/td[1]")).Text;
 
             Console.WriteLine(activityName);
