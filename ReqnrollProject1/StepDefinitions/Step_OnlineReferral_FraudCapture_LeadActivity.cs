@@ -174,27 +174,24 @@ namespace ReqnrollProject1.StepDefinitions
             {
                 fc.ClickLeadActivityTab();
                 CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,50);
+
                 var ActName = fc.GetActivityName();
 
-                //NUnitAssert.Equals(activityName, ActName);
+                 if(!fc.ClickOnEditActivity(activityName)) 
+                    Assert.Fail("The activity with the name '" + activityName + "' was not found in the Activities table.");
+
                 Assert.That(ActName, Is.EqualTo(activityName));
-
-               
-                
-
-
-
 
             }
             catch (Exception)
             {
-                fc.ExitLeadActivity();
-                fc.ClickLeadTab();
-                fc.ClickLeadcreateDateFilter();
-                fc.ClickLeadIDSecondLink();
-                CommonHelpers.SwitchtoNewWindow(Driver);
-                fc.BeginEditingLead();
-                fc.ClickLeadActivityTab();
+                //fc.ExitLeadActivity();
+                //fc.ClickLeadTab();
+                //fc.ClickLeadcreateDateFilter();
+                //fc.ClickLeadIDSecondLink();
+                //CommonHelpers.SwitchtoNewWindow(Driver);
+                //fc.BeginEditingLead();
+                //fc.ClickLeadActivityTab();
                 //Assert.AreEqual(fc.GetActivityName(), activityName);
 
 

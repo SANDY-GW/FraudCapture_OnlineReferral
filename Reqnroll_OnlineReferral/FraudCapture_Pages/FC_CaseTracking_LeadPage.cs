@@ -20,8 +20,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         private readonly By LeadIDsecondLink = By.XPath("//table/tbody/tr[2]/td[2]/small/a");
 
         private By LeadIDLinkByRow(int row) => By.XPath("//*[@id='allLeadlist-wrapper']//div[1]/table/tbody/tr[" + row + "]/td[2]//a");
-
-        //private readonly By LeadIDLink = By.XPath("//table/tbody/tr/td[2]/small");
+        private By ActivityNameByRow(int row) => By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[" + row + "]/td[1]");
+        private By LeadEditBtnByRow(int row) => By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[" + row + "]//button[@id='editActivityId']");
+        
 
         private readonly By LeadGridSearchInput = By.XPath("//div[@id='allLeads']/descendant::input[@id='searchInputField']");
         private readonly By LeadGridSearchButton = By.XPath("//div[@id='allLeads']/descendant::button[@id='searchStartButton']");
@@ -268,10 +269,32 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             Driver.FindElement(LeadGridSearchButton).Click();
             CommonHelpers.WaitForPageLoading(Driver);
         }
+
+        public bool ClickOnEditActivity(string activityNme)
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);           
+            CommonHelpers.WaitForPageLoading(Driver);
+            var countRows = Driver.FindElements(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr")).Count;
+            
+            for (int i = 0; i < countRows; i++)
+            {
+               // var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[" + (i + 1) + "]/td[1]")).Text;
+                var activityName = Driver.FindElement(ActivityNameByRow(i+1)).Text;               
+                if (activityName.Equals(activityNme))
+                {
+                    Driver.FindElement(LeadEditBtnByRow(i+1)).Click();           
+                    CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,50);
+                    return true;                    
+                }
+            }
+            return false;
+           // var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[1]/td[1]")).Text;
+            
+        }
         public string GetActivityName()
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
-            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForPageLoading(Driver);            
             var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[1]/td[1]")).Text;
             return activityName;
 

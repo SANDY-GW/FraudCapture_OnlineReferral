@@ -35,6 +35,14 @@ namespace ReqnrollProject1.StepDefinitions
             ((IJavaScriptExecutor)Driver).ExecuteScript("window.localStorage.setItem('useTestData', 'true');localStorage.setItem('validatedEmail', '" + username + "');localStorage.setItem('emailValidated', 'true')");
 
         }
+        [Given("Verify color on all Required Field in the Initial User Data Page")]
+        public void GivenVerifyColorOnAllRequiredFieldInTheInitialUserDataPage()
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+            PG1.VerifyBGColorOnRequiredFields();
+
+        }
+
 
         [Given("I enter the Phone number as {string} on the Initial User Data Page")]
         public void GivenIEnterThePhoneNumberAsOnTheInitialUserDataPage(string phoneno)
