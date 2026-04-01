@@ -5,7 +5,7 @@ Online referral End to End Scenarios
 
 
 
-	
+@online_referral @SmokeTest @regression
 Scenario Outline: [Verify that the user is able to see the new UI changes for online referral as a Provider]
 	Given when I open the Online referral application
 	And I enter the email as "<Email address>" on the Initial User Data Page
@@ -46,7 +46,8 @@ Scenario Outline: [Verify that the user is able to see the new UI changes for on
 	When I enter the "<UserEmailID>" on the welcome fraude capture page
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
-	And I click on CaseTracking and select the "Lead" option on the fraud capture home page
+	And I select the payor as "DEMO"
+	And I click on CaseTracking and select the "Leads" option on the fraud capture home page
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And I click on the Activities and selected lead activity name as "<ActivityName>" on the fraud capture Lead detials Page
@@ -152,11 +153,15 @@ Examples:
 
 
 Scenario Outline: [TestMyCode]
+	#Given when I open the Online referral application
+	#And Verify color on all Required Field in the Initial User Data Page
+
 	Given when I open the fraud capture  application
 	When I enter the "<UserEmailID>" on the welcome fraude capture page
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
-	And I click on CaseTracking and select the "Lead" option on the fraud capture home page
+	And I select the payor as "DEMO"
+	And I click on CaseTracking and select the "Leads" option on the fraud capture home page
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And I click on the Activities and selected lead activity name as "<ActivityName>" on the fraud capture Lead detials Page

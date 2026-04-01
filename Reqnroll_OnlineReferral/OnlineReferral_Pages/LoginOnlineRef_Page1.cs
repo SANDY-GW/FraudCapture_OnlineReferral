@@ -62,6 +62,52 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.selectOptionByValue(Driver.FindElement(orgAgencyDropdn), OrgAgency);
 
         }
+        public bool VerifyBGColorOnRequiredFields() 
+        {
+
+            var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
+            var allReqFieldsID = Driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
+
+            foreach (IWebElement elem in allReqFieldsID)
+            {
+
+                if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
+                {
+                    Console.WriteLine("Required");
+                }
+                else if (elem.GetCssValue("border-color").Equals("rgb(206, 212, 218)"))//Non required fields with no border color
+                {
+                    Console.WriteLine("Optional");
+                }
+                else
+                {
+                    Console.WriteLine("Fail");
+                }
+
+            }
+
+            foreach (IWebElement elem in allReqFieldsID)
+            {
+
+                if (elem.GetAttribute("type").Equals("text"))
+                {
+                    Console.WriteLine("text");
+                }
+                else if (elem.GetAttribute("type").Equals("email"))
+                {
+                    Console.WriteLine("email");
+                }
+                else if (elem.GetAttribute("type").Equals("select-one"))
+                {
+                    Console.WriteLine("select-one");
+                }
+            }
+
+            //*[@id=//label[contains(normalize-space(.),'(Required)') and @for]/@for]
+
+            //label[contains(normalize-space(.),'(Required)') and @for]
+            return false;
+        }
 
         public void EnterUserEmailName(string emailValue)
         {

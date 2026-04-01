@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.BiDi.BrowsingContext;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -50,9 +51,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
                 try
                 {
-                    while (Driver.FindElement(CloseAlertButton).Displayed)
+                    while (Driver.FindElements(CloseAlertButton).Any())                    
                     {
-                       CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 3000);
+                       CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
                         //Common.WaitForLoadingOverlayToDisappear();
 
                         Driver.FindElement(CloseAlertButton).Click();

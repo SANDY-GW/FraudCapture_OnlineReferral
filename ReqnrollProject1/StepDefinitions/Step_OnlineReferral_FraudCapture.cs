@@ -19,6 +19,12 @@ namespace ReqnrollProject1.StepDefinitions
             CommonHelpers.WaitForPageLoading(Driver);
         }
 
+        [When("I select the payor as {string}")]
+        public void WhenISelectThePayorAs(string demo)
+        {
+            var fc = new FC_HeaderMenu(Driver);
+            fc.SelectPayor(demo);
+        }
 
 
         [When("I enter the {string} on the welcome fraude capture page")]

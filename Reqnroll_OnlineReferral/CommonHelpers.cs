@@ -295,5 +295,13 @@ namespace FC_OnlineReferral
             jsExec.ExecuteScript("window.scrollBy(" + x_coordinate + ", " + y_coordinate + ");");
         }
 
+        public static string GetElementBackgroundColor(IWebDriver driver, IWebElement ele)
+        {
+
+            return (string)((IJavaScriptExecutor)driver)
+                .ExecuteScript("return window.getComputedStyle(arguments[0]).backgroundColor;", ele);
+
+        }
+
     }
 }
