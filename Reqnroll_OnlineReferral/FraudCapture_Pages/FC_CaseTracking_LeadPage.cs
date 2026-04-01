@@ -19,17 +19,19 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         private readonly By LeadIDLink = By.XPath("//*[@id='allLeadlist-wrapper']//div[1]/table/tbody/tr[1]/td[2]/small");
         private readonly By LeadIDsecondLink = By.XPath("//table/tbody/tr[2]/td[2]/small/a");
 
-        private By LeadIDLinkByRow(int row) => By.XPath("//*[@id='allLeadlist-wrapper']//div[1]/table/tbody/tr[" + row + "]/td[2]//a");
-        private By ActivityNameByRow(int row) => By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[" + row + "]/td[1]");
-        private By LeadEditBtnByRow(int row) => By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[" + row + "]//button[@id='editActivityId']");
-        
+        private By LeadIDLinkByRow(int row) => By.XPath("//*[@id='allLeadlist-wrapper']//div[1]/table//tr[" + row + "]/td[2]//a");
+        private By ActivityNameByRow(int row) => By.XPath("//*[@id='activityForm']//table[@rules='groups']//tr[" + row + "]/td[1]");
+        private By LeadEditBtnByRow(int row) => By.XPath("//*[@id='activityForm']//table[@rules='groups']//tr[" + row + "]//button[@id='editActivityId']");
+        private By LeadActivityByName(string name) => By.XPath("//*[@id='activityForm']//table[@rules='groups']//tr[1]//td[contains(text(),'"+ name + "')]");
+        private By LeadViewBtnByRow(int row) => By.XPath("//*[@id='activityForm']//table[@rules='groups']//tr[" + row + "]//button[@id='editActivityId']//following-sibling::button[contains(text(),'View')]");
+
 
         private readonly By LeadGridSearchInput = By.XPath("//div[@id='allLeads']/descendant::input[@id='searchInputField']");
         private readonly By LeadGridSearchButton = By.XPath("//div[@id='allLeads']/descendant::button[@id='searchStartButton']");
         private readonly By LeadOrgName = By.XPath("//tbody/tr[1]/td[8]/div/small");
         private readonly By LeadOrgNameSecondRow = By.XPath("//tbody/tr[2]/td[8]/div/small[1]");
-        private readonly By LeadSubFirstNameLastNameFirstRow = By.XPath("//*[@id='allLeadlist-wrapper']//tbody/tr[1]/td[8]/div/small[1]");
-        private readonly By LeadSubFirstNameLastNameSecondRow = By.XPath("//*[@id='allLeadlist-wrapper']//tbody/tr[2]/td[8]/div/small[1]");
+        private readonly By LeadSubFirstNameLastNameFirstRow = By.XPath("//*[@id='allLeadlist-wrapper']//tr[1]/td[8]/div/small[1]");
+        private readonly By LeadSubFirstNameLastNameSecondRow = By.XPath("//*[@id='allLeadlist-wrapper']//tr[2]/td[8]/div/small[1]");
 
         //tbody/tr[1]/td[8]/div/small
         private readonly By LeadCreateDateFilter = By.XPath("//*[@id='headerTableLeads']//*[@title='Created Date']");
@@ -40,7 +42,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         private readonly By ActivitiesDetailsTab = By.XPath("//a[@id='activitiesDetailsTabId']");
         private readonly By ActivitiesEditButton = By.XPath("//button[@id='editActivityId']");
-        private readonly By ActivitiesViewButton = By.XPath("//button[@id='editActivityId']//following-sibling::button[contains(text(),'View')");
+        private readonly By ActivitiesViewButton = By.XPath("//button[@id='editActivityId']//following-sibling::button[contains(text(),'View')]");
         private readonly By ActivitiesAttachmentTab = By.XPath("//button[@id='attachmentTabId']");
         #endregion
         public void ClickLeadTab()
@@ -109,8 +111,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         }
         public void ClickLeadcreateDateFilter()
         {
-            CommonHelpers.WaitForPageToLoad(Driver, 3000);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 3000);
+            CommonHelpers.WaitForPageToLoad(Driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             CommonHelpers.ScrollDown(Driver);
             Driver.FindElement(LeadCreateDateFilter).Click();
 
@@ -143,25 +145,10 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public string getLeadFirstRowFirstAndLastNameName()
         {
             return Driver.FindElement(LeadSubFirstNameLastNameFirstRow).Text;
-
-            //var subjectname1 = Driver.FindElement(LeadSubFirstNameLastNameFirstRow).Text;
-            //var subjectname = Driver.FindElement(LeadSubFirstNameLastNameFirstRow).Text.Split(':')[1];
-            //var firsRowFLName = subjectname.Split('-')[0];
-            //return firsRowFLName;
-
-
         }
         public string getLeadSecondRowFirstAndLastNameName()
         {
-
-
             return Driver.FindElement(LeadSubFirstNameLastNameSecondRow).Text;
-            //var subjectname2 = Driver.FindElement(LeadSubFirstNameLastNameFirstRow).Text;
-            //var subjectname = Driver.FindElement(LeadSubFirstNameLastNameSecondRow).Text.Split(':')[1];
-            //var secondRowFLName = subjectname.Split('-')[0];
-            //return secondRowFLName;
-
-
 
         }
         public void waitForLeadTab()
