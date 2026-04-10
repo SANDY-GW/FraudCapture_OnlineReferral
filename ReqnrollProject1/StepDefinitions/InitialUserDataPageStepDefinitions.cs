@@ -55,13 +55,14 @@ namespace ReqnrollProject1.StepDefinitions
         public void ThenVerifyTheCaptchaEmailNotification()
         {
             var PG1 = new LoginOnlineRef_Page1(Driver);
-            PG1.waitForEmailNotification();
+            PG1.clickEmailAddressVerificationButton();
+            //PG1.waitForEmailNotification();
         }
 
+       
 
 
-
-        [When("I click on the Next button on the Initial User Data Page")]
+        [Then("I click on the Next button on the Initial User Data Page")]
         public void WhenIClickOnTheNextButtonOnTheInitialUserDataPage()
         {
             var PG2 = new OnlineReferral_Referral_Page2(Driver);

@@ -160,7 +160,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.WaitForElementVisiblity(Driver, emailverification, 100);
 
-            CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 20000);
+            CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 120);
 
         }
        

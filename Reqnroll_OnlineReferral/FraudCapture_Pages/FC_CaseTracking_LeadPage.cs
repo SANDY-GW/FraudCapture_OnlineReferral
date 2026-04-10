@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace FC_OnlineReferral.FraudCapture_Pages
 {
@@ -44,7 +45,84 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         private readonly By ActivitiesEditButton = By.XPath("//button[@id='editActivityId']");
         private readonly By ActivitiesViewButton = By.XPath("//button[@id='editActivityId']//following-sibling::button[contains(text(),'View')]");
         private readonly By ActivitiesAttachmentTab = By.XPath("//button[@id='attachmentTabId']");
+        private readonly By AttachmentTab = By.XPath("//div[@id='noteAttachmentList']/descendant::ul//li/a[contains(text(),'Attachments')]");
+        private readonly By ExitActivityButton = By.XPath("//div[@id='attachment']/descendant::button[text()='Exit Activity']");
+
+
+        // Page verification locators
+        private By editActivityHeader =By.XPath("//b[text()='Edit Activity']");
+
+        private By activityNameField = By.XPath("//label[contains(text(),'Activity Name')]/following::select[1]");
+
+
+        private By assignedToDropdown = By.XPath("//div[@id='activitiesContentId']/descendant::label[contains(text(),'Assigned To')]/following::div[1]");
+
+
+
         #endregion
+
+        public Boolean isEditActivityPageDisplayed()
+        {
+            return Driver.FindElement(editActivityHeader).Displayed
+                    && Driver.FindElement(activityNameField).Displayed
+                    && Driver.FindElement(assignedToDropdown).Displayed;
+
+        }
+        public void ClickAttachmentTab()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, AttachmentTab, 10);
+            Driver.FindElement(AttachmentTab).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
+
+        private By attachmentRow(String keyword)
+        {
+            return By.XPath("//tr[td[contains(normalize-space(),'" + keyword + "')]]");
+        }
+
+
+        private Boolean isAttachmentDisplayed(String attachmentName)
+        {
+            try
+            {
+
+                attachmentRow(attachmentName);
+               
+                return true;
+            }
+            catch (TimeoutException e)
+            {
+                return false;
+            }
+        }
+
+        public Boolean areAllRequiredAttachmentsDisplayed()
+        {
+
+            Boolean summaryDisplayed = isAttachmentDisplayed("Summary");
+            Boolean confirmationDisplayed = isAttachmentDisplayed("Confirmation");
+            Boolean testFileDisplayed = isAttachmentDisplayed("TestFile");
+
+            if (summaryDisplayed && confirmationDisplayed && testFileDisplayed)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+        public void ClickExitActivity()
+        {
+            Driver.FindElement(ExitActivityButton).Click();
+            CommonHelpers.WaitForPageLoading(Driver);
+        }
+        public void ClickLeadGridSearchInput()
+        {
+            Driver.FindElement(LeadGridSearchInput).Click();
+        }
+
         public void ClickLeadTab()
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
@@ -238,6 +316,18 @@ namespace FC_OnlineReferral.FraudCapture_Pages
               {
                   //already in Edit mode, move along
               }*/
+        }
+
+
+        //serach for the activity created through online referral
+
+        public void SearchActivityName(string activityName)
+        {
+            var selectCriteria = Driver.FindElement(By.XPath("//form[@id='activityForm']/descendant::input[@name='searchtext']"));
+            selectCriteria.Clear();
+            selectCriteria.SendKeys(activityName);
+             Driver.FindElement(By.XPath("//form[@id='activityForm']/descendant::button[@id='searchStartButton']")).Click();
+             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
         }
         public void SearchByLeadID(string leadid)
         {

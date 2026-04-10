@@ -1,6 +1,7 @@
 ﻿using FC_OnlineReferral.FraudCapture_Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using System.Security.Cryptography.X509Certificates;
 using NUnitAssert = NUnit.Framework.Assert;
 
 
@@ -36,7 +37,7 @@ namespace ReqnrollProject1.StepDefinitions
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
 
             var leadsTabBUtton = Driver.FindElement(By.XPath("//a[@id='allLeadsTabId']"));
-            var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'"+TabToSelect+"')]"));
+            var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + TabToSelect + "')]"));
             tabToSelect.Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
 
@@ -65,14 +66,14 @@ namespace ReqnrollProject1.StepDefinitions
                         fc.ClickLeadIDLinkbyRow(1);
                     }
                 }
-                else if (firstAndLastName_ROW2 != null) 
+                else if (firstAndLastName_ROW2 != null)
                 {
                     if (firstAndLastName_ROW2.Contains(_scenarioContext["UserFN"].ToString() + _scenarioContext["UserLN"].ToString()))
                     {
                         // Assert.AreEqual(secondRowOrgName, CommonData.UserFN);
                         fc.ClickLeadIDLinkbyRow(2);
                     }
-                }                
+                }
                 else
                 {
                     Assert.Fail("The latest created lead does not have the expected first and last name.");
@@ -127,7 +128,7 @@ namespace ReqnrollProject1.StepDefinitions
             CommonHelpers.WaitForPageLoading(Driver);
         }
 
-        
+
 
         [When("I Filter the created date on the fraud capture Page")]
         public void WhenIFilterTheCreatedDateOnTheFraudCapturePage()
@@ -146,7 +147,7 @@ namespace ReqnrollProject1.StepDefinitions
             var fc = new FC_CaseTracking_LeadPage(Driver);
             try
             {
-                
+
                 var firstAndLastName = fc.getLeadFirstRowFirstAndLastNameName();
                 // Assert.AreEqual(firstRowOrgName, CommonData.UserFN);
             }
@@ -173,11 +174,11 @@ namespace ReqnrollProject1.StepDefinitions
             try
             {
                 fc.ClickLeadActivityTab();
-                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,50);
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
 
                 var ActName = fc.GetActivityName();
 
-                 if(!fc.ClickOnEditActivity(activityName)) 
+                if (!fc.ClickOnEditActivity(activityName))
                     Assert.Fail("The activity with the name '" + activityName + "' was not found in the Activities table.");
 
                 Assert.That(ActName, Is.EqualTo(activityName));
@@ -198,11 +199,88 @@ namespace ReqnrollProject1.StepDefinitions
             }
         }
 
+        [When("click on Activities tab and serach for the activity {string} created through onlinereferral")]
+        public void WhenClickOnActivitiesTabAndSerachForTheActivityCreatedThroughOnlinereferral(string activityName)
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.ClickLeadActivityTab();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+            fc.SearchActivityName(activityName);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+
+
+        }
+
+
+        [When("user clicks on Edit button for an existing activity {string}")]
+        public void WhenUserClicksOnEditButtonForAnExistingActivity(string activityName)
+        {
+
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.ClickOnEditActivity(activityName);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+        }
+
+
+
+        [Then("Edit Activity page should be displayed")]
+        public void ThenEditActivityPageShouldBeDisplayed()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            Assert.That(fc.isEditActivityPageDisplayed(), "Edit Activity page is not displayed");
+
+        }
+
+
+        [Then("click on Attachment tab")]
+        public void ThenClickOnAttachmentTab()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.ClickAttachmentTab();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+        }
+
+        [Then("verify summary, confirmation and test files are displayed")]
+        public void ThenVerifySummaryConfirmationAndTestFilesAreDisplayed()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            Boolean areAllFilesDisplayed =
+                            fc.areAllRequiredAttachmentsDisplayed();
+
+            Assert.That(areAllFilesDisplayed, "One or more attachments (Summary / Confirmation / TestFile) are missing");
+            fc.ClickExitActivity();
+        }
+
+
+
+
+
+        [Then("the searched activity should be displayed in the activity list {string}")]
+        public void ThenTheSearchedActivityShouldBeDisplayedInTheActivityList(string activityName)
+        {
+
+
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            try
+            {
+                var searchedActivityName = fc.GetActivityName();
+                Assert.That(searchedActivityName, Is.EqualTo(activityName), $"Expected activity name '{activityName}' does not match the actual activity name '{searchedActivityName}'.");
+            }
+            catch (NoSuchElementException)
+            {
+                Assert.Fail($"The activity with the name '{activityName}' was not found in the Activities table.");
+            }
+        }
+
+
+
+
+
 
         [When("I click on the Begin Editing on the fraud capture Lead detials Page")]
         public void WhenIClickOnTheBeginEditingOnTheFraudCaptureLeadDetialsPage()
         {
-            var fc = new FC_CaseTracking_LeadPage(Driver);            
+            var fc = new FC_CaseTracking_LeadPage(Driver);
             fc.BeginEditingLead();
         }
 
@@ -219,7 +297,7 @@ namespace ReqnrollProject1.StepDefinitions
         [Then("I should be navigated to Lead Activities  Page")]
         public void ThenIShouldBeNavigatedToLeadActivitiesPage()
         {
-            
+
             CommonHelpers.WaitForPageLoading(Driver);
 
         }
