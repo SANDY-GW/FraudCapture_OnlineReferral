@@ -13,11 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="FraudCapture_Pages\CaseTrackingModule\CaseTab\CaseSearchOptions\" />
     <Folder Include="FraudCapture_Pages\CaseTrackingModule\LeadTab\CreateNewLead\" />
-    <Folder Include="FraudCapture_Pages\CaseTrackingModule\LeadTab\LeadSearchOptions\" />
-    <Folder Include="FraudCapture_Pages\CaseTrackingModule\LeadTab\WorkloadReassignment\" />
-    <Folder Include="FraudCapture_Pages\DataQueryExtraction\" />
     <Folder Include="FraudCapture_Pages\CustomAnalysis&amp;Reports\" />
   </ItemGroup>
 

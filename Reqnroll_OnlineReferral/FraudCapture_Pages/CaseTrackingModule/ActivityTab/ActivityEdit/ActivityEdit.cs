@@ -19,5 +19,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.ActivityTab.Ac
 
         //Add xpath here
         private readonly By WorkLoadReassignment = By.XPath("//*[@id='reassignUserCaseTabId']/b");
+        public void ClickWorkLoadReassignment()
+        {
+            Driver.FindElement(WorkLoadReassignment).Click();
+        }
     }
 }
