@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDetails.Activities.ViewActivity.Activity
 {
-    public class EditActivity : BaseSettings
+    public class ViewActivity : BaseSettings
     {
-        public EditActivity(IWebDriver driver) : base(driver) { }
+        public ViewActivity(IWebDriver driver) : base(driver) { }
 
         protected readonly WebDriverWait Wait;
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);

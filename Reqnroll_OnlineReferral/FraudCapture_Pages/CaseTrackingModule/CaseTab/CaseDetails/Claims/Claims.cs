@@ -18,12 +18,12 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
 
 
         //Add xpath here
-        private readonly By amountTab = By.XPath("//*[@id=\"recoveryTabId\"]");
+        private readonly By claimsBtn = By.XPath("//*[@id=\"ClaimTabId\"]");
 
         #endregion
-        public void ClickAmountTab()
+        public void ClickClaims()
         {
-            Driver.FindElement(amountTab).Click();
+            Driver.FindElement(claimsBtn).Click();
         }
     }
 }

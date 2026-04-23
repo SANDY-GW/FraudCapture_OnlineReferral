@@ -22,7 +22,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         private readonly By cancelBtn = By.XPath("//*[@id=\"activitydetail\"]/div/div[1]/button[1]");
         private readonly By continueBtn = By.XPath("//*[@id=\"activitydetail\"]/div/div[1]/button[2]/span");
         private readonly By exitActivity = By.XPath("//*[@id=\"activitydetail\"]/div[1]/div[1]/button[1]");
-        private readonly By otherActivityOptions = By.XPath("//*[@id=\"activitydetail\"]/div[1]/div[1]/button[1]");
+        private readonly By otherActivityOptionsDDL = By.XPath("//select[@id='activityOption']");
 
         private readonly By createDocument = By.XPath("//*[@id=\"createDocumentButton\"]");
         private readonly By saveDocumentStatus = By.XPath("//*[@id=\"document\"]/fc-activity-note-attachment-document/div[3]/div[2]/button");

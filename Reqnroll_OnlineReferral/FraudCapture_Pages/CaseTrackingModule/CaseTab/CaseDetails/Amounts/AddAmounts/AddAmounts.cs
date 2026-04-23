@@ -21,6 +21,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         private readonly By amountTypeDDL = By.XPath("//*[@id=\"detailsTab\"]/div[2]/div[1]/p/select");
         private readonly By subjectDDL = By.XPath("//*[@id=\"detailsTab\"]/div[2]/div[2]/p/select");
         private readonly By amountEffectiveDate = By.XPath("//*[@id=\"paymentDate\"]/span/input");
+        private readonly By paymentAmount = By.XPath("//*[@id=\"paymentAmount\"]");
         private readonly By lineOfBusinessDDL = By.XPath("//*[@id=\"detailsTab\"]/div[2]/div[5]/p/select");
         private readonly By finalRecoupChk = By.XPath("//*[@id=\"IsActiveFinalRecoup\"]");
         private readonly By cancleBtn = By.XPath("//*[@id=\"detailsTab\"]/div[1]/button[1]");
@@ -55,9 +56,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         {
             Driver.FindElement(amountEffectiveDate).SendKeys(date);
         }
-        public void EnterPaymentAmount(string paymentAmount)
+        public void EnterPaymentAmount(string amount)
         {
-            Driver.FindElement(amountEffectiveDate).SendKeys(paymentAmount);
+            Driver.FindElement(paymentAmount).SendKeys(amount);
         }
     }
 }

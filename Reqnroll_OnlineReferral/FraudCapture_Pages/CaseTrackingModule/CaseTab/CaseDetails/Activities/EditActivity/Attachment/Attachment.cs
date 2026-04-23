@@ -20,10 +20,10 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         //Add xpath here
         private readonly By csvExport = By.XPath("//*[@id=\"attachment\"]/div[1]/button[2]");
         private readonly By downloadAttachmentManager = By.XPath("//*[@id=\"attachment\"]/div[1]/button[3]");
-        private readonly By referesh = By.XPath("//*[@id=\"attachment\"]/div[1]/button[3]");
+        private readonly By referesh = By.XPath("//*[@id=\"attachment\"]/div[1]/button[4]");
         private readonly By exitActivity = By.XPath("//*[@id=\"activitydetail\"]/div[1]/div[1]/button[1]");
         private readonly By otherActivityOptions = By.XPath("//*[@id=\"activitydetail\"]/div[1]/div[1]/button[1]");
-        private readonly By addAttachment= By.XPath("//*[@id=\"attachment\"]/div[1]/button[3]");
+        private readonly By addAttachment= By.XPath("//*[@id=\"attachment\"]/div[1]/button[5]");
 
         #endregion
         public void ClickCsvExport()
