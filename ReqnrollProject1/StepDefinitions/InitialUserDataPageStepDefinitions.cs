@@ -1,4 +1,5 @@
 using FC_OnlineReferral.OnlineReferral_Pages;
+using NUnit.Framework;
 using OpenQA.Selenium;
 
 namespace ReqnrollProject1.StepDefinitions
@@ -32,6 +33,7 @@ namespace ReqnrollProject1.StepDefinitions
         {           
             var PG1 = new LoginOnlineRef_Page1(Driver);
             PG1.EnterUserEmailName(username);
+            Assert.That( CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid email ID '{username}' entered");
             ((IJavaScriptExecutor)Driver).ExecuteScript("window.localStorage.setItem('useTestData', 'true');localStorage.setItem('validatedEmail', '" + username + "');localStorage.setItem('emailValidated', 'true')");
 
         }
@@ -90,7 +92,12 @@ namespace ReqnrollProject1.StepDefinitions
             PG1.EnterMailingStreetAddress2(Mailing_Street_Address2);
             PG1.EnterMailingAddressCity(Mailing_Address_City);
             PG1.SelectState_Or_Territory(Mailing_Address_State);
-            PG1.EnterMailingAddressZipCode(Mailing_Address_Zip);
+
+            PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder();
+            Assert.That(PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder(), Is.True, "State/territory dropdown list is not in alphabetic order");
+
+            PG1.EnterMailingAddressZipCode(Mailing_Address_Zip);            
+            Assert.That(CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid email ID '{Mailing_Address_Zip}' entered");
         }
 
         [When("I click on the emailverification button on the Initial User Data Page")]
