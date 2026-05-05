@@ -341,7 +341,7 @@ namespace FC_OnlineReferral
             jsExec.ExecuteScript("window.scrollBy(" + x_coordinate + ", " + y_coordinate + ");");
         }
 
-        public static string GetElementBackgroundColor(IWebDriver driver, IWebElement ele)
+        public static string GetElementBorderColor(IWebDriver driver, IWebElement ele)
         {
 
             return (string)((IJavaScriptExecutor)driver)
@@ -364,7 +364,6 @@ namespace FC_OnlineReferral
             return ValidationerrorExists(driver)
                 ? driver.FindElement(By.XPath("//span[contains(@class,'error')]")).Text
                 : string.Empty;
-
 
         }
 
