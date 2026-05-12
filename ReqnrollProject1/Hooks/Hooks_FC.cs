@@ -41,7 +41,8 @@ namespace ReqnrollProject1.Hooks
            var driver = BaseSettings.Create();
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Manage().Window.Size = new System.Drawing.Size(1920, 1080);
-            loc_driver= driver;
+            ((IJavaScriptExecutor)driver).ExecuteScript("document.body.style.zoom='80%';");
+            loc_driver = driver;
             featureContext.Set(driver, nameof(IWebDriver));
 
         }
@@ -51,6 +52,7 @@ namespace ReqnrollProject1.Hooks
         {
             _scenarioContext.Set(loc_driver, nameof(IWebDriver));
             var xxx = _featureContext.Get<IWebDriver>(nameof(IWebDriver));
+            
 
         }
 

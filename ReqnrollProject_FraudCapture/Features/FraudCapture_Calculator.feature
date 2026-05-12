@@ -1,4 +1,4 @@
-Feature: Calculator test
+Feature: FraudCapture_Calculator test
 
 Simple calculator for adding two numbers
 Background: 

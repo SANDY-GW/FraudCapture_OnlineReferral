@@ -1,14 +1,10 @@
-﻿using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
+
 
 namespace FC_OnlineReferral
 {
@@ -31,13 +27,22 @@ namespace FC_OnlineReferral
             Driver = driver;
         }
 
-        public void FC_OnlineReferralLogin(string URL= "https://fc-referrals-dev.gainwelltechnologies.com/#/DEMO-498B")
+        public void FC_OnlineReferralLogin(string URL= "https://fc-referrals-test.gainwelltechnologies.com/#/DEMO-AD2B")
         {
             //Driver.Navigate().GoToUrl("https://dev.fraudcapture.hms.com");
             
-            Driver.Navigate().GoToUrl(URL); 
+            Driver.Navigate().GoToUrl(URL);
+            Driver.Manage().Window.Maximize();
         }
 
+        public void FC_OnlineLogin(string URL = "https://test.fraudcapture.hms.com/#/")
+        {
+            //Driver.Navigate().GoToUrl("https://dev.fraudcapture.hms.com");            
+            Driver.Navigate().GoToUrl(URL);
+            Driver.Manage().Window.Maximize();
+            //Driver.Navigate().Refresh();
+            //Driver.Url = URL;
+        }
         public static void QuitDriver(IWebDriver driver)
         {
             try
@@ -79,6 +84,8 @@ namespace FC_OnlineReferral
                     copt.AddArgument("--window-size=1920,1080");
                     copt.AddArgument("--disable-gpu");
                     copt.AddArgument("--no-sandbox");
+                    copt.AddArguments("--start-maximized");
+                    copt.PageLoadStrategy = PageLoadStrategy.Normal;
                     return new ChromeDriver(copt);
             }
         }

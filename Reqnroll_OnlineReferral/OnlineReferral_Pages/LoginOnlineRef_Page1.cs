@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace FC_OnlineReferral.OnlineReferral_Pages
 {
@@ -29,6 +30,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By mailingAddressCityField = By.XPath("//input[@id='city']");
         private readonly By mailingAddressstate_Or_Territorydropdown = By.XPath("//select[@id='state']");
         private readonly By mailingAddresszipCodeField = By.XPath("//input[@id='zip']");
+        private readonly By emailverification = By.XPath("//div/h4[text()='Email Verification']");
+        private readonly By goToPreviousSectionButton = By.XPath("//button[text()='Go to Previous Section']");
+        private readonly By proceed_To_Next_SectionButton = By.XPath("//button[text()=' Proceed to Next Section ']");
+
 
         #endregion
 
@@ -41,59 +46,148 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void EnterUserFName(string UserFN)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, userFnameField, 10);
+            Driver.FindElement(userFnameField).Clear();
             Driver.FindElement(userFnameField).SendKeys(UserFN);
 
         }
         public void EnterUserLastName(string UserLN)
         {
+            Driver.FindElement(userLnameField).Clear();
             Driver.FindElement(userLnameField).SendKeys(UserLN);
 
         }
 
         public void SelectOrgAgency(string OrgAgency)
         {
+            CommonHelpers.WaitForElementVisiblity(Driver, userFnameField, 10);
             CommonHelpers.selectOptionByValue(Driver.FindElement(orgAgencyDropdn), OrgAgency);
 
+        }
+        /// <summary>
+        /// COnverts RGBA to CSS Hex color code to compare the border color of required and non required fields. 
+        /// This is needed as the border color is in RGBA format and we need to convert it to Hex format to compare it with the expected color codes for required and non required fields.
+        /// </summary>
+        /// <param name="RGBA"></param>
+        /// <returns>string</returns>
+
+        public string ConvertRGBAtoCSS(string RGBA)
+        {
+            //#008671 - for green color
+            var rgb = RGBA.Replace("rgb(", "").Replace(")", ""); //input = "rgb(0, 134, 113)"
+            Color color = ColorTranslator.FromHtml(rgb);
+            string actualHex = $"#{color.R:X2}{color.G:X2}{color.B:X2}";
+            return actualHex;
+        }
+        public bool VerifyBGColorOnRequiredFields() 
+        {
+
+            var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
+            var allReqFieldsID = Driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
+
+            foreach (IWebElement elem in allReqFieldsID)
+            {
+                var cssCol = elem.GetCssValue("border-color");
+                var cssHexValue = ConvertRGBAtoCSS(elem.GetCssValue("border-color"));
+
+                if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//#008671 - for green color
+                {
+                    Console.WriteLine("Required");
+                }
+                else if (elem.GetCssValue("border-color").Equals("rgb(206, 212, 218)"))//Non required fields with no border color
+                {
+                    Console.WriteLine("Optional");
+                }
+                else
+                {
+                    Console.WriteLine("Fail");
+                }
+
+            }
+
+            foreach (IWebElement elem in allReqFieldsID)
+            {
+
+                if (elem.GetAttribute("type").Equals("text"))
+                {
+                    Console.WriteLine("text");
+                }
+                else if (elem.GetAttribute("type").Equals("email"))
+                {
+                    Console.WriteLine("email");
+                }
+                else if (elem.GetAttribute("type").Equals("select-one"))
+                {
+                    Console.WriteLine("select-one");
+                }
+            }
+
+            //*[@id=//label[contains(normalize-space(.),'(Required)') and @for]/@for]
+
+            //label[contains(normalize-space(.),'(Required)') and @for]
+            return false;
         }
 
         public void EnterUserEmailName(string emailValue)
         {
+            Driver.FindElement(emailtxtbx).Clear();
             Driver.FindElement(emailtxtbx).SendKeys(emailValue);
 
         }
         public void EnterUserTitle(string UserTitle)
         {
+            Driver.FindElement(titletxtbx).Clear();
             Driver.FindElement(titletxtbx).SendKeys(UserTitle);
         }
 
         public void EnterPhoneNumberAndExtension(string PhoneNumber)
         {
+            Driver.FindElement(phonenumber_And_ExtensionField).Clear();
             Driver.FindElement(phonenumber_And_ExtensionField).SendKeys(PhoneNumber);
         }
         public void EnterMailingStreetAddress1(string StreetAddress1)
         {
+            Driver.FindElement(mailingStreetAddress1Field).Clear();
             Driver.FindElement(mailingStreetAddress1Field).SendKeys(StreetAddress1);
         }
         public void EnterMailingStreetAddress2(string StreetAddress2)
         {
+            Driver.FindElement(mailingStreetAddress2Field).Clear();
             Driver.FindElement(mailingStreetAddress2Field).SendKeys(StreetAddress2);
         }
         public void EnterMailingAddressCity(string CityName)
         {
+            Driver.FindElement(mailingAddressCityField).Clear();
             Driver.FindElement(mailingAddressCityField).SendKeys(CityName);
         }
         public void SelectState_Or_Territory(string StateName)
         {
             CommonHelpers.selectOptionByValue(Driver.FindElement(mailingAddressstate_Or_Territorydropdown), StateName);
         }
+
+        public bool VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder()
+        {
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(mailingAddressstate_Or_Territorydropdown));
+        }
         public void EnterMailingAddressZipCode(string ZipCode)
         {
+            Driver.FindElement(mailingAddresszipCodeField).Clear();
             Driver.FindElement(mailingAddresszipCodeField).SendKeys(ZipCode);
         }
+       
 
         public void clickEmailAddressVerificationButton()
         {
             Driver.FindElement(emailVerificationBtn).Click();
         }
+
+        public void waitForEmailNotification()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, emailverification, 100);
+
+            CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 200);
+
+        }
+       
+
     }
 }
