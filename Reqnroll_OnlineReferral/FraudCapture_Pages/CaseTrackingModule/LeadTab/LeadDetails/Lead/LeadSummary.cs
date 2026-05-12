@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDetails.Lead
 {
-    public class Lead : BaseSettings
+    public class LeadSummary : BaseSettings
     {
-        public Lead(IWebDriver driver) : base(driver) { }
+        public LeadSummary(IWebDriver driver) : base(driver) { }
 
         protected readonly WebDriverWait Wait;
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
