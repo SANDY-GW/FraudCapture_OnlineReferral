@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace FC_OnlineReferral.OnlineReferral_Pages
 {
@@ -65,6 +66,21 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.selectOptionByValue(Driver.FindElement(orgAgencyDropdn), OrgAgency);
 
         }
+        /// <summary>
+        /// COnverts RGBA to CSS Hex color code to compare the border color of required and non required fields. 
+        /// This is needed as the border color is in RGBA format and we need to convert it to Hex format to compare it with the expected color codes for required and non required fields.
+        /// </summary>
+        /// <param name="RGBA"></param>
+        /// <returns>string</returns>
+
+        public string ConvertRGBAtoCSS(string RGBA)
+        {
+            //#008671 - for green color
+            var rgb = RGBA.Replace("rgb(", "").Replace(")", ""); //input = "rgb(0, 134, 113)"
+            Color color = ColorTranslator.FromHtml(rgb);
+            string actualHex = $"#{color.R:X2}{color.G:X2}{color.B:X2}";
+            return actualHex;
+        }
         public bool VerifyBGColorOnRequiredFields() 
         {
 
@@ -73,8 +89,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             foreach (IWebElement elem in allReqFieldsID)
             {
+                var cssCol = elem.GetCssValue("border-color");
+                var cssHexValue = ConvertRGBAtoCSS(elem.GetCssValue("border-color"));
 
-                if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
+                if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//#008671 - for green color
                 {
                     Console.WriteLine("Required");
                 }
@@ -148,11 +166,17 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.selectOptionByValue(Driver.FindElement(mailingAddressstate_Or_Territorydropdown), StateName);
         }
+
+        public bool VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder()
+        {
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(mailingAddressstate_Or_Territorydropdown));
+        }
         public void EnterMailingAddressZipCode(string ZipCode)
         {
             Driver.FindElement(mailingAddresszipCodeField).Clear();
             Driver.FindElement(mailingAddresszipCodeField).SendKeys(ZipCode);
         }
+       
 
         public void clickEmailAddressVerificationButton()
         {
@@ -163,7 +187,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.WaitForElementVisiblity(Driver, emailverification, 100);
 
-            CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 20000);
+            CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 200);
 
         }
 
