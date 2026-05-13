@@ -300,7 +300,6 @@ namespace FC_OnlineReferral
 
             return (string)((IJavaScriptExecutor)driver)
                 .ExecuteScript("return window.getComputedStyle(arguments[0]).backgroundColor;", ele);
-
         }
 
     }
