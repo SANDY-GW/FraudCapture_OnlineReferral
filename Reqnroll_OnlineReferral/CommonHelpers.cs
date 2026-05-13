@@ -302,6 +302,21 @@ namespace FC_OnlineReferral
                 .ExecuteScript("return window.getComputedStyle(arguments[0]).backgroundColor;", ele);
 
         }
+        /// <summary>
+        /// Scrolls to the specified element coordinates.
+        /// </summary>
+        public void ScrollByElementCoordinates(IWebElement element)
+        {
+            System.Drawing.Point point = element.Location;
+            int x_coordinate = point.X - 250;
+            int y_coordinate = point.Y - 250;
+            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)Driver;
+            jsExec.ExecuteScript("window.scrollBy(" + x_coordinate + ", " + y_coordinate + ");");
+        }
 
+        internal static void selectOptionByValue(IWebElement webElement, object orgAgency)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

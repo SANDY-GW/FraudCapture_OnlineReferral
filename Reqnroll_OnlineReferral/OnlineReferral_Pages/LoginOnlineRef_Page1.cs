@@ -32,6 +32,9 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By emailverification = By.XPath("//div/h4[text()='Email Verification']");
         private readonly By goToPreviousSectionButton = By.XPath("//button[text()='Go to Previous Section']");
         private readonly By proceed_To_Next_SectionButton = By.XPath("//button[text()=' Proceed to Next Section ']");
+        private readonly By AdvancedSearch = By.XPath("//button[text()='Search']");
+        private readonly By SearchCriteriaDropDown = By.XPath("//select[@class='form-control darkNavy-fc ng-pristine ng-valid ng-touched']");
+        private readonly By SearchButton = By.XPath("//button[@id='btnSearch']");
 
 
         #endregion
@@ -163,7 +166,20 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 20000);
 
         }
-       
+
+        public void ClickSearchButton()
+        {
+            Driver.FindElement(AdvancedSearch).Click();
+        }
+
+        public void waitQuickSearchWindow(string ProviderID)
+        {
+            Driver.FindElement(SearchCriteriaDropDown).Click();
+            CommonHelpers.selectOptionByValue(Driver.FindElement(SearchCriteriaDropDown), ProviderID);
+            Driver.FindElement(SearchButton).Click();
+            CommonHelpers.WaitForElementVisiblity(Driver, SearchButton, 100);
+        }
+
 
     }
 }
