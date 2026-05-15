@@ -10,6 +10,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         protected readonly WebDriverWait Wait;
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
+
         #region Elements
         //Add xpath here
         private readonly By LeadTab = By.XPath("//a[@id='allLeadsTabId']");
@@ -47,8 +48,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         private readonly By ActivitiesAttachmentTab = By.XPath("//button[@id='attachmentTabId']");
         private readonly By AttachmentTab = By.XPath("//div[@id='noteAttachmentList']/descendant::ul//li/a[contains(text(),'Attachments')]");
         private readonly By ExitActivityButton = By.XPath("//div[@id='attachment']/descendant::button[text()='Exit Activity']");
-
-
+        private readonly By leadCreationDate = By.XPath("//input[@name='leadDate']");
+        private readonly By activityDuedate = By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr/td[4]");
         // Page verification locators
         private By editActivityHeader =By.XPath("//b[text()='Edit Activity']");
 
@@ -80,8 +81,24 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             return By.XPath("//tr[td[contains(normalize-space(),'" + keyword + "')]]");
         }
 
+        //Getting lead create date
 
-        private Boolean isAttachmentDisplayed(String attachmentName)
+        public string getLeadCreationDate()
+        {
+            var value = "";
+            if (leadCreationDate != null)
+            {
+                CommonHelpers.WaitForElementVisiblity(Driver, leadCreationDate, 30);
+
+                value = Driver.FindElement(leadCreationDate).GetAttribute("value")?.Trim();
+                Console.WriteLine($"Original Detection Date field value: {value}");
+
+            }
+
+
+            return value;
+        }
+        private bool isAttachmentDisplayed(String attachmentName)
         {
             try
             {
@@ -95,13 +112,26 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                 return false;
             }
         }
-
-        public Boolean areAllRequiredAttachmentsDisplayed()
+        public string getLeadiD()
+        {
+            try
+            {
+                var attachment = Driver.FindElement(By.XPath("//fc-activity-note-attachment/descendant::label[@class='form-control darkNavy-fc title3 editSourceId headerFields']"));
+                string leadid = attachment.Text;
+                Console.WriteLine("Lead ID: " + leadid);
+                return leadid;
+            }
+            catch (NoSuchElementException e)
+            {
+                return null;
+            }
+        }
+        public bool areAllRequiredAttachmentsDisplayed()
         {
 
-            Boolean summaryDisplayed = isAttachmentDisplayed("Summary");
-            Boolean confirmationDisplayed = isAttachmentDisplayed("Confirmation");
-            Boolean testFileDisplayed = isAttachmentDisplayed("TestFile");
+            bool summaryDisplayed = isAttachmentDisplayed("ReferralSummary-'"+ getLeadiD() + "'");
+            bool confirmationDisplayed = isAttachmentDisplayed("Confirmation");
+            bool testFileDisplayed = isAttachmentDisplayed("TestFile");
 
             if (summaryDisplayed && confirmationDisplayed && testFileDisplayed)
             {
@@ -376,6 +406,15 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             return activityName;
 
         }
+
+        public string getActivityDueDate()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            CommonHelpers.WaitForPageLoading(Driver);
+            var activityduedate = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr/td[4]")).Text;
+            return activityduedate;
+        }
+
     }
 }
 

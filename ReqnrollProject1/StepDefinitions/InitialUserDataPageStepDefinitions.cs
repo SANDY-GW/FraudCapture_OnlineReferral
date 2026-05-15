@@ -1,6 +1,8 @@
 using FC_OnlineReferral.OnlineReferral_Pages;
+using NUnit.Framework;
 using OpenQA.Selenium;
-
+using System;
+using Assert = NUnit.Framework.Assert;
 namespace ReqnrollProject1.StepDefinitions
 {
     [Binding]
@@ -135,6 +137,55 @@ namespace ReqnrollProject1.StepDefinitions
             PG2.EnterOriginalDetectionDate(detectiondate);
             PG2.EnterIncidentStartDate(startdate);
             PG2.EnterIncidentEndDate(enddate);
+        }
+
+
+        [When("User enters Incident Start Date as {string}")]
+        public void WhenUserEntersIncidentStartDateAs(string startDate)
+        {
+            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+            PG2.EnterIncidentStartDate(startDate);
+
+        }
+
+        [When("User enters Incident End Date as {string}")]
+        public void WhenUserEntersIncidentEndDateAs(string p0)
+        {
+            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+            PG2.EnterIncidentEndDate(p0);
+        }
+
+        [Then("Error message {string} should be displayed")]
+        public void ThenErrorMessageShouldBeDisplayed(string expectedMessage)
+        {
+            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+
+            string actualStartError = PG2.GetErrorMessage();
+            string actualEndError = PG2.GetErrorMessageStartDate();
+
+            Console.WriteLine($"Start error: {actualStartError}");
+            Console.WriteLine($"End   error: {actualEndError}");
+
+            Assert.Multiple((Action)(() =>
+            {
+
+                Assert.That(
+                            actualStartError.Contains("Date cannot be in the future") ||
+                            actualEndError.Contains("Incident End Date cannot be prior"),
+                            "No valid date error message displayed"
+                        );
+
+            }));
+        }
+
+
+
+        [Then("get the Original detection date")]
+        public void ThenGetTheOriginalDetectionDate()
+        {
+            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+            var referraldate =PG2.GetOriginalDetectionDate();
+         Console.WriteLine(referraldate);
         }
 
         [Then("enter state as {string} and city as {string} on the second User Data Page")]
@@ -526,6 +577,14 @@ namespace ReqnrollProject1.StepDefinitions
         public void WhenEnterInvolvedPartyNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAs(string nameprefix, string Fn, string Mn, string Ln, string namesuffix)
         {
             var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+
+           
+            DateTime dateTime = DateTime.Now;
+            Fn = Fn + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            Ln = Ln + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            _scenarioContext["UserFN"] = Fn;
+            _scenarioContext["UserLN"] = Ln;
+
             PG3.FillNamePrefixField(nameprefix);
             PG3.FillFirstNameField(Fn);
             PG3.FillMiddleNameField(Mn);

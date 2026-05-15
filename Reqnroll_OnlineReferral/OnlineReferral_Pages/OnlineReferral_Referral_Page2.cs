@@ -1,7 +1,8 @@
-﻿using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,16 +33,41 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By proceed_To_Next_SectionButton = By.XPath("//button[contains(text(),'Proceed to Next Section')]");
         private readonly By proceed_To_Next_SectionButton_end = By.XPath("//form[@class='userForm ng-dirty ng-valid ng-touched']//button[contains(text(),'Proceed to Next Section')]");
         private readonly By instructionsButton = By.XPath("//button[text()='Instructions']");
+        private readonly By errorMessage = By.XPath("//span[@id='incidentEndDt_Error']");
+        private readonly By errorMessageStartDate = By.XPath("//span[@id='incidentStartDt_Error']");
+
+
+        // In GetOriginalDetectionDate, replace _wait with Wait and fix usage:
+
 
         #endregion
 
+        public string GetOriginalDetectionDate()
+        {
+            var value = "";
+            if (originalDetectionDateField != null)
+            {
+                CommonHelpers.WaitForElementVisiblity(Driver, originalDetectionDateField, 30);
 
+                value = Driver.FindElement(originalDetectionDateField).GetAttribute("value")?.Trim();
+                Console.WriteLine($"Original Detection Date field value: '{value}'");
+
+            }
+
+           
+            return value;
+        }
+        
         public void SelectRefType(string RefType)
         {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
             CommonHelpers.WaitForElementVisiblity(Driver, refTypeDropdn, 10);
             CommonHelpers.selectOptionByValue(Driver.FindElement(refTypeDropdn), RefType);
 
         }
+
+       
+
         public void SelectInvolvedPartyType(string InvolvedPartyType)
         {
             CommonHelpers.selectOptionByValue(Driver.FindElement(involvedPartyTypeDropdn), InvolvedPartyType);
@@ -121,5 +147,22 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForInstructionsButton(Driver, 10);
             Driver.FindElement(instructionsButton).Click();
         }
-    }
+
+        //Error Message Validation for Referral Incident Start Date and End Date
+
+
+        public string GetErrorMessage()
+        {
+            return Driver.FindElement(errorMessage).Text;
+        }
+
+        public string GetErrorMessageStartDate()
+        {
+            return Driver.FindElement(errorMessageStartDate).Text;
+        }
+
+
+
+
+        }
 }

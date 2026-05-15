@@ -1,10 +1,8 @@
 ﻿using FC_OnlineReferral.FraudCapture_Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using System.Security.Cryptography.X509Certificates;
-using NUnitAssert = NUnit.Framework.Assert;
-
-
+using System;
+using Assert = NUnit.Framework.Assert;
 
 namespace ReqnrollProject1.StepDefinitions
 {
@@ -32,6 +30,8 @@ namespace ReqnrollProject1.StepDefinitions
             var navigateBtn = Driver.FindElement(By.XPath("//button[@id='navigationMenuId']"));
             navigateBtn.Click();
 
+            
+
             var caseTrackingLink = Driver.FindElement(By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking']"));
             caseTrackingLink.Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
@@ -42,6 +42,13 @@ namespace ReqnrollProject1.StepDefinitions
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
 
 
+        }
+        [When("get the lead creation date")]
+        public void WhenGetTheLeadCreationDate()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            var referraldate = fc.getLeadCreationDate();
+            Console.WriteLine(referraldate);
         }
 
 
@@ -76,7 +83,7 @@ namespace ReqnrollProject1.StepDefinitions
                 }
                 else
                 {
-                    Assert.Fail("The latest created lead does not have the expected first and last name.");
+                    NUnit.Framework.Assert.Fail("The latest created lead does not have the expected first and last name.");
                 }
             }
             catch (Exception ex)
@@ -179,7 +186,7 @@ namespace ReqnrollProject1.StepDefinitions
                 var ActName = fc.GetActivityName();
 
                 if (!fc.ClickOnEditActivity(activityName))
-                    Assert.Fail("The activity with the name '" + activityName + "' was not found in the Activities table.");
+                    NUnit.Framework. Assert.Fail("The activity with the name '" + activityName + "' was not found in the Activities table.");
 
                 Assert.That(ActName, Is.EqualTo(activityName));
 
@@ -268,12 +275,27 @@ namespace ReqnrollProject1.StepDefinitions
             }
             catch (NoSuchElementException)
             {
-                Assert.Fail($"The activity with the name '{activityName}' was not found in the Activities table.");
+               Assert.Fail($"The activity with the name '{activityName}' was not found in the Activities table.");
             }
         }
 
 
+        [Then("get the Activitydate created through online")]
+        public void ThenGetTheActivitydateCreatedThroughOnline()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            var referraldate = fc.getActivityDueDate();
+            Console.WriteLine(referraldate);
 
+        }
+
+       
+        [Then("verify Due Date of the activity generated through an Online Referral submission is based on the Due Date configuration for that activity")]
+        public void ThenVerifyDueDateOfTheActivityGeneratedThroughAnOnlineReferralSubmissionIsBasedOnTheDueDateConfigurationForThatActivity()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            Assert.That(fc.getLeadCreationDate(), Does.Contain(fc.getActivityDueDate()), "The lead creation date does not match the activity due date.");
+        }
 
 
 
@@ -302,6 +324,11 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
-
+        public override bool Equals(object? obj)
+        {
+            return obj is Step_OnlineReferral_FraudCapture_LeadActivity activity &&
+                   EqualityComparer<ScenarioContext>.Default.Equals(_scenarioContext, activity._scenarioContext) &&
+                   EqualityComparer<IWebDriver>.Default.Equals(Driver, activity.Driver);
+        }
     }
 }
