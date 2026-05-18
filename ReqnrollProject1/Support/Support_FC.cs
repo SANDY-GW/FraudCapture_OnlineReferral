@@ -2,7 +2,7 @@
 
 namespace ReqnrollProject1.Support
 {
-    public class Support_FC
+    public class Support_FC 
     {
         public static class ScreenshotHelper
         {

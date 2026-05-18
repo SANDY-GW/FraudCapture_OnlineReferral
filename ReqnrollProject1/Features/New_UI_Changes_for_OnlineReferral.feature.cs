@@ -1064,7 +1064,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             argumentsOfScenario.Add("UserEmailID", userEmailID);
             argumentsOfScenario.Add("ActivityName", activityName);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[TestMyCode]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[TestMyCode]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 155
@@ -1077,36 +1077,46 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 159
- await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line 156
+ await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 157
+ await testRunner.AndAsync("Verify color on all Required Field in the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 158
+ await testRunner.AndAsync(string.Format("I enter the \"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\", filled in the Address section yon the " +
+                            "Initial User Data Page", address1, address2, city, state, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 160
- await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page", userEmailID), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 161
- await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page", userEmailID), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 162
- await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 163
- await testRunner.AndAsync("I select the payor as \"DEMO\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 164
+ await testRunner.AndAsync("I select the payor as \"DEMO\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 165
  await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
                         "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 165
+#line 166
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 166
+#line 167
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 167
+#line 168
  await testRunner.AndAsync(string.Format("I click on the Activities and selected lead activity name as \"{0}\" on the fraud c" +
                             "apture Lead detials Page", activityName), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 168
+#line 169
  await testRunner.ThenAsync("I should be navigated to Lead Activities  Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
