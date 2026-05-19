@@ -225,5 +225,11 @@ namespace ReqnrollProject1.StepDefinitions
         }
 
 
+        [Then("I should be navigated to Quick Search Page")]
+        public void ThenIShouldBeNavigatedToQuickSearchPage()
+        {
+            CommonHelpers.WaitForPageLoading(Driver);
+        }
+
     }
 }

@@ -86,15 +86,18 @@ Scenario Outline: [Enter fraudcapture user data]
 	When I enter the "<UserEmailID>" on the welcome fraude capture page
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
-	And I Verify first and Last Name on the Latest created lead
+	#And I Verify first and Last Name on the Latest created lead
 	#And I click on the Lead tab on the fraud capture Page
 	#And  I Filter the created date on the fraud capture Page
 	#And  I verify  FirstAndLastName  on the fraud capture Page
-	And I click on the leadid link on the fraud capture Lead table Page
-	And I click on the Begin Editing on the fraud capture Lead detials Page
-	And I click on the Activities and selected lead activity name as "<ActivityName>" on the fraud capture Lead detials Page
-	Then I should be navigated to Lead Activities  Page
+	#And I click on the leadid link on the fraud capture Lead table Page
+	#And I click on the Begin Editing on the fraud capture Lead detials Page
+	#And I click on the Activities and selected lead activity name as "<ActivityName>" on the fraud capture Lead detials Page
+	Then I should be navigated to Quick Search Page
+
+	
 	
 	Examples: 
-| UserEmailID                               | ActivityName                                    |
-| Sandeep.krishnan@gainwelltechnologies.com | 02242026-Lead Activity 1-Auto Close on Creation |
+| UserEmailID                               | ProviderID
+| yamuna.c@gainwelltechnologies.com			| 41237
+

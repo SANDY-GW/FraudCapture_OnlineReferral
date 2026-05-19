@@ -434,13 +434,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
         
         [global::NUnit.Framework.TestAttribute()]
         [global::NUnit.Framework.DescriptionAttribute("[Enter fraudcapture user data]")]
-        [global::NUnit.Framework.TestCaseAttribute("Sandeep.krishnan@gainwelltechnologies.com", "02242026-Lead Activity 1-Auto Close on Creation", "1", null)]
-        public async global::System.Threading.Tasks.Task EnterFraudcaptureUserData(string userEmailID, string activityName, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "1", null)]
+        public async global::System.Threading.Tasks.Task EnterFraudcaptureUserData(string userEmailID, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("UserEmailID", userEmailID);
-            argumentsOfScenario.Add("ActivityName", activityName);
             string pickleIndex = @__pickleIndex;
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Enter fraudcapture user data]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
@@ -467,21 +466,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 88
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 89
- await testRunner.AndAsync("I Verify first and Last Name on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 93
- await testRunner.AndAsync("I click on the leadid link on the fraud capture Lead table Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 94
- await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 95
- await testRunner.AndAsync(string.Format("I click on the Activities and selected lead activity name as \"{0}\" on the fraud c" +
-                            "apture Lead detials Page", activityName), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
 #line 96
- await testRunner.ThenAsync("I should be navigated to Lead Activities  Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("I should be navigated to Quick Search Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

@@ -367,7 +367,7 @@ namespace FC_OnlineReferral
 
         }
 
-        public static bool IsDropdoenListInAlphabeticOrder(IWebDriver driver,IWebElement ele)
+        public static bool IsDropdoenListInAlphabeticOrder(IWebDriver driver, IWebElement ele)
         {
             SelectElement selectElement = new SelectElement(ele);
             var options = selectElement.Options.Select(option => option.Text).ToList();
@@ -392,7 +392,7 @@ namespace FC_OnlineReferral
             bool xx = options.SequenceEqual(sortedOptions);
 
             return (options.SequenceEqual(sortedOptions));
- 
+
         }
 
 
