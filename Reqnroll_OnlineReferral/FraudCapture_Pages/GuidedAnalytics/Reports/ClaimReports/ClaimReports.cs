@@ -45,7 +45,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.Reports.ClaimRepo
         {
             Driver.FindElement(ClaimReportsClear).Click();
         }
-        public void ClickReportTilte()
+        public void ClickReportTitle()
         {
             Driver.FindElement(ReportTitle).Click();
         }

@@ -18,7 +18,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics
         private readonly By DashBoardBtn = By.XPath("//*[@id='reportsTabId']");
 
         #endregion
-        public void ClickDashaBoardBtn()
+        public void ClickDashBoardBtn()
         {
             Driver.FindElement(DashBoardBtn).Click();
         }
