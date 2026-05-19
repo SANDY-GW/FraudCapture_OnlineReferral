@@ -32,6 +32,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By emailverification = By.XPath("//div/h4[text()='Email Verification']");
         private readonly By goToPreviousSectionButton = By.XPath("//button[text()='Go to Previous Section']");
         private readonly By proceed_To_Next_SectionButton = By.XPath("//button[text()=' Proceed to Next Section ']");
+        private readonly  By logo = By.XPath("*//img[@title='Header Image']");
 
 
         #endregion
@@ -163,7 +164,81 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 120);
 
         }
+
+
+
+
+        // Locator (adjust if needed)
        
 
+        public IWebElement GetLogo()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, logo, 10);
+            return Driver.FindElement(logo);
+        }
+
+        public bool IsLogoDisplayed()
+        {
+
+            return GetLogo().Displayed;
+        }
+
+        // ✅ Check if logo is at TOP CENTER
+        public bool IsLogoAtTopCenter()
+        {
+            var logoElement = GetLogo();
+
+            int logoCenterX = logoElement.Location.X + (logoElement.Size.Width / 2);
+            Console.WriteLine("Logo Center X: " + logoCenterX);
+            int pageCenterX = Driver.Manage().Window.Size.Width / 2;
+            Console.WriteLine("Page Center X: " + pageCenterX);
+
+            int logoTopY = logoElement.Location.Y;
+              Console.WriteLine("Logo Top Y: " + logoTopY);
+            // Conditions:
+            bool isHorizontallyCentered = Math.Abs(pageCenterX - logoCenterX) <= 20;
+            bool isAtTop = logoTopY < 150; // threshold for "top"
+
+            return isHorizontallyCentered && isAtTop;
+        }
+
+
+        // ✅ Check if logo is LEFT aligned
+        public bool IsLogoLeftAligned()
+        {
+            var logoElement = GetLogo();
+
+            int logoX = logoElement.Location.X;
+
+            return logoX <= 50; // near left edge
+        }
+
+        public bool verifyrequiredfieldsinpage1()
+        {
+            var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
+            if (eleList.Count > 0)
+            {
+                foreach (IWebElement elem in eleList)
+                {
+                    if (!CommonData.dic.ContainsKey(elem.GetAttribute("for")))
+                    {
+                        Console.WriteLine("text");
+                        return false;
+
+
+                    }
+                   
+
+            }
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("No required fields found");
+                return false;
+            }
+                
+
+        }
     }
-}
+

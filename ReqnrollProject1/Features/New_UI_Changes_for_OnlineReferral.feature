@@ -22,7 +22,7 @@ Scenario Outline: [Verify that the user is able to see the new UI changes for on
 	Then enter case or reference number as "<caseOrReferenceNumber>" on the second User Data Page
 	And How was this detected as"<detectedAs>" ,please provide  a Summary of this referral as "<summary>" on the second User Data Page
 	And enter Amount "<amount>",detectiondate "<detectionDate>", incidentStartDate "<incidentStartDate>", incidentEndDate "<incidentEndDate>" on the second User Data Page
-	Then get the Original detection date
+	And get the Original detection date
 	And enter state as "<state2>" and city as "<city2>" on the second User Data Page
 	And I click on the Next button on the Initial User Data Page
 	When I should be navigated to the Next Page
@@ -58,11 +58,11 @@ Scenario Outline: [Verify that the user is able to see the new UI changes for on
 	And click on Activities tab and serach for the activity "<ActivityName>" created through onlinereferral
 	Then the searched activity should be displayed in the activity list "<ActivityName>"
 	And get the Activitydate created through online
-	Then verify Due Date of the activity generated through an Online Referral submission is based on the Due Date configuration for that activity
+	And verify Due Date of the activity generated through an Online Referral submission is based on the Due Date configuration for that activity
 	When user clicks on Edit button for an existing activity "<ActivityName>"
 	Then Edit Activity page should be displayed
 	And click on Attachment tab
-	Then verify summary, confirmation and test files are displayed
+	And verify summary, confirmation and test files are displayed
 
 
 	
@@ -130,7 +130,7 @@ Scenario Outline: [Verify that the user is able to see the new UI changes for on
 	When user clicks on Edit button for an existing activity "<ActivityName>"
 	Then Edit Activity page should be displayed
 	And click on Attachment tab
-	Then verify summary, confirmation and test files are displayed
+	And verify summary, confirmation and test files are displayed
 
 Examples:
 	| UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | referralType                                           | involvedPartyType                                                 | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentStartDate | incidentEndDate | state2 | city2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN     | LN     | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  |
@@ -202,7 +202,7 @@ Examples:
 	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | TX    |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026        | 02/13/2026      | TX     | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | 02242026-Lead Activity 1-Auto Close on Creation |
 
 
-	Scenario Outline: [Verify that the error messages are displayed when Incident end date is prior to start date for online referral as a Provider]
+Scenario Outline: [Verify that the error messages are displayed when Incident end date is prior to start date for online referral as a Provider]
 	Given when I open the Online referral application
 	And I enter the email as "<Email address>" on the Initial User Data Page
 	And I enter the userFN as "<UserFirstName>",User lastname as "<UserLastName>",Org name as "<Org name>",title as "<title>"  filled on the Initial User Data Page
@@ -218,12 +218,12 @@ Examples:
 	And How was this detected as"<detectedAs>" ,please provide  a Summary of this referral as "<summary>" on the second User Data Page
 	
 
-    When User enters Incident Start Date as "04/10/2026"
-    And User enters Incident End Date as "04/05/2026"
-    Then Error message "Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date" should be displayed
+	When User enters Incident Start Date as "04/10/2026"
+	And User enters Incident End Date as "04/05/2026"
+	Then Error message "Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date" should be displayed
 
 
-	Examples:
+Examples:
 	| UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate |
 	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    |
 	
@@ -245,11 +245,11 @@ Scenario Outline: [Verify that the error messages are displayed when Incident st
 	And How was this detected as"<detectedAs>" ,please provide  a Summary of this referral as "<summary>" on the second User Data Page
 	
 
-    When User enters Incident Start Date as "04/10/2028"
-    Then Error message "Date cannot be in the future" should be displayed
+	When User enters Incident Start Date as "04/10/2028"
+	Then Error message "Date cannot be in the future" should be displayed
 
 
-	Examples:
+Examples:
 	| UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate |
 	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    |
 	
@@ -272,12 +272,26 @@ Scenario Outline: [Verify that the error messages are displayed when Incident st
 	And How was this detected as"<detectedAs>" ,please provide  a Summary of this referral as "<summary>" on the second User Data Page
 	
 
-    When User enters Incident Start Date as "04/10/2028"
-	 And User enters Incident End Date as "04/05/2029"
-    Then Error message "Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date." should be displayed
+	When User enters Incident Start Date as "04/10/2028"
+	And User enters Incident End Date as "04/05/2029"
+	Then Error message "Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date." should be displayed
 
 
-	Examples:
+Examples:
 	| UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate |
 	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    |
+	
+	
+	
+Scenario Outline: [Submitting Party Information]
+
+Scenario: 01_ Validate logo is positioned at top center
+    Given  when I open the Online referral application
+    Then Logo should be visible
+    And Logo should be aligned at the top center of the page
+
+	Scenario: 02_ Validate that the Required fields indicated in Admin Configuration appear in the portal
+	Given  when I open the Online referral application
+	When i check the required fields in the "Submitting Party Information"
+	Then the same fields should be displayed as required in the portal with a red asterisk mark
 	

@@ -4,15 +4,61 @@ using SeleniumExtras.WaitHelpers;
 
 namespace FC_OnlineReferral
 {
-    public class CommonHelpers
+    public class CommonHelpers : BaseSettings
     {
-        public CommonHelpers(IWebDriver driver)
-        {
-            Driver = driver;
-        }
-        protected readonly IWebDriver Driver;
+        public CommonHelpers(IWebDriver driver) : base(driver) { }
+
+        //protected readonly IWebDriver driverLocal;
         protected readonly WebDriverWait Wait;
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
+
+        public bool VerifyBGColorOnRequiredFields()
+        {
+
+            var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
+            var allReqFieldsID = Driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
+
+            foreach (IWebElement elem in allReqFieldsID)
+            {
+
+                if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
+                {
+                    Console.WriteLine("Required");
+                }
+                else if (elem.GetCssValue("border-color").Equals("rgb(206, 212, 218)"))//Non required fields with no border color
+                {
+                    Console.WriteLine("Optional");
+                }
+                else
+                {
+                    Console.WriteLine("Fail");
+                }
+
+            }
+
+            foreach (IWebElement elem in allReqFieldsID)
+            {
+
+                if (elem.GetAttribute("type").Equals("text"))
+                {
+                    Console.WriteLine("text");
+                }
+                else if (elem.GetAttribute("type").Equals("email"))
+                {
+                    Console.WriteLine("email");
+                }
+                else if (elem.GetAttribute("type").Equals("select-one"))
+                {
+                    Console.WriteLine("select-one");
+                }
+            }
+
+            //*[@id=//label[contains(normalize-space(.),'(Required)') and @for]/@for]
+
+            //label[contains(normalize-space(.),'(Required)') and @for]
+            return false;
+        }
+
         public static void WaitForPageToLoad(IWebDriver driver, int timeoutInSeconds)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
@@ -295,13 +341,60 @@ namespace FC_OnlineReferral
             jsExec.ExecuteScript("window.scrollBy(" + x_coordinate + ", " + y_coordinate + ");");
         }
 
-        public static string GetElementBackgroundColor(IWebDriver driver, IWebElement ele)
+        public static string GetElementBorderColor(IWebDriver driver, IWebElement ele)
         {
 
             return (string)((IJavaScriptExecutor)driver)
                 .ExecuteScript("return window.getComputedStyle(arguments[0]).backgroundColor;", ele);
 
         }
+        /// <summary>
+        /// Method to validate if any validation error appears
+        /// </summary>
+        /// <param name="driver"></param>
+        /// <returns>returns true if Validation error exists</returns>
+        public static bool ValidationerrorExists(IWebDriver driver)
+        {
+            return driver.FindElements(By.XPath("//span[contains(@class,'error')]")).Any();
+
+        }
+        public static string GetValidationErrorText(IWebDriver driver)
+        {
+
+            return ValidationerrorExists(driver)
+                ? driver.FindElement(By.XPath("//span[contains(@class,'error')]")).Text
+                : string.Empty;
+
+        }
+
+        public static bool IsDropdoenListInAlphabeticOrder(IWebDriver driver, IWebElement ele)
+        {
+            SelectElement selectElement = new SelectElement(ele);
+            var options = selectElement.Options.Select(option => option.Text).ToList();
+            //var sortedOptions = options.OrderBy(option => option).ToList();
+
+            //var sortedOptions = options 
+            //    .Where(o => !o.Equals("Select an option", StringComparison.OrdinalIgnoreCase))
+            //    .OrderBy(o => o)
+            //    .ToList();
+
+            //var options1 = options
+            //    .Where(o => !o.Equals("Select an option", StringComparison.OrdinalIgnoreCase))
+            //    .OrderBy(o => o)
+            //    .ToList();
+            //bool xx = options.SequenceEqual(sortedOptions);
+
+            var sortedOptions = options
+                .OrderBy(o => o.Equals("Select an option", StringComparison.OrdinalIgnoreCase) ? 0 : 1)
+                .ThenBy(o => o)
+                .ToList();
+
+            bool xx = options.SequenceEqual(sortedOptions);
+
+            return (options.SequenceEqual(sortedOptions));
+
+        }
+
 
     }
 }

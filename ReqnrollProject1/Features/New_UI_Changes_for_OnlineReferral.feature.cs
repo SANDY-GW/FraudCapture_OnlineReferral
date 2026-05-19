@@ -105,7 +105,7 @@ namespace OnlineReferral_BDD.Features
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/New_UI_Changes_for_OnlineReferral.feature.ndjson", 9);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/New_UI_Changes_for_OnlineReferral.feature.ndjson", 11);
         }
         
         [global::NUnit.Framework.TestAttribute()]
@@ -318,7 +318,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "\"{3}\" on the second User Data Page", amount, detectionDate, incidentStartDate, incidentEndDate), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 25
- await testRunner.ThenAsync("get the Original detection date", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("get the Original detection date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 26
  await testRunner.AndAsync(string.Format("enter state as \"{0}\" and city as \"{1}\" on the second User Data Page", state2, city2), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -419,8 +419,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 61
- await testRunner.ThenAsync("verify Due Date of the activity generated through an Online Referral submission i" +
-                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
+                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 62
  await testRunner.WhenAsync(string.Format("user clicks on Edit button for an existing activity \"{0}\"", activityName), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -432,7 +432,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 65
- await testRunner.ThenAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -737,7 +737,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 133
- await testRunner.ThenAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -1237,7 +1237,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 205
- this.ScenarioInitialize(scenarioInfo, ruleInfo);
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -1283,13 +1283,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "\" on the second User Data Page", detectedAs, summary), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 221
-    await testRunner.WhenAsync("User enters Incident Start Date as \"04/10/2026\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("User enters Incident Start Date as \"04/10/2026\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 222
-    await testRunner.AndAsync("User enters Incident End Date as \"04/05/2026\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("User enters Incident End Date as \"04/05/2026\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 223
-    await testRunner.ThenAsync("Error message \"Date cannot be in the future or Incident End Date cannot be prior " +
+ await testRunner.ThenAsync("Error message \"Date cannot be in the future or Incident End Date cannot be prior " +
                         "to the Incident Start Date\" should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -1394,10 +1394,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "\" on the second User Data Page", detectedAs, summary), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 248
-    await testRunner.WhenAsync("User enters Incident Start Date as \"04/10/2028\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("User enters Incident Start Date as \"04/10/2028\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 249
-    await testRunner.ThenAsync("Error message \"Date cannot be in the future\" should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("Error message \"Date cannot be in the future\" should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -1501,14 +1501,71 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "\" on the second User Data Page", detectedAs, summary), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 275
-    await testRunner.WhenAsync("User enters Incident Start Date as \"04/10/2028\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("User enters Incident Start Date as \"04/10/2028\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 276
-  await testRunner.AndAsync("User enters Incident End Date as \"04/05/2029\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("User enters Incident End Date as \"04/05/2029\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 277
-    await testRunner.ThenAsync("Error message \"Date cannot be in the future or Incident End Date cannot be prior " +
+ await testRunner.ThenAsync("Error message \"Date cannot be in the future or Incident End Date cannot be prior " +
                         "to the Incident Start Date.\" should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("[Submitting Party Information]")]
+        public async global::System.Threading.Tasks.Task SubmittingPartyInformation()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "7";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Submitting Party Information]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 286
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("01_ Validate logo is positioned at top center")]
+        public async global::System.Threading.Tasks.Task _01_ValidateLogoIsPositionedAtTopCenter()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "8";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("01_ Validate logo is positioned at top center", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 288
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 289
+    await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 290
+    await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 291
+    await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
