@@ -182,9 +182,10 @@ Examples:
 
 
 Scenario Outline: [TestMyCode]
-	#Given when I open the Online referral application
-	#And Verify color on all Required Field in the Initial User Data Page
-
+	Given when I open the Online referral application
+	And Verify color on all Required Field in the Initial User Data Page
+	And I enter the "<Address1>","<Address2>","<City>","<State>","<Zipcode>", filled in the Address section yon the Initial User Data Page
+	
 	Given when I open the fraud capture  application
 	When I enter the "<UserEmailID>" on the welcome fraude capture page
 	And I click on the Procced to login button on the welcome fraude capture page
