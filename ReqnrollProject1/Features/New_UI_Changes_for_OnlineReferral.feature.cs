@@ -105,7 +105,7 @@ namespace OnlineReferral_BDD.Features
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/New_UI_Changes_for_OnlineReferral.feature.ndjson", 11);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/New_UI_Changes_for_OnlineReferral.feature.ndjson", 13);
         }
         
         [global::NUnit.Framework.TestAttribute()]
@@ -1188,7 +1188,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
         [global::NUnit.Framework.TestAttribute()]
         [global::NUnit.Framework.DescriptionAttribute("[Verify that the error messages are displayed when Incident end date is prior to " +
             "start date for online referral as a Provider]")]
-        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "4", null)]
+        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
+            " Start Date", "4", null)]
+        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "04/10/2028", "04/05/2029", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
+            " Start Date.", "5", null)]
         public async global::System.Threading.Tasks.Task VerifyThatTheErrorMessagesAreDisplayedWhenIncidentEndDateIsPriorToStartDateForOnlineReferralAsAProvider(
                     string userFirstName, 
                     string userLastName, 
@@ -1208,6 +1211,9 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     string summary, 
                     string amount, 
                     string detectionDate, 
+                    string incidentStartDate, 
+                    string incidentEnd, 
+                    string errorMessage, 
                     string @__pickleIndex, 
                     string[] exampleTags)
         {
@@ -1231,6 +1237,9 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             argumentsOfScenario.Add("summary", summary);
             argumentsOfScenario.Add("amount", amount);
             argumentsOfScenario.Add("detectionDate", detectionDate);
+            argumentsOfScenario.Add("Incident Start Date", incidentStartDate);
+            argumentsOfScenario.Add("Incident End", incidentEnd);
+            argumentsOfScenario.Add("Error message", errorMessage);
             string pickleIndex = @__pickleIndex;
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Verify that the error messages are displayed when Incident end date is prior to " +
                     "start date for online referral as a Provider]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
@@ -1283,14 +1292,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "\" on the second User Data Page", detectedAs, summary), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 221
- await testRunner.WhenAsync("User enters Incident Start Date as \"04/10/2026\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync(string.Format("User enters Incident Start Date as \"{0}\"", incidentStartDate), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 222
- await testRunner.AndAsync("User enters Incident End Date as \"04/05/2026\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync(string.Format("User enters Incident End Date as \"{0}\"", incidentEnd), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 223
- await testRunner.ThenAsync("Error message \"Date cannot be in the future or Incident End Date cannot be prior " +
-                        "to the Incident Start Date\" should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync(string.Format("Error message \"{0}\" should be displayed", errorMessage), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -1299,7 +1307,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
         [global::NUnit.Framework.TestAttribute()]
         [global::NUnit.Framework.DescriptionAttribute("[Verify that the error messages are displayed when Incident start date is prior t" +
             "o end date for online referral as a Provider]")]
-        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "5", null)]
+        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "04/10/2028", "6", null)]
         public async global::System.Threading.Tasks.Task VerifyThatTheErrorMessagesAreDisplayedWhenIncidentStartDateIsPriorToEndDateForOnlineReferralAsAProvider(
                     string userFirstName, 
                     string userLastName, 
@@ -1319,6 +1327,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     string summary, 
                     string amount, 
                     string detectionDate, 
+                    string incidentStartDate, 
                     string @__pickleIndex, 
                     string[] exampleTags)
         {
@@ -1342,12 +1351,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             argumentsOfScenario.Add("summary", summary);
             argumentsOfScenario.Add("amount", amount);
             argumentsOfScenario.Add("detectionDate", detectionDate);
+            argumentsOfScenario.Add("Incident Start Date", incidentStartDate);
             string pickleIndex = @__pickleIndex;
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Verify that the error messages are displayed when Incident start date is prior t" +
                     "o end date for online referral as a Provider]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 231
+#line 232
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1357,46 +1367,46 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 232
+#line 233
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 233
+#line 234
  await testRunner.AndAsync(string.Format("I enter the email as \"{0}\" on the Initial User Data Page", emailAddress), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 234
+#line 235
  await testRunner.AndAsync(string.Format("I enter the userFN as \"{0}\",User lastname as \"{1}\",Org name as \"{2}\",title as \"{3" +
                             "}\"  filled on the Initial User Data Page", userFirstName, userLastName, orgName, title), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 235
+#line 236
  await testRunner.AndAsync(string.Format("I enter the Phone number as \"{0}\" on the Initial User Data Page", phoneNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 236
+#line 237
  await testRunner.AndAsync(string.Format("I enter the \"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\", filled in the Address section yon the " +
                             "Initial User Data Page", address1, address2, city, state, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 237
+#line 238
  await testRunner.ThenAsync("verify the Captcha Email notification", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 239
+#line 240
  await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 242
+#line 243
  await testRunner.AndAsync(string.Format("Referral Type is selected as \"{0}\" on the second User Data Page", referralType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 243
+#line 244
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type as \"{0}\"", involvedPartyType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 244
+#line 245
  await testRunner.ThenAsync(string.Format("enter case or reference number as \"{0}\" on the second User Data Page", caseOrReferenceNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 245
+#line 246
  await testRunner.AndAsync(string.Format("How was this detected as\"{0}\" ,please provide  a Summary of this referral as \"{1}" +
                             "\" on the second User Data Page", detectedAs, summary), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 248
+#line 249
  await testRunner.WhenAsync("User enters Incident Start Date as \"04/10/2028\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 249
+#line 250
  await testRunner.ThenAsync("Error message \"Date cannot be in the future\" should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -1406,7 +1416,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
         [global::NUnit.Framework.TestAttribute()]
         [global::NUnit.Framework.DescriptionAttribute("[Verify that the error messages are displayed when Incident start date and end da" +
             "tes are future dates for online referral as a Provider]")]
-        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "6", null)]
+        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "7", null)]
         public async global::System.Threading.Tasks.Task VerifyThatTheErrorMessagesAreDisplayedWhenIncidentStartDateAndEndDatesAreFutureDatesForOnlineReferralAsAProvider(
                     string userFirstName, 
                     string userLastName, 
@@ -1454,7 +1464,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "tes are future dates for online referral as a Provider]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 258
+#line 259
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1464,49 +1474,49 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 259
+#line 260
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 260
+#line 261
  await testRunner.AndAsync(string.Format("I enter the email as \"{0}\" on the Initial User Data Page", emailAddress), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 261
+#line 262
  await testRunner.AndAsync(string.Format("I enter the userFN as \"{0}\",User lastname as \"{1}\",Org name as \"{2}\",title as \"{3" +
                             "}\"  filled on the Initial User Data Page", userFirstName, userLastName, orgName, title), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 262
+#line 263
  await testRunner.AndAsync(string.Format("I enter the Phone number as \"{0}\" on the Initial User Data Page", phoneNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 263
+#line 264
  await testRunner.AndAsync(string.Format("I enter the \"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\", filled in the Address section yon the " +
                             "Initial User Data Page", address1, address2, city, state, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 264
+#line 265
  await testRunner.ThenAsync("verify the Captcha Email notification", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 266
+#line 267
  await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 269
+#line 270
  await testRunner.AndAsync(string.Format("Referral Type is selected as \"{0}\" on the second User Data Page", referralType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 270
+#line 271
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type as \"{0}\"", involvedPartyType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 271
+#line 272
  await testRunner.ThenAsync(string.Format("enter case or reference number as \"{0}\" on the second User Data Page", caseOrReferenceNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 272
+#line 273
  await testRunner.AndAsync(string.Format("How was this detected as\"{0}\" ,please provide  a Summary of this referral as \"{1}" +
                             "\" on the second User Data Page", detectedAs, summary), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 275
+#line 276
  await testRunner.WhenAsync("User enters Incident Start Date as \"04/10/2028\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 276
+#line 277
  await testRunner.AndAsync("User enters Incident End Date as \"04/05/2029\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 277
+#line 278
  await testRunner.ThenAsync("Error message \"Date cannot be in the future or Incident End Date cannot be prior " +
                         "to the Incident Start Date.\" should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
@@ -1520,11 +1530,11 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
         {
             string[] tagsOfScenario = ((string[])(null));
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            string pickleIndex = "7";
+            string pickleIndex = "8";
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Submitting Party Information]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 286
+#line 287
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1544,11 +1554,11 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
         {
             string[] tagsOfScenario = ((string[])(null));
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            string pickleIndex = "8";
+            string pickleIndex = "9";
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("01_ Validate logo is positioned at top center", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 288
+#line 289
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1558,14 +1568,50 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 289
+#line 290
     await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 290
+#line 291
     await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 291
+#line 292
     await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("02_ Validate that the Required fields indicated in Admin Configuration appear in " +
+            "the portal")]
+        public async global::System.Threading.Tasks.Task _02_ValidateThatTheRequiredFieldsIndicatedInAdminConfigurationAppearInThePortal()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "10";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("02_ Validate that the Required fields indicated in Admin Configuration appear in " +
+                    "the portal", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 294
+ this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 295
+ await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 296
+ await testRunner.WhenAsync("i check the required fields in the \"Submitting Party Information\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 297
+ await testRunner.ThenAsync("the same fields should be displayed as required in the portal with a red asterisk" +
+                        " mark", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

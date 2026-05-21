@@ -32,7 +32,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By emailverification = By.XPath("//div/h4[text()='Email Verification']");
         private readonly By goToPreviousSectionButton = By.XPath("//button[text()='Go to Previous Section']");
         private readonly By proceed_To_Next_SectionButton = By.XPath("//button[text()=' Proceed to Next Section ']");
-        private readonly  By logo = By.XPath("*//img[@title='Header Image']");
+        private readonly By logo = By.XPath("*//img[@title='Header Image']");
 
 
         #endregion
@@ -63,7 +63,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.selectOptionByValue(Driver.FindElement(orgAgencyDropdn), OrgAgency);
 
         }
-        public bool VerifyBGColorOnRequiredFields() 
+        public bool VerifyBGColorOnRequiredFields()
         {
 
             var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
@@ -169,7 +169,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
 
         // Locator (adjust if needed)
-       
+
 
         public IWebElement GetLogo()
         {
@@ -194,7 +194,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             Console.WriteLine("Page Center X: " + pageCenterX);
 
             int logoTopY = logoElement.Location.Y;
-              Console.WriteLine("Logo Top Y: " + logoTopY);
+            Console.WriteLine("Logo Top Y: " + logoTopY);
             // Conditions:
             bool isHorizontallyCentered = Math.Abs(pageCenterX - logoCenterX) <= 20;
             bool isAtTop = logoTopY < 150; // threshold for "top"
@@ -227,9 +227,9 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
 
                     }
-                   
 
-            }
+
+                }
                 return true;
             }
             else
@@ -237,8 +237,9 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
                 Console.WriteLine("No required fields found");
                 return false;
             }
-                
+
 
         }
     }
+}
 
