@@ -324,11 +324,6 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
-        public override bool Equals(object? obj)
-        {
-            return obj is Step_OnlineReferral_FraudCapture_LeadActivity activity &&
-                   EqualityComparer<ScenarioContext>.Default.Equals(_scenarioContext, activity._scenarioContext) &&
-                   EqualityComparer<IWebDriver>.Default.Equals(Driver, activity.Driver);
-        }
+      
     }
 }

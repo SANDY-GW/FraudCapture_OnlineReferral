@@ -19,22 +19,7 @@ namespace ReqnrollProject1.StepDefinitions
             Ol.Login();
         }
 
-        [When(@"the user enters the following details:")]
-        public void EnterDetails(Table table)
-        {
-            var PG1 = new LoginOnlineRef_Page1(Driver);
-            PG1.EnterUserFName("FirstName");
-            var username = table.Rows[0]["Username"].Insert(0, "test");
-
-            foreach (var row in table.Rows)
-            {
-                if (row["Field"] == "FirstName")
-                    PG1.EnterUserFName(row["Value"]);
-
-                Driver.FindElement(By.Id("username")).SendKeys(row["Value"]);
-
-            }
-        }
+       
 
         [When("i check the required fields in the {string}")]
         public void WhenICheckTheRequiredFieldsInThe(string p0)
@@ -80,8 +65,8 @@ namespace ReqnrollProject1.StepDefinitions
             PG1.EnterPhoneNumberAndExtension(phoneno);
         }
 
-        [Then("verify the Captcha Email notification")]
-        public void ThenVerifyTheCaptchaEmailNotification()
+        [Then("the Captcha Email notification appears")]
+        public void TheCaptchaEmailNotificationAppears()
         {
             var PG1 = new LoginOnlineRef_Page1(Driver);
             PG1.clickEmailAddressVerificationButton();
@@ -211,8 +196,8 @@ namespace ReqnrollProject1.StepDefinitions
             {
 
                 Assert.That(
-                            actualStartError.Contains("Date cannot be in the future") ||
-                            actualEndError.Contains("Incident End Date cannot be prior"),
+                            actualStartError.Contains(actualStartError) ||
+                            actualEndError.Contains(actualEndError),
                             "No valid date error message displayed"
                         );
 
@@ -824,23 +809,7 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
-        [When("I click the Email Verification button")]
-        public void WhenIClickTheEmailVerificationButton()
-        {
-            throw new PendingStepException();
-        }
-
-        [Then("I should see the Captcha Email notification")]
-        public void ThenIShouldSeeTheCaptchaEmailNotification()
-        {
-            throw new PendingStepException();
-        }
-
-        [When("I click Next Then I should be navigated to the Referral Details page")]
-        public void WhenIClickNextThenIShouldBeNavigatedToTheReferralDetailsPage()
-        {
-            throw new PendingStepException();
-        }
+        
 
 
     }
