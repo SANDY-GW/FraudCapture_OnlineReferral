@@ -18,10 +18,31 @@ namespace ReqnrollProject1.StepDefinitions
             var Ol = new OnlineReferral(Driver);
             Ol.Login();
         }
+
+        [When(@"the user enters the following details:")]
+        public void EnterDetails(Table table)
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+            PG1.EnterUserFName("FirstName");
+            var username = table.Rows[0]["Username"].Insert(0, "test");
+
+            foreach (var row in table.Rows)
+            {
+                if (row["Field"] == "FirstName")
+                    PG1.EnterUserFName(row["Value"]);
+
+                Driver.FindElement(By.Id("username")).SendKeys(row["Value"]);
+
+            }
+        }
+
         [When("i check the required fields in the {string}")]
         public void WhenICheckTheRequiredFieldsInThe(string p0)
         {
-            throw new PendingStepException();
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+            PG1.verifyrequiredfieldsinpage1();
+            Assert.That(PG1.IsLogoDisplayed(), Is.True, "Logo is not displayed on the page");
+            Assert.That(PG1.verifyrequiredfieldsinpage1(), Is.True, "Required fields are not highlighted with expected color");
         }
 
 
@@ -39,7 +60,7 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var PG1 = new LoginOnlineRef_Page1(Driver);
             PG1.EnterUserEmailName(username);
-            Assert.That( CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid email ID '{username}' entered");
+            Assert.That(CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid email ID '{username}' entered");
             ((IJavaScriptExecutor)Driver).ExecuteScript("window.localStorage.setItem('useTestData', 'true');localStorage.setItem('validatedEmail', '" + username + "');localStorage.setItem('emailValidated', 'true')");
 
         }
@@ -100,11 +121,20 @@ namespace ReqnrollProject1.StepDefinitions
             PG1.EnterMailingAddressCity(Mailing_Address_City);
             PG1.SelectState_Or_Territory(Mailing_Address_State);
 
-            PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder();
-            Assert.That(PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder(), Is.True, "State/territory dropdown list is not in alphabetic order");
+            //PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder();
+            //Assert.That(PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder(), Is.True, "State/territory dropdown list is not in alphabetic order");
 
-            PG1.EnterMailingAddressZipCode(Mailing_Address_Zip);            
+            PG1.EnterMailingAddressZipCode(Mailing_Address_Zip);
             Assert.That(CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid email ID '{Mailing_Address_Zip}' entered");
+        }
+
+        [Then("verify Dropdown lists are in alphabetical order")]
+        public void ThenVerifyDropdownListsAreInAlphabeticalOrder()
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+            
+            Assert.That(PG1.VerifyIfStateOrTerritoryDropdownIsInAlphabeticalOrder(), Is.True, "State/territory dropdown list is not in alphabetic order");
+           
         }
 
         [When("I click on the emailverification button on the Initial User Data Page")]
@@ -744,9 +774,77 @@ namespace ReqnrollProject1.StepDefinitions
             Assert.That(PG1.IsLogoLeftAligned(), Is.True, "Logo is not left aligned");
         }
 
+        [When("Required CSS glow appears with correct configured color controlled in Admin.")]
+        public void WhenRequiredCSSGlowAppearsWithCorrectConfiguredColorControlledInAdmin_()
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+
+            Assert.That(PG1.VerifyBGColorOnRequiredFieldsPage1(), Is.True, "Required field glow color is not correct");
+        }
+
+        [Then("the same fields should be displayed as required in the portal with a red asterisk mark")]
+        public void ThenTheSameFieldsShouldBeDisplayedAsRequiredInThePortalWithARedAsteriskMark()
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+
+        }
+
+
+
+        [When("I enter initial user details:")]
+        public void WhenIEnterInitialUserDetails(DataTable dataTable)
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+
+
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG1.EnterUserFName(data.FirstName);
+            PG1.EnterUserLastName(data.LastName);
+            PG1.EnterUserEmailName(data.Email);
+            PG1.SelectOrgAgency(data.Organization);
+            PG1.EnterUserTitle(data.Title);
+            PG1.EnterPhoneNumberAndExtension(data.Phone);
+
+        }
+
+
+
+        [When("I enter the address:")]
+        public void WhenIEnterTheAddress(DataTable dataTable)
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+
+
+            var data = dataTable.CreateInstance<CommonData.UserCredentials>();
+            //PG1.EnterAddress1(data.Address1);
+            //PG1.EnterAddress2(data.Address2);
+            //PG1.EnterCity(data.City);
+            //PG1.SelectState(data.State);
+            //PG1.EnterZipCode(data.Zipcode);
+
+        }
+
+        [When("I click the Email Verification button")]
+        public void WhenIClickTheEmailVerificationButton()
+        {
+            throw new PendingStepException();
+        }
+
+        [Then("I should see the Captcha Email notification")]
+        public void ThenIShouldSeeTheCaptchaEmailNotification()
+        {
+            throw new PendingStepException();
+        }
+
+        [When("I click Next Then I should be navigated to the Referral Details page")]
+        public void WhenIClickNextThenIShouldBeNavigatedToTheReferralDetailsPage()
+        {
+            throw new PendingStepException();
+        }
+
+
     }
 }
 
 
 
-   

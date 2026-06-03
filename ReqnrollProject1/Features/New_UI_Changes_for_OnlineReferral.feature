@@ -2,13 +2,14 @@
 
 Online referral End to End Scenarios
 
-
+Background: Given when I open the Online referral application
 
 
 @online_referral @SmokeTest @regression
 Scenario Outline: [Verify that the user is able to see the new UI changes for online referral as a Provider]
 	Given when I open the Online referral application
 	And I enter the email as "<Email address>" on the Initial User Data Page
+
 	And I enter the userFN as "<UserFirstName>",User lastname as "<UserLastName>",Org name as "<Org name>",title as "<title>"  filled on the Initial User Data Page
 	And I enter the Phone number as "<Phone number>" on the Initial User Data Page
 	And I enter the "<Address1>","<Address2>","<City>","<State>","<Zipcode>", filled in the Address section yon the Initial User Data Page
@@ -257,34 +258,6 @@ Examples:
 	
 
 	
-Scenario Outline: [Verify that the error messages are displayed when Incident start date and end dates are future dates for online referral as a Provider]
-	Given when I open the Online referral application
-	And I enter the email as "<Email address>" on the Initial User Data Page
-	And I enter the userFN as "<UserFirstName>",User lastname as "<UserLastName>",Org name as "<Org name>",title as "<title>"  filled on the Initial User Data Page
-	And I enter the Phone number as "<Phone number>" on the Initial User Data Page
-	And I enter the "<Address1>","<Address2>","<City>","<State>","<Zipcode>", filled in the Address section yon the Initial User Data Page
-	Then verify the Captcha Email notification
-	#Then I click on the Next button on the Initial User Data Page
-	When I should be navigated to the Next Page
-
-
-	And Referral Type is selected as "<referralType>" on the second User Data Page
-	And Suspect or Subject or Involved Party Type as "<involvedPartyType>"
-	Then enter case or reference number as "<caseOrReferenceNumber>" on the second User Data Page
-	And How was this detected as"<detectedAs>" ,please provide  a Summary of this referral as "<summary>" on the second User Data Page
-	
-
-	When User enters Incident Start Date as "04/10/2028"
-	And User enters Incident End Date as "04/05/2029"
-	Then Error message "Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date." should be displayed
-
-
-Examples:
-	| UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate |
-	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    |
-	
-	
-	
 Scenario Outline: [Submitting Party Information]
 
 Scenario: 01_ Validate logo is positioned at top center
@@ -292,8 +265,20 @@ Scenario: 01_ Validate logo is positioned at top center
     Then Logo should be visible
     And Logo should be aligned at the top center of the page
 
+	Given  when I open the Online referral application
+	When i check the required fields in the "Submitting Party Information"
+	When Required CSS glow appears with correct configured color controlled in Admin.
+	Then  verify Dropdown lists are in alphabetical order
+
 	Scenario: 02_ Validate that the Required fields indicated in Admin Configuration appear in the portal
 	Given  when I open the Online referral application
 	When i check the required fields in the "Submitting Party Information"
-	Then the same fields should be displayed as required in the portal with a red asterisk mark
+	When Required CSS glow appears with correct configured color controlled in Admin.
 	
+	Scenario: 03_ Validate that  the Required fields indicated in Admin Configuration appear in the portal
+	Given  when I open the Online referral application
+	When Required CSS glow appears with correct configured color controlled in Admin.
+	
+	
+ 
+

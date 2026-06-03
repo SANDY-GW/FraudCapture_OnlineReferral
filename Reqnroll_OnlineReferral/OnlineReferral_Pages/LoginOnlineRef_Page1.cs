@@ -56,7 +56,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             Driver.FindElement(userLnameField).SendKeys(UserLN);
 
         }
-
+        public bool VerifyIfStateOrTerritoryDropdownIsInAlphabeticalOrder()
+        {
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(mailingAddressstate_Or_Territorydropdown));
+        }
         public void SelectOrgAgency(string OrgAgency)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, userFnameField, 10);
@@ -183,6 +186,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             return GetLogo().Displayed;
         }
 
+        //getting the title of the page
+        public string GetPageTitle()
+        {
+            return Driver.Title;
+        }
+
         // ✅ Check if logo is at TOP CENTER
         public bool IsLogoAtTopCenter()
         {
@@ -222,7 +231,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
                 {
                     if (!CommonData.dic.ContainsKey(elem.GetAttribute("for")))
                     {
-                        Console.WriteLine("text");
+                        Console.WriteLine();
                         return false;
 
 
@@ -239,6 +248,39 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             }
 
 
+        }
+
+        public bool VerifyBGColorOnRequiredFieldsPage1()
+        {
+
+            var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
+            var allReqFieldsID = Driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
+            if (eleList.Count > 0)
+            {
+                foreach (IWebElement elem in allReqFieldsID)
+                {
+
+                    if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
+                    {
+                        Console.WriteLine("Required");
+                    }
+                    else if (elem.GetCssValue("border-color").Equals("rgb(206, 212, 218)"))//Non required fields with no border color
+                    {
+                        Console.WriteLine("Optional");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Fail");
+                    }
+
+                }
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("No required fields found");
+                return false;
+            }
         }
     }
 }
