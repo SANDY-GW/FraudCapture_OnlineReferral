@@ -46,7 +46,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.Reports.RankingRe
         {
             Driver.FindElement(RankingReportsClear).Click();
         }
-        public void ClickReportTilte()
+        public void ClickReportTitle()
         {
             Driver.FindElement(ReportTitle).Click();
         }

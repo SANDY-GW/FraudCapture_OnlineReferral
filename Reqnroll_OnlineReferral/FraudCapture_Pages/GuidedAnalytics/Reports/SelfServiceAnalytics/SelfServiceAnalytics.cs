@@ -57,11 +57,11 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.Reports.SelfServi
         {
             Driver.FindElement(SelfServiceAnalyticsSearchTextbox).SendKeys(searchTextboxValue);
         }
-        public void ClickClaimReportsSearch()
+        public void ClickSelfServiceAnalyticsSearch()
         {
             Driver.FindElement(SelfServiceAnalyticsSearch).Click();
         }
-        public void ClickClaimReportsClear()
+        public void ClickSelfServiceAnalyticsClear()
         {
             Driver.FindElement(SelfServiceAnalyticsClear).Click();
         }

@@ -37,15 +37,15 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.Reports.PeerGroup
         {
             Driver.FindElement(PeerGroupReportsSearchTextbox).SendKeys(searchTextboxValue);
         }
-        public void ClickClaimReportsSearch()
+        public void ClickPeerGroupReportsSearch()
         {
             Driver.FindElement(PeerGroupReportsSearch).Click();
         }
-        public void ClickClaimReportsClear()
+        public void ClickPeerGroupReportsClear()
         {
             Driver.FindElement(PeerGroupReportsClear).Click();
         }
-        public void ClickReportTilte()
+        public void ClickReportTitle()
         {
             Driver.FindElement(ReportTitle).Click();
         }

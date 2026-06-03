@@ -45,7 +45,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.Reports.CostRepor
         {
             Driver.FindElement(CostReportsClear).Click();
         }
-        public void ClickReportTilte()
+        public void ClickReportTitle()
         {
             Driver.FindElement(ReportTitle).Click();
         }
