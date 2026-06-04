@@ -1,5 +1,6 @@
-﻿using OpenQA.Selenium.Support.UI;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -255,6 +256,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
             var allReqFieldsID = Driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
+            bool bgcolormatch = true;
             if (eleList.Count > 0)
             {
                 foreach (IWebElement elem in allReqFieldsID)
@@ -262,25 +264,30 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
                     if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
                     {
-                        Console.WriteLine("Required");
+                        TestContext.Out.WriteLine(elem.GetAttribute("id") + ": Required field with expected green border color");
+
+
                     }
                     else if (elem.GetCssValue("border-color").Equals("rgb(206, 212, 218)"))//Non required fields with no border color
                     {
-                        Console.WriteLine("Optional");
+                        Assert.Warn(elem.GetAttribute("id") + ":Optional field with no border color");
+                        bgcolormatch = false;
                     }
                     else
                     {
-                        Console.WriteLine("Fail");
+                        Assert.Warn("Fail: Required field does not have the expected green border color or non-required field does not have the expected no border color");
+                        bgcolormatch = false;
                     }
 
                 }
-                return true;
+                return bgcolormatch;
             }
             else
             {
-                Console.WriteLine("No required fields found");
+
                 return false;
             }
+
         }
     }
 }

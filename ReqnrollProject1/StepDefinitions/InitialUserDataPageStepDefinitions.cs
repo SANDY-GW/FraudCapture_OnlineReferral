@@ -181,28 +181,27 @@ namespace ReqnrollProject1.StepDefinitions
             PG2.EnterIncidentEndDate(p0);
         }
 
-        [Then("Error message {string} should be displayed")]
-        public void ThenErrorMessageShouldBeDisplayed(string expectedMessage)
+       
+        [Then("validate {string} should be displayed")]
+        public void ThenValidateShouldBeDisplayed(string p0, DataTable dataTable)
         {
             var PG2 = new OnlineReferral_Referral_Page2(Driver);
 
-            string actualStartError = PG2.GetErrorMessage();
-            string actualEndError = PG2.GetErrorMessageStartDate();
 
-            Console.WriteLine($"Start error: {actualStartError}");
-            Console.WriteLine($"End   error: {actualEndError}");
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            string actualEndError = PG2.GetErrorMessage();
 
-            Assert.Multiple((Action)(() =>
-            {
+            string actualstartError = PG2.GetErrorMessageStartDate();
 
-                Assert.That(
-                            actualStartError.Contains(actualStartError) ||
-                            actualEndError.Contains(actualEndError),
-                            "No valid date error message displayed"
-                        );
 
-            }));
+
+
+            Assert.That(actualEndError.Contains(data.errormessage) || actualstartError.Contains(data.errormessage)
+                        , "No valid date error message displayed");
+
+
         }
+
 
 
 

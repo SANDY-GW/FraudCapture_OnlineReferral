@@ -1219,7 +1219,7 @@ await this.FeatureBackgroundAsync();
         [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
             " Start Date", "4", null)]
         [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "04/10/2028", "04/05/2029", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
-            " Start Date.", "5", null)]
+            " Start Date", "5", null)]
         public async global::System.Threading.Tasks.Task VerifyThatTheErrorMessagesAreDisplayedWhenIncidentEndDateIsPriorToStartDateForOnlineReferralAsAProvider(
                     string userFirstName, 
                     string userLastName, 
@@ -1304,7 +1304,7 @@ await this.FeatureBackgroundAsync();
                             "Initial User Data Page", address1, address2, city, state, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 213
- await testRunner.ThenAsync("verify the Captcha Email notification", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("the Captcha Email notification appears", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
 #line 214
  await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -1328,8 +1328,12 @@ await this.FeatureBackgroundAsync();
 #line 224
  await testRunner.AndAsync(string.Format("User enters Incident End Date as \"{0}\"", incidentEnd), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
+                global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
+                            "error message"});
+                table1.AddRow(new string[] {
+                            string.Format("{0}", errorMessage)});
 #line 225
- await testRunner.ThenAsync(string.Format("Error message \"{0}\" should be displayed", errorMessage), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync(string.Format("validate \"{0}\" should be displayed", errorMessage), ((string)(null)), table1, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
