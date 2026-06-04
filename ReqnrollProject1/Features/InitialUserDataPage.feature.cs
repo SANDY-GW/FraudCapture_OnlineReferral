@@ -105,7 +105,7 @@ namespace OnlineReferral_BDD.Features
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/InitialUserDataPage.feature.ndjson", 4);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/InitialUserDataPage.feature.ndjson", 3);
         }
         
         [global::NUnit.Framework.TestAttribute()]
@@ -427,47 +427,6 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
 #line 72
  await testRunner.ThenAsync("I should be navigated to Lead Activities  Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("[Enter fraudcapture user data]")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "1", null)]
-        public async global::System.Threading.Tasks.Task EnterFraudcaptureUserData(string userEmailID, string @__pickleIndex, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("UserEmailID", userEmailID);
-            string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Enter fraudcapture user data]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 84
-this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 85
- await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 86
- await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page", userEmailID), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 87
- await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 88
- await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 96
- await testRunner.ThenAsync("I should be navigated to Quick Search Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

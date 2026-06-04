@@ -103,9 +103,15 @@ namespace OnlineReferral_BDD.Features
             await testRunner.CollectScenarioErrorsAsync();
         }
         
+        public virtual async global::System.Threading.Tasks.Task FeatureBackgroundAsync()
+        {
+#line 5
+#line hidden
+        }
+        
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/New_UI_Changes_for_OnlineReferral.feature.ndjson", 6);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/New_UI_Changes_for_OnlineReferral.feature.ndjson", 13);
         }
         
         [global::NUnit.Framework.TestAttribute()]
@@ -114,8 +120,8 @@ namespace OnlineReferral_BDD.Features
         [global::NUnit.Framework.CategoryAttribute("online_referral")]
         [global::NUnit.Framework.CategoryAttribute("SmokeTest")]
         [global::NUnit.Framework.CategoryAttribute("regression")]
-        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "TX", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "TX", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "Sandeep.Krishnan@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "0", null)]
+        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "0", null)]
         public async global::System.Threading.Tasks.Task VerifyThatTheUserIsAbleToSeeTheNewUIChangesForOnlineReferralAsAProvider(
                     string userFirstName, 
                     string userLastName, 
@@ -277,137 +283,165 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
+#line 5
+await this.FeatureBackgroundAsync();
+#line hidden
 #line 10
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 11
  await testRunner.AndAsync(string.Format("I enter the email as \"{0}\" on the Initial User Data Page", emailAddress), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 12
+#line 13
  await testRunner.AndAsync(string.Format("I enter the userFN as \"{0}\",User lastname as \"{1}\",Org name as \"{2}\",title as \"{3" +
                             "}\"  filled on the Initial User Data Page", userFirstName, userLastName, orgName, title), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 14
  await testRunner.AndAsync(string.Format("I enter the Phone number as \"{0}\" on the Initial User Data Page", phoneNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 15
  await testRunner.AndAsync(string.Format("I enter the \"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\", filled in the Address section yon the " +
                             "Initial User Data Page", address1, address2, city, state, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 15
- await testRunner.WhenAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
 #line 16
- await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.ThenAsync("verify the Captcha Email notification", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
 #line 18
- await testRunner.AndAsync(string.Format("Referral Type is selected as \"{0}\" on the second User Data Page", referralType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 19
- await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type as \"{0}\"", involvedPartyType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 20
- await testRunner.ThenAsync(string.Format("enter case or reference number as \"{0}\" on the second User Data Page", caseOrReferenceNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 21
+ await testRunner.AndAsync(string.Format("Referral Type is selected as \"{0}\" on the second User Data Page", referralType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 22
+ await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type as \"{0}\"", involvedPartyType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 23
+ await testRunner.ThenAsync(string.Format("enter case or reference number as \"{0}\" on the second User Data Page", caseOrReferenceNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 24
  await testRunner.AndAsync(string.Format("How was this detected as\"{0}\" ,please provide  a Summary of this referral as \"{1}" +
                             "\" on the second User Data Page", detectedAs, summary), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 22
+#line 25
  await testRunner.AndAsync(string.Format("enter Amount \"{0}\",detectiondate \"{1}\", incidentStartDate \"{2}\", incidentEndDate " +
                             "\"{3}\" on the second User Data Page", amount, detectionDate, incidentStartDate, incidentEndDate), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 23
- await testRunner.AndAsync(string.Format("enter state as \"{0}\" and city as \"{1}\" on the second User Data Page", state2, city2), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 24
- await testRunner.WhenAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 25
- await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 26
+ await testRunner.AndAsync("get the Original detection date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 27
- await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected as \"{0}\" on the third User Data Page", witnessDropdown), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync(string.Format("enter state as \"{0}\" and city as \"{1}\" on the second User Data Page", state2, city2), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 28
+ await testRunner.AndAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 29
+ await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 31
+ await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected as \"{0}\" on the third User Data Page", witnessDropdown), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 32
  await testRunner.AndAsync(string.Format("enter InvolvedParty orgname as \"{0}\", name prefix as \"{1}\", associated party firs" +
                             "t name as \"{2}\",associated party middle name as \"{3}\", associated party last nam" +
                             "e as \"{4}\" and name suffix as \"{5}\" on the fourth User Data Page", orgname, namePrefix, firstName, middleName, lastName, nameSuffix), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 33
  await testRunner.AndAsync(string.Format("enter InvolvedParty Designation as \"{0}\",DOB as \"{1}\", SSN as \"{2}\", licenseNumbe" +
                             "r as \"{3}\", How witness or external party reported this as \"{4}\",any additional " +
                             "info as \"{5}\" ID Test as \"{6}\"", designation, dOB, sSN, licenseNumber, involvedPartyType, detectedAs, iDTest), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 30
+#line 34
  await testRunner.AndAsync(string.Format("enter InvolvedParty NPI as \"{0}\", TIN as \"{1}\",medicaid ID as \"{2}\",Medicare ID a" +
                             "s \"{3}\", otherID as \"{4}\" on the fourth User Data Page", nPI, tIN, medicaidID, medicareID, otherID), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 31
+#line 35
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type as \"{0}\", provider specialty as \"{1}\",Taxonomy " +
                             "as \"{2}\" and other as \"{3}\" on the fourth User Data Page", providerType, providerSpecialty, taxonomy, other), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 32
+#line 36
  await testRunner.AndAsync(string.Format("InvolvedParty street_Address_lineone as \"{0}\", street_Address_linetwo as \"{1}\", c" +
                             "ity as ,\"{2}\", state as \"{3}\" , county as \"{4}\" and zip code as \"{5}\"", address1, address2, city, associatedstate, city2, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 33
+#line 37
  await testRunner.AndAsync(string.Format("InvolvedParty country as \"{0}\",  phone number as \"{1}\", fax as \"{2}\" and email ad" +
                             "dress as \"{3}\"", country, phoneNumber, fax, emailAddress), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 34
+#line 38
  await testRunner.AndAsync("I click on the Next button on the third User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 35
+#line 39
  await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 37
+#line 41
  await testRunner.AndAsync(string.Format("is there anotherinvolved party dropdown is selected as \"{0}\" on the fourth User D" +
                             "ata Page", isThereAnyInvolvedPartyDropdown), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 44
  await testRunner.AndAsync(string.Format("Questionone Is this a resubmission as \"{0}\"", question1), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 41
+#line 45
  await testRunner.AndAsync(string.Format("Questiontwo as \"Question2\", QuestionThree as \"{0}\"", question3), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 46
  await testRunner.AndAsync(string.Format("then uploading a file using file path as \"{0}\"", testFile), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 43
+#line 47
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 45
+#line 49
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 46
+#line 50
  await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page", userEmailID), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 47
+#line 51
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 48
+#line 52
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 49
+#line 53
  await testRunner.AndAsync("I select the payor as \"DEMO\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 50
+#line 54
  await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
                         "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 51
+#line 55
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 52
+#line 56
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 53
- await testRunner.AndAsync(string.Format("I click on the Activities and selected lead activity name as \"{0}\" on the fraud c" +
-                            "apture Lead detials Page", activityName), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 57
+ await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 54
- await testRunner.ThenAsync("I should be navigated to Lead Activities  Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 59
+ await testRunner.AndAsync(string.Format("click on Activities tab and serach for the activity \"{0}\" created through onliner" +
+                            "eferral", activityName), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 60
+ await testRunner.ThenAsync(string.Format("the searched activity should be displayed in the activity list \"{0}\"", activityName), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 61
+ await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 62
+ await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
+                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 63
+ await testRunner.WhenAsync(string.Format("user clicks on Edit button for an existing activity \"{0}\"", activityName), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 64
+ await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 65
+ await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 66
+ await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -416,9 +450,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
         [global::NUnit.Framework.TestAttribute()]
         [global::NUnit.Framework.DescriptionAttribute("[Verify that the user is able to see the new UI changes for online referral as a " +
             "Member]")]
-        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "jayapradha.d@gainwelltechnologies.com", "9999999999", "Referring Source 1", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "TX", "75035", "Referral Type 1 - w/ Distribution Email", "QA_Automation_Member", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "TX", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "FN", "MN", "LN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "C:/Users/jd/SourceQaDevelopment/Repos/FraudCapture_OnlineReferral/ReqnrollProject" +
-            "1/Attachments/TestFile.txt", "No", "Female", "1", null)]
+        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Recipient w/ req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "UserFN", "UserLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "1", null)]
         public async global::System.Threading.Tasks.Task VerifyThatTheUserIsAbleToSeeTheNewUIChangesForOnlineReferralAsAMember(
                     string userFirstName, 
                     string userLastName, 
@@ -484,7 +517,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     string associatedstate, 
                     string testFile, 
                     string isThereAnyInvolvedPartyDropdown, 
-                    string gender, 
+                    string userEmailID, 
+                    string activityName, 
                     string @__pickleIndex, 
                     string[] exampleTags)
         {
@@ -554,13 +588,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             argumentsOfScenario.Add("associatedstate", associatedstate);
             argumentsOfScenario.Add("TestFile", testFile);
             argumentsOfScenario.Add("Is there any Involved Party Dropdown", isThereAnyInvolvedPartyDropdown);
-            argumentsOfScenario.Add("Gender", gender);
+            argumentsOfScenario.Add("UserEmailID", userEmailID);
+            argumentsOfScenario.Add("ActivityName", activityName);
             string pickleIndex = @__pickleIndex;
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Verify that the user is able to see the new UI changes for online referral as a " +
                     "Member]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 69
+#line 83
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -570,102 +605,151 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 70
+#line 5
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 84
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 71
+#line 85
  await testRunner.AndAsync(string.Format("I enter the email as \"{0}\" on the Initial User Data Page", emailAddress), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 72
+#line 86
  await testRunner.AndAsync(string.Format("I enter the userFN as \"{0}\",User lastname as \"{1}\",Org name as \"{2}\",title as \"{3" +
                             "}\"  filled on the Initial User Data Page", userFirstName, userLastName, orgName, title), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 73
+#line 87
  await testRunner.AndAsync(string.Format("I enter the Phone number as \"{0}\" on the Initial User Data Page", phoneNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 74
+#line 88
  await testRunner.AndAsync(string.Format("I enter the \"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\", filled in the Address section yon the " +
                             "Initial User Data Page", address1, address2, city, state, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 75
- await testRunner.WhenAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line 89
+ await testRunner.ThenAsync("verify the Captcha Email notification", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 76
- await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 91
+ await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 78
+#line 93
  await testRunner.AndAsync(string.Format("Referral Type is selected as \"{0}\" on the second User Data Page", referralType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 79
+#line 94
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type as \"{0}\"", involvedPartyType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 80
+#line 95
  await testRunner.ThenAsync(string.Format("enter case or reference number as \"{0}\" on the second User Data Page", caseOrReferenceNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 81
+#line 96
  await testRunner.AndAsync(string.Format("How was this detected as\"{0}\" ,please provide  a Summary of this referral as \"{1}" +
                             "\" on the second User Data Page", detectedAs, summary), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 82
+#line 97
  await testRunner.AndAsync(string.Format("enter Amount \"{0}\",detectiondate \"{1}\", incidentStartDate \"{2}\", incidentEndDate " +
                             "\"{3}\" on the second User Data Page", amount, detectionDate, incidentStartDate, incidentEndDate), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 83
+#line 98
  await testRunner.AndAsync(string.Format("enter state as \"{0}\" and city as \"{1}\" on the second User Data Page", state2, city2), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 84
- await testRunner.WhenAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line 99
+ await testRunner.AndAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 85
- await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 100
+ await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 87
+#line 102
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected as \"{0}\" on the third User Data Page", witnessDropdown), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 88
- await testRunner.AndAsync(string.Format(@"enter InvolvedParty  name prefix as ""{0}"", associated party first name as ""<associated party first name>"",associated party middle name as ""<associated party middle name>"", associated party last name as ""<associated party last name>"" and name suffix as ""{1}""", namePrefix, nameSuffix), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 103
+ await testRunner.AndAsync(string.Format("enter InvolvedParty  name prefix as \"{0}\", associated party first name as \"{1}\",a" +
+                            "ssociated party middle name as \"{2}\", associated party last name as \"{3}\" and na" +
+                            "me suffix as \"{4}\"", namePrefix, firstName, middleName, lastName, nameSuffix), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 89
- await testRunner.AndAsync(string.Format("enter InvolvedParty DOB as \"{0}\", Gender as \"{1}\", other as \"{2}\", How witness or" +
-                            " external party reported this as \"{3}\",any additional info as \"{4}\"", dOB, gender, other, involvedPartyType, detectedAs), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 104
+ await testRunner.AndAsync(string.Format("enter InvolvedParty DOB as \"{0}\", Gender as \"<Gender>\", other as \"{1}\", How witne" +
+                            "ss or external party reported this as \"{2}\",any additional info as \"{3}\"", dOB, other, involvedPartyType, detectedAs), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 90
+#line 105
  await testRunner.AndAsync(string.Format("enter InvolvedParty ID as \"{0}\",ssn as \"{1}\" medicaid ID as \"{0}\",Medicare ID as " +
                             "\"{2}\", otherID as \"{3}\"", medicaidID, sSN, medicareID, otherID), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 91
+#line 106
  await testRunner.AndAsync("enter InvolvedParty plan as \"Test\", Program  as \"Program\",LOB as \"LOB1\" and Group" +
                         " as \"Group1\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 92
+#line 107
  await testRunner.AndAsync(string.Format("InvolvedParty member street_Address_lineone as \"{0}\", street_Address_linetwo as \"" +
                             "{1}\", city as ,\"{2}\", state as \"{3}\" , county as \"{4}\" and zip code as \"{5}\"", address1, address2, city, associatedstate, city2, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 93
+#line 108
  await testRunner.AndAsync(string.Format("InvolvedParty Primary phoneNo as \"{0}\",  Secondary phone number as \"{0}\" and emai" +
                             "l address as \"jayapradha.d@gainwelltechnologies.com\"", phoneNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 94
+#line 109
  await testRunner.AndAsync("I click on the Next button on the third User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 95
+#line 110
  await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 97
+#line 112
  await testRunner.AndAsync(string.Format("is there anotherinvolved party dropdown is selected as \"{0}\" on the fourth User D" +
                             "ata Page", isThereAnyInvolvedPartyDropdown), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 100
+#line 115
  await testRunner.AndAsync(string.Format("Questionone Is this a resubmission as \"{0}\"", question1), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 101
+#line 116
  await testRunner.AndAsync(string.Format("Questiontwo as \"Question2\", QuestionThree as \"{0}\"", question3), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 102
+#line 117
  await testRunner.AndAsync(string.Format("then uploading a file using file path as \"{0}\"", testFile), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 103
+#line 118
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 120
+ await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 121
+ await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page", userEmailID), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 122
+ await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 123
+ await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 124
+ await testRunner.AndAsync("I select the payor as \"DEMO\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 125
+ await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
+                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 126
+ await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 127
+ await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 129
+ await testRunner.AndAsync(string.Format("click on Activities tab and serach for the activity \"{0}\" created through onliner" +
+                            "eferral", activityName), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 130
+ await testRunner.ThenAsync(string.Format("the searched activity should be displayed in the activity list \"{0}\"", activityName), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 131
+ await testRunner.WhenAsync(string.Format("user clicks on Edit button for an existing activity \"{0}\"", activityName), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 132
+ await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 133
+ await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 134
+ await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -816,7 +900,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "Non Enumerated Provider]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 113
+#line 143
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -826,95 +910,98 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 114
+#line 5
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 144
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 115
+#line 145
  await testRunner.AndAsync(string.Format("I enter the email as \"{0}\" on the Initial User Data Page", emailAddress), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 116
+#line 146
  await testRunner.AndAsync(string.Format("I enter the userFN as \"{0}\",User lastname as \"{1}\",Org name as \"{2}\",title as \"{3" +
                             "}\"  filled on the Initial User Data Page", userFirstName, userLastName, orgName, title), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 117
+#line 147
  await testRunner.AndAsync(string.Format("I enter the Phone number as \"{0}\" on the Initial User Data Page", phoneNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 118
+#line 148
  await testRunner.AndAsync(string.Format("I enter the \"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\", filled in the Address section yon the " +
                             "Initial User Data Page", address1, address2, city, state, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 119
+#line 149
  await testRunner.WhenAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 120
+#line 150
  await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 122
+#line 152
  await testRunner.AndAsync(string.Format("Referral Type is selected as \"{0}\" on the second User Data Page", referralType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 123
+#line 153
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type as \"{0}\"", involvedPartyType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 124
+#line 154
  await testRunner.ThenAsync(string.Format("enter case or reference number as \"{0}\" on the second User Data Page", caseOrReferenceNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 125
+#line 155
  await testRunner.AndAsync(string.Format("How was this detected as\"{0}\" ,please provide  a Summary of this referral as \"{1}" +
                             "\" on the second User Data Page", detectedAs, summary), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 126
+#line 156
  await testRunner.AndAsync(string.Format("enter Amount \"{0}\",detectiondate \"{1}\", incidentStartDate \"{2}\", incidentEndDate " +
                             "\"{3}\" on the second User Data Page", amount, detectionDate, incidentStartDate, incidentEndDate), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 127
+#line 157
  await testRunner.AndAsync(string.Format("enter state as \"{0}\" and city as \"{1}\" on the second User Data Page", state2, city2), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 128
+#line 158
  await testRunner.WhenAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 129
+#line 159
  await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 131
+#line 161
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected as \"{0}\" on the third User Data Page", witnessDropdown), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 132
+#line 162
  await testRunner.AndAsync(string.Format(@"enter InvolvedParty Non-Enumertaed Provider orgname as ""<associated orgname>"", name prefix as ""{0}"", associated party first name as ""<associated party first name>"",associated party middle name as ""<associated party middle name>"", associated party last name as ""<associated party last name>"" and name suffix as ""{1}"" on the fourth User Data Page", namePrefix, nameSuffix), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 133
+#line 163
  await testRunner.AndAsync(string.Format("enter InvolvedParty Designation as \"{0}\" ,DOB as \"{1}\", SSN as \"{2}\", How witness" +
                             " or external party reported this as \"{3}\",any additional info as \"{4}\" licenseNu" +
                             "mber as \"{5}\",other ID as \"{6}\",other as \"{7}\"", designation, dOB, sSN, involvedPartyType, detectedAs, licenseNumber, otherID, other), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 134
+#line 164
  await testRunner.AndAsync(string.Format("enter primary phone number as \"{0}\",secondary phone number as \"{0}\", fax as \"{1}\"" +
                             " and email address as \"{2}\" for the involved party", phoneNumber, fax, emailAddress), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 135
+#line 165
  await testRunner.AndAsync(string.Format("street address line one as \"{0}\", street address line two as \"{1}\", city as \"{2}\"" +
                             ", state as \"{3}\", county as \"{4}\" , zip code as \"{5}\" and country as \"{6}\" for t" +
                             "he involved party", address1, address2, city, associatedstate, city2, zipcode, country), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 136
+#line 166
  await testRunner.AndAsync("I click on the Next button on the third User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 137
+#line 167
  await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 139
+#line 169
  await testRunner.AndAsync(string.Format("is there anotherinvolved party dropdown is selected as \"{0}\" on the fourth User D" +
                             "ata Page", isThereAnyInvolvedPartyDropdown), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 142
+#line 172
  await testRunner.AndAsync(string.Format("Questionone Is this a resubmission as \"{0}\"", question1), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 143
+#line 173
  await testRunner.AndAsync(string.Format("Questiontwo as \"Question2\", QuestionThree as \"{0}\"", question3), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 144
+#line 174
  await testRunner.AndAsync(string.Format("then uploading a file using file path as \"{0}\"", testFile), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 145
+#line 175
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -1067,7 +1154,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[TestMyCode]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 155
+#line 185
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1077,47 +1164,432 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 156
+#line 5
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 186
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 157
+#line 187
  await testRunner.AndAsync("Verify color on all Required Field in the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 158
+#line 188
  await testRunner.AndAsync(string.Format("I enter the \"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\", filled in the Address section yon the " +
                             "Initial User Data Page", address1, address2, city, state, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 160
+#line 190
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 161
+#line 191
  await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page", userEmailID), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 162
+#line 192
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 163
+#line 193
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 164
+#line 194
  await testRunner.AndAsync("I select the payor as \"DEMO\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 165
+#line 195
  await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
                         "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 166
+#line 196
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 167
+#line 197
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 168
+#line 198
  await testRunner.AndAsync(string.Format("I click on the Activities and selected lead activity name as \"{0}\" on the fraud c" +
                             "apture Lead detials Page", activityName), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 169
+#line 199
  await testRunner.ThenAsync("I should be navigated to Lead Activities  Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("[Verify that the error messages are displayed when Incident end date is prior to " +
+            "start date for online referral as a Provider]")]
+        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
+            " Start Date", "4", null)]
+        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "04/10/2028", "04/05/2029", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
+            " Start Date.", "5", null)]
+        public async global::System.Threading.Tasks.Task VerifyThatTheErrorMessagesAreDisplayedWhenIncidentEndDateIsPriorToStartDateForOnlineReferralAsAProvider(
+                    string userFirstName, 
+                    string userLastName, 
+                    string emailAddress, 
+                    string phoneNumber, 
+                    string orgName, 
+                    string title, 
+                    string address1, 
+                    string address2, 
+                    string city, 
+                    string state, 
+                    string zipcode, 
+                    string referralType, 
+                    string involvedPartyType, 
+                    string caseOrReferenceNumber, 
+                    string detectedAs, 
+                    string summary, 
+                    string amount, 
+                    string detectionDate, 
+                    string incidentStartDate, 
+                    string incidentEnd, 
+                    string errorMessage, 
+                    string @__pickleIndex, 
+                    string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UserFirstName", userFirstName);
+            argumentsOfScenario.Add("UserLastName", userLastName);
+            argumentsOfScenario.Add("Email address", emailAddress);
+            argumentsOfScenario.Add("Phone number", phoneNumber);
+            argumentsOfScenario.Add("Org name", orgName);
+            argumentsOfScenario.Add("title", title);
+            argumentsOfScenario.Add("Address1", address1);
+            argumentsOfScenario.Add("Address2", address2);
+            argumentsOfScenario.Add("City", city);
+            argumentsOfScenario.Add("State", state);
+            argumentsOfScenario.Add("Zipcode", zipcode);
+            argumentsOfScenario.Add("referralType", referralType);
+            argumentsOfScenario.Add("involvedPartyType", involvedPartyType);
+            argumentsOfScenario.Add("caseOrReferenceNumber", caseOrReferenceNumber);
+            argumentsOfScenario.Add("detectedAs", detectedAs);
+            argumentsOfScenario.Add("summary", summary);
+            argumentsOfScenario.Add("amount", amount);
+            argumentsOfScenario.Add("detectionDate", detectionDate);
+            argumentsOfScenario.Add("Incident Start Date", incidentStartDate);
+            argumentsOfScenario.Add("Incident End", incidentEnd);
+            argumentsOfScenario.Add("Error message", errorMessage);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Verify that the error messages are displayed when Incident end date is prior to " +
+                    "start date for online referral as a Provider]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 207
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 5
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 208
+ await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 209
+ await testRunner.AndAsync(string.Format("I enter the email as \"{0}\" on the Initial User Data Page", emailAddress), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 210
+ await testRunner.AndAsync(string.Format("I enter the userFN as \"{0}\",User lastname as \"{1}\",Org name as \"{2}\",title as \"{3" +
+                            "}\"  filled on the Initial User Data Page", userFirstName, userLastName, orgName, title), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 211
+ await testRunner.AndAsync(string.Format("I enter the Phone number as \"{0}\" on the Initial User Data Page", phoneNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 212
+ await testRunner.AndAsync(string.Format("I enter the \"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\", filled in the Address section yon the " +
+                            "Initial User Data Page", address1, address2, city, state, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 213
+ await testRunner.ThenAsync("verify the Captcha Email notification", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 214
+ await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 217
+ await testRunner.AndAsync(string.Format("Referral Type is selected as \"{0}\" on the second User Data Page", referralType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 218
+ await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type as \"{0}\"", involvedPartyType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 219
+ await testRunner.ThenAsync(string.Format("enter case or reference number as \"{0}\" on the second User Data Page", caseOrReferenceNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 220
+ await testRunner.AndAsync(string.Format("How was this detected as\"{0}\" ,please provide  a Summary of this referral as \"{1}" +
+                            "\" on the second User Data Page", detectedAs, summary), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 223
+ await testRunner.WhenAsync(string.Format("User enters Incident Start Date as \"{0}\"", incidentStartDate), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 224
+ await testRunner.AndAsync(string.Format("User enters Incident End Date as \"{0}\"", incidentEnd), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 225
+ await testRunner.ThenAsync(string.Format("Error message \"{0}\" should be displayed", errorMessage), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("[Verify that the error messages are displayed when Incident start date is prior t" +
+            "o end date for online referral as a Provider]")]
+        [global::NUnit.Framework.TestCaseAttribute("UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "04/10/2028", "6", null)]
+        public async global::System.Threading.Tasks.Task VerifyThatTheErrorMessagesAreDisplayedWhenIncidentStartDateIsPriorToEndDateForOnlineReferralAsAProvider(
+                    string userFirstName, 
+                    string userLastName, 
+                    string emailAddress, 
+                    string phoneNumber, 
+                    string orgName, 
+                    string title, 
+                    string address1, 
+                    string address2, 
+                    string city, 
+                    string state, 
+                    string zipcode, 
+                    string referralType, 
+                    string involvedPartyType, 
+                    string caseOrReferenceNumber, 
+                    string detectedAs, 
+                    string summary, 
+                    string amount, 
+                    string detectionDate, 
+                    string incidentStartDate, 
+                    string @__pickleIndex, 
+                    string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UserFirstName", userFirstName);
+            argumentsOfScenario.Add("UserLastName", userLastName);
+            argumentsOfScenario.Add("Email address", emailAddress);
+            argumentsOfScenario.Add("Phone number", phoneNumber);
+            argumentsOfScenario.Add("Org name", orgName);
+            argumentsOfScenario.Add("title", title);
+            argumentsOfScenario.Add("Address1", address1);
+            argumentsOfScenario.Add("Address2", address2);
+            argumentsOfScenario.Add("City", city);
+            argumentsOfScenario.Add("State", state);
+            argumentsOfScenario.Add("Zipcode", zipcode);
+            argumentsOfScenario.Add("referralType", referralType);
+            argumentsOfScenario.Add("involvedPartyType", involvedPartyType);
+            argumentsOfScenario.Add("caseOrReferenceNumber", caseOrReferenceNumber);
+            argumentsOfScenario.Add("detectedAs", detectedAs);
+            argumentsOfScenario.Add("summary", summary);
+            argumentsOfScenario.Add("amount", amount);
+            argumentsOfScenario.Add("detectionDate", detectionDate);
+            argumentsOfScenario.Add("Incident Start Date", incidentStartDate);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Verify that the error messages are displayed when Incident start date is prior t" +
+                    "o end date for online referral as a Provider]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 234
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 5
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 235
+ await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 236
+ await testRunner.AndAsync(string.Format("I enter the email as \"{0}\" on the Initial User Data Page", emailAddress), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 237
+ await testRunner.AndAsync(string.Format("I enter the userFN as \"{0}\",User lastname as \"{1}\",Org name as \"{2}\",title as \"{3" +
+                            "}\"  filled on the Initial User Data Page", userFirstName, userLastName, orgName, title), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 238
+ await testRunner.AndAsync(string.Format("I enter the Phone number as \"{0}\" on the Initial User Data Page", phoneNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 239
+ await testRunner.AndAsync(string.Format("I enter the \"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\", filled in the Address section yon the " +
+                            "Initial User Data Page", address1, address2, city, state, zipcode), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 240
+ await testRunner.ThenAsync("verify the Captcha Email notification", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 242
+ await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 245
+ await testRunner.AndAsync(string.Format("Referral Type is selected as \"{0}\" on the second User Data Page", referralType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 246
+ await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type as \"{0}\"", involvedPartyType), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 247
+ await testRunner.ThenAsync(string.Format("enter case or reference number as \"{0}\" on the second User Data Page", caseOrReferenceNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 248
+ await testRunner.AndAsync(string.Format("How was this detected as\"{0}\" ,please provide  a Summary of this referral as \"{1}" +
+                            "\" on the second User Data Page", detectedAs, summary), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 251
+ await testRunner.WhenAsync("User enters Incident Start Date as \"04/10/2028\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 252
+ await testRunner.ThenAsync("Error message \"Date cannot be in the future\" should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("[Submitting Party Information]")]
+        public async global::System.Threading.Tasks.Task SubmittingPartyInformation()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "7";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Submitting Party Information]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 261
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 5
+await this.FeatureBackgroundAsync();
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("01_ Validate logo is positioned at top center")]
+        public async global::System.Threading.Tasks.Task _01_ValidateLogoIsPositionedAtTopCenter()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "8";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("01_ Validate logo is positioned at top center", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 263
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 5
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 264
+    await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 265
+    await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 266
+    await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 268
+ await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 269
+ await testRunner.WhenAsync("i check the required fields in the \"Submitting Party Information\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 270
+ await testRunner.WhenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 271
+ await testRunner.ThenAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("02_ Validate that the Required fields indicated in Admin Configuration appear in " +
+            "the portal")]
+        public async global::System.Threading.Tasks.Task _02_ValidateThatTheRequiredFieldsIndicatedInAdminConfigurationAppearInThePortal()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "9";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("02_ Validate that the Required fields indicated in Admin Configuration appear in " +
+                    "the portal", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 273
+ this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 5
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 274
+ await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 275
+ await testRunner.WhenAsync("i check the required fields in the \"Submitting Party Information\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 276
+ await testRunner.WhenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("03_ Validate that  the Required fields indicated in Admin Configuration appear in" +
+            " the portal")]
+        public async global::System.Threading.Tasks.Task _03_ValidateThatTheRequiredFieldsIndicatedInAdminConfigurationAppearInThePortal()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "10";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("03_ Validate that  the Required fields indicated in Admin Configuration appear in" +
+                    " the portal", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 278
+ this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 5
+await this.FeatureBackgroundAsync();
+#line hidden
+#line 279
+ await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 280
+ await testRunner.WhenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

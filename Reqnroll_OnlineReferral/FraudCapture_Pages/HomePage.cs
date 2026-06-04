@@ -26,7 +26,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             //Driver.WrappedDriver.FindElement(By.XPath("//button[@id='btnAmaEulaAgree']")).Click();
 
             By acceptAMAButton = By.XPath("//button[@id='btnAmaEulaAgree']");
-            CommonHelpers.WaitForElementClickable(Driver, acceptAMAButton, 200);
+            CommonHelpers.WaitForElementClickable(Driver, acceptAMAButton, 300);
             //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(180));
 
             //wait.Until(ExpectedConditions.ElementToBeClickable(acceptAMAButton));

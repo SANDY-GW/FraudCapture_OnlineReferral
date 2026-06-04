@@ -16,8 +16,26 @@ namespace FC_OnlineReferral
             public string? Password { get; set; }
             public bool? IsActive { get; set; }
             //public UserRole Role { get; set; }
-            public  string? UserFN { get; set; }
+            public string? UserFN { get; set; }
+
+
+          
+
+
         }
+
+        public static Dictionary<string, string> dic = new Dictionary<string, string>
+            {
+                { "firstName", "Required" },
+                { "lastName", "Required" },
+                { "orgName", "Required" },
+                { "email", "Required" },
+                { "address1", "Required" },
+
+
+            };
+
+
 
 
     }

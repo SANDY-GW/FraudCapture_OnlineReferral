@@ -2,27 +2,31 @@
 
 Online referral End to End Scenarios
 
-
+Background: Given when I open the Online referral application
 
 
 @online_referral @SmokeTest @regression
 Scenario Outline: [Verify that the user is able to see the new UI changes for online referral as a Provider]
 	Given when I open the Online referral application
 	And I enter the email as "<Email address>" on the Initial User Data Page
+
 	And I enter the userFN as "<UserFirstName>",User lastname as "<UserLastName>",Org name as "<Org name>",title as "<title>"  filled on the Initial User Data Page
 	And I enter the Phone number as "<Phone number>" on the Initial User Data Page
 	And I enter the "<Address1>","<Address2>","<City>","<State>","<Zipcode>", filled in the Address section yon the Initial User Data Page
-	When I click on the Next button on the Initial User Data Page
-	And I should be navigated to the Next Page
+	Then verify the Captcha Email notification
+	#Then I click on the Next button on the Initial User Data Page
+	When I should be navigated to the Next Page
+
 
 	And Referral Type is selected as "<referralType>" on the second User Data Page
 	And Suspect or Subject or Involved Party Type as "<involvedPartyType>"
 	Then enter case or reference number as "<caseOrReferenceNumber>" on the second User Data Page
 	And How was this detected as"<detectedAs>" ,please provide  a Summary of this referral as "<summary>" on the second User Data Page
 	And enter Amount "<amount>",detectiondate "<detectionDate>", incidentStartDate "<incidentStartDate>", incidentEndDate "<incidentEndDate>" on the second User Data Page
+	And get the Original detection date
 	And enter state as "<state2>" and city as "<city2>" on the second User Data Page
-	When I click on the Next button on the Initial User Data Page
-	And I should be navigated to the Next Page
+	And I click on the Next button on the Initial User Data Page
+	When I should be navigated to the Next Page
 
 	And Is thisInvolved Party dropdown is selected as "<witnessDropdown>" on the third User Data Page
 	And enter InvolvedParty orgname as "<orgname>", name prefix as "<name prefix>", associated party first name as "<first name>",associated party middle name as "<middle name>", associated party last name as "<last name>" and name suffix as "<name suffix>" on the fourth User Data Page
@@ -50,13 +54,23 @@ Scenario Outline: [Verify that the user is able to see the new UI changes for on
 	And I click on CaseTracking and select the "Leads" option on the fraud capture home page
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
-	And I click on the Activities and selected lead activity name as "<ActivityName>" on the fraud capture Lead detials Page
-	Then I should be navigated to Lead Activities  Page
+	And get the lead creation date
+	#And I click on the Activities and selected lead activity name as "<ActivityName>" on the fraud capture Lead detials Page
+	And click on Activities tab and serach for the activity "<ActivityName>" created through onlinereferral
+	Then the searched activity should be displayed in the activity list "<ActivityName>"
+	And get the Activitydate created through online
+	And verify Due Date of the activity generated through an Online Referral submission is based on the Due Date configuration for that activity
+	When user clicks on Edit button for an existing activity "<ActivityName>"
+	Then Edit Activity page should be displayed
+	And click on Attachment tab
+	And verify summary, confirmation and test files are displayed
+
+
 	
 
 Examples:
-	| UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentStartDate | incidentEndDate | state2 | city2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  |
-	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | TX    |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026        | 02/13/2026      | TX     | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) |
+	| UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentStartDate | incidentEndDate | state2 | city2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  |
+	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026        | 02/13/2026      | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) |
 
 
 
@@ -72,8 +86,9 @@ Scenario Outline: [Verify that the user is able to see the new UI changes for on
 	And I enter the userFN as "<UserFirstName>",User lastname as "<UserLastName>",Org name as "<Org name>",title as "<title>"  filled on the Initial User Data Page
 	And I enter the Phone number as "<Phone number>" on the Initial User Data Page
 	And I enter the "<Address1>","<Address2>","<City>","<State>","<Zipcode>", filled in the Address section yon the Initial User Data Page
-	When I click on the Next button on the Initial User Data Page
-	And I should be navigated to the Next Page
+	Then verify the Captcha Email notification
+	#Then I click on the Next button on the Initial User Data Page
+	When I should be navigated to the Next Page
 
 	And Referral Type is selected as "<referralType>" on the second User Data Page
 	And Suspect or Subject or Involved Party Type as "<involvedPartyType>"
@@ -81,11 +96,11 @@ Scenario Outline: [Verify that the user is able to see the new UI changes for on
 	And How was this detected as"<detectedAs>" ,please provide  a Summary of this referral as "<summary>" on the second User Data Page
 	And enter Amount "<amount>",detectiondate "<detectionDate>", incidentStartDate "<incidentStartDate>", incidentEndDate "<incidentEndDate>" on the second User Data Page
 	And enter state as "<state2>" and city as "<city2>" on the second User Data Page
-	When I click on the Next button on the Initial User Data Page
-	And I should be navigated to the Next Page
+	And I click on the Next button on the Initial User Data Page
+	When I should be navigated to the Next Page
 
 	And Is thisInvolved Party dropdown is selected as "<witnessDropdown>" on the third User Data Page
-	And enter InvolvedParty  name prefix as "<name prefix>", associated party first name as "<associated party first name>",associated party middle name as "<associated party middle name>", associated party last name as "<associated party last name>" and name suffix as "<name suffix>"
+	And enter InvolvedParty  name prefix as "<name prefix>", associated party first name as "<first name>",associated party middle name as "<middle name>", associated party last name as "<last name>" and name suffix as "<name suffix>"
 	And enter InvolvedParty DOB as "<DOB>", Gender as "<Gender>", other as "<other>", How witness or external party reported this as "<involvedPartyType>",any additional info as "<detectedAs>"
 	And enter InvolvedParty ID as "<medicaid ID>",ssn as "<SSN>" medicaid ID as "<medicaid ID>",Medicare ID as "<Medicare ID>", otherID as "<otherID>"
 	And enter InvolvedParty plan as "Test", Program  as "Program",LOB as "LOB1" and Group as "Group1"
@@ -102,11 +117,26 @@ Scenario Outline: [Verify that the user is able to see the new UI changes for on
 	And then uploading a file using file path as "<TestFile>"
 	Then click on proceed to next session button
 
-	
+	Given when I open the fraud capture  application
+	When I enter the "<UserEmailID>" on the welcome fraude capture page
+	And I click on the Procced to login button on the welcome fraude capture page
+	And I click on the I Agree button on the fraud capture Page
+	And I select the payor as "DEMO"
+	And I click on CaseTracking and select the "Leads" option on the fraud capture home page
+	And I Verify first and Last Name and click on the Latest created lead
+	And I click on the Begin Editing on the fraud capture Lead detials Page
+	#And I click on the Activities and selected lead activity name as "<ActivityName>" on the fraud capture Lead detials Page
+	And click on Activities tab and serach for the activity "<ActivityName>" created through onlinereferral
+	Then the searched activity should be displayed in the activity list "<ActivityName>"
+	When user clicks on Edit button for an existing activity "<ActivityName>"
+	Then Edit Activity page should be displayed
+	And click on Attachment tab
+	And verify summary, confirmation and test files are displayed
 
 Examples:
-	| UserFirstName | UserLastName | Email address                         | Phone number | Org name           | title   | Address1           | Address2    | City   | State | Zipcode | referralType                            | involvedPartyType    | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentStartDate | incidentEndDate | state2 | city2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile                                                                                                    | Is there any Involved Party Dropdown | Gender |
-	| UserFName     | UserLastName | jayapradha.d@gainwelltechnologies.com |   9999999999 | Referring Source 1 | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | TX    |   75035 | Referral Type 1 - w/ Distribution Email | QA_Automation_Member |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026        | 02/13/2026      | TX     | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | FN         | MN          | LN        | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | C:/Users/jd/SourceQaDevelopment/Repos/FraudCapture_OnlineReferral/ReqnrollProject1/Attachments/TestFile.txt | No                                   | Female |
+	| UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | referralType                                           | involvedPartyType                                                 | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentStartDate | incidentEndDate | state2 | city2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN     | LN     | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  |
+	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Recipient w/ req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026        | 02/13/2026      | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | UserFN | UserLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) |
+
 
 
 
@@ -172,3 +202,83 @@ Scenario Outline: [TestMyCode]
 Examples:
 	| UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentStartDate | incidentEndDate | state2 | city2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                    |
 	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | TX    |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026        | 02/13/2026      | TX     | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | 02242026-Lead Activity 1-Auto Close on Creation |
+
+
+Scenario Outline: [Verify that the error messages are displayed when Incident end date is prior to start date for online referral as a Provider]
+	Given when I open the Online referral application
+	And I enter the email as "<Email address>" on the Initial User Data Page
+	And I enter the userFN as "<UserFirstName>",User lastname as "<UserLastName>",Org name as "<Org name>",title as "<title>"  filled on the Initial User Data Page
+	And I enter the Phone number as "<Phone number>" on the Initial User Data Page
+	And I enter the "<Address1>","<Address2>","<City>","<State>","<Zipcode>", filled in the Address section yon the Initial User Data Page
+	Then verify the Captcha Email notification
+	When I should be navigated to the Next Page
+
+
+	And Referral Type is selected as "<referralType>" on the second User Data Page
+	And Suspect or Subject or Involved Party Type as "<involvedPartyType>"
+	Then enter case or reference number as "<caseOrReferenceNumber>" on the second User Data Page
+	And How was this detected as"<detectedAs>" ,please provide  a Summary of this referral as "<summary>" on the second User Data Page
+	
+
+	When User enters Incident Start Date as "<Incident Start Date>"
+	And User enters Incident End Date as "<Incident End>"
+	Then Error message "<Error message>" should be displayed
+
+
+Examples:
+	| UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | Incident Start Date | Incident End | Error message                                                                                 |
+	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 04/10/2026          | 04/05/2026   | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date  |
+	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 04/10/2028          | 04/05/2029   | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date. |
+	
+
+Scenario Outline: [Verify that the error messages are displayed when Incident start date is prior to end date for online referral as a Provider]
+	Given when I open the Online referral application
+	And I enter the email as "<Email address>" on the Initial User Data Page
+	And I enter the userFN as "<UserFirstName>",User lastname as "<UserLastName>",Org name as "<Org name>",title as "<title>"  filled on the Initial User Data Page
+	And I enter the Phone number as "<Phone number>" on the Initial User Data Page
+	And I enter the "<Address1>","<Address2>","<City>","<State>","<Zipcode>", filled in the Address section yon the Initial User Data Page
+	Then verify the Captcha Email notification
+	#Then I click on the Next button on the Initial User Data Page
+	When I should be navigated to the Next Page
+
+
+	And Referral Type is selected as "<referralType>" on the second User Data Page
+	And Suspect or Subject or Involved Party Type as "<involvedPartyType>"
+	Then enter case or reference number as "<caseOrReferenceNumber>" on the second User Data Page
+	And How was this detected as"<detectedAs>" ,please provide  a Summary of this referral as "<summary>" on the second User Data Page
+	
+
+	When User enters Incident Start Date as "04/10/2028"
+	Then Error message "Date cannot be in the future" should be displayed
+
+
+Examples:
+	| UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | Incident Start Date |
+	| UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 04/10/2028          |
+	
+
+	
+Scenario Outline: [Submitting Party Information]
+
+Scenario: 01_ Validate logo is positioned at top center
+    Given  when I open the Online referral application
+    Then Logo should be visible
+    And Logo should be aligned at the top center of the page
+
+	Given  when I open the Online referral application
+	When i check the required fields in the "Submitting Party Information"
+	When Required CSS glow appears with correct configured color controlled in Admin.
+	Then  verify Dropdown lists are in alphabetical order
+
+	Scenario: 02_ Validate that the Required fields indicated in Admin Configuration appear in the portal
+	Given  when I open the Online referral application
+	When i check the required fields in the "Submitting Party Information"
+	When Required CSS glow appears with correct configured color controlled in Admin.
+	
+	Scenario: 03_ Validate that  the Required fields indicated in Admin Configuration appear in the portal
+	Given  when I open the Online referral application
+	When Required CSS glow appears with correct configured color controlled in Admin.
+	
+	
+ 
+

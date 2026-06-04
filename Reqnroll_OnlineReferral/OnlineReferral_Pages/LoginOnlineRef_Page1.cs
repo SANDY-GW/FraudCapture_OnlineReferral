@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
 
 namespace FC_OnlineReferral.OnlineReferral_Pages
 {
@@ -33,9 +32,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By emailverification = By.XPath("//div/h4[text()='Email Verification']");
         private readonly By goToPreviousSectionButton = By.XPath("//button[text()='Go to Previous Section']");
         private readonly By proceed_To_Next_SectionButton = By.XPath("//button[text()=' Proceed to Next Section ']");
-        private readonly By AdvancedSearch = By.XPath("//button[text()='Search']");
-        private readonly By SearchCriteriaDropDown = By.XPath("//select[@class='form-control darkNavy-fc ng-pristine ng-valid ng-touched']");
-        private readonly By SearchButton = By.XPath("//button[@id='btnSearch']");
+        private readonly By logo = By.XPath("*//img[@title='Header Image']");
 
 
         #endregion
@@ -59,29 +56,17 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             Driver.FindElement(userLnameField).SendKeys(UserLN);
 
         }
-
+        public bool VerifyIfStateOrTerritoryDropdownIsInAlphabeticalOrder()
+        {
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(mailingAddressstate_Or_Territorydropdown));
+        }
         public void SelectOrgAgency(string OrgAgency)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, userFnameField, 10);
             CommonHelpers.selectOptionByValue(Driver.FindElement(orgAgencyDropdn), OrgAgency);
 
         }
-        /// <summary>
-        /// COnverts RGBA to CSS Hex color code to compare the border color of required and non required fields. 
-        /// This is needed as the border color is in RGBA format and we need to convert it to Hex format to compare it with the expected color codes for required and non required fields.
-        /// </summary>
-        /// <param name="RGBA"></param>
-        /// <returns>string</returns>
-
-        public string ConvertRGBAtoCSS(string RGBA)
-        {
-            //#008671 - for green color
-            var rgb = RGBA.Replace("rgb(", "").Replace(")", ""); //input = "rgb(0, 134, 113)"
-            Color color = ColorTranslator.FromHtml(rgb);
-            string actualHex = $"#{color.R:X2}{color.G:X2}{color.B:X2}";
-            return actualHex;
-        }
-        public bool VerifyBGColorOnRequiredFields() 
+        public bool VerifyBGColorOnRequiredFields()
         {
 
             var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
@@ -89,10 +74,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             foreach (IWebElement elem in allReqFieldsID)
             {
-                var cssCol = elem.GetCssValue("border-color");
-                var cssHexValue = ConvertRGBAtoCSS(elem.GetCssValue("border-color"));
 
-                if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//#008671 - for green color
+                if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
                 {
                     Console.WriteLine("Required");
                 }
@@ -166,17 +149,11 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.selectOptionByValue(Driver.FindElement(mailingAddressstate_Or_Territorydropdown), StateName);
         }
-
-        public bool VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder()
-        {
-            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(mailingAddressstate_Or_Territorydropdown));
-        }
         public void EnterMailingAddressZipCode(string ZipCode)
         {
             Driver.FindElement(mailingAddresszipCodeField).Clear();
             Driver.FindElement(mailingAddresszipCodeField).SendKeys(ZipCode);
         }
-       
 
         public void clickEmailAddressVerificationButton()
         {
@@ -187,23 +164,124 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.WaitForElementVisiblity(Driver, emailverification, 100);
 
-            CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 200);
+            CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 120);
 
         }
 
-        public void ClickSearchButton()
+
+
+
+        // Locator (adjust if needed)
+
+
+        public IWebElement GetLogo()
         {
-            Driver.FindElement(AdvancedSearch).Click();
+            CommonHelpers.WaitForElementVisiblity(Driver, logo, 10);
+            return Driver.FindElement(logo);
         }
 
-        public void waitQuickSearchWindow(string ProviderID)
+        public bool IsLogoDisplayed()
         {
-            Driver.FindElement(SearchCriteriaDropDown).Click();
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SearchCriteriaDropDown), ProviderID);
-            Driver.FindElement(SearchButton).Click();
-            CommonHelpers.WaitForElementVisiblity(Driver, SearchButton, 100);
+
+            return GetLogo().Displayed;
+        }
+
+        //getting the title of the page
+        public string GetPageTitle()
+        {
+            return Driver.Title;
+        }
+
+        // ✅ Check if logo is at TOP CENTER
+        public bool IsLogoAtTopCenter()
+        {
+            var logoElement = GetLogo();
+
+            int logoCenterX = logoElement.Location.X + (logoElement.Size.Width / 2);
+            Console.WriteLine("Logo Center X: " + logoCenterX);
+            int pageCenterX = Driver.Manage().Window.Size.Width / 2;
+            Console.WriteLine("Page Center X: " + pageCenterX);
+
+            int logoTopY = logoElement.Location.Y;
+            Console.WriteLine("Logo Top Y: " + logoTopY);
+            // Conditions:
+            bool isHorizontallyCentered = Math.Abs(pageCenterX - logoCenterX) <= 20;
+            bool isAtTop = logoTopY < 150; // threshold for "top"
+
+            return isHorizontallyCentered && isAtTop;
         }
 
 
+        // ✅ Check if logo is LEFT aligned
+        public bool IsLogoLeftAligned()
+        {
+            var logoElement = GetLogo();
+
+            int logoX = logoElement.Location.X;
+
+            return logoX <= 50; // near left edge
+        }
+
+        public bool verifyrequiredfieldsinpage1()
+        {
+            var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
+            if (eleList.Count > 0)
+            {
+                foreach (IWebElement elem in eleList)
+                {
+                    if (!CommonData.dic.ContainsKey(elem.GetAttribute("for")))
+                    {
+                        Console.WriteLine();
+                        return false;
+
+
+                    }
+
+
+                }
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("No required fields found");
+                return false;
+            }
+
+
+        }
+
+        public bool VerifyBGColorOnRequiredFieldsPage1()
+        {
+
+            var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
+            var allReqFieldsID = Driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
+            if (eleList.Count > 0)
+            {
+                foreach (IWebElement elem in allReqFieldsID)
+                {
+
+                    if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
+                    {
+                        Console.WriteLine("Required");
+                    }
+                    else if (elem.GetCssValue("border-color").Equals("rgb(206, 212, 218)"))//Non required fields with no border color
+                    {
+                        Console.WriteLine("Optional");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Fail");
+                    }
+
+                }
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("No required fields found");
+                return false;
+            }
+        }
     }
 }
+
