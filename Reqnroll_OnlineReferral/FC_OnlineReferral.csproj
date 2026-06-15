@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="FraudCapture_Pages\CaseTrackingModule\LeadTab\CreateNewLead\" />
     <Folder Include="FraudCapture_Pages\CustomAnalysis&amp;Reports\" />
   </ItemGroup>
 

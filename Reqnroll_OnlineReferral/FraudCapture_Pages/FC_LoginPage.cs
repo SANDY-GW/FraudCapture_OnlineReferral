@@ -28,12 +28,13 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         #endregion
         public void EnterLoginUserEmail(string userEmail)
         {
-            //CommonHelpers.WaitForPageToLoad(Driver, 100);
+            CommonHelpers.WaitForPageToLoad(Driver, 100);
 
             var emailInput = Driver.FindElement(Login_UserEmail);
 
             emailInput.Click();
             emailInput.Clear();
+            CommonHelpers.WaitForElementVisiblity(Driver, Login_UserEmail, 100);
             emailInput = Driver.FindElement(Login_UserEmail);
             emailInput.SendKeys(userEmail);
 
@@ -55,6 +56,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public void ClickProceedToLogin()
         {
             Driver.FindElement(Login_ProceedToLogin).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
+
         }
         public void ClickAmaIAgree()
         {
