@@ -389,7 +389,17 @@ namespace FC_OnlineReferral
                 .OrderBy(o => o.Equals("Select an option", StringComparison.OrdinalIgnoreCase) ? 0 : 1)
                 .ThenBy(o => o)
                 .ToList();
-
+            Console.WriteLine("Original Options:");
+            foreach (var option in options)
+            {
+                Console.WriteLine(option);
+            }
+            Console.WriteLine("Sorted Options:");
+            foreach (var option in sortedOptions)
+            {
+                Console.WriteLine(option);
+            }
+            bool isAlphabetical = options.SequenceEqual(sortedOptions);
             bool xx = options.SequenceEqual(sortedOptions);
 
             return (options.SequenceEqual(sortedOptions));

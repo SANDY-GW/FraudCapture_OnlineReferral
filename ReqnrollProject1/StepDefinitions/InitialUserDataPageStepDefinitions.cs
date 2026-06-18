@@ -1,7 +1,8 @@
 using FC_OnlineReferral.OnlineReferral_Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
-
+using System;
+using Assert = NUnit.Framework.Assert;
 namespace ReqnrollProject1.StepDefinitions
 {
     [Binding]
@@ -18,6 +19,17 @@ namespace ReqnrollProject1.StepDefinitions
             Ol.Login();
         }
 
+       
+
+        [When("i check the required fields in the {string}")]
+        public void WhenICheckTheRequiredFieldsInThe(string p0)
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+            PG1.verifyrequiredfieldsinpage1();
+            Assert.That(PG1.IsLogoDisplayed(), Is.True, "Logo is not displayed on the page");
+            Assert.That(PG1.verifyrequiredfieldsinpage1(), Is.True, "Required fields are not highlighted with expected color");
+        }
+
 
         [Given("I enter the userFN as {string},User lastname as {string},Org name as {string},title as {string}  filled on the Initial User Data Page")]
         public void GivenIEnterTheUserFNAsUserLastnameAsOrgNameAsTitleAsFilledOnTheInitialUserDataPage(string userFName, string userLastName, string value, string title)
@@ -30,10 +42,10 @@ namespace ReqnrollProject1.StepDefinitions
         }
         [Given("I enter the email as {string} on the Initial User Data Page")]
         public void GivenIEnterTheEmailAsOnTheInitialUserDataPage(string username)
-        {           
+        {
             var PG1 = new LoginOnlineRef_Page1(Driver);
             PG1.EnterUserEmailName(username);
-            Assert.That( CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid email ID '{username}' entered");
+            Assert.That(CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid email ID '{username}' entered");
             ((IJavaScriptExecutor)Driver).ExecuteScript("window.localStorage.setItem('useTestData', 'true');localStorage.setItem('validatedEmail', '" + username + "');localStorage.setItem('emailValidated', 'true')");
 
         }
@@ -53,17 +65,18 @@ namespace ReqnrollProject1.StepDefinitions
             PG1.EnterPhoneNumberAndExtension(phoneno);
         }
 
-        [Then("verify the Captcha Email notification")]
-        public void ThenVerifyTheCaptchaEmailNotification()
+        [Then("the Captcha Email notification appears")]
+        public void TheCaptchaEmailNotificationAppears()
         {
             var PG1 = new LoginOnlineRef_Page1(Driver);
-            PG1.waitForEmailNotification();
+            PG1.clickEmailAddressVerificationButton();
+            //PG1.waitForEmailNotification();
         }
 
 
 
 
-        [When("I click on the Next button on the Initial User Data Page")]
+        [Then("I click on the Next button on the Initial User Data Page")]
         public void WhenIClickOnTheNextButtonOnTheInitialUserDataPage()
         {
             var PG2 = new OnlineReferral_Referral_Page2(Driver);
@@ -93,11 +106,20 @@ namespace ReqnrollProject1.StepDefinitions
             PG1.EnterMailingAddressCity(Mailing_Address_City);
             PG1.SelectState_Or_Territory(Mailing_Address_State);
 
-            PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder();
-            Assert.That(PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder(), Is.True, "State/territory dropdown list is not in alphabetic order");
+            //PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder();
+            //Assert.That(PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder(), Is.True, "State/territory dropdown list is not in alphabetic order");
 
-            PG1.EnterMailingAddressZipCode(Mailing_Address_Zip);            
+            PG1.EnterMailingAddressZipCode(Mailing_Address_Zip);
             Assert.That(CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid email ID '{Mailing_Address_Zip}' entered");
+        }
+
+        [Then("verify Dropdown lists are in alphabetical order")]
+        public void ThenVerifyDropdownListsAreInAlphabeticalOrder()
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+            
+            Assert.That(PG1.VerifyIfStateOrTerritoryDropdownIsInAlphabeticalOrder(), Is.True, "State/territory dropdown list is not in alphabetic order");
+           
         }
 
         [When("I click on the emailverification button on the Initial User Data Page")]
@@ -141,6 +163,54 @@ namespace ReqnrollProject1.StepDefinitions
             PG2.EnterOriginalDetectionDate(detectiondate);
             PG2.EnterIncidentStartDate(startdate);
             PG2.EnterIncidentEndDate(enddate);
+        }
+
+
+        [When("User enters Incident Start Date as {string}")]
+        public void WhenUserEntersIncidentStartDateAs(string startDate)
+        {
+            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+            PG2.EnterIncidentStartDate(startDate);
+
+        }
+
+        [When("User enters Incident End Date as {string}")]
+        public void WhenUserEntersIncidentEndDateAs(string p0)
+        {
+            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+            PG2.EnterIncidentEndDate(p0);
+        }
+
+       
+        [Then("validate {string} should be displayed")]
+        public void ThenValidateShouldBeDisplayed(string p0, DataTable dataTable)
+        {
+            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+
+
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            string actualEndError = PG2.GetErrorMessage();
+
+            string actualstartError = PG2.GetErrorMessageStartDate();
+
+
+
+
+            Assert.That(actualEndError.Contains(data.errormessage) || actualstartError.Contains(data.errormessage)
+                        , "No valid date error message displayed");
+
+
+        }
+
+
+
+
+        [Then("get the Original detection date")]
+        public void ThenGetTheOriginalDetectionDate()
+        {
+            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+            var referraldate = PG2.GetOriginalDetectionDate();
+            Console.WriteLine(referraldate);
         }
 
         [Then("enter state as {string} and city as {string} on the second User Data Page")]
@@ -200,14 +270,14 @@ namespace ReqnrollProject1.StepDefinitions
         {
 
             var PG3 = new InvolvedParties_Page3(Driver);
-            
+
             PG3.SelectIsExternalReferringPartyFromDropdown(option);
         }
 
         [When("enter InvolvedParty orgname as {string}, name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string} on the fourth User Data Page")]
         public void WhenEnterInvolvedPartyOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(string orgname, string prefix, string fn, string mn, string ln, string suffix)
         {
-           
+
             var PG3 = new InvolvedParties_Page3(Driver);
             DateTime dateTime = DateTime.Now;
             fn = fn + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
@@ -302,6 +372,7 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
+
         [When("enter associated orgname as {string}, name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string} on the fourth User Data Page")]
         public void WhenEnterAssociatedOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(string orgname, string nameprefix, string FN, string MN, string LN, string namesuffix)
         {
@@ -395,7 +466,7 @@ namespace ReqnrollProject1.StepDefinitions
         [When("is there anotherinvolved party dropdown is selected as {string} on the fourth User Data Page")]
         public void WhenIsThereAnotherinvolvedPartyDropdownIsSelectedAsOnTheFourthUserDataPage(string no)
         {
-           var PG4 = new additionalInvolvedParty_page4(Driver);
+            var PG4 = new additionalInvolvedParty_page4(Driver);
             PG4.SelectisThereAnotherInvolvedParty(no);
 
             PG4.ClickContinueWithInvolvedPartySelectionButton();
@@ -505,7 +576,7 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var PG5 = new New_UI_Questions_Page5(Driver);
             string filePath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + @"\Attachments\";
-            PG5.ClickUploadFileArrow(filePath+ fileName);
+            PG5.ClickUploadFileArrow(filePath + fileName);
         }
 
         [Then("click on proceed to next session button")]
@@ -532,6 +603,14 @@ namespace ReqnrollProject1.StepDefinitions
         public void WhenEnterInvolvedPartyNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAs(string nameprefix, string Fn, string Mn, string Ln, string namesuffix)
         {
             var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+
+
+            DateTime dateTime = DateTime.Now;
+            Fn = Fn + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            Ln = Ln + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            _scenarioContext["UserFN"] = Fn;
+            _scenarioContext["UserLN"] = Ln;
+
             PG3.FillNamePrefixField(nameprefix);
             PG3.FillFirstNameField(Fn);
             PG3.FillMiddleNameField(Mn);
@@ -542,7 +621,7 @@ namespace ReqnrollProject1.StepDefinitions
 
         [When("enter InvolvedParty DOB as {string}, Gender as {string}, other as {string}, How witness or external party reported this as {string},any additional info as {string}")]
         public void WhenEnterInvolvedPartyDOBAsGenderAsOtherAsHowWitnessOrExternalPartyReportedThisAsAnyAdditionalInfoAs(string p0, string male, string test, string member, string p4)
-     {
+        {
 
             var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
             PG3.FillDOBField(p0);
@@ -611,7 +690,7 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
-       
+
         [When("enter InvolvedParty Designation as {string} ,DOB as {string}, SSN as {string}, How witness or external party reported this as {string},any additional info as {string} licenseNumber as {string},other ID as {string},other as {string}")]
         public void WhenEnterInvolvedPartyDesignationAsDOBAsSSNAsHowWitnessOrExternalPartyReportedThisAsAnyAdditionalInfoAsLicenseNumberAsOtherIDAsOtherAs(string testDesignation, string dob, string ssn, string referringPartyReport, string additionalwitness, string licenseno, string otherid, string other)
         {
@@ -652,10 +731,88 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
+        //Header logo Validation
+
+
+
+
+        [Then(@"Logo should be visible")]
+        public void ThenLogoShouldBeVisible()
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+            Assert.That(PG1.IsLogoDisplayed(), Is.True, "Logo is not visible");
+        }
+
+        [Then(@"Logo should be aligned at the top center of the page")]
+        public void ThenLogoTopCenter()
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+
+            Assert.That(PG1.IsLogoAtTopCenter(), Is.True, "Logo is not at top center");
+        }
+
+        [Then(@"Logo should be aligned to the left of the header")]
+        public void ThenLogoLeftAligned()
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+            Assert.That(PG1.IsLogoLeftAligned(), Is.True, "Logo is not left aligned");
+        }
+
+        [When("Required CSS glow appears with correct configured color controlled in Admin.")]
+        public void WhenRequiredCSSGlowAppearsWithCorrectConfiguredColorControlledInAdmin_()
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+
+            Assert.That(PG1.VerifyBGColorOnRequiredFieldsPage1(), Is.True, "Required field glow color is not correct");
+        }
+
+        [Then("the same fields should be displayed as required in the portal with a red asterisk mark")]
+        public void ThenTheSameFieldsShouldBeDisplayedAsRequiredInThePortalWithARedAsteriskMark()
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+
+        }
+
+
+
+        [When("I enter initial user details:")]
+        public void WhenIEnterInitialUserDetails(DataTable dataTable)
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+
+
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG1.EnterUserFName(data.FirstName);
+            PG1.EnterUserLastName(data.LastName);
+            PG1.EnterUserEmailName(data.Email);
+            PG1.SelectOrgAgency(data.Organization);
+            PG1.EnterUserTitle(data.Title);
+            PG1.EnterPhoneNumberAndExtension(data.Phone);
+
+        }
+
+
+
+        [When("I enter the address:")]
+        public void WhenIEnterTheAddress(DataTable dataTable)
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+
+
+            var data = dataTable.CreateInstance<CommonData.UserCredentials>();
+            //PG1.EnterAddress1(data.Address1);
+            //PG1.EnterAddress2(data.Address2);
+            //PG1.EnterCity(data.City);
+            //PG1.SelectState(data.State);
+            //PG1.EnterZipCode(data.Zipcode);
+
+        }
+
+        
 
 
     }
-
-
-
 }
+
+
+

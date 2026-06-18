@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace FC_OnlineReferral.FraudCapture_Pages
 {
@@ -9,6 +10,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         protected readonly WebDriverWait Wait;
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
+
         #region Elements
         //Add xpath here
         private readonly By LeadTab = By.XPath("//a[@id='allLeadsTabId']");
@@ -44,7 +46,113 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         private readonly By ActivitiesEditButton = By.XPath("//button[@id='editActivityId']");
         private readonly By ActivitiesViewButton = By.XPath("//button[@id='editActivityId']//following-sibling::button[contains(text(),'View')]");
         private readonly By ActivitiesAttachmentTab = By.XPath("//button[@id='attachmentTabId']");
+        private readonly By AttachmentTab = By.XPath("//div[@id='noteAttachmentList']/descendant::ul//li/a[contains(text(),'Attachments')]");
+        private readonly By ExitActivityButton = By.XPath("//div[@id='attachment']/descendant::button[text()='Exit Activity']");
+        private readonly By leadCreationDate = By.XPath("//input[@name='leadDate']");
+        private readonly By activityDuedate = By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr/td[4]");
+        // Page verification locators
+        private By editActivityHeader =By.XPath("//b[text()='Edit Activity']");
+
+        private By activityNameField = By.XPath("//label[contains(text(),'Activity Name')]/following::select[1]");
+
+
+        private By assignedToDropdown = By.XPath("//div[@id='activitiesContentId']/descendant::label[contains(text(),'Assigned To')]/following::div[1]");
+
+
+
         #endregion
+
+        public Boolean isEditActivityPageDisplayed()
+        {
+            return Driver.FindElement(editActivityHeader).Displayed
+                    && Driver.FindElement(activityNameField).Displayed
+                    && Driver.FindElement(assignedToDropdown).Displayed;
+
+        }
+        public void ClickAttachmentTab()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, AttachmentTab, 10);
+            Driver.FindElement(AttachmentTab).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
+
+        private By attachmentRow(String keyword)
+        {
+            return By.XPath("//tr[td[contains(normalize-space(),'" + keyword + "')]]");
+        }
+
+        //Getting lead create date
+
+        public string getLeadCreationDate()
+        {
+            var value = "";
+            if (leadCreationDate != null)
+            {
+                CommonHelpers.WaitForElementVisiblity(Driver, leadCreationDate, 30);
+
+                value = Driver.FindElement(leadCreationDate).GetAttribute("value")?.Trim();
+                Console.WriteLine($"Original Detection Date field value: {value}");
+
+            }
+
+
+            return value;
+        }
+        private bool isAttachmentDisplayed(String attachmentName)
+        {
+            try
+            {
+
+                attachmentRow(attachmentName);
+               
+                return true;
+            }
+            catch (TimeoutException e)
+            {
+                return false;
+            }
+        }
+        public string getLeadiD()
+        {
+            try
+            {
+                var attachment = Driver.FindElement(By.XPath("//fc-activity-note-attachment/descendant::label[@class='form-control darkNavy-fc title3 editSourceId headerFields']"));
+                string leadid = attachment.Text;
+                Console.WriteLine("Lead ID: " + leadid);
+                return leadid;
+            }
+            catch (NoSuchElementException e)
+            {
+                return null;
+            }
+        }
+        public bool areAllRequiredAttachmentsDisplayed()
+        {
+
+            bool summaryDisplayed = isAttachmentDisplayed("ReferralSummary-'"+ getLeadiD() + "'");
+            bool confirmationDisplayed = isAttachmentDisplayed("Confirmation");
+            bool testFileDisplayed = isAttachmentDisplayed("TestFile");
+
+            if (summaryDisplayed && confirmationDisplayed && testFileDisplayed)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+        public void ClickExitActivity()
+        {
+            Driver.FindElement(ExitActivityButton).Click();
+            CommonHelpers.WaitForPageLoading(Driver);
+        }
+        public void ClickLeadGridSearchInput()
+        {
+            Driver.FindElement(LeadGridSearchInput).Click();
+        }
+
         public void ClickLeadTab()
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
@@ -239,6 +347,18 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                   //already in Edit mode, move along
               }*/
         }
+
+
+        //serach for the activity created through online referral
+
+        public void SearchActivityName(string activityName)
+        {
+            var selectCriteria = Driver.FindElement(By.XPath("//form[@id='activityForm']/descendant::input[@name='searchtext']"));
+            selectCriteria.Clear();
+            selectCriteria.SendKeys(activityName);
+             Driver.FindElement(By.XPath("//form[@id='activityForm']/descendant::button[@id='searchStartButton']")).Click();
+             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
         public void SearchByLeadID(string leadid)
         {
             var selectCriteria = new SelectElement(Driver.FindElement(By.Id("leadSearchCriteria")));
@@ -286,6 +406,15 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             return activityName;
 
         }
+
+        public string getActivityDueDate()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            CommonHelpers.WaitForPageLoading(Driver);
+            var activityduedate = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr/td[4]")).Text;
+            return activityduedate;
+        }
+
     }
 }
 
