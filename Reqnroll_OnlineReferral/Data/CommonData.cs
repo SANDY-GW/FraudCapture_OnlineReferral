@@ -31,6 +31,34 @@ namespace FC_OnlineReferral
                 { "orgName", "Required" },
                 { "email", "Required" },
                 { "address1", "Required" },
+            {"referalType","Required"},
+            {"involvedType", "Required" },
+            {"detected", "Required" },
+            {"referralSummary", "Required" },
+            {"involvedType","Required"},
+            {"isExternalReferal","Required" },
+            { "pOrgName","Required"},
+            {"pFirstName","Required" },
+            { "pLastName","Required"},
+            { "pDateOfBirth","Required"},
+            {"pProviderID" ,"Required"},
+            {"pTaxonomy","Required" },
+            {"pStreetAddress1","Required" },
+            {"pCity","Required" },
+            { "pState","Required" },
+            { "pZip","Required"},
+            {"pCountry" ,"Required"},
+            {"pPhone","Required" },
+            {"pEmail","Required" },
+            { "externalReferalReport","Required"},
+            {"isAnotherInvolvedParty","Required" },
+            {"questionTxt2","Required" },
+            {"questiondDrDown3","Required" },
+            {"questionTxt4","Required"},
+            {"questiondDrDown5","Required" },
+            {"questionTxt6","Required" }
+
+
 
 
             };

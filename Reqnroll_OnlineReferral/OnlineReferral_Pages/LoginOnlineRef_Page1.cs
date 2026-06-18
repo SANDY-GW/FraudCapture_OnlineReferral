@@ -154,6 +154,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             Driver.FindElement(mailingAddresszipCodeField).Clear();
             Driver.FindElement(mailingAddresszipCodeField).SendKeys(ZipCode);
+
         }
 
         public void clickEmailAddressVerificationButton()
@@ -183,7 +184,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public bool IsLogoDisplayed()
         {
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 70); 
+            CommonHelpers.ScrollUp(Driver);
             return GetLogo().Displayed;
         }
 
@@ -257,21 +259,39 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
             var allReqFieldsID = Driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
             bool bgcolormatch = true;
+            
             if (eleList.Count > 0)
             {
                 foreach (IWebElement elem in allReqFieldsID)
                 {
+                    
 
                     if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
                     {
+                        IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+                        js.ExecuteScript(
+                            "window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });");
+
                         TestContext.Out.WriteLine(elem.GetAttribute("id") + ": Required field with expected green border color");
 
 
                     }
                     else if (elem.GetCssValue("border-color").Equals("rgb(206, 212, 218)"))//Non required fields with no border color
                     {
-                        Assert.Warn(elem.GetAttribute("id") + ":Optional field with no border color");
-                        bgcolormatch = false;
+
+                        // if((elem.GetAttribute("ng-reflect-model") is null or "") )
+                        //Console.WriteLine("first if");
+
+                        if ((elem.GetAttribute("class").Contains("ng-invalid")))
+
+                            Assert.Fail(elem.GetAttribute("ng-reflect-model") + ":Required field with no border color");
+                       // Assert.Warn(elem.GetAttribute("id") + ":Required field with no border color and data populated");
+                       //if ((elem.GetAttribute("ng-reflect-model") is null or "") || (elem.GetAttribute("class").Contains("form-select ng-untouched ng-pristine ng-invalid")))
+
+                        //
+
+                        // bgcolormatch = false;
                     }
                     else
                     {
@@ -288,6 +308,16 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
                 return false;
             }
 
+        }
+
+        public string GetValidationErrorMessage()
+        {
+            return CommonHelpers.GetValidationErrorText(Driver);
+        }
+
+        public bool IsValidationErrorDisplayed()
+        {
+            return CommonHelpers.ValidationerrorExists(Driver);
         }
     }
 }

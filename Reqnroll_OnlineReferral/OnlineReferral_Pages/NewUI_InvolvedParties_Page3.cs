@@ -320,8 +320,32 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 10000);
 
         }
+       
 
 
+        public string GetValidationDateErrorMessage()
+        {
+            return CommonHelpers.GetValidationDateErrorText(Driver);
+        }
 
+        public bool IsValidationDateErrorDisplayed()
+        {
+            return CommonHelpers.ValidationDateerrorExists(Driver);
+        }
+
+        public bool VerifyIfStateOrTerritoryDropdownIsInAlphabeticalOrder()
+        {
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(stateDrpdn));
+        }
+
+        public string GetValidationErrorMessage()
+        {
+            return CommonHelpers.GetValidationErrorText(Driver);
+        }
+
+        public bool IsValidationErrorDisplayed()
+        {
+            return CommonHelpers.ValidationerrorExists(Driver);
+        }
     }
 }
