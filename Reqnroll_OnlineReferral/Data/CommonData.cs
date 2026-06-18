@@ -21,6 +21,19 @@ namespace FC_OnlineReferral
 
         }
 
+        public static Dictionary<string, string> dic = new Dictionary<string, string>
+            {
+                { "firstName", "Required" },
+                { "lastName", "Required" },
+                { "orgName", "Required" },
+                { "email", "Required" },
+                { "address1", "Required" },
+
+
+            };
+
+
+
 
     }
 }
