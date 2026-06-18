@@ -122,7 +122,6 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             Driver.FindElement(emailtxtbx).SendKeys(emailValue);
             ((IJavaScriptExecutor)Driver).ExecuteScript("window.localStorage.setItem('useTestData', 'true');localStorage.setItem('validatedEmail', '" + emailValue + "');localStorage.setItem('emailValidated', 'true')");
 
-
         }
         public void EnterUserTitle(string UserTitle)
         {

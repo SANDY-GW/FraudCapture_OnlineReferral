@@ -3,8 +3,6 @@ using FC_OnlineReferral.OnlineReferral_Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
-using System.Runtime.Intrinsics.X86;
-using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
 using Assert = NUnit.Framework.Assert;
 namespace ReqnrollProject1.StepDefinitions
 {
@@ -959,32 +957,12 @@ namespace ReqnrollProject1.StepDefinitions
             var PG3 = new additionalInvolvedParty_page4(Driver);
             PG3.ClickfinishInvolvedPartySelectionAndProceedToNectSectionButton();
         }
-
-
-        [Then("I select {string} questions should be displayed")]
-        public void ThenISelectQuestionsShouldBeDisplayed(DataTable dataTable)
-        {
-            var PG3 = new additionalInvolvedParty_page4(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.SelectPleaseSelectTheAdditionalInvolvedPartyType(data.additionalInvolvedPartyType);
-        }
-
-
         [Then("I select the Involved party an external referring Party or Witness dropdown as {string}")]
         public void ThenISelectTheInvolvedPartyAnExternalReferringPartyOrWitnessDropdownAs(DataTable dataTable)
         {
             var PG3 = new additionalInvolvedParty_page4(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
             PG3.SelectIsThisInvolvedPartyAnExternalReferringParty(data.isAnotherExternalInvolvedPartyAvailable);
-        }
-        [Then("the following fields should be displayed: {string}, {string}, and {string}")]
-        public void ThenTheFollowingFieldsShouldBeDisplayedAnd(DataTable dataTable)
-        {
-            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.FillIDField(data.id);
-            PG3.FillSSNField(data.ssn);
-            PG3.FillEmailField(data.email);
         }
         [Then("I Select the Entering into the Questions and Attachments Section and answer the questions")]
         public void ThenISelectTheEnteringIntoTheQuestionsAndAttachmentsSectionAndAnswerTheQuestions(DataTable dataTable)

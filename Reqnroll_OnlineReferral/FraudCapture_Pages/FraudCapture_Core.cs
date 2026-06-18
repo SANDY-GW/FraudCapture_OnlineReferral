@@ -30,10 +30,10 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         public void FC_SelectPayor(string payorName)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, PayorSelect, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(PayorSelect), payorName);
-            Driver.FindElement(PayorSelect).Click();
-            //CommonHelpers.WaitForElementVisiblity(Driver, By.Id("welcomeMessage"), 20);
+            var payorDropField = By.XPath("//ul[@id='payorSelector']");
+            CommonHelpers.WaitForElementVisiblity(Driver, payorDropField, 120);
+            Driver.FindElement(payorDropField).Click();
+            Driver.FindElement(By.XPath($"//ul[@id='payorSelector']//a[normalize-space(.)='{payorName}']")).Click();
         }
         public void FC_UserSelect(string UserSelectoption)
         {
