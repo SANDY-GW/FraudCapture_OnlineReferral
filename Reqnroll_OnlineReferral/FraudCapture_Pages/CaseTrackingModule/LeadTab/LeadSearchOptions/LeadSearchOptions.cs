@@ -34,7 +34,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadSe
         {
             Driver.FindElement(searchInputFieldTxt).SendKeys(value);
         }
-        public void ClickCaseExpoertListBtn()
+        public void ClickCaseExportListBtn()
         {
             Driver.FindElement(caseExportListBtn).Click();
         }

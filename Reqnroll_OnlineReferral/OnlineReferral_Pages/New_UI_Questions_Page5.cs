@@ -70,18 +70,18 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         }
 
-        public void EnterQuestion2Answer(string answer)
+        public void EnterQuestion2Answer(string question2)
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
 
             js.ExecuteScript("window.scrollBy(0, 500);");
-            Driver.FindElement(Question2).SendKeys(answer);
+            Driver.FindElement(Question2).SendKeys(question2);
         }
 
-        public void EnterQuestion3Answer(string answer)
+        public void EnterQuestion3Answer(string question3)
         {
            
-            Driver.FindElement(Question3).SendKeys(answer);
+            Driver.FindElement(Question3).SendKeys(question3);
 
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
 
@@ -170,10 +170,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
             js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
             //js.ExecuteScript("window.scrollTo(0, 0);");
-            CommonHelpers.WaitForElementVisiblity(Driver, proceedToNextSessionButton, 10000);
-
+            //CommonHelpers.WaitForElementVisiblity(Driver, proceedToNextSessionButton, 10000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
             Driver.FindElement(proceedToNextSessionButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,10);
+            
             //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 50000);
             //new CommonHelpers(Driver).WaitForPageLoading();
             //Thread.Sleep(5000);
@@ -199,7 +199,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForPageLoading(Driver);
 
 
-            CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 5000);
+            //CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 5000);
 
         }
 

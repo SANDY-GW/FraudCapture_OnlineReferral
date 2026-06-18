@@ -51,6 +51,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         private readonly By ActivitiesEditButton = By.XPath("//button[@id='editActivityId']");
         private readonly By ActivitiesViewButton = By.XPath("//button[@id='editActivityId']//following-sibling::button[contains(text(),'View')");
         private readonly By ActivitiesAttachmentTab = By.XPath("//button[@id='attachmentTabId']");
+
+        //CreateNewLeadButton
+        private readonly By CreateNewLeadBtn = By.XPath("//button[contains(normalize-space(.),'Create New Lead')]");
         #endregion
         public void ClickLeadTab()
         {
@@ -309,6 +312,11 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
             Console.WriteLine(activityName);
             return activityName;
 
+        }
+        //Create New Lead Button
+        public void ClickCreateNewLeadBtn()
+        {
+            Driver.FindElement(CreateNewLeadBtn).Click();
         }
     }
 }

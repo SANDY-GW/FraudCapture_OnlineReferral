@@ -75,12 +75,16 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void EnterHowWasThisDetected(string Detected)
         {
-            Driver.FindElement(detectedField).Clear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
+            Driver.FindElement(detectedField).Click();
             Driver.FindElement(detectedField).SendKeys(Detected);
         }
         public void EnterReferralSummary(string ReferralSummary)
         {
-            Driver.FindElement(referralSummaryField).Clear();
+            
+            CommonHelpers.ScrollDown(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            Driver.FindElement(referralSummaryField).Click();
             Driver.FindElement(referralSummaryField).SendKeys(ReferralSummary);
         }
         public void EnterCase_Or_Reference_Or_TrackingNumber(string Case_Or_Reference_Or_TrackingNumber)
@@ -132,12 +136,14 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void ClickProceedToNextSectionButton()
         {
-            CommonHelpers.ScrollUp(Driver);
-            //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 500);
-            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 70);
+
+
+            Thread.Sleep(2000);
             CommonHelpers.ScrollToElement(Driver, proceed_To_Next_SectionButton);
+            //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 500);
+            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 200);
             Driver.FindElement(proceed_To_Next_SectionButton).Click();
-            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 70);
+            //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 70);
 
         }
 

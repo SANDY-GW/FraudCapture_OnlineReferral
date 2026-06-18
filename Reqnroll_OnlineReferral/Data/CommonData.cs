@@ -19,9 +19,6 @@ namespace FC_OnlineReferral
             public string? UserFN { get; set; }
 
 
-          
-
-
         }
 
         public static Dictionary<string, string> dic = new Dictionary<string, string>

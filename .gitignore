@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/.github/BDD_XPath_BestPractices.agent.md
+/ReqnrollProject1/OpenQA/Selenium/Size.cs

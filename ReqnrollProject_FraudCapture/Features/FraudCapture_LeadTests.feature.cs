@@ -27,7 +27,11 @@ namespace FraudCapture_BDD.Features
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "FraudCapture_LeadTests", "A short summary of the feature", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "FraudCapture_LeadTests", @"A short summary of the feature
+	And I enter the ""qwqw"" on the Initial User Data Page 
+	And I enter the ""Phone number"" on the Initial User Data Page
+	When I click on the Next button on the Initial User Data Page
+	Then I should be navigated to the Next Page", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
 #line 1 "FraudCapture_LeadTests.feature"
 #line hidden
@@ -105,151 +109,16 @@ namespace FraudCapture_BDD.Features
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/FraudCapture_LeadTests.feature.ndjson", 11);
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("[Enter usedetails in the first page]")]
-        [global::NUnit.Framework.CategoryAttribute("tag1")]
-        public async global::System.Threading.Tasks.Task EnterUsedetailsInTheFirstPage()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "tag1"};
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            string pickleIndex = "0";
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Enter usedetails in the first page]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 6
-this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 7
- await testRunner.GivenAsync("when I open the FraudCapture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 8
- await testRunner.AndAsync("I enter the \"UserFirstName\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 9
- await testRunner.AndAsync("I enter the \"UserLastName\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 10
- await testRunner.AndAsync("I enter the \"Email address\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 11
- await testRunner.AndAsync("I enter the \"Phone number\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 12
- await testRunner.WhenAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 13
- await testRunner.ThenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("[Enter usedetails in the first page with invalid data]")]
-        public async global::System.Threading.Tasks.Task EnterUsedetailsInTheFirstPageWithInvalidData()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            string pickleIndex = "1";
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Enter usedetails in the first page with invalid data]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 16
-this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 17
- await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 18
- await testRunner.AndAsync("I enter the \"Sandeep\" on the Initial User Data Page for this demo", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 19
- await testRunner.AndAsync("I enter the \"UserLastName\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 20
- await testRunner.AndAsync("I enter the \"qwqw\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 21
- await testRunner.AndAsync("I enter the \"Phone number\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 22
- await testRunner.WhenAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 23
- await testRunner.ThenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("[Enter usedetails in the entire application]")]
-        public async global::System.Threading.Tasks.Task EnterUsedetailsInTheEntireApplication()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            string pickleIndex = "2";
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Enter usedetails in the entire application]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 25
-this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 26
- await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-#line 27
- await testRunner.AndAsync("I enter the \"UserFName\",\"UserLastName\",\"Test Source 1\",\"sandeep.krishnan@gainwell" +
-                        "technologies.com\"  filled on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 28
- await testRunner.AndAsync("I enter the \"Email address\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 29
- await testRunner.AndAsync("I enter the \"Phone number\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 30
- await testRunner.WhenAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 31
- await testRunner.ThenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/FraudCapture_LeadTests.feature.ndjson", 8);
         }
         
         [global::NUnit.Framework.TestAttribute()]
         [global::NUnit.Framework.DescriptionAttribute("[Enter usedetails in the first page with different data sets]")]
-        [global::NUnit.Framework.TestCaseAttribute("san", "sAN2", "t.t@tcom", "999999", "8888", "3", null)]
-        [global::NUnit.Framework.TestCaseAttribute("san", "sAN3", "t.t@tcom", "999999", "8888", "4", null)]
-        [global::NUnit.Framework.TestCaseAttribute("san", "sAN4", "t.t@tcom", "999999", "Null", "5", null)]
-        [global::NUnit.Framework.TestCaseAttribute("san", "sAN5", "t.t@tcom", "999999", "", "6", null)]
-        [global::NUnit.Framework.TestCaseAttribute("san", "sAN6", "t.t@tcom", "999999", "", "7", null)]
+        [global::NUnit.Framework.TestCaseAttribute("san", "sAN2", "t.t@tcom", "999999", "8888", "0", null)]
+        [global::NUnit.Framework.TestCaseAttribute("san", "sAN3", "t.t@tcom", "999999", "8888", "1", null)]
+        [global::NUnit.Framework.TestCaseAttribute("san", "sAN4", "t.t@tcom", "999999", "Null", "2", null)]
+        [global::NUnit.Framework.TestCaseAttribute("san", "sAN5", "t.t@tcom", "999999", "", "3", null)]
+        [global::NUnit.Framework.TestCaseAttribute("san", "sAN6", "t.t@tcom", "999999", "", "4", null)]
         public async global::System.Threading.Tasks.Task EnterUsedetailsInTheFirstPageWithDifferentDataSets(string userFirstName, string userLastName, string emailAddress, string phoneNumber, string phoneNumber1, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -263,7 +132,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Enter usedetails in the first page with different data sets]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 34
+#line 10
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -273,28 +142,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 35
+#line 11
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 36
+#line 12
  await testRunner.AndAsync(string.Format("I enter the \"{0}\" on the Initial User Data Page", userFirstName), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 37
+#line 13
  await testRunner.AndAsync(string.Format("I enter the \"{0}\" on the Initial User Data Page", userLastName), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 38
+#line 14
  await testRunner.AndAsync(string.Format("I enter the \"{0}\" on the Initial User Data Page", emailAddress), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 15
  await testRunner.AndAsync(string.Format("I enter the \"{0}\" on the Initial User Data Page", phoneNumber), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 16
  await testRunner.AndAsync(string.Format("I enter the \"{0}\" on the Initial User Data Page", phoneNumber1), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 41
+#line 17
  await testRunner.WhenAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 42
+#line 18
  await testRunner.ThenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -307,11 +176,11 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
         {
             string[] tagsOfScenario = ((string[])(null));
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            string pickleIndex = "8";
+            string pickleIndex = "5";
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[Enter usedetails in the entire application part2]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 51
+#line 27
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -321,35 +190,35 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 52
+#line 28
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table81 = new global::Reqnroll.Table(new string[] {
                             "UserFName",
                             "USerLName",
                             "TestSource",
                             "Email",
                             ""});
-                table1.AddRow(new string[] {
+                table81.AddRow(new string[] {
                             "UserFName",
                             "UserLastName",
                             "Test Source 1",
                             "sandeep.krishnan@gainwelltechnologies.com",
                             ""});
-#line 53
+#line 29
  await testRunner.AndAsync("I enter the \"UserFName\",\"UserLastName\",\"Test Source 1\",\"sandeep.krishnan@gainwell" +
-                        "technologies.com\" filled on the Initial User Data Page", ((string)(null)), table1, "And ");
+                        "technologies.com\" filled on the Initial User Data Page", ((string)(null)), table81, "And ");
 #line hidden
-#line 56
+#line 32
  await testRunner.AndAsync("I enter the \"Email address\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 57
+#line 33
  await testRunner.AndAsync("I enter the \"Phone number\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 58
+#line 34
  await testRunner.WhenAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 59
+#line 35
  await testRunner.ThenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }

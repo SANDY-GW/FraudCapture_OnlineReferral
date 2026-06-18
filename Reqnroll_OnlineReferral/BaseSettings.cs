@@ -29,7 +29,7 @@ namespace FC_OnlineReferral
 
         public void FC_OnlineReferralLogin(string URL= "https://fc-referrals-test.gainwelltechnologies.com/#/DEMO-AD2B")
         {
-            //Driver.Navigate().GoToUrl("https://dev.fraudcapture.hms.com");
+            //Driver.Navigate().GoToUrl("https://test.fraudcapture.hms.com");
             
             Driver.Navigate().GoToUrl(URL);
             Driver.Manage().Window.Maximize();

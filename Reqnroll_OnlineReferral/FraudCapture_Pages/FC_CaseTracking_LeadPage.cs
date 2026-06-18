@@ -107,7 +107,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                
                 return true;
             }
-            catch (TimeoutException e)
+            catch (TimeoutException )
             {
                 return false;
             }
@@ -121,7 +121,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                 Console.WriteLine("Lead ID: " + leadid);
                 return leadid;
             }
-            catch (NoSuchElementException e)
+            catch (NoSuchElementException )
             {
                 return null;
             }
