@@ -1,7 +1,10 @@
+using FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab;
 using FC_OnlineReferral.OnlineReferral_Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
+using System.Runtime.Intrinsics.X86;
+using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
 using Assert = NUnit.Framework.Assert;
 namespace ReqnrollProject1.StepDefinitions
 {
@@ -19,7 +22,7 @@ namespace ReqnrollProject1.StepDefinitions
             Ol.Login();
         }
 
-       
+
 
         [When("i check the required fields in the {string}")]
         public void WhenICheckTheRequiredFieldsInThe(string p0)
@@ -40,6 +43,14 @@ namespace ReqnrollProject1.StepDefinitions
             PG1.SelectOrgAgency(value);
             PG1.EnterUserTitle(title);
         }
+        [When("I click on the Next button on the Initial User Data Page")]
+        public void WhenIClickOnTheNextButtonOnTheInitialUserDataPage()
+        {
+            var PG3 = new InvolvedPartyTypeInfo_Page4(Driver);
+            PG3.ClickProceedToNextSection();
+        }
+
+
         [Given("I enter the email as {string} on the Initial User Data Page")]
         public void GivenIEnterTheEmailAsOnTheInitialUserDataPage(string username)
         {
@@ -70,19 +81,18 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var PG1 = new LoginOnlineRef_Page1(Driver);
             PG1.clickEmailAddressVerificationButton();
-            //PG1.waitForEmailNotification();
+            PG1.waitForEmailNotification();
         }
 
 
-
-
-        [Then("I click on the Next button on the Initial User Data Page")]
-        public void WhenIClickOnTheNextButtonOnTheInitialUserDataPage()
+        [Then("I click Next button to proceed")]
+        public void ThenIClickNextButtonToProceed()
         {
             var PG2 = new OnlineReferral_Referral_Page2(Driver);
             PG2.ClickProceedToNextSectionButton();
-
         }
+
+
         [When("I click on the Next button on the fouth User Data Page")]
         public void WhenIClickOnTheNextButtonOnTheFouthUserDataPage()
         {
@@ -105,10 +115,6 @@ namespace ReqnrollProject1.StepDefinitions
             PG1.EnterMailingStreetAddress2(Mailing_Street_Address2);
             PG1.EnterMailingAddressCity(Mailing_Address_City);
             PG1.SelectState_Or_Territory(Mailing_Address_State);
-
-            //PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder();
-            //Assert.That(PG1.VerifyIfStateteOrTerritoryDropdownIsInAlphabaticalOrder(), Is.True, "State/territory dropdown list is not in alphabetic order");
-
             PG1.EnterMailingAddressZipCode(Mailing_Address_Zip);
             Assert.That(CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid email ID '{Mailing_Address_Zip}' entered");
         }
@@ -117,9 +123,9 @@ namespace ReqnrollProject1.StepDefinitions
         public void ThenVerifyDropdownListsAreInAlphabeticalOrder()
         {
             var PG1 = new LoginOnlineRef_Page1(Driver);
-            
+
             Assert.That(PG1.VerifyIfStateOrTerritoryDropdownIsInAlphabeticalOrder(), Is.True, "State/territory dropdown list is not in alphabetic order");
-           
+
         }
 
         [When("I click on the emailverification button on the Initial User Data Page")]
@@ -181,7 +187,7 @@ namespace ReqnrollProject1.StepDefinitions
             PG2.EnterIncidentEndDate(p0);
         }
 
-       
+
         [Then("validate {string} should be displayed")]
         public void ThenValidateShouldBeDisplayed(string p0, DataTable dataTable)
         {
@@ -201,9 +207,6 @@ namespace ReqnrollProject1.StepDefinitions
 
 
         }
-
-
-
 
         [Then("get the Original detection date")]
         public void ThenGetTheOriginalDetectionDate()
@@ -474,7 +477,6 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
-
         [When("Does this rederral involve a specific member is selected as {string}")]
         public void WhenDoesThisRederralInvolveASpecificMemberIsSelectedAs(string dropdownOption)
         {
@@ -733,9 +735,6 @@ namespace ReqnrollProject1.StepDefinitions
 
         //Header logo Validation
 
-
-
-
         [Then(@"Logo should be visible")]
         public void ThenLogoShouldBeVisible()
         {
@@ -758,22 +757,98 @@ namespace ReqnrollProject1.StepDefinitions
             Assert.That(PG1.IsLogoLeftAligned(), Is.True, "Logo is not left aligned");
         }
 
-        [When("Required CSS glow appears with correct configured color controlled in Admin.")]
-        public void WhenRequiredCSSGlowAppearsWithCorrectConfiguredColorControlledInAdmin_()
+
+        [When("Required CSS glow appears with correct configured color controlled in Admin")]
+        public void WhenRequiredCSSGlowAppearsWithCorrectConfiguredColorControlledInAdmin()
         {
             var PG1 = new LoginOnlineRef_Page1(Driver);
 
             Assert.That(PG1.VerifyBGColorOnRequiredFieldsPage1(), Is.True, "Required field glow color is not correct");
         }
 
-        [Then("the same fields should be displayed as required in the portal with a red asterisk mark")]
-        public void ThenTheSameFieldsShouldBeDisplayedAsRequiredInThePortalWithARedAsteriskMark()
+
+        [When("I filling the mandatory fileds details on the Initial User Data Page")]
+        public void WhenIFillingTheMandatoryFiledsDetailsOnTheInitialUserDataPage(DataTable dataTable)
         {
             var PG1 = new LoginOnlineRef_Page1(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG1.EnterUserFName(data.FirstName);
+            PG1.EnterUserLastName(data.LastName);
+            PG1.EnterUserEmailName(data.Email);
+            PG1.SelectOrgAgency(data.Organization);
+            PG1.EnterMailingStreetAddress1(data.StreetAddress1);
+        }
+        [Then("select the StateName from the dropdown")]
+        public void ThenSelectTheStateNameFromTheDropdown(DataTable dataTable)
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG1.SelectState_Or_Territory(data.StateName);
+        }
+
+
+
+        [Then("Proceed to Email Address Verification")]
+        public void ThenProceedToEmailAddressVerification()
+        {
+            var PG1 = new LoginOnlineRef_Page1(Driver);
+            PG1.clickEmailAddressVerificationButton();
+        }
+        [Then("I validate the Captcha for the email address verification page")]
+        public void ThenIValidateTheCaptchaForTheEmailAddressVerificationPage()
+        {
+            //var PG1 = new LoginOnlineRef_Page1(Driver);
+            //PG1.waitForEmailNotification();
 
         }
 
 
+        [Then("I Click NextButtonToProceed button to proceed")]
+        public void ThenIClickNextButtonToProceedButtonToProceed()
+        {
+            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+            PG2.ClickProceedToNextSectionButton();
+        }
+
+
+        [Then("I select the referralType and InvolvedPartyType from the dropdown")]
+        public void ThenISelectTheReferralTypeAndInvolvedPartyTypeFromTheDropdown(DataTable dataTable)
+        {
+            var PG1 = new OnlineReferral_Referral_Page2(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG1.SelectRefType(data.RefType);
+            PG1.SelectInvolvedPartyType(data.InvolvedPartyType);
+        }
+        [Then("I Enter the Text for How was this detected?")]
+        public void ThenIEnterTheTextForHowWasThisDetected(DataTable dataTable)
+        {
+            var PG1 = new OnlineReferral_Referral_Page2(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG1.EnterHowWasThisDetected(data.Detected);
+        }
+
+        [Then("I Enter the Text for Please Provide a Summary of this Referral for the referral details page")]
+        public void ThenIEnterTheTextForPleaseProvideASummaryOfThisReferralForTheReferralDetailsPage(DataTable dataTable)
+        {
+            var PG1 = new OnlineReferral_Referral_Page2(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG1.EnterReferralSummary(data.ReferralSummary);
+        }
+
+        [Then("I click Next step to Proceed to the next page")]
+        public void ThenIClickNextStepToProceedToTheNextPage()
+        {
+            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+            PG2.ClickProceedToNextSectionButton();
+        }
+
+        [Then("I select involved party an external referring party or witness?")]
+        public void ThenISelectInvolvedPartyAnExternalReferringPartyOrWitness(DataTable dataTable)
+        {
+            var PG4 = new InvolvedPartyTypeInfo_Page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG4.SelectWitness_Or_ExternalReferringParty(data.witness_Or_ExternalReferringParty);
+        }
 
         [When("I enter initial user details:")]
         public void WhenIEnterInitialUserDetails(DataTable dataTable)
@@ -799,20 +874,159 @@ namespace ReqnrollProject1.StepDefinitions
             var PG1 = new LoginOnlineRef_Page1(Driver);
 
 
-            var data = dataTable.CreateInstance<CommonData.UserCredentials>();
-            //PG1.EnterAddress1(data.Address1);
-            //PG1.EnterAddress2(data.Address2);
-            //PG1.EnterCity(data.City);
-            //PG1.SelectState(data.State);
-            //PG1.EnterZipCode(data.Zipcode);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            
+
+        }
+
+        [Then("I select the another involved Party from the drop down menu")]
+        public void ThenISelectTheAnotherInvolvedPartyFromTheDropDownMenu(DataTable dataTable)
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.SelectisThereAnotherInvolvedParty(data.isAnotherInvolvedPartyAvailable);
+            PG3.SelectPleaseSelectTheAdditionalInvolvedPartyType(data.additionalInvolvedPartyType);
+            PG3.SelectIsThisInvolvedPartyAnExternalReferringParty(data.isAnotherExternalInvolvedPartyAvailable);
+        }
+        [Then("the following fields should be displayed:")]
+        public void ThenTheFollowingFieldsShouldBeDisplayed(DataTable dataTable)
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.FillOrganizationField(data.Organization1);
+            PG3.FillNamePrefixField(data.NamePrefix);
+            PG3.FillFirstNameField(data.FirstName1);
+            PG3.FillMiddleNameField(data.MiddleName1);
+            PG3.FillLastNameField(data.LastName1);
+            PG3.FillNameSuffixField(data.NameSuffix);
+            PG3.FillStreetAddress1Field(data.StreetAddress3);
+            PG3.FillStreetAddress2Field(data.StreetAddress4);
+            PG3.FillCityField(data.City);
+            //PG3.FillStateField(data.State);
+            //PG3.SelectCountyField(data.County);
+            PG3.FillZipField(data.Zip);
+            PG3.FillDesignationField1(data.Designation1);
+            PG3.FillCountryField(data.Country);
+            PG3.FillPrimaryPhoneField(data.PrimaryPhone);
+            PG3.FillSecondaryPhoneField(data.SecondaryPhone);
+            PG3.FillSsnField(data.Ssn);
+            PG3.FillOtherIdField(data.OtherId);
+            PG3.FillEmailField(data.Email1);
+            PG3.FillOtherField(data.Other);
+            
+
+
+
+
 
         }
 
         
+        [Then("I enter the Text for How did this witness\\/external referring party report this? \\(Required) and Any Additonal Information regarding the witness or external referring party? \\(Optional)field")]
+        public void ThenIEnterTheTextForHowDidThisWitnessExternalReferringPartyReportThisRequiredAndAnyAdditonalInformationRegardingTheWitnessOrExternalReferringPartyOptionalField(DataTable dataTable)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.FillHowDidThisExternalReferringPartyreportThisTextarea(data.report);
+            PG3.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.additionalInfo);
+        }
+        [Then("I enter the Text for How did this witness\\/external referring party report this? \\(Required) and Any Additonal Information regarding the witness or external referring party? \\(Optional)field on Second Time")]
+        public void ThenIEnterTheTextForHowDidThisWitnessExternalReferringPartyReportThisRequiredAndAnyAdditonalInformationRegardingTheWitnessOrExternalReferringPartyOptionalFieldOnSecondTime(DataTable dataTable)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.SelectHowDidThisExternalReferringPartyreportThisTextarea(data.report1);
+            PG3.SelectAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.additionalInfo1);
+        }
+        [Then("I continue with Involved Party Selection and proceed to the next page")]
+        public void ThenIContinueWithInvolvedPartySelectionAndProceedToTheNextPage()
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            PG3.ClickProceedToNextSectionButton();
+            
+        }
 
+        [Then("I Select the  another involved Party from the drop down menu as NO")]
+        public void ThenISelectTheAnotherInvolvedPartyFromTheDropDownMenuAsNO(DataTable dataTable)
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.FillisThereAnotherInvolvedParty(data.isAnotherInvolvedPartyAvailable1);
+        }
+        [Then("I Click Finish Involved Party Selection and Proceed to Next Section button")]
+        public void ThenIClickFinishInvolvedPartySelectionAndProceedToNextSectionButton()
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+            PG3.ClickfinishInvolvedPartySelectionAndProceedToNectSectionButton();
+        }
+
+
+        [Then("I select {string} questions should be displayed")]
+        public void ThenISelectQuestionsShouldBeDisplayed(DataTable dataTable)
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.SelectPleaseSelectTheAdditionalInvolvedPartyType(data.additionalInvolvedPartyType);
+        }
+
+
+        [Then("I select the Involved party an external referring Party or Witness dropdown as {string}")]
+        public void ThenISelectTheInvolvedPartyAnExternalReferringPartyOrWitnessDropdownAs(DataTable dataTable)
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.SelectIsThisInvolvedPartyAnExternalReferringParty(data.isAnotherExternalInvolvedPartyAvailable);
+        }
+        [Then("the following fields should be displayed: {string}, {string}, and {string}")]
+        public void ThenTheFollowingFieldsShouldBeDisplayedAnd(DataTable dataTable)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.FillIDField(data.id);
+            PG3.FillSSNField(data.ssn);
+            PG3.FillEmailField(data.email);
+        }
+        [Then("I Select the Entering into the Questions and Attachments Section and answer the questions")]
+        public void ThenISelectTheEnteringIntoTheQuestionsAndAttachmentsSectionAndAnswerTheQuestions(DataTable dataTable)
+        {
+            var PG5 = new ResponseToQuestions_Page5(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG5.SelectQuestion1Dropdown(data.question1);
+            PG5.EnterQuestion2(data.question2);
+            PG5.SelectQuestion3dropdown(data.question3);
+            PG5.EnterQuestion4(data.question4);
+            PG5.SelectQuestion5(data.question5);
+            PG5.EnterQuestion6(data.question6);
+        }
+
+        [Then("I Click Proceed to Next Section and Submit the Refreral button to proceed to Finish the Referral Submission")]
+        public void ThenIClickProceedToNextSectionAndSubmitTheRefreralButtonToProceedToFinishTheReferralSubmission()
+        {
+            var PG5 = new New_UI_Questions_Page5(Driver);
+            PG5.ClickProceedToNextSessionButton();
+        }
+        
+        [Then("I add the Attachments with the help of Uploading the files and providing the detail")]
+        public void ThenIAddTheAttachmentsWithTheHelpOfUploadingTheFilesAndProvidingTheDetail(DataTable dataTable)
+        {
+            var PG5 = new New_UI_Questions_Page5(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            //PG5.ClickUploadFileArrow(data.filePath);
+            string filePath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + @"\Attachments\";
+            PG5.ClickUploadFileArrow(filePath + data.filePath);
+        }
+       
+        [Then("I click {string} Continue with Invloved Party Selection button to proceed")]
+        public void ThenIClickContinueWithInvlovedPartySelectionButtonToProceed(string next)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            PG3.ClickProceedToNextSectionButton();
+        }
 
     }
 }
+
+
 
 
 

@@ -23,6 +23,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By orgAgencyDropdn = By.XPath("//select[@id='orgName']");
         private readonly By emailtxtbx = By.XPath("//input[@id='email']");
         private readonly By emailVerificationBtn = By.XPath("//button[contains(.,'Email Address Verification')]");
+        private readonly By Captcha = By.XPath("//span[@id='recaptcha-anchor']");
+        
         private readonly By titletxtbx = By.XPath("//input[@id='title']");
         private readonly By phonenumber_And_ExtensionField = By.XPath("//input[@id='phone']");
         private readonly By mailingStreetAddress1Field = By.XPath("//input[@id='address1']");
@@ -118,6 +120,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             Driver.FindElement(emailtxtbx).Clear();
             Driver.FindElement(emailtxtbx).SendKeys(emailValue);
+            ((IJavaScriptExecutor)Driver).ExecuteScript("window.localStorage.setItem('useTestData', 'true');localStorage.setItem('validatedEmail', '" + emailValue + "');localStorage.setItem('emailValidated', 'true')");
+
 
         }
         public void EnterUserTitle(string UserTitle)
@@ -148,6 +152,9 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         }
         public void SelectState_Or_Territory(string StateName)
         {
+
+           
+            Driver.FindElement(mailingAddressstate_Or_Territorydropdown).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(mailingAddressstate_Or_Territorydropdown), StateName);
         }
         public void EnterMailingAddressZipCode(string ZipCode)
@@ -250,7 +257,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
 
         }
-
+        
         public bool VerifyBGColorOnRequiredFieldsPage1()
         {
 
