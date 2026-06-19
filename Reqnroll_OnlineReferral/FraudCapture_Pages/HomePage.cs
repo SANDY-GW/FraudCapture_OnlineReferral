@@ -21,7 +21,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             //var common = new CommonHelpers(Driver);
             //common.WaitForLoadingOverlayToDisappear();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 4000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 2000);
             //WaitForWidgetLoading();
             //Driver.WrappedDriver.FindElement(By.XPath("//button[@id='btnAmaEulaAgree']")).Click();
 

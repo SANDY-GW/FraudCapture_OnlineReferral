@@ -19,9 +19,6 @@ namespace FC_OnlineReferral
             public string? UserFN { get; set; }
 
 
-          
-
-
         }
 
         public static Dictionary<string, string> dic = new Dictionary<string, string>
@@ -35,7 +32,7 @@ namespace FC_OnlineReferral
             {"involvedType", "Required" },
             {"detected", "Required" },
             {"referralSummary", "Required" },
-            {"involvedType","Required"},
+           
             {"isExternalReferal","Required" },
             { "pOrgName","Required"},
             {"pFirstName","Required" },

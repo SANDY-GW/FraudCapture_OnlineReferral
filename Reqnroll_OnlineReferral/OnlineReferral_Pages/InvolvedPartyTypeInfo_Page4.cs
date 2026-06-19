@@ -58,11 +58,11 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         #endregion
 
-        //public void SelectWitness_Or_ExternalReferringParty(string witness_Or_ExternalReferringParty)
-        //{
-        //    CommonHelpers.WaitForElementVisiblity(Driver, witness_Or_ExternalReferringPartydrp, 10);
-        //    CommonHelpers.selectOptionByValue(Driver.FindElement(witness_Or_ExternalReferringPartydrp), witness_Or_ExternalReferringParty);
-        //}
+        public void SelectWitness_Or_ExternalReferringParty(string witness_Or_ExternalReferringParty)
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, witness_Or_ExternalReferringPartydrp, 10);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(witness_Or_ExternalReferringPartydrp), witness_Or_ExternalReferringParty);
+        }
         public void EnterOrgName(string orgName)
         {
           

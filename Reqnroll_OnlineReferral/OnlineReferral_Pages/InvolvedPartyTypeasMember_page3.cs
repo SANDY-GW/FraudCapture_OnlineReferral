@@ -47,6 +47,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By countyDrpdn = By.XPath("//select[@id='mCounty']");
         private readonly By zipCodeField = By.XPath("//input[@id='mZip']");
 
+
         private readonly By primaryPhoneNumberField = By.XPath("//input[@id='mPrimaryPhone']");
         private readonly By secondaryPhoneNumberField = By.XPath("//input[@id='mSecondaryPhone']");
         private readonly By emailField = By.XPath("//input[@id='mEmail']");
@@ -138,15 +139,37 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         //How did this external referring party report this? 
         public void FillHowDidThisExternalReferringPartyreportThisTextarea(string report)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, HowDidThisExternalReferringPartyreportThisTextarea, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
+            //CommonHelpers.WaitForElementVisiblity(Driver, HowDidThisExternalReferringPartyreportThisTextarea, 100);
+            CommonHelpers.ScrollToElement(Driver, HowDidThisExternalReferringPartyreportThisTextarea);
+            Driver.FindElement(HowDidThisExternalReferringPartyreportThisTextarea).Click();
             Driver.FindElement(HowDidThisExternalReferringPartyreportThisTextarea).SendKeys(report);
+        }
+        public void SelectHowDidThisExternalReferringPartyreportThisTextarea(string report1)
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
+            //CommonHelpers.WaitForElementVisiblity(Driver, HowDidThisExternalReferringPartyreportThisTextarea, 100);
+            CommonHelpers.ScrollToElement(Driver, HowDidThisExternalReferringPartyreportThisTextarea);
+            Driver.FindElement(HowDidThisExternalReferringPartyreportThisTextarea).Click();
+            Driver.FindElement(HowDidThisExternalReferringPartyreportThisTextarea).SendKeys(report1);
         }
 
         //Any additional information regarding the witness or external referring party
         public void FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(string additionalInfo)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
+            //CommonHelpers.WaitForElementVisiblity(Driver, AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea, 100);
+            CommonHelpers.ScrollToElement(Driver, AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea);
+            Driver.FindElement(AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea).Click();
             Driver.FindElement(AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea).SendKeys(additionalInfo);
+        }
+        public void SelectAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(string additionalInfo1)
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
+            //CommonHelpers.WaitForElementVisiblity(Driver, AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea, 100);
+            CommonHelpers.ScrollToElement(Driver, AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea);
+            Driver.FindElement(AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea).Click();
+            Driver.FindElement(AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea).SendKeys(additionalInfo1);
         }
 
 
@@ -277,12 +300,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void ClickProceedToNextSectionButton()
         {
-            Thread.Sleep(5000);
-
-            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 100);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,300);
+            
+            //CommonHelpers.WaitForElementVisiblity(Driver, HowDidThisExternalReferringPartyreportThisTextarea, 100);
+            CommonHelpers.ScrollToElement(Driver, continue_with_Involved_Party_Selection_Button);
             Driver.FindElement(continue_with_Involved_Party_Selection_Button).Click();
-            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
+            //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
 
         }
 

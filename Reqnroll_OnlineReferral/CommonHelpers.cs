@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
+using System.Xml.Linq;
 
 namespace FC_OnlineReferral
 {
@@ -92,7 +93,7 @@ namespace FC_OnlineReferral
 
         public static void selectOptionByValue(IWebElement ele, string selectText)
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
             SelectElement selectElement = new SelectElement(ele);
 
             // Select by Visible Text
