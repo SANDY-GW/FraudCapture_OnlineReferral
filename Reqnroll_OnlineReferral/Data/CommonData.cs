@@ -32,7 +32,7 @@ namespace FC_OnlineReferral
             {"involvedType", "Required" },
             {"detected", "Required" },
             {"referralSummary", "Required" },
-
+           
             {"isExternalReferal","Required" },
             { "pOrgName","Required"},
             {"pFirstName","Required" },

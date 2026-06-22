@@ -18,11 +18,13 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             // Login code here
             FC_OnlineReferralLogin();
+            
+            
             CommonHelpers.WaitForPageToLoad(Driver, 10);
             CommonHelpers.WaitForInstructionsButton(Driver, 180);
 
             CommonHelpers.WaitForElementVisiblity(Driver, By.XPath("//button[contains(.,'Instructions')]"), 120);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
         }
 
 
