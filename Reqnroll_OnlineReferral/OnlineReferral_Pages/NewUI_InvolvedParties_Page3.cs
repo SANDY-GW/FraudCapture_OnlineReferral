@@ -302,7 +302,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForPageToLoad(Driver, 10000);
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
             js.ExecuteScript("window.scrollTo(0, 0);");
-            
+
 
         }
         //Click on  continue_with_Involved_Party_Selection_Button
@@ -323,5 +323,29 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
 
 
+        public string GetValidationDateErrorMessage()
+        {
+            return CommonHelpers.GetValidationDateErrorText(Driver);
+        }
+
+        public bool IsValidationDateErrorDisplayed()
+        {
+            return CommonHelpers.ValidationDateerrorExists(Driver);
+        }
+
+        public bool VerifyIfStateOrTerritoryDropdownIsInAlphabeticalOrder()
+        {
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(stateDrpdn));
+        }
+
+        public string GetValidationErrorMessage()
+        {
+            return CommonHelpers.GetValidationErrorText(Driver);
+        }
+
+        public bool IsValidationErrorDisplayed()
+        {
+            return CommonHelpers.ValidationerrorExists(Driver);
+        }
     }
 }

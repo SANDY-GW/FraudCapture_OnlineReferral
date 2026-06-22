@@ -439,7 +439,7 @@ Scenario Outline: 01_ [Online Referral End To End Scenario with Primary Subject 
 	And i check the required fields current page
 
 	And Questionone Is this a resubmission
-		| <Question1  |
+		| Question1  |
 		| <Question1> |
 
 	And Questiontwo, QuestionThree

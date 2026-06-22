@@ -367,6 +367,22 @@ namespace FC_OnlineReferral
                 : string.Empty;
 
         }
+        public static bool ValidationDateerrorExists(IWebDriver driver)
+        {
+            return driver.FindElements(By.XPath("//span[contains(@id,'Error') and contains(text(),'Date')]")).Any();
+
+        }
+        public static string GetValidationDateErrorText(IWebDriver driver)
+        {
+
+            return ValidationDateerrorExists(driver)
+                ? driver.FindElement(By.XPath("//span[contains(@id,'Error') and contains(text(),'Date')]")).Text
+                : string.Empty;
+
+        }
+
+
+
 
         public static bool IsDropdoenListInAlphabeticOrder(IWebDriver driver, IWebElement ele)
         {

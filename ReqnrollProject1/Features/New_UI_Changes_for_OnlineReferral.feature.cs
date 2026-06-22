@@ -2037,7 +2037,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table39 = new global::Reqnroll.Table(new string[] {
-                            "<Question1"});
+                            "Question1"});
                 table39.AddRow(new string[] {
                             string.Format("{0}", question1)});
 #line 441

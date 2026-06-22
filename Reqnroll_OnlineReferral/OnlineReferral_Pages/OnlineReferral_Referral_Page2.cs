@@ -54,10 +54,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             }
 
-           
+
             return value;
         }
-        
+
         public void SelectRefType(string RefType)
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
@@ -66,7 +66,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         }
 
-       
+
 
         public void SelectInvolvedPartyType(string InvolvedPartyType)
         {
@@ -75,16 +75,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void EnterHowWasThisDetected(string Detected)
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
-            Driver.FindElement(detectedField).Click();
+            Driver.FindElement(detectedField).Clear();
             Driver.FindElement(detectedField).SendKeys(Detected);
         }
         public void EnterReferralSummary(string ReferralSummary)
         {
-            
-            CommonHelpers.ScrollDown(Driver);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
-            Driver.FindElement(referralSummaryField).Click();
+            Driver.FindElement(referralSummaryField).Clear();
             Driver.FindElement(referralSummaryField).SendKeys(ReferralSummary);
         }
         public void EnterCase_Or_Reference_Or_TrackingNumber(string Case_Or_Reference_Or_TrackingNumber)
@@ -101,17 +97,25 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void EnterOriginalDetectionDate(string OriginalDetectionDate)
         {
+            CommonHelpers.WaitForElementVisiblity(Driver, originalDetectionDateField, 30);
+            Driver.FindElement(originalDetectionDateField).Click();
             Driver.FindElement(originalDetectionDateField).Clear();
             Driver.FindElement(originalDetectionDateField).SendKeys(OriginalDetectionDate);
         }
         public void EnterIncidentStartDate(string IncidentStartDate)
         {
+            CommonHelpers.WaitForElementVisiblity(Driver, incidentStartDateField, 60);
+            Driver.FindElement(incidentStartDateField).Clear();
+            Driver.FindElement(incidentStartDateField).Click();
             Driver.FindElement(incidentStartDateField).Clear();
             Driver.FindElement(incidentStartDateField).SendKeys(IncidentStartDate);
         }
 
         public void EnterIncidentEndDate(string IncidentEndDate)
         {
+            CommonHelpers.WaitForElementVisiblity(Driver, incidentEndDateField, 60);
+            Driver.FindElement(incidentEndDateField).Clear();
+            Driver.FindElement(incidentEndDateField).Click();
             Driver.FindElement(incidentEndDateField).Clear();
             Driver.FindElement(incidentEndDateField).SendKeys(IncidentEndDate);
         }
@@ -136,15 +140,13 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void ClickProceedToNextSectionButton()
         {
-
-
-            Thread.Sleep(2000);
-            CommonHelpers.ScrollToElement(Driver, proceed_To_Next_SectionButton);
+            CommonHelpers.ScrollUp(Driver);
             //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 500);
-            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 200);
+            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 70);
+            CommonHelpers.ScrollToElement(Driver, proceed_To_Next_SectionButton);
             Driver.FindElement(proceed_To_Next_SectionButton).Click();
-            //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 70);
-
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 70);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 70);
         }
 
 
@@ -169,6 +171,26 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
 
 
-
+        // Method to get field value
+        public string GetAmountValue()
+        {
+            return Driver.FindElement(estimatedAmountField).GetAttribute("value");
         }
+        public bool IsDollarSymbolDisplayed()
+        {
+            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+            string value = PG2.GetAmountValue();
+            return value.Contains("$");
+        }
+
+        public string GetValidationDateErrorMessage()
+        {
+            return CommonHelpers.GetValidationDateErrorText(Driver);
+        }
+
+        public bool IsValidationDateErrorDisplayed()
+        {
+            return CommonHelpers.ValidationDateerrorExists(Driver);
+        }
+    }
 }
