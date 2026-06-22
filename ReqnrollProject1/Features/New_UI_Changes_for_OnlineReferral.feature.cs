@@ -2653,48 +2653,117 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table78 = new global::Reqnroll.Table(new string[] {
-                            "Is there any Involved Party Dropdown"});
+                            "isAnotherInvolvedPartyAvailable",
+                            "additionalInvolvedPartyType",
+                            "isAnotherExternalInvolvedPartyAvailable"});
                 table78.AddRow(new string[] {
-                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
+                            "<isAnotherInvolvedPartyAvailable>",
+                            "<additionalInvolvedPartyType>",
+                            "<isAnotherExternalInvolvedPartyAvailable>"});
 #line 633
- await testRunner.AndAsync("is there anotherinvolved party dropdown is selected on the fourth User Data Page", ((string)(null)), table78, "And ");
-#line hidden
-#line 640
- await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 641
- await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 642
- await testRunner.WhenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 643
- await testRunner.AndAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.ThenAsync("I select the another involved Party from the drop down menu", ((string)(null)), table78, "Then ");
 #line hidden
                 global::Reqnroll.Table table79 = new global::Reqnroll.Table(new string[] {
-                            "<Question1"});
+                            "Organization1",
+                            "NamePrefix",
+                            "FirstName1",
+                            "MiddleName1",
+                            "LastName1",
+                            "NameSuffix",
+                            "StreetAddress3",
+                            "StreetAddress4",
+                            "City",
+                            "Zip",
+                            "Designation1",
+                            "Country",
+                            "PrimaryPhone",
+                            "SecondaryPhone",
+                            "Ssn",
+                            "OtherId",
+                            "Email1",
+                            "Other"});
                 table79.AddRow(new string[] {
-                            string.Format("{0}", question1)});
-#line 645
- await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table79, "And ");
+                            "<Organization1>",
+                            "<NamePrefix>",
+                            "<FirstName1>",
+                            "<MiddleName1>",
+                            "<LastName1>",
+                            "<NameSuffix>",
+                            "<StreetAddress3>",
+                            "<StreetAddress4>",
+                            string.Format("{0}", city),
+                            "<Zip>",
+                            "<Designation1>",
+                            "<Country>",
+                            "<PrimaryPhone>",
+                            "<SecondaryPhone>",
+                            "<Ssn>",
+                            "<OtherId>",
+                            "<Email1>",
+                            "<Other>"});
+#line 636
+ await testRunner.ThenAsync("the following fields should be displayed:", ((string)(null)), table79, "Then ");
 #line hidden
                 global::Reqnroll.Table table80 = new global::Reqnroll.Table(new string[] {
-                            "Question2",
-                            "Question3"});
+                            "report1",
+                            "additionalInfo1"});
                 table80.AddRow(new string[] {
-                            string.Format("{0}", question2),
-                            string.Format("{0}", question3)});
-#line 649
- await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table80, "And ");
+                            "<report1>",
+                            "<additionalInfo1>"});
+#line 639
+ await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
+                        "Required) and Any Additonal Information regarding the witness or external referr" +
+                        "ing party? (Optional)field on Second Time", ((string)(null)), table80, "Then ");
+#line hidden
+#line 642
+ await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table81 = new global::Reqnroll.Table(new string[] {
-                            "TestFile"});
+                            "isAnotherInvolvedPartyAvailable1"});
                 table81.AddRow(new string[] {
-                            string.Format("{0}", testFile)});
-#line 652
- await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table81, "And ");
+                            "<isAnotherInvolvedPartyAvailable1>"});
+#line 643
+ await testRunner.ThenAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table81, "Then ");
 #line hidden
-#line 655
+#line 646
+ await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 651
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 652
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 653
+ await testRunner.WhenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 654
+ await testRunner.AndAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table82 = new global::Reqnroll.Table(new string[] {
+                            "<Question1"});
+                table82.AddRow(new string[] {
+                            string.Format("{0}", question1)});
+#line 656
+ await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table82, "And ");
+#line hidden
+                global::Reqnroll.Table table83 = new global::Reqnroll.Table(new string[] {
+                            "Question2",
+                            "Question3"});
+                table83.AddRow(new string[] {
+                            string.Format("{0}", question2),
+                            string.Format("{0}", question3)});
+#line 660
+ await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table83, "And ");
+#line hidden
+                global::Reqnroll.Table table84 = new global::Reqnroll.Table(new string[] {
+                            "TestFile"});
+                table84.AddRow(new string[] {
+                            string.Format("{0}", testFile)});
+#line 663
+ await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table84, "And ");
+#line hidden
+#line 666
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
