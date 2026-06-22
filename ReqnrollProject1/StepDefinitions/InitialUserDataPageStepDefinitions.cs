@@ -1065,7 +1065,93 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
+        [Then("I select the another involved Party from the drop down menu")]
+        public void ThenISelectTheAnotherInvolvedPartyFromTheDropDownMenu(DataTable dataTable)
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.SelectisThereAnotherInvolvedParty(data.isAnotherInvolvedPartyAvailable);
+            PG3.SelectPleaseSelectTheAdditionalInvolvedPartyType(data.additionalInvolvedPartyType);
+            PG3.SelectIsThisInvolvedPartyAnExternalReferringParty(data.isAnotherExternalInvolvedPartyAvailable);
+        }
+        [Then("the following fields should be displayed:")]
+        public void ThenTheFollowingFieldsShouldBeDisplayed(DataTable dataTable)
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.FillOrganizationField(data.Organization1);
+            PG3.FillNamePrefixField(data.NamePrefix);
+            PG3.FillFirstNameField(data.FirstName1);
+            PG3.FillMiddleNameField(data.MiddleName1);
+            PG3.FillLastNameField(data.LastName1);
+            PG3.FillNameSuffixField(data.NameSuffix);
+            PG3.FillStreetAddress1Field(data.StreetAddress3);
+            PG3.FillStreetAddress2Field(data.StreetAddress4);
+            PG3.FillCityField(data.City);
+            //PG3.FillStateField(data.State);
+            //PG3.SelectCountyField(data.County);
+            PG3.FillZipField(data.Zip);
+            PG3.FillDesignationField1(data.Designation1);
+            PG3.FillCountryField(data.Country);
+            PG3.FillPrimaryPhoneField(data.PrimaryPhone);
+            PG3.FillSecondaryPhoneField(data.SecondaryPhone);
+            PG3.FillSsnField(data.Ssn);
+            PG3.FillOtherIdField(data.OtherId);
+            PG3.FillEmailField(data.Email1);
+            PG3.FillOtherField(data.Other);
 
+
+
+
+
+
+        }
+
+
+        [Then("I enter the Text for How did this witness\\/external referring party report this? \\(Required) and Any Additonal Information regarding the witness or external referring party? \\(Optional)field")]
+        public void ThenIEnterTheTextForHowDidThisWitnessExternalReferringPartyReportThisRequiredAndAnyAdditonalInformationRegardingTheWitnessOrExternalReferringPartyOptionalField(DataTable dataTable)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.FillHowDidThisExternalReferringPartyreportThisTextarea(data.report);
+            PG3.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.additionalInfo);
+        }
+        [Then("I enter the Text for How did this witness\\/external referring party report this? \\(Required) and Any Additonal Information regarding the witness or external referring party? \\(Optional)field on Second Time")]
+        public void ThenIEnterTheTextForHowDidThisWitnessExternalReferringPartyReportThisRequiredAndAnyAdditonalInformationRegardingTheWitnessOrExternalReferringPartyOptionalFieldOnSecondTime(DataTable dataTable)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.SelectHowDidThisExternalReferringPartyreportThisTextarea(data.report1);
+            PG3.SelectAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.additionalInfo1);
+        }
+        [Then("I continue with Involved Party Selection and proceed to the next page")]
+        public void ThenIContinueWithInvolvedPartySelectionAndProceedToTheNextPage()
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            PG3.ClickProceedToNextSectionButton();
+
+        }
+
+        [Then("I Select the  another involved Party from the drop down menu as NO")]
+        public void ThenISelectTheAnotherInvolvedPartyFromTheDropDownMenuAsNO(DataTable dataTable)
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.FillisThereAnotherInvolvedParty(data.isAnotherInvolvedPartyAvailable1);
+        }
+        [Then("I Click Finish Involved Party Selection and Proceed to Next Section button")]
+        public void ThenIClickFinishInvolvedPartySelectionAndProceedToNextSectionButton()
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+            PG3.ClickfinishInvolvedPartySelectionAndProceedToNectSectionButton();
+        }
+        [Then("I select the Involved party an external referring Party or Witness dropdown as {string}")]
+        public void ThenISelectTheInvolvedPartyAnExternalReferringPartyOrWitnessDropdownAs(DataTable dataTable)
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.SelectIsThisInvolvedPartyAnExternalReferringParty(data.isAnotherExternalInvolvedPartyAvailable);
+        }
 
 
 

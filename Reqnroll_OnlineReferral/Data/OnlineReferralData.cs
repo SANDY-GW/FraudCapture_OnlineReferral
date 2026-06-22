@@ -90,6 +90,45 @@ namespace FC_OnlineReferral
         public string Question2 { get; set; } = string.Empty;
         public string Question3 { get; set; } = string.Empty;
         public string TestFile { get; set; } = string.Empty;
+        public string Question4 { get; set; }= string.Empty;
+
+        public string isAnotherInvolvedPartyAvailable { get; set; }=string.Empty;
+
+        public string Question5 { get; set; } = string.Empty;
+        public string additionalInvolvedPartyType { get; set; } = string.Empty;
+        public string isAnotherExternalInvolvedPartyAvailable { get; set; } = string.Empty;
+
+        public string Organization1 { get; set; } = string.Empty;
+
+        public string NamePrefix { get; set; } = string.Empty;
+        public string FirstName1 { get; set; } = string.Empty;
+        public string MiddleName1 { get; set; } = string.Empty;
+        public string LastName1 { get; set; } = string.Empty;
+        virtual public string NameSuffix { get; set; } = string.Empty;
+        public string StreetAddress3 { get; set; } = string.Empty;
+        public string StreetAddress4 { get; set; } = string.Empty;
+        public string Zip { get; set; } = string.Empty;
+        public string Designation1 { get; set; } = string.Empty;
+        public string Country { get; set; } = string.Empty;
+        public string PrimaryPhone { get; set; } = string.Empty;
+        public string SecondaryPhone { get; set; } = string.Empty;
+
+        public string PhoneNumber { get; set; }= string.Empty;
+        public string Ssn { get; set; } = string.Empty;
+
+        public string OtherId { get; set; } = string.Empty;
+
+        public string Email1 { get; set; } = string.Empty;
+        public string Other { get; set; } = string.Empty;
+
+        public string report { get; set; }
+        public string additionalInfo { get; set; }=string.Empty;
+        public string report1 { get; set; } = string.Empty;
+        public string additionalInfo1 { get; set; } = string.Empty  ;
+
+
+    public string isAnotherInvolvedPartyAvailable1 { get; set; } = string.Empty;
+
 
 
 
