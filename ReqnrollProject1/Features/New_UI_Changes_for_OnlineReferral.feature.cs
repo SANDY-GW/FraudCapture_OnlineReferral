@@ -2072,7 +2072,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             "f all the required fields ]")]
         [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
             " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2026", "Date cannot be in the future.", "8", null)]
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2026", "Date cannot be in the future.", "Yes", "12.1.25 Non enumerated Individual", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "8", null)]
         public async global::System.Threading.Tasks.Task _02_OnlineReferralEndToEndScenarioWithPrimarySubjectTypeAsProviderAndAdditionalInvolvedPartyAsNon_EnumeratedProviderAlongWithValidationOfAllTheRequiredFields(
                     string invalidZipcode, 
                     string zipcodeValidationErrorMessage, 
@@ -2150,6 +2150,30 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     string dollarsymbolinAmountFieldValidationMessage, 
                     string invalidDOB, 
                     string dOBValidationErrorMessage, 
+                    string isAnotherInvolvedPartyAvailable, 
+                    string additionalInvolvedPartyType, 
+                    string isAnotherExternalInvolvedPartyAvailable, 
+                    string organization1, 
+                    string namePrefix1, 
+                    string firstName1, 
+                    string middleName1, 
+                    string lastName1, 
+                    string nameSuffix1, 
+                    string streetAddress3, 
+                    string streetAddress4, 
+                    string city1, 
+                    string zip, 
+                    string designation1, 
+                    string country1, 
+                    string primaryPhone, 
+                    string secondaryPhone, 
+                    string ssn, 
+                    string otherId, 
+                    string email1, 
+                    string other1, 
+                    string report1, 
+                    string additionalInfo1, 
+                    string isAnotherInvolvedPartyAvailable1, 
                     string @__pickleIndex, 
                     string[] exampleTags)
         {
@@ -2231,6 +2255,30 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             argumentsOfScenario.Add("DollarsymbolinAmountFieldValidationMessage", dollarsymbolinAmountFieldValidationMessage);
             argumentsOfScenario.Add("InvalidDOB", invalidDOB);
             argumentsOfScenario.Add("DOB validation error message", dOBValidationErrorMessage);
+            argumentsOfScenario.Add("isAnotherInvolvedPartyAvailable", isAnotherInvolvedPartyAvailable);
+            argumentsOfScenario.Add("additionalInvolvedPartyType", additionalInvolvedPartyType);
+            argumentsOfScenario.Add("isAnotherExternalInvolvedPartyAvailable", isAnotherExternalInvolvedPartyAvailable);
+            argumentsOfScenario.Add("Organization1", organization1);
+            argumentsOfScenario.Add("NamePrefix", namePrefix1);
+            argumentsOfScenario.Add("FirstName1", firstName1);
+            argumentsOfScenario.Add("MiddleName1", middleName1);
+            argumentsOfScenario.Add("LastName1", lastName1);
+            argumentsOfScenario.Add("NameSuffix", nameSuffix1);
+            argumentsOfScenario.Add("StreetAddress3", streetAddress3);
+            argumentsOfScenario.Add("StreetAddress4", streetAddress4);
+            argumentsOfScenario.Add("City1", city1);
+            argumentsOfScenario.Add("Zip", zip);
+            argumentsOfScenario.Add("Designation1", designation1);
+            argumentsOfScenario.Add("Country", country1);
+            argumentsOfScenario.Add("PrimaryPhone", primaryPhone);
+            argumentsOfScenario.Add("SecondaryPhone", secondaryPhone);
+            argumentsOfScenario.Add("Ssn", ssn);
+            argumentsOfScenario.Add("OtherId", otherId);
+            argumentsOfScenario.Add("Email1", email1);
+            argumentsOfScenario.Add("Other", other1);
+            argumentsOfScenario.Add("report1", report1);
+            argumentsOfScenario.Add("additionalInfo1", additionalInfo1);
+            argumentsOfScenario.Add("isAnotherInvolvedPartyAvailable1", isAnotherInvolvedPartyAvailable1);
             string pickleIndex = @__pickleIndex;
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("02_ [Online Referral End To End Scenario with Primary Subject Type as Provider an" +
                     "d additional involved party as \"Non-Enumerated Provider\" along with Validation o" +
@@ -2238,7 +2286,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 466
- this.ScenarioInitialize(scenarioInfo, ruleInfo);
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -2657,9 +2705,9 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "additionalInvolvedPartyType",
                             "isAnotherExternalInvolvedPartyAvailable"});
                 table78.AddRow(new string[] {
-                            "<isAnotherInvolvedPartyAvailable>",
-                            "<additionalInvolvedPartyType>",
-                            "<isAnotherExternalInvolvedPartyAvailable>"});
+                            string.Format("{0}", isAnotherInvolvedPartyAvailable),
+                            string.Format("{0}", additionalInvolvedPartyType),
+                            string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
 #line 633
  await testRunner.ThenAsync("I select the another involved Party from the drop down menu", ((string)(null)), table78, "Then ");
 #line hidden
@@ -2683,24 +2731,24 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Email1",
                             "Other"});
                 table79.AddRow(new string[] {
-                            "<Organization1>",
-                            "<NamePrefix>",
-                            "<FirstName1>",
-                            "<MiddleName1>",
-                            "<LastName1>",
-                            "<NameSuffix>",
-                            "<StreetAddress3>",
-                            "<StreetAddress4>",
+                            string.Format("{0}", organization1),
+                            string.Format("{0}", namePrefix1),
+                            string.Format("{0}", firstName1),
+                            string.Format("{0}", middleName1),
+                            string.Format("{0}", lastName1),
+                            string.Format("{0}", nameSuffix1),
+                            string.Format("{0}", streetAddress3),
+                            string.Format("{0}", streetAddress4),
                             string.Format("{0}", city),
-                            "<Zip>",
-                            "<Designation1>",
-                            "<Country>",
-                            "<PrimaryPhone>",
-                            "<SecondaryPhone>",
-                            "<Ssn>",
-                            "<OtherId>",
-                            "<Email1>",
-                            "<Other>"});
+                            string.Format("{0}", zip),
+                            string.Format("{0}", designation1),
+                            string.Format("{0}", country1),
+                            string.Format("{0}", primaryPhone),
+                            string.Format("{0}", secondaryPhone),
+                            string.Format("{0}", ssn),
+                            string.Format("{0}", otherId),
+                            string.Format("{0}", email1),
+                            string.Format("{0}", other1)});
 #line 636
  await testRunner.ThenAsync("the following fields should be displayed:", ((string)(null)), table79, "Then ");
 #line hidden
@@ -2708,8 +2756,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "report1",
                             "additionalInfo1"});
                 table80.AddRow(new string[] {
-                            "<report1>",
-                            "<additionalInfo1>"});
+                            string.Format("{0}", report1),
+                            string.Format("{0}", additionalInfo1)});
 #line 639
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
@@ -2721,7 +2769,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 global::Reqnroll.Table table81 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table81.AddRow(new string[] {
-                            "<isAnotherInvolvedPartyAvailable1>"});
+                            string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
 #line 643
  await testRunner.ThenAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table81, "Then ");
 #line hidden

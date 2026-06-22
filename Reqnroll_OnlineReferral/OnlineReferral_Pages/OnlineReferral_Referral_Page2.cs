@@ -176,7 +176,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             return Driver.FindElement(estimatedAmountField).GetAttribute("value");
         }
-        public bool IsDollarSymbolDisplayed()
+        public bool ValidateTheAmountField()
         {
             var PG2 = new OnlineReferral_Referral_Page2(Driver);
             string value = PG2.GetAmountValue();

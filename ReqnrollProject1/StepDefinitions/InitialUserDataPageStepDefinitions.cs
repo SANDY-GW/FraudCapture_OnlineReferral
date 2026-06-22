@@ -310,7 +310,7 @@ namespace ReqnrollProject1.StepDefinitions
         public void ThenValidateTheSymbolIsDisplayedInTheAmountField(DataTable dataTable)
         {
             var PG2 = new OnlineReferral_Referral_Page2(Driver);
-            PG2.IsDollarSymbolDisplayed();
+            PG2.ValidateTheAmountField();
 
         }
 
