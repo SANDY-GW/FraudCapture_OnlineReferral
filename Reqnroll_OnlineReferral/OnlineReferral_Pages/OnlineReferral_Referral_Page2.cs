@@ -97,7 +97,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void EnterOriginalDetectionDate(string OriginalDetectionDate)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, originalDetectionDateField, 30);
+            CommonHelpers.WaitForElementVisiblity(Driver, originalDetectionDateField, 60);
             Driver.FindElement(originalDetectionDateField).Click();
             Driver.FindElement(originalDetectionDateField).Clear();
             Driver.FindElement(originalDetectionDateField).SendKeys(OriginalDetectionDate);

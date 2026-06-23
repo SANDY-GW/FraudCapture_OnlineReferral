@@ -2,9 +2,6 @@ using FC_OnlineReferral.OnlineReferral_Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
-using System.ComponentModel;
-using System.Runtime.Intrinsics.X86;
-using static System.Net.Mime.MediaTypeNames;
 using Assert = NUnit.Framework.Assert;
 namespace ReqnrollProject1.StepDefinitions
 {
@@ -94,7 +91,7 @@ namespace ReqnrollProject1.StepDefinitions
             Assert.That(CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid email ID '{username}' entered");
 
             PG1.EnterMailingAddressZipCode(Mailing_Address_Zip);
-            Assert.That(CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid email ID '{Mailing_Address_Zip}' entered");
+            Assert.That(CommonHelpers.ValidationerrorExists(Driver), Is.False, $"Invalid Zip Code '{Mailing_Address_Zip}' entered");
         }
 
 
@@ -853,80 +850,85 @@ namespace ReqnrollProject1.StepDefinitions
 
         // member page
 
-        [When("enter InvolvedParty  name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string}")]
-        public void WhenEnterInvolvedPartyNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAs(string nameprefix, string Fn, string Mn, string Ln, string namesuffix)
+        [When("enter InvolvedParty  name prefix , associated party first name ,associated party middle name , associated party last name and name suffix")]
+        public void WhenEnterInvolvedPartyNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAs(DataTable dataTable)
         {
             var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
-
+            var data = dataTable.CreateInstance<OnlineReferralData>();
 
             DateTime dateTime = DateTime.Now;
-            Fn = Fn + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
-            Ln = Ln + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
-            _scenarioContext["UserFN"] = Fn;
-            _scenarioContext["UserLN"] = Ln;
+            data.firstName = data.firstName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            data.lastName = data.lastName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            _scenarioContext["UserFN"] = data.firstName;
+            _scenarioContext["UserLN"] = data.lastName;
 
-            PG3.FillNamePrefixField(nameprefix);
-            PG3.FillFirstNameField(Fn);
-            PG3.FillMiddleNameField(Mn);
-            PG3.FillLastNameField(Ln);
-            PG3.FillNameSuffixField(namesuffix);
+            PG3.FillNamePrefixField(data.NamePrefix);
+            PG3.FillFirstNameField(data.firstName);
+            PG3.FillMiddleNameField(data.middleName);
+            PG3.FillLastNameField(data.lastName);
+            PG3.FillNameSuffixField(data.nameSuffix);
         }
 
 
-        [When("enter InvolvedParty DOB as {string}, Gender as {string}, other as {string}, How witness or external party reported this as {string},any additional info as {string}")]
-        public void WhenEnterInvolvedPartyDOBAsGenderAsOtherAsHowWitnessOrExternalPartyReportedThisAsAnyAdditionalInfoAs(string p0, string male, string test, string member, string p4)
+        [When("enter InvolvedParty DOB , Gender , other , How witness or external party reported this ,any additional info")]
+        public void WhenEnterInvolvedPartyDOBAsGenderAsOtherAsHowWitnessOrExternalPartyReportedThisAsAnyAdditionalInfoAs(DataTable dataTable)
         {
 
             var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
-            PG3.FillDOBField(p0);
-            PG3.FillGenderField(male);
-            PG3.FillOtherField(test);
-            PG3.FillHowDidThisExternalReferringPartyreportThisTextarea(member);
-            PG3.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(p4);
+            var data = dataTable.CreateInstance<OnlineReferralData>();  
+            PG3.FillDOBField(data.DOB);
+            PG3.FillGenderField(data.Gender);
+            PG3.FillOtherField(data.Other);
+            PG3.FillHowDidThisExternalReferringPartyreportThisTextarea(data.involvedPartyType);
+            PG3.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.detectedAs);
         }
 
 
 
-        [When("enter InvolvedParty ID as {string},ssn as {string} medicaid ID as {string},Medicare ID as {string}, otherID as {string}")]
-        public void WhenEnterInvolvedPartyIDAsSsnAsMedicaidIDAsMedicareIDAsOtherIDAs(string Id, string ssn, string medicaid, string medicare, string otherID)
+        [When("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID")]
+        public void WhenEnterInvolvedPartyIDAsSsnAsMedicaidIDAsMedicareIDAsOtherIDAs(DataTable dataTable)
         {
             var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
-            PG3.FillIDField(Id);
-            PG3.FillSSNField(ssn);
-            PG3.FillMedicaidIDField(medicaid);
-            PG3.FillMedicareIDField(medicare);
-            PG3.FillOtherIDField(otherID);
-
+            var data = dataTable.CreateInstance<OnlineReferralData>();     
+            PG3.FillIDField(data.Other);
+            PG3.FillSSNField(data.SSN);
+            PG3.FillMedicaidIDField(data.medicaidID);
+            PG3.FillMedicareIDField(data.MedicareID);
+            PG3.FillOtherIDField(data.otherID);
         }
 
-        [When("enter InvolvedParty plan as {string}, Program  as {string},LOB as {string} and Group as {string}")]
-        public void WhenEnterInvolvedPartyPlanAsProgramAsLOBAsAndGroupAs(string plan, string program, string lob, string group)
+        [When("enter InvolvedParty plan , Program  ,LOB  and Group")]
+        public void WhenEnterInvolvedPartyPlanAsProgramAsLOBAsAndGroupAs(DataTable dataTable)
         {
             var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
-            PG3.FillPlanField(plan);
-            PG3.FillProgramField(program);
-            PG3.FillLOBField(lob);
-            PG3.FillGroupField(group);
+
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.FillPlanField(data.planType);
+            PG3.FillProgramField(data.Program);
+            PG3.FillLOBField(data.LOB);
+            PG3.FillGroupField(data.Group);
         }
-        [When("InvolvedParty member street_Address_lineone as {string}, street_Address_linetwo as {string}, city as ,{string}, state as {string} , county as {string} and zip code as {string}")]
-        public void WhenInvolvedPartyMemberStreet_Address_LineoneAsStreet_Address_LinetwoAsCityAsStateAsCountyAsAndZipCodeAs(string p0, string p1, string irving, string texas, string washington, string p5)
+        [When("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , state  , county  and zip code")]
+        public void WhenInvolvedPartyMemberStreet_Address_LineoneAsStreet_Address_LinetwoAsCityAsStateAsCountyAsAndZipCodeAs(DataTable dataTable)
         {
             var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
-            PG3.FillAddress1Field(p0);
-            PG3.FillAddress2Field(p1);
-            PG3.FillCityField(irving);
-            PG3.SelectStateFromDropdown(texas);
-            PG3.SelectCountyFromDropdown(washington);
-            PG3.FillZipCodeField(p5);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.FillAddress1Field(data.Address1);
+            PG3.FillAddress2Field(data.Address2);
+            PG3.FillCityField(data.City);
+            PG3.SelectStateFromDropdown(data.State2);
+            PG3.SelectCountyFromDropdown(data.City2);
+            PG3.FillZipCodeField(data.Zipcode);
         }
 
-        [When("InvolvedParty Primary phoneNo as {string},  Secondary phone number as {string} and email address as {string}")]
-        public void WhenInvolvedPartyPrimaryPhoneNoAsSecondaryPhoneNumberAsAndEmailAddressAs(string primaryphNo, string SeconadryPhno, string email)
+        [When("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address")]
+        public void WhenInvolvedPartyPrimaryPhoneNoAsSecondaryPhoneNumberAsAndEmailAddressAs(DataTable dataTable)
         {
             var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
-            PG3.FillPrimaryPhoneNumberField(primaryphNo);
-            PG3.FillSecondaryPhoneNumberField(SeconadryPhno);
-            PG3.FillEmailField(email);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.FillPrimaryPhoneNumberField(data.PrimaryPhone);
+            PG3.FillSecondaryPhoneNumberField(data.SecondaryPhone);
+            PG3.FillEmailField(data.EmailAddress);
         }
 
 

@@ -90,9 +90,9 @@ namespace FC_OnlineReferral
         public string Question2 { get; set; } = string.Empty;
         public string Question3 { get; set; } = string.Empty;
         public string TestFile { get; set; } = string.Empty;
-        public string Question4 { get; set; }= string.Empty;
+        public string Question4 { get; set; } = string.Empty;
 
-        public string isAnotherInvolvedPartyAvailable { get; set; }=string.Empty;
+        public string isAnotherInvolvedPartyAvailable { get; set; } = string.Empty;
 
         public string Question5 { get; set; } = string.Empty;
         public string additionalInvolvedPartyType { get; set; } = string.Empty;
@@ -113,7 +113,7 @@ namespace FC_OnlineReferral
         public string PrimaryPhone { get; set; } = string.Empty;
         public string SecondaryPhone { get; set; } = string.Empty;
 
-        public string PhoneNumber { get; set; }= string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
         public string Ssn { get; set; } = string.Empty;
 
         public string OtherId { get; set; } = string.Empty;
@@ -122,12 +122,23 @@ namespace FC_OnlineReferral
         public string Other { get; set; } = string.Empty;
 
         public string report { get; set; }
-        public string additionalInfo { get; set; }=string.Empty;
+        public string additionalInfo { get; set; } = string.Empty;
         public string report1 { get; set; } = string.Empty;
-        public string additionalInfo1 { get; set; } = string.Empty  ;
+        public string additionalInfo1 { get; set; } = string.Empty;
 
 
-    public string isAnotherInvolvedPartyAvailable1 { get; set; } = string.Empty;
+        public string isAnotherInvolvedPartyAvailable1 { get; set; } = string.Empty;
+
+        public string Gender { get; set; } = string.Empty;
+        public string HowWitnessOrExternalPartyReportedThis { get; set; } = string.Empty;
+        public string AnyAdditionalInfo { get; set; } = string.Empty;
+
+        public string planType { get; set; } = string.Empty;
+        public string Program { get; set; } = string.Empty;
+        public string LOB { get; set; } = string.Empty;
+        public string Group { get; set; } = string.Empty;
+
+
 
 
 
