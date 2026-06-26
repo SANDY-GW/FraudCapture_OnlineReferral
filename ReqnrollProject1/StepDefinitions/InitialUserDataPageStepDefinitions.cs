@@ -274,6 +274,17 @@ namespace ReqnrollProject1.StepDefinitions
 
             PG3.SelectIsExternalReferringPartyFromDropdown(option);
         }
+        
+        [Then("I select the another involved Party from the drop down menu as YES option")]
+        public void ThenISelectTheAnotherInvolvedPartyFromTheDropDownMenuAsYESOption(DataTable dataTable)
+        {
+            var PG4 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG4.SelectisThereAnotherInvolvedParty(data.isAnotherInvolvedPartyAvailable);
+            PG4.SelectPleaseSelectTheAdditionalInvolvedPartyType(data.additionalInvolvedPartyType);
+            PG4.SelectIsThisInvolvedPartyAnExternalReferringParty(data.isAnotherExternalInvolvedPartyAvailable);
+        }
+
 
         [When("enter InvolvedParty orgname as {string}, name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string} on the fourth User Data Page")]
         public void WhenEnterInvolvedPartyOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(string orgname, string prefix, string fn, string mn, string ln, string suffix)
@@ -900,26 +911,89 @@ namespace ReqnrollProject1.StepDefinitions
             PG3.FillStreetAddress1Field(data.StreetAddress3);
             PG3.FillStreetAddress2Field(data.StreetAddress4);
             PG3.FillCityField(data.City);
-            //PG3.FillStateField(data.State);
-            //PG3.SelectCountyField(data.County);
+            PG3.SelectStateField(data.State);
+            PG3.SelectCountyField(data.County);
             PG3.FillZipField(data.Zip);
             PG3.FillDesignationField1(data.Designation1);
             PG3.FillCountryField(data.Country);
+            PG3.FilldobField(data.dob);
             PG3.FillPrimaryPhoneField(data.PrimaryPhone);
             PG3.FillSecondaryPhoneField(data.SecondaryPhone);
             PG3.FillSsnField(data.Ssn);
             PG3.FillOtherIdField(data.OtherId);
             PG3.FillEmailField(data.Email1);
             PG3.FillOtherField(data.Other);
-            
-
-
-
-
 
         }
+        [Then("the following fields should be displayed for Provider")]
+        public void ThenTheFollowingFieldsShouldBeDisplayedForProvider(DataTable dataTable)
+        {
+            var PG4 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG4.FillorganizationFieldprovider(data.OrganizationProvider);
+            PG4.FillnamePrefixFieldprovider(data.namePrefixProvider);
+            PG4.FillfirstNameFieldprovider(data.firstNameProvider);
+            PG4.FillmiddleNameFieldprovider(data.middleNameProvider);
+            PG4.FilllastNameFieldprovider(data.lastNameProvider);
+            PG4.FillnameSuffixFieldprovider(data.nameSuffixProvider);
+            PG4.FillDesignationFieldprovider(data.DesignationProvider);
+            PG4.FillDOBFieldprovider(data.DOBProvider);
+            PG4.FillSSNFieldprovider(data.SSNProvider);
+            PG4.FillLicenseNumberFieldprovider(data.LicenseNumberProvider);
+            PG4.FillIDFieldprovider(data.IDProvider);
+            PG4.FillNPIFieldprovider(data.NPIProvider);
+            PG4.FillTIN_EINFieldprovider(data.TIN_EINProvider);
+            PG4.FillmedicaidIDFieldprovider(data.medicaidIDProvider);
+            PG4.FillmedicareIDFieldprovider(data.medicareIDProvider);
+            PG4.FillOtherIDFieldprovider(data.OtherIDProvider);
+            PG4.FillProviderTypeFieldprovider(data.ProviderTypeProvider);
+            PG4.FillProviderSpecialtyFieldprovider(data.ProviderSpecialtyProvider);
+            PG4.FillTaxonomyFieldprovider(data.TaxonomyProvider);
+            PG4.FillotherFieldprovider(data.otherProvider);
+            PG4.Filladdress1Fieldprovider(data.address1Provider);
+            PG4.Filladdress2Fieldprovider(data.address2Provider);
+            PG4.FillcityFieldprovider(data.cityProvider);
+            PG4.SelectstateDrpdnprovider(data.stateProvider);
+            PG4.SelectcountyDrpdnprovider(data.countyProvider);
+            PG4.FillzipCodeFieldprovider(data.zipCodeProvider);
+            PG4.FillcountryFieldprovider(data.countryProvider);
+            PG4.FillphoneNumberFieldprovider(data.phoneNumberProvider);
+            PG4.FillfaxFieldprovider(data.faxProvider);
+            PG4.FillemailFieldprovider(data.emailProvider);
+        }
 
-        
+        [Then("the following fields should be displayed for Witness:")]
+        public void ThenTheFollowingFieldsShouldBeDisplayedForWitness(DataTable dataTable)
+        {
+            var PG3 = new additionalInvolvedParty_page4(Driver);
+
+
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.FillOrganizationFieldLawer(data.Organization1Lawer);
+            PG3.FillNamePrefixFieldLawer(data.NamePrefixLawer);
+            PG3.FillFirstNameFieldLawer(data.FirstName1Lawer);
+            PG3.FillMiddleNameFieldLawer(data.MiddleName1Lawer);
+            PG3.FillLastNameFieldLawer(data.LastName1Lawer);
+            PG3.FillNameSuffixFieldLawer(data.NameSuffixLawer);
+            PG3.FillStreetAddress1FieldLawer(data.StreetAddress3Lawer);
+            PG3.FillStreetAddress2FieldLawer(data.StreetAddress4Lawer);
+            PG3.FillCityFieldLawer(data.CityLawer);
+            PG3.SelectStateFieldLawer(data.StateLawer);
+            PG3.SelectCountyFieldLawer(data.CountyLawer);
+            PG3.FillZipFieldLawer(data.ZipLawer);
+            PG3.FillDesignationField1Lawer(data.Designation1Lawer);
+            PG3.FillCountryFieldLawer(data.CountryLawer);
+            PG3.FilldobFieldLawer(data.dobLawer);
+            PG3.FillPrimaryPhoneFieldLawer(data.PrimaryPhoneLawer);
+            PG3.FillSecondaryPhoneFieldLawer(data.SecondaryPhoneLawer);
+            PG3.FillSsnFieldLawer(data.SsnLawer);
+            PG3.FillOtherIdFieldLawer(data.OtherIdLawer);
+            PG3.FillEmailFieldLawer(data.Email1Lawer);
+            PG3.FillOtherFieldLawer(data.OtherLawer);
+        }
+
+
+
         [Then("I enter the Text for How did this witness\\/external referring party report this? \\(Required) and Any Additonal Information regarding the witness or external referring party? \\(Optional)field")]
         public void ThenIEnterTheTextForHowDidThisWitnessExternalReferringPartyReportThisRequiredAndAnyAdditonalInformationRegardingTheWitnessOrExternalReferringPartyOptionalField(DataTable dataTable)
         {
@@ -994,8 +1068,8 @@ namespace ReqnrollProject1.StepDefinitions
             PG5.ClickUploadFileArrow(filePath + data.filePath);
         }
        
-        [Then("I click {string} Continue with Invloved Party Selection button to proceed")]
-        public void ThenIClickContinueWithInvlovedPartySelectionButtonToProceed(string next)
+        [Then("I click {string} Continue with Involved Party Selection button to proceed")]
+        public void ThenIClickContinueWithInvolvedPartySelectionButtonToProceed(string next)
         {
             var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
             PG3.ClickProceedToNextSectionButton();
