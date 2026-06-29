@@ -3252,7 +3252,7 @@ Examples:
 		| orgname   | TIN   | licenseNumber   | other   | otherID   |
 		| <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> |
 
-	And enter nameprefix,firstname, middlename, lastname, designation
+	And enter nameprefix,firstname, middlename, lastname, designation, how witness or external party reported this, any additional info
 		| name prefix  | first name   | middle name   | last name   | designation    |
 		| <NamePrefix> | <FirstName1> | <middle name> | <LastName1> | <Designation1> |
 

@@ -75,7 +75,6 @@ namespace ReqnrollProject1.StepDefinitions
             var PG1 = new LoginOnlineRef_Page1(Driver);
 
             PG1.verifyrequiredfieldsinpage1();
-            Console.WriteLine("Required fields are highlighted with expected color",PG1.verifyrequiredfieldsinpage1());
             Assert.That(PG1.verifyrequiredfieldsinpage1(), Is.True, "Required fields are not highlighted with expected color");
         }
 
@@ -1195,18 +1194,7 @@ namespace ReqnrollProject1.StepDefinitions
         }
 
 
-        [When("enter nameprefix,firstname, middlename, lastname, designation")]
-        public void WhenEnterNameprefixFirstnameMiddlenameLastnameDesignation(DataTable dataTable)
-        {
-            var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.EnterContactNamePrefix(data.namePrefix);
-            PG3.EnterContactFirstName(data.firstName);
-            PG3.EnterContactMiddleName(data.middleName);
-            PG3.EnterContactLastName(data.lastName);
-            PG3.EnterContactDesignation(data.designation);
-            
-        }
+       
 
         [When("street address line one , street address line two, city , state , county , zip code, country, fax and email  for the involved party")]
         public void WhenStreetAddressLineOneStreetAddressLineTwoCityStateCountyZipCodeCountryFaxAndEmailForTheInvolvedParty(DataTable dataTable)
@@ -1221,7 +1209,7 @@ namespace ReqnrollProject1.StepDefinitions
             PG3.EnterZipCode(data.Zip);
             PG3.EnterCountry(data.Country);
             PG3.EnterFax(data.fax);
-            PG3.EnterEmail(data.Emailaddress);
+            PG3.EnterEmail(data.EmailAddress);
         }
 
 

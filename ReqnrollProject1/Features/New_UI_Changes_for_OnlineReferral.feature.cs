@@ -11934,7 +11934,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", lastName1),
                             string.Format("{0}", designation1)});
 #line 3255
- await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table575, "And ");
+ await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation, how witness or ext" +
+                        "ernal party reported this, any additional info", ((string)(null)), table575, "And ");
 #line hidden
                 global::Reqnroll.Table table576 = new global::Reqnroll.Table(new string[] {
                             "Address1",
