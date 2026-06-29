@@ -74,9 +74,9 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var PG1 = new LoginOnlineRef_Page1(Driver);
 
-            PG1.verifyrequiredfieldsinpage1();
-            Console.WriteLine("Required fields are highlighted with expected color",PG1.verifyrequiredfieldsinpage1());
-            Assert.That(PG1.verifyrequiredfieldsinpage1(), Is.True, "Required fields are not highlighted with expected color");
+var isHighlighted = PG1.verifyrequiredfieldsinpage1();
+Console.WriteLine($"Required fields are highlighted with expected color: {isHighlighted}");
+Assert.That(isHighlighted, Is.True, "Required fields are not highlighted with expected color");
         }
 
 
