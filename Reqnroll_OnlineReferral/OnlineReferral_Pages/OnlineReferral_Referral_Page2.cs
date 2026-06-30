@@ -107,19 +107,22 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void EnterIncidentStartDate(string IncidentStartDate)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, incidentStartDateField, 60);
-            Driver.FindElement(incidentStartDateField).Clear();
+            
+
             Driver.FindElement(incidentStartDateField).Click();
             Driver.FindElement(incidentStartDateField).Clear();
             Driver.FindElement(incidentStartDateField).SendKeys(IncidentStartDate);
+            Driver.FindElement(incidentStartDateField).Clear();
         }
 
         public void EnterIncidentEndDate(string IncidentEndDate)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, incidentEndDateField, 60);
-            Driver.FindElement(incidentEndDateField).Clear();
+           
             Driver.FindElement(incidentEndDateField).Click();
             Driver.FindElement(incidentEndDateField).Clear();
             Driver.FindElement(incidentEndDateField).SendKeys(IncidentEndDate);
+            Driver.FindElement(incidentEndDateField).Clear();
         }
 
         public void SelectState_Or_Territory(string State_Or_Territory)

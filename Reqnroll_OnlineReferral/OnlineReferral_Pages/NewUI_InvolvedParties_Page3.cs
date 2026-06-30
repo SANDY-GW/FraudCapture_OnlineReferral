@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework.Constraints;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -314,10 +315,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
             js.ExecuteScript("window.scrollBy(0, -500);");
 
-            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 5000);
+            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 50);
 
             Driver.FindElement(continue_with_Involved_Party_Selection_Button).Click();
-            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 10000);
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
 
         }
 
@@ -330,7 +331,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public bool IsValidationDateErrorDisplayed()
         {
-            return CommonHelpers.ValidationDateerrorExists(Driver);
+           
+                return CommonHelpers.ValidationDateerrorExists(Driver);
+            
+            
         }
 
         public bool VerifyIfStateOrTerritoryDropdownIsInAlphabeticalOrder()

@@ -297,8 +297,8 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var PG2 = new OnlineReferral_Referral_Page2(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG2.EnterIncidentStartDate(data.IncidentStartDate);
-            PG2.EnterIncidentEndDate(data.IncidentEndDate);
+            PG2.EnterIncidentStartDate(data.incidentValidStartDate);
+            PG2.EnterIncidentEndDate(data.incidentValidEndDate);
         }
 
 
@@ -320,7 +320,7 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var PG2 = new OnlineReferral_Referral_Page2(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG2.EnterIncidentStartDate(data.IncidentStartDate);
+            PG2.EnterIncidentStartDate(data.incidentStartDate);
 
         }
 
@@ -329,7 +329,7 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var PG2 = new OnlineReferral_Referral_Page2(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG2.EnterIncidentEndDate(data.IncidentEndDate);
+            PG2.EnterIncidentEndDate(data.incidentEndDate);
         }
 
 
@@ -452,6 +452,7 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var PG3 = new InvolvedParties_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
+            CommonHelpers.ScrollDown(Driver);
             PG3.FillDOBField(data.InvalidDOB);
         }
 
@@ -463,11 +464,11 @@ namespace ReqnrollProject1.StepDefinitions
             var data = dataTable.CreateInstance<OnlineReferralData>();
 
             Console.WriteLine("Expected error message: " + data.DOBValidationMessage);
-            Assert.That(PG3.IsValidationDateErrorDisplayed(), Is.True, "Email validation error message is not displayed");
+            Assert.That(PG3.IsValidationDateErrorDisplayed(), Is.True, "BOB: Date validation error message is not displayed");
 
             string actualErrorMessage = PG3.GetValidationDateErrorMessage();
 
-            Console.WriteLine(actualErrorMessage);
+           
             Assert.That(actualErrorMessage, Is.EqualTo("Date cannot be in the future."),
                 $"Expected error message: '{"Date cannot be in the future."}', but got: '{actualErrorMessage}'");
         }
