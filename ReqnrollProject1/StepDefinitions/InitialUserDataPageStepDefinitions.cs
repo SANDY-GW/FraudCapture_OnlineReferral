@@ -37,7 +37,7 @@ namespace ReqnrollProject1.StepDefinitions
 
         [When("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User Data Page")]
         public void WhenEnterTheUserFNAsUserLastnameAsOrgNameAsTitleAsFilledOnTheInitialUserDataPage(DataTable dataTable)
-        public void ThenIEnterTheUserFNAsUserLastnameAsOrgNameAsTitleAsFilledOnTheInitialUserDataPage(DataTable dataTable)
+
         {
             var PG1 = new LoginOnlineRef_Page1(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
@@ -469,7 +469,7 @@ namespace ReqnrollProject1.StepDefinitions
 
             string actualErrorMessage = PG3.GetValidationDateErrorMessage();
 
-           
+
             Assert.That(actualErrorMessage, Is.EqualTo("Date cannot be in the future."),
                 $"Expected error message: '{"Date cannot be in the future."}', but got: '{actualErrorMessage}'");
         }
@@ -896,7 +896,7 @@ namespace ReqnrollProject1.StepDefinitions
             PG3.FillDOBField(data.DOB);
             PG3.FillGenderField(data.Gender);
             PG3.FillOtherField(data.Other);
-           
+
         }
 
         [When("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID")]
@@ -1184,7 +1184,7 @@ namespace ReqnrollProject1.StepDefinitions
             PG3.EnterOther(data.other);
             PG3.EnterOtherID(data.otherID);
         }
-       
+
         [When("enter nameprefix,firstname, middlename, lastname, designation, how witness or external party reported this, any additional info")]
         public void WhenEnterNameprefixFirstnameMiddlenameLastnameDesignationHowWitnessOrExternalPartyReportedThisAnyAdditionalInfo(DataTable dataTable)
         {
@@ -1200,7 +1200,7 @@ namespace ReqnrollProject1.StepDefinitions
         }
 
 
-       
+
 
         [When("street address line one , street address line two, city , state , county , zip code, country, fax and email  for the involved party")]
         public void WhenStreetAddressLineOneStreetAddressLineTwoCityStateCountyZipCodeCountryFaxAndEmailForTheInvolvedParty(DataTable dataTable)
@@ -1219,36 +1219,10 @@ namespace ReqnrollProject1.StepDefinitions
         }
 
 
-        // Non-Enumerated provider
-        [When("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated party first name ,associated party middle name , associated party last name  and name suffix")]
-        public void WhenEnterInvolvedPartyNon_EnumertaedProviderOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(DataTable dataTable)
-        {
-            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.EnterOrganization(data.orgname);
-            PG3.EnterNamePrefix(data.namePrefix);
-            PG3.EnterFirstName(data.firstName);
-            PG3.EnterMiddleName(data.middleName);
-            PG3.EnterLastName(data.lastName);
-            PG3.EnterNameSuffix(data.nameSuffix);
-
-        }
+       
 
 
-        [When("enter InvolvedParty Designation  ,DOB , SSN , How witness or external party reported this ,any additional info  licenseNumber ,other ID ,other")]
-        public void WhenEnterInvolvedPartyDesignationAsDOBAsSSNAsHowWitnessOrExternalPartyReportedThisAsAnyAdditionalInfoAsLicenseNumberAsOtherIDAsOtherAs(DataTable dataTable)
-        {
-            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.EnterDesignation(data.designation);
-            PG3.EnterDOB(data.DOB);
-            PG3.EnterSSN(data.SSN);
-            PG3.FillHowDidThisExternalReferringPartyreportThisTextarea(data.involvedPartyType);
-            PG3.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.detectedAs);
-            PG3.EnterLicenseNumber(data.licenseNumber);
-            PG3.EnterOtherID(data.otherID);
-            PG3.EnterOther(data.other);
-        }
+
 
         [When("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other")]
         public void WhenEnterInvolvedPartyDesignationAsDOBAsSSNAsLicenseNumberAsOtherIDAsOtherAs(DataTable dataTable)
@@ -1264,32 +1238,11 @@ namespace ReqnrollProject1.StepDefinitions
         }
 
 
-        [When("enter primary phone number ,secondary phone number , fax aand email address  for the involved party")]
-        public void WhenEnterPrimaryPhoneNumberAsSecondaryPhoneNumberAsFaxAsAndEmailAddressAsForTheInvolvedParty(DataTable dataTable)
-        {
-            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.EnterPrimaryPhoneNumber(data.PrimaryPhone);
-            PG3.EnterSecondaryPhoneNumber(data.SecondaryPhone);
-            PG3.EnterFax(data.fax);
-            PG3.EnterEmail(data.EmailAddress);
-        }
-
-        [When("street address line one , street address line two, city , state , county , zip code and country for the involved party")]
-        public void WhenStreetAddressLineOneAsStreetAddressLineTwoAsCityAsStateAsCountyAsZipCodeAsAndCountryAsForTheInvolvedParty(DataTable dataTable)
-        {
-            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.EnterAddress1(data.Address1);
-            PG3.EnterAddress2(data.Address2);
-            PG3.EnterCity(data.City);
-            PG3.SelectState(data.State2);
-            PG3.SelectCounty(data.City2);
-            PG3.EnterZipCode(data.Zipcode);
-            PG3.EnterCountry(data.Country);
+      
 
 
         }
+    }
 
 
 
