@@ -34,8 +34,8 @@ namespace FC_OnlineReferral
         public string City { get; set; } = string.Empty;
         public string State { get; set; } = string.Empty;
         public string Zipcode { get; set; } = string.Empty;
-        public string IncidentStartDate { get; set; } = string.Empty;
-        public string IncidentEndDate { get; set; } = string.Empty;
+        public string incidentStartDate { get; set; } = string.Empty;
+        public string incidentEndDate { get; set; } = string.Empty;
         public string DOB { get; set; } = string.Empty;
         public string DOBValidationMessage { get; set; } = string.Empty;
 
@@ -137,7 +137,8 @@ namespace FC_OnlineReferral
         public string Program { get; set; } = string.Empty;
         public string LOB { get; set; } = string.Empty;
         public string Group { get; set; } = string.Empty;
-
+        public string incidentValidStartDate { get; set; } = string.Empty;
+        public string incidentValidEndDate { get; set; } = string.Empty;
 
 
 
