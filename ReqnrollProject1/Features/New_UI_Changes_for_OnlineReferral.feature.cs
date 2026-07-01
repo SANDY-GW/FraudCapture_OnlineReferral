@@ -105,7 +105,7 @@ namespace OnlineReferral_BDD.Features
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/New_UI_Changes_for_OnlineReferral.feature.ndjson", 15);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/New_UI_Changes_for_OnlineReferral.feature.ndjson", 18);
         }
         
         [global::NUnit.Framework.TestAttribute()]
@@ -1622,7 +1622,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 268
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 269
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -1684,7 +1684,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table8.AddRow(new string[] {
                             string.Format("{0}", invalidZipcode)});
 #line 295
- await testRunner.WhenAsync("I enter the invalid zipcode", ((string)(null)), table8, "When ");
+ await testRunner.AndAsync("I enter the invalid zipcode", ((string)(null)), table8, "And ");
 #line hidden
                 global::Reqnroll.Table table9 = new global::Reqnroll.Table(new string[] {
                             "Zipcode validation error message"});
@@ -1724,10 +1724,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 313
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 314
- await testRunner.ThenAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table11 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
@@ -2012,7 +2012,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 426
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 427
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -2031,7 +2031,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 438
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 439
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -2305,7 +2305,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 472
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 473
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -2367,7 +2367,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table48.AddRow(new string[] {
                             string.Format("{0}", invalidZipcode)});
 #line 499
- await testRunner.WhenAsync("I enter the invalid zipcode", ((string)(null)), table48, "When ");
+ await testRunner.AndAsync("I enter the invalid zipcode", ((string)(null)), table48, "And ");
 #line hidden
                 global::Reqnroll.Table table49 = new global::Reqnroll.Table(new string[] {
                             "Zipcode validation error message"});
@@ -2407,10 +2407,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 517
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 518
- await testRunner.ThenAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table51 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
@@ -2695,7 +2695,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 631
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 632
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -2709,7 +2709,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
 #line 634
- await testRunner.WhenAsync("I select the another involved Party from the drop down menu", ((string)(null)), table78, "When ");
+ await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table78, "And ");
 #line hidden
                 global::Reqnroll.Table table79 = new global::Reqnroll.Table(new string[] {
                             "Organization1",
@@ -2783,7 +2783,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 654
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 655
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -3067,7 +3067,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 687
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 688
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -3129,7 +3129,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table91.AddRow(new string[] {
                             string.Format("{0}", invalidZipcode)});
 #line 714
- await testRunner.WhenAsync("I enter the invalid zipcode", ((string)(null)), table91, "When ");
+ await testRunner.AndAsync("I enter the invalid zipcode", ((string)(null)), table91, "And ");
 #line hidden
                 global::Reqnroll.Table table92 = new global::Reqnroll.Table(new string[] {
                             "Zipcode validation error message"});
@@ -3169,10 +3169,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 732
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 733
- await testRunner.ThenAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table94 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
@@ -3457,7 +3457,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 846
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 847
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -3486,8 +3486,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
 #line 854
- await testRunner.WhenAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
-                        "middle name , associated party last name and name suffix", ((string)(null)), table122, "When ");
+ await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
+                        "middle name , associated party last name and name suffix", ((string)(null)), table122, "And ");
 #line hidden
                 global::Reqnroll.Table table123 = new global::Reqnroll.Table(new string[] {
                             "DOB",
@@ -3582,7 +3582,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 887
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 888
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -3866,7 +3866,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 918
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 919
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -3928,7 +3928,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table138.AddRow(new string[] {
                             string.Format("{0}", invalidZipcode)});
 #line 945
- await testRunner.WhenAsync("I enter the invalid zipcode", ((string)(null)), table138, "When ");
+ await testRunner.AndAsync("I enter the invalid zipcode", ((string)(null)), table138, "And ");
 #line hidden
                 global::Reqnroll.Table table139 = new global::Reqnroll.Table(new string[] {
                             "Zipcode validation error message"});
@@ -3968,10 +3968,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 963
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 964
- await testRunner.ThenAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table141 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
@@ -4256,7 +4256,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1077
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1078
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -4270,7 +4270,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
 #line 1080
- await testRunner.WhenAsync("I select the another involved Party from the drop down menu", ((string)(null)), table168, "When ");
+ await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table168, "And ");
 #line hidden
                 global::Reqnroll.Table table169 = new global::Reqnroll.Table(new string[] {
                             "orgname",
@@ -4287,9 +4287,9 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix)});
 #line 1084
- await testRunner.WhenAsync("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
+ await testRunner.AndAsync("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
                         "ed party middle name , associated party last name  and name suffix  on the fourt" +
-                        "h User Data Page", ((string)(null)), table169, "When ");
+                        "h User Data Page", ((string)(null)), table169, "And ");
 #line hidden
                 global::Reqnroll.Table table170 = new global::Reqnroll.Table(new string[] {
                             "designation"});
@@ -4454,7 +4454,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1153
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1154
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -4738,7 +4738,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1184
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1185
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -4800,7 +4800,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table194.AddRow(new string[] {
                             string.Format("{0}", invalidZipcode)});
 #line 1211
- await testRunner.WhenAsync("I enter the invalid zipcode", ((string)(null)), table194, "When ");
+ await testRunner.AndAsync("I enter the invalid zipcode", ((string)(null)), table194, "And ");
 #line hidden
                 global::Reqnroll.Table table195 = new global::Reqnroll.Table(new string[] {
                             "Zipcode validation error message"});
@@ -4840,10 +4840,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1229
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1230
- await testRunner.ThenAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table197 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
@@ -5128,7 +5128,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1343
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1344
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -5142,7 +5142,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
 #line 1346
- await testRunner.WhenAsync("I select the another involved Party from the drop down menu", ((string)(null)), table224, "When ");
+ await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table224, "And ");
 #line hidden
                 global::Reqnroll.Table table225 = new global::Reqnroll.Table(new string[] {
                             "orgname",
@@ -5159,9 +5159,9 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
 #line 1351
- await testRunner.WhenAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
+ await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
-                        "ame suffix", ((string)(null)), table225, "When ");
+                        "ame suffix", ((string)(null)), table225, "And ");
 #line hidden
                 global::Reqnroll.Table table226 = new global::Reqnroll.Table(new string[] {
                             "designation",
@@ -5239,7 +5239,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1380
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1381
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -5504,7 +5504,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 1402
- this.ScenarioInitialize(scenarioInfo, ruleInfo);
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -5523,7 +5523,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1408
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1409
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -5585,7 +5585,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table239.AddRow(new string[] {
                             string.Format("{0}", invalidZipcode)});
 #line 1435
- await testRunner.WhenAsync("I enter the invalid zipcode", ((string)(null)), table239, "When ");
+ await testRunner.AndAsync("I enter the invalid zipcode", ((string)(null)), table239, "And ");
 #line hidden
                 global::Reqnroll.Table table240 = new global::Reqnroll.Table(new string[] {
                             "Zipcode validation error message"});
@@ -5625,10 +5625,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1453
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1454
- await testRunner.ThenAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table242 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
@@ -5913,7 +5913,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1567
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1568
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -5927,7 +5927,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
 #line 1570
- await testRunner.WhenAsync("I select the another involved Party from the drop down menu", ((string)(null)), table269, "When ");
+ await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table269, "And ");
 #line hidden
                 global::Reqnroll.Table table270 = new global::Reqnroll.Table(new string[] {
                             "orgname",
@@ -5986,7 +5986,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
 #line 1582
-await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
+ await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table272, "And ");
 #line hidden
 #line 1585
@@ -6009,7 +6009,7 @@ await testRunner.AndAsync("street address line one , street address line two, ci
  await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1599
- await testRunner.ThenAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 1600
  await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -6038,6 +6038,1791 @@ await testRunner.AndAsync("street address line one , street address line two, ci
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table276, "And ");
 #line hidden
 #line 1612
+ await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("21_ [Online Referral End To End Scenario with Primary Subject Type as Provider an" +
+            "d Editing the Primary Subject Type]")]
+        [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
+            " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Gainwell Technologies", "13", null)]
+        public async global::System.Threading.Tasks.Task _21_OnlineReferralEndToEndScenarioWithPrimarySubjectTypeAsProviderAndEditingThePrimarySubjectType(
+                    string invalidZipcode, 
+                    string zipcodeValidationErrorMessage, 
+                    string invalidEmail, 
+                    string emailValidationErrorMessage, 
+                    string userFirstName, 
+                    string userLastName, 
+                    string emailAddress, 
+                    string phoneNumber, 
+                    string orgName, 
+                    string title, 
+                    string address1, 
+                    string address2, 
+                    string city, 
+                    string state, 
+                    string zipcode, 
+                    string incidentStartDate, 
+                    string incidentEnd, 
+                    string errorMessage, 
+                    string referralType, 
+                    string involvedPartyType, 
+                    string caseOrReferenceNumber, 
+                    string detectedAs, 
+                    string summary, 
+                    string amount, 
+                    string detectionDate, 
+                    string incidentStartDate1, 
+                    string incidentEndDate, 
+                    string state2, 
+                    string city2, 
+                    string witnessDropdown, 
+                    string referralFN, 
+                    string referralLN, 
+                    string referralOrgname, 
+                    string referralRelationship, 
+                    string orgname, 
+                    string namePrefix, 
+                    string firstName, 
+                    string middleName, 
+                    string lastName, 
+                    string nameSuffix, 
+                    string designation, 
+                    string sSN, 
+                    string licenseNumber, 
+                    string iDTest, 
+                    string nPI, 
+                    string tIN, 
+                    string medicaidID, 
+                    string medicareID, 
+                    string otherID, 
+                    string providerType, 
+                    string providerSpecialty, 
+                    string taxonomy, 
+                    string other, 
+                    string country, 
+                    string fax, 
+                    string rederralInvolveASpecificMemberDropdown, 
+                    string isTheMemberTheSamePersonAsTheWitnessOrExternalReferringParty, 
+                    string fN, 
+                    string lN, 
+                    string memberID, 
+                    string dOB, 
+                    string planType, 
+                    string question1, 
+                    string question2, 
+                    string question3, 
+                    string question4, 
+                    string question5, 
+                    string question6, 
+                    string associatedstate, 
+                    string testFile, 
+                    string isThereAnyInvolvedPartyDropdown, 
+                    string userEmailID, 
+                    string activityName, 
+                    string dollarsymbolinAmountFieldValidationMessage, 
+                    string invalidDOB, 
+                    string dOBValidationErrorMessage, 
+                    string updatedOrgname, 
+                    string @__pickleIndex, 
+                    string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Invalid zipcode", invalidZipcode);
+            argumentsOfScenario.Add("Zipcode validation error message", zipcodeValidationErrorMessage);
+            argumentsOfScenario.Add("Invalid email", invalidEmail);
+            argumentsOfScenario.Add("Email validation error message", emailValidationErrorMessage);
+            argumentsOfScenario.Add("UserFirstName", userFirstName);
+            argumentsOfScenario.Add("UserLastName", userLastName);
+            argumentsOfScenario.Add("Email address", emailAddress);
+            argumentsOfScenario.Add("Phone number", phoneNumber);
+            argumentsOfScenario.Add("Org name", orgName);
+            argumentsOfScenario.Add("title", title);
+            argumentsOfScenario.Add("Address1", address1);
+            argumentsOfScenario.Add("Address2", address2);
+            argumentsOfScenario.Add("City", city);
+            argumentsOfScenario.Add("State", state);
+            argumentsOfScenario.Add("Zipcode", zipcode);
+            argumentsOfScenario.Add("Incident Start Date", incidentStartDate);
+            argumentsOfScenario.Add("Incident End", incidentEnd);
+            argumentsOfScenario.Add("Error message", errorMessage);
+            argumentsOfScenario.Add("referralType", referralType);
+            argumentsOfScenario.Add("involvedPartyType", involvedPartyType);
+            argumentsOfScenario.Add("caseOrReferenceNumber", caseOrReferenceNumber);
+            argumentsOfScenario.Add("detectedAs", detectedAs);
+            argumentsOfScenario.Add("summary", summary);
+            argumentsOfScenario.Add("amount", amount);
+            argumentsOfScenario.Add("detectionDate", detectionDate);
+            argumentsOfScenario.Add("incidentStartDate", incidentStartDate1);
+            argumentsOfScenario.Add("incidentEndDate", incidentEndDate);
+            argumentsOfScenario.Add("state2", state2);
+            argumentsOfScenario.Add("city2", city2);
+            argumentsOfScenario.Add("witnessDropdown", witnessDropdown);
+            argumentsOfScenario.Add("referralFN", referralFN);
+            argumentsOfScenario.Add("referralLN", referralLN);
+            argumentsOfScenario.Add("referralOrgname", referralOrgname);
+            argumentsOfScenario.Add("referralRelationship", referralRelationship);
+            argumentsOfScenario.Add("orgname", orgname);
+            argumentsOfScenario.Add("name prefix", namePrefix);
+            argumentsOfScenario.Add("first name", firstName);
+            argumentsOfScenario.Add("middle name", middleName);
+            argumentsOfScenario.Add("last name", lastName);
+            argumentsOfScenario.Add("name suffix", nameSuffix);
+            argumentsOfScenario.Add("designation", designation);
+            argumentsOfScenario.Add("SSN", sSN);
+            argumentsOfScenario.Add("licenseNumber", licenseNumber);
+            argumentsOfScenario.Add("ID Test", iDTest);
+            argumentsOfScenario.Add("NPI", nPI);
+            argumentsOfScenario.Add("TIN", tIN);
+            argumentsOfScenario.Add("medicaid ID", medicaidID);
+            argumentsOfScenario.Add("Medicare ID", medicareID);
+            argumentsOfScenario.Add("otherID", otherID);
+            argumentsOfScenario.Add("provider type", providerType);
+            argumentsOfScenario.Add("provider specialty", providerSpecialty);
+            argumentsOfScenario.Add("Taxonomy", taxonomy);
+            argumentsOfScenario.Add("other", other);
+            argumentsOfScenario.Add("country", country);
+            argumentsOfScenario.Add("fax", fax);
+            argumentsOfScenario.Add("rederral involve a specific member dropdown", rederralInvolveASpecificMemberDropdown);
+            argumentsOfScenario.Add("Is the member the same person as the witness or external referring party?", isTheMemberTheSamePersonAsTheWitnessOrExternalReferringParty);
+            argumentsOfScenario.Add("FN", fN);
+            argumentsOfScenario.Add("LN", lN);
+            argumentsOfScenario.Add("memberID", memberID);
+            argumentsOfScenario.Add("DOB", dOB);
+            argumentsOfScenario.Add("planType", planType);
+            argumentsOfScenario.Add("Question1", question1);
+            argumentsOfScenario.Add("Question2", question2);
+            argumentsOfScenario.Add("Question3", question3);
+            argumentsOfScenario.Add("Question4", question4);
+            argumentsOfScenario.Add("Question5", question5);
+            argumentsOfScenario.Add("Question6", question6);
+            argumentsOfScenario.Add("associatedstate", associatedstate);
+            argumentsOfScenario.Add("TestFile", testFile);
+            argumentsOfScenario.Add("Is there any Involved Party Dropdown", isThereAnyInvolvedPartyDropdown);
+            argumentsOfScenario.Add("UserEmailID", userEmailID);
+            argumentsOfScenario.Add("ActivityName", activityName);
+            argumentsOfScenario.Add("DollarsymbolinAmountFieldValidationMessage", dollarsymbolinAmountFieldValidationMessage);
+            argumentsOfScenario.Add("InvalidDOB", invalidDOB);
+            argumentsOfScenario.Add("DOB validation error message", dOBValidationErrorMessage);
+            argumentsOfScenario.Add("updatedOrgname", updatedOrgname);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("21_ [Online Referral End To End Scenario with Primary Subject Type as Provider an" +
+                    "d Editing the Primary Subject Type]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 1623
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 1626
+ await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 1627
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 1628
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1629
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1630
+ await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 1631
+ await testRunner.ThenAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+                global::Reqnroll.Table table277 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table277.AddRow(new string[] {
+                            string.Format("{0}", emailAddress)});
+#line 1632
+ await testRunner.WhenAsync("I enter the email  on the Initial User Data Page", ((string)(null)), table277, "When ");
+#line hidden
+                global::Reqnroll.Table table278 = new global::Reqnroll.Table(new string[] {
+                            "Invalid email"});
+                table278.AddRow(new string[] {
+                            string.Format("{0}", invalidEmail)});
+#line 1636
+ await testRunner.AndAsync("I enter the invalid email id", ((string)(null)), table278, "And ");
+#line hidden
+                global::Reqnroll.Table table279 = new global::Reqnroll.Table(new string[] {
+                            "Email validation error message"});
+                table279.AddRow(new string[] {
+                            string.Format("{0}", emailValidationErrorMessage)});
+#line 1640
+ await testRunner.ThenAsync("I validate the error messgae", ((string)(null)), table279, "Then ");
+#line hidden
+                global::Reqnroll.Table table280 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table280.AddRow(new string[] {
+                            string.Format("{0}", emailAddress)});
+#line 1644
+ await testRunner.WhenAsync("I enter the valid email id", ((string)(null)), table280, "When ");
+#line hidden
+                global::Reqnroll.Table table281 = new global::Reqnroll.Table(new string[] {
+                            "UserFirstName",
+                            "UserLastName",
+                            "Org name",
+                            "title"});
+                table281.AddRow(new string[] {
+                            string.Format("{0}", userFirstName),
+                            string.Format("{0}", userLastName),
+                            string.Format("{0}", orgName),
+                            string.Format("{0}", title)});
+#line 1648
+ await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
+                        "ata Page", ((string)(null)), table281, "And ");
+#line hidden
+                global::Reqnroll.Table table282 = new global::Reqnroll.Table(new string[] {
+                            "Phone number"});
+                table282.AddRow(new string[] {
+                            string.Format("{0}", phoneNumber)});
+#line 1652
+ await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table282, "And ");
+#line hidden
+                global::Reqnroll.Table table283 = new global::Reqnroll.Table(new string[] {
+                            "Invalid zipcode"});
+                table283.AddRow(new string[] {
+                            string.Format("{0}", invalidZipcode)});
+#line 1656
+ await testRunner.AndAsync("I enter the invalid zipcode", ((string)(null)), table283, "And ");
+#line hidden
+                global::Reqnroll.Table table284 = new global::Reqnroll.Table(new string[] {
+                            "Zipcode validation error message"});
+                table284.AddRow(new string[] {
+                            string.Format("{0}", zipcodeValidationErrorMessage)});
+#line 1660
+ await testRunner.ThenAsync("I validate the zip code error messgae", ((string)(null)), table284, "Then ");
+#line hidden
+                global::Reqnroll.Table table285 = new global::Reqnroll.Table(new string[] {
+                            "Address1",
+                            "Address2",
+                            "City",
+                            "State",
+                            "Zipcode"});
+                table285.AddRow(new string[] {
+                            string.Format("{0}", address1),
+                            string.Format("{0}", address2),
+                            string.Format("{0}", city),
+                            string.Format("{0}", state),
+                            string.Format("{0}", zipcode)});
+#line 1664
+ await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table285, "And ");
+#line hidden
+#line 1667
+ await testRunner.WhenAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 1668
+ await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1671
+ await testRunner.AndAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1672
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 1673
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1674
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1675
+ await testRunner.AndAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table286 = new global::Reqnroll.Table(new string[] {
+                            "referralType"});
+                table286.AddRow(new string[] {
+                            string.Format("{0}", referralType)});
+#line 1680
+ await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table286, "When ");
+#line hidden
+                global::Reqnroll.Table table287 = new global::Reqnroll.Table(new string[] {
+                            "involvedPartyType"});
+                table287.AddRow(new string[] {
+                            string.Format("{0}", involvedPartyType)});
+#line 1683
+ await testRunner.AndAsync("Suspect or Subject or Involved Party Type", ((string)(null)), table287, "And ");
+#line hidden
+                global::Reqnroll.Table table288 = new global::Reqnroll.Table(new string[] {
+                            "caseOrReferenceNumber"});
+                table288.AddRow(new string[] {
+                            string.Format("{0}", caseOrReferenceNumber)});
+#line 1686
+ await testRunner.AndAsync("enter case or reference number  on the second User Data Page", ((string)(null)), table288, "And ");
+#line hidden
+                global::Reqnroll.Table table289 = new global::Reqnroll.Table(new string[] {
+                            "detectedAs",
+                            "summary"});
+                table289.AddRow(new string[] {
+                            string.Format("{0}", detectedAs),
+                            string.Format("{0}", summary)});
+#line 1689
+ await testRunner.AndAsync("How was this detected  ,please provide  a Summary of this referral  on the second" +
+                        " User Data Page", ((string)(null)), table289, "And ");
+#line hidden
+                global::Reqnroll.Table table290 = new global::Reqnroll.Table(new string[] {
+                            "amount",
+                            "detectionDate"});
+                table290.AddRow(new string[] {
+                            string.Format("{0}", amount),
+                            string.Format("{0}", detectionDate)});
+#line 1692
+ await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table290, "And ");
+#line hidden
+                global::Reqnroll.Table table291 = new global::Reqnroll.Table(new string[] {
+                            "Incident Start Date"});
+                table291.AddRow(new string[] {
+                            string.Format("{0}", incidentStartDate)});
+#line 1695
+ await testRunner.AndAsync("User enters Incident Start Date", ((string)(null)), table291, "And ");
+#line hidden
+                global::Reqnroll.Table table292 = new global::Reqnroll.Table(new string[] {
+                            "Incident End Date"});
+                table292.AddRow(new string[] {
+                            string.Format("{0}", incidentEnd)});
+#line 1699
+ await testRunner.AndAsync("User enters Incident End Date", ((string)(null)), table292, "And ");
+#line hidden
+                global::Reqnroll.Table table293 = new global::Reqnroll.Table(new string[] {
+                            "error message"});
+                table293.AddRow(new string[] {
+                            string.Format("{0}", errorMessage)});
+#line 1703
+ await testRunner.ThenAsync("validate error message should be displayed", ((string)(null)), table293, "Then ");
+#line hidden
+                global::Reqnroll.Table table294 = new global::Reqnroll.Table(new string[] {
+                            "incidentStartDate",
+                            "incidentEndDate"});
+                table294.AddRow(new string[] {
+                            string.Format("{0}", incidentStartDate1),
+                            string.Format("{0}", incidentEndDate)});
+#line 1706
+ await testRunner.WhenAsync("enter incidentStartDate , incidentEndDate  on the second User Data Page", ((string)(null)), table294, "When ");
+#line hidden
+                global::Reqnroll.Table table295 = new global::Reqnroll.Table(new string[] {
+                            "State",
+                            "City"});
+                table295.AddRow(new string[] {
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2)});
+#line 1709
+ await testRunner.AndAsync("enter state  and city  on the second User Data Page", ((string)(null)), table295, "And ");
+#line hidden
+                global::Reqnroll.Table table296 = new global::Reqnroll.Table(new string[] {
+                            "Dollar symbol in amount field validation message"});
+                table296.AddRow(new string[] {
+                            "<Dollar symbol in amount field validation message>"});
+#line 1712
+ await testRunner.ThenAsync("validate the  symbol is displayed in the amount field", ((string)(null)), table296, "Then ");
+#line hidden
+#line 1715
+ await testRunner.AndAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1716
+ await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 1720
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 1721
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1723
+ await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table297 = new global::Reqnroll.Table(new string[] {
+                            "witnessDropdown"});
+                table297.AddRow(new string[] {
+                            string.Format("{0}", witnessDropdown)});
+#line 1724
+ await testRunner.AndAsync("Is thisInvolved Party dropdown is selected  on the third User Data Page", ((string)(null)), table297, "And ");
+#line hidden
+                global::Reqnroll.Table table298 = new global::Reqnroll.Table(new string[] {
+                            "orgname",
+                            "name prefix",
+                            "first name",
+                            "middle name",
+                            "last name",
+                            "name suffix"});
+                table298.AddRow(new string[] {
+                            string.Format("{0}", orgname),
+                            string.Format("{0}", namePrefix),
+                            string.Format("{0}", firstName),
+                            string.Format("{0}", middleName),
+                            string.Format("{0}", lastName),
+                            string.Format("{0}", nameSuffix)});
+#line 1727
+ await testRunner.AndAsync("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
+                        "ed party middle name , associated party last name  and name suffix  on the fourt" +
+                        "h User Data Page", ((string)(null)), table298, "And ");
+#line hidden
+                global::Reqnroll.Table table299 = new global::Reqnroll.Table(new string[] {
+                            "designation"});
+                table299.AddRow(new string[] {
+                            string.Format("{0}", designation)});
+#line 1731
+ await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table299, "And ");
+#line hidden
+                global::Reqnroll.Table table300 = new global::Reqnroll.Table(new string[] {
+                            "InvalidDOB"});
+                table300.AddRow(new string[] {
+                            string.Format("{0}", invalidDOB)});
+#line 1735
+ await testRunner.AndAsync("i enter invalid date of birth", ((string)(null)), table300, "And ");
+#line hidden
+                global::Reqnroll.Table table301 = new global::Reqnroll.Table(new string[] {
+                            "DOB validation error message"});
+                table301.AddRow(new string[] {
+                            string.Format("{0}", dOBValidationErrorMessage)});
+#line 1738
+ await testRunner.ThenAsync("error message should be displayed", ((string)(null)), table301, "Then ");
+#line hidden
+                global::Reqnroll.Table table302 = new global::Reqnroll.Table(new string[] {
+                            "SSN",
+                            "licenseNumber",
+                            "involvedPartyType",
+                            "detectedAs",
+                            "ID Test"});
+                table302.AddRow(new string[] {
+                            string.Format("{0}", sSN),
+                            string.Format("{0}", licenseNumber),
+                            string.Format("{0}", involvedPartyType),
+                            string.Format("{0}", detectedAs),
+                            string.Format("{0}", iDTest)});
+#line 1742
+ await testRunner.WhenAsync("SSN , licenseNumber , How witness or external party reported this ,any additional" +
+                        " info ID Test", ((string)(null)), table302, "When ");
+#line hidden
+                global::Reqnroll.Table table303 = new global::Reqnroll.Table(new string[] {
+                            "NPI",
+                            "TIN",
+                            "medicaid ID",
+                            "Medicare ID",
+                            "otherID"});
+                table303.AddRow(new string[] {
+                            string.Format("{0}", nPI),
+                            string.Format("{0}", tIN),
+                            string.Format("{0}", medicaidID),
+                            string.Format("{0}", medicareID),
+                            string.Format("{0}", otherID)});
+#line 1746
+ await testRunner.AndAsync("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the fourth U" +
+                        "ser Data Page", ((string)(null)), table303, "And ");
+#line hidden
+                global::Reqnroll.Table table304 = new global::Reqnroll.Table(new string[] {
+                            "provider type",
+                            "provider specialty",
+                            "Taxonomy",
+                            "other"});
+                table304.AddRow(new string[] {
+                            string.Format("{0}", providerType),
+                            string.Format("{0}", providerSpecialty),
+                            string.Format("{0}", taxonomy),
+                            string.Format("{0}", other)});
+#line 1749
+ await testRunner.AndAsync("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
+                        "he fourth User Data Page", ((string)(null)), table304, "And ");
+#line hidden
+                global::Reqnroll.Table table305 = new global::Reqnroll.Table(new string[] {
+                            "Invalid zipcode"});
+                table305.AddRow(new string[] {
+                            string.Format("{0}", invalidZipcode)});
+#line 1752
+ await testRunner.AndAsync("I enter the invalid zipcode for InvolvedParty", ((string)(null)), table305, "And ");
+#line hidden
+                global::Reqnroll.Table table306 = new global::Reqnroll.Table(new string[] {
+                            "Zipcode validation error message"});
+                table306.AddRow(new string[] {
+                            string.Format("{0}", zipcodeValidationErrorMessage)});
+#line 1756
+ await testRunner.ThenAsync("I validate the zip code error messgae", ((string)(null)), table306, "Then ");
+#line hidden
+#line 1759
+ await testRunner.AndAsync("verify Dropdown lists are in alphabetical order in Involved Party as provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table307 = new global::Reqnroll.Table(new string[] {
+                            "Address1",
+                            "Address2",
+                            "City",
+                            "state2",
+                            "city2",
+                            "Zipcode"});
+                table307.AddRow(new string[] {
+                            string.Format("{0}", address1),
+                            string.Format("{0}", address2),
+                            string.Format("{0}", city),
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2),
+                            string.Format("{0}", zipcode)});
+#line 1760
+ await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table307, "When ");
+#line hidden
+                global::Reqnroll.Table table308 = new global::Reqnroll.Table(new string[] {
+                            "Invalid email"});
+                table308.AddRow(new string[] {
+                            string.Format("{0}", invalidEmail)});
+#line 1763
+ await testRunner.AndAsync("I enter the invalid email id for involvedparty as provider", ((string)(null)), table308, "And ");
+#line hidden
+                global::Reqnroll.Table table309 = new global::Reqnroll.Table(new string[] {
+                            "Email validation error message"});
+                table309.AddRow(new string[] {
+                            string.Format("{0}", emailValidationErrorMessage)});
+#line 1767
+ await testRunner.ThenAsync("I validate the error message is displayed for involvedparty as provider", ((string)(null)), table309, "Then ");
+#line hidden
+                global::Reqnroll.Table table310 = new global::Reqnroll.Table(new string[] {
+                            "InvalidDOB"});
+                table310.AddRow(new string[] {
+                            string.Format("{0}", invalidDOB)});
+#line 1770
+ await testRunner.WhenAsync("i enter invalid date of birth", ((string)(null)), table310, "When ");
+#line hidden
+                global::Reqnroll.Table table311 = new global::Reqnroll.Table(new string[] {
+                            "country",
+                            "Phone number",
+                            "fax",
+                            "Email address"});
+                table311.AddRow(new string[] {
+                            string.Format("{0}", country),
+                            string.Format("{0}", phoneNumber),
+                            string.Format("{0}", fax),
+                            string.Format("{0}", emailAddress)});
+#line 1774
+ await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table311, "And ");
+#line hidden
+                global::Reqnroll.Table table312 = new global::Reqnroll.Table(new string[] {
+                            "DOB"});
+                table312.AddRow(new string[] {
+                            string.Format("{0}", dOB)});
+#line 1777
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table312, "And ");
+#line hidden
+#line 1780
+ await testRunner.AndAsync("I click on the Next button on the third User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1781
+ await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1785
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 1786
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1787
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1788
+ await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table313 = new global::Reqnroll.Table(new string[] {
+                            "updatedOrgname"});
+                table313.AddRow(new string[] {
+                            string.Format("{0}", updatedOrgname)});
+#line 1790
+ await testRunner.AndAsync("Edit Primary InvovePartyType,Change the data and save the changes", ((string)(null)), table313, "And ");
+#line hidden
+                global::Reqnroll.Table table314 = new global::Reqnroll.Table(new string[] {
+                            "updatedOrgname"});
+                table314.AddRow(new string[] {
+                            string.Format("{0}", updatedOrgname)});
+#line 1794
+ await testRunner.ThenAsync("Validate the updated data of the Primary Subject type", ((string)(null)), table314, "Then ");
+#line hidden
+                global::Reqnroll.Table table315 = new global::Reqnroll.Table(new string[] {
+                            "Is there any Involved Party Dropdown"});
+                table315.AddRow(new string[] {
+                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
+#line 1798
+ await testRunner.WhenAsync("is there anotherinvolved party dropdown is selected on the fourth User Data Page", ((string)(null)), table315, "When ");
+#line hidden
+#line 1805
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 1806
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1807
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1808
+ await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table316 = new global::Reqnroll.Table(new string[] {
+                            "Question1"});
+                table316.AddRow(new string[] {
+                            string.Format("{0}", question1)});
+#line 1810
+ await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table316, "And ");
+#line hidden
+                global::Reqnroll.Table table317 = new global::Reqnroll.Table(new string[] {
+                            "Question2",
+                            "Question3"});
+                table317.AddRow(new string[] {
+                            string.Format("{0}", question2),
+                            string.Format("{0}", question3)});
+#line 1814
+ await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table317, "And ");
+#line hidden
+                global::Reqnroll.Table table318 = new global::Reqnroll.Table(new string[] {
+                            "TestFile"});
+                table318.AddRow(new string[] {
+                            string.Format("{0}", testFile)});
+#line 1817
+ await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table318, "And ");
+#line hidden
+#line 1820
+ await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("22_ [Online Referral End To End Scenario with Primary Subject Type as Member and " +
+            "Editing the Primary Subject Type]")]
+        [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
+            " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Recipient w/ req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Gainwell Technologies", "FN101", "14", null)]
+        public async global::System.Threading.Tasks.Task _22_OnlineReferralEndToEndScenarioWithPrimarySubjectTypeAsMemberAndEditingThePrimarySubjectType(
+                    string invalidZipcode, 
+                    string zipcodeValidationErrorMessage, 
+                    string invalidEmail, 
+                    string emailValidationErrorMessage, 
+                    string userFirstName, 
+                    string userLastName, 
+                    string emailAddress, 
+                    string phoneNumber, 
+                    string orgName, 
+                    string title, 
+                    string address1, 
+                    string address2, 
+                    string city, 
+                    string state, 
+                    string zipcode, 
+                    string incidentStartDate, 
+                    string incidentEnd, 
+                    string errorMessage, 
+                    string referralType, 
+                    string involvedPartyType, 
+                    string caseOrReferenceNumber, 
+                    string detectedAs, 
+                    string summary, 
+                    string amount, 
+                    string detectionDate, 
+                    string incidentStartDate1, 
+                    string incidentEndDate, 
+                    string state2, 
+                    string city2, 
+                    string witnessDropdown, 
+                    string referralFN, 
+                    string referralLN, 
+                    string referralOrgname, 
+                    string referralRelationship, 
+                    string orgname, 
+                    string namePrefix, 
+                    string firstName, 
+                    string middleName, 
+                    string lastName, 
+                    string nameSuffix, 
+                    string designation, 
+                    string sSN, 
+                    string licenseNumber, 
+                    string iDTest, 
+                    string nPI, 
+                    string tIN, 
+                    string medicaidID, 
+                    string medicareID, 
+                    string otherID, 
+                    string providerType, 
+                    string providerSpecialty, 
+                    string taxonomy, 
+                    string other, 
+                    string country, 
+                    string fax, 
+                    string rederralInvolveASpecificMemberDropdown, 
+                    string isTheMemberTheSamePersonAsTheWitnessOrExternalReferringParty, 
+                    string fN, 
+                    string lN, 
+                    string memberID, 
+                    string dOB, 
+                    string planType, 
+                    string question1, 
+                    string question2, 
+                    string question3, 
+                    string question4, 
+                    string question5, 
+                    string question6, 
+                    string associatedstate, 
+                    string testFile, 
+                    string isThereAnyInvolvedPartyDropdown, 
+                    string userEmailID, 
+                    string activityName, 
+                    string dollarsymbolinAmountFieldValidationMessage, 
+                    string invalidDOB, 
+                    string dOBValidationErrorMessage, 
+                    string updatedOrgname, 
+                    string updatedFirstName, 
+                    string @__pickleIndex, 
+                    string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Invalid zipcode", invalidZipcode);
+            argumentsOfScenario.Add("Zipcode validation error message", zipcodeValidationErrorMessage);
+            argumentsOfScenario.Add("Invalid email", invalidEmail);
+            argumentsOfScenario.Add("Email validation error message", emailValidationErrorMessage);
+            argumentsOfScenario.Add("UserFirstName", userFirstName);
+            argumentsOfScenario.Add("UserLastName", userLastName);
+            argumentsOfScenario.Add("Email address", emailAddress);
+            argumentsOfScenario.Add("Phone number", phoneNumber);
+            argumentsOfScenario.Add("Org name", orgName);
+            argumentsOfScenario.Add("title", title);
+            argumentsOfScenario.Add("Address1", address1);
+            argumentsOfScenario.Add("Address2", address2);
+            argumentsOfScenario.Add("City", city);
+            argumentsOfScenario.Add("State", state);
+            argumentsOfScenario.Add("Zipcode", zipcode);
+            argumentsOfScenario.Add("Incident Start Date", incidentStartDate);
+            argumentsOfScenario.Add("Incident End", incidentEnd);
+            argumentsOfScenario.Add("Error message", errorMessage);
+            argumentsOfScenario.Add("referralType", referralType);
+            argumentsOfScenario.Add("involvedPartyType", involvedPartyType);
+            argumentsOfScenario.Add("caseOrReferenceNumber", caseOrReferenceNumber);
+            argumentsOfScenario.Add("detectedAs", detectedAs);
+            argumentsOfScenario.Add("summary", summary);
+            argumentsOfScenario.Add("amount", amount);
+            argumentsOfScenario.Add("detectionDate", detectionDate);
+            argumentsOfScenario.Add("incidentStartDate", incidentStartDate1);
+            argumentsOfScenario.Add("incidentEndDate", incidentEndDate);
+            argumentsOfScenario.Add("state2", state2);
+            argumentsOfScenario.Add("city2", city2);
+            argumentsOfScenario.Add("witnessDropdown", witnessDropdown);
+            argumentsOfScenario.Add("referralFN", referralFN);
+            argumentsOfScenario.Add("referralLN", referralLN);
+            argumentsOfScenario.Add("referralOrgname", referralOrgname);
+            argumentsOfScenario.Add("referralRelationship", referralRelationship);
+            argumentsOfScenario.Add("orgname", orgname);
+            argumentsOfScenario.Add("name prefix", namePrefix);
+            argumentsOfScenario.Add("first name", firstName);
+            argumentsOfScenario.Add("middle name", middleName);
+            argumentsOfScenario.Add("last name", lastName);
+            argumentsOfScenario.Add("name suffix", nameSuffix);
+            argumentsOfScenario.Add("designation", designation);
+            argumentsOfScenario.Add("SSN", sSN);
+            argumentsOfScenario.Add("licenseNumber", licenseNumber);
+            argumentsOfScenario.Add("ID Test", iDTest);
+            argumentsOfScenario.Add("NPI", nPI);
+            argumentsOfScenario.Add("TIN", tIN);
+            argumentsOfScenario.Add("medicaid ID", medicaidID);
+            argumentsOfScenario.Add("Medicare ID", medicareID);
+            argumentsOfScenario.Add("otherID", otherID);
+            argumentsOfScenario.Add("provider type", providerType);
+            argumentsOfScenario.Add("provider specialty", providerSpecialty);
+            argumentsOfScenario.Add("Taxonomy", taxonomy);
+            argumentsOfScenario.Add("other", other);
+            argumentsOfScenario.Add("country", country);
+            argumentsOfScenario.Add("fax", fax);
+            argumentsOfScenario.Add("rederral involve a specific member dropdown", rederralInvolveASpecificMemberDropdown);
+            argumentsOfScenario.Add("Is the member the same person as the witness or external referring party?", isTheMemberTheSamePersonAsTheWitnessOrExternalReferringParty);
+            argumentsOfScenario.Add("FN", fN);
+            argumentsOfScenario.Add("LN", lN);
+            argumentsOfScenario.Add("memberID", memberID);
+            argumentsOfScenario.Add("DOB", dOB);
+            argumentsOfScenario.Add("planType", planType);
+            argumentsOfScenario.Add("Question1", question1);
+            argumentsOfScenario.Add("Question2", question2);
+            argumentsOfScenario.Add("Question3", question3);
+            argumentsOfScenario.Add("Question4", question4);
+            argumentsOfScenario.Add("Question5", question5);
+            argumentsOfScenario.Add("Question6", question6);
+            argumentsOfScenario.Add("associatedstate", associatedstate);
+            argumentsOfScenario.Add("TestFile", testFile);
+            argumentsOfScenario.Add("Is there any Involved Party Dropdown", isThereAnyInvolvedPartyDropdown);
+            argumentsOfScenario.Add("UserEmailID", userEmailID);
+            argumentsOfScenario.Add("ActivityName", activityName);
+            argumentsOfScenario.Add("DollarsymbolinAmountFieldValidationMessage", dollarsymbolinAmountFieldValidationMessage);
+            argumentsOfScenario.Add("InvalidDOB", invalidDOB);
+            argumentsOfScenario.Add("DOB validation error message", dOBValidationErrorMessage);
+            argumentsOfScenario.Add("updatedOrgname", updatedOrgname);
+            argumentsOfScenario.Add("updatedFirstName", updatedFirstName);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("22_ [Online Referral End To End Scenario with Primary Subject Type as Member and " +
+                    "Editing the Primary Subject Type]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 1832
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 1835
+ await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 1836
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 1837
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1838
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1839
+ await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 1840
+ await testRunner.ThenAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+                global::Reqnroll.Table table319 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table319.AddRow(new string[] {
+                            string.Format("{0}", emailAddress)});
+#line 1841
+ await testRunner.WhenAsync("I enter the email  on the Initial User Data Page", ((string)(null)), table319, "When ");
+#line hidden
+                global::Reqnroll.Table table320 = new global::Reqnroll.Table(new string[] {
+                            "Invalid email"});
+                table320.AddRow(new string[] {
+                            string.Format("{0}", invalidEmail)});
+#line 1845
+ await testRunner.AndAsync("I enter the invalid email id", ((string)(null)), table320, "And ");
+#line hidden
+                global::Reqnroll.Table table321 = new global::Reqnroll.Table(new string[] {
+                            "Email validation error message"});
+                table321.AddRow(new string[] {
+                            string.Format("{0}", emailValidationErrorMessage)});
+#line 1849
+ await testRunner.ThenAsync("I validate the error messgae", ((string)(null)), table321, "Then ");
+#line hidden
+                global::Reqnroll.Table table322 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table322.AddRow(new string[] {
+                            string.Format("{0}", emailAddress)});
+#line 1853
+ await testRunner.WhenAsync("I enter the valid email id", ((string)(null)), table322, "When ");
+#line hidden
+                global::Reqnroll.Table table323 = new global::Reqnroll.Table(new string[] {
+                            "UserFirstName",
+                            "UserLastName",
+                            "Org name",
+                            "title"});
+                table323.AddRow(new string[] {
+                            string.Format("{0}", userFirstName),
+                            string.Format("{0}", userLastName),
+                            string.Format("{0}", orgName),
+                            string.Format("{0}", title)});
+#line 1857
+ await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
+                        "ata Page", ((string)(null)), table323, "And ");
+#line hidden
+                global::Reqnroll.Table table324 = new global::Reqnroll.Table(new string[] {
+                            "Phone number"});
+                table324.AddRow(new string[] {
+                            string.Format("{0}", phoneNumber)});
+#line 1861
+ await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table324, "And ");
+#line hidden
+                global::Reqnroll.Table table325 = new global::Reqnroll.Table(new string[] {
+                            "Invalid zipcode"});
+                table325.AddRow(new string[] {
+                            string.Format("{0}", invalidZipcode)});
+#line 1865
+ await testRunner.AndAsync("I enter the invalid zipcode", ((string)(null)), table325, "And ");
+#line hidden
+                global::Reqnroll.Table table326 = new global::Reqnroll.Table(new string[] {
+                            "Zipcode validation error message"});
+                table326.AddRow(new string[] {
+                            string.Format("{0}", zipcodeValidationErrorMessage)});
+#line 1869
+ await testRunner.ThenAsync("I validate the zip code error messgae", ((string)(null)), table326, "Then ");
+#line hidden
+                global::Reqnroll.Table table327 = new global::Reqnroll.Table(new string[] {
+                            "Address1",
+                            "Address2",
+                            "City",
+                            "State",
+                            "Zipcode"});
+                table327.AddRow(new string[] {
+                            string.Format("{0}", address1),
+                            string.Format("{0}", address2),
+                            string.Format("{0}", city),
+                            string.Format("{0}", state),
+                            string.Format("{0}", zipcode)});
+#line 1873
+ await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table327, "And ");
+#line hidden
+#line 1876
+ await testRunner.WhenAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 1877
+ await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1880
+ await testRunner.AndAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1881
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 1882
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1883
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1884
+ await testRunner.AndAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table328 = new global::Reqnroll.Table(new string[] {
+                            "referralType"});
+                table328.AddRow(new string[] {
+                            string.Format("{0}", referralType)});
+#line 1889
+ await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table328, "When ");
+#line hidden
+                global::Reqnroll.Table table329 = new global::Reqnroll.Table(new string[] {
+                            "involvedPartyType"});
+                table329.AddRow(new string[] {
+                            string.Format("{0}", involvedPartyType)});
+#line 1892
+ await testRunner.AndAsync("Suspect or Subject or Involved Party Type", ((string)(null)), table329, "And ");
+#line hidden
+                global::Reqnroll.Table table330 = new global::Reqnroll.Table(new string[] {
+                            "caseOrReferenceNumber"});
+                table330.AddRow(new string[] {
+                            string.Format("{0}", caseOrReferenceNumber)});
+#line 1895
+ await testRunner.AndAsync("enter case or reference number  on the second User Data Page", ((string)(null)), table330, "And ");
+#line hidden
+                global::Reqnroll.Table table331 = new global::Reqnroll.Table(new string[] {
+                            "detectedAs",
+                            "summary"});
+                table331.AddRow(new string[] {
+                            string.Format("{0}", detectedAs),
+                            string.Format("{0}", summary)});
+#line 1898
+ await testRunner.AndAsync("How was this detected  ,please provide  a Summary of this referral  on the second" +
+                        " User Data Page", ((string)(null)), table331, "And ");
+#line hidden
+                global::Reqnroll.Table table332 = new global::Reqnroll.Table(new string[] {
+                            "amount",
+                            "detectionDate"});
+                table332.AddRow(new string[] {
+                            string.Format("{0}", amount),
+                            string.Format("{0}", detectionDate)});
+#line 1901
+ await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table332, "And ");
+#line hidden
+                global::Reqnroll.Table table333 = new global::Reqnroll.Table(new string[] {
+                            "Incident Start Date"});
+                table333.AddRow(new string[] {
+                            string.Format("{0}", incidentStartDate)});
+#line 1904
+ await testRunner.AndAsync("User enters Incident Start Date", ((string)(null)), table333, "And ");
+#line hidden
+                global::Reqnroll.Table table334 = new global::Reqnroll.Table(new string[] {
+                            "Incident End Date"});
+                table334.AddRow(new string[] {
+                            string.Format("{0}", incidentEnd)});
+#line 1908
+ await testRunner.AndAsync("User enters Incident End Date", ((string)(null)), table334, "And ");
+#line hidden
+                global::Reqnroll.Table table335 = new global::Reqnroll.Table(new string[] {
+                            "error message"});
+                table335.AddRow(new string[] {
+                            string.Format("{0}", errorMessage)});
+#line 1912
+ await testRunner.ThenAsync("validate error message should be displayed", ((string)(null)), table335, "Then ");
+#line hidden
+                global::Reqnroll.Table table336 = new global::Reqnroll.Table(new string[] {
+                            "incidentStartDate",
+                            "incidentEndDate"});
+                table336.AddRow(new string[] {
+                            string.Format("{0}", incidentStartDate1),
+                            string.Format("{0}", incidentEndDate)});
+#line 1915
+ await testRunner.WhenAsync("enter incidentStartDate , incidentEndDate  on the second User Data Page", ((string)(null)), table336, "When ");
+#line hidden
+                global::Reqnroll.Table table337 = new global::Reqnroll.Table(new string[] {
+                            "State",
+                            "City"});
+                table337.AddRow(new string[] {
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2)});
+#line 1918
+ await testRunner.AndAsync("enter state  and city  on the second User Data Page", ((string)(null)), table337, "And ");
+#line hidden
+                global::Reqnroll.Table table338 = new global::Reqnroll.Table(new string[] {
+                            "Dollar symbol in amount field validation message"});
+                table338.AddRow(new string[] {
+                            "<Dollar symbol in amount field validation message>"});
+#line 1921
+ await testRunner.ThenAsync("validate the  symbol is displayed in the amount field", ((string)(null)), table338, "Then ");
+#line hidden
+#line 1924
+ await testRunner.AndAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1925
+ await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 1929
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 1930
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table339 = new global::Reqnroll.Table(new string[] {
+                            "witnessDropdown"});
+                table339.AddRow(new string[] {
+                            string.Format("{0}", witnessDropdown)});
+#line 1933
+ await testRunner.WhenAsync("Is thisInvolved Party dropdown is selected  on the third User Data Page", ((string)(null)), table339, "When ");
+#line hidden
+                global::Reqnroll.Table table340 = new global::Reqnroll.Table(new string[] {
+                            "name prefix",
+                            "first name",
+                            "middle name",
+                            "last name",
+                            "name suffix"});
+                table340.AddRow(new string[] {
+                            "<NamePrefix>",
+                            "<FirstName1>",
+                            "<MiddleName1>",
+                            "<LastName1>",
+                            "<NameSuffix>"});
+#line 1936
+ await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
+                        "middle name , associated party last name and name suffix", ((string)(null)), table340, "And ");
+#line hidden
+                global::Reqnroll.Table table341 = new global::Reqnroll.Table(new string[] {
+                            "DOB",
+                            "Gender",
+                            "other",
+                            "involvedPartyType",
+                            "detectedAs"});
+                table341.AddRow(new string[] {
+                            string.Format("{0}", dOB),
+                            "<Gender>",
+                            string.Format("{0}", other),
+                            string.Format("{0}", involvedPartyType),
+                            string.Format("{0}", detectedAs)});
+#line 1939
+ await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other , How witness or external party reported" +
+                        " this ,any additional info", ((string)(null)), table341, "And ");
+#line hidden
+                global::Reqnroll.Table table342 = new global::Reqnroll.Table(new string[] {
+                            "other",
+                            "SSN",
+                            "medicaid ID",
+                            "Medicare ID",
+                            "otherID"});
+                table342.AddRow(new string[] {
+                            string.Format("{0}", other),
+                            string.Format("{0}", sSN),
+                            string.Format("{0}", medicaidID),
+                            string.Format("{0}", medicareID),
+                            string.Format("{0}", otherID)});
+#line 1942
+ await testRunner.AndAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table342, "And ");
+#line hidden
+                global::Reqnroll.Table table343 = new global::Reqnroll.Table(new string[] {
+                            "planType",
+                            "Program",
+                            "LOB",
+                            "Group"});
+                table343.AddRow(new string[] {
+                            string.Format("{0}", planType),
+                            "<Program>",
+                            "<LOB>",
+                            "<Group>"});
+#line 1945
+ await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table343, "And ");
+#line hidden
+                global::Reqnroll.Table table344 = new global::Reqnroll.Table(new string[] {
+                            "Address1",
+                            "Address2",
+                            "City",
+                            "state2",
+                            "city2",
+                            "Zipcode"});
+                table344.AddRow(new string[] {
+                            string.Format("{0}", address1),
+                            string.Format("{0}", address2),
+                            string.Format("{0}", city),
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2),
+                            string.Format("{0}", zipcode)});
+#line 1949
+ await testRunner.AndAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
+                        "te  , county  and zip code", ((string)(null)), table344, "And ");
+#line hidden
+                global::Reqnroll.Table table345 = new global::Reqnroll.Table(new string[] {
+                            "PrimaryPhone",
+                            "SecondaryPhone",
+                            "Email address"});
+                table345.AddRow(new string[] {
+                            "<PrimaryPhone>",
+                            "<SecondaryPhone>",
+                            string.Format("{0}", emailAddress)});
+#line 1952
+ await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table345, "And ");
+#line hidden
+#line 1955
+ await testRunner.AndAsync("I click on the Next button on the third User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1956
+ await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1960
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 1961
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1962
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1963
+ await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table346 = new global::Reqnroll.Table(new string[] {
+                            "updatedFirstName"});
+                table346.AddRow(new string[] {
+                            string.Format("{0}", updatedFirstName)});
+#line 1965
+ await testRunner.AndAsync("Edit Primary InvovePartyType for member,Change the data and save the changes", ((string)(null)), table346, "And ");
+#line hidden
+                global::Reqnroll.Table table347 = new global::Reqnroll.Table(new string[] {
+                            "updatedFirstName"});
+                table347.AddRow(new string[] {
+                            string.Format("{0}", updatedFirstName)});
+#line 1969
+ await testRunner.ThenAsync("Validate the updated data of the Primary Subject type as member", ((string)(null)), table347, "Then ");
+#line hidden
+                global::Reqnroll.Table table348 = new global::Reqnroll.Table(new string[] {
+                            "Is there any Involved Party Dropdown"});
+                table348.AddRow(new string[] {
+                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
+#line 1973
+ await testRunner.WhenAsync("is there anotherinvolved party dropdown is selected on the fourth User Data Page", ((string)(null)), table348, "When ");
+#line hidden
+#line 1980
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 1981
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1982
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 1983
+ await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table349 = new global::Reqnroll.Table(new string[] {
+                            "Question1"});
+                table349.AddRow(new string[] {
+                            string.Format("{0}", question1)});
+#line 1985
+ await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table349, "And ");
+#line hidden
+                global::Reqnroll.Table table350 = new global::Reqnroll.Table(new string[] {
+                            "Question2",
+                            "Question3"});
+                table350.AddRow(new string[] {
+                            string.Format("{0}", question2),
+                            string.Format("{0}", question3)});
+#line 1989
+ await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table350, "And ");
+#line hidden
+                global::Reqnroll.Table table351 = new global::Reqnroll.Table(new string[] {
+                            "TestFile"});
+                table351.AddRow(new string[] {
+                            string.Format("{0}", testFile)});
+#line 1992
+ await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table351, "And ");
+#line hidden
+#line 1995
+ await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("23_ [Online Referral End To End Scenario with Primary Subject Type as Non-Enumera" +
+            "ted Provider and Editing the Primary Subject Type]")]
+        [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
+            " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Caregiver w/o req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Gainwell Technologies", "FN101", "15", null)]
+        public async global::System.Threading.Tasks.Task _23_OnlineReferralEndToEndScenarioWithPrimarySubjectTypeAsNon_EnumeratedProviderAndEditingThePrimarySubjectType(
+                    string invalidZipcode, 
+                    string zipcodeValidationErrorMessage, 
+                    string invalidEmail, 
+                    string emailValidationErrorMessage, 
+                    string userFirstName, 
+                    string userLastName, 
+                    string emailAddress, 
+                    string phoneNumber, 
+                    string orgName, 
+                    string title, 
+                    string address1, 
+                    string address2, 
+                    string city, 
+                    string state, 
+                    string zipcode, 
+                    string incidentStartDate, 
+                    string incidentEnd, 
+                    string errorMessage, 
+                    string referralType, 
+                    string involvedPartyType, 
+                    string caseOrReferenceNumber, 
+                    string detectedAs, 
+                    string summary, 
+                    string amount, 
+                    string detectionDate, 
+                    string incidentStartDate1, 
+                    string incidentEndDate, 
+                    string state2, 
+                    string city2, 
+                    string witnessDropdown, 
+                    string referralFN, 
+                    string referralLN, 
+                    string referralOrgname, 
+                    string referralRelationship, 
+                    string orgname, 
+                    string namePrefix, 
+                    string firstName, 
+                    string middleName, 
+                    string lastName, 
+                    string nameSuffix, 
+                    string designation, 
+                    string sSN, 
+                    string licenseNumber, 
+                    string iDTest, 
+                    string nPI, 
+                    string tIN, 
+                    string medicaidID, 
+                    string medicareID, 
+                    string otherID, 
+                    string providerType, 
+                    string providerSpecialty, 
+                    string taxonomy, 
+                    string other, 
+                    string country, 
+                    string fax, 
+                    string rederralInvolveASpecificMemberDropdown, 
+                    string isTheMemberTheSamePersonAsTheWitnessOrExternalReferringParty, 
+                    string fN, 
+                    string lN, 
+                    string memberID, 
+                    string dOB, 
+                    string planType, 
+                    string question1, 
+                    string question2, 
+                    string question3, 
+                    string question4, 
+                    string question5, 
+                    string question6, 
+                    string associatedstate, 
+                    string testFile, 
+                    string isThereAnyInvolvedPartyDropdown, 
+                    string userEmailID, 
+                    string activityName, 
+                    string dollarsymbolinAmountFieldValidationMessage, 
+                    string invalidDOB, 
+                    string dOBValidationErrorMessage, 
+                    string updatedOrgname, 
+                    string updatedFirstName, 
+                    string @__pickleIndex, 
+                    string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Invalid zipcode", invalidZipcode);
+            argumentsOfScenario.Add("Zipcode validation error message", zipcodeValidationErrorMessage);
+            argumentsOfScenario.Add("Invalid email", invalidEmail);
+            argumentsOfScenario.Add("Email validation error message", emailValidationErrorMessage);
+            argumentsOfScenario.Add("UserFirstName", userFirstName);
+            argumentsOfScenario.Add("UserLastName", userLastName);
+            argumentsOfScenario.Add("Email address", emailAddress);
+            argumentsOfScenario.Add("Phone number", phoneNumber);
+            argumentsOfScenario.Add("Org name", orgName);
+            argumentsOfScenario.Add("title", title);
+            argumentsOfScenario.Add("Address1", address1);
+            argumentsOfScenario.Add("Address2", address2);
+            argumentsOfScenario.Add("City", city);
+            argumentsOfScenario.Add("State", state);
+            argumentsOfScenario.Add("Zipcode", zipcode);
+            argumentsOfScenario.Add("Incident Start Date", incidentStartDate);
+            argumentsOfScenario.Add("Incident End", incidentEnd);
+            argumentsOfScenario.Add("Error message", errorMessage);
+            argumentsOfScenario.Add("referralType", referralType);
+            argumentsOfScenario.Add("involvedPartyType", involvedPartyType);
+            argumentsOfScenario.Add("caseOrReferenceNumber", caseOrReferenceNumber);
+            argumentsOfScenario.Add("detectedAs", detectedAs);
+            argumentsOfScenario.Add("summary", summary);
+            argumentsOfScenario.Add("amount", amount);
+            argumentsOfScenario.Add("detectionDate", detectionDate);
+            argumentsOfScenario.Add("incidentStartDate", incidentStartDate1);
+            argumentsOfScenario.Add("incidentEndDate", incidentEndDate);
+            argumentsOfScenario.Add("state2", state2);
+            argumentsOfScenario.Add("city2", city2);
+            argumentsOfScenario.Add("witnessDropdown", witnessDropdown);
+            argumentsOfScenario.Add("referralFN", referralFN);
+            argumentsOfScenario.Add("referralLN", referralLN);
+            argumentsOfScenario.Add("referralOrgname", referralOrgname);
+            argumentsOfScenario.Add("referralRelationship", referralRelationship);
+            argumentsOfScenario.Add("orgname", orgname);
+            argumentsOfScenario.Add("name prefix", namePrefix);
+            argumentsOfScenario.Add("first name", firstName);
+            argumentsOfScenario.Add("middle name", middleName);
+            argumentsOfScenario.Add("last name", lastName);
+            argumentsOfScenario.Add("name suffix", nameSuffix);
+            argumentsOfScenario.Add("designation", designation);
+            argumentsOfScenario.Add("SSN", sSN);
+            argumentsOfScenario.Add("licenseNumber", licenseNumber);
+            argumentsOfScenario.Add("ID Test", iDTest);
+            argumentsOfScenario.Add("NPI", nPI);
+            argumentsOfScenario.Add("TIN", tIN);
+            argumentsOfScenario.Add("medicaid ID", medicaidID);
+            argumentsOfScenario.Add("Medicare ID", medicareID);
+            argumentsOfScenario.Add("otherID", otherID);
+            argumentsOfScenario.Add("provider type", providerType);
+            argumentsOfScenario.Add("provider specialty", providerSpecialty);
+            argumentsOfScenario.Add("Taxonomy", taxonomy);
+            argumentsOfScenario.Add("other", other);
+            argumentsOfScenario.Add("country", country);
+            argumentsOfScenario.Add("fax", fax);
+            argumentsOfScenario.Add("rederral involve a specific member dropdown", rederralInvolveASpecificMemberDropdown);
+            argumentsOfScenario.Add("Is the member the same person as the witness or external referring party?", isTheMemberTheSamePersonAsTheWitnessOrExternalReferringParty);
+            argumentsOfScenario.Add("FN", fN);
+            argumentsOfScenario.Add("LN", lN);
+            argumentsOfScenario.Add("memberID", memberID);
+            argumentsOfScenario.Add("DOB", dOB);
+            argumentsOfScenario.Add("planType", planType);
+            argumentsOfScenario.Add("Question1", question1);
+            argumentsOfScenario.Add("Question2", question2);
+            argumentsOfScenario.Add("Question3", question3);
+            argumentsOfScenario.Add("Question4", question4);
+            argumentsOfScenario.Add("Question5", question5);
+            argumentsOfScenario.Add("Question6", question6);
+            argumentsOfScenario.Add("associatedstate", associatedstate);
+            argumentsOfScenario.Add("TestFile", testFile);
+            argumentsOfScenario.Add("Is there any Involved Party Dropdown", isThereAnyInvolvedPartyDropdown);
+            argumentsOfScenario.Add("UserEmailID", userEmailID);
+            argumentsOfScenario.Add("ActivityName", activityName);
+            argumentsOfScenario.Add("DollarsymbolinAmountFieldValidationMessage", dollarsymbolinAmountFieldValidationMessage);
+            argumentsOfScenario.Add("InvalidDOB", invalidDOB);
+            argumentsOfScenario.Add("DOB validation error message", dOBValidationErrorMessage);
+            argumentsOfScenario.Add("updatedOrgname", updatedOrgname);
+            argumentsOfScenario.Add("updatedFirstName", updatedFirstName);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("23_ [Online Referral End To End Scenario with Primary Subject Type as Non-Enumera" +
+                    "ted Provider and Editing the Primary Subject Type]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 2009
+ this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 2012
+ await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 2013
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 2014
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2015
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2016
+ await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 2017
+ await testRunner.ThenAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+                global::Reqnroll.Table table352 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table352.AddRow(new string[] {
+                            string.Format("{0}", emailAddress)});
+#line 2018
+ await testRunner.WhenAsync("I enter the email  on the Initial User Data Page", ((string)(null)), table352, "When ");
+#line hidden
+                global::Reqnroll.Table table353 = new global::Reqnroll.Table(new string[] {
+                            "Invalid email"});
+                table353.AddRow(new string[] {
+                            string.Format("{0}", invalidEmail)});
+#line 2022
+ await testRunner.AndAsync("I enter the invalid email id", ((string)(null)), table353, "And ");
+#line hidden
+                global::Reqnroll.Table table354 = new global::Reqnroll.Table(new string[] {
+                            "Email validation error message"});
+                table354.AddRow(new string[] {
+                            string.Format("{0}", emailValidationErrorMessage)});
+#line 2026
+ await testRunner.ThenAsync("I validate the error messgae", ((string)(null)), table354, "Then ");
+#line hidden
+                global::Reqnroll.Table table355 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table355.AddRow(new string[] {
+                            string.Format("{0}", emailAddress)});
+#line 2030
+ await testRunner.WhenAsync("I enter the valid email id", ((string)(null)), table355, "When ");
+#line hidden
+                global::Reqnroll.Table table356 = new global::Reqnroll.Table(new string[] {
+                            "UserFirstName",
+                            "UserLastName",
+                            "Org name",
+                            "title"});
+                table356.AddRow(new string[] {
+                            string.Format("{0}", userFirstName),
+                            string.Format("{0}", userLastName),
+                            string.Format("{0}", orgName),
+                            string.Format("{0}", title)});
+#line 2034
+ await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
+                        "ata Page", ((string)(null)), table356, "And ");
+#line hidden
+                global::Reqnroll.Table table357 = new global::Reqnroll.Table(new string[] {
+                            "Phone number"});
+                table357.AddRow(new string[] {
+                            string.Format("{0}", phoneNumber)});
+#line 2038
+ await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table357, "And ");
+#line hidden
+                global::Reqnroll.Table table358 = new global::Reqnroll.Table(new string[] {
+                            "Invalid zipcode"});
+                table358.AddRow(new string[] {
+                            string.Format("{0}", invalidZipcode)});
+#line 2042
+ await testRunner.AndAsync("I enter the invalid zipcode", ((string)(null)), table358, "And ");
+#line hidden
+                global::Reqnroll.Table table359 = new global::Reqnroll.Table(new string[] {
+                            "Zipcode validation error message"});
+                table359.AddRow(new string[] {
+                            string.Format("{0}", zipcodeValidationErrorMessage)});
+#line 2046
+ await testRunner.ThenAsync("I validate the zip code error messgae", ((string)(null)), table359, "Then ");
+#line hidden
+                global::Reqnroll.Table table360 = new global::Reqnroll.Table(new string[] {
+                            "Address1",
+                            "Address2",
+                            "City",
+                            "State",
+                            "Zipcode"});
+                table360.AddRow(new string[] {
+                            string.Format("{0}", address1),
+                            string.Format("{0}", address2),
+                            string.Format("{0}", city),
+                            string.Format("{0}", state),
+                            string.Format("{0}", zipcode)});
+#line 2050
+ await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table360, "And ");
+#line hidden
+#line 2053
+ await testRunner.WhenAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 2054
+ await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2057
+ await testRunner.AndAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2058
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 2059
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2060
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2061
+ await testRunner.AndAsync("verify Dropdown lists are in alphabetical order", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table361 = new global::Reqnroll.Table(new string[] {
+                            "referralType"});
+                table361.AddRow(new string[] {
+                            string.Format("{0}", referralType)});
+#line 2066
+ await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table361, "When ");
+#line hidden
+                global::Reqnroll.Table table362 = new global::Reqnroll.Table(new string[] {
+                            "involvedPartyType"});
+                table362.AddRow(new string[] {
+                            string.Format("{0}", involvedPartyType)});
+#line 2069
+ await testRunner.AndAsync("Suspect or Subject or Involved Party Type", ((string)(null)), table362, "And ");
+#line hidden
+                global::Reqnroll.Table table363 = new global::Reqnroll.Table(new string[] {
+                            "caseOrReferenceNumber"});
+                table363.AddRow(new string[] {
+                            string.Format("{0}", caseOrReferenceNumber)});
+#line 2072
+ await testRunner.AndAsync("enter case or reference number  on the second User Data Page", ((string)(null)), table363, "And ");
+#line hidden
+                global::Reqnroll.Table table364 = new global::Reqnroll.Table(new string[] {
+                            "detectedAs",
+                            "summary"});
+                table364.AddRow(new string[] {
+                            string.Format("{0}", detectedAs),
+                            string.Format("{0}", summary)});
+#line 2075
+ await testRunner.AndAsync("How was this detected  ,please provide  a Summary of this referral  on the second" +
+                        " User Data Page", ((string)(null)), table364, "And ");
+#line hidden
+                global::Reqnroll.Table table365 = new global::Reqnroll.Table(new string[] {
+                            "amount",
+                            "detectionDate"});
+                table365.AddRow(new string[] {
+                            string.Format("{0}", amount),
+                            string.Format("{0}", detectionDate)});
+#line 2078
+ await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table365, "And ");
+#line hidden
+                global::Reqnroll.Table table366 = new global::Reqnroll.Table(new string[] {
+                            "Incident Start Date"});
+                table366.AddRow(new string[] {
+                            string.Format("{0}", incidentStartDate)});
+#line 2081
+ await testRunner.AndAsync("User enters Incident Start Date", ((string)(null)), table366, "And ");
+#line hidden
+                global::Reqnroll.Table table367 = new global::Reqnroll.Table(new string[] {
+                            "Incident End Date"});
+                table367.AddRow(new string[] {
+                            string.Format("{0}", incidentEnd)});
+#line 2085
+ await testRunner.AndAsync("User enters Incident End Date", ((string)(null)), table367, "And ");
+#line hidden
+                global::Reqnroll.Table table368 = new global::Reqnroll.Table(new string[] {
+                            "error message"});
+                table368.AddRow(new string[] {
+                            string.Format("{0}", errorMessage)});
+#line 2089
+ await testRunner.ThenAsync("validate error message should be displayed", ((string)(null)), table368, "Then ");
+#line hidden
+                global::Reqnroll.Table table369 = new global::Reqnroll.Table(new string[] {
+                            "incidentStartDate",
+                            "incidentEndDate"});
+                table369.AddRow(new string[] {
+                            string.Format("{0}", incidentStartDate1),
+                            string.Format("{0}", incidentEndDate)});
+#line 2092
+ await testRunner.WhenAsync("enter incidentStartDate , incidentEndDate  on the second User Data Page", ((string)(null)), table369, "When ");
+#line hidden
+                global::Reqnroll.Table table370 = new global::Reqnroll.Table(new string[] {
+                            "State",
+                            "City"});
+                table370.AddRow(new string[] {
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2)});
+#line 2095
+ await testRunner.AndAsync("enter state  and city  on the second User Data Page", ((string)(null)), table370, "And ");
+#line hidden
+                global::Reqnroll.Table table371 = new global::Reqnroll.Table(new string[] {
+                            "Dollar symbol in amount field validation message"});
+                table371.AddRow(new string[] {
+                            "<Dollar symbol in amount field validation message>"});
+#line 2098
+ await testRunner.ThenAsync("validate the  symbol is displayed in the amount field", ((string)(null)), table371, "Then ");
+#line hidden
+#line 2101
+ await testRunner.AndAsync("I click on the Next button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2102
+ await testRunner.WhenAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 2106
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 2107
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table372 = new global::Reqnroll.Table(new string[] {
+                            "witnessDropdown"});
+                table372.AddRow(new string[] {
+                            string.Format("{0}", witnessDropdown)});
+#line 2110
+ await testRunner.WhenAsync("Is thisInvolved Party dropdown is selected  on the third User Data Page", ((string)(null)), table372, "When ");
+#line hidden
+                global::Reqnroll.Table table373 = new global::Reqnroll.Table(new string[] {
+                            "orgname",
+                            "name prefix",
+                            "first name",
+                            "middle name",
+                            "last name",
+                            "name suffix"});
+                table373.AddRow(new string[] {
+                            "<Organization1>",
+                            "<NamePrefix>",
+                            "<FirstName1>",
+                            "<MiddleName1>",
+                            "<LastName1>",
+                            "<NameSuffix>"});
+#line 2113
+ await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
+                        "rty first name ,associated party middle name , associated party last name  and n" +
+                        "ame suffix", ((string)(null)), table373, "And ");
+#line hidden
+                global::Reqnroll.Table table374 = new global::Reqnroll.Table(new string[] {
+                            "designation",
+                            "DOB",
+                            "SSN",
+                            "involvedPartyType",
+                            "detectedAs",
+                            "licenseNumber",
+                            "otherID",
+                            "other"});
+                table374.AddRow(new string[] {
+                            string.Format("{0}", designation),
+                            string.Format("{0}", dOB),
+                            string.Format("{0}", sSN),
+                            string.Format("{0}", involvedPartyType),
+                            string.Format("{0}", detectedAs),
+                            string.Format("{0}", licenseNumber),
+                            string.Format("{0}", otherID),
+                            string.Format("{0}", other)});
+#line 2117
+await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN , How witness or external party repor" +
+                        "ted this ,any additional info  licenseNumber ,other ID ,other", ((string)(null)), table374, "And ");
+#line hidden
+                global::Reqnroll.Table table375 = new global::Reqnroll.Table(new string[] {
+                            "PrimaryPhone",
+                            "SecondaryPhone",
+                            "fax",
+                            "Email address"});
+                table375.AddRow(new string[] {
+                            "<PrimaryPhone>",
+                            "<SecondaryPhone>",
+                            string.Format("{0}", fax),
+                            string.Format("{0}", emailAddress)});
+#line 2121
+await testRunner.AndAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
+                        "the involved party", ((string)(null)), table375, "And ");
+#line hidden
+                global::Reqnroll.Table table376 = new global::Reqnroll.Table(new string[] {
+                            "Address1",
+                            "Address2",
+                            "City",
+                            "state2",
+                            "city2",
+                            "Zipcode",
+                            "Country"});
+                table376.AddRow(new string[] {
+                            string.Format("{0}", address1),
+                            string.Format("{0}", address2),
+                            string.Format("{0}", city),
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2),
+                            string.Format("{0}", zipcode),
+                            string.Format("{0}", country)});
+#line 2124
+await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
+                        "de and country for the involved party", ((string)(null)), table376, "And ");
+#line hidden
+#line 2127
+ await testRunner.AndAsync("I click on the Next button on the third User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2128
+ await testRunner.AndAsync("I should be navigated to the Next Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2132
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 2133
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2134
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2135
+ await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table377 = new global::Reqnroll.Table(new string[] {
+                            "updatedFirstName"});
+                table377.AddRow(new string[] {
+                            string.Format("{0}", updatedFirstName)});
+#line 2137
+ await testRunner.AndAsync("Edit Primary InvovePartyType for member,Change the data and save the changes", ((string)(null)), table377, "And ");
+#line hidden
+                global::Reqnroll.Table table378 = new global::Reqnroll.Table(new string[] {
+                            "updatedFirstName"});
+                table378.AddRow(new string[] {
+                            string.Format("{0}", updatedFirstName)});
+#line 2141
+ await testRunner.ThenAsync("Validate the updated data of the Primary Subject type as member", ((string)(null)), table378, "Then ");
+#line hidden
+                global::Reqnroll.Table table379 = new global::Reqnroll.Table(new string[] {
+                            "Is there any Involved Party Dropdown"});
+                table379.AddRow(new string[] {
+                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
+#line 2145
+ await testRunner.WhenAsync("is there anotherinvolved party dropdown is selected on the fourth User Data Page", ((string)(null)), table379, "When ");
+#line hidden
+#line 2152
+ await testRunner.ThenAsync("Logo should be visible", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 2153
+ await testRunner.AndAsync("Logo should be aligned at the top center of the page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2154
+ await testRunner.AndAsync("Required CSS glow appears with correct configured color controlled in Admin.", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 2155
+ await testRunner.WhenAsync("i check the required fields current page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table380 = new global::Reqnroll.Table(new string[] {
+                            "Question1"});
+                table380.AddRow(new string[] {
+                            string.Format("{0}", question1)});
+#line 2157
+ await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table380, "And ");
+#line hidden
+                global::Reqnroll.Table table381 = new global::Reqnroll.Table(new string[] {
+                            "Question2",
+                            "Question3"});
+                table381.AddRow(new string[] {
+                            string.Format("{0}", question2),
+                            string.Format("{0}", question3)});
+#line 2161
+ await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table381, "And ");
+#line hidden
+                global::Reqnroll.Table table382 = new global::Reqnroll.Table(new string[] {
+                            "TestFile"});
+                table382.AddRow(new string[] {
+                            string.Format("{0}", testFile)});
+#line 2164
+ await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table382, "And ");
+#line hidden
+#line 2167
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }

@@ -1202,6 +1202,58 @@ namespace ReqnrollProject1.StepDefinitions
             PG3.SelectIsThisInvolvedPartyAnExternalReferringParty(data.isAnotherExternalInvolvedPartyAvailable);
         }
 
+        public void UpdateOrganizationName(string newOrganizationName)
+        {
+            var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
+            PG3.EnterOrganizationName(newOrganizationName);
+        }
+
+        [When("Edit Primary InvovePartyType,Change the data and save the changes")]
+        public void WhenEditPrimaryInvovePartyTypeChangeTheDataAndSaveTheChanges(DataTable dataTable)
+        {
+            var PG3 = new InvolvedParties_Page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.ClickEditButton();
+            PG3.updateOrganizationField(data.updatedOrgname);
+            PG3.clickSaveButton();
+        }
+
+        [When("Edit Primary InvovePartyType for member,Change the data and save the changes")]
+        public void WhenEditPrimaryInvovePartyTypeForMemberChangeTheDataAndSaveTheChanges(DataTable dataTable)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG3.ClickEditButton();
+            PG3.updateFirstNameField(data.updatedFirstName);
+            PG3.clickSaveButton();
+        }
+
+
+        [Then("Validate the updated data of the Primary Subject type")]
+        public void ThenValidateTheUpdatedDataOfThePrimarySubjectType(DataTable dataTable)
+        {
+            var PG3 = new InvolvedParties_Page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
+            PG3.clickGoToPreviousSectionButton();
+            Assert.That(PG3.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
+            PG3.ClickProceedToNextSectionButton();
+        }
+
+        [Then("Validate the updated data of the Primary Subject type as member")]
+        public void ThenValidateTheUpdatedDataOfThePrimarySubjectTypeAsMember(DataTable dataTable)
+        {
+            var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
+            PG3.clickGoToPreviousSectionButton();
+            Assert.That(PG3.getFirstName(), Is.EqualTo(data.updatedFirstName), "First name was not updated correctly");
+            PG3.ClickProceedToNextSectionButton();
+        }
+
+
+
+
     }
 }
 

@@ -137,7 +137,8 @@ namespace FC_OnlineReferral
         public string Program { get; set; } = string.Empty;
         public string LOB { get; set; } = string.Empty;
         public string Group { get; set; } = string.Empty;
-
+        public string updatedOrgname { get; set; } = string.Empty;
+        public string updatedFirstName { get; set; } = string.Empty;
 
 
 
