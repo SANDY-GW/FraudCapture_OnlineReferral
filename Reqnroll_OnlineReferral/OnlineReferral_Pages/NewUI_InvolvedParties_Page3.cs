@@ -61,7 +61,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         //referring party dropdown
         public void SelectIsExternalReferringPartyFromDropdown(string option)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, isExtRefDropdn, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, isExtRefDropdn, 100);
             var dropdown = new SelectElement(Driver.FindElement(isExtRefDropdn));
             dropdown.SelectByText(option);
         }
@@ -71,7 +71,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         //Organization field
         public void FillOrganizationField(string organization)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, organizationField, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, organizationField, 100);
             CommonHelpers.enterTextValue(Driver.FindElement(organizationField), organization);
             //Driver.FindElement(organizationField).Clear();
             //Driver.FindElement(organizationField).SendKeys(organization);
@@ -79,35 +79,35 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         //Name prefix field
         public void FillNamePrefixField(string namePrefix)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, namePrefixField, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, namePrefixField, 100);
             Driver.FindElement(namePrefixField).Clear();
             Driver.FindElement(namePrefixField).SendKeys(namePrefix);
         }
         //First name field
         public void FillFirstNameField(string firstName)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, firstNameField, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, firstNameField, 100);
             Driver.FindElement(firstNameField).Clear();
             Driver.FindElement(firstNameField).SendKeys(firstName);
         }
         //Middle name field
         public void FillMiddleNameField(string middleName)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, middleNameField, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, middleNameField, 100);
             Driver.FindElement(middleNameField).Clear();
             Driver.FindElement(middleNameField).SendKeys(middleName);
         }
         //Last name field
         public void FillLastNameField(string lastName)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, lastNameField, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, lastNameField, 100);
             Driver.FindElement(lastNameField).Clear();
             Driver.FindElement(lastNameField).SendKeys(lastName);
         }
         //Name suffix field
         public void FillNameSuffixField(string nameSuffix)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, nameSuffixField, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, nameSuffixField, 100);
             Driver.FindElement(nameSuffixField).Clear();
             Driver.FindElement(nameSuffixField).SendKeys(nameSuffix);
         }
@@ -115,28 +115,35 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void FillDesignationField(string designation)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, DesignationField, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, DesignationField, 100);
             Driver.FindElement(DesignationField).Clear();
             Driver.FindElement(DesignationField).SendKeys(designation);
         }
         //DOB field
         public void FillDOBField(string dob)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, DOBField, 1000);
-            Driver.FindElement(DOBField).Clear();
-            Driver.FindElement(DOBField).SendKeys(dob);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
+            //CommonHelpers.WaitForElementVisiblity(Driver, DOBField, 10);
+            CommonHelpers.ScrollToElement(Driver, DOBField);
+            var element = Driver.FindElement(DOBField);
+            element.Click();
+            element.SendKeys(Keys.Control + "a");
+            element.SendKeys(Keys.Delete);
+            element.SendKeys(dob);
+            
+            
         }
         //SSN field
         public void FillSSNField(string ssn)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, SSNField, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, SSNField, 100);
             Driver.FindElement(SSNField).Clear();
             Driver.FindElement(SSNField).SendKeys(ssn);
         }
         //License number field
         public void FillLicenseNumberField(string licenseNumber)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, LicenseNumberField, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, LicenseNumberField, 100);
             Driver.FindElement(LicenseNumberField).Clear();
             Driver.FindElement(LicenseNumberField).SendKeys(licenseNumber);
         }

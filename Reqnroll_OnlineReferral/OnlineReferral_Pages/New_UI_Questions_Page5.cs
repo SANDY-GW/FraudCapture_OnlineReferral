@@ -166,40 +166,18 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         }
         public void ClickProceedToNextSessionButton()
         {
-            Thread.Sleep(5000);
-            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
-            js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
-            //js.ExecuteScript("window.scrollTo(0, 0);");
-            //CommonHelpers.WaitForElementVisiblity(Driver, proceedToNextSessionButton, 10000);
+            CommonHelpers.ScrollDownToPageEnd(Driver);         
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
             Driver.FindElement(proceedToNextSessionButton).Click();
-            
-            //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 50000);
-            //new CommonHelpers(Driver).WaitForPageLoading();
-            //Thread.Sleep(5000);
 
-            //Actions actions = new Actions(Driver);
-            //actions.SendKeys(Keys.PageDown).Perform();
-            //Thread.Sleep(5000);
-            //js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
-            //Thread.Sleep(5000);
-            ////js.ExecuteScript("window.scrollBy(0, 1000);");
-            ////new CommonHelpers(Driver).WaitForPageLoading();
-
-            //js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
-
-            
-
-            js.ExecuteScript("window.scrollTo(0, 0);");
+            CommonHelpers.ScrollUp(Driver);
             CommonHelpers.WaitForPageLoading(Driver);
 
 
-            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 60);
             Driver.FindElement(submitReferralButton).Submit();
             CommonHelpers.WaitForPageLoading(Driver);
 
-
-            //CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 5000);
 
         }
 
