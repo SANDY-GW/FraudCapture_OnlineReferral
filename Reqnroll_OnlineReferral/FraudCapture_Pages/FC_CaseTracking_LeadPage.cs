@@ -73,7 +73,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             CommonHelpers.WaitForElementVisiblity(Driver, AttachmentTab, 10);
             Driver.FindElement(AttachmentTab).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
         }
 
         private By attachmentRow(String keyword)
@@ -220,8 +220,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public void ClickLeadcreateDateFilter()
         {
             CommonHelpers.WaitForPageToLoad(Driver, 100);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
-            CommonHelpers.ScrollDown(Driver);
+          
+           // CommonHelpers.ScrollDown(Driver);
             Driver.FindElement(LeadCreateDateFilter).Click();
 
 

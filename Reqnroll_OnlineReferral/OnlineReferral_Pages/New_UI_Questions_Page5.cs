@@ -190,13 +190,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             
 
-            js.ExecuteScript("window.scrollTo(0, 0);");
-            CommonHelpers.WaitForPageLoading(Driver);
-
-
-            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 1000);
-            Driver.FindElement(submitReferralButton).Submit();
-            CommonHelpers.WaitForPageLoading(Driver);
+            
 
 
             //CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 5000);

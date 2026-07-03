@@ -212,21 +212,24 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void ClickSubmitReferralButton()
         {
-            // Instantiate IJavaScriptExecutor
-            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
-
-            // Execute script to scroll to the bottom of the page
-            //js.ExecuteScript("window.scrollBy(0, document.body.scrollHeight);");
-
-            Actions actions = new Actions(Driver);
-            new Actions(Driver).KeyDown(Keys.Control).SendKeys(Keys.End).Perform();
-            //Thread.Sleep(5000);
-            js.ExecuteScript("window.scrollBy(0, document.body.scrollHeight);");
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
-            Driver.FindElement(submitReferralButton).Submit();
-            //CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 5000);
-            //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
            
+            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.ScrollUp(Driver);
+
+            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 100);
+            Driver.FindElement(submitReferralButton).Submit();
+            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+
+
+
+        }
+
+        public bool EnterNewReferralButtonIsDisplayed()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 100);
+            return Driver.FindElement(enterNewReferral).Displayed;
         }
 
         public void ClickProceedToNextSectionButton()

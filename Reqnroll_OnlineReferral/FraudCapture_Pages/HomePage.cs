@@ -26,7 +26,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             //Driver.WrappedDriver.FindElement(By.XPath("//button[@id='btnAmaEulaAgree']")).Click();
 
             By acceptAMAButton = By.XPath("//button[@id='btnAmaEulaAgree']");
-            CommonHelpers.WaitForElementClickable(Driver, acceptAMAButton, 300);
+            CommonHelpers.WaitForElementClickable(Driver, acceptAMAButton, 60);
             //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(180));
 
             //wait.Until(ExpectedConditions.ElementToBeClickable(acceptAMAButton));
@@ -35,7 +35,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             // check for Help Content Alerts
             try
             {
-                var waitForAlerts = new WebDriverWait(Driver, TimeSpan.FromSeconds(200));
+                var waitForAlerts = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
                 waitForAlerts.Until(d =>
                 {
                     try
@@ -53,7 +53,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                 {
                     while (Driver.FindElements(CloseAlertButton).Any())                    
                     {
-                       CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+                       CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
                         //Common.WaitForLoadingOverlayToDisappear();
 
                         Driver.FindElement(CloseAlertButton).Click();

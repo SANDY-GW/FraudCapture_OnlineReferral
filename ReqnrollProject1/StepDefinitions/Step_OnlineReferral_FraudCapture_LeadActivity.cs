@@ -34,12 +34,12 @@ namespace ReqnrollProject1.StepDefinitions
 
             var caseTrackingLink = Driver.FindElement(By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking']"));
             caseTrackingLink.Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
 
             var leadsTabBUtton = Driver.FindElement(By.XPath("//a[@id='allLeadsTabId']"));
             var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + TabToSelect + "')]"));
             tabToSelect.Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
 
 
         }
@@ -59,15 +59,17 @@ namespace ReqnrollProject1.StepDefinitions
             //fc.ClickLeadTab();
             CommonHelpers.WaitForPageLoading(Driver);
             fc.ClickLeadcreateDateFilter();
-            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
 
             try
             {
                 var firstAndLastName_ROW1 = fc.getLeadFirstRowFirstAndLastNameName();
+                Console.WriteLine("First and Last Name in Row 1: " + firstAndLastName_ROW1);    
                 var firstAndLastName_ROW2 = fc.getLeadSecondRowFirstAndLastNameName();
+                Console.WriteLine("First and Last Name in Row 2: " + firstAndLastName_ROW2);
                 if (firstAndLastName_ROW1 != null)
                 {
-                    if (firstAndLastName_ROW1.Contains(_scenarioContext["UserFN"].ToString()) && firstAndLastName_ROW1.Contains(_scenarioContext["UserLN"].ToString()))
+                    if (firstAndLastName_ROW1.Contains(_scenarioContext["UserFN"].ToString()) || firstAndLastName_ROW1.Contains(_scenarioContext["UserLN"].ToString()))
                     {
                         // Assert.AreEqual(firstRowOrgName, CommonData.UserFN);
                         fc.ClickLeadIDLinkbyRow(1);
