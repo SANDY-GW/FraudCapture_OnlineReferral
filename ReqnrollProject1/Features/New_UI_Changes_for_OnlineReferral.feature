@@ -261,160 +261,141 @@ Examples:
 	
 Scenario Outline: 01_ [Online Referral End To End Scenario with Primary Subject Type as Provider and additional involved party selected as "No" along with Validation of all the required fields ]
 
- #Submitting Party Information page:
+  #Submitting Party Information page:
 	Given when I open the Online referral application
-	Then Logo should be visible
-	And Logo should be aligned at the top center of the page
-	And Required CSS glow appears with correct configured color controlled in Admin.
-	When i check the required fields current page
-	Then verify Dropdown lists are in alphabetical order
-	When I enter the email  on the Initial User Data Page
+	Then Validate header appears aligned and not distorted on the "<Sub Party Info>"
+	And Required CSS glow appears with correct configured color controlled in Admin "<Sub Party Info>"
+	When i check the required fields current page on the "<Sub Party Info >"
+	Then verify Dropdown lists are in alphabetical order "state dropdown" on the page "<Sub Party Info>"
+	When I enter the invalid email id and validate for "Email validation error message under <Sub Party Info>"
+		| Invalid email   | Email validation error message   |
+		| <Invalid email> | <Email validation error message> |
+	And I enter the email  on the "<Sub Party Info>"
 		| Email address   |
 		| <Email address> |
-
-	And I enter the invalid email id
-		| Invalid email   |
-		| <Invalid email> |
-
-	Then I validate the error messgae
-		| Email validation error message   |
-		| <Email validation error message> |
-
-	When I enter the valid email id
-		| Email address   |
-		| <Email address> |
-#		
 	And I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User Data Page
 		| UserFirstName   | UserLastName   | Org name   | title   |
 		| <UserFirstName> | <UserLastName> | <Org name> | <title> |
-
 	And I enter the Phone number on the Initial User Data Page
 		| Phone number   |
 		| <Phone number> |
-
 	And I enter the invalid zipcode and validate
 		| Invalid zipcode   | Zipcode validation error message   |
 		| <Invalid zipcode> | <Zipcode validation error message> |
-
-
 	And I enter Address section yon the Initial User Data Page
 		| Address1   | Address2   | City   | State   | Zipcode   |
 		| <Address1> | <Address2> | <City> | <State> | <Zipcode> |
 	And I click on the emailverification button on the Initial User Data Page
-	And I should be navigated to the Next Page
+	And I should be navigated to the "Referral Details page"
 
 	# Referral page:
-	And i check the required fields current page
-	Then Logo should be visible
-	And Logo should be aligned at the top center of the page
-	And Required CSS glow appears with correct configured color controlled in Admin.
-	And verify Dropdown lists are in alphabetical order
-
+	And i check the required fields current page on the "<Referral>"
+	Then Validate header appears aligned and not distorted on the "<Referral>"
+	And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
+	And verify Dropdown lists are in alphabetical order "state dropdown" on the page "<Referral>"
+	And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
 	When Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
-	And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the second User Data Page
+	And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
 		| InvalidIncidentStartDate   | InvalidIncidentEndDate   |
 		| <InvalidIncidentStartDate> | <InvalidIncidentEndDate> |
 
-	And Suspect or Subject or Involved Party Type
+	And Suspect or Subject or Involved Party Type dropdown is selected  on the "<Referral>"
 		| involvedPartyType   |
 		| <involvedPartyType> |
-	And enter case or reference number  on the second User Data Page
+	And enter case or reference number  on the "<Referral>"
 		| caseOrReferenceNumber   |
 		| <caseOrReferenceNumber> |
-	And How was this detected  ,please provide  a Summary of this referral  on the second User Data Page
+	And How was this detected  ,please provide  a Summary of this referral  on the "<Referral>"
 		| detectedAs   | summary   |
 		| <detectedAs> | <summary> |
 	And enter Amount ,detectiondate
 		| amount   | detectionDate   |
 		| <amount> | <detectionDate> |
-	And enter valid incidentStartDate , incidentEndDate  on the second User Data Page
-		| incidentValidStartDate   | incidentValidEndDate   |
-		| <incidentValidStartDate> | <incidentValidEndDate> |
-	And enter state  and city  on the second User Data Page
-		| State    | City    |
-		| <state2> | <city2> |
-	Then validate the  symbol is displayed in the amount field
+			
+	Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 		| Dollar symbol in amount field validation message   |
 		| <Dollar symbol in amount field validation message> |
-	And I click on the Next button on the Initial User Data Page
-	When I should be navigated to the Next Page
-
+	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+		| incidentValidStartDate   | incidentValidEndDate   |
+		| <incidentValidStartDate> | <incidentValidEndDate> |
+	And enter state  and city  on the "<Referral>"
+		| State2   | City2   |
+		| <State2> | <City2> |
+	And I click on the Next button on the "<Referral>"
+	And I should be navigated to the "<Involved Party>"
 	#Primary Involved Party Information Page:
 	
-	Then Logo should be visible
-	And Logo should be aligned at the top center of the page
-	When i check the required fields current page
-	And Is thisInvolved Party dropdown is selected  on the third User Data Page
+	Then Validate header appears aligned and not distorted on the "<Involved Party>"
+	
+	When i check the required fields current page on the "<Involved Party>"
+	And Is thisInvolved Party dropdown is selected  on the "<Involved Party>"
 		| witnessDropdown   |
 		| <witnessDropdown> |
-	And enter InvolvedParty orgname , name prefix , associated party first name ,associated party middle name , associated party last name  and name suffix  on the fourth User Data Page
+	And enter InvolvedParty orgname , name prefix , associated party first name ,associated party middle name , associated party last name  and name suffix  on the "<Involved Parties page>"
 		| orgname   | name prefix   | first name   | middle name   | last name   | name suffix   |
 		| <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> |
 	And enter InvolvedParty Designation
 		| designation   |
 		| <designation> |
-	Then i enter invalid date of birth and validate
+	Then i enter invalid date of birth and validate for "<Involved Party>"
 		| InvalidDOB   | DOB validation error message   |
 		| <InvalidDOB> | <DOB validation error message> |
-	When enter DOB
-		| DOB   |
-		| <DOB> |
+	
 	When enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	And enter How witness or external party reported this ,any additional info
 		| involvedPartyType   | detectedAs   |
 		| <involvedPartyType> | <detectedAs> |
-	And enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the fourth User Data Page
+	And enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the "<Involved Party>"
 		| NPI   | TIN   | medicaid ID   | Medicare ID   | otherID   |
 		| <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> |
-	And enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on the fourth User Data Page
+	And enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on the "<Involved Party>"
 		| provider type   | provider specialty   | Taxonomy   | other   |
 		| <provider type> | <provider specialty> | <Taxonomy> | <other> |
 	Then I enter the invalid zipcode and validate for provider
 		| Invalid zipcode   | Zipcode validation error message   |
 		| <Invalid zipcode> | <Zipcode validation error message> |
 		
-	And verify Dropdown lists are in alphabetical order in Involved Party as provider
+	And verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
+	And verify county Dropdown lists are in alphabetical order "<CountyDropdown>" on the page "<Involved Party>" 
 	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
-		| Address1   | Address2   | City   | state2   | city2   | Zipcode   |
-		| <Address1> | <Address2> | <City> | <state2> | <city2> | <Zipcode> |
+		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
+		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 
 	
-	Then I enter the invalid email id  and validate for involvedparty as provider
+	Then I enter the invalid email id  and validate for "<Involved Party>"
 		| Invalid email   | Email validation error message   |
 		| <Invalid email> | <Email validation error message> |
-		When enter DOB
+	When enter DOB
 		| DOB   |
 		| <DOB> |
 						
-	When InvolvedParty country,  phone number , fax  and email address
+	And InvolvedParty country,  phone number , fax  and email address
 		| country   | Phone number   | fax   | Email address   |
 		| <country> | <Phone number> | <fax> | <Email address> |
 	
-	And I click on the Next button on the third User Data Page
-	And I should be navigated to the Next Page
+	And I click on the continue button on the "<Involved Party>"
+	And I should be navigated to the "< Add Inv Party>"
 
 	# Additional Involved Party Information Page:
 
-	Then Logo should be visible
-	And Logo should be aligned at the top center of the page
-	And Required CSS glow appears with correct configured color controlled in Admin.
-	When i check the required fields current page
+	Then Validate header appears aligned and not distorted on the "<Add Inv Party>"
+	And Required CSS glow appears with correct configured color controlled in Admin "<Add Inv Party>"
+	When i check the required fields current page on the "<Add Inv Party>"
 
-	And is there anotherinvolved party dropdown is selected on the fourth User Data Page
+	And is there anotherinvolved party dropdown is selected on the "<Add Inv Party>"
 		| Is there any Involved Party Dropdown   |
 		| <Is there any Involved Party Dropdown> |
 
 
 	#Questions Page:
 
-	Then Logo should be visible
-	And Logo should be aligned at the top center of the page
-	And Required CSS glow appears with correct configured color controlled in Admin.
-	When i check the required fields current page
+	Then Validate header appears aligned and not distorted on the "<Questions>"
+	And Required CSS glow appears with correct configured color controlled in Admin "<Questions>"
+	When i check the required fields current page on the "<Questions>"
 
 	And Questionone Is this a resubmission
 		| Question1   |
@@ -427,24 +408,37 @@ Scenario Outline: 01_ [Online Referral End To End Scenario with Primary Subject 
 		| TestFile   |
 		| <TestFile> |
 	Then click on proceed to next session button
-	When  Click on Submit Button
+	When Click on Submit Button
 	Then validate Enter New Referral is displayed
 
+
+	##Lead is created 
 	Given when I open the fraud capture  application
-	When I enter the "<UserEmailID>" on the welcome fraude capture page
+	When I enter the user email id  on the welcome fraude capture page
+		| UserEmailID   |
+		| <UserEmailID> |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
-	And I select the payor as "DEMO"
-	And I click on CaseTracking and select the "Leads" option on the fraud capture home page
+	And I select the payor
+		| Payor   |
+		| <Payor> |
+	And I click on CaseTracking and select the leads tab option on the fraud capture home page
+		| Leads   |
+		| <Leads> |
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	#And I click on the Activities and selected lead activity name as "<ActivityName>" on the fraud capture Lead detials Page
-	And click on Activities tab and serach for the activity "<ActivityName>" created through onlinereferral
-	Then the searched activity should be displayed in the activity list "<ActivityName>"
+	And click on Activities tab and serach for the activity created through onlinereferral
+		| ActivityName   |
+		| <ActivityName> |
+	Then the searched activity should be displayed in the activity list
+		| ActivityName   |
+		| <ActivityName> |
 	And get the Activitydate created through online
 	And verify Due Date of the activity generated through an Online Referral submission is based on the Due Date configuration for that activity
-	When user clicks on Edit button for an existing activity "<ActivityName>"
+	When user clicks on Edit button for an existing activity
+		| ActivityName   |
+		| <ActivityName> |
 	Then Edit Activity page should be displayed
 	And click on Attachment tab
 	And verify summary, confirmation and test files are displayed
@@ -453,8 +447,9 @@ Scenario Outline: 01_ [Online Referral End To End Scenario with Primary Subject 
 
 
 Examples:
-	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | state2 | city2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  |
-	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. |
+	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  |Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
+	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. |Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
+
 
 
 

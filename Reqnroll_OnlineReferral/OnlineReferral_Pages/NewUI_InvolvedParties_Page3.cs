@@ -356,6 +356,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(stateDrpdn));
         }
 
+        public bool VerifyIfCountyDropdownIsInAlphabeticalOrder()
+        {
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(countryField));
+        }
+
+
         public string GetValidationErrorMessage()
         {
             return CommonHelpers.GetValidationErrorText(Driver);

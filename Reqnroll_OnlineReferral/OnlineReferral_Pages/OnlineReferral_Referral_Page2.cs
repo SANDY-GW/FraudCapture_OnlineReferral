@@ -196,5 +196,11 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             return CommonHelpers.ValidationDateerrorExists(Driver);
         }
+
+        public bool VerifyIfReferralDropdownIsInAlphabeticalOrder()
+        {
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(refTypeDropdn));
+        }
+
     }
 }
