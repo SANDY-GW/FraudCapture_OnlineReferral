@@ -360,5 +360,16 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         }
 
 
+
+        public string getWitnessDropdownValue()
+        {
+            CommonHelpers.ScrollUp(Driver);
+            CommonHelpers.WaitForElementVisiblity(Driver, isExtRefDropdn, 30);
+            var dropdown = new SelectElement(Driver.FindElement(isExtRefDropdn));
+            var option = dropdown.SelectedOption.Text;
+            return option;
+
+        }
+
     }
 }

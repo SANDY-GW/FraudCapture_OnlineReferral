@@ -78,7 +78,7 @@ namespace FC_OnlineReferral
         public string providerSpecialty { get; set; } = string.Empty;
         public string Taxonomy { get; set; } = string.Empty;
         public string other { get; set; } = string.Empty;
-        public string country { get; set; } = string.Empty;
+        public string Country { get; set; } = string.Empty;
 
         public string fax { get; set; } = string.Empty;
         public string Emailaddress { get; set; } = string.Empty;
@@ -109,7 +109,7 @@ namespace FC_OnlineReferral
         public string StreetAddress4 { get; set; } = string.Empty;
         public string Zip { get; set; } = string.Empty;
         public string Designation1 { get; set; } = string.Empty;
-        public string Country { get; set; } = string.Empty;
+        public string Country1 { get; set; } = string.Empty;
         public string PrimaryPhone { get; set; } = string.Empty;
         public string SecondaryPhone { get; set; } = string.Empty;
 
@@ -147,7 +147,10 @@ namespace FC_OnlineReferral
 
         public string InvalidIncidentEndDate { get; set; }= string.Empty;
         public string InvalidIncidentStartDate { get; set; } = string.Empty;
-
+        public string UserEmailID { get; set; } = string.Empty;
+        public string Payor { get; set; } = string.Empty;
+        public string Leads { get; set; } = string.Empty;
+        public string ActivityName { get; set; } = string.Empty;
 
 
 

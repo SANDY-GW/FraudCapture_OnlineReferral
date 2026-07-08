@@ -46,6 +46,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By Go_To_Previous_SectionButton = By.XPath("//button[contains(.,'Go to Previous Section')]");
         private readonly By continue_with_Involved_Party_Selection_Button = By.XPath("//button[contains(.,'Continue with Involved Party Selection ')]");
         private readonly By involvedPartyEditButton = By.XPath("//div[@class='col-md-10']/following::button[contains(.,'Edit')]");
+        private readonly By involvedPartyDeleteButton = By.XPath("//div[@class='col-md-10']/following::button[contains(.,'Delete')]");
+        private readonly By confirmDeletion = By.XPath("//div[@id='ConfirmationModal']/following::button[contains(.,'Yes')]");
         private readonly By CancelButton = By.XPath("//button[contains(.,'Cancel')]");
 
         #endregion
@@ -263,5 +265,16 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
         }
 
-}}
+        public void ClickInvolvedPartyDeleteButton()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForElementVisiblity(Driver, involvedPartyDeleteButton, 100);
+            Driver.FindElement(involvedPartyDeleteButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            Driver.FindElement(confirmDeletion).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
+
+    }
+}
 

@@ -31,11 +31,11 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By StreetAddress2Field = By.XPath("//input[@id='neiStreetAddress2']");
         private readonly By CityField = By.XPath("//input[@id='neiCity']");
         private readonly By StateField = By.XPath("//select[@name='neiState']");
-        private readonly By CountyField = By.XPath("//input[@id='neiCounty']");
+        private readonly By CountyField = By.XPath("//select[@id='neiCounty']");
         private readonly By NameSuffixField = By.XPath("//input[@id='neiNameSuffix']");
         private readonly By ZipField = By.XPath("//input[@id='neiZip']");
         private readonly By DesignationField1 = By.XPath("//input[@id='neiDesignation']");
-        private readonly By CountryField = By.XPath("//select[@id='neiCounty']");
+        private readonly By CountryField = By.XPath("//input[@name='neiCountry']");
         private readonly By PrimaryPhoneField = By.XPath("//input[@id='neiPrimaryPhone']");
         private readonly By SecondaryPhoneField = By.XPath("//input[@id='neiSecondaryPhone']");
         private readonly By SsnField = By.XPath("//input[@id='neiSsn']");
@@ -43,8 +43,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By EmailField = By.XPath("//input[@id='neiEmail']");
         private readonly By OtherField = By.XPath("//input[@id='neiOther']");
         private readonly By DOBField = By.XPath("//input[@name='neiDateOfBirth']");
+        
 
-       
         private readonly By Go_To_Previous_SectionButton = By.XPath("//button[contains(.,'Go to Previous Section')]");
         private readonly By continue_with_Involved_Party_Selection_Button = By.XPath("//button[contains(.,'Continue with Involved Party Selection ')]");
 
@@ -88,7 +88,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.ScrollToElement(Driver, isThereAnotherInvolvedPartyDropdn);
             Driver.FindElement(isThereAnotherInvolvedPartyDropdn).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(isThereAnotherInvolvedPartyDropdn), isAnotherInvolvedPartyAvailable1);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
         }
 
         public void SelectPleaseSelectTheAdditionalInvolvedPartyType(string additionalInvolvedPartyType)
@@ -97,6 +97,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.ScrollToElement(Driver, pleaseSelectTheAdditionalInvolvedPartyTypeDropdn);
             Driver.FindElement(pleaseSelectTheAdditionalInvolvedPartyTypeDropdn).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(pleaseSelectTheAdditionalInvolvedPartyTypeDropdn), additionalInvolvedPartyType);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
         }
         public void SelectIsThisInvolvedPartyAnExternalReferringParty(string isAnotherExternalInvolvedPartyAvailable)
         {
@@ -105,6 +106,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.ScrollToElement(Driver, isThisInvolvedPartyAnExternalReferringPartyDropdn);
             Driver.FindElement(isThisInvolvedPartyAnExternalReferringPartyDropdn).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(isThisInvolvedPartyAnExternalReferringPartyDropdn), isAnotherExternalInvolvedPartyAvailable);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
 
         }
 
@@ -176,8 +178,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         }
         public void SelectCountyField(string County)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, CountryField, 100);
-            var dropdown = new SelectElement(Driver.FindElement(CountryField));
+            CommonHelpers.WaitForElementVisiblity(Driver, CountyField, 100);
+            var dropdown = new SelectElement(Driver.FindElement(CountyField));
             dropdown.SelectByText(County);
 
 
@@ -306,6 +308,16 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.ScrollToElement(Driver, continue_with_Involved_Party_Selection_Button);
             Driver.FindElement(continue_with_Involved_Party_Selection_Button).Click();
             //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
+
+        }
+
+        public string getWitnessadditionalDropdownValue()
+        {
+            CommonHelpers.ScrollUp(Driver);
+            CommonHelpers.WaitForElementVisiblity(Driver, isThisInvolvedPartyAnExternalReferringPartyDropdn, 30);
+            var dropdown = new SelectElement(Driver.FindElement(isThisInvolvedPartyAnExternalReferringPartyDropdn));
+            var option = dropdown.SelectedOption.Text;
+            return option;
 
         }
 

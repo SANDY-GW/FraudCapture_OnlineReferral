@@ -363,3 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 /.github/BDD_XPath_BestPractices.agent.md
 /ReqnrollProject1/OpenQA/Selenium/Size.cs
+/.github
+/GitDocs

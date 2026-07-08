@@ -69,13 +69,13 @@ namespace FC_OnlineReferral
         public static void WaitForInstructionsButton(IWebDriver driver, int timeoutInSeconds)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//button[contains(.,'Instructions')]")));
+            wait.Until(ExpectedConditions.ElementExists(By.XPath("//button[contains(.,'Instructions')]")));
         }
 
         public static void WaitForElementVisiblity(IWebDriver driver, By element, int timeoutInSeconds)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(element));
+            wait.Until(ExpectedConditions.ElementExists(element));
         }
         public static void ScrollUp(IWebDriver driver)
         {
@@ -88,7 +88,7 @@ namespace FC_OnlineReferral
         public static void WaitForElementClickable(IWebDriver driver, By element, int timeoutInSeconds)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
+            wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
         public static void selectOptionByValue(IWebElement ele, string selectText)
@@ -186,12 +186,18 @@ namespace FC_OnlineReferral
             js.ExecuteScript("window.scrollBy(0, 500)");
         }
 
+        public static void ScrollDownToPageEnd(IWebDriver driver)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
+        }
+
         public static void ScrollToElement(IWebDriver driver, By element)
         {
             IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
             var webElement = driver.FindElement(element);
             jsExec.ExecuteScript("arguments[0].scrollIntoView(true);", webElement);
-            Thread.Sleep(2000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 10);
         }
 
 
@@ -276,7 +282,7 @@ namespace FC_OnlineReferral
 
             try
             {
-                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(loadingOverlay));
+                    wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(loadingOverlay));
                 return true;
             }
             catch (NoSuchElementException)

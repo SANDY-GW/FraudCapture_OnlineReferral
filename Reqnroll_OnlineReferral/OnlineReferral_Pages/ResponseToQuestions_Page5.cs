@@ -133,6 +133,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
             CommonHelpers.ScrollToElement(Driver, question1dropdwn);
+            CommonHelpers.WaitForElementVisiblity(Driver, question1dropdwn,20);
+            
             Driver.FindElement(question1dropdwn).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(question1dropdwn), question1);
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
