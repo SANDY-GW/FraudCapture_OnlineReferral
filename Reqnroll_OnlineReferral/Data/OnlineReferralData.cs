@@ -78,7 +78,7 @@ namespace FC_OnlineReferral
         public string providerSpecialty { get; set; } = string.Empty;
         public string Taxonomy { get; set; } = string.Empty;
         public string other { get; set; } = string.Empty;
-        public string country { get; set; } = string.Empty;
+        public string Country { get; set; } = string.Empty;
 
         public string fax { get; set; } = string.Empty;
         public string Emailaddress { get; set; } = string.Empty;
@@ -109,7 +109,7 @@ namespace FC_OnlineReferral
         public string StreetAddress4 { get; set; } = string.Empty;
         public string Zip { get; set; } = string.Empty;
         public string Designation1 { get; set; } = string.Empty;
-        public string Country { get; set; } = string.Empty;
+        public string Country1 { get; set; } = string.Empty;
         public string PrimaryPhone { get; set; } = string.Empty;
         public string SecondaryPhone { get; set; } = string.Empty;
 
@@ -129,6 +129,7 @@ namespace FC_OnlineReferral
 
         public string isAnotherInvolvedPartyAvailable1 { get; set; } = string.Empty;
 
+
         public string Gender { get; set; } = string.Empty;
         public string HowWitnessOrExternalPartyReportedThis { get; set; } = string.Empty;
         public string AnyAdditionalInfo { get; set; } = string.Empty;
@@ -137,8 +138,19 @@ namespace FC_OnlineReferral
         public string Program { get; set; } = string.Empty;
         public string LOB { get; set; } = string.Empty;
         public string Group { get; set; } = string.Empty;
+
+        public string updatedOrgname { get; set; } = string.Empty;
+        public string updatedFirstName { get; set; } = string.Empty;
+
         public string incidentValidStartDate { get; set; } = string.Empty;
         public string incidentValidEndDate { get; set; } = string.Empty;
+
+        public string InvalidIncidentEndDate { get; set; }= string.Empty;
+        public string InvalidIncidentStartDate { get; set; } = string.Empty;
+        public string UserEmailID { get; set; } = string.Empty;
+        public string Payor { get; set; } = string.Empty;
+        public string Leads { get; set; } = string.Empty;
+        public string ActivityName { get; set; } = string.Empty;
 
 
 

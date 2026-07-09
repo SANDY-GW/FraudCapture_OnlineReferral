@@ -133,6 +133,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
             CommonHelpers.ScrollToElement(Driver, question1dropdwn);
+            CommonHelpers.WaitForElementVisiblity(Driver, question1dropdwn,20);
+            
             Driver.FindElement(question1dropdwn).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(question1dropdwn), question1);
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
@@ -143,9 +145,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.WaitForElementVisiblity(Driver, question1TextBox, 100);
             Driver.FindElement(question1TextBox).SendKeys(answer);
-
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
-
             js.ExecuteScript("window.scrollBy(0, 100);");
         }
 
@@ -154,15 +154,11 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
             Driver.FindElement(question2TextBox).Click();          
             Driver.FindElement(question2TextBox).SendKeys(question2);
-            
-           
-            
         }
         public void SelectQuestion3dropdown(string question3)
         {
 
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
-            //CommonHelpers.ScrollToElement(Driver, question3Dropdwn);
             Driver.FindElement(question3Dropdwn).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(question3Dropdwn), question3);
         }
@@ -178,9 +174,6 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.ScrollToElement(Driver, question4TextBox);
             Driver.FindElement(question4TextBox).Click();
             Driver.FindElement(question4TextBox).SendKeys(question4);
-            //Thread.Sleep(5000);
-            
-            
 
         }
 
@@ -212,31 +205,32 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void ClickSubmitReferralButton()
         {
-            // Instantiate IJavaScriptExecutor
-            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
-
-            // Execute script to scroll to the bottom of the page
-            //js.ExecuteScript("window.scrollBy(0, document.body.scrollHeight);");
-
-            Actions actions = new Actions(Driver);
-            new Actions(Driver).KeyDown(Keys.Control).SendKeys(Keys.End).Perform();
-            //Thread.Sleep(5000);
-            js.ExecuteScript("window.scrollBy(0, document.body.scrollHeight);");
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
-            Driver.FindElement(submitReferralButton).Submit();
-            //CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 5000);
-            //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
            
+            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.ScrollUp(Driver);
+
+            CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 100);
+            Driver.FindElement(submitReferralButton).Submit();
+            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+
+
+
+        }
+
+        public bool EnterNewReferralButtonIsDisplayed()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForElementVisiblity(Driver, enterNewReferral, 100);
+            return Driver.FindElement(enterNewReferral).Displayed;
         }
 
         public void ClickProceedToNextSectionButton()
         {
             CommonHelpers.ScrollUp(Driver);
-            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 5000);
-
+            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 100);
             Driver.FindElement(proceed_To_Next_SectionButton).Click();
-            //Thread.Sleep(10000);
-            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 50000);
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
 
         }
 

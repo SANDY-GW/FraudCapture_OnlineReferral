@@ -23,23 +23,23 @@ namespace ReqnrollProject1.StepDefinitions
             homePage.AcceptDisclosure();
         }
 
-        [When("I click on CaseTracking and select the {string} option on the fraud capture home page")]
-        public void WhenIClickOnCaseTrackingAndSelectTheOptionOnTheFraudCaptureHomePage(string TabToSelect)
+        [When("I click on CaseTracking and select the leads tab option on the fraud capture home page")]
+        public void WhenIClickOnCaseTrackingAndSelectTheOptionOnTheFraudCaptureHomePage(DataTable dataTable)
         {
 
             var navigateBtn = Driver.FindElement(By.XPath("//button[@id='navigationMenuId']"));
             navigateBtn.Click();
 
-            
+            var data = dataTable.CreateInstance<OnlineReferralData>();
 
             var caseTrackingLink = Driver.FindElement(By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking']"));
             caseTrackingLink.Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
 
-            var leadsTabBUtton = Driver.FindElement(By.XPath("//a[@id='allLeadsTabId']"));
-            var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + TabToSelect + "')]"));
+           // var leadsTabBUtton = Driver.FindElement(By.XPath("//a[@id='allLeadsTabId']"));
+            var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + data.Leads + "')]"));
             tabToSelect.Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
 
 
         }
@@ -59,7 +59,7 @@ namespace ReqnrollProject1.StepDefinitions
             //fc.ClickLeadTab();
             CommonHelpers.WaitForPageLoading(Driver);
             fc.ClickLeadcreateDateFilter();
-            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
 
             try
             {
@@ -206,26 +206,28 @@ namespace ReqnrollProject1.StepDefinitions
             }
         }
 
-        [When("click on Activities tab and serach for the activity {string} created through onlinereferral")]
-        public void WhenClickOnActivitiesTabAndSerachForTheActivityCreatedThroughOnlinereferral(string activityName)
+        [When("click on Activities tab and serach for the activity created through onlinereferral")]
+        public void WhenClickOnActivitiesTabAndSerachForTheActivityCreatedThroughOnlinereferral(DataTable dataTable)
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
             fc.ClickLeadActivityTab();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
-            fc.SearchActivityName(activityName);
+            fc.SearchActivityName(data.ActivityName);
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
 
 
         }
 
 
-        [When("user clicks on Edit button for an existing activity {string}")]
-        public void WhenUserClicksOnEditButtonForAnExistingActivity(string activityName)
+        [When("user clicks on Edit button for an existing activity")]
+        public void WhenUserClicksOnEditButtonForAnExistingActivity(DataTable dataTable)
         {
 
             var fc = new FC_CaseTracking_LeadPage(Driver);
-            fc.ClickOnEditActivity(activityName);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            fc.ClickOnEditActivity(data.ActivityName);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
         }
 
 
@@ -262,20 +264,21 @@ namespace ReqnrollProject1.StepDefinitions
 
 
 
-        [Then("the searched activity should be displayed in the activity list {string}")]
-        public void ThenTheSearchedActivityShouldBeDisplayedInTheActivityList(string activityName)
+        [Then("the searched activity should be displayed in the activity list")]
+        public void ThenTheSearchedActivityShouldBeDisplayedInTheActivityList(DataTable dataTable)
         {
 
 
             var fc = new FC_CaseTracking_LeadPage(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
             try
             {
                 var searchedActivityName = fc.GetActivityName();
-                Assert.That(searchedActivityName, Is.EqualTo(activityName), $"Expected activity name '{activityName}' does not match the actual activity name '{searchedActivityName}'.");
+                Assert.That(searchedActivityName, Is.EqualTo(data.ActivityName), $"Expected activity name '{data.ActivityName}' does not match the actual activity name '{searchedActivityName}'.");
             }
             catch (NoSuchElementException)
             {
-               Assert.Fail($"The activity with the name '{activityName}' was not found in the Activities table.");
+               Assert.Fail($"The activity with the name '{data.ActivityName}' was not found in the Activities table.");
             }
         }
 

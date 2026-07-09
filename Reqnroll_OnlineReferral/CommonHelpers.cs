@@ -197,7 +197,7 @@ namespace FC_OnlineReferral
             IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
             var webElement = driver.FindElement(element);
             jsExec.ExecuteScript("arguments[0].scrollIntoView(true);", webElement);
-            Thread.Sleep(2000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 10);
         }
 
 
@@ -282,7 +282,7 @@ namespace FC_OnlineReferral
 
             try
             {
-                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(loadingOverlay));
+                    wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(loadingOverlay));
                 return true;
             }
             catch (NoSuchElementException)

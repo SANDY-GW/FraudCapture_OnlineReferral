@@ -6,7 +6,6 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace FC_OnlineReferral.OnlineReferral_Pages
 {
@@ -61,8 +60,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void SelectRefType(string RefType)
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
-            //CommonHelpers.WaitForElementVisiblity(Driver, refTypeDropdn, 10);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            CommonHelpers.WaitForElementVisiblity(Driver, refTypeDropdn, 10);
             CommonHelpers.selectOptionByValue(Driver.FindElement(refTypeDropdn), RefType);
 
         }
@@ -107,9 +106,9 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         }
         public void EnterIncidentStartDate(string IncidentStartDate)
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,60);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
             var element = Driver.FindElement(incidentStartDateField);
-            element.Click();           
+            element.Click();
             element.SendKeys(Keys.Control + "a");
             element.SendKeys(Keys.Delete);
             element.SendKeys(IncidentStartDate);
@@ -125,6 +124,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             element.SendKeys(Keys.Delete);
             element.SendKeys(IncidentEndDate);
         }
+
 
         public void SelectState_Or_Territory(string State_Or_Territory)
 
@@ -180,8 +180,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         // Method to get field value
         public string GetAmountValue()
         {
-            //return Driver.FindElement(estimatedAmountField).GetAttribute("value");
-            return Driver.FindElement(estimatedAmountField).Text;
+            return Driver.FindElement(estimatedAmountField).GetAttribute("value");
         }
         public bool ValidateTheAmountField()
         {
@@ -199,5 +198,11 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             return CommonHelpers.ValidationDateerrorExists(Driver);
         }
+
+        public bool VerifyIfReferralDropdownIsInAlphabeticalOrder()
+        {
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(refTypeDropdn));
+        }
+
     }
 }

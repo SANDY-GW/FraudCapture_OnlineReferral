@@ -53,6 +53,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By emailField = By.XPath("//input[@id='mEmail']");
         private readonly By Go_To_Previous_SectionButton = By.XPath("//button[contains(.,'Go to Previous Section')]");
         private readonly By continue_with_Involved_Party_Selection_Button = By.XPath("//button[contains(.,'Continue with Involved Party Selection ')]");
+        private readonly By EditButton = By.XPath("//button[contains(.,'Edit')]");
+        private readonly By SaveButton = By.XPath("//button[contains(.,'Save')]");
 
         #endregion
         //referring party dropdown
@@ -308,7 +310,66 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
 
         }
+        public void ClickEditButton()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, EditButton, 100);
+            Driver.FindElement(EditButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
 
-       
+        public void updateFirstNameField(string firstName)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+            js.ExecuteScript("window.scrollBy(0, 300);");
+            CommonHelpers.WaitForElementVisiblity(Driver, firstNameField, 1000);
+
+
+            Driver.FindElement(firstNameField).Clear();
+            Driver.FindElement(firstNameField).SendKeys(firstName);
+           
+        }
+
+        public void clickSaveButton()
+        {
+            CommonHelpers.WaitForPageToLoad(Driver, 200);
+            CommonHelpers.ScrollUp(Driver);
+            
+           
+            CommonHelpers.WaitForElementVisiblity(Driver, SaveButton, 100);
+            Driver.FindElement(SaveButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
+        public string getFirstName()
+        {
+            Console.WriteLine("First Name: " + Driver.FindElement(firstNameField).GetAttribute("value"));
+            return Driver.FindElement(firstNameField).GetAttribute("value");
+        }
+
+        public string GetFirstNameFieldValue()
+        {
+            return getFirstName();
+        }
+
+        public void clickGoToPreviousSectionButton()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
+            Driver.FindElement(Go_To_Previous_SectionButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 100);
+        }
+
+
+
+        public string getWitnessDropdownValue()
+        {
+            CommonHelpers.ScrollUp(Driver);
+            CommonHelpers.WaitForElementVisiblity(Driver, isExtRefDropdn, 30);
+            var dropdown = new SelectElement(Driver.FindElement(isExtRefDropdn));
+            var option = dropdown.SelectedOption.Text;
+            return option;
+
+        }
+
     }
 }

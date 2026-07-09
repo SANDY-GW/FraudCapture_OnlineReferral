@@ -19,21 +19,23 @@ namespace ReqnrollProject1.StepDefinitions
             CommonHelpers.WaitForPageLoading(Driver);
         }
 
-        [When("I select the payor as {string}")]
-        public void WhenISelectThePayorAs(string demo)
+        [When("I select the payor")]
+        public void WhenISelectThePayorAs(DataTable dataTable)
         {
             var fc = new FC_HeaderMenu(Driver);
-            fc.SelectPayor(demo);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            fc.SelectPayor(data.Payor);
         }
 
 
-        [When("I enter the {string} on the welcome fraude capture page")]
-        public void WhenIEnterTheOnTheWelcomeFraudeCapturePage(string userEmail)
+        [When("I enter the user email id  on the welcome fraude capture page")]
+        public void WhenIEnterTheOnTheWelcomeFraudeCapturePage(DataTable dataTable)
         {
             
             var fc = new FC_LoginPage(Driver);
-            fc.EnterLoginUserEmail(userEmail);
-            fc.EnterLoginUserEmail(userEmail);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            fc.EnterLoginUserEmail(data.UserEmailID);
+            fc.EnterLoginUserEmail(data.UserEmailID);
         }
         [When("I click on the Procced to login button on the welcome fraude capture page")]
         public void WhenIClickOnTheProccedToLoginButtonOnTheWelcomeFraudeCapturePage()

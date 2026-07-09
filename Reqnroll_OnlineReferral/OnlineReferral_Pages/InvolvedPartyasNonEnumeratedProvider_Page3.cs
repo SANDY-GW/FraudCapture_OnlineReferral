@@ -41,6 +41,14 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By emailField = By.XPath("//input[@id='nepEmail']");
         private readonly By HowDidThisExternalReferringPartyreportThisTextarea = By.XPath("//textarea[@id='externalReferalReport']");
         private readonly By AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea = By.XPath("//textarea[@id='externalReferalAddInfo']");
+        private readonly By EditButton = By.XPath("//button[contains(.,'Edit')]");
+        private readonly By SaveButton = By.XPath("//button[contains(.,'Save')]");
+        private readonly By Go_To_Previous_SectionButton = By.XPath("//button[contains(.,'Go to Previous Section')]");
+        private readonly By continue_with_Involved_Party_Selection_Button = By.XPath("//button[contains(.,'Continue with Involved Party Selection ')]");
+        private readonly By involvedPartyEditButton = By.XPath("//div[@class='col-md-10']/following::button[contains(.,'Edit')]");
+        private readonly By involvedPartyDeleteButton = By.XPath("//div[@class='col-md-10']/following::button[contains(.,'Delete')]");
+        private readonly By confirmDeletion = By.XPath("//div[@id='ConfirmationModal']/following::button[contains(.,'Yes')]");
+        private readonly By CancelButton = By.XPath("//button[contains(.,'Cancel')]");
 
         #endregion
 
@@ -180,6 +188,95 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             Driver.FindElement(countryField).Clear();
             Driver.FindElement(countryField).SendKeys(Country);
         }
+
+        public void ClickEditButton()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, EditButton, 100);
+            Driver.FindElement(EditButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
+
+        public void updateOrganizationField(string organization)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+            js.ExecuteScript("window.scrollBy(0, 300);");
+            CommonHelpers.WaitForElementVisiblity(Driver, organizationField, 1000);
+
+
+            Driver.FindElement(organizationField).Clear();
+            Driver.FindElement(organizationField).SendKeys(organization);
+        }
+
+        public void clickSaveButton()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            js.ExecuteScript("window.scrollTo(0, 0);");
+            CommonHelpers.WaitForElementVisiblity(Driver, SaveButton, 100);
+            Driver.FindElement(SaveButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
+
+        public void clickCancelButton()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            js.ExecuteScript("window.scrollTo(0, 0);");
+            CommonHelpers.WaitForElementVisiblity(Driver, CancelButton, 100);
+            Driver.FindElement(CancelButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
+        public string getOrganizationName()
+        {
+            Console.WriteLine("Organization Name: " + Driver.FindElement(organizationField).GetAttribute("value"));
+            return Driver.FindElement(organizationField).GetAttribute("value");
+        }
+
+        public string GetOrganizationFieldValue()
+        {
+            return getOrganizationName();
+        }
+
+        public void clickGoToPreviousSectionButton()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
+            Driver.FindElement(Go_To_Previous_SectionButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 100);
+        }
+
+        public void ClickProceedToNextSectionButton()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 300);
+
+            //CommonHelpers.WaitForElementVisiblity(Driver, HowDidThisExternalReferringPartyreportThisTextarea, 100);
+            CommonHelpers.ScrollToElement(Driver, continue_with_Involved_Party_Selection_Button);
+            Driver.FindElement(continue_with_Involved_Party_Selection_Button).Click();
+            //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
+
+        }
+
+        public void ClickInvolvedPartyEditButton()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForElementVisiblity(Driver, involvedPartyEditButton, 100);
+            Driver.FindElement(involvedPartyEditButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
+
+        public void ClickInvolvedPartyDeleteButton()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForElementVisiblity(Driver, involvedPartyDeleteButton, 100);
+            Driver.FindElement(involvedPartyDeleteButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            Driver.FindElement(confirmDeletion).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
+
+       
+
     }
 }
 

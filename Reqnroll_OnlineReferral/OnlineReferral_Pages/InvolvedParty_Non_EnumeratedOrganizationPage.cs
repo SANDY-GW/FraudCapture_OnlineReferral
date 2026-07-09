@@ -43,6 +43,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By emailField = By.XPath("//input[@id='neoEmail']");
         private readonly By Go_To_Previous_SectionButton = By.XPath("//button[contains(.,'Go to Previous Section')]");
         private readonly By continue_with_Involved_Party_Selection_Button = By.XPath("//button[contains(.,'Continue with Involved Party Selection ')]");
+
+        
+        private readonly By EditButton = By.XPath("//button[contains(.,'Edit')]");
+        private readonly By SaveButton = By.XPath("//button[contains(.,'Save')]");
         #endregion
         public void SelectIsExternalReferringPartyFromDropdown(string option)
         {
@@ -243,5 +247,57 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             return CommonHelpers.ValidationerrorExists(Driver);
         }
+
+
+
+        public void ClickEditButton()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, EditButton, 100);
+            Driver.FindElement(EditButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
+
+        public void updateOrganizationField(string organizationName )
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+            js.ExecuteScript("window.scrollBy(0, 300);");
+            CommonHelpers.WaitForElementVisiblity(Driver, organizationField, 1000);
+
+
+            Driver.FindElement(organizationField).Clear();
+            Driver.FindElement(organizationField).SendKeys(organizationName);
+
+        }
+
+        public void clickSaveButton()
+        {
+            CommonHelpers.WaitForPageToLoad(Driver, 200);
+            CommonHelpers.ScrollUp(Driver);
+
+
+            CommonHelpers.WaitForElementVisiblity(Driver, SaveButton, 100);
+            Driver.FindElement(SaveButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
+        public string getOrganizationName()
+        {
+            Console.WriteLine("organization Name: " + Driver.FindElement(organizationField).GetAttribute("value"));
+            return Driver.FindElement(organizationField).GetAttribute("value");
+        }
+
+        public string GetOrganizationFieldValue()
+        {
+            return getOrganizationName();
+        }
+
+        public void clickGoToPreviousSectionButton()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
+            Driver.FindElement(Go_To_Previous_SectionButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 100);
+        }
+
     }
 }
