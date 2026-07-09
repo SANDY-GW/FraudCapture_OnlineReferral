@@ -98,31 +98,33 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void EnterOriginalDetectionDate(string OriginalDetectionDate)
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
-        
-            CommonHelpers.WaitForElementVisiblity(Driver, originalDetectionDateField, 100);
             Driver.FindElement(originalDetectionDateField).Click();
-            Driver.FindElement(originalDetectionDateField).Clear();
+            var element = Driver.FindElement(originalDetectionDateField);
+            element.SendKeys(Keys.Control + "a");
+            element.SendKeys(Keys.Delete);
             Driver.FindElement(originalDetectionDateField).SendKeys(OriginalDetectionDate);
         }
         public void EnterIncidentStartDate(string IncidentStartDate)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, incidentStartDateField, 100);
-            
-
-            Driver.FindElement(incidentStartDateField).Click();
-            Driver.FindElement(incidentStartDateField).Clear();
-            Driver.FindElement(incidentStartDateField).SendKeys(IncidentStartDate);
-            
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
+            var element = Driver.FindElement(incidentStartDateField);
+            element.Click();
+            element.SendKeys(Keys.Control + "a");
+            element.SendKeys(Keys.Delete);
+            element.SendKeys(IncidentStartDate);
         }
 
         public void EnterIncidentEndDate(string IncidentEndDate)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, incidentEndDateField, 100);
+            CommonHelpers.WaitForElementVisiblity(Driver, incidentEndDateField, 60);
 
-            Driver.FindElement(incidentEndDateField).Click();
-            Driver.FindElement(incidentEndDateField).Clear();
-            Driver.FindElement(incidentEndDateField).SendKeys(IncidentEndDate);
+            var element = Driver.FindElement(incidentEndDateField);
+            element.Click();
+            element.SendKeys(Keys.Control + "a");
+            element.SendKeys(Keys.Delete);
+            element.SendKeys(IncidentEndDate);
         }
+
 
         public void SelectState_Or_Territory(string State_Or_Territory)
 

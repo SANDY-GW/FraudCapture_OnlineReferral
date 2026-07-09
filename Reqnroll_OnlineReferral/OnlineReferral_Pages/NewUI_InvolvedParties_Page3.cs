@@ -123,12 +123,16 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         //DOB field
         public void FillDOBField(string dob)
         {
-            CommonHelpers.WaitForPageToLoad(Driver, 100);
-            CommonHelpers.WaitForElementVisiblity(Driver, DOBField, 30);
-            Driver.FindElement(DOBField).Clear();
-            Driver.FindElement(DOBField).SendKeys(dob);
-            
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
+            //CommonHelpers.WaitForElementVisiblity(Driver, DOBField, 10);
+            CommonHelpers.ScrollToElement(Driver, DOBField);
+            var element = Driver.FindElement(DOBField);
+            element.Click();
+            element.SendKeys(Keys.Control + "a");
+            element.SendKeys(Keys.Delete);
+            element.SendKeys(dob);
         }
+
         //SSN field
         public void FillSSNField(string ssn)
         {
@@ -313,6 +317,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void FillEmailField(string email)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, emailField, 30);
+            Driver.FindElement(emailField).Clear(); 
             Driver.FindElement(emailField).SendKeys(email);
             CommonHelpers.WaitForPageToLoad(Driver, 10000);
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
@@ -358,7 +363,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public bool VerifyIfCountyDropdownIsInAlphabeticalOrder()
         {
-            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(countryField));
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(countyDrpdn));
         }
 
 

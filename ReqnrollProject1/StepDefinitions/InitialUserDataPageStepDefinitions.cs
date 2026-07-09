@@ -1240,9 +1240,9 @@ namespace ReqnrollProject1.StepDefinitions
         public void ThenIEnterTheTextForHowDidThisWitnessExternalReferringPartyReportThisRequiredAndAnyAdditonalInformationRegardingTheWitnessOrExternalReferringPartyOptionalFieldOnSecondTime(DataTable dataTable)
         {
             var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
-            var PG4 = new InvolvedPartyTypeasMember_page3(Driver);
+            var PG4 = new additionalInvolvedParty_page4(Driver); 
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            if (PG3.getWitnessDropdownValue().Equals("Yes"))
+            if (PG4.getWitnessadditionalDropdownValue().Equals("Yes"))
             {
                 CommonHelpers.WaitForPageLoading(Driver);
                 CommonHelpers.ScrollDown(Driver);
@@ -1512,6 +1512,7 @@ namespace ReqnrollProject1.StepDefinitions
             PG3.EnterOtherID(data.otherID);
             PG3.EnterOther(data.other);
         }
+
 
 
 
