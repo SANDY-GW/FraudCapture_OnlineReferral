@@ -401,7 +401,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public string GetActivityName()
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
-            CommonHelpers.WaitForPageLoading(Driver);            
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
             var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[1]/td[1]")).Text;
             return activityName;
 
@@ -410,7 +410,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public string getActivityDueDate()
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
-            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear (Driver,30);
             var activityduedate = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr/td[4]")).Text;
             return activityduedate;
         }

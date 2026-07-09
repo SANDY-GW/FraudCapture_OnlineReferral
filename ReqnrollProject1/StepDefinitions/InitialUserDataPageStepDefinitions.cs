@@ -223,11 +223,7 @@ namespace ReqnrollProject1.StepDefinitions
         }
 
 
-        [When("I should be navigated to the {string}")]
-        public void WhenIShouldBeNavigatedToTheNextPage(string pageName)
-        {
-
-        }
+        
         [Given("I enter the {string},{string},{string},{string},{string}, filled in the Address section yon the Initial User Data Page")]
         public void GivenIEnterTheFilledInTheAddressSectionOnTheInitialUserDataPage(string Mailing_Street_Address1, string Mailing_Street_Address2, string Mailing_Address_City, string Mailing_Address_State, string Mailing_Address_Zip)
         {
@@ -673,6 +669,11 @@ namespace ReqnrollProject1.StepDefinitions
             PG4.EnterNameSuffix(namesuffix);
 
         }
+        [When("I should be navigated to the {string}")]
+        public void WhenIShouldBeNavigatedToTheNextPage(string pageName)
+        {
+
+        }
 
 
         [When("enter associated orgname as {string}, name prefix as {string}, associated party first name as {string},associated party middle name as {string}, associated party last name as {string} and name suffix as {string} on the fourth User Data Page")]
@@ -1109,13 +1110,7 @@ namespace ReqnrollProject1.StepDefinitions
             Assert.That(PG1.IsLogoAtTopCenter(), Is.True, "Logo is not at top center: " +title);
         }
 
-        [Then(@"Logo should be aligned at the top center of the page")]
-        public void ThenLogoTopCenter()
-        {
-            var PG1 = new LoginOnlineRef_Page1(Driver);
-
-            
-        }
+        
 
         [Then(@"Logo should be aligned to the left of the header")]
         public void ThenLogoLeftAligned()
@@ -1144,38 +1139,38 @@ namespace ReqnrollProject1.StepDefinitions
 
 
 
-        [When("I enter initial user details:")]
-        public void WhenIEnterInitialUserDetails(DataTable dataTable)
-        {
-            var PG1 = new LoginOnlineRef_Page1(Driver);
+        //[When("I enter initial user details:")]
+        //public void WhenIEnterInitialUserDetails(DataTable dataTable)
+        //{
+        //    var PG1 = new LoginOnlineRef_Page1(Driver);
 
 
-            var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG1.EnterUserFName(data.UserFirstName);
-            PG1.EnterUserLastName(data.UserLastName);
-            PG1.EnterUserEmailName(data.Email);
-            PG1.SelectOrgAgency(data.Orgname);
-            PG1.EnterUserTitle(data.title);
-            PG1.EnterPhoneNumberAndExtension(data.Phonenumber);
+        //    var data = dataTable.CreateInstance<OnlineReferralData>();
+        //    PG1.EnterUserFName(data.UserFirstName);
+        //    PG1.EnterUserLastName(data.UserLastName);
+        //    PG1.EnterUserEmailName(data.Email);
+        //    PG1.SelectOrgAgency(data.Orgname);
+        //    PG1.EnterUserTitle(data.title);
+        //    PG1.EnterPhoneNumberAndExtension(data.Phonenumber);
 
-        }
-
-
-
-        [When("I enter the address:")]
-        public void WhenIEnterTheAddress(DataTable dataTable)
-        {
-            var PG1 = new LoginOnlineRef_Page1(Driver);
+        //}
 
 
-            var data = dataTable.CreateInstance<CommonData.UserCredentials>();
-            //PG1.EnterAddress1(data.Address1);
-            //PG1.EnterAddress2(data.Address2);
-            //PG1.EnterCity(data.City);
-            //PG1.SelectState(data.State);
-            //PG1.EnterZipCode(data.Zipcode);
 
-        }
+        //[When("I enter the address:")]
+        //public void WhenIEnterTheAddress(DataTable dataTable)
+        //{
+        //    var PG1 = new LoginOnlineRef_Page1(Driver);
+
+
+        //    var data = dataTable.CreateInstance<CommonData.UserCredentials>();
+        //    //PG1.EnterAddress1(data.Address1);
+        //    //PG1.EnterAddress2(data.Address2);
+        //    //PG1.EnterCity(data.City);
+        //    //PG1.SelectState(data.State);
+        //    //PG1.EnterZipCode(data.Zipcode);
+
+        //}
 
         [When("I select the another involved Party from the drop down menu")]
         public void WhenISelectTheAnotherInvolvedPartyFromTheDropDownMenu(DataTable dataTable)

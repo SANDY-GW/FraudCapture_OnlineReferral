@@ -145,9 +145,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             CommonHelpers.WaitForElementVisiblity(Driver, question1TextBox, 100);
             Driver.FindElement(question1TextBox).SendKeys(answer);
-
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
-
             js.ExecuteScript("window.scrollBy(0, 100);");
         }
 
@@ -156,15 +154,11 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
             Driver.FindElement(question2TextBox).Click();          
             Driver.FindElement(question2TextBox).SendKeys(question2);
-            
-           
-            
         }
         public void SelectQuestion3dropdown(string question3)
         {
 
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
-            //CommonHelpers.ScrollToElement(Driver, question3Dropdwn);
             Driver.FindElement(question3Dropdwn).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(question3Dropdwn), question3);
         }
@@ -180,9 +174,6 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.ScrollToElement(Driver, question4TextBox);
             Driver.FindElement(question4TextBox).Click();
             Driver.FindElement(question4TextBox).SendKeys(question4);
-            //Thread.Sleep(5000);
-            
-            
 
         }
 
@@ -237,11 +228,9 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void ClickProceedToNextSectionButton()
         {
             CommonHelpers.ScrollUp(Driver);
-            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 5000);
-
+            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 100);
             Driver.FindElement(proceed_To_Next_SectionButton).Click();
-            //Thread.Sleep(10000);
-            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 50000);
+            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
 
         }
 
