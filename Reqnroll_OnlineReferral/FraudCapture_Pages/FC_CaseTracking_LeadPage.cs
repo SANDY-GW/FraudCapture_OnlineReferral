@@ -50,6 +50,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         private readonly By ExitActivityButton = By.XPath("//div[@id='attachment']/descendant::button[text()='Exit Activity']");
         private readonly By leadCreationDate = By.XPath("//input[@name='leadDate']");
         private readonly By activityDuedate = By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr/td[4]");
+        private By activityDuedateByRow(int row) => By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[" + row + "]/td[4]");
         // Page verification locators
         private By editActivityHeader =By.XPath("//b[text()='Edit Activity']");
 
@@ -380,7 +381,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public bool ClickOnEditActivity(string activityNme)
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);           
-            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,50);
             var countRows = Driver.FindElements(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr")).Count;
             
             for (int i = 0; i < countRows; i++)
@@ -402,7 +403,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
-            var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[1]/td[1]")).Text;
+            //var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[1]/td[1]")).Text;
+            var activityName = Driver.FindElement(ActivityNameByRow(1)).Text;
             return activityName;
 
         }
@@ -411,7 +413,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
             CommonHelpers.WaitForLoadingOverlayToDisappear (Driver,30);
-            var activityduedate = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr/td[4]")).Text;
+            //var activityduedate = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr/td[4]")).Text;
+            var activityduedate = Driver.FindElement(activityDuedateByRow(1)).Text; 
             return activityduedate;
         }
 

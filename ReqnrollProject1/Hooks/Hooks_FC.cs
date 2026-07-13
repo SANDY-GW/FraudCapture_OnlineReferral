@@ -12,12 +12,12 @@ using Allure.Net.Commons;
 namespace ReqnrollProject1.Hooks
 {
     [Binding]
-    internal class Hooks_FC
+    public class Hooks_FC
     {
 
         private readonly ScenarioContext _scenarioContext;
         private readonly FeatureContext _featureContext;
-        static IWebDriver loc_driver;
+        public static IWebDriver loc_driver;
         //public Hooks_FC(ScenarioContext scenarioContext) => _scenarioContext = scenarioContext;
         public Hooks_FC(ScenarioContext scenarioContext, FeatureContext featureContext)
         {

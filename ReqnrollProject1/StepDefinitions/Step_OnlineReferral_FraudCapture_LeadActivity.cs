@@ -186,7 +186,7 @@ namespace ReqnrollProject1.StepDefinitions
                 var ActName = fc.GetActivityName();
 
                 if (!fc.ClickOnEditActivity(activityName))
-                    NUnit.Framework. Assert.Fail("The activity with the name '" + activityName + "' was not found in the Activities table.");
+                     Assert.Fail("The activity with the name '" + activityName + "' was not found in the Activities table.");
 
                 Assert.That(ActName, Is.EqualTo(activityName));
 
@@ -288,7 +288,6 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
             var referraldate = fc.getActivityDueDate();
-            Console.WriteLine(referraldate);
 
         }
 
