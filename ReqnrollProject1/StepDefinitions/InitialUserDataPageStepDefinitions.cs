@@ -30,6 +30,7 @@ namespace ReqnrollProject1.StepDefinitions
             PG2 = new OnlineReferral_Referral_Page2(Driver);
             PG3_InvParty = new InvolvedParties_Page3(Driver);
             PG3Witness = new WitnessOrExternalRefParty_Page3(Driver);
+            PG3_Member = new InvolvedPartyTypeasMember_page3(Driver);
             PG4 = new InvolvedPartyTypeInfo_Page4(Driver);
             PG4_AddtnlInvldParty = new additionalInvolvedParty_page4(Driver);
             PG5 = new New_UI_Questions_Page5(Driver);
@@ -505,20 +506,24 @@ namespace ReqnrollProject1.StepDefinitions
         public void WhenEnterInvolvedPartyOrgnameAsNamePrefixAsAssociatedPartyFirstNameAsAssociatedPartyMiddleNameAsAssociatedPartyLastNameAsAndNameSuffixAsOnTheFourthUserDataPage(string pageName, DataTable dataTable)
         {
 
-            var PG3 = new InvolvedParties_Page3(Driver);
+            //var PG3 = new InvolvedParties_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
             DateTime dateTime = DateTime.Now;
             data.firstName = data.firstName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
             data.lastName = data.lastName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
-            _scenarioContext["UserFN"] = data.firstName;
-            _scenarioContext["UserLN"] = data.lastName;
+            if (!_scenarioContext.ContainsKey("UserFN") || !_scenarioContext.ContainsKey("UserLN"))
+            {
+                _scenarioContext["UserFN"] = data.firstName;
+                _scenarioContext["UserLN"] = data.lastName;
 
-            PG3.FillOrganizationField(data.orgname);
-            PG3.FillNamePrefixField(data.namePrefix);
-            PG3.FillFirstNameField(data.firstName);
-            PG3.FillMiddleNameField(data.middleName);
-            PG3.FillLastNameField(data.lastName);
-            PG3.FillNameSuffixField(data.nameSuffix);
+            }
+
+            PG3_InvParty.FillOrganizationField(data.orgname);
+            PG3_InvParty.FillNamePrefixField(data.namePrefix);
+            PG3_InvParty.FillFirstNameField(data.firstName);
+            PG3_InvParty.FillMiddleNameField(data.middleName);
+            PG3_InvParty.FillLastNameField(data.lastName);
+            PG3_InvParty.FillNameSuffixField(data.nameSuffix);
         }
         [Then("i enter invalid date of birth and validate for {string}")]
         public void ThenIEnterInvalidDateOfBirthAndValidateForPage(string pageName, DataTable dataTable)
@@ -951,8 +956,12 @@ namespace ReqnrollProject1.StepDefinitions
             DateTime dateTime = DateTime.Now;
             data.firstName = data.firstName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
             data.lastName = data.lastName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
-            _scenarioContext["UserFN"] = data.firstName;
-            _scenarioContext["UserLN"] = data.lastName;
+            if (!_scenarioContext.ContainsKey("UserFN") || !_scenarioContext.ContainsKey("UserLN"))
+            {
+                _scenarioContext["UserFN"] = data.firstName;
+                _scenarioContext["UserLN"] = data.lastName;
+
+            }
 
             PG3_Member.FillNamePrefixField(data.NamePrefix);
             PG3_Member.FillFirstNameField(data.firstName);
