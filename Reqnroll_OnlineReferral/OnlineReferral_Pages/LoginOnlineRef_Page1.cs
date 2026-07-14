@@ -24,7 +24,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By emailtxtbx = By.XPath("//input[@id='email']");
         private readonly By emailVerificationBtn = By.XPath("//button[contains(.,'Email Address Verification')]");
         private readonly By Captcha = By.XPath("//span[@id='recaptcha-anchor']");
-        
+
         private readonly By titletxtbx = By.XPath("//input[@id='title']");
         private readonly By phonenumber_And_ExtensionField = By.XPath("//input[@id='phone']");
         private readonly By mailingStreetAddress1Field = By.XPath("//input[@id='address1']");
@@ -152,7 +152,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void SelectState_Or_Territory(string StateName)
         {
 
-           
+
             Driver.FindElement(mailingAddressstate_Or_Territorydropdown).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(mailingAddressstate_Or_Territorydropdown), StateName);
         }
@@ -160,6 +160,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         {
             Driver.FindElement(mailingAddresszipCodeField).Clear();
             Driver.FindElement(mailingAddresszipCodeField).SendKeys(ZipCode);
+
         }
 
         public void clickEmailAddressVerificationButton()
@@ -189,7 +190,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public bool IsLogoDisplayed()
         {
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 70);
+            CommonHelpers.ScrollUp(Driver);
             return GetLogo().Displayed;
         }
 
@@ -256,28 +258,46 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
 
         }
-        
+
         public bool VerifyBGColorOnRequiredFieldsPage1()
         {
 
             var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
             var allReqFieldsID = Driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
             bool bgcolormatch = true;
+
             if (eleList.Count > 0)
             {
                 foreach (IWebElement elem in allReqFieldsID)
                 {
 
+
                     if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
                     {
+                        IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+
+                        js.ExecuteScript(
+                            "window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });");
+
                         TestContext.Out.WriteLine(elem.GetAttribute("id") + ": Required field with expected green border color");
 
 
                     }
                     else if (elem.GetCssValue("border-color").Equals("rgb(206, 212, 218)"))//Non required fields with no border color
                     {
-                        Assert.Warn(elem.GetAttribute("id") + ":Optional field with no border color");
-                        bgcolormatch = false;
+
+                        // if((elem.GetAttribute("ng-reflect-model") is null or "") )
+                        //Console.WriteLine("first if");
+
+                        if ((elem.GetAttribute("class").Contains("ng-invalid")))
+
+                            Assert.Fail(elem.GetAttribute("ng-reflect-model") + ":Required field with no border color");
+                        // Assert.Warn(elem.GetAttribute("id") + ":Required field with no border color and data populated");
+                        //if ((elem.GetAttribute("ng-reflect-model") is null or "") || (elem.GetAttribute("class").Contains("form-select ng-untouched ng-pristine ng-invalid")))
+
+                        //
+
+                        // bgcolormatch = false;
                     }
                     else
                     {
@@ -295,6 +315,15 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             }
 
         }
+
+        public string GetValidationErrorMessage()
+        {
+            return CommonHelpers.GetValidationErrorText(Driver);
+        }
+
+        public bool IsValidationErrorDisplayed()
+        {
+            return CommonHelpers.ValidationerrorExists(Driver);
+        }
     }
 }
-

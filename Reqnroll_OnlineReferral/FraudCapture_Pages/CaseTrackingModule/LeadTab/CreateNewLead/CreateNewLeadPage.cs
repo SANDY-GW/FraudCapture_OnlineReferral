@@ -34,13 +34,37 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         private readonly By ManuallyAddBySubjectPrefix = By.XPath("//input[@id='ViewSubjectNamePrefix']");
         private readonly By ManuallyAddBySubjectFirstName = By.XPath("//input[@id='ViewSubjectFirstName']");
         private readonly By ManuallyAddBySubjectLastName = By.XPath("//input[@id='ViewSubjectLastName']");
+        private readonly By ManuallyAddBySubjectMiddleName = By.XPath("//input[@id='ViewSubjectMiddleName']");
+        private readonly By ManuallyAddBySubjectSuffix = By.XPath("//input[@id='ViewSubjectSuffix']");
+        private readonly By ManuallyAddBySubjectDateofBirth = By.XPath("//input[@name='ViewSubjectDateofBirth']");
+        private readonly By ManuallyAddBySubjectGender = By.XPath("//input[@id='ViewSubjectGender']");
+        private readonly By ManuallyAddBySubjectOther = By.XPath("//input[@id='ViewSubjectOther']");
+        private readonly By ManuallyAddBySubjectId = By.XPath("//input[@id='ViewSubjectId']");
+        private readonly By ManuallyAddBySubjectSSN = By.XPath("//input[@id='ViewSubjectSSN']");
+        private readonly By ManuallyAddBySubjectMedicaidNo = By.XPath("//input[@id='SubjectMedicaidNo']");
+        private readonly By ManuallyAddBySubjectMedicareNo = By.XPath("//input[@id='SubjectMedicareNo']");
+        private readonly By ManuallyAddBySubjectOtherId = By.XPath("//input[@id='ViewSubjectOtherId']");
+        private readonly By ManuallyAddBySubjectplan = By.XPath("//input[@id='ViewSubjectplan']");
+        private readonly By ManuallyAddBySubjectprogram = By.XPath("//input[@id='ViewSubjectprogram']");
+        private readonly By ManuallyAddBySubjectLob = By.XPath("//input[@id='ViewSubjectLob']");
+        private readonly By ManuallyAddBySubjectGroup = By.XPath("//input[@id='ViewSubjectGroup']");
+        private readonly By ManuallyAddBySubjectAddress1 = By.XPath("//input[@id='ViewSubjectAddress1']");
+        private readonly By ManuallyAddBySubjectAddress2 = By.XPath("//input[@id='ViewSubjectAddress2']");
+        private readonly By ManuallyAddBySubjectCity = By.XPath("//input[@id='ViewSubjectCity']");
+        private readonly By ManuallyAddBySubjectState = By.XPath("//select[@id='ViewSubjectState']");
+        private readonly By ManuallyAddBySubjectCounty = By.XPath("//select[@id='ViewSubjectCounty']");
+        private readonly By ManuallyAddBySubjectZipCode = By.XPath("//input[@id='ViewSubjectZipCode']");
+        private readonly By ManuallyAddByViewSubjectPhone = By.XPath("//input[@id='ViewSubjectPhone']");
+        private readonly By ManuallyAddBySecondaryPhone = By.XPath("//input[@id='SecondaryPhone']");
+        private readonly By ManuallyAddBySubjectEmail = By.XPath("//input[@id='ProviderViewSubjectEmail']");
+        
 
         //Search By ID Search Elements for Member
         private readonly By SearchByIDSelectionDropDown = By.XPath("//select[@id='subjectTypeSelection']");
         private readonly By MemberSearchByID = By.XPath("//input[@id='searchIdCase']");
         private readonly By MemberSearchBtn = By.XPath("//button[@id='btnSearch']");
         private readonly By MemberClearBtn= By.XPath("//form[@id='LeadNewForm']//button[text()='Clear']");
-        private readonly By MemberSelectBtn = By.XPath("(//button[@id='SelectSbjectResultBtn'])[1]");
+        private readonly By MemberSelectBtn = By.XPath("//button[@id='SelectSbjectResultBtn']");
 
         //Search By Name Search Elements for Member
         private readonly By SearchByNameSelectionDropDown = By.XPath("//select[@id='subjectTypeSelection']");
@@ -48,7 +72,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         private readonly By MemberSearchByLastName = By.XPath("//input[@id='searchLname']");
         private readonly By MemberSearchByNameSearchBtn = By.XPath("//button[@id='btnSearch']");
         private readonly By MemberSearchByNameSearchClearBtn = By.XPath("//form[@id='LeadNewForm']//button[text()='Clear']");
-        private readonly By MemberSearchByNameSelectBtn = By.XPath("(//button[@id='SelectSbjectResultBtn'])[1]");
+        private readonly By MemberSearchByNameSelectBtn = By.XPath("//div//button[@id='SelectSbjectResultBtn']");
 
         //Search By Address Elements for Member-5615 High Point Dr
         private readonly By SearchByAddressSelectionDropDown = By.XPath("//select[@id='subjectTypeSelection']");
@@ -56,7 +80,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         private readonly By MemberSearchByCity = By.XPath("//input[@id='searchCity']");
         private readonly By MemberSearchByAddressSearchBtn = By.XPath("//button[@id='btnSearch']");
         private readonly By MemberSearchByAddressSearchClearBtn = By.XPath("//form[@id='LeadNewForm']//button[text()='Clear']");
-        private readonly By MemberSearchByAddressSelectBtn = By.XPath("(//button[@id='SelectSbjectResultBtn'])[1]");
+        private readonly By MemberSearchByAddressSelectBtn = By.XPath("//div//button[@id='SelectSbjectResultBtn']");
 
         //Provider-Manually add the subject 
         private readonly By SubjectTypeDropDownProvider = By.XPath("//select[@id='subjectTypeVal']");
@@ -92,7 +116,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         //Search By Address to Elements for Provider-5615 High Point Dr
         private readonly By ProviderSearchByAddress = By.XPath("//input[@id='searchAddress']");
         private readonly By ProviderSearchByCity = By.XPath("//input[@id='searchCity']");
-        private readonly By ProviderSearchByAddressSelectBtn = By.XPath("(//button[@id='SelectSbjectResultBtn'])[1]");
+        private readonly By ProviderSearchByAddressSelectBtn = By.XPath("//div//button[@id='SelectSbjectResultBtn']");
 
         //Referring Party-Search By Member ID to Search Elements for Referring Party
         private readonly By ReferringPartySearchByID = By.XPath("//input[@name='searchIdCase']");
@@ -189,6 +213,136 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         {
             Driver.FindElement(ManuallyAddBySubjectLastName).SendKeys(lastName);
         }
+        public void ClickManuallyAddBySubjectMiddleName(string middleName)
+        {
+            Driver.FindElement(ManuallyAddBySubjectMiddleName).SendKeys(middleName);
+        }
+        public void ClickManuallyAddBySubjectSuffix(string suffix)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectSuffix);
+            Driver.FindElement(ManuallyAddBySubjectSuffix).SendKeys(suffix);
+        }
+        public void ClickManuallyAddBySubjectDateofBirth(string dateOfBirth)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectDateofBirth);
+            Driver.FindElement(ManuallyAddBySubjectDateofBirth).Click();
+            Driver.FindElement(ManuallyAddBySubjectDateofBirth).SendKeys(dateOfBirth);
+        }
+        public void ClickManuallyAddBySubjectGender(string gender)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectGender);
+            Driver.FindElement(ManuallyAddBySubjectGender).SendKeys(gender);
+        }
+        public void ClickManuallyAddBySubjectOther(string other)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectOther);  
+            Driver.FindElement(ManuallyAddBySubjectOther).SendKeys(other);
+        }
+        public void ClickManuallyAddBySubjectId(string subjectId)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectId);
+            Driver.FindElement(ManuallyAddBySubjectId).SendKeys(subjectId);
+        }
+        public void ClickManuallyAddBySubjectSSN(string ssn)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectSSN);
+            Driver.FindElement(ManuallyAddBySubjectSSN).SendKeys(ssn);
+        }
+        public void ClickManuallyAddBySubjectMedicaidNo(string medicaidNo)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectMedicaidNo);
+            Driver.FindElement(ManuallyAddBySubjectMedicaidNo).SendKeys(medicaidNo);
+        }
+        public void ClickManuallyAddBySubjectMedicareNo(string medicareNo)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectMedicareNo);
+            Driver.FindElement(ManuallyAddBySubjectMedicareNo).SendKeys(medicareNo);
+        }
+        public void ClickManuallyAddBySubjectOtherId(string OtherId)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectOtherId);
+            Driver.FindElement(ManuallyAddBySubjectOtherId).SendKeys(OtherId);
+        }
+        public void ClickManuallyAddBySubjectplan(string plan)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectplan);
+            Driver.FindElement(ManuallyAddBySubjectplan).SendKeys(plan);
+
+        }
+        public void ClickManuallyAddBySubjectprogram(string program)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectprogram);
+            Driver.FindElement(ManuallyAddBySubjectprogram).SendKeys(program);
+
+        }
+        public void ClickManuallyAddBySubjectLob(string Lob)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectLob);
+            Driver.FindElement(ManuallyAddBySubjectLob).SendKeys(Lob);
+
+        }
+        public void ClickManuallyAddBySubjectGroup(string Group)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectGroup);
+            Driver.FindElement(ManuallyAddBySubjectGroup).SendKeys(Group);
+
+        }
+        public void ClickManuallyAddBySubjectAddress1(string Address1)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectAddress1);
+            Driver.FindElement(ManuallyAddBySubjectAddress1).SendKeys(Address1);
+
+        }
+        public void ClickManuallyAddBySubjectAddress2(string Address2)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectAddress2);
+            Driver.FindElement(ManuallyAddBySubjectAddress2).SendKeys(Address2);
+
+        }
+        
+        public void ClickManuallyAddBySubjectCity(string City )
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectCity);
+            Driver.FindElement(ManuallyAddBySubjectCity).SendKeys(City);
+
+        }
+        public void SelectManuallyAddBySubjectState(string State)
+        {
+
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(ManuallyAddBySubjectState), State);
+        }
+        public void SelectManuallyAddBySubjectCounty(string County)
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(ManuallyAddBySubjectCounty), County);
+
+        }
+        public void ClickManuallyAddBySubjectZipCode(string ZipCode)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectZipCode);
+            Driver.FindElement(ManuallyAddBySubjectZipCode).SendKeys(ZipCode);
+
+        }
+        public void ClickManuallyAddByViewSubjectPhone(string Phone)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddByViewSubjectPhone);
+            Driver.FindElement(ManuallyAddByViewSubjectPhone).SendKeys(Phone);
+
+        }
+        public void ClickManuallyAddBySecondaryPhone(string SecondaryPhone)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySecondaryPhone);
+            Driver.FindElement(ManuallyAddBySecondaryPhone).SendKeys(SecondaryPhone);
+
+        }
+        public void ClickManuallyAddBySubjectEmail(string Email)
+        {
+            CommonHelpers.ScrollToElement(Driver, ManuallyAddBySubjectEmail);
+            Driver.FindElement(ManuallyAddBySubjectEmail).SendKeys(Email);
+
+        }
+
         //Search By ID for Member
         public void ClickSearchByIDSelectionDropDown(string searchByIdOption)
         {

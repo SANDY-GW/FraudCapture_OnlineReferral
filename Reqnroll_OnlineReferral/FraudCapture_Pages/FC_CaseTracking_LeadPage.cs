@@ -15,10 +15,13 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         //Add xpath here
         private readonly By LeadTab = By.XPath("//a[@id='allLeadsTabId']");
         private readonly By LeadSearchCriteria = By.XPath("//select[@id='leadSearchCriteria']");
+        //private readonly By LeadSearchCriteria = By.XPath("//select[@id='leadSearchCriteria']");
+        ////select[normalize-space(text())='leadSearchCriteria']
         private readonly By LeadSearchTextBox = By.XPath("//input[@id='searchInputField']");
-        private readonly By LeadSearchButton = By.XPath("//button[@id='searchStartButton']");
+        private readonly By LeadSearchButton = By.XPath("(//button[@id='searchStartButton'])[3]");
         private readonly By LeadSearchClearButton = By.XPath("//button[@id='searchClearButton']");
         private readonly By LeadIDLink = By.XPath("//*[@id='allLeadlist-wrapper']//div[1]/table/tbody/tr[1]/td[2]/small");
+        private readonly By LeadIDFirstLink = By.XPath("(//span[@class='link-text'])[1]");
         private readonly By LeadIDsecondLink = By.XPath("//table/tbody/tr[2]/td[2]/small/a");
 
         private By LeadIDLinkByRow(int row) => By.XPath("//*[@id='allLeadlist-wrapper']//div[1]/table//tr[" + row + "]/td[2]//a");
@@ -43,9 +46,19 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
 
         private readonly By ActivitiesDetailsTab = By.XPath("//a[@id='activitiesDetailsTabId']");
-        private readonly By ActivitiesEditButton = By.XPath("//button[@id='editActivityId']");
+        private readonly By ActivitiesBeginEditing = By.XPath("//button[@id='leadViewEditEndButton']");
+
+        private readonly By ActivitiesEditButton = By.XPath("(//button[@id='editActivityId'])[3]");
         private readonly By ActivitiesViewButton = By.XPath("//button[@id='editActivityId']//following-sibling::button[contains(text(),'View')]");
-        private readonly By ActivitiesAttachmentTab = By.XPath("//button[@id='attachmentTabId']");
+        private readonly By AddBtnNotes = By.XPath("//button[(text()=' Add ')])");
+        private readonly By AddNotesTextArea = By.XPath("//trix-editor[@id='notes']");
+        private readonly By AddNotesSaveBtn = By.XPath("( //button[(text()=' Save ' )])[2]");
+        private readonly By AddSaveConfirmYesbtn = By.XPath("//button[(text()='Yes' )]");
+        private readonly By ActivitiesAttachmentTab = By.XPath("//a[@id='attachmentTabId']");
+        private readonly By ActivitiesAddAttachmentBtn = By.XPath("//button[contains(text(),'Add Attachment')]");
+        private readonly By uploadFileArrow = By.XPath("//label[contains(text(),'Choose a File or Drag Files To Upload')]");
+        private readonly By ActivityAttachmentCloseBtn= By.XPath("//img[@class='ActivityIndicator float-end ng-star-inserted']");
+
         private readonly By AttachmentTab = By.XPath("//div[@id='noteAttachmentList']/descendant::ul//li/a[contains(text(),'Attachments')]");
         private readonly By ExitActivityButton = By.XPath("//div[@id='attachment']/descendant::button[text()='Exit Activity']");
         private readonly By leadCreationDate = By.XPath("//input[@name='leadDate']");
@@ -161,29 +174,60 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         }
         public void SelectLeadSearchCriteria(string searchCriteria)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, LeadSearchCriteria, 120);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            //Driver.FindElement(LeadSearchCriteria).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(LeadSearchCriteria), searchCriteria);
 
         }
         public void EnterLeadSearchCriteriaText(string searchCriteriaText)
         {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 40);
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadSearchTextBox, 100);
             Driver.FindElement(LeadSearchTextBox).SendKeys(searchCriteriaText);
         }
         public void ClickLeadActivitiesEdit()
         {
             Driver.FindElement(ActivitiesEditButton).Click();
         }
-
+        public void ClickActivitiesBeginEditing()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            Driver.FindElement(ActivitiesBeginEditing).Click();
+        }
         public void ClickLeadActivitiesDetailsTab()
         {
+            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
             Driver.FindElement(ActivitiesDetailsTab).Click();
         }
         public void ClickLeadActivitiesView()
         {
             Driver.FindElement(ActivitiesViewButton).Click();
         }
+        public void ClickAddBtnNotes()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
+            Driver.FindElement(AddBtnNotes).Click();
+        }
+        public void ClickAddNotesTextArea(string AddNotes)
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 40);
+            CommonHelpers.WaitForElementVisiblity(Driver, AddNotesTextArea, 100);
+            Driver.FindElement(AddNotesTextArea).SendKeys(AddNotes);
+        }
+        public void ClickAddNotesSaveBtn()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
+            Driver.FindElement(AddNotesSaveBtn).Click();
+        }
+        public void ClickAddSaveConfirmYesbtn()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
+            Driver.FindElement(AddSaveConfirmYesbtn).Click();
+        }
         public void ClickLeadSearch()
         {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
             Driver.FindElement(LeadSearchButton).Click();
         }
         public void ClickLeadSearchClear()
@@ -201,7 +245,13 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             Driver.FindElement(LeadIDLinkByRow(row)).Click();
             CommonHelpers.SwitchtoNewWindow(Driver);
         }
-        
+        public void ClickLeadIDFirstLink()
+        {
+           
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadIDFirstLink, 120);
+            Driver.FindElement(LeadIDFirstLink).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+        }
         public void ClickLeadIDSecondLink()
         {
             CommonHelpers.WaitForPageLoading(Driver);
@@ -216,6 +266,15 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             
             Driver.FindElement(ActivitiesAttachmentTab).Click();
+        }
+        public void ClickActivitiesAddAttachmentBtn()
+        {
+            Driver.FindElement(ActivitiesAddAttachmentBtn).Click();
+        }
+        public void ClickActivityAttachmentCloseBtn()
+        {
+            Driver.FindElement(ActivityAttachmentCloseBtn).Click();
+            CommonHelpers.WaitForPageLoading(Driver);
         }
         public void ClickLeadcreateDateFilter()
         {
@@ -273,7 +332,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             // CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 15000);
 
         }
-        public void SelectLead(string leadId)
+        public void SelectLead(string selectleadId)
         {
             var tableRows = Driver.FindElements(By.XPath("//table/tbody/tr"));
 
@@ -282,7 +341,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                 var selectedRow = tableRows.Where(row =>
                 {
                     var selectedLeadId = row.FindElements(By.TagName("small"))[1].Text;
-                    return leadId == selectedLeadId;
+                    return selectleadId == selectedLeadId;
                 }).First();
 
                 var viewLeadButton = selectedRow.FindElements(By.TagName("small"))[1];                
@@ -292,7 +351,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             catch (NoSuchElementException) { }
           //  var common = new CommonHelpers(Driver);
           //common.WaitForLoadingOverlayToDisappear();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);  
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);  
         }
         
         public void BeginEditingLead()
@@ -332,20 +391,10 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public void ClickLeadActivityTab()
         {
             //  WaitForPageLoading();
+            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             Driver.FindElement(ActivitiesDetailsTab).Click();
-            /* try
-              {
-                  WaitForPageLoading();
-                  //if (Driver.FindElement(ActivitiesDetailsTab).Displayed)
-                  //{
-                  Driver.FindElement(ActivitiesDetailsTab).Click();
-                      WaitForPageLoading();
-                  //}
-              }
-              catch (NoSuchElementException)
-              {
-                  //already in Edit mode, move along
-              }*/
+           
         }
 
 
@@ -359,10 +408,13 @@ namespace FC_OnlineReferral.FraudCapture_Pages
              Driver.FindElement(By.XPath("//form[@id='activityForm']/descendant::button[@id='searchStartButton']")).Click();
              CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
         }
-        public void SearchByLeadID(string leadid)
+        public void SearchByLeadID(string searchleadid)
         {
+
             var selectCriteria = new SelectElement(Driver.FindElement(By.Id("leadSearchCriteria")));
-            selectCriteria.SelectByValue(leadid);
+            searchleadid=searchleadid.Trim('"');
+            selectCriteria.SelectByValue(searchleadid);
+
         }
 
         public void EnterLeadID(string leadID)
@@ -413,6 +465,28 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             CommonHelpers.WaitForPageLoading(Driver);
             var activityduedate = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr/td[4]")).Text;
             return activityduedate;
+        }
+        public void ClickUploadFileArrow(string filepath)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            js.ExecuteScript("window.scrollBy(0, 700);");
+            CommonHelpers.WaitForElementVisiblity(Driver, uploadFileArrow, 500);
+            var fileUploadArea = Driver.FindElement(By.Id("fileLabel"));
+            DropFile(fileUploadArea, filepath);
+            js.ExecuteScript("window.scrollBy(0, 700);");
+            CommonHelpers.WaitForPageLoading(Driver);
+
+        }
+        const string JS_DROP_FILE = "for(var b=arguments[0],k=arguments[1],l=arguments[2],c=b.ownerDocument,m=0;;){var e=b.getBoundingClientRect(),g=e.left+(k||e.width/2),h=e.top+(l||e.height/2),f=c.elementFromPoint(g,h);if(f&&b.contains(f))break;if(1<++m)throw b=Error('Element not interractable'),b.code=15,b;b.scrollIntoView({behavior:'instant',block:'center',inline:'center'})}var a=c.createElement('INPUT');a.setAttribute('type','file');a.setAttribute('style','position:fixed;z-index:2147483647;left:0;top:0;');a.onchange=function(){var b={effectAllowed:'all',dropEffect:'none',types:['Files'],files:this.files,setData:function(){},getData:function(){},clearData:function(){},setDragImage:function(){}};window.DataTransferItemList&&(b.items=Object.setPrototypeOf([Object.setPrototypeOf({kind:'file',type:this.files[0].type,file:this.files[0],getAsFile:function(){return this.file},getAsString:function(b){var a=new FileReader;a.onload=function(a){b(a.target.result)};a.readAsText(this.file)}},DataTransferItem.prototype)],DataTransferItemList.prototype));Object.setPrototypeOf(b,DataTransfer.prototype);['dragenter','dragover','drop'].forEach(function(a){var d=c.createEvent('DragEvent');d.initMouseEvent(a,!0,!0,c.defaultView,0,0,0,g,h,!1,!1,!1,!1,0,null);Object.setPrototypeOf(d,null);d.dataTransfer=b;Object.setPrototypeOf(d,DragEvent.prototype);f.dispatchEvent(d)});a.parentElement.removeChild(a)};c.documentElement.appendChild(a);a.getBoundingClientRect();return a;";
+        public void DropFile(IWebElement target, string filePath, double offsetX = 0, double offsetY = 0)
+        {
+            if (!File.Exists(filePath))
+                throw new FileNotFoundException(filePath);
+
+            IJavaScriptExecutor jse = (IJavaScriptExecutor)Driver;
+
+            IWebElement input = (IWebElement)jse.ExecuteScript(JS_DROP_FILE, target, offsetX, offsetY);
+            input.SendKeys(filePath);
         }
 
     }

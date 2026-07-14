@@ -105,13 +105,51 @@ namespace FraudCapture_BDD.Features
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/CreateNewLead.feature.ndjson", 18);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/CreateNewLead.feature.ndjson", 24);
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_SubjectType_As_Member_And_Adding_Manually")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Member", "Manually add the Subject", "Mrs", "Yamuna", "C", "Test", "Manually add the Referring Party Details", "0", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_SubjectType_As_Member_And_Adding_Manually(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string namePrefix, string firstName, string lastName, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("01_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Manually")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Member", "Manually add the Subject", "Mrs", "Smitha", "Vedha", "Singh", "Mrs.", "02/03/1990", "Female", "123", "3456", "345678910", "12345", "567890", "4567", "PLAN14", "Test", "Test1", "Group1", "Texas", "Cali", "Mandal", "AK", "Aleutians East Borough", "34567", "8906785432", "7896542341", "smitha@gmail.com", "Test", "Manually add the Referring Party Details", "0", null)]
+        public async global::System.Threading.Tasks.Task _01_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Manually(
+                    string userEmail, 
+                    string workflowType, 
+                    string detectionMethod, 
+                    string sourceType, 
+                    string reason, 
+                    string assignedTo, 
+                    string subjectType, 
+                    string subjectTypeSelect, 
+                    string namePrefix, 
+                    string firstName, 
+                    string lastName, 
+                    string middleName, 
+                    string suffix, 
+                    string dateOfBirth, 
+                    string gender, 
+                    string other, 
+                    string subjectId, 
+                    string ssn, 
+                    string medicaidNo, 
+                    string medicareNo, 
+                    string otherId, 
+                    string plan, 
+                    string program, 
+                    string lob, 
+                    string group, 
+                    string address1, 
+                    string address2, 
+                    string city, 
+                    string state, 
+                    string county, 
+                    string zipCode, 
+                    string phone, 
+                    string secondaryPhone, 
+                    string email, 
+                    string description, 
+                    string referringParty, 
+                    string @__pickleIndex, 
+                    string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -126,10 +164,33 @@ namespace FraudCapture_BDD.Features
             argumentsOfScenario.Add("NamePrefix", namePrefix);
             argumentsOfScenario.Add("FirstName", firstName);
             argumentsOfScenario.Add("LastName", lastName);
+            argumentsOfScenario.Add("MiddleName", middleName);
+            argumentsOfScenario.Add("suffix", suffix);
+            argumentsOfScenario.Add("dateOfBirth", dateOfBirth);
+            argumentsOfScenario.Add("gender", gender);
+            argumentsOfScenario.Add("other", other);
+            argumentsOfScenario.Add("subjectId", subjectId);
+            argumentsOfScenario.Add("ssn", ssn);
+            argumentsOfScenario.Add("medicaidNo", medicaidNo);
+            argumentsOfScenario.Add("medicareNo", medicareNo);
+            argumentsOfScenario.Add("OtherId", otherId);
+            argumentsOfScenario.Add("plan", plan);
+            argumentsOfScenario.Add("program", program);
+            argumentsOfScenario.Add("Lob", lob);
+            argumentsOfScenario.Add("Group", group);
+            argumentsOfScenario.Add("Address1", address1);
+            argumentsOfScenario.Add("Address2", address2);
+            argumentsOfScenario.Add("City", city);
+            argumentsOfScenario.Add("State", state);
+            argumentsOfScenario.Add("County", county);
+            argumentsOfScenario.Add("ZipCode", zipCode);
+            argumentsOfScenario.Add("Phone", phone);
+            argumentsOfScenario.Add("SecondaryPhone", secondaryPhone);
+            argumentsOfScenario.Add("Email", email);
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("ReferringParty", referringParty);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_SubjectType_As_Member_And_Adding_Manually", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("01_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Manually", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 4
@@ -159,8 +220,7 @@ await testRunner.AndAsync("I click on the Procced to login button on the welcome
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 11
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 12
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -188,13 +248,59 @@ await testRunner.AndAsync("I Click the Next button in the first page of CreateNe
                             "SubjectTypeSelect",
                             "NamePrefix",
                             "FirstName",
-                            "LastName"});
+                            "LastName",
+                            "MiddleName",
+                            "suffix",
+                            "dateOfBirth",
+                            "gender",
+                            "other",
+                            "subjectId",
+                            "ssn",
+                            "medicaidNo",
+                            "medicareNo",
+                            "OtherId",
+                            "plan",
+                            "program",
+                            "Lob",
+                            "Group",
+                            "Address1",
+                            "Address2",
+                            "City",
+                            "State",
+                            "County",
+                            "ZipCode",
+                            "Phone",
+                            "SecondaryPhone",
+                            "Email"});
                 table3.AddRow(new string[] {
                             string.Format("{0}", subjectType),
                             string.Format("{0}", subjectTypeSelect),
                             string.Format("{0}", namePrefix),
                             string.Format("{0}", firstName),
-                            string.Format("{0}", lastName)});
+                            string.Format("{0}", lastName),
+                            string.Format("{0}", middleName),
+                            string.Format("{0}", suffix),
+                            string.Format("{0}", dateOfBirth),
+                            string.Format("{0}", gender),
+                            string.Format("{0}", other),
+                            string.Format("{0}", subjectId),
+                            string.Format("{0}", ssn),
+                            string.Format("{0}", medicaidNo),
+                            string.Format("{0}", medicareNo),
+                            string.Format("{0}", otherId),
+                            string.Format("{0}", plan),
+                            string.Format("{0}", program),
+                            string.Format("{0}", lob),
+                            string.Format("{0}", group),
+                            string.Format("{0}", address1),
+                            string.Format("{0}", address2),
+                            string.Format("{0}", city),
+                            string.Format("{0}", state),
+                            string.Format("{0}", county),
+                            string.Format("{0}", zipCode),
+                            string.Format("{0}", phone),
+                            string.Format("{0}", secondaryPhone),
+                            string.Format("{0}", email)});
 #line 17
 await testRunner.AndAsync("I enter Subject details in Primary Subject Tab:", ((string)(null)), table3, "And ");
 #line hidden
@@ -233,9 +339,9 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByID")]
+        [global::NUnit.Framework.DescriptionAttribute("02_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByID")]
         [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Member", "Search by ID", "123427", "Test", "Manually add the Referring Party Details", "1", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByID(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string memberId, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
+        public async global::System.Threading.Tasks.Task _02_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByID(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string memberId, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -251,7 +357,7 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("ReferringParty", referringParty);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByID", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("02_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByID", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 38
@@ -281,8 +387,7 @@ await testRunner.AndAsync("I click on the Procced to login button on the welcome
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 45
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 46
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -357,9 +462,9 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByName")]
+        [global::NUnit.Framework.DescriptionAttribute("03_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByName")]
         [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Member", "Search by Name", "FN33480", "LN42933", "Test", "Manually add the Referring Party Details", "2", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByName(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string firstName, string lastName, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
+        public async global::System.Threading.Tasks.Task _03_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByName(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string firstName, string lastName, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -376,10 +481,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("ReferringParty", referringParty);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByName", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("03_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByName", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 73
+#line 74
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -389,27 +494,26 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 74
+#line 75
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table11 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
                 table11.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 75
+#line 76
 await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table11, "When ");
 #line hidden
-#line 78
+#line 79
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 79
+#line 80
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 80
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
 #line 81
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 82
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table12 = new global::Reqnroll.Table(new string[] {
@@ -424,10 +528,10 @@ await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation P
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 82
+#line 83
 await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table12, "When ");
 #line hidden
-#line 85
+#line 86
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table13 = new global::Reqnroll.Table(new string[] {
@@ -440,42 +544,42 @@ await testRunner.AndAsync("I Click the Next button in the first page of CreateNe
                             string.Format("{0}", subjectTypeSelect),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 86
+#line 87
 await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Search By Name:", ((string)(null)), table13, "And ");
 #line hidden
-#line 89
+#line 90
 await testRunner.AndAsync("I click Search button from the Search By Name screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 90
+#line 91
 await testRunner.AndAsync("I giving the name to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 91
+#line 92
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 92
+#line 93
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table14 = new global::Reqnroll.Table(new string[] {
                             "Description"});
                 table14.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 93
+#line 94
 await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table14, "And ");
 #line hidden
-#line 96
+#line 97
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table15 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty"});
                 table15.AddRow(new string[] {
                             string.Format("{0}", referringParty)});
-#line 97
+#line 98
 await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table15, "And ");
 #line hidden
-#line 100
+#line 101
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 101
+#line 102
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -484,9 +588,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByAddress")]
+        [global::NUnit.Framework.DescriptionAttribute("04_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByAddress" +
+            "")]
         [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Member", "Search by Address", "5615 High Point Dr", "Irving", "Test", "Manually add the Referring Party Details", "3", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByAddress(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string addressField, string city, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
+        public async global::System.Threading.Tasks.Task _04_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByAddress(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string addressField, string city, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -503,10 +608,11 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("ReferringParty", referringParty);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByAddress", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("04_Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByAddress" +
+                    "", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 108
+#line 109
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -516,27 +622,26 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 109
+#line 110
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table16 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
                 table16.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 110
+#line 111
 await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table16, "When ");
 #line hidden
-#line 113
+#line 114
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 114
+#line 115
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 115
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
 #line 116
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 117
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table17 = new global::Reqnroll.Table(new string[] {
@@ -551,10 +656,10 @@ await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation P
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 117
+#line 118
 await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table17, "When ");
 #line hidden
-#line 120
+#line 121
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table18 = new global::Reqnroll.Table(new string[] {
@@ -567,42 +672,42 @@ await testRunner.AndAsync("I Click the Next button in the first page of CreateNe
                             string.Format("{0}", subjectTypeSelect),
                             string.Format("{0}", addressField),
                             string.Format("{0}", city)});
-#line 121
+#line 122
 await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Search By Address:", ((string)(null)), table18, "And ");
 #line hidden
-#line 124
+#line 125
 await testRunner.AndAsync("I click Search button from the Search By Address screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 125
+#line 126
 await testRunner.AndAsync("I giving the address to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 126
+#line 127
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 127
+#line 128
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table19 = new global::Reqnroll.Table(new string[] {
                             "Description"});
                 table19.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 128
+#line 129
 await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table19, "And ");
 #line hidden
-#line 131
+#line 132
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table20 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty"});
                 table20.AddRow(new string[] {
                             string.Format("{0}", referringParty)});
-#line 132
+#line 133
 await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table20, "And ");
 #line hidden
-#line 135
+#line 136
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 136
+#line 137
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -611,9 +716,813 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Manually")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Manually add the Subject", "asv", "123427", "FN29303", "LN10061", "Test", "Manually add the Referring Party Details", "4", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Manually(
+        [global::NUnit.Framework.DescriptionAttribute("05_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Memb" +
+            "erID")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Member", "Search by ID", "123427", "Test", "Search by Member ID", "123427", "4", null)]
+        public async global::System.Threading.Tasks.Task _05_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_MemberID(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string memberId, string description, string referringParty, string memberIdRefParty, string @__pickleIndex, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UserEmail", userEmail);
+            argumentsOfScenario.Add("WorkflowType", workflowType);
+            argumentsOfScenario.Add("DetectionMethod", detectionMethod);
+            argumentsOfScenario.Add("SourceType", sourceType);
+            argumentsOfScenario.Add("Reason", reason);
+            argumentsOfScenario.Add("AssignedTo", assignedTo);
+            argumentsOfScenario.Add("SubjectType", subjectType);
+            argumentsOfScenario.Add("SubjectTypeSelect", subjectTypeSelect);
+            argumentsOfScenario.Add("memberId", memberId);
+            argumentsOfScenario.Add("Description", description);
+            argumentsOfScenario.Add("ReferringParty", referringParty);
+            argumentsOfScenario.Add("memberIdRefParty", memberIdRefParty);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("05_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Memb" +
+                    "erID", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 144
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 145
+await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+                global::Reqnroll.Table table21 = new global::Reqnroll.Table(new string[] {
+                            "UserEmail"});
+                table21.AddRow(new string[] {
+                            string.Format("{0}", userEmail)});
+#line 146
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table21, "When ");
+#line hidden
+#line 149
+await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 150
+await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 151
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 152
+await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table22 = new global::Reqnroll.Table(new string[] {
+                            "WorkflowType",
+                            "DetectionMethod",
+                            "SourceType",
+                            "Reason",
+                            "AssignedTo"});
+                table22.AddRow(new string[] {
+                            string.Format("{0}", workflowType),
+                            string.Format("{0}", detectionMethod),
+                            string.Format("{0}", sourceType),
+                            string.Format("{0}", reason),
+                            string.Format("{0}", assignedTo)});
+#line 153
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table22, "When ");
+#line hidden
+#line 156
+await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table23 = new global::Reqnroll.Table(new string[] {
+                            "SubjectType",
+                            "SubjectTypeSelect",
+                            "memberId"});
+                table23.AddRow(new string[] {
+                            string.Format("{0}", subjectType),
+                            string.Format("{0}", subjectTypeSelect),
+                            string.Format("{0}", memberId)});
+#line 157
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Member ID:", ((string)(null)), table23, "And ");
+#line hidden
+#line 160
+await testRunner.AndAsync("I click Search button from the Search By ID screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 161
+await testRunner.AndAsync("I Selecting the respective Member ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 162
+await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 163
+await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table24 = new global::Reqnroll.Table(new string[] {
+                            "Description"});
+                table24.AddRow(new string[] {
+                            string.Format("{0}", description)});
+#line 164
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table24, "And ");
+#line hidden
+#line 167
+await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table25 = new global::Reqnroll.Table(new string[] {
+                            "ReferringParty",
+                            "memberIdRefParty"});
+                table25.AddRow(new string[] {
+                            string.Format("{0}", referringParty),
+                            string.Format("{0}", memberIdRefParty)});
+#line 168
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By Member ID", ((string)(null)), table25, "And ");
+#line hidden
+#line 171
+await testRunner.AndAsync("I click Search button in the Search By ID Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 172
+await testRunner.AndAsync("I Selecting the respective Member ID for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 173
+await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 174
+await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
+                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("06_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_Member_Name")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Member", "Search by ID", "123427", "Test", "Search by Member Name", "FN33480", "5", null)]
+        public async global::System.Threading.Tasks.Task _06_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_Member_Name(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string memberId, string description, string referringParty, string firstname, string @__pickleIndex, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UserEmail", userEmail);
+            argumentsOfScenario.Add("WorkflowType", workflowType);
+            argumentsOfScenario.Add("DetectionMethod", detectionMethod);
+            argumentsOfScenario.Add("SourceType", sourceType);
+            argumentsOfScenario.Add("Reason", reason);
+            argumentsOfScenario.Add("AssignedTo", assignedTo);
+            argumentsOfScenario.Add("SubjectType", subjectType);
+            argumentsOfScenario.Add("SubjectTypeSelect", subjectTypeSelect);
+            argumentsOfScenario.Add("memberId", memberId);
+            argumentsOfScenario.Add("Description", description);
+            argumentsOfScenario.Add("ReferringParty", referringParty);
+            argumentsOfScenario.Add("Firstname", firstname);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("06_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_Member_Name", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 182
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 183
+await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+                global::Reqnroll.Table table26 = new global::Reqnroll.Table(new string[] {
+                            "UserEmail"});
+                table26.AddRow(new string[] {
+                            string.Format("{0}", userEmail)});
+#line 184
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table26, "When ");
+#line hidden
+#line 187
+await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 188
+await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 189
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 190
+await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table27 = new global::Reqnroll.Table(new string[] {
+                            "WorkflowType",
+                            "DetectionMethod",
+                            "SourceType",
+                            "Reason",
+                            "AssignedTo"});
+                table27.AddRow(new string[] {
+                            string.Format("{0}", workflowType),
+                            string.Format("{0}", detectionMethod),
+                            string.Format("{0}", sourceType),
+                            string.Format("{0}", reason),
+                            string.Format("{0}", assignedTo)});
+#line 191
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table27, "When ");
+#line hidden
+#line 194
+await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table28 = new global::Reqnroll.Table(new string[] {
+                            "SubjectType",
+                            "SubjectTypeSelect",
+                            "memberId"});
+                table28.AddRow(new string[] {
+                            string.Format("{0}", subjectType),
+                            string.Format("{0}", subjectTypeSelect),
+                            string.Format("{0}", memberId)});
+#line 195
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Member ID:", ((string)(null)), table28, "And ");
+#line hidden
+#line 198
+await testRunner.AndAsync("I click Search button from the Search By ID screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 199
+await testRunner.AndAsync("I Selecting the respective Member ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 200
+await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 201
+await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table29 = new global::Reqnroll.Table(new string[] {
+                            "Description"});
+                table29.AddRow(new string[] {
+                            string.Format("{0}", description)});
+#line 202
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table29, "And ");
+#line hidden
+#line 205
+await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table30 = new global::Reqnroll.Table(new string[] {
+                            "ReferringParty",
+                            "Firstname"});
+                table30.AddRow(new string[] {
+                            string.Format("{0}", referringParty),
+                            string.Format("{0}", firstname)});
+#line 206
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By Member Name", ((string)(null)), table30, "And ");
+#line hidden
+#line 209
+await testRunner.AndAsync("I click Search button in the Search By Name Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 210
+await testRunner.AndAsync("I Selecting the respective Member Name for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 211
+await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 212
+await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
+                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("07_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+            "iderID")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Member", "Search by ID", "123427", "Test", "Search by Provider ID", "10006", "6", null)]
+        public async global::System.Threading.Tasks.Task _07_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderID(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string memberId, string description, string referringParty, string providerId, string @__pickleIndex, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UserEmail", userEmail);
+            argumentsOfScenario.Add("WorkflowType", workflowType);
+            argumentsOfScenario.Add("DetectionMethod", detectionMethod);
+            argumentsOfScenario.Add("SourceType", sourceType);
+            argumentsOfScenario.Add("Reason", reason);
+            argumentsOfScenario.Add("AssignedTo", assignedTo);
+            argumentsOfScenario.Add("SubjectType", subjectType);
+            argumentsOfScenario.Add("SubjectTypeSelect", subjectTypeSelect);
+            argumentsOfScenario.Add("memberId", memberId);
+            argumentsOfScenario.Add("Description", description);
+            argumentsOfScenario.Add("ReferringParty", referringParty);
+            argumentsOfScenario.Add("providerId", providerId);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("07_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+                    "iderID", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 220
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 221
+await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+                global::Reqnroll.Table table31 = new global::Reqnroll.Table(new string[] {
+                            "UserEmail"});
+                table31.AddRow(new string[] {
+                            string.Format("{0}", userEmail)});
+#line 222
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table31, "When ");
+#line hidden
+#line 225
+await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 226
+await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 227
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 228
+await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table32 = new global::Reqnroll.Table(new string[] {
+                            "WorkflowType",
+                            "DetectionMethod",
+                            "SourceType",
+                            "Reason",
+                            "AssignedTo"});
+                table32.AddRow(new string[] {
+                            string.Format("{0}", workflowType),
+                            string.Format("{0}", detectionMethod),
+                            string.Format("{0}", sourceType),
+                            string.Format("{0}", reason),
+                            string.Format("{0}", assignedTo)});
+#line 229
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table32, "When ");
+#line hidden
+#line 232
+await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table33 = new global::Reqnroll.Table(new string[] {
+                            "SubjectType",
+                            "SubjectTypeSelect",
+                            "memberId"});
+                table33.AddRow(new string[] {
+                            string.Format("{0}", subjectType),
+                            string.Format("{0}", subjectTypeSelect),
+                            string.Format("{0}", memberId)});
+#line 233
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Member ID:", ((string)(null)), table33, "And ");
+#line hidden
+#line 236
+await testRunner.AndAsync("I click Search button from the Search By ID screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 237
+await testRunner.AndAsync("I Selecting the respective Member ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 238
+await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 239
+await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table34 = new global::Reqnroll.Table(new string[] {
+                            "Description"});
+                table34.AddRow(new string[] {
+                            string.Format("{0}", description)});
+#line 240
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table34, "And ");
+#line hidden
+#line 243
+await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table35 = new global::Reqnroll.Table(new string[] {
+                            "ReferringParty",
+                            "providerId"});
+                table35.AddRow(new string[] {
+                            string.Format("{0}", referringParty),
+                            string.Format("{0}", providerId)});
+#line 244
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search by Provider ID:" +
+                        "", ((string)(null)), table35, "And ");
+#line hidden
+#line 247
+await testRunner.AndAsync("I click Search button in the Search By Provider ID Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 248
+await testRunner.AndAsync("I Selecting the respective Provider ID for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 249
+await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 250
+await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
+                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("08_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+            "iderName")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Member", "Search by ID", "123427", "Test", "Search by Provider Name", "PR13163", "7", null)]
+        public async global::System.Threading.Tasks.Task _08_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderName(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string memberId, string description, string referringParty, string providerName, string @__pickleIndex, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UserEmail", userEmail);
+            argumentsOfScenario.Add("WorkflowType", workflowType);
+            argumentsOfScenario.Add("DetectionMethod", detectionMethod);
+            argumentsOfScenario.Add("SourceType", sourceType);
+            argumentsOfScenario.Add("Reason", reason);
+            argumentsOfScenario.Add("AssignedTo", assignedTo);
+            argumentsOfScenario.Add("SubjectType", subjectType);
+            argumentsOfScenario.Add("SubjectTypeSelect", subjectTypeSelect);
+            argumentsOfScenario.Add("memberId", memberId);
+            argumentsOfScenario.Add("Description", description);
+            argumentsOfScenario.Add("ReferringParty", referringParty);
+            argumentsOfScenario.Add("providerName", providerName);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("08_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+                    "iderName", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 258
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 259
+await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+                global::Reqnroll.Table table36 = new global::Reqnroll.Table(new string[] {
+                            "UserEmail"});
+                table36.AddRow(new string[] {
+                            string.Format("{0}", userEmail)});
+#line 260
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table36, "When ");
+#line hidden
+#line 263
+await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 264
+await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 265
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 266
+await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table37 = new global::Reqnroll.Table(new string[] {
+                            "WorkflowType",
+                            "DetectionMethod",
+                            "SourceType",
+                            "Reason",
+                            "AssignedTo"});
+                table37.AddRow(new string[] {
+                            string.Format("{0}", workflowType),
+                            string.Format("{0}", detectionMethod),
+                            string.Format("{0}", sourceType),
+                            string.Format("{0}", reason),
+                            string.Format("{0}", assignedTo)});
+#line 267
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table37, "When ");
+#line hidden
+#line 270
+await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table38 = new global::Reqnroll.Table(new string[] {
+                            "SubjectType",
+                            "SubjectTypeSelect",
+                            "memberId"});
+                table38.AddRow(new string[] {
+                            string.Format("{0}", subjectType),
+                            string.Format("{0}", subjectTypeSelect),
+                            string.Format("{0}", memberId)});
+#line 271
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Member ID:", ((string)(null)), table38, "And ");
+#line hidden
+#line 274
+await testRunner.AndAsync("I click Search button from the Search By ID screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 275
+await testRunner.AndAsync("I Selecting the respective Member ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 276
+await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 277
+await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table39 = new global::Reqnroll.Table(new string[] {
+                            "Description"});
+                table39.AddRow(new string[] {
+                            string.Format("{0}", description)});
+#line 278
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table39, "And ");
+#line hidden
+#line 281
+await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table40 = new global::Reqnroll.Table(new string[] {
+                            "ReferringParty",
+                            "providerName"});
+                table40.AddRow(new string[] {
+                            string.Format("{0}", referringParty),
+                            string.Format("{0}", providerName)});
+#line 282
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search by Provider Nam" +
+                        "e:", ((string)(null)), table40, "And ");
+#line hidden
+#line 285
+await testRunner.AndAsync("I click Search button in the Search By Provider Name Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 286
+await testRunner.AndAsync("I Selecting the respective Provider Name for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 287
+await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 288
+await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
+                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("09_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+            "iderNPI")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Member", "Search by ID", "123427", "Test", "Search by Provider NPI", "9999004811", "8", null)]
+        public async global::System.Threading.Tasks.Task _09_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderNPI(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string memberId, string description, string referringParty, string providerNPI, string @__pickleIndex, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UserEmail", userEmail);
+            argumentsOfScenario.Add("WorkflowType", workflowType);
+            argumentsOfScenario.Add("DetectionMethod", detectionMethod);
+            argumentsOfScenario.Add("SourceType", sourceType);
+            argumentsOfScenario.Add("Reason", reason);
+            argumentsOfScenario.Add("AssignedTo", assignedTo);
+            argumentsOfScenario.Add("SubjectType", subjectType);
+            argumentsOfScenario.Add("SubjectTypeSelect", subjectTypeSelect);
+            argumentsOfScenario.Add("memberId", memberId);
+            argumentsOfScenario.Add("Description", description);
+            argumentsOfScenario.Add("ReferringParty", referringParty);
+            argumentsOfScenario.Add("providerNPI", providerNPI);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("09_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+                    "iderNPI", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 296
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 297
+await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+                global::Reqnroll.Table table41 = new global::Reqnroll.Table(new string[] {
+                            "UserEmail"});
+                table41.AddRow(new string[] {
+                            string.Format("{0}", userEmail)});
+#line 298
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table41, "When ");
+#line hidden
+#line 301
+await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 302
+await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 303
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 304
+await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table42 = new global::Reqnroll.Table(new string[] {
+                            "WorkflowType",
+                            "DetectionMethod",
+                            "SourceType",
+                            "Reason",
+                            "AssignedTo"});
+                table42.AddRow(new string[] {
+                            string.Format("{0}", workflowType),
+                            string.Format("{0}", detectionMethod),
+                            string.Format("{0}", sourceType),
+                            string.Format("{0}", reason),
+                            string.Format("{0}", assignedTo)});
+#line 305
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table42, "When ");
+#line hidden
+#line 308
+await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table43 = new global::Reqnroll.Table(new string[] {
+                            "SubjectType",
+                            "SubjectTypeSelect",
+                            "memberId"});
+                table43.AddRow(new string[] {
+                            string.Format("{0}", subjectType),
+                            string.Format("{0}", subjectTypeSelect),
+                            string.Format("{0}", memberId)});
+#line 309
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Member ID:", ((string)(null)), table43, "And ");
+#line hidden
+#line 312
+await testRunner.AndAsync("I click Search button from the Search By ID screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 313
+await testRunner.AndAsync("I Selecting the respective Member ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 314
+await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 315
+await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table44 = new global::Reqnroll.Table(new string[] {
+                            "Description"});
+                table44.AddRow(new string[] {
+                            string.Format("{0}", description)});
+#line 316
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table44, "And ");
+#line hidden
+#line 319
+await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table45 = new global::Reqnroll.Table(new string[] {
+                            "ReferringParty",
+                            "providerNPI"});
+                table45.AddRow(new string[] {
+                            string.Format("{0}", referringParty),
+                            string.Format("{0}", providerNPI)});
+#line 320
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By NPI:", ((string)(null)), table45, "And ");
+#line hidden
+#line 323
+await testRunner.AndAsync("I click Search button in the Search By Provider NPI Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 324
+await testRunner.AndAsync("I Selecting the respective Provider NPI for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 325
+await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 326
+await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
+                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("10_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+            "iderTIN_OR_EIN")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Member", "Search by ID", "123427", "Test", "Search by Provider TIN/EIN", "66602459", "9", null)]
+        public async global::System.Threading.Tasks.Task _10_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderTIN_OR_EIN(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectType, string subjectTypeSelect, string memberId, string description, string referringParty, string providerTIN, string @__pickleIndex, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UserEmail", userEmail);
+            argumentsOfScenario.Add("WorkflowType", workflowType);
+            argumentsOfScenario.Add("DetectionMethod", detectionMethod);
+            argumentsOfScenario.Add("SourceType", sourceType);
+            argumentsOfScenario.Add("Reason", reason);
+            argumentsOfScenario.Add("AssignedTo", assignedTo);
+            argumentsOfScenario.Add("SubjectType", subjectType);
+            argumentsOfScenario.Add("SubjectTypeSelect", subjectTypeSelect);
+            argumentsOfScenario.Add("memberId", memberId);
+            argumentsOfScenario.Add("Description", description);
+            argumentsOfScenario.Add("ReferringParty", referringParty);
+            argumentsOfScenario.Add("providerTIN", providerTIN);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("10_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+                    "iderTIN_OR_EIN", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 334
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 335
+await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+                global::Reqnroll.Table table46 = new global::Reqnroll.Table(new string[] {
+                            "UserEmail"});
+                table46.AddRow(new string[] {
+                            string.Format("{0}", userEmail)});
+#line 336
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table46, "When ");
+#line hidden
+#line 339
+await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 340
+await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 341
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 342
+await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table47 = new global::Reqnroll.Table(new string[] {
+                            "WorkflowType",
+                            "DetectionMethod",
+                            "SourceType",
+                            "Reason",
+                            "AssignedTo"});
+                table47.AddRow(new string[] {
+                            string.Format("{0}", workflowType),
+                            string.Format("{0}", detectionMethod),
+                            string.Format("{0}", sourceType),
+                            string.Format("{0}", reason),
+                            string.Format("{0}", assignedTo)});
+#line 343
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table47, "When ");
+#line hidden
+#line 346
+await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table48 = new global::Reqnroll.Table(new string[] {
+                            "SubjectType",
+                            "SubjectTypeSelect",
+                            "memberId"});
+                table48.AddRow(new string[] {
+                            string.Format("{0}", subjectType),
+                            string.Format("{0}", subjectTypeSelect),
+                            string.Format("{0}", memberId)});
+#line 347
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Member ID:", ((string)(null)), table48, "And ");
+#line hidden
+#line 350
+await testRunner.AndAsync("I click Search button from the Search By ID screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 351
+await testRunner.AndAsync("I Selecting the respective Member ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 352
+await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 353
+await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table49 = new global::Reqnroll.Table(new string[] {
+                            "Description"});
+                table49.AddRow(new string[] {
+                            string.Format("{0}", description)});
+#line 354
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table49, "And ");
+#line hidden
+#line 357
+await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table50 = new global::Reqnroll.Table(new string[] {
+                            "ReferringParty",
+                            "providerTIN"});
+                table50.AddRow(new string[] {
+                            string.Format("{0}", referringParty),
+                            string.Format("{0}", providerTIN)});
+#line 358
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By TIN:", ((string)(null)), table50, "And ");
+#line hidden
+#line 361
+await testRunner.AndAsync("I click Search button in the Search By Provider TIN Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 362
+await testRunner.AndAsync("I Selecting the respective Provider TIN for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 363
+await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 364
+await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
+                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("11_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Manually")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Manually add the Subject", "asv", "123427", "FN29303", "LN10061", "Test", "Manually add the Referring Party Details", "10", null)]
+        public async global::System.Threading.Tasks.Task _11_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Manually(
                     string userEmail, 
                     string workflowType, 
                     string detectionMethod, 
@@ -648,10 +1557,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("ReferringParty", referringParty);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Manually", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("11_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Manually", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 143
+#line 372
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -661,92 +1570,91 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 145
+#line 373
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table21 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table51 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table21.AddRow(new string[] {
+                table51.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 146
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table21, "When ");
+#line 374
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table51, "When ");
 #line hidden
-#line 149
+#line 377
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 150
+#line 378
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 151
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 379
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 152
+#line 380
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table22 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table52 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table22.AddRow(new string[] {
+                table52.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 153
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table22, "When ");
+#line 381
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table52, "When ");
 #line hidden
-#line 156
+#line 384
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table23 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table53 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "organization",
                             "providerId",
                             "providerfirstName",
                             "providerlastName"});
-                table23.AddRow(new string[] {
+                table53.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", organization),
                             "<providerId>",
                             string.Format("{0}", providerfirstName),
                             string.Format("{0}", providerlastName)});
-#line 157
+#line 385
 await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Manually add the Subj" +
-                        "ect:", ((string)(null)), table23, "And ");
+                        "ect:", ((string)(null)), table53, "And ");
 #line hidden
-#line 160
+#line 388
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 161
+#line 389
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table24 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table54 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table24.AddRow(new string[] {
+                table54.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 162
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table24, "And ");
+#line 390
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table54, "And ");
 #line hidden
-#line 165
+#line 393
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table25 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table55 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty"});
-                table25.AddRow(new string[] {
+                table55.AddRow(new string[] {
                             string.Format("{0}", referringParty)});
-#line 166
-await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table25, "And ");
+#line 394
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table55, "And ");
 #line hidden
-#line 169
+#line 397
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 170
+#line 398
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -755,9 +1663,9 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_SearchByID")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Manually add the Referring Party Details", "5", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_SearchByID(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("12_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_SearchByID")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Manually add the Referring Party Details", "11", null)]
+        public async global::System.Threading.Tasks.Task _12_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_SearchByID(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -773,10 +1681,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("ReferringParty", referringParty);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_SearchByID", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("12_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_SearchByID", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 177
+#line 405
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -786,91 +1694,90 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 178
+#line 406
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table26 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table56 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table26.AddRow(new string[] {
+                table56.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 179
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table26, "When ");
+#line 407
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table56, "When ");
 #line hidden
-#line 182
+#line 410
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 183
+#line 411
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 184
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 412
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 185
+#line 413
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table27 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table57 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table27.AddRow(new string[] {
+                table57.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 186
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table27, "When ");
+#line 414
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table57, "When ");
 #line hidden
-#line 189
+#line 417
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table28 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table58 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "providerId1"});
-                table28.AddRow(new string[] {
+                table58.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", providerId1)});
-#line 190
-await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table28, "And ");
+#line 418
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table58, "And ");
 #line hidden
-#line 193
+#line 421
 await testRunner.AndAsync("I click Search button from the Search By ID screen for Provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 194
+#line 422
 await testRunner.AndAsync("I Selecting the respective provider ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 195
+#line 423
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 196
+#line 424
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table29 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table59 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table29.AddRow(new string[] {
+                table59.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 197
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table29, "And ");
+#line 425
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table59, "And ");
 #line hidden
-#line 200
+#line 428
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table30 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table60 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty"});
-                table30.AddRow(new string[] {
+                table60.AddRow(new string[] {
                             string.Format("{0}", referringParty)});
-#line 201
-await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table30, "And ");
+#line 429
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table60, "And ");
 #line hidden
-#line 204
+#line 432
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 205
+#line 433
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -879,9 +1786,9 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_TIN_OR_EIN")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by TIN/EIN", "66602459", "Test", "Manually add the Referring Party Details", "6", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_TIN_OR_EIN(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string tin, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("13_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_TIN_OR_EIN")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by TIN/EIN", "66602459", "Test", "Manually add the Referring Party Details", "12", null)]
+        public async global::System.Threading.Tasks.Task _13_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_TIN_OR_EIN(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string tin, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -897,10 +1804,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("ReferringParty", referringParty);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_TIN_OR_EIN", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("13_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_TIN_OR_EIN", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 213
+#line 441
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -910,91 +1817,90 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 215
+#line 443
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table31 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table61 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table31.AddRow(new string[] {
+                table61.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 216
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table31, "When ");
+#line 444
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table61, "When ");
 #line hidden
-#line 219
+#line 447
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 220
+#line 448
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 221
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 449
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 222
+#line 450
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table32 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table62 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table32.AddRow(new string[] {
+                table62.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 223
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table32, "When ");
+#line 451
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table62, "When ");
 #line hidden
-#line 226
+#line 454
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table33 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table63 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "tin"});
-                table33.AddRow(new string[] {
+                table63.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", tin)});
-#line 227
-await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By TIN:", ((string)(null)), table33, "And ");
+#line 455
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By TIN:", ((string)(null)), table63, "And ");
 #line hidden
-#line 230
+#line 458
 await testRunner.AndAsync("I click Search button from the Search By ID screen for Provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 231
+#line 459
 await testRunner.AndAsync("I Selecting the respective provider ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 232
+#line 460
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 233
+#line 461
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table34 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table64 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table34.AddRow(new string[] {
+                table64.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 234
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table34, "And ");
+#line 462
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table64, "And ");
 #line hidden
-#line 237
+#line 465
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table35 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table65 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty"});
-                table35.AddRow(new string[] {
+                table65.AddRow(new string[] {
                             string.Format("{0}", referringParty)});
-#line 238
-await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table35, "And ");
+#line 466
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table65, "And ");
 #line hidden
-#line 241
+#line 469
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 242
+#line 470
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -1003,9 +1909,9 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_NPI")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by NPI", "9999004811", "Test", "Manually add the Referring Party Details", "7", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_NPI(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string npi, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("14_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_NPI")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by NPI", "9999004811", "Test", "Manually add the Referring Party Details", "13", null)]
+        public async global::System.Threading.Tasks.Task _14_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_NPI(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string npi, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -1021,10 +1927,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("ReferringParty", referringParty);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_NPI", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("14_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_NPI", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 250
+#line 478
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1034,91 +1940,90 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 251
+#line 479
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table36 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table66 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table36.AddRow(new string[] {
+                table66.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 252
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table36, "When ");
+#line 480
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table66, "When ");
 #line hidden
-#line 255
+#line 483
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 256
+#line 484
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 257
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 485
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 258
+#line 486
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table37 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table67 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table37.AddRow(new string[] {
+                table67.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 259
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table37, "When ");
+#line 487
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table67, "When ");
 #line hidden
-#line 262
+#line 490
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table38 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table68 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "npi"});
-                table38.AddRow(new string[] {
+                table68.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", npi)});
-#line 263
-await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By NPI:", ((string)(null)), table38, "And ");
+#line 491
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By NPI:", ((string)(null)), table68, "And ");
 #line hidden
-#line 266
+#line 494
 await testRunner.AndAsync("I click Search button from the Search By ID screen for Provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 267
+#line 495
 await testRunner.AndAsync("I Selecting the respective provider ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 268
+#line 496
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 269
+#line 497
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table39 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table69 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table39.AddRow(new string[] {
+                table69.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 270
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table39, "And ");
+#line 498
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table69, "And ");
 #line hidden
-#line 273
+#line 501
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table40 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table70 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty"});
-                table40.AddRow(new string[] {
+                table70.AddRow(new string[] {
                             string.Format("{0}", referringParty)});
-#line 274
-await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table40, "And ");
+#line 502
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table70, "And ");
 #line hidden
-#line 277
+#line 505
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 278
+#line 506
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -1127,9 +2032,9 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Name")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by Name", "PR13163", "Test", "Manually add the Referring Party Details", "8", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Name(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerorganization, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("15_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Name")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by Name", "PR13163", "Test", "Manually add the Referring Party Details", "14", null)]
+        public async global::System.Threading.Tasks.Task _15_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Name(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerorganization, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -1145,10 +2050,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("ReferringParty", referringParty);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Name", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("15_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Name", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 286
+#line 514
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1158,91 +2063,90 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 287
+#line 515
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table41 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table71 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table41.AddRow(new string[] {
+                table71.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 288
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table41, "When ");
+#line 516
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table71, "When ");
 #line hidden
-#line 291
+#line 519
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 292
+#line 520
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 293
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 521
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 294
+#line 522
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table42 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table72 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table42.AddRow(new string[] {
+                table72.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 295
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table42, "When ");
+#line 523
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table72, "When ");
 #line hidden
-#line 298
+#line 526
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table43 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table73 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "providerorganization"});
-                table43.AddRow(new string[] {
+                table73.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", providerorganization)});
-#line 299
-await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By Name:", ((string)(null)), table43, "And ");
+#line 527
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By Name:", ((string)(null)), table73, "And ");
 #line hidden
-#line 302
+#line 530
 await testRunner.AndAsync("I click Search button from the Search By ID screen for Provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 303
+#line 531
 await testRunner.AndAsync("I Selecting the respective provider ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 304
+#line 532
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 305
+#line 533
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table44 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table74 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table44.AddRow(new string[] {
+                table74.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 306
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table44, "And ");
+#line 534
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table74, "And ");
 #line hidden
-#line 309
+#line 537
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table45 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table75 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty"});
-                table45.AddRow(new string[] {
+                table75.AddRow(new string[] {
                             string.Format("{0}", referringParty)});
-#line 310
-await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table45, "And ");
+#line 538
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table75, "And ");
 #line hidden
-#line 313
+#line 541
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 314
+#line 542
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -1251,9 +2155,9 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Address")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by Address", "5615 High Point Dr", "Irving", "Test", "Manually add the Referring Party Details", "9", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Address(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string provideraddressField, string providercity, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("16_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Address")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by Address", "5615 High Point Dr", "Irving", "Test", "Manually add the Referring Party Details", "15", null)]
+        public async global::System.Threading.Tasks.Task _16_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Address(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string provideraddressField, string providercity, string description, string referringParty, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -1270,10 +2174,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("ReferringParty", referringParty);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Address", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("16_Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Address", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 322
+#line 550
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1283,93 +2187,92 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 323
+#line 551
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table46 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table76 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table46.AddRow(new string[] {
+                table76.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 324
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table46, "When ");
+#line 552
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table76, "When ");
 #line hidden
-#line 327
+#line 555
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 328
+#line 556
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 329
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 557
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 330
+#line 558
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table47 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table77 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table47.AddRow(new string[] {
+                table77.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 331
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table47, "When ");
+#line 559
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table77, "When ");
 #line hidden
-#line 334
+#line 562
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table48 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table78 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "provideraddressField",
                             "providercity"});
-                table48.AddRow(new string[] {
+                table78.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", provideraddressField),
                             string.Format("{0}", providercity)});
-#line 335
-await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By Address:", ((string)(null)), table48, "And ");
+#line 563
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By Address:", ((string)(null)), table78, "And ");
 #line hidden
-#line 338
+#line 566
 await testRunner.AndAsync("I click Search button from the Search By ID screen for Provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 339
+#line 567
 await testRunner.AndAsync("I Selecting the respective provider ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 340
+#line 568
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 341
+#line 569
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table49 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table79 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table49.AddRow(new string[] {
+                table79.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 342
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table49, "And ");
+#line 570
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table79, "And ");
 #line hidden
-#line 345
+#line 573
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table50 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table80 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty"});
-                table50.AddRow(new string[] {
+                table80.AddRow(new string[] {
                             string.Format("{0}", referringParty)});
-#line 346
-await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table50, "And ");
+#line 574
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab:", ((string)(null)), table80, "And ");
 #line hidden
-#line 349
+#line 577
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 350
+#line 578
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -1378,10 +2281,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_MemberI" +
-            "D")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Member ID", "123427", "10", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_MemberID(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string memberIdRefParty, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("17_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Memb" +
+            "erID")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Member ID", "123427", "16", null)]
+        public async global::System.Threading.Tasks.Task _17_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_MemberID(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string memberIdRefParty, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -1398,11 +2301,11 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("ReferringParty", referringParty);
             argumentsOfScenario.Add("memberIdRefParty", memberIdRefParty);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_MemberI" +
-                    "D", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("17_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Memb" +
+                    "erID", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 358
+#line 586
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1412,99 +2315,98 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 359
+#line 587
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table51 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table81 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table51.AddRow(new string[] {
+                table81.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 360
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table51, "When ");
+#line 588
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table81, "When ");
 #line hidden
-#line 363
+#line 591
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 364
+#line 592
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 365
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 593
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 366
+#line 594
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table52 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table82 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table52.AddRow(new string[] {
+                table82.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 367
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table52, "When ");
+#line 595
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table82, "When ");
 #line hidden
-#line 370
+#line 598
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table53 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table83 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "providerId1"});
-                table53.AddRow(new string[] {
+                table83.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", providerId1)});
-#line 371
-await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table53, "And ");
+#line 599
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table83, "And ");
 #line hidden
-#line 374
+#line 602
 await testRunner.AndAsync("I click Search button from the Search By ID screen for Provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 375
+#line 603
 await testRunner.AndAsync("I Selecting the respective provider ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 376
+#line 604
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 377
+#line 605
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table54 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table84 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table54.AddRow(new string[] {
+                table84.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 378
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table54, "And ");
+#line 606
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table84, "And ");
 #line hidden
-#line 381
+#line 609
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table55 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table85 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty",
                             "memberIdRefParty"});
-                table55.AddRow(new string[] {
+                table85.AddRow(new string[] {
                             string.Format("{0}", referringParty),
                             string.Format("{0}", memberIdRefParty)});
-#line 382
-await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By Member ID", ((string)(null)), table55, "And ");
+#line 610
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By Member ID", ((string)(null)), table85, "And ");
 #line hidden
-#line 385
+#line 613
 await testRunner.AndAsync("I click Search button in the Search By ID Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 386
+#line 614
 await testRunner.AndAsync("I Selecting the respective Member ID for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 387
+#line 615
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 388
+#line 616
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -1513,9 +2415,9 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_Member_Name")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Member Name", "FN33480", "11", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_Member_Name(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string firstname, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("18_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_Member_Name")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Member Name", "FN33480", "17", null)]
+        public async global::System.Threading.Tasks.Task _18_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_Member_Name(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string firstname, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -1532,10 +2434,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("ReferringParty", referringParty);
             argumentsOfScenario.Add("Firstname", firstname);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_Member_Name", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("18_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_Member_Name", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 395
+#line 624
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1545,99 +2447,98 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 397
+#line 626
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table56 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table86 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table56.AddRow(new string[] {
+                table86.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 398
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table56, "When ");
+#line 627
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table86, "When ");
 #line hidden
-#line 401
+#line 630
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 402
+#line 631
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 403
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 632
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 404
+#line 633
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table57 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table87 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table57.AddRow(new string[] {
+                table87.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 405
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table57, "When ");
+#line 634
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table87, "When ");
 #line hidden
-#line 408
+#line 637
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table58 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table88 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "providerId1"});
-                table58.AddRow(new string[] {
+                table88.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", providerId1)});
-#line 409
-await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table58, "And ");
+#line 638
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table88, "And ");
 #line hidden
-#line 412
+#line 641
 await testRunner.AndAsync("I click Search button from the Search By ID screen for Provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 413
+#line 642
 await testRunner.AndAsync("I Selecting the respective provider ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 414
+#line 643
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 415
+#line 644
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table59 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table89 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table59.AddRow(new string[] {
+                table89.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 416
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table59, "And ");
+#line 645
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table89, "And ");
 #line hidden
-#line 419
+#line 648
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table60 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table90 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty",
                             "Firstname"});
-                table60.AddRow(new string[] {
+                table90.AddRow(new string[] {
                             string.Format("{0}", referringParty),
                             string.Format("{0}", firstname)});
-#line 420
-await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By Member Name", ((string)(null)), table60, "And ");
+#line 649
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By Member Name", ((string)(null)), table90, "And ");
 #line hidden
-#line 423
+#line 652
 await testRunner.AndAsync("I click Search button in the Search By Name Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 424
+#line 653
 await testRunner.AndAsync("I Selecting the respective Member Name for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 425
+#line 654
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 426
+#line 655
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -1646,10 +2547,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Provide" +
-            "rID")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Provider ID", "10006", "12", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderID(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string providerId, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("19_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+            "iderID")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Provider ID", "10006", "18", null)]
+        public async global::System.Threading.Tasks.Task _19_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderID(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string providerId, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -1666,11 +2567,11 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("ReferringParty", referringParty);
             argumentsOfScenario.Add("providerId", providerId);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Provide" +
-                    "rID", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("19_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+                    "iderID", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 434
+#line 663
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1680,100 +2581,99 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 435
+#line 664
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table61 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table91 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table61.AddRow(new string[] {
+                table91.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 436
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table61, "When ");
+#line 665
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table91, "When ");
 #line hidden
-#line 439
+#line 668
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 440
+#line 669
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 441
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 670
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 442
+#line 671
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table62 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table92 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table62.AddRow(new string[] {
+                table92.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 443
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table62, "When ");
+#line 672
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table92, "When ");
 #line hidden
-#line 446
+#line 675
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table63 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table93 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "providerId1"});
-                table63.AddRow(new string[] {
+                table93.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", providerId1)});
-#line 447
-await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table63, "And ");
+#line 676
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table93, "And ");
 #line hidden
-#line 450
+#line 679
 await testRunner.AndAsync("I click Search button from the Search By ID screen for Provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 451
+#line 680
 await testRunner.AndAsync("I Selecting the respective provider ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 452
+#line 681
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 453
+#line 682
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table64 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table94 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table64.AddRow(new string[] {
+                table94.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 454
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table64, "And ");
+#line 683
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table94, "And ");
 #line hidden
-#line 457
+#line 686
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table65 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table95 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty",
                             "providerId"});
-                table65.AddRow(new string[] {
+                table95.AddRow(new string[] {
                             string.Format("{0}", referringParty),
                             string.Format("{0}", providerId)});
-#line 458
+#line 687
 await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search by Provider ID:" +
-                        "", ((string)(null)), table65, "And ");
+                        "", ((string)(null)), table95, "And ");
 #line hidden
-#line 461
+#line 690
 await testRunner.AndAsync("I click Search button in the Search By Provider ID Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 462
+#line 691
 await testRunner.AndAsync("I Selecting the respective Provider ID for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 463
+#line 692
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 464
+#line 693
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -1782,10 +2682,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Provide" +
-            "rName")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Provider Name", "PR13163", "13", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderName(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string providerName, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("20_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+            "iderName")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Provider Name", "PR13163", "19", null)]
+        public async global::System.Threading.Tasks.Task _20_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderName(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string providerName, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -1802,11 +2702,11 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("ReferringParty", referringParty);
             argumentsOfScenario.Add("providerName", providerName);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Provide" +
-                    "rName", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("20_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+                    "iderName", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 472
+#line 701
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1816,100 +2716,99 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 473
+#line 702
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table66 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table96 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table66.AddRow(new string[] {
+                table96.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 474
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table66, "When ");
+#line 703
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table96, "When ");
 #line hidden
-#line 477
+#line 706
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 478
+#line 707
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 479
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 708
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 480
+#line 709
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table67 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table97 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table67.AddRow(new string[] {
+                table97.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 481
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table67, "When ");
+#line 710
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table97, "When ");
 #line hidden
-#line 484
+#line 713
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table68 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table98 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "providerId1"});
-                table68.AddRow(new string[] {
+                table98.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", providerId1)});
-#line 485
-await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table68, "And ");
+#line 714
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table98, "And ");
 #line hidden
-#line 488
+#line 717
 await testRunner.AndAsync("I click Search button from the Search By ID screen for Provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 489
+#line 718
 await testRunner.AndAsync("I Selecting the respective provider ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 490
+#line 719
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 491
+#line 720
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table69 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table99 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table69.AddRow(new string[] {
+                table99.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 492
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table69, "And ");
+#line 721
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table99, "And ");
 #line hidden
-#line 495
+#line 724
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table70 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table100 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty",
                             "providerName"});
-                table70.AddRow(new string[] {
+                table100.AddRow(new string[] {
                             string.Format("{0}", referringParty),
                             string.Format("{0}", providerName)});
-#line 496
+#line 725
 await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search by Provider Nam" +
-                        "e:", ((string)(null)), table70, "And ");
+                        "e:", ((string)(null)), table100, "And ");
 #line hidden
-#line 499
+#line 728
 await testRunner.AndAsync("I click Search button in the Search By Provider Name Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 500
+#line 729
 await testRunner.AndAsync("I Selecting the respective Provider Name for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 501
+#line 730
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 502
+#line 731
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -1918,10 +2817,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Provide" +
-            "rNPI")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Provider NPI", "9999004811", "14", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderNPI(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string providerNPI, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("21_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+            "iderNPI")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Provider NPI", "9999004811", "20", null)]
+        public async global::System.Threading.Tasks.Task _21_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderNPI(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string providerNPI, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -1938,11 +2837,11 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("ReferringParty", referringParty);
             argumentsOfScenario.Add("providerNPI", providerNPI);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Provide" +
-                    "rNPI", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("21_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+                    "iderNPI", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 510
+#line 739
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -1952,99 +2851,98 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 511
+#line 740
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table71 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table101 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table71.AddRow(new string[] {
+                table101.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 512
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table71, "When ");
+#line 741
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table101, "When ");
 #line hidden
-#line 515
+#line 744
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 516
+#line 745
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 517
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 746
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 518
+#line 747
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table72 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table102 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table72.AddRow(new string[] {
+                table102.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 519
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table72, "When ");
+#line 748
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table102, "When ");
 #line hidden
-#line 522
+#line 751
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table73 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table103 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "providerId1"});
-                table73.AddRow(new string[] {
+                table103.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", providerId1)});
-#line 523
-await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table73, "And ");
+#line 752
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table103, "And ");
 #line hidden
-#line 526
+#line 755
 await testRunner.AndAsync("I click Search button from the Search By ID screen for Provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 527
+#line 756
 await testRunner.AndAsync("I Selecting the respective provider ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 528
+#line 757
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 529
+#line 758
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table74 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table104 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table74.AddRow(new string[] {
+                table104.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 530
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table74, "And ");
+#line 759
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table104, "And ");
 #line hidden
-#line 533
+#line 762
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table75 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table105 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty",
                             "providerNPI"});
-                table75.AddRow(new string[] {
+                table105.AddRow(new string[] {
                             string.Format("{0}", referringParty),
                             string.Format("{0}", providerNPI)});
-#line 534
-await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By NPI:", ((string)(null)), table75, "And ");
+#line 763
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By NPI:", ((string)(null)), table105, "And ");
 #line hidden
-#line 537
+#line 766
 await testRunner.AndAsync("I click Search button in the Search By Provider NPI Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 538
+#line 767
 await testRunner.AndAsync("I Selecting the respective Provider NPI for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 539
+#line 768
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 540
+#line 769
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -2053,10 +2951,10 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Provide" +
-            "rTIN_OR_EIN")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Provider TIN/EIN", "66602459", "15", null)]
-        public async global::System.Threading.Tasks.Task Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderTIN_OR_EIN(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string providerTIN, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("22_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+            "iderTIN_OR_EIN")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "02192026 Test", "Hotline Referral", "Claims", "Billing Errors", "Chandrasekar, Yamuna", "Provider", "Search by ID", "10006", "Test", "Search by Provider TIN/EIN", "66602459", "21", null)]
+        public async global::System.Threading.Tasks.Task _22_Creating_NewLead_With_Adding_The_Referring_Party_Details_Through_SearchBy_ProviderTIN_OR_EIN(string userEmail, string workflowType, string detectionMethod, string sourceType, string reason, string assignedTo, string subjectTypeprovider, string subjectTypeselectprovider, string providerId1, string description, string referringParty, string providerTIN, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -2073,11 +2971,11 @@ await testRunner.AndAsync("I click Prioritization and click Create New Lead butt
             argumentsOfScenario.Add("ReferringParty", referringParty);
             argumentsOfScenario.Add("providerTIN", providerTIN);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Provide" +
-                    "rTIN_OR_EIN", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("22_Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_Prov" +
+                    "iderTIN_OR_EIN", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 548
+#line 777
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -2087,99 +2985,98 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 549
+#line 778
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table76 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table106 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table76.AddRow(new string[] {
+                table106.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 550
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table76, "When ");
+#line 779
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table106, "When ");
 #line hidden
-#line 553
+#line 782
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 554
+#line 783
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 555
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 784
+await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 556
+#line 785
 await testRunner.AndAsync("I click CreateNewLead button to go to Lead Creation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table77 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table107 = new global::Reqnroll.Table(new string[] {
                             "WorkflowType",
                             "DetectionMethod",
                             "SourceType",
                             "Reason",
                             "AssignedTo"});
-                table77.AddRow(new string[] {
+                table107.AddRow(new string[] {
                             string.Format("{0}", workflowType),
                             string.Format("{0}", detectionMethod),
                             string.Format("{0}", sourceType),
                             string.Format("{0}", reason),
                             string.Format("{0}", assignedTo)});
-#line 557
-await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table77, "When ");
+#line 786
+await testRunner.WhenAsync("I enter initial user details in Lead Creation Tab:", ((string)(null)), table107, "When ");
 #line hidden
-#line 560
+#line 789
 await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table78 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table108 = new global::Reqnroll.Table(new string[] {
                             "subjectTypeprovider",
                             "subjectTypeselectprovider",
                             "providerId1"});
-                table78.AddRow(new string[] {
+                table108.AddRow(new string[] {
                             string.Format("{0}", subjectTypeprovider),
                             string.Format("{0}", subjectTypeselectprovider),
                             string.Format("{0}", providerId1)});
-#line 561
-await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table78, "And ");
+#line 790
+await testRunner.AndAsync("I enter Subject details in Primary Subject Tab for Provider-Search By ID:", ((string)(null)), table108, "And ");
 #line hidden
-#line 564
+#line 793
 await testRunner.AndAsync("I click Search button from the Search By ID screen for Provider", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 565
+#line 794
 await testRunner.AndAsync("I Selecting the respective provider ID to see the Case Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 566
+#line 795
 await testRunner.AndAsync("I click on the Next button on the Primary Subject Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 567
+#line 796
 await testRunner.AndAsync("I click Description tab in the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table79 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table109 = new global::Reqnroll.Table(new string[] {
                             "Description"});
-                table79.AddRow(new string[] {
+                table109.AddRow(new string[] {
                             string.Format("{0}", description)});
-#line 568
-await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table79, "And ");
+#line 797
+await testRunner.AndAsync("I enter Description details in Description tab:", ((string)(null)), table109, "And ");
 #line hidden
-#line 571
+#line 800
 await testRunner.AndAsync("I click on the Next button on the Description Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table80 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table110 = new global::Reqnroll.Table(new string[] {
                             "ReferringParty",
                             "providerTIN"});
-                table80.AddRow(new string[] {
+                table110.AddRow(new string[] {
                             string.Format("{0}", referringParty),
                             string.Format("{0}", providerTIN)});
-#line 572
-await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By TIN:", ((string)(null)), table80, "And ");
+#line 801
+await testRunner.AndAsync("I enter Referring Party details in Referring Party tab for Search By TIN:", ((string)(null)), table110, "And ");
 #line hidden
-#line 575
+#line 804
 await testRunner.AndAsync("I click Search button in the Search By Provider TIN Window", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 576
+#line 805
 await testRunner.AndAsync("I Selecting the respective Provider TIN for the Referring Party Screen", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 577
+#line 806
 await testRunner.AndAsync("I click on the Next button on the Referring Party Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 578
+#line 807
 await testRunner.AndAsync("I click Prioritization and click Create New Lead button in the Prioritization Pag" +
                         "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden

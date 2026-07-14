@@ -244,20 +244,27 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         //State dropdown
         public void SelectStateFromDropdown(string state)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, stateDrpdn, 100);
 
-            var dropdown = new SelectElement(Driver.FindElement(stateDrpdn));
-            dropdown.SelectByText(state);
-            Thread.Sleep(5000);
-            CommonHelpers.WaitForPageToLoad(Driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.ScrollToElement(Driver, stateDrpdn);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(stateDrpdn), state); 
+            //CommonHelpers.WaitForElementVisiblity(Driver, stateDrpdn, 100);
+
+            //var dropdown = new SelectElement(Driver.FindElement(stateDrpdn));
+            //dropdown.SelectByText(state);
+            //Thread.Sleep(5000);
+            //CommonHelpers.WaitForPageToLoad(Driver, 100);
         }
 
         //County dropdown
         public void SelectCountyFromDropdown(string county)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, countyDrpdn, 100);
-            var dropdown = new SelectElement(Driver.FindElement(countyDrpdn));
-            dropdown.SelectByText(county);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.ScrollToElement(Driver, countyDrpdn);
+            CommonHelpers.selectOptionByValue(Driver.FindElement(countyDrpdn), county);
+            //CommonHelpers.WaitForElementVisiblity(Driver, countyDrpdn, 100);
+            //var dropdown = new SelectElement(Driver.FindElement(countyDrpdn));
+            //dropdown.SelectByText(county);
         }
 
         //Zip code field
@@ -309,7 +316,6 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         }
 
-
-
+       
     }
 }

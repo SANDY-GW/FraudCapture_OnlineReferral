@@ -1,32 +1,19 @@
 Feature: FraudCapture_GeneralTests
 
 A short summary of the feature
-#Scenario Outline: User_Can_Login 
-#Given when I open the Fraud Capture application to launch the welcome page
-#When I enter the "<UserEmail>" on the welcome fraude capture page for General Test:
-#| UserEmail |
-#| <UserEmail> |
-#And I click on the Procced to login button on the welcome fraude capture page for General Tests
-#
-#Examples:	
-#	| UserEmail                         |
-#	| yamuna.c@gainwelltechnologies.com |
-
-Scenario Outline: User_Can_Login 
+Scenario Outline: 01_User_Can_Login 
 Given when I open the Fraud Capture application
 When I enter the "<UserEmail>" on the welcome fraude capture page:
 | UserEmail |
 | <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
-And I click on the I Agree button on the fraud capture Page
-And I click on CaseTracking and select the "Leads" option on the fraud capture home page
 
 Examples:	
 	| UserEmail                         |
 	| yamuna.c@gainwelltechnologies.com |
 
 
-Scenario Outline:AMA_Appears 
+Scenario Outline:02_AMA_Appears 
 Given when I open the Fraud Capture application
 When I enter the "<UserEmail>" on the welcome fraude capture page for General Test:
 | UserEmail |
@@ -38,7 +25,7 @@ Examples:
 	| UserEmail                         |
 	| yamuna.c@gainwelltechnologies.com |
 
-Scenario Outline:Default_Landing_Page_Appears 
+Scenario Outline:03_Default_Landing_Page_Appears 
 Given when I open the Fraud Capture application
 When I enter the "<UserEmail>" on the welcome fraude capture page for General Test:
 | UserEmail |
@@ -51,14 +38,14 @@ Examples:
 	| UserEmail                         |
 	| yamuna.c@gainwelltechnologies.com |
 
-Scenario Outline:Can_Switch_Payor
+Scenario Outline:04_Can_Switch_Payor
 Given when I open the Fraud Capture application
 When I enter the "<UserEmail>" on the welcome fraude capture page for General Test:
 | UserEmail |
 | <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page for General Tests
 And I click on the I Agree button on the fraud capture Page for General Tests
-And I can switch the Payor to "<PayorName>" on the fraud capture Page for General Tests
+And I can switch the Payor fraud capture Page for General Tests
 | PayorName |
 | <PayorName> |
 
@@ -66,7 +53,7 @@ Examples:
 	| UserEmail                         | PayorName   |
 	| yamuna.c@gainwelltechnologies.com | Demo Client |
 
-Scenario Outline:Settings_Works
+Scenario Outline:05_Settings_Works
 Given when I open the Fraud Capture application
 When I enter the "<UserEmail>" on the welcome fraude capture page for General Test:
 | UserEmail |
@@ -79,7 +66,7 @@ Examples:
 	| UserEmail                         |
 	| yamuna.c@gainwelltechnologies.com |
 
-Scenario Outline:User_Can_Logout 
+Scenario Outline:06_User_Can_Logout 
 Given when I open the Fraud Capture application
 When I enter the "<UserEmail>" on the welcome fraude capture page for General Test:
 | UserEmail |
@@ -92,7 +79,7 @@ Examples:
 	| UserEmail                         |
 	| yamuna.c@gainwelltechnologies.com |
 
-Scenario Outline:Can_View_Help_Article
+Scenario Outline:07_Can_View_Help_Article
 Given when I open the Fraud Capture application
 When I enter the "<UserEmail>" on the welcome fraude capture page for General Test:
 | UserEmail |
@@ -106,7 +93,7 @@ Examples:
 	| yamuna.c@gainwelltechnologies.com |
 
 
-Scenario Outline:Alerts_And_Exports_Works
+Scenario Outline:08_Alerts_And_Exports_Works
 Given when I open the Fraud Capture application
 When I enter the "<UserEmail>" on the welcome fraude capture page for General Test:
 | UserEmail |

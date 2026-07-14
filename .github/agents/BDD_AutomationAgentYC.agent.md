@@ -1,9 +1,72 @@
-﻿using FC_OnlineReferral.FraudCapture_Pages;
+---
+name: BDD Automation Agent
+description: "Write Automation Scripts for BDD Framework structure long with Feture File,Step Definition,Methods nd Xpath"
+---
+
+# System Instructions
+
+You are an expert in Behavior-Driven Development (BDD). Your task is to help the user write Gherkin feature files (`.feature`), implement step definitions using C# language, and methods creation and xpath management following best practices for the Page Object Model.
+
+# Instructions
+- Always ask the user for the business requirement before generating `.feature` files.
+- When writing step definitions, ensure they correspond 1:1 with the Given/When/Then steps.
+- Suggest hints and refactor to avoid duplicate steps.
+
+#Your responsibility is to convert:
+- Your responsibility is to convert the business requirements into a structured BDD format, ensuring clarity and maintainability of the test scripts.
+- To crete a well-structured BDD framework that includes:
+  - Feature Files
+  - Step Definitions
+  - Methods
+  - Xpath management
+- To Create a maintainable and scalable BDD framework that can be easily extended for future test cases.
+
+## ✅ Mandatory Behavior (Always)
+- Always ask the user for the business requirement before generating `.feature` files.
+**Identify risks**, including:
+   - Duplication
+   - UI coupling
+   - Hard‑coded data
+   - Brittle or index‑based locators
+
+   ### ✅ Example for BDD Feature File
+```gherkin
+Scenario Outline: Creating_NewLead_With_SubjectType_As_Member_And_Adding_Manually
+Given when I open the Fraud Capture application
+When I enter the "<UserEmail>" on the welcome fraude capture page:
+| UserEmail |
+| <UserEmail> |
+And I click on the Procced to login button on the welcome fraude capture page
+And I click on the I Agree button on the fraud capture Page
+And I click on CaseTracking and select the "Leads" option on the fraud capture home page
+And I click CreateNewLead button to go to Lead Creation Page
+When I enter initial user details in Lead Creation Tab: 
+| WorkflowType   | DetectionMethod   | SourceType   | Reason   | AssignedTo   |
+| <WorkflowType> | <DetectionMethod> | <SourceType> | <Reason> | <AssignedTo> |
+And I Click the Next button in the first page of CreateNewLead Page
+And I enter Subject details in Primary Subject Tab: 
+| SubjectType   | SubjectTypeSelect   | NamePrefix   | FirstName   | LastName   |
+| <SubjectType> | <SubjectTypeSelect> | <NamePrefix> | <FirstName> | <LastName> |
+And I click on the Next button on the Primary Subject Page
+And I click Description tab in the Description Page
+And I enter Description details in Description tab:
+| Description |
+| <Description> |
+And I click on the Next button on the Description Page
+And I enter Referring Party details in Referring Party tab:
+| ReferringParty |
+| <ReferringParty> |
+And I click on the Next button on the Referring Party Page
+And I click Prioritization and click Create New Lead button in the Prioritization Page
+
+```
+### ✅ Example for BDD Step Definition in C#
+```csharp
+using FC_OnlineReferral.FraudCapture_Pages;
 using FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab;
 using FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDetails.Lead;
 using FC_OnlineReferral.OnlineReferral_Pages;
 using OpenQA.Selenium;
-using Reqnroll.Formatters.PayloadProcessing.Cucumber;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +94,7 @@ namespace FraudCapture_BDD.StepDefinitions
         public void WhenIEnterTheOnTheWelcomeFraudeCapturePage(string UserEmail, DataTable dataTable)
         {
             var fc = new FC_LoginPage(Driver);
-            var data = dataTable.CreateInstance <FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance <FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             fc.EnterLoginUserEmail(data.UserEmail);
         }
 
@@ -53,31 +116,21 @@ namespace FraudCapture_BDD.StepDefinitions
             homePage.AcceptDisclosure();
         }
 
-        //[When("I click on CaseTracking and select the {string} option on the fraud capture home page")]
-        //public void WhenIClickOnCaseTrackingAndSelectTheOptionOnTheFraudCaptureHomePage(string TabToSelect)
-        //{
-        //    //var navigateBtn = Driver.FindElement(By.XPath("//button[@id='navigationMenuId']"));
-        //    //navigateBtn.Click();
-
-        //    //var caseTrackingLink = Driver.FindElement(By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking']"));
-        //    //caseTrackingLink.Click();
-        //    //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
-
-        //    //var leadsTabBUtton = Driver.FindElement(By.XPath("//a[@id='allLeadsTabId']"));
-        //    //var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + TabToSelect + "')]"));
-        //    //tabToSelect.Click();
-        //    //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
-
-        //}
-        [When("I click on CaseTracking and select the Leads Tab on the fraud capture home page")]
-        public void WhenIClickOnCaseTrackingAndSelectTheLeadsTabOnTheFraudCaptureHomePage()
+        [When("I click on CaseTracking and select the {string} option on the fraud capture home page")]
+        public void WhenIClickOnCaseTrackingAndSelectTheOptionOnTheFraudCaptureHomePage(string TabToSelect)
         {
-            var homePage = new HomePage(Driver);
-            homePage.ClickMainNavigationBtn();
-            homePage.ClickCaseTrackingOption();
-            homePage.ClickSelectLeadsTab();
-        }
+            var navigateBtn = Driver.FindElement(By.XPath("//button[@id='navigationMenuId']"));
+            navigateBtn.Click();
 
+            var caseTrackingLink = Driver.FindElement(By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking']"));
+            caseTrackingLink.Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+
+            var leadsTabBUtton = Driver.FindElement(By.XPath("//a[@id='allLeadsTabId']"));
+            var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + TabToSelect + "')]"));
+            tabToSelect.Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+        }
         [When("I click CreateNewLead button to go to Lead Creation Page")]
         public void WhenIClickCreateNewLeadButtonToGoToLeadCreationPage()
         {
@@ -87,7 +140,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter initial user details in Lead Creation Tab:")]
         public void WhenIEnterInitialUserDetailsInLeadCreationTab(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectLeadWorkflowType(data.WorkflowType);
             fc.SelectDetectionMethod(data.DetectionMethod);
@@ -104,38 +157,13 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Subject details in Primary Subject Tab:")]
         public void WhenIEnterSubjectDetailsInPrimarySubjectTab(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectSubjectType(data.SubjectType);
             fc.SelectPrimarySubject(data.SubjectTypeSelect);
             fc.ClickManuallyAddBySubjectPrefix(data.namePrefix);
             fc.ClickManuallyAddBySubjectFirstName(data.FirstName);
             fc.ClickManuallyAddBySubjectLastName(data.LastName);
-            fc.ClickManuallyAddBySubjectMiddleName(data.MiddleName);
-            fc.ClickManuallyAddBySubjectSuffix(data.suffix);
-            fc.ClickManuallyAddBySubjectDateofBirth(data.dateOfBirth);
-            fc.ClickManuallyAddBySubjectGender(data.gender);
-            fc.ClickManuallyAddBySubjectOther(data.other);
-            fc.ClickManuallyAddBySubjectId(data.subjectId);
-            fc.ClickManuallyAddBySubjectSSN(data.ssn);
-            fc.ClickManuallyAddBySubjectMedicaidNo(data.medicaidNo);
-            fc.ClickManuallyAddBySubjectMedicareNo(data.medicareNo);
-            fc.ClickManuallyAddBySubjectOtherId(data.OtherId);
-            fc.ClickManuallyAddBySubjectplan(data.plan);
-            fc.ClickManuallyAddBySubjectprogram(data.program);
-            fc.ClickManuallyAddBySubjectLob(data.Lob);
-            fc.ClickManuallyAddBySubjectGroup(data.Group);
-            fc.ClickManuallyAddBySubjectAddress1(data.Address1);
-            fc.ClickManuallyAddBySubjectAddress2(data.Address2);
-            fc.ClickManuallyAddBySubjectCity(data.City);
-            fc.SelectManuallyAddBySubjectState(data.State);
-            fc.SelectManuallyAddBySubjectCounty(data.County);
-            fc.ClickManuallyAddBySubjectZipCode(data.ZipCode);
-            fc.ClickManuallyAddByViewSubjectPhone(data.Phone);
-            fc.ClickManuallyAddBySecondaryPhone(data.SecondaryPhone);
-            fc.ClickManuallyAddBySubjectEmail(data.Email);
-
-
         }
         [When("I click on the Next button on the Primary Subject Page Manually add the Subject details")]
         public void WhenIClickOnTheNextButtonOnThePrimarySubjectPageManuallyAddTheSubjectDetails()
@@ -147,20 +175,17 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Subject details in Primary Subject Tab for Member ID:")]
         public void WhenIEnterSubjectDetailsInPrimarySubjectTabForMemberID(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectSubjectType(data.SubjectType);
             fc.SelectPrimarySubject(data.SubjectTypeSelect);
-            fc.ClickMemberSearchByID(data.memberId);
+            fc.ClickMemberSearchByID(data.memberIdRefParty);
             
-
-
-
         }
         [When("I enter Subject details in Primary Subject Tab for Search By Name:")]
         public void WhenIEnterSubjectDetailsInPrimarySubjectTabForSearchByName(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectSubjectType(data.SubjectType);
             fc.SelectPrimarySubject(data.SubjectTypeSelect);
@@ -196,7 +221,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Subject details in Primary Subject Tab for Search By Address:")]
         public void WhenIEnterSubjectDetailsInPrimarySubjectTabForSearchByAddress(DataTable dataTable)
         {
-          var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+          var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectSubjectType(data.SubjectType);
             fc.SelectPrimarySubject(data.SubjectTypeSelect);
@@ -220,19 +245,16 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Subject details in Primary Subject Tab for Provider-Manually add the Subject:")]
         public void WhenIEnterSubjectDetailsInPrimarySubjectTabForProvider_ManuallyAddTheSubject(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectSubjectTypeDropDownProvider(data.subjectTypeprovider);
             fc.SelectPrimarySubjectDropDownProvider(data.subjectTypeselectprovider);
-            //fc.ClickProviderOrganizationName(data.organization);
-            //fc.ClickProviderID(data.providerId);
-            //fc.ClickProviderFirstname(data.providerfirstName);
-            //fc.ClickProviderLastname(data.providerlastName);
+            
         }
         [When("I enter Subject details in Primary Subject Tab for Provider-Search By ID:")]
         public void WhenIEnterSubjectDetailsInPrimarySubjectTabForProvider_SearchByID(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectSubjectTypeDropDownProvider(data.subjectTypeprovider);
             fc.SelectPrimarySubjectDropDownProvider(data.subjectTypeselectprovider);
@@ -254,7 +276,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Subject details in Primary Subject Tab for Provider-Search By TIN:")]
         public void WhenIEnterSubjectDetailsInPrimarySubjectTabForProvider_SearchByTIN(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectSubjectTypeDropDownProvider(data.subjectTypeprovider);
             fc.SelectPrimarySubjectDropDownProvider(data.subjectTypeselectprovider);
@@ -263,7 +285,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Subject details in Primary Subject Tab for Provider-Search By NPI:")]
         public void WhenIEnterSubjectDetailsInPrimarySubjectTabForProvider_SearchByNPI(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectSubjectTypeDropDownProvider(data.subjectTypeprovider);
             fc.SelectPrimarySubjectDropDownProvider(data.subjectTypeselectprovider);
@@ -272,7 +294,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Subject details in Primary Subject Tab for Provider-Search By Name:")]
         public void WhenIEnterSubjectDetailsInPrimarySubjectTabForProvider_SearchByName(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectSubjectTypeDropDownProvider(data.subjectTypeprovider);
             fc.SelectPrimarySubjectDropDownProvider(data.subjectTypeselectprovider);
@@ -281,7 +303,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Subject details in Primary Subject Tab for Provider-Search By Address:")]
         public void WhenIEnterSubjectDetailsInPrimarySubjectTabForProvider_SearchByAddress(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectSubjectTypeDropDownProvider(data.subjectTypeprovider);
             fc.SelectPrimarySubjectDropDownProvider(data.subjectTypeselectprovider);
@@ -307,7 +329,7 @@ namespace FraudCapture_BDD.StepDefinitions
         public void WhenIEnterDescriptionDetailsInDescriptionTab(DataTable dataTable)
         {
 
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.ClickDescriptionField(data.Description);
         }
@@ -324,7 +346,7 @@ namespace FraudCapture_BDD.StepDefinitions
 
         public void WhenIEnterReferringPartyDetailsInReferringPartyTab(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectReferringParty(data.ReferringParty);
            
@@ -333,7 +355,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Referring Party details in Referring Party tab for Search By Member ID")]
         public void WhenIEnterReferringPartyDetailsInReferringPartyTabForSearchByMemberID(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectReferringParty(data.ReferringParty);
             fc.ClickReferringPartySearchByID(data.memberIdRefParty);
@@ -356,7 +378,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Referring Party details in Referring Party tab for Search By Member Name")]
         public void WhenIEnterReferringPartyDetailsInReferringPartyTabForSearchByMemberName(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectReferringParty(data.ReferringParty);
             fc.ClickReferringPartySearchByFirstname(data.Firstname);
@@ -379,7 +401,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Referring Party details in Referring Party tab for Search by Provider ID:")]
         public void WhenIEnterReferringPartyDetailsInReferringPartyTabForSearchByProviderID(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectReferringParty(data.ReferringParty);
             fc.ClickReferringPartySearchByProviderID(data.providerId);
@@ -400,7 +422,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Referring Party details in Referring Party tab for Search by Provider Name:")]
         public void WhenIEnterReferringPartyDetailsInReferringPartyTabForSearchByProviderName(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectReferringParty(data.ReferringParty);
             fc.ClickReferringPartySearchByProviderName(data.providerName);
@@ -421,7 +443,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Referring Party details in Referring Party tab for Search By NPI:")]
         public void WhenIEnterReferringPartyDetailsInReferringPartyTabForSearchByNPI(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectReferringParty(data.ReferringParty);
             fc.ClickReferringPartySearchByProviderNPI(data.providerNPI);
@@ -443,7 +465,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I enter Referring Party details in Referring Party tab for Search By TIN:")]
         public void WhenIEnterReferringPartyDetailsInReferringPartyTabForSearchByTIN(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var fc = new CreateNewLeadPage(Driver);
             fc.SelectReferringParty(data.ReferringParty);
             fc.ClickReferringPartySearchByProviderTIN(data.providerTIN);
@@ -477,19 +499,6 @@ namespace FraudCapture_BDD.StepDefinitions
             var fc = new CreateNewLeadPage(Driver);
             fc.ClickCreateLeadBtninPrioritizationTab();
         }
-
-
-
-       
-
-
-
-
-
-
-
-
-
 
     }
 }

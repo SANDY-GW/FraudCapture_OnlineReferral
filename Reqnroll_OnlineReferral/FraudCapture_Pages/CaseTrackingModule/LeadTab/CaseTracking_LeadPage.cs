@@ -54,6 +54,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
 
         //CreateNewLeadButton
         private readonly By CreateNewLeadBtn = By.XPath("//button[contains(normalize-space(.),'Create New Lead')]");
+        private readonly By LeadId = By.XPath("(//div//span[@class='link-text'])[1]");
+        
         #endregion
         public void ClickLeadTab()
         {
@@ -316,6 +318,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         //Create New Lead Button
         public void ClickCreateNewLeadBtn()
         {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);    
             Driver.FindElement(CreateNewLeadBtn).Click();
         }
     }

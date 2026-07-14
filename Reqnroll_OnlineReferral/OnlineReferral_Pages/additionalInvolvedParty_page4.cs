@@ -42,6 +42,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By OtherIdField = By.XPath("//input[@id='neiOtherId']");
         private readonly By EmailField = By.XPath("//input[@id='neiEmail']");
         private readonly By OtherField = By.XPath("//input[@id='neiOther']");
+
         private readonly By dobField = By.XPath("//input[@name='neiDateOfBirth']");
 
         
@@ -56,6 +57,19 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By DOBFieldprovider = By.XPath("//input[@name='pDateOfBirth']");
         private readonly By SSNFieldprovider = By.XPath("//input[@id='pSsn']");
         private readonly By LicenseNumberFieldprovider = By.XPath("//input[@id='pLicenseNo']");
+
+
+        private readonly By organizationField = By.XPath("//input[@id='pOrgName']");
+        private readonly By namePrefixField = By.XPath("//input[@id='pNamePrefix']");
+        private readonly By firstNameField = By.XPath("//input[@id='pFirstName']");
+        private readonly By middleNameField = By.XPath("//input[@id='pMiddleName']");
+        private readonly By lastNameField = By.XPath("//input[@id='pLastName']");
+        private readonly By nameSuffixField = By.XPath("//input[@id='pNameSuffix']");
+        private readonly By DesignationField = By.XPath("//input[@id='pDesignation']");
+        private readonly By DOBField = By.XPath("//input[@name='pDateOfBirth']");
+        private readonly By SSNField = By.XPath("//input[@id='pSsn']");
+        private readonly By LicenseNumberField = By.XPath("//input[@id='pLicenseNo']");
+
         private readonly By HowDidThisExternalReferringPartyreportThisTextarea = By.XPath("//textarea[@id='externalReferalReport']");
         private readonly By AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea = By.XPath("//textarea[@id='externalReferalAddInfo']");
         private readonly By IDFieldprovider = By.XPath("//input[@id='pProviderID']");
@@ -87,12 +101,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void SelectisThereAnotherInvolvedParty(string isAnotherInvolvedPartyAvailable)
         {
-            
+
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 300);
             CommonHelpers.ScrollToElement(Driver, isThereAnotherInvolvedPartyDropdn);
             Driver.FindElement(isThereAnotherInvolvedPartyDropdn).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(isThereAnotherInvolvedPartyDropdn), isAnotherInvolvedPartyAvailable);
-            
+
         }
         public void FillisThereAnotherInvolvedParty(string isAnotherInvolvedPartyAvailable1)
         {
@@ -100,7 +114,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.ScrollToElement(Driver, isThereAnotherInvolvedPartyDropdn);
             //Driver.FindElement(isThereAnotherInvolvedPartyDropdn).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(isThereAnotherInvolvedPartyDropdn), isAnotherInvolvedPartyAvailable1);
-            
+
         }
 
         public void SelectPleaseSelectTheAdditionalInvolvedPartyType(string additionalInvolvedPartyType)
@@ -163,7 +177,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void FillLastNameField(string LastName1)
         {
             Driver.FindElement(LastNameField).Click();
-            Driver.FindElement(LastNameField).SendKeys(LastName1);  
+            Driver.FindElement(LastNameField).SendKeys(LastName1);
         }
         public void FillLastNameFieldLawer(string LastNameLawer)
         {
@@ -251,7 +265,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForElementVisiblity(Driver, CountyField, 100);
             Driver.FindElement(CountyField).Click();
             CommonHelpers.selectOptionByValue(Driver.FindElement(CountyField), County);
-                
+
         }
         public void SelectCountyFieldLawer(string CountyLawer)
         {
@@ -602,9 +616,11 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
 
 
+
         
        
         
+
 
 
 
@@ -623,7 +639,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
             CommonHelpers.WaitForElementVisiblity(Driver, finishInvolvedPartySelectionAndProceedToNectSectionButton, 100);
             Driver.FindElement(finishInvolvedPartySelectionAndProceedToNectSectionButton).Click();
-            
+
         }
     }
 }

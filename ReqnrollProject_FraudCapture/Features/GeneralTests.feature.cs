@@ -109,18 +109,18 @@ namespace FraudCapture_BDD.Features
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("User_Can_Login")]
+        [global::NUnit.Framework.DescriptionAttribute("01_User_Can_Login")]
         [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "0", null)]
-        public async global::System.Threading.Tasks.Task User_Can_Login(string userEmail, string @__pickleIndex, string[] exampleTags)
+        public async global::System.Threading.Tasks.Task _01_User_Can_Login(string userEmail, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("UserEmail", userEmail);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("User_Can_Login", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("01_User_Can_Login", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 15
+#line 4
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -130,43 +130,36 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 16
+#line 5
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table82 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table112 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table82.AddRow(new string[] {
+                table112.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 17
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table82, "When ");
+#line 6
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table112, "When ");
 #line hidden
-#line 20
+#line 9
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 21
-await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 22
-await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
-                        "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("AMA_Appears")]
+        [global::NUnit.Framework.DescriptionAttribute("02_AMA_Appears")]
         [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "1", null)]
-        public async global::System.Threading.Tasks.Task AMA_Appears(string userEmail, string @__pickleIndex, string[] exampleTags)
+        public async global::System.Threading.Tasks.Task _02_AMA_Appears(string userEmail, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("UserEmail", userEmail);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("AMA_Appears", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("02_AMA_Appears", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 29
+#line 16
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -176,21 +169,21 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 30
+#line 17
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table83 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table113 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table83.AddRow(new string[] {
+                table113.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 31
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table83, "When ");
+#line 18
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table113, "When ");
 #line hidden
-#line 34
+#line 21
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
                         "eral Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 35
+#line 22
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page for General Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
@@ -198,15 +191,63 @@ await testRunner.AndAsync("I click on the I Agree button on the fraud capture Pa
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Default_Landing_Page_Appears")]
+        [global::NUnit.Framework.DescriptionAttribute("03_Default_Landing_Page_Appears")]
         [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "2", null)]
-        public async global::System.Threading.Tasks.Task Default_Landing_Page_Appears(string userEmail, string @__pickleIndex, string[] exampleTags)
+        public async global::System.Threading.Tasks.Task _03_Default_Landing_Page_Appears(string userEmail, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("UserEmail", userEmail);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Default_Landing_Page_Appears", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("03_Default_Landing_Page_Appears", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 28
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 29
+await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+                global::Reqnroll.Table table114 = new global::Reqnroll.Table(new string[] {
+                            "UserEmail"});
+                table114.AddRow(new string[] {
+                            string.Format("{0}", userEmail)});
+#line 30
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table114, "When ");
+#line hidden
+#line 33
+await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
+                        "eral Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 34
+await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page for General Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 35
+await testRunner.AndAsync("I can able to see the Default Landing Page \"Case Tracking\" of Fraud Capture Appli" +
+                        "cation", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::NUnit.Framework.TestAttribute()]
+        [global::NUnit.Framework.DescriptionAttribute("04_Can_Switch_Payor")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "Demo Client", "3", null)]
+        public async global::System.Threading.Tasks.Task _04_Can_Switch_Payor(string userEmail, string payorName, string @__pickleIndex, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("UserEmail", userEmail);
+            argumentsOfScenario.Add("PayorName", payorName);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("04_Can_Switch_Payor", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 41
@@ -222,12 +263,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 42
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table84 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table115 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table84.AddRow(new string[] {
+                table115.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 43
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table84, "When ");
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table115, "When ");
 #line hidden
 #line 46
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
@@ -236,28 +277,30 @@ await testRunner.AndAsync("I click on the Procced to login button on the welcome
 #line 47
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page for General Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
+                global::Reqnroll.Table table116 = new global::Reqnroll.Table(new string[] {
+                            "PayorName"});
+                table116.AddRow(new string[] {
+                            string.Format("{0}", payorName)});
 #line 48
-await testRunner.AndAsync("I can able to see the Default Landing Page \"Case Tracking\" of Fraud Capture Appli" +
-                        "cation", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("I can switch the Payor fraud capture Page for General Tests", ((string)(null)), table116, "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Can_Switch_Payor")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "Demo Client", "3", null)]
-        public async global::System.Threading.Tasks.Task Can_Switch_Payor(string userEmail, string payorName, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("05_Settings_Works")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "4", null)]
+        public async global::System.Threading.Tasks.Task _05_Settings_Works(string userEmail, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("UserEmail", userEmail);
-            argumentsOfScenario.Add("PayorName", payorName);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Can_Switch_Payor", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("05_Settings_Works", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 54
+#line 56
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -267,44 +310,40 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 55
+#line 57
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table85 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table117 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table85.AddRow(new string[] {
+                table117.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 56
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table85, "When ");
+#line 58
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table117, "When ");
 #line hidden
-#line 59
+#line 61
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
                         "eral Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 60
+#line 62
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page for General Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table86 = new global::Reqnroll.Table(new string[] {
-                            "PayorName"});
-                table86.AddRow(new string[] {
-                            string.Format("{0}", payorName)});
-#line 61
-await testRunner.AndAsync(string.Format("I can switch the Payor to \"{0}\" on the fraud capture Page for General Tests", payorName), ((string)(null)), table86, "And ");
+#line 63
+await testRunner.AndAsync("I click Settings options to see the selection of Landing Page Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Settings_Works")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "4", null)]
-        public async global::System.Threading.Tasks.Task Settings_Works(string userEmail, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("06_User_Can_Logout")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "5", null)]
+        public async global::System.Threading.Tasks.Task _06_User_Can_Logout(string userEmail, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("UserEmail", userEmail);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Settings_Works", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("06_User_Can_Logout", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 69
@@ -320,12 +359,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 70
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table87 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table118 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table87.AddRow(new string[] {
+                table118.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 71
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table87, "When ");
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table118, "When ");
 #line hidden
 #line 74
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
@@ -335,22 +374,22 @@ await testRunner.AndAsync("I click on the Procced to login button on the welcome
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page for General Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 76
-await testRunner.AndAsync("I click Settings options to see the selection of Landing Page Details", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("User_Can_Logout")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "5", null)]
-        public async global::System.Threading.Tasks.Task User_Can_Logout(string userEmail, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.DescriptionAttribute("07_Can_View_Help_Article")]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "6", null)]
+        public async global::System.Threading.Tasks.Task _07_Can_View_Help_Article(string userEmail, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("UserEmail", userEmail);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("User_Can_Logout", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("07_Can_View_Help_Article", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 82
@@ -366,12 +405,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 83
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table88 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table119 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table88.AddRow(new string[] {
+                table119.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 84
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table88, "When ");
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table119, "When ");
 #line hidden
 #line 87
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
@@ -381,52 +420,6 @@ await testRunner.AndAsync("I click on the Procced to login button on the welcome
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page for General Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 89
-await testRunner.AndAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-            }
-            await this.ScenarioCleanupAsync();
-        }
-        
-        [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Can_View_Help_Article")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "6", null)]
-        public async global::System.Threading.Tasks.Task Can_View_Help_Article(string userEmail, string @__pickleIndex, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("UserEmail", userEmail);
-            string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Can_View_Help_Article", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
-            string[] tagsOfRule = ((string[])(null));
-            global::Reqnroll.RuleInfo ruleInfo = null;
-#line 95
-this.ScenarioInitialize(scenarioInfo, ruleInfo);
-#line hidden
-            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                await testRunner.SkipScenarioAsync();
-            }
-            else
-            {
-                await this.ScenarioStartAsync();
-#line 96
-await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
-                global::Reqnroll.Table table89 = new global::Reqnroll.Table(new string[] {
-                            "UserEmail"});
-                table89.AddRow(new string[] {
-                            string.Format("{0}", userEmail)});
-#line 97
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table89, "When ");
-#line hidden
-#line 100
-await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
-                        "eral Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 101
-await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page for General Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 102
 await testRunner.AndAsync("I click Help symbol to see the QuickLinks and click on the User Guide to view the" +
                         " help article in new tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -435,18 +428,18 @@ await testRunner.AndAsync("I click Help symbol to see the QuickLinks and click o
         }
         
         [global::NUnit.Framework.TestAttribute()]
-        [global::NUnit.Framework.DescriptionAttribute("Alerts_And_Exports_Works")]
+        [global::NUnit.Framework.DescriptionAttribute("08_Alerts_And_Exports_Works")]
         [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "7", null)]
-        public async global::System.Threading.Tasks.Task Alerts_And_Exports_Works(string userEmail, string @__pickleIndex, string[] exampleTags)
+        public async global::System.Threading.Tasks.Task _08_Alerts_And_Exports_Works(string userEmail, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("UserEmail", userEmail);
             string pickleIndex = @__pickleIndex;
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Alerts_And_Exports_Works", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("08_Alerts_And_Exports_Works", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 109
+#line 96
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -456,24 +449,24 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 110
+#line 97
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table90 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table120 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table90.AddRow(new string[] {
+                table120.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 111
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table90, "When ");
+#line 98
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table120, "When ");
 #line hidden
-#line 114
+#line 101
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
                         "eral Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 115
+#line 102
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page for General Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 116
+#line 103
 await testRunner.AndAsync("I click Help symbol to see the QuickLinks and click on the User Guide to view the" +
                         " help article in new tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
