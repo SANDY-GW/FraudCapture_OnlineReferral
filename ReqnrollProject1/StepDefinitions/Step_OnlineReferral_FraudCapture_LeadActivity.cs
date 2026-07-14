@@ -57,7 +57,7 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
             //fc.ClickLeadTab();
-            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,60);
             fc.ClickLeadcreateDateFilter();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
 
