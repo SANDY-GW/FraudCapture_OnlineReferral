@@ -260,6 +260,20 @@ namespace ReqnrollProject1.StepDefinitions
             fc.ClickExitActivity();
         }
 
+        [When("I click Logout Option to close the Fraud Capture Application")]
+        public void WhenIClickLogoutOptionToCloseTheFraudCaptureApplication()
+        {
+            var fc = new FraudCapture_Core(Driver);
+            fc.FC_Logout();
+        }
+
+        [Then("I should ne navigated to FC Logout confirmation Page")]
+        public void ThenIShouldNeNavigatedToFCLogoutConfirmationPage()
+        {
+            var fc = new FraudCapture_Core(Driver);
+            Assert.That(fc.FCLogout_Confirmation(), "Logout confirmation message is not displayed.");
+        }
+
 
 
 

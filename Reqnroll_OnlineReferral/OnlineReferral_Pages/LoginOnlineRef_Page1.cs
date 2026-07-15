@@ -209,12 +209,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             var logoElement = GetLogo();
 
             int logoCenterX = logoElement.Location.X + (logoElement.Size.Width / 2);
-            Console.WriteLine("Logo Center X: " + logoCenterX);
+            
             int pageCenterX = Driver.Manage().Window.Size.Width / 2;
-            Console.WriteLine("Page Center X: " + pageCenterX);
+            
 
             int logoTopY = logoElement.Location.Y;
-            Console.WriteLine("Logo Top Y: " + logoTopY);
+            
             // Conditions:
             bool isHorizontallyCentered = Math.Abs(pageCenterX - logoCenterX) <= 20;
             bool isAtTop = logoTopY < 150; // threshold for "top"
@@ -272,40 +272,44 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             {
                 foreach (IWebElement elem in allReqFieldsID)
                 {
-
-
-                    if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
+                    
+                    if (!elem.GetAttribute("class").ToString().Contains("ng-valid"))
                     {
-                        IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+                        if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
+                        {
+                            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
 
-                        js.ExecuteScript(
-                            "window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });");
+                            js.ExecuteScript(
+                                "window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });");
 
-                        TestContext.Out.WriteLine(elem.GetAttribute("id") + ": Required field with expected green border color");
+                            TestContext.Out.WriteLine(elem.GetAttribute("id") + ": Required field with expected green border color");
 
+
+                        }
+                        else if (elem.GetCssValue("border-color").Equals("rgb(206, 212, 218)"))//Non required fields with no border color
+                        {
+
+                            // if((elem.GetAttribute("ng-reflect-model") is null or "") )
+                            //Console.WriteLine("first if");
+
+                            if ((elem.GetAttribute("class").Contains("ng-invalid")))
+
+                                Assert.Fail(elem.GetAttribute("ng-reflect-model") + ":Required field with no border color");
+                            // Assert.Warn(elem.GetAttribute("id") + ":Required field with no border color and data populated");
+                            //if ((elem.GetAttribute("ng-reflect-model") is null or "") || (elem.GetAttribute("class").Contains("form-select ng-untouched ng-pristine ng-invalid")))
+
+                            //
+
+                            // bgcolormatch = false;
+                        }
+                        else
+                        {
+                            Assert.Warn("Fail: Required field does not have the expected green border color or non-required field does not have the expected no border color");
+                            bgcolormatch = false;
+                        }
 
                     }
-                    else if (elem.GetCssValue("border-color").Equals("rgb(206, 212, 218)"))//Non required fields with no border color
-                    {
 
-                        // if((elem.GetAttribute("ng-reflect-model") is null or "") )
-                        //Console.WriteLine("first if");
-
-                        if ((elem.GetAttribute("class").Contains("ng-invalid")))
-
-                            Assert.Fail(elem.GetAttribute("ng-reflect-model") + ":Required field with no border color");
-                        // Assert.Warn(elem.GetAttribute("id") + ":Required field with no border color and data populated");
-                        //if ((elem.GetAttribute("ng-reflect-model") is null or "") || (elem.GetAttribute("class").Contains("form-select ng-untouched ng-pristine ng-invalid")))
-
-                        //
-
-                        // bgcolormatch = false;
-                    }
-                    else
-                    {
-                        Assert.Warn("Fail: Required field does not have the expected green border color or non-required field does not have the expected no border color");
-                        bgcolormatch = false;
-                    }
 
                 }
                 return bgcolormatch;

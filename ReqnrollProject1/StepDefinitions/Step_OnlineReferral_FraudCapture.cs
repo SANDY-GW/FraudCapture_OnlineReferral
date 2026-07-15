@@ -13,10 +13,21 @@ namespace ReqnrollProject1.StepDefinitions
         [Given("when I open the fraud capture  application")]
         public void GivenWhenIOpenTheFraudCaptureApplication()
         {
-            var fc = new FraudCapture_Core(Driver);
-            fc.FC_OnlineLogin();
-            CommonHelpers.WaitForPageToLoad(Driver, 100);
-            CommonHelpers.WaitForPageLoading(Driver);
+            try
+            {
+                var fc = new FraudCapture_Core(Driver);
+                fc.FC_OnlineLogin();
+                CommonHelpers.WaitForPageToLoad(Driver, 60);
+                CommonHelpers.WaitForPageLoading(Driver);
+
+            }
+            catch (Exception ex)
+            {
+                Driver.Navigate().RefreshAsync();
+                CommonHelpers.WaitForPageToLoad(Driver, 60);
+                CommonHelpers.WaitForPageLoading(Driver);
+            }
+
         }
 
         [When("I select the payor")]

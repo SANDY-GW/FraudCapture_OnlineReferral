@@ -11,12 +11,14 @@ namespace ReqnrollProject1.StepDefinitions
     {
         private readonly ScenarioContext _scenarioContext;
         private readonly IWebDriver _driver;
+        CommonHelpers _commonHelpers;
         LoginOnlineRef_Page1 PG1;
         OnlineReferral_Referral_Page2 PG2;
         InvolvedParties_Page3 PG3_InvParty;
         WitnessOrExternalRefParty_Page3 PG3Witness;
         InvolvedPartyTypeasMember_page3 PG3_Member;
         InvolvedPartyasNonEnumeratedProvider_Page3 PG3InvPrtyNONEnum;
+        OnlineReferral_Referral_Page_Organization Page_Organization;
         InvolvedPartyTypeInfo_Page4 PG4;
         additionalInvolvedParty_page4 PG4_AddtnlInvldParty;
         New_UI_Questions_Page5 PG5;
@@ -31,10 +33,14 @@ namespace ReqnrollProject1.StepDefinitions
             PG3_InvParty = new InvolvedParties_Page3(Driver);
             PG3Witness = new WitnessOrExternalRefParty_Page3(Driver);
             PG3_Member = new InvolvedPartyTypeasMember_page3(Driver);
+            PG3InvPrtyNONEnum = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
+            Page_Organization = new OnlineReferral_Referral_Page_Organization(Driver);
             PG4 = new InvolvedPartyTypeInfo_Page4(Driver);
             PG4_AddtnlInvldParty = new additionalInvolvedParty_page4(Driver);
             PG5 = new New_UI_Questions_Page5(Driver);
-            
+            _commonHelpers = new CommonHelpers(Driver);
+
+
 
         }
         //PG3 = new InvolvedParties_Page3(Driver);
@@ -44,6 +50,7 @@ namespace ReqnrollProject1.StepDefinitions
         {
             var Ol = new OnlineReferral(_driver);
             Ol.Login();
+            _commonHelpers.WaitForPageToLoad(30);
         }
 
 
@@ -158,7 +165,6 @@ namespace ReqnrollProject1.StepDefinitions
             Assert.That(PG1.IsValidationErrorDisplayed(), Is.True, $"Email validation error message is not displayed for Page '{pageName}'");
 
             string actualErrorMessage = PG1.GetValidationErrorMessage();
-            Console.WriteLine(actualErrorMessage);
             Assert.That(actualErrorMessage, Is.EqualTo(data.Emailvalidationerrormessage),
                 $"Expected error message: '{data.Emailvalidationerrormessage}', but got: '{actualErrorMessage}'");
         
@@ -1312,8 +1318,8 @@ namespace ReqnrollProject1.StepDefinitions
 
         public void UpdateOrganizationName(string newOrganizationName)
         {
-            var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
-            PG3.EnterOrganizationName(newOrganizationName);
+            //var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
+            Page_Organization.EnterOrganizationName(newOrganizationName);
         }
 
         [When("Edit Primary InvovePartyType,Change the data and save the changes")]
@@ -1379,11 +1385,11 @@ namespace ReqnrollProject1.StepDefinitions
         [When("Edit Primary InvovePartyType for non-Enumerated organization,Change the data and save the changes")]
         public void WhenEditPrimaryInvovePartyTypeForNonEnumeratedOrganizationChangeTheDataAndSaveTheChanges(DataTable dataTable)
         {
-            var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
+            //var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.ClickEditButton();
-            PG3.updateOrganizationField(data.updatedOrgname);
-            PG3.clickSaveButton();
+            Page_Organization.ClickEditButton();
+            Page_Organization.updateOrganizationField(data.updatedOrgname);
+            Page_Organization.clickSaveButton();
         }
 
 
@@ -1434,12 +1440,12 @@ namespace ReqnrollProject1.StepDefinitions
         [Then("Validate the updated data of the Primary Subject type as non-enumerated Organization")]
         public void ThenValidateTheUpdatedDataOfThePrimarySubjectTypeAsNonEnumeratedOrganization(DataTable dataTable)
         {
-            var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
+            //var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
-            PG3.clickGoToPreviousSectionButton();
-            Assert.That(PG3.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
-            PG3.ClickProceedToNextSectionButton();
+            Page_Organization.clickGoToPreviousSectionButton();
+            Assert.That(Page_Organization.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
+            Page_Organization.ClickProceedToNextSectionButton();
         }
 
         [Then("Validate the updated data of the Primary Subject type as non-enumerated member")]
@@ -1459,47 +1465,57 @@ namespace ReqnrollProject1.StepDefinitions
         [When("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,other and other ID")]
         public void WhenEnterInvolvedPartyNon_EnumertaedOrganizationOrgnameTinLicenseNumberOtherAndOtherID(DataTable dataTable)
         {
-            var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
+            //var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.EnterOrganizationName(data.orgname);
-            PG3.EnterTIN_OR_EIN(data.TIN);
-            PG3.EnterLicenseNumber(data.licenseNumber);
-            PG3.EnterOther(data.other);
-            PG3.EnterOtherID(data.otherID);
+            Page_Organization.EnterOrganizationName(data.orgname);
+            Page_Organization.EnterTIN_OR_EIN(data.TIN);
+            Page_Organization.EnterLicenseNumber(data.licenseNumber);
+            Page_Organization.EnterOther(data.other);
+            Page_Organization.EnterOtherID(data.otherID);
         }
 
         [When("enter  how witness or external party reported this, any additional info")]
         public void WhenEnterNameprefixFirstnameMiddlenameLastnameDesignationHowWitnessOrExternalPartyReportedThisAnyAdditionalInfo(DataTable dataTable)
         {
-            var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
+            //var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
            
-            PG3.EnterHowDidThisExternalReferringPartyReportThis(data.detectedAs);
-            PG3.EnterAnyAdditionalInformationRegardingTheWitnessOrExternalReferringParty(data.detectedAs);
+            Page_Organization.EnterHowDidThisExternalReferringPartyReportThis(data.detectedAs);
+            Page_Organization.EnterAnyAdditionalInformationRegardingTheWitnessOrExternalReferringParty(data.detectedAs);
         }
 
         [When("enter nameprefix,firstname, middlename, lastname, designation")]
         public void WhenEnterNameprefixFirstnameMiddlenameLastnameDesignation(DataTable dataTable)
         {
-            var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.EnterContactNamePrefix(data.namePrefix);
-            PG3.EnterContactFirstName(data.firstName);
-            PG3.EnterContactMiddleName(data.middleName);
-            PG3.EnterContactLastName(data.lastName);
-            PG3.EnterContactDesignation(data.designation);
+            DateTime dateTime = DateTime.Now;
+            data.firstName = data.firstName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            data.lastName = data.lastName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            if (!_scenarioContext.ContainsKey("UserFN") || !_scenarioContext.ContainsKey("UserLN"))
+            {
+                _scenarioContext["UserFN"] = data.firstName;
+                _scenarioContext["UserLN"] = data.lastName;
+
+            }
+            //var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
+            
+            Page_Organization.EnterContactNamePrefix(data.namePrefix);
+            Page_Organization.EnterContactFirstName(data.firstName);
+            Page_Organization.EnterContactMiddleName(data.middleName);
+            Page_Organization.EnterContactLastName(data.lastName);
+            Page_Organization.EnterContactDesignation(data.designation);
             
         }
         [When("enter how witness or external party reported this, any additional info")]
         public void WhenEnterHowWitnessOrExternalPartyReportedThisAnyAdditionalInfo(DataTable dataTable)
         {
-            var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
+            //var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
             //var PG4 = new InvolvedPartyTypeasMember_page3(Driver);
             if (PG3_Member.getWitnessDropdownValue().Equals("Yes"))
             {
-                PG3.EnterHowDidThisExternalReferringPartyReportThis(data.detectedAs);
-                PG3.EnterAnyAdditionalInformationRegardingTheWitnessOrExternalReferringParty(data.detectedAs);
+                Page_Organization.EnterHowDidThisExternalReferringPartyReportThis(data.detectedAs);
+                Page_Organization.EnterAnyAdditionalInformationRegardingTheWitnessOrExternalReferringParty(data.detectedAs);
             }
         }
            
@@ -1510,17 +1526,17 @@ namespace ReqnrollProject1.StepDefinitions
         [When("street address line one , street address line two, city , state , county , zip code, country, fax and email  for the involved party")]
         public void WhenStreetAddressLineOneStreetAddressLineTwoCityStateCountyZipCodeCountryFaxAndEmailForTheInvolvedParty(DataTable dataTable)
         {
-            var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
+            //var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.EnterAddress1(data.Address1);
-            PG3.EnterAddress2(data.Address2);
-            PG3.EnterCity(data.City);
-            PG3.EnterState(data.State2);
-            PG3.EnterCounty(data.City2);
-            PG3.EnterZipCode(data.Zip);
-            PG3.EnterCountry(data.Country);
-            PG3.EnterFax(data.fax);
-            PG3.EnterEmail(data.EmailAddress);
+            Page_Organization.EnterAddress1(data.Address1);
+            Page_Organization.EnterAddress2(data.Address2);
+            Page_Organization.EnterCity(data.City);
+            Page_Organization.EnterState(data.State2);
+            Page_Organization.EnterCounty(data.City2);
+            Page_Organization.EnterZipCode(data.Zip);
+            Page_Organization.EnterCountry(data.Country);
+            Page_Organization.EnterFax(data.fax);
+            Page_Organization.EnterEmail(data.EmailAddress);
         }
 
 

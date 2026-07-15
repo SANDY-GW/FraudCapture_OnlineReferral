@@ -13,6 +13,36 @@ namespace FC_OnlineReferral
         protected readonly WebDriverWait Wait;
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
 
+        public static void CloseAllOtherTabs(IWebDriver driver)
+        {
+            // 1. Save the handle of the current active tab
+            string currentTabHandle = driver.CurrentWindowHandle;
+
+            // 2. Get all open tab/window handles
+            var allTabHandles = driver.WindowHandles;
+
+            // 3. Loop through each handle
+            foreach (string handle in allTabHandles)
+            {
+                // Check if it is NOT the tab you want to keep
+                if (handle != currentTabHandle)
+                {
+                    // Switch focus to the target tab and close it
+                    driver.SwitchTo().Window(handle);
+                    driver.Close();
+                }
+            }
+
+            // 4. Crucial step: Switch focus back to the remaining open tab
+            driver.SwitchTo().Window(currentTabHandle);
+        }
+
+
+        public void WaitForPageToLoad(int timeoutInSeconds)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(timeoutInSeconds));
+            wait.Until(webDriver => ((IJavaScriptExecutor)webDriver).ExecuteScript("return document.readyState").Equals("complete"));
+        }
         public bool VerifyBGColorOnRequiredFields()
         {
 
@@ -59,6 +89,8 @@ namespace FC_OnlineReferral
             //label[contains(normalize-space(.),'(Required)') and @for]
             return false;
         }
+
+        
 
         public static void WaitForPageToLoad(IWebDriver driver, int timeoutInSeconds)
         {

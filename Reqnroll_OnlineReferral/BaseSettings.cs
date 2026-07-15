@@ -37,9 +37,18 @@ namespace FC_OnlineReferral
 
         public void FC_OnlineLogin(string URL = "https://test.fraudcapture.hms.com/#/")
         {
-            //Driver.Navigate().GoToUrl("https://dev.fraudcapture.hms.com");            
-            Driver.Navigate().GoToUrl(URL);
-            Driver.Manage().Window.Maximize();
+            //Driver.Navigate().GoToUrl("https://dev.fraudcapture.hms.com");
+            try
+            {
+                Driver.Navigate().GoToUrl(URL);
+                Driver.Manage().Window.Maximize();
+            }
+            catch (Exception ex)
+            {
+                Driver.Navigate().Refresh();
+
+            }
+
             //Driver.Navigate().Refresh();
             //Driver.Url = URL;
         }
@@ -85,7 +94,8 @@ namespace FC_OnlineReferral
                     copt.AddArgument("--disable-gpu");
                     copt.AddArgument("--no-sandbox");
                     copt.AddArguments("--start-maximized");
-                    copt.PageLoadStrategy = PageLoadStrategy.Normal;
+                    copt.PageLoadStrategy = PageLoadStrategy.Normal; 
+                    copt.AddUserProfilePreference("profile.default_content_setting_values.local_network_access", 1);
                     return new ChromeDriver(copt);
             }
         }
