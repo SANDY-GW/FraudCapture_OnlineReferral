@@ -1033,8 +1033,16 @@ namespace ReqnrollProject1.StepDefinitions
         public void WhenEnterInvolvedPartyPlanAsProgramAsLOBAsAndGroupAs(DataTable dataTable)
         {
             //var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
-
             var data = dataTable.CreateInstance<OnlineReferralData>();
+            DateTime dateTime = DateTime.Now;
+            data.firstName = data.firstName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            data.lastName = data.lastName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            if (!_scenarioContext.ContainsKey("UserFN") || !_scenarioContext.ContainsKey("UserLN"))
+            {
+                _scenarioContext["UserFN"] = data.firstName;
+                _scenarioContext["UserLN"] = data.lastName;
+
+            }
             PG3_Member.FillPlanField(data.planType);
             PG3_Member.FillProgramField(data.Program);
             PG3_Member.FillLOBField(data.LOB);
@@ -1070,6 +1078,15 @@ namespace ReqnrollProject1.StepDefinitions
         {
             //var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
+            DateTime dateTime = DateTime.Now;
+            data.firstName = data.firstName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            data.lastName = data.lastName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            if (!_scenarioContext.ContainsKey("UserFN") || !_scenarioContext.ContainsKey("UserLN"))
+            {
+                _scenarioContext["UserFN"] = data.firstName;
+                _scenarioContext["UserLN"] = data.lastName;
+
+            }
             PG3InvPrtyNONEnum.EnterOrganization(data.orgname);
             PG3InvPrtyNONEnum.EnterNamePrefix(data.namePrefix);
             PG3InvPrtyNONEnum.EnterFirstName(data.firstName);
@@ -1224,6 +1241,8 @@ namespace ReqnrollProject1.StepDefinitions
         [When("the following fields should be displayed:")]
         public void WhenTheFollowingFieldsShouldBeDisplayed(DataTable dataTable)
         {
+
+
             //var PG3 = new additionalInvolvedParty_page4(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
             PG4_AddtnlInvldParty.FillOrganizationField(data.Organization1);
