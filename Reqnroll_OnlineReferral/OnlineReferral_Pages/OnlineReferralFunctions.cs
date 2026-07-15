@@ -25,6 +25,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             CommonHelpers.WaitForElementVisiblity(Driver, By.XPath("//button[contains(.,'Instructions')]"), 120);
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
+            CommonHelpers.CloseAllOtherTabs(Driver);
         }
 
 

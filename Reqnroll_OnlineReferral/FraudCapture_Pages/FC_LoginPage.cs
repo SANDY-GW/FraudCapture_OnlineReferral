@@ -31,12 +31,14 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             CommonHelpers.WaitForPageToLoad(Driver, 100);
 
             var emailInput = Driver.FindElement(Login_UserEmail);
-
-            emailInput.Click();
-            emailInput.Clear();
-            CommonHelpers.WaitForElementVisiblity(Driver, Login_UserEmail, 100);
-            emailInput = Driver.FindElement(Login_UserEmail);
-            emailInput.SendKeys(userEmail);
+           
+                emailInput.Click();
+                emailInput.Clear();
+                CommonHelpers.WaitForElementVisiblity(Driver, Login_UserEmail, 100);
+                emailInput = Driver.FindElement(Login_UserEmail);
+                emailInput.SendKeys(userEmail);
+                
+            
 
         }
         public void EnterPingUsername(string pingUsername)

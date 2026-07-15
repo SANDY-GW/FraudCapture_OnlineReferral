@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +15,13 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         #region Elements
         private readonly By PayorSelect = By.XPath("//input[@id='firstName']");
-        private readonly By LogOutButton = By.XPath("//input[@id='firstName']");
+        private readonly By UserLogout = By.XPath("//a[contains(@class,'userInfo') and contains(@aria-label,'Option')]");
+        private readonly By LogOutButton = By.XPath("//a[contains(@class,'userInfo') and contains(@id,'Logout')]"); //a[text()='Log Out']
         private readonly By UserSelect = By.XPath("//img[@class='float-start userInfo-img']");
         private readonly By Settings = By.XPath("//a[text()='Settings']");
         private readonly By HelpIcon = By.XPath("//i[@class='fa-regular fa-question-circle fa-2x greenColor helpContentIcon-a-i']");
-        
+        private readonly By LogoutConfirmationMessage = By.XPath("//*[contains(text(),'You have successfully logged out of')]");
+
 
         #endregion
 
@@ -54,6 +58,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             try
             {
+                Driver.FindElement(UserLogout).Click();
                 Driver.FindElement(LogOutButton).Click();
                 CommonHelpers.WaitForPageToLoad(Driver, 10);
             }
@@ -62,6 +67,24 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                 // Handle exceptions if necessary
             }
         }
+
+        public bool FCLogout_Confirmation()
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(60));
+                wait.Until(ExpectedConditions.ElementExists(LogoutConfirmationMessage));
+
+                return Driver.FindElement(LogoutConfirmationMessage).Displayed ? true : false;
+                
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         public string GetActivityName()
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
