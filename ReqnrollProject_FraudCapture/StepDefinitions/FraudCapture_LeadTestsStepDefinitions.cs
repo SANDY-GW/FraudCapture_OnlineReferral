@@ -55,7 +55,22 @@ namespace ReqnrollProject_FraudCapture.StepDefinitions
             fc.ClickSearchButton();
             fc.SelectLead(data.selectleadId);
         }
-        
+
+        [Then("i click Activity Tab and click Begin Editing on the Fraud Capture Page")]
+        public void ThenIClickActivityTabAndClickBeginEditingOnTheFraudCapturePage()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.ClickLeadActivitiesDetailsTab();
+            fc.ClickBeginEditing();
+        }
+
+        [Then("i click Edit button to edit the activity on the Fraud Capture Page")]
+        public void ThenIClickEditButtonToEditTheActivityOnTheFraudCapturePage()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.ClickLeadActivitiesEdit();
+        }
+
         [Then("I click on the Begin Editing on the fraud capture Lead detials Page")]
         public void ThenIClickOnTheBeginEditingOnTheFraudCaptureLeadDetialsPage()
         {

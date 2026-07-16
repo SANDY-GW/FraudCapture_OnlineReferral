@@ -41,14 +41,14 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         //tbody/tr[1]/td[8]/div/small
         private readonly By LeadCreateDateFilter = By.XPath("//*[@id='headerTableLeads']//*[@title='Created Date']");
 
-        private readonly By BeginEditing = By.XPath("//*[@id='leadViewEditEndButton']");
+        private readonly By BeginEditing = By.XPath("//button[contains(text(),'Begin Editing')]");
         private readonly By ExitLead = By.XPath("//*[@id='closeBtn']");
 
 
         private readonly By ActivitiesDetailsTab = By.XPath("//a[@id='activitiesDetailsTabId']");
         private readonly By ActivitiesBeginEditing = By.XPath("//button[@id='leadViewEditEndButton']");
 
-        private readonly By ActivitiesEditButton = By.XPath("(//button[@id='editActivityId'])[3]");
+        private readonly By ActivitiesEditButton = By.XPath("(//button[@id='editActivityId'])[1]");
         private readonly By ActivitiesViewButton = By.XPath("//button[@id='editActivityId']//following-sibling::button[contains(text(),'View')]");
         private readonly By AddBtnNotes = By.XPath("//button[(text()=' Add ')])");
         private readonly By AddNotesTextArea = By.XPath("//trix-editor[@id='notes']");
@@ -187,6 +187,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         }
         public void ClickLeadActivitiesEdit()
         {
+            CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            //CommonHelpers.SwitchtoNewWindow(Driver);
             Driver.FindElement(ActivitiesEditButton).Click();
         }
         public void ClickActivitiesBeginEditing()
@@ -198,6 +201,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             CommonHelpers.WaitForPageLoading(Driver);
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            CommonHelpers.SwitchtoNewWindow(Driver);
             Driver.FindElement(ActivitiesDetailsTab).Click();
         }
         public void ClickLeadActivitiesView()
@@ -260,6 +264,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public void ClickBeginEditing()
         {
             CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
             Driver.FindElement(BeginEditing).Click();
         }
         public void ClickLeadActivitiesAttachment()

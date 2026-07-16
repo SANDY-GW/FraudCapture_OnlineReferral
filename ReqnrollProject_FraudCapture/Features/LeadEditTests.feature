@@ -37,7 +37,7 @@ When I enter the "<UserEmail>" on the welcome fraude capture page:
 | <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
-And I click on CaseTracking and select the Leads Tab on the fraud capture home page
+And I click on CaseTracking and select the "Leads" option on the fraud capture home page
 When I select  the select criteria  as "Lead ID" on the fraud capture Lead table Page
 Then I search the LeadID from Search Criteria on the fraud capture lead page
 | leadID   |
@@ -45,15 +45,13 @@ Then I search the LeadID from Search Criteria on the fraud capture lead page
 And I click Search button to search the LeadID and navigate to the Lead Details page on the fraud capture
 | selectleadId   |
 | <selectleadId> |
-And I click on the Begin Editing on the fraud capture Lead detials Page
-And I click on the Activities and selected lead activity name as "<ActivityName>" on the fraud capture Lead detials Page
-Then I should be navigated to Lead Activities  Page
-
+Then i click Activity Tab and click Begin Editing on the Fraud Capture Page
+And i click Edit button to edit the activity on the Fraud Capture Page
 
 Examples:	
 
-	| UserEmail                         | leadid  | leadID         | selectleadId   | activityName                 |
-	| yamuna.c@gainwelltechnologies.com | Lead ID | DEMO0103201902 | DEMO0103201902 | Background Review of Subject |
+	| UserEmail                         | leadid  | leadID         | selectleadId   |
+	| yamuna.c@gainwelltechnologies.com | Lead ID | DEMO0715202637 | DEMO0715202637 |
 	
 
 Scenario Outline: 06_Can_Add_Note_To_Lead_Activity 

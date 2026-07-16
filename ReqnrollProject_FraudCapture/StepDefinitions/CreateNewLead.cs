@@ -53,22 +53,22 @@ namespace FraudCapture_BDD.StepDefinitions
             homePage.AcceptDisclosure();
         }
 
-        //[When("I click on CaseTracking and select the {string} option on the fraud capture home page")]
-        //public void WhenIClickOnCaseTrackingAndSelectTheOptionOnTheFraudCaptureHomePage(string TabToSelect)
-        //{
-        //    //var navigateBtn = Driver.FindElement(By.XPath("//button[@id='navigationMenuId']"));
-        //    //navigateBtn.Click();
+        [When("I click on CaseTracking and select the {string} option on the fraud capture home page")]
+        public void WhenIClickOnCaseTrackingAndSelectTheOptionOnTheFraudCaptureHomePage(string TabToSelect)
+        {
+            var navigateBtn = Driver.FindElement(By.XPath("//button[@id='navigationMenuId']"));
+            navigateBtn.Click();
 
-        //    //var caseTrackingLink = Driver.FindElement(By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking']"));
-        //    //caseTrackingLink.Click();
-        //    //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+            var caseTrackingLink = Driver.FindElement(By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking']"));
+            caseTrackingLink.Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
 
-        //    //var leadsTabBUtton = Driver.FindElement(By.XPath("//a[@id='allLeadsTabId']"));
-        //    //var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + TabToSelect + "')]"));
-        //    //tabToSelect.Click();
-        //    //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            var leadsTabBUtton = Driver.FindElement(By.XPath("//a[@id='allLeadsTabId']"));
+            var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + TabToSelect + "')]"));
+            tabToSelect.Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
 
-        //}
+        }
         [When("I click on CaseTracking and select the Leads Tab on the fraud capture home page")]
         public void WhenIClickOnCaseTrackingAndSelectTheLeadsTabOnTheFraudCaptureHomePage()
         {
