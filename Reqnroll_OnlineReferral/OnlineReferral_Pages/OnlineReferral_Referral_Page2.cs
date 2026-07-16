@@ -88,6 +88,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             Driver.FindElement(case_Or_Reference_Or_TrackingNumberField).Clear();
             Driver.FindElement(case_Or_Reference_Or_TrackingNumberField).SendKeys(Case_Or_Reference_Or_TrackingNumber);
         }
+        public bool VerifyIfCountyDropdownIsInAlphabeticalOrder()
+        {
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(County_Or_DistrictDropdn));
+        }
 
         public void EnterEstimatedAmount(string EstimatedAmount)
         {

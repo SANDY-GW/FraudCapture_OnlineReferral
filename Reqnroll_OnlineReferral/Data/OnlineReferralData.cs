@@ -23,8 +23,8 @@ namespace FC_OnlineReferral
         public string Address1 { get; set; } = string.Empty;
         public string Address2 { get; set; } = string.Empty;
         public string errormessage { get; set; } = string.Empty;
-
-
+        public string Invalidfax { get; set; } = string.Empty;
+        public string FaxValidationErrorMessage { get; set; } = string.Empty;
         public string EmailAddress { get; set; } = string.Empty;
         public string Invalidemail { get; set; } = string.Empty;
         public string Emailvalidationerrormessage { get; set; } = string.Empty;
