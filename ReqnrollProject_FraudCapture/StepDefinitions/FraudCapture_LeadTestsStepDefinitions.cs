@@ -156,12 +156,11 @@ namespace ReqnrollProject_FraudCapture.StepDefinitions
         [Then("I click Attachment to add the attachment on the fraud capture lead page")]
         public void ThenIClickAttachmentToAddTheAttachmentOnTheFraudCaptureLeadPage(DataTable dataTable)
         {
-            var fc = new FC_CaseTracking_LeadPage(Driver);
-            fc.ClickLeadActivitiesAttachment();
-            fc.ClickActivitiesAddAttachmentBtn();
-            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            var PG5 = new New_UI_Questions_Page5(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            //PG5.ClickUploadFileArrow(data.filePath);
             string filePath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + @"\Attachments\";
-            fc.ClickUploadFileArrow(filePath + data.filePath);
+            PG5.ClickUploadFileArrow(filePath + data.filePath);
         }
 
 

@@ -25,8 +25,8 @@ And I click Attachment to add the attachment on the fraud capture lead page
 
 Examples:	
 
-	| UserEmail                         | leadid  | leadID         | selectleadId   | activityName                 | filepath     |
-	| yamuna.c@gainwelltechnologies.com | Lead ID | DEMO0103201902 | DEMO0103201902 | Background Review of Subject | TestFile.txt |
+	| UserEmail                         | leadid  | leadID         | selectleadId   | filepath     |
+	| yamuna.c@gainwelltechnologies.com | Lead ID | DEMO0715202637 | DEMO0715202637 | TestFile.txt |
 
 
 Scenario Outline: 04_Can_Add_Lead_Activity
@@ -79,5 +79,5 @@ Then I Add the note on the fraud capture lead page and click on the Save button 
 Examples:	
 
 	| UserEmail                         | leadid  | leadID         | selectleadId   | AddNotes |
-	| yamuna.c@gainwelltechnologies.com | Lead ID | DEMO0103201902 | DEMO0103201902 | Test     |
+	| yamuna.c@gainwelltechnologies.com | Lead ID | DEMO0715202637 | DEMO0715202637 | Test     |
 	

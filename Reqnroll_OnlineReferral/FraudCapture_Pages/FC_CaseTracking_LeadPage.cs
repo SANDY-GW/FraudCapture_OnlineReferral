@@ -50,7 +50,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         private readonly By ActivitiesEditButton = By.XPath("(//button[@id='editActivityId'])[1]");
         private readonly By ActivitiesViewButton = By.XPath("//button[@id='editActivityId']//following-sibling::button[contains(text(),'View')]");
-        private readonly By AddBtnNotes = By.XPath("//button[(text()=' Add ')])");
+        private readonly By AddBtnNotes = By.XPath("(//button[contains(text(),' Add ')])[1]");
         private readonly By AddNotesTextArea = By.XPath("//trix-editor[@id='notes']");
         private readonly By AddNotesSaveBtn = By.XPath("( //button[(text()=' Save ' )])[2]");
         private readonly By AddSaveConfirmYesbtn = By.XPath("//button[(text()='Yes' )]");
@@ -189,8 +189,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             CommonHelpers.WaitForPageLoading(Driver);
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
-            //CommonHelpers.SwitchtoNewWindow(Driver);
             Driver.FindElement(ActivitiesEditButton).Click();
+            CommonHelpers.WaitForElementVisiblity(Driver, ActivitiesEditButton, 50);
+            //CommonHelpers.SwitchtoNewWindow(Driver);
         }
         public void ClickActivitiesBeginEditing()
         {
@@ -211,6 +212,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public void ClickAddBtnNotes()
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
+            //CommonHelpers.WaitForPageLoading(Driver);
+            CommonHelpers.WaitForElementVisiblity(Driver, AddBtnNotes, 50);
             Driver.FindElement(AddBtnNotes).Click();
         }
         public void ClickAddNotesTextArea(string AddNotes)
@@ -269,11 +272,17 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         }
         public void ClickLeadActivitiesAttachment()
         {
-            
+
+
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
+            CommonHelpers.WaitForElementVisiblity(Driver, ActivitiesAttachmentTab, 50);
             Driver.FindElement(ActivitiesAttachmentTab).Click();
+            CommonHelpers.WaitForPageLoading(Driver);
         }
         public void ClickActivitiesAddAttachmentBtn()
         {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
+            CommonHelpers.WaitForElementVisiblity(Driver, ActivitiesAddAttachmentBtn, 20);
             Driver.FindElement(ActivitiesAddAttachmentBtn).Click();
         }
         public void ClickActivityAttachmentCloseBtn()

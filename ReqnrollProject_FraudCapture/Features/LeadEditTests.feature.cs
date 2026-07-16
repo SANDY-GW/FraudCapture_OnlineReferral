@@ -110,8 +110,8 @@ namespace FraudCapture_BDD.Features
         
         [global::NUnit.Framework.TestAttribute()]
         [global::NUnit.Framework.DescriptionAttribute("03_Can_Add_Attachment_To_Lead_Activity")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "Lead ID", "DEMO0103201902", "DEMO0103201902", "Background Review of Subject", "TestFile.txt", "0", null)]
-        public async global::System.Threading.Tasks.Task _03_Can_Add_Attachment_To_Lead_Activity(string userEmail, string leadid, string leadID, string selectleadId, string activityName, string filepath, string @__pickleIndex, string[] exampleTags)
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "Lead ID", "DEMO0715202637", "DEMO0715202637", "TestFile.txt", "0", null)]
+        public async global::System.Threading.Tasks.Task _03_Can_Add_Attachment_To_Lead_Activity(string userEmail, string leadid, string leadID, string selectleadId, string filepath, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
@@ -119,7 +119,6 @@ namespace FraudCapture_BDD.Features
             argumentsOfScenario.Add("leadid", leadid);
             argumentsOfScenario.Add("leadID", leadID);
             argumentsOfScenario.Add("selectleadId", selectleadId);
-            argumentsOfScenario.Add("activityName", activityName);
             argumentsOfScenario.Add("filepath", filepath);
             string pickleIndex = @__pickleIndex;
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("03_Can_Add_Attachment_To_Lead_Activity", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
@@ -264,7 +263,7 @@ await testRunner.AndAsync("i click Edit button to edit the activity on the Fraud
         
         [global::NUnit.Framework.TestAttribute()]
         [global::NUnit.Framework.DescriptionAttribute("06_Can_Add_Note_To_Lead_Activity")]
-        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "Lead ID", "DEMO0103201902", "DEMO0103201902", "Test", "2", null)]
+        [global::NUnit.Framework.TestCaseAttribute("yamuna.c@gainwelltechnologies.com", "Lead ID", "DEMO0715202637", "DEMO0715202637", "Test", "2", null)]
         public async global::System.Threading.Tasks.Task _06_Can_Add_Note_To_Lead_Activity(string userEmail, string leadid, string leadID, string selectleadId, string addNotes, string @__pickleIndex, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
