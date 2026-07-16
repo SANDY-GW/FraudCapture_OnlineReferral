@@ -173,20 +173,16 @@ await testRunner.AndAsync("I click Search button to search the LeadID and naviga
                         "on the fraud capture", ((string)(null)), table123, "And ");
 #line hidden
 #line 20
-await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.ThenAsync("i click Activity Tab and click Begin Editing on the Fraud Capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
 #line 21
-await testRunner.AndAsync("I click on the Activities and selected lead activity name as \"<ActivityName>\" on " +
-                        "the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 22
-await testRunner.ThenAsync("I should be navigated to Lead Activities  Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+await testRunner.AndAsync("i click Edit button to edit the activity on the Fraud Capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table124 = new global::Reqnroll.Table(new string[] {
                             "filePath"});
                 table124.AddRow(new string[] {
                             "<filePath>"});
-#line 23
+#line 22
 await testRunner.AndAsync("I click Attachment to add the attachment on the fraud capture lead page", ((string)(null)), table124, "And ");
 #line hidden
             }
@@ -208,7 +204,7 @@ await testRunner.AndAsync("I click Attachment to add the attachment on the fraud
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("04_Can_Add_Lead_Activity", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 33
+#line 32
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -218,48 +214,48 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 34
+#line 33
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table125 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
                 table125.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 35
+#line 34
 await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table125, "When ");
 #line hidden
-#line 38
+#line 37
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 38
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 39
 await testRunner.AndAsync("I click on CaseTracking and select the \"Leads\" option on the fraud capture home p" +
                         "age", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 41
+#line 40
 await testRunner.WhenAsync("I select  the select criteria  as \"Lead ID\" on the fraud capture Lead table Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table126 = new global::Reqnroll.Table(new string[] {
                             "leadID"});
                 table126.AddRow(new string[] {
                             string.Format("{0}", leadID)});
-#line 42
+#line 41
 await testRunner.ThenAsync("I search the LeadID from Search Criteria on the fraud capture lead page", ((string)(null)), table126, "Then ");
 #line hidden
                 global::Reqnroll.Table table127 = new global::Reqnroll.Table(new string[] {
                             "selectleadId"});
                 table127.AddRow(new string[] {
                             string.Format("{0}", selectleadId)});
-#line 45
+#line 44
 await testRunner.AndAsync("I click Search button to search the LeadID and navigate to the Lead Details page " +
                         "on the fraud capture", ((string)(null)), table127, "And ");
 #line hidden
-#line 48
+#line 47
 await testRunner.ThenAsync("i click Activity Tab and click Begin Editing on the Fraud Capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 49
+#line 48
 await testRunner.AndAsync("i click Edit button to edit the activity on the Fraud Capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
@@ -282,7 +278,7 @@ await testRunner.AndAsync("i click Edit button to edit the activity on the Fraud
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("06_Can_Add_Note_To_Lead_Activity", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 57
+#line 56
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -292,55 +288,54 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 58
+#line 57
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table128 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
                 table128.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
-#line 59
+#line 58
 await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table128, "When ");
 #line hidden
-#line 62
+#line 61
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 63
+#line 62
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 64
+#line 63
 await testRunner.AndAsync("I click on CaseTracking and select the Leads Tab on the fraud capture home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 65
+#line 64
 await testRunner.WhenAsync("I select  the select criteria  as \"Lead ID\" on the fraud capture Lead table Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table129 = new global::Reqnroll.Table(new string[] {
                             "leadID"});
                 table129.AddRow(new string[] {
                             string.Format("{0}", leadID)});
-#line 66
+#line 65
 await testRunner.ThenAsync("I search the LeadID from Search Criteria on the fraud capture lead page", ((string)(null)), table129, "Then ");
 #line hidden
                 global::Reqnroll.Table table130 = new global::Reqnroll.Table(new string[] {
                             "selectleadId"});
                 table130.AddRow(new string[] {
                             string.Format("{0}", selectleadId)});
-#line 69
+#line 68
 await testRunner.AndAsync("I click Search button to search the LeadID and navigate to the Lead Details page " +
                         "on the fraud capture", ((string)(null)), table130, "And ");
 #line hidden
-#line 72
-await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 71
+await testRunner.ThenAsync("i click Activity Tab and click Begin Editing on the Fraud Capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 74
-await testRunner.AndAsync("I click on the Activities and selected lead activity name as \"<ActivityName>\" on " +
-                        "the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 72
+await testRunner.AndAsync("i click Edit button to edit the activity on the Fraud Capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table131 = new global::Reqnroll.Table(new string[] {
                             "AddNotes"});
                 table131.AddRow(new string[] {
                             string.Format("{0}", addNotes)});
-#line 75
+#line 73
 await testRunner.ThenAsync("I Add the note on the fraud capture lead page and click on the Save button with C" +
                         "onfirmation", ((string)(null)), table131, "Then ");
 #line hidden

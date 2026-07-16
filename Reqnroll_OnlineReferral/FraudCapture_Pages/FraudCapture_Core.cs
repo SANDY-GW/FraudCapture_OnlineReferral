@@ -13,7 +13,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         #region Elements
         private readonly By PayorSelect = By.XPath("//input[@id='firstName']");
-        private readonly By LogOutButton = By.XPath("//input[@id='firstName']");
+        private readonly By LogOutButton = By.XPath("//a[@id='optionLogout']");
+        private readonly By Useroption = By.XPath("//img[@class='float-start userInfo-img']");
         private readonly By UserSelect = By.XPath("//img[@class='float-start userInfo-img']");
         private readonly By Settings = By.XPath("//a[text()='Settings']");
         private readonly By HelpIcon = By.XPath("//i[@class='fa-regular fa-question-circle fa-2x greenColor helpContentIcon-a-i']");
@@ -41,6 +42,12 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             CommonHelpers.selectOptionByValue(Driver.FindElement(UserSelect), UserSelectoption);
             //Driver.FindElement(PayorSelect).Click();
         }
+        public void SelectUseroption(string UserOption)
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            Driver.FindElement(Useroption).Click();
+            CommonHelpers.selectOptionByValue(Driver.FindElement(Useroption), UserOption);
+        }
         public void FC_Settings()
         {
             Driver.FindElement(Settings).Click();
@@ -54,6 +61,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             try
             {
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
                 Driver.FindElement(LogOutButton).Click();
                 CommonHelpers.WaitForPageToLoad(Driver, 10);
             }

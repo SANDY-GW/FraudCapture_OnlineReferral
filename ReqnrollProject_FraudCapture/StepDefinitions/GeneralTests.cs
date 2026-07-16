@@ -72,12 +72,19 @@ namespace FC_OnlineReferral.FraudCapture_Pages.HeaderComponent
             var fc = new FraudCapture_Core(Driver);
             fc.FC_Settings();
         }
-        [When("I click Logout Option to close the Fraud Capture Application")]
-        public void WhenIClickLogoutOptionToCloseTheFraudCaptureApplication()
+        
+        [When("I click Logout Option to close the Fraud Capture Application successfully")]
+        public void WhenIClickLogoutOptionToCloseTheFraudCaptureApplicationSuccessfully(DataTable dataTable)
         {
             var fc = new FraudCapture_Core(Driver);
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
+            fc.SelectUseroption(data.UserOption);
             fc.FC_Logout();
         }
+
+
+
+
 
         [When("I click Help symbol to see the QuickLinks and click on the User Guide to view the help article in new tab")]
         public void WhenIClickHelpSymbolToSeeTheQuickLinksAndClickOnTheUserGuideToViewTheHelpArticleInNewTab()

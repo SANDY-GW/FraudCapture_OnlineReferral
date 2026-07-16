@@ -17,9 +17,8 @@ Then I search the LeadID from Search Criteria on the fraud capture lead page
 And I click Search button to search the LeadID and navigate to the Lead Details page on the fraud capture
 | selectleadId   |
 | <selectleadId> |
-And I click on the Begin Editing on the fraud capture Lead detials Page
-And I click on the Activities and selected lead activity name as "<ActivityName>" on the fraud capture Lead detials Page
-Then I should be navigated to Lead Activities  Page
+Then i click Activity Tab and click Begin Editing on the Fraud Capture Page
+And i click Edit button to edit the activity on the Fraud Capture Page
 And I click Attachment to add the attachment on the fraud capture lead page
 | filePath   |
 | <filePath> |
@@ -69,9 +68,8 @@ Then I search the LeadID from Search Criteria on the fraud capture lead page
 And I click Search button to search the LeadID and navigate to the Lead Details page on the fraud capture
 | selectleadId   |
 | <selectleadId> |
-And I click on the Begin Editing on the fraud capture Lead detials Page
-#Then I click Activity Tab on the Fraud Capture Page and Edit the Actvity
-And I click on the Activities and selected lead activity name as "<ActivityName>" on the fraud capture Lead detials Page
+Then i click Activity Tab and click Begin Editing on the Fraud Capture Page
+And i click Edit button to edit the activity on the Fraud Capture Page
 Then I Add the note on the fraud capture lead page and click on the Save button with Confirmation
 | AddNotes |
 | <AddNotes> |

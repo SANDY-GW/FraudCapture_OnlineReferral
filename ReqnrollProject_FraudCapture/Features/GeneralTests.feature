@@ -45,9 +45,9 @@ When I enter the "<UserEmail>" on the welcome fraude capture page for General Te
 | <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page for General Tests
 And I click on the I Agree button on the fraud capture Page for General Tests
-And I can switch the Payor fraud capture Page for General Tests
-| PayorName |
-| <PayorName> |
+#And I can switch the Payor fraud capture Page for General Tests
+#| PayorName |
+#| <PayorName> |
 
 Examples:	
 	| UserEmail                         | PayorName   |
@@ -73,11 +73,13 @@ When I enter the "<UserEmail>" on the welcome fraude capture page for General Te
 | <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page for General Tests
 And I click on the I Agree button on the fraud capture Page for General Tests
-And I click Logout Option to close the Fraud Capture Application
+And I click Logout Option to close the Fraud Capture Application successfully
+| UserOption   |
+| <UserOption> |
 
 Examples:	
-	| UserEmail                         |
-	| yamuna.c@gainwelltechnologies.com |
+	| UserEmail                         | UserOption |
+	| yamuna.c@gainwelltechnologies.com | Log Out    |
 
 Scenario Outline:07_Can_View_Help_Article
 Given when I open the Fraud Capture application

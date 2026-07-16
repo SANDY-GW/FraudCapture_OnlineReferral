@@ -10,6 +10,7 @@ namespace FC_OnlineReferral.Data
     public class FraudCaptureLeadData
     {
         public string UserEmail { get; set; } = string.Empty;
+        public string UserOption { get; set; } = string.Empty;
         public string WorkflowType { get; set; } = string.Empty;
         public string DetectionMethod { get; set; } = string.Empty;
         public string SourceType { get; set; } = string.Empty;
