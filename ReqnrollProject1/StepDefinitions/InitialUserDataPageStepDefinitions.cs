@@ -236,6 +236,14 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
+        [Then("verify county Dropdown lists are in alphabetical order for referral page {string} on the page {string}")]
+        public void ThenVerifyCountyDropdownListsAreInAlphabeticalOrderOnTheReferralUserDataPage(string dropdownName, string pageName)
+        {
+            //var PG3 = new InvolvedParties_Page3(Driver);
+
+            Assert.That(PG2.VerifyIfCountyDropdownIsInAlphabeticalOrder(), Is.True, dropdownName + "dropdown list is not in alphabetic order in :" + pageName);
+
+        }
 
 
 
@@ -297,6 +305,13 @@ namespace ReqnrollProject1.StepDefinitions
         {
             //var PG1 = new LoginOnlineRef_Page1(Driver);
             PG1.clickEmailAddressVerificationButton();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
+        }
+        [When("I click on the proceed to next section button on the Initial User Data Page")]
+        public void WhenIClickOnTheProceedToNextSectionButtonOnTheInitialUserDataPage()
+        {
+            //var PG1 = new LoginOnlineRef_Page1(Driver);
+            PG1.clickProceedToNextSectionButton();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
         }
 
@@ -656,12 +671,27 @@ namespace ReqnrollProject1.StepDefinitions
             Assert.That(PG3_InvParty.IsValidationErrorDisplayed(), Is.True, "Email validation error message is not displayed: "+ pageTitle);
 
             string actualErrorMessage = PG3_InvParty.GetValidationErrorMessage();
-            Console.WriteLine(actualErrorMessage);
             Assert.That(actualErrorMessage, Is.EqualTo(data.Emailvalidationerrormessage),
                 $"Expected error message: '{data.Emailvalidationerrormessage}', but got: '{actualErrorMessage}'");
         }
 
-      
+
+        [Then("I enter the invalid  fax  and validate for {string}")]
+        public void ThenEnterTheInvalidFaxAndValidateForInvolvedpartyAsProvider(string pageTitle, DataTable dataTable)
+        {
+            //var PG3 = new InvolvedParties_Page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            CommonHelpers.ScrollDown(Driver);
+            CommonHelpers.WaitForPageLoading(Driver);
+            PG3_InvParty.FillFaxField(data.Invalidfax);
+            Assert.That(PG3_InvParty.IsValidationErrorDisplayed(), Is.True, "Email validation error message is not displayed: " + pageTitle);
+
+            string actualErrorMessage = PG3_InvParty.GetValidationErrorMessage();
+            Assert.That(actualErrorMessage, Is.EqualTo(data.FaxValidationErrorMessage),
+                $"Expected error message: '{data.FaxValidationErrorMessage}', but got: '{actualErrorMessage}'");
+        }
+
+
 
         [When("I enter the valid email id for involvedparty as provider")]
         public void WhenEnterThevalidEmailId(DataTable dataTable)

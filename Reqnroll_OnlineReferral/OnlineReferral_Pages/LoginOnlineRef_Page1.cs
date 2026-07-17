@@ -34,7 +34,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By mailingAddresszipCodeField = By.XPath("//input[@id='zip']");
         private readonly By emailverification = By.XPath("//div/h4[text()='Email Verification']");
         private readonly By goToPreviousSectionButton = By.XPath("//button[text()='Go to Previous Section']");
-        private readonly By proceed_To_Next_SectionButton = By.XPath("//button[text()=' Proceed to Next Section ']");
+        private readonly By proceed_To_Next_SectionButton = By.XPath("//button[contains(.,'Proceed to Next Section')]");
         private readonly By logo = By.XPath("*//img[@title='Header Image']");
 
 
@@ -168,6 +168,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void clickEmailAddressVerificationButton()
         {
             Driver.FindElement(emailVerificationBtn).Click();
+        }
+
+        public void clickProceedToNextSectionButton()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 10);
+            Driver.FindElement(proceed_To_Next_SectionButton).Click();
         }
 
         public void waitForEmailNotification()
