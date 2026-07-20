@@ -125,7 +125,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void SelectState_Or_Territory(string State_Or_Territory)
 
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, state_Or_TerritoryDropdowm, 10);
+            CommonHelpers.WaitForElementVisiblity(Driver, state_Or_TerritoryDropdowm, 1000);
             CommonHelpers.selectOptionByValue(Driver.FindElement(state_Or_TerritoryDropdowm), State_Or_Territory);
         }
         public void SelectCounty_Or_District(string County_Or_District)

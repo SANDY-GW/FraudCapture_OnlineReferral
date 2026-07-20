@@ -334,9 +334,10 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
             js.ExecuteScript("window.scrollBy(0, -500);");
 
-            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 50);
+            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 100);
 
             Driver.FindElement(continue_with_Involved_Party_Selection_Button).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
 
         }

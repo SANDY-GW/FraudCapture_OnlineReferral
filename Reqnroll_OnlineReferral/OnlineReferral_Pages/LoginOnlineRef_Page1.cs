@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace FC_OnlineReferral.OnlineReferral_Pages
 {
@@ -36,6 +37,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By goToPreviousSectionButton = By.XPath("//button[text()='Go to Previous Section']");
         private readonly By proceed_To_Next_SectionButton = By.XPath("//button[contains(.,'Proceed to Next Section')]");
         private readonly By logo = By.XPath("*//img[@title='Header Image']");
+        private readonly By instructionsButton = By.XPath("//button[contains(.,'Instructions')]");
 
 
         #endregion
@@ -184,7 +186,39 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         }
 
+        //instructions button
 
+        public void clickInstructionsButton()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, instructionsButton, 30);
+            Driver.FindElement(instructionsButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,30);
+        }
+
+        public string validateInstructionsModalData()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, By.XPath("//div[@class='modal-content']"), 10);
+         var modaltext= Driver.FindElement(By.XPath("//div[@class='modal-content']")).Text;
+            Console.WriteLine(modaltext);
+            CommonHelpers.ScrollDown(Driver);
+
+            IWebElement downloadButton = Driver.FindElement(
+                By.XPath("//button[contains(text(),'Download')]"));
+
+            ((IJavaScriptExecutor)Driver).ExecuteScript(
+                "arguments[0].scrollIntoView({block:'center'});",
+                downloadButton);
+
+
+            
+            return modaltext;
+        }
+        public void clickcloseInstructionsModalButton()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, By.XPath("//button[contains(text(),'Close')]"), 10);
+            Driver.FindElement(By.XPath("//button[contains(text(),'Close')]")).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+        }
 
 
         // Locator (adjust if needed)
