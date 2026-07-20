@@ -1,11 +1,14 @@
-﻿Feature: New UI Changes for Online Referral
+Feature: New UI Changes for Online Referral
 
 Online referral End to End Scenarios
 
 
-	
-Scenario Outline: 01_ [Online Referral End To End Scenario with Primary Subject Type as Provider and additional involved party selected as "No" along with Validation of all the required fields ]
+	###### Primary Subject as "Provider" 
+	### No additional subject = No 
+	### Validation = Yes Types (with Validation of all the required fields ) ######
 
+Scenario Outline: 01_ [Online Referral End To End Scenario with Primary Subject Type as Provider and additional involved party selected as "No" along with Validation of all the required fields ]
+	
   #Submitting Party Information page:
 	Given when I open the Online referral application
 	Then Validate header appears aligned and not distorted on the "<Sub Party Info>"
@@ -145,6 +148,7 @@ Scenario Outline: 01_ [Online Referral End To End Scenario with Primary Subject 
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -164,7 +168,16 @@ Scenario Outline: 01_ [Online Referral End To End Scenario with Primary Subject 
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
+		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -346,7 +359,90 @@ Scenario Outline: 02_ [Online Referral End To End Scenario with Primary Subject 
 		| TestFile   |
 		| <TestFile> |
 	Then click on proceed to next session button
+	Then validate Review and Submit Referral page displays all entered data
+		| Field                                      | Expected value                             |
+		| Submitting Party First Name                | <UserFirstName>                            |
+		| Submitting Party Last Name                 | <UserLastName>                             |
+		| Submitting Party Email                     | <Email address>                            |
+		| Submitting Party Phone Number              | <Phone number>                             |
+		| Organization or Agency Name                | <Org name>                                 |
+		| Submitting Party Title                     | <title>                                    |
+		| Submitting Party Street Address 1          | <Address1>                                 |
+		| Submitting Party Street Address 2          | <Address2>                                 |
+		| Submitting Party City                      | <City>                                     |
+		| Submitting Party State                     | <State>                                    |
+		| Submitting Party Zip Code                  | <Zipcode>                                  |
+		| Referral Type                              | <referralType>                             |
+		| Primary Involved Party Type                | <involvedPartyType>                        |
+		| Case or Reference Number                   | <caseOrReferenceNumber>                    |
+		| How Referral Was Detected                  | <detectedAs>                               |
+		| Referral Summary                          | <summary>                                  |
+		| Estimated Amount                          | <amount>                                   |
+		| Original Detection Date                   | <detectionDate>                            |
+		| Incident Start Date                       | <incidentValidStartDate>                   |
+		| Incident End Date                         | <incidentValidEndDate>                     |
+		| Incident State                            | <State2>                                   |
+		| Incident County                           | <City2>                                    |
+		| Primary Party External Referring Party    | <witnessDropdown>                          |
+		| Primary Party Organization                | <orgname>                                  |
+		| Primary Party Name Prefix                 | <name prefix>                              |
+		| Primary Party First Name                  | <first name>                               |
+		| Primary Party Middle Name                 | <middle name>                              |
+		| Primary Party Last Name                   | <last name>                                |
+		| Primary Party Name Suffix                 | <name suffix>                              |
+		| Primary Party Designation                 | <designation>                              |
+		| Primary Party Date of Birth               | <DOB>                                      |
+		| Primary Party SSN                         | <SSN>                                      |
+		| Primary Party License Number              | <licenseNumber>                            |
+		| Primary Party ID                          | <ID Test>                                  |
+		| Primary Party NPI                         | <NPI>                                      |
+		| Primary Party TIN                         | <TIN>                                      |
+		| Primary Party Medicaid ID                 | <medicaid ID>                              |
+		| Primary Party Medicare ID                 | <Medicare ID>                              |
+		| Primary Party Other ID                    | <otherID>                                  |
+		| Primary Party Provider Type               | <provider type>                            |
+		| Primary Party Provider Specialty          | <provider specialty>                       |
+		| Primary Party Taxonomy                    | <Taxonomy>                                 |
+		| Primary Party Other                       | <other>                                    |
+		| Primary Party Street Address 1            | <Address1>                                 |
+		| Primary Party Street Address 2            | <Address2>                                 |
+		| Primary Party City                        | <City>                                     |
+		| Primary Party State                       | <State2>                                   |
+		| Primary Party County                      | <City2>                                    |
+		| Primary Party Zip Code                    | <Zipcode>                                  |
+		| Primary Party Country                     | <country>                                  |
+		| Primary Party Phone                       | <Phone number>                             |
+		| Primary Party Fax                         | <fax>                                      |
+		| Primary Party Email                       | <Email address>                            |
+		| Additional Party Type                     | <additionalInvolvedPartyType>              |
+		| Additional Party External Referring Party | <isAnotherExternalInvolvedPartyAvailable>  |
+		| Additional Party Organization             | <Organization1>                            |
+		| Additional Party Name Prefix              | <NamePrefix>                               |
+		| Additional Party First Name               | <FirstName1>                               |
+		| Additional Party Middle Name              | <MiddleName1>                              |
+		| Additional Party Last Name                | <LastName1>                                |
+		| Additional Party Name Suffix              | <NameSuffix>                               |
+		| Additional Party Designation              | <Designation1>                             |
+		| Additional Party Date of Birth            | <DOB>                                      |
+		| Additional Party SSN                      | <Ssn>                                      |
+		| Additional Party Other ID                 | <OtherId>                                  |
+		| Additional Party Other                    | <Other>                                    |
+		| Additional Party Street Address 1         | <StreetAddress3>                           |
+		| Additional Party Street Address 2         | <StreetAddress4>                           |
+		| Additional Party City                     | <City>                                     |
+		| Additional Party State                    | <State2>                                   |
+		| Additional Party County                   | <City2>                                    |
+		| Additional Party Zip Code                 | <Zip>                                      |
+		| Additional Party Country                  | <Country>                                  |
+		| Additional Party Primary Phone            | <PrimaryPhone>                             |
+		| Additional Party Secondary Phone          | <SecondaryPhone>                           |
+		| Additional Party Email                    | <Email1>                                   |
+		| Question 1 Answer                         | <Question1>                                |
+		| Question 2 Answer                         | <Question2>                                |
+		| Question 3 Answer                         | <Question3>                                |
+		| Attachment                                | <TestFile>                                 |
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -366,7 +462,16 @@ Scenario Outline: 02_ [Online Referral End To End Scenario with Primary Subject 
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
+		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -571,6 +676,7 @@ Scenario Outline: 03_ [Online Referral End To End Scenario with Primary Subject 
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -590,7 +696,16 @@ Scenario Outline: 03_ [Online Referral End To End Scenario with Primary Subject 
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
+		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -656,7 +771,7 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
 	When Referral Type is selected  on the second User Data Page
 		| referralType   |
-	#	| <referralType> |
+		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
 	#	| InvalidIncidentStartDate   | InvalidIncidentEndDate   |
 	#	| <InvalidIncidentStartDate> | <InvalidIncidentEndDate> |
@@ -809,6 +924,7 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -828,7 +944,16 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <orgname>            | <first name>       | <last name>       |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
+		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -851,7 +976,7 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 
 
 Examples:
-	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | Incident Start Date | Incident End | Error message                                                                                | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentStartDate | incidentEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                     | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
+	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | Incident Start Date | Incident End | Error message                                                                                | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                     | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
 	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026          | 04/05/2026   | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026        | 02/13/2026      | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Provider w Req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
 
 
@@ -1032,6 +1157,7 @@ Scenario Outline: 05_ [Online Referral End To End Scenario with Primary Subject 
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -1051,7 +1177,16 @@ Scenario Outline: 05_ [Online Referral End To End Scenario with Primary Subject 
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
+		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -1256,6 +1391,7 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -1275,7 +1411,16 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
+		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -1484,6 +1629,7 @@ Scenario Outline: 07_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -1503,7 +1649,16 @@ Scenario Outline: 07_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -1592,7 +1747,7 @@ Scenario Outline: 08_[Online Referral End To End Scenario with Primary Subject T
 	#	| <Dollar symbol in amount field validation message> |
 	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
-		| <incidentValidStartDate> | <incidentValidEndDate> |
+		| <Incident Start Date> | <Incident End Date> |
 	And enter state  and city  on the "<Referral>"
 		| State2   | City2   |
 		| <State2> | <City2> |
@@ -1674,6 +1829,7 @@ Scenario Outline: 08_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -1693,7 +1849,16 @@ Scenario Outline: 08_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -1883,6 +2048,7 @@ Scenario Outline: 09_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -1902,7 +2068,16 @@ Scenario Outline: 09_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -2088,6 +2263,7 @@ Scenario Outline: 10_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -2107,7 +2283,16 @@ Scenario Outline: 10_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -2287,6 +2472,7 @@ Scenario Outline: 11_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -2306,7 +2492,16 @@ Scenario Outline: 11_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -2330,6 +2525,8 @@ Examples:
 	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026          | 04/05/2026   | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Recipient w/ req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026        | 02/13/2026      | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Law Firm w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
 
 
+	
+	
 	# Selecting the dropdown option as "No for Is this involved party an external referring party or witness? 
 
 Scenario Outline: 12_[Online Referral End To End Scenario with Primary Subject Type as Member, involved party an external referring party or witness? as "No" and additional involved party as "No" ]
@@ -2464,6 +2661,7 @@ Scenario Outline: 12_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -2483,7 +2681,16 @@ Scenario Outline: 12_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -2625,6 +2832,7 @@ Scenario Outline: 13_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -2644,7 +2852,16 @@ Scenario Outline: 13_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <state2> | <city2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -2793,6 +3010,7 @@ Scenario Outline: 14_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -2812,7 +3030,16 @@ Scenario Outline: 14_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -2968,6 +3195,7 @@ Scenario Outline: 15_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -2987,7 +3215,16 @@ Scenario Outline: 15_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
+		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -3161,6 +3398,7 @@ Scenario Outline: 16_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -3180,7 +3418,16 @@ Scenario Outline: 16_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
+		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -3364,6 +3611,7 @@ Scenario Outline: 17_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -3383,7 +3631,16 @@ Scenario Outline: 17_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
+		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -3550,6 +3807,7 @@ Scenario Outline: 18_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -3569,7 +3827,16 @@ Scenario Outline: 18_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
+		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -3728,6 +3995,7 @@ Scenario Outline: 19_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -3747,7 +4015,16 @@ Scenario Outline: 19_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
+		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -3913,6 +4190,7 @@ Scenario Outline: 20_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -3932,7 +4210,16 @@ Scenario Outline: 20_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
+		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -4110,6 +4397,7 @@ Scenario Outline: 21_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -4129,7 +4417,16 @@ Scenario Outline: 21_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -4331,6 +4628,7 @@ Scenario Outline: 22_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -4350,7 +4648,16 @@ Scenario Outline: 22_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -4524,6 +4831,7 @@ Scenario Outline: 23_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -4543,7 +4851,16 @@ Scenario Outline: 23_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -4706,6 +5023,7 @@ Scenario Outline: 24_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -4725,7 +5043,16 @@ Scenario Outline: 24_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -4890,6 +5217,7 @@ Scenario Outline: 25_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -4909,7 +5237,16 @@ Scenario Outline: 25_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -5070,6 +5407,7 @@ Scenario Outline: 26_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -5089,7 +5427,16 @@ Scenario Outline: 26_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -5276,6 +5623,7 @@ Scenario Outline: 27_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -5295,7 +5643,16 @@ Scenario Outline: 27_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -5448,6 +5805,7 @@ Scenario Outline: 28_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -5467,7 +5825,16 @@ Scenario Outline: 28_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -5617,6 +5984,7 @@ Scenario Outline: 29_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -5636,7 +6004,16 @@ Scenario Outline: 29_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -5787,6 +6164,7 @@ Scenario Outline: 30_[Online Referral End To End Scenario with Primary Subject T
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -5806,7 +6184,16 @@ Scenario Outline: 30_[Online Referral End To End Scenario with Primary Subject T
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -5990,6 +6377,7 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -6009,7 +6397,16 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <updatedOrgname> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
+		| <involvedPartyType> | <updatedOrgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <state2> | <city2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -6161,6 +6558,7 @@ Scenario Outline: 32_ [Online Referral End To End Scenario with Primary Subject 
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -6180,7 +6578,16 @@ Scenario Outline: 32_ [Online Referral End To End Scenario with Primary Subject 
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <DOB> |  | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> |  |  |  | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |  |  | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -6333,6 +6740,7 @@ Scenario Outline: 33_ [Online Referral End To End Scenario with Primary Subject 
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -6352,7 +6760,16 @@ Scenario Outline: 33_ [Online Referral End To End Scenario with Primary Subject 
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <updatedOrgname>     | <first name>       | <last name>       |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
+		| <involvedPartyType> | <updatedOrgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> |  |  | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -6496,6 +6913,7 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -6515,7 +6933,16 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentStartDate> | <incidentEndDate> | <amount> | <updatedOrgname> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
+		| <involvedPartyType> | <updatedOrgname> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -6664,6 +7091,7 @@ Scenario Outline: 35_ [Online Referral End To End Scenario with Primary Subject 
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -6683,7 +7111,16 @@ Scenario Outline: 35_ [Online Referral End To End Scenario with Primary Subject 
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <updatedOrgname> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
+		| <involvedPartyType> | <updatedOrgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -6886,6 +7323,7 @@ Scenario Outline: 36_ [Online Referral End To End Scenario with editing addition
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -6905,7 +7343,16 @@ Scenario Outline: 36_ [Online Referral End To End Scenario with editing addition
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
+		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
@@ -7098,6 +7545,7 @@ Scenario Outline: 37_ [Online Referral End To End Scenario with deleting additio
 		| <TestFile> |
 	Then click on proceed to next session button
 	When Click on Submit Button
+	Then validate attachment upload progress and wait for the confirmation page
 	Then validate Enter New Referral is displayed
 
 
@@ -7117,7 +7565,16 @@ Scenario Outline: 37_ [Online Referral End To End Scenario with deleting additio
 	And I Verify first and Last Name and click on the Latest created lead
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
-	And click on Activities tab and serach for the activity created through onlinereferral
+	Then validate the Lead Summary tab details against referral data
+		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
+		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
 	Then the searched activity should be displayed in the activity list
