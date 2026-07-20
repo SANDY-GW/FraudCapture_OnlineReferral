@@ -21,6 +21,15 @@ namespace FC_OnlineReferral
 
         }
 
+        public static Dictionary<string, string> StateList = new Dictionary<string, string>
+        (StringComparer.OrdinalIgnoreCase)
+        {
+            { "Texas", "TX" },
+            { "Password", "password123" },
+            { "IsActive", "true" },
+            { "UserFN", "John" }
+        };
+
         public static Dictionary<string, string> dic = new Dictionary<string, string>
             {
                 { "firstName", "Required" },

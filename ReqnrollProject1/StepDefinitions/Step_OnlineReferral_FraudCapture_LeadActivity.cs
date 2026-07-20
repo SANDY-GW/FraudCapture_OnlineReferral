@@ -1,7 +1,9 @@
 ﻿using FC_OnlineReferral.FraudCapture_Pages;
+using FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDetails.Lead;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
+using System.Globalization;
 using Assert = NUnit.Framework.Assert;
 
 namespace ReqnrollProject1.StepDefinitions
@@ -49,6 +51,138 @@ namespace ReqnrollProject1.StepDefinitions
             var fc = new FC_CaseTracking_LeadPage(Driver);
             var referraldate = fc.getLeadCreationDate();
             Console.WriteLine(referraldate);
+        }
+
+        [Then("validate the Lead Summary tab details against referral data")]
+        public void ThenValidateTheLeadSummaryTabDetailsAgainstReferralData(DataTable dataTable)
+        {
+            var expected = GetExpectedValues(dataTable);
+            var summaryPage = new LeadSummary(Driver);
+            summaryPage.ClickSummaryTab();
+
+            Assert.That(DatesMatch(summaryPage.GetLeadCreatedDate(), DateTime.Today.ToString("MM/dd/yyyy")),
+                Is.True, "Lead Created Date does not match today's referral submission date.");
+            AssertField("Suspect Activity From", expected["Suspect Activity From"], summaryPage.GetSuspectActivityFrom());
+            AssertField("Suspect Activity To", expected["Suspect Activity To"], summaryPage.GetSuspectActivityTo());
+            AssertField("Potential Overpayment Amount", expected["Potential Overpayment Amount"], summaryPage.GetPotentialOverpaymentAmount());
+
+            string subjectRow = summaryPage.GetPrimarySubjectRowText();
+            foreach (string subjectComponent in new[] { "Subject Organization", "Subject First Name", "Subject Last Name" })
+            {
+                if (expected.TryGetValue(subjectComponent, out string? expectedValue) &&
+                    !string.IsNullOrWhiteSpace(expectedValue))
+                {
+                    Assert.That(Normalize(subjectRow), Does.Contain(Normalize(expectedValue)),
+                        $"Summary Subject(s) name did not contain {subjectComponent} '{expectedValue}'. Actual row: '{subjectRow}'.");
+                }
+            }
+        }
+
+        [Then("validate the primary Subject edit form against referral data")]
+        public void ThenValidateThePrimarySubjectEditFormAgainstReferralData(DataTable dataTable)
+        {
+            var expected = GetExpectedValues(dataTable);
+            var subjectsPage = new LeadSubjects(Driver);
+            subjectsPage.ClickSubjectsTab();
+            subjectsPage.ClickPrimarySubjectEdit();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,20);
+            Assert.That(subjectsPage.IsEditSubjectFormDisplayed(), Is.True,
+                "Edit Subject form was not displayed after clicking Edit for the primary subject.");
+
+            foreach (KeyValuePair<string, string> field in expected)
+            {
+                if (field.Key == "Subject Type" || string.IsNullOrWhiteSpace(field.Value)) continue;
+                AssertField(field.Key, field.Value, subjectsPage.GetEditFieldValue(field.Key));
+            }
+
+            subjectsPage.CloseEditSubjectForm();
+        }
+
+        [Then("validate the Lead Referral tab details against referral data")]
+        public void ThenValidateTheLeadReferralTabDetailsAgainstReferralData(DataTable dataTable)
+        {
+            var expected = GetExpectedValues(dataTable);
+            var referralPage = new LeadReferral(Driver);
+            referralPage.ClickReferralTab();
+
+            Assert.That(DatesMatch(referralPage.GetReferralReceivedDate(), DateTime.Today.ToString("MM/dd/yyyy")),
+                Is.True, "Referral Received Date does not match today's referral submission date.");
+
+            foreach (KeyValuePair<string, string> field in expected)
+            {
+                if (string.IsNullOrWhiteSpace(field.Value)) continue;
+                AssertField(field.Key, field.Value, referralPage.GetFieldValue(field.Key));
+            }
+        }
+
+        private static Dictionary<string, string> GetExpectedValues(DataTable dataTable)
+        {
+            Assert.That(dataTable.Rows, Is.Not.Empty, "Expected referral data table must contain one data row.");
+            DataTableRow row = dataTable.Rows[0];
+            return dataTable.Header.ToDictionary(header => header, header => row[header]);
+        }
+
+        private static void AssertField(string fieldName, string expected, string actual)
+        {
+            bool matches = fieldName.Contains("Date", StringComparison.OrdinalIgnoreCase) ||
+                           fieldName.Contains("Activity From", StringComparison.OrdinalIgnoreCase) ||
+                           fieldName.Contains("Activity To", StringComparison.OrdinalIgnoreCase)
+                ? DatesMatch(actual, expected)
+                : fieldName.Contains("Amount", StringComparison.OrdinalIgnoreCase)
+                    ? AmountsMatch(actual, expected)
+                    : ValuesMatch(fieldName, actual, expected);
+            Assert.That(matches, Is.True,
+                $"{fieldName} mismatch. Expected: '{expected}'. Actual: '{actual}'.");
+        }
+
+        private static bool ValuesMatch(string fieldName, string actual, string expected)
+        {
+            string normalizedActual = Normalize(actual);
+            string normalizedExpected = Normalize(expected);
+
+            if (fieldName is "First Name" or "Last Name")
+            {
+                return normalizedActual.StartsWith(normalizedExpected, StringComparison.OrdinalIgnoreCase);
+            }
+
+            if (fieldName == "State/Territory")
+            {
+               if (CommonData.StateList.TryGetValue(normalizedExpected, out string? expectedState) &&
+                    actual.Equals(expectedState, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+
+            //if (fieldName == "State/Territory" &&
+            //    normalizedExpected == "texas" &&
+            //    normalizedActual == "tx")
+            //{
+            //    return true;
+            //}
+
+            return normalizedActual.Equals(normalizedExpected, StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static bool DatesMatch(string actual, string expected)
+        {
+            return DateTime.TryParse(actual, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime actualDate) &&
+                   DateTime.TryParse(expected, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime expectedDate) &&
+                   actualDate.Date == expectedDate.Date;
+        }
+
+        private static bool AmountsMatch(string actual, string expected)
+        {
+            string actualAmount = new string(actual.Where(character => char.IsDigit(character) || character is '.' or '-').ToArray());
+            string expectedAmount = new string(expected.Where(character => char.IsDigit(character) || character is '.' or '-').ToArray());
+            return decimal.TryParse(actualAmount, NumberStyles.Number, CultureInfo.InvariantCulture, out decimal parsedActual) &&
+                   decimal.TryParse(expectedAmount, NumberStyles.Number, CultureInfo.InvariantCulture, out decimal parsedExpected) &&
+                   parsedActual == parsedExpected;
+        }
+
+        private static string Normalize(string value)
+        {
+            return new string(value.Where(char.IsLetterOrDigit).Select(char.ToLowerInvariant).ToArray());
         }
 
 

@@ -47,6 +47,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         private readonly By question6TextBox = By.XPath("//textarea[@id='questionTxt6']");
         private readonly By submitReferralButton = By.XPath("//button[text()=' Submit Referral ']");
         private readonly By enterNewReferral = By.XPath("//button[text()='Enter New Referral']");
+        private readonly By attachmentUploadMessage = By.XPath("//*[contains(normalize-space(text()), 'File(s) upload is in progress')]");
+        private readonly By attachmentUploadSpinner = By.XPath("//*[contains(normalize-space(text()), 'Loading...')]");
+        private readonly By attachmentFileNameHeader = By.XPath("//*[normalize-space(text())='File Name']");
+        private readonly By attachmentStatusHeader = By.XPath("//*[normalize-space(text())='Status']");
+        private readonly By attachmentUploadStatus = By.XPath("//*[contains(normalize-space(text()), 'Upload complete') or contains(normalize-space(text()), 'Upload is progress') or contains(normalize-space(text()), 'Upload in progress')]");
+        private readonly By attachmentCorrectionWorkflow = By.XPath("//*[contains(translate(normalize-space(text()), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'attachment') and (contains(translate(normalize-space(text()), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'error') or contains(translate(normalize-space(text()), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'correct'))]");
 
         #endregion
 
@@ -211,11 +217,94 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             CommonHelpers.WaitForElementVisiblity(Driver, submitReferralButton, 100);
             Driver.FindElement(submitReferralButton).Submit();
+        }
+
+        public bool WaitForAttachmentUploadOrSubmissionOutcome(int timeoutInSeconds)
+        {
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(timeoutInSeconds));
+            wait.Until(_ => IsAttachmentUploadDisplayed() ||
+                            IsSubmissionConfirmationDisplayed() ||
+                            IsAttachmentCorrectionWorkflowDisplayed());
+
+            return IsAttachmentUploadDisplayed();
+        }
+
+        public bool IsAttachmentUploadDisplayed()
+        {
+            return IsDisplayed(attachmentUploadMessage);
+        }
+
+        public bool IsAttachmentUploadSpinnerDisplayed()
+        {
+            return IsDisplayed(attachmentUploadSpinner);
+        }
+
+        public bool IsAttachmentUploadStatusBoxDisplayed()
+        {
+            return IsDisplayed(attachmentFileNameHeader) &&
+                   IsDisplayed(attachmentStatusHeader) &&
+                   IsDisplayed(attachmentUploadStatus);
+        }
+
+        public bool WaitForSubmissionOutcomeWithoutLeavingUploadPage(
+            string submissionPageUrl,
+            int timeoutInSeconds)
+        {
+            bool stayedOnSubmissionPage = true;
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(timeoutInSeconds));
+
+            wait.Until(_ =>
+            {
+                if (IsAttachmentUploadDisplayed() &&
+                    !string.Equals(Driver.Url, submissionPageUrl, StringComparison.OrdinalIgnoreCase))
+                {
+                    stayedOnSubmissionPage = false;
+                }
+
+                return IsSubmissionConfirmationDisplayed() ||
+                       IsAttachmentCorrectionWorkflowDisplayed();
+            });
+
+            return stayedOnSubmissionPage;
+        }
+
+        public bool IsSubmissionConfirmationDisplayed()
+        {
+            return IsDisplayed(enterNewReferral);
+        }
+
+        public bool IsAttachmentCorrectionWorkflowDisplayed()
+        {
+            return IsDisplayed(attachmentCorrectionWorkflow);
+        }
+
+        private bool IsDisplayed(By locator)
+        {
+            return Driver.FindElements(locator).Any(element =>
+            {
+                try
+                {
+                    return element.Displayed;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    return false;
+                }
+            });
+        }
+
+        public string GetReviewPageContent()
+        {
             CommonHelpers.WaitForPageLoading(Driver);
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
 
-
-
+            return (string)((IJavaScriptExecutor)Driver).ExecuteScript(@"
+                const visibleControlValues = Array.from(document.querySelectorAll('input, textarea, select'))
+                    .filter(element => element.offsetParent !== null)
+                    .map(element => element.tagName === 'SELECT'
+                        ? element.options[element.selectedIndex]?.text ?? ''
+                        : element.value ?? '');
+                return `${document.body.innerText}\n${visibleControlValues.join('\n')}`;");
         }
 
         public bool EnterNewReferralButtonIsDisplayed()

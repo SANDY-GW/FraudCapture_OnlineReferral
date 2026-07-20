@@ -951,6 +951,7 @@ namespace ReqnrollProject1.StepDefinitions
             var data = dataTable.CreateInstance<OnlineReferralData>();
             string filePath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + @"\Attachments\";
             PG5.ClickUploadFileArrow(filePath + data.TestFile);
+            _scenarioContext["AttachmentsExpectedDuringSubmission"] = !string.IsNullOrWhiteSpace(data.TestFile);
         }
 
         [Then("click on proceed to next session button")]
@@ -963,12 +964,88 @@ namespace ReqnrollProject1.StepDefinitions
         }
 
 
+        [Then("validate Review and Submit Referral page displays all entered data")]
+        public void ThenValidateReviewAndSubmitReferralPageDisplaysAllEnteredData(DataTable dataTable)
+        {
+            var reviewPage = new ResponseToQuestions_Page5(Driver);
+            string reviewPageContent = reviewPage.GetReviewPageContent();
+
+            string normalizedReviewPageContent = NormalizeReviewValue(reviewPageContent);
+            Assert.That(normalizedReviewPageContent,
+                Does.Contain(NormalizeReviewValue("Review & Submit Referral")),
+                "Review & Submit Referral page was not displayed.");
+
+            List<string> missingFields = new List<string>();
+            foreach (DataTableRow row in dataTable.Rows)
+            {
+                string fieldName = row["Field"];
+                string expectedValue = row["Expected value"];
+
+                if (!string.IsNullOrWhiteSpace(expectedValue) &&
+                    !normalizedReviewPageContent.Contains(NormalizeReviewValue(expectedValue)))
+                {
+                    missingFields.Add($"{fieldName}: '{expectedValue}'");
+                }
+            }
+
+            Assert.That(missingFields, Is.Empty,
+                "The Review & Submit Referral page did not display the following entered data:" +
+                Environment.NewLine + string.Join(Environment.NewLine, missingFields));
+        }
+
+        private static string NormalizeReviewValue(string value)
+        {
+            return new string(value
+                .Where(char.IsLetterOrDigit)
+                .Select(char.ToLowerInvariant)
+                .ToArray());
+        }
+
+
         [When("Click on Submit Button")]
         public void ThenSubmittingAReferral()
         {
             var PG5 = new ResponseToQuestions_Page5(Driver);
+            _scenarioContext["SubmissionPageUrl"] = Driver.Url;
             PG5.ClickSubmitReferralButton();
 
+        }
+
+        [Then("validate attachment upload progress and wait for the confirmation page")]
+        public void ThenValidateAttachmentUploadProgressAndWaitForTheConfirmationPage()
+        {
+            var submissionPage = new ResponseToQuestions_Page5(Driver);
+            bool attachmentsExpected = _scenarioContext.TryGetValue(
+                "AttachmentsExpectedDuringSubmission",
+                out bool expected) && expected;
+            string submissionPageUrl = _scenarioContext.TryGetValue(
+                "SubmissionPageUrl",
+                out string? capturedUrl)
+                ? capturedUrl
+                : Driver.Url;
+
+            bool uploadProgressDisplayed = submissionPage
+                .WaitForAttachmentUploadOrSubmissionOutcome(15);
+
+            if (attachmentsExpected)
+            {
+                Assert.That(uploadProgressDisplayed, Is.True,
+                    "The attachment upload progress message was not displayed after submitting the referral.");
+                Assert.That(submissionPage.IsAttachmentUploadSpinnerDisplayed(), Is.True,
+                    "The attachment upload loading spinner was not displayed.");
+                Assert.That(submissionPage.IsAttachmentUploadStatusBoxDisplayed(), Is.True,
+                    "The attachment upload status box did not display File Name, Status, and upload status details.");
+            }
+
+            bool stayedOnSubmissionPage = submissionPage
+                .WaitForSubmissionOutcomeWithoutLeavingUploadPage(submissionPageUrl, 300);
+
+            Assert.That(stayedOnSubmissionPage, Is.True,
+                "The browser navigated away from the submission page while attachment upload was in progress.");
+            Assert.That(submissionPage.IsAttachmentCorrectionWorkflowDisplayed(), Is.False,
+                "An attachment upload error occurred and the attachment correction workflow was displayed.");
+            Assert.That(submissionPage.IsSubmissionConfirmationDisplayed(), Is.True,
+                "The referral confirmation page was not displayed after submission completed.");
         }
 
 
@@ -1294,7 +1371,7 @@ namespace ReqnrollProject1.StepDefinitions
 
 
             //PG3.SelectCountyField(data.County);
-            PG4_AddtnlInvldParty.FillZipField(data.Zipcode);
+            PG4_AddtnlInvldParty.FillZipField(data.Zip);
            
             PG4_AddtnlInvldParty.FillCountryField(data.Country); 
             PG4_AddtnlInvldParty.FillPrimaryPhoneField(data.PrimaryPhone);

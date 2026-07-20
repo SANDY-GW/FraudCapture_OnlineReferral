@@ -111,22 +111,14 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void EnterIncidentStartDate(string IncidentStartDate)
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
-            var element = Driver.FindElement(incidentStartDateField);
-            element.Click();
-            element.SendKeys(Keys.Control + "a");
-            element.SendKeys(Keys.Delete);
-            element.SendKeys(IncidentStartDate);
+            CommonHelpers.EnterDate(Driver.FindElement(incidentStartDateField), IncidentStartDate);
         }
 
         public void EnterIncidentEndDate(string IncidentEndDate)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, incidentEndDateField, 60);
 
-            var element = Driver.FindElement(incidentEndDateField);
-            element.Click();
-            element.SendKeys(Keys.Control + "a");
-            element.SendKeys(Keys.Delete);
-            element.SendKeys(IncidentEndDate);
+            CommonHelpers.EnterDate(Driver.FindElement(incidentEndDateField), IncidentEndDate);
         }
 
 

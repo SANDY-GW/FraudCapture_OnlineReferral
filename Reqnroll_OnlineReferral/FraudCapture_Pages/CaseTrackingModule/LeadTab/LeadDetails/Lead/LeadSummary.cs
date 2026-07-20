@@ -25,8 +25,59 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDe
         private readonly By leadSupervisorDDL = By.XPath("//*[@id='dropdownMenuLeadSupervisorAssign']");
         private readonly By leadDivDeptDDL = By.XPath("//*[@id='divisiondep']");
         private readonly By leadSectionTeamDDL = By.XPath("//*[@id='SectionId']");
+        private readonly By summaryTab = By.XPath("//*[self::a or self::button][normalize-space()='Summary']");
+        private readonly By leadCreatedDate = By.XPath("//label[contains(normalize-space(.),'Lead Created Date')]/following::input[1]");
+        private readonly By suspectActivityFrom = By.XPath("//label[contains(normalize-space(.),'Suspect Activity From')]/following::input[1]");
+        private readonly By suspectActivityTo = By.XPath("//label[contains(normalize-space(.),'Suspect Activity To')]/following::input[1]");
+        private readonly By potentialOverpaymentAmount = By.XPath("//label[contains(normalize-space(.),'Potential Overpayment Amount')]/following::input[1]");
+        //private readonly By primarySubjectRow = By.XPath("//table[.//th[contains(normalize-space(.),'Subject')]]/tbody/tr[1]");
+        private readonly By primarySubjectTable = By.XPath("//table[@id='caseViewSummarySubjectName']//tbody");
+        private readonly By primarySubjectRow = By.XPath("//table[@id='caseViewSummarySubjectName']//tbody/tr[1]");
 
         #endregion
+        public void ClickSummaryTab()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, summaryTab, 30);
+            Driver.FindElement(summaryTab).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+        }
+
+        public string GetLeadCreatedDate() => GetValue(leadCreatedDate);
+        public string GetSuspectActivityFrom() => GetValue(suspectActivityFrom);
+        public string GetSuspectActivityTo() => GetValue(suspectActivityTo);
+        public string GetPotentialOverpaymentAmount() => GetValue(potentialOverpaymentAmount);
+
+        public string GetPrimarySubjectRowText()
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, primarySubjectRow, 30);
+
+            var rows = Driver.FindElements(By.XPath("//table[@id='caseViewSummarySubjectName']//tbody/tr"));
+            if (rows.Count > 1)
+            {
+                for (int i = 1; i <= rows.Count; i++)
+                {
+                    var rowNum = Driver.FindElement(By.XPath($"//table[@id='caseViewSummarySubjectName']//tbody/tr[{i}]/td[2]"));
+                    if (rowNum.Text.Trim().Contains("Yes", StringComparison.OrdinalIgnoreCase))
+                    {
+                        return rows[i - 1].Text.Trim();
+                    }
+                }
+            }
+            
+
+            return Driver.FindElement(primarySubjectRow).Text.Trim();
+
+
+
+        }
+
+        private string GetValue(By locator)
+        {
+            CommonHelpers.WaitForElementVisiblity(Driver, locator, 30);
+            IWebElement element = Driver.FindElement(locator);
+            return (element.GetAttribute("value") ?? element.Text).Trim();
+        }
+
         public void SelectSectionTeam(string sectionId)
         {
             CommonHelpers.selectOptionByValue(Driver.FindElement(leadSectionTeamDDL), sectionId);
