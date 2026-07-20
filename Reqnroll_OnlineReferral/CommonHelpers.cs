@@ -371,6 +371,15 @@ namespace FC_OnlineReferral
                 new WebDriverWait(driver, TimeSpan.FromSeconds(timeout)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
             }
         }
+
+        public static void EnterDate(IWebElement DateElement, string IncidentStartDate)
+        {
+            DateElement.Click();
+            DateElement.SendKeys(Keys.Control + "a");
+            DateElement.SendKeys(Keys.Delete);
+            DateElement.SendKeys(IncidentStartDate);
+        }
+
         public static void ScrollByElementCoordinates(IWebDriver driver, IWebElement element)
         {
             System.Drawing.Point point = element.Location;
