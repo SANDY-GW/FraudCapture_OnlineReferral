@@ -2218,7 +2218,7 @@ Scenario Outline: 11_[Online Referral End To End Scenario with Primary Subject T
 	And enter InvolvedParty DOB , Gender , other
 		| DOB   | Gender   | other   |
 		| <DOB> | <Gender> | <other> |
-	And enter  how witness or external party reported this, any additional info
+	And enter How witness or external party reported this ,any additional info as
 		| involvedPartyType   | detectedAs   |
 		| <involvedPartyType> | <detectedAs> |
 	And enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID
@@ -2416,7 +2416,7 @@ Scenario Outline: 12_[Online Referral End To End Scenario with Primary Subject T
 	And enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID
 		| other   | SSN   | medicaid ID   | Medicare ID   | otherID   |
 		| <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> |
-	And enter How witness or external party reported this ,any additional info as member
+	And enter How witness or external party reported this ,any additional info as
 		| involvedPartyType   | detectedAs   |
 		| <involvedPartyType> | <detectedAs> |
 	And enter InvolvedParty plan , Program  ,LOB  and Group
@@ -2926,7 +2926,7 @@ Submitting Party Information page:
 
 		| NamePrefix   | FirstName1   | middle name   | LastName1   | Designation1   |
 		| <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> |
-	And enter  how witness or external party reported this, any additional info
+	And enter How witness or external party reported this ,any additional info as
 		| InvolvedPartyType   | detectedAs   |
 		| <involvedPartyType> | <detectedAs> |
 		
@@ -6457,7 +6457,7 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 		| Organization1   | NamePrefix   | FirstName1   | MiddleName1   | LastName1   | NameSuffix   | Designation1   | DOB   | Ssn   | OtherId   | Other   | StreetAddress3   | StreetAddress4   | City   | State2   | City2   | Zip   | Country   | PrimaryPhone   | SecondaryPhone   | OtherId   | Email1   |
 		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <Country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
 
-	And enter  how witness or external party reported this, any additional info
+	And enter How witness or external party reported this ,any additional info as
 		| involvedPartyType   | detectedAs   |
 		| <involvedPartyType> | <detectedAs> |
 
