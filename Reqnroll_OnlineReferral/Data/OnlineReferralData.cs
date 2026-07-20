@@ -151,6 +151,8 @@ namespace FC_OnlineReferral
         public string Payor { get; set; } = string.Empty;
         public string Leads { get; set; } = string.Empty;
         public string ActivityName { get; set; } = string.Empty;
+        public string InitialInstructionText { get; set; } = string.Empty;
+        public string EndInstructionText { get; set; }
 
 
 

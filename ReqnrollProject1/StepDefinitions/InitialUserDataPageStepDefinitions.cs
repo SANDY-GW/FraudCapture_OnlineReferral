@@ -579,8 +579,8 @@ namespace ReqnrollProject1.StepDefinitions
             PG3_InvParty.FillDOBField(dob);
             PG3_InvParty.FillSSNField(ssn);
             PG3_InvParty.FillLicenseNumberField(licenseno);
-            PG3_InvParty.FillHowDidThisExternalReferringPartyreportThisTextarea(text);
-            PG3_InvParty.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(text);
+            PG3InvPrtyNONEnum.FillHowDidThisExternalReferringPartyreportThisTextarea(text);
+            PG3InvPrtyNONEnum.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(text);
             PG3_InvParty.FillIDTestField(idTest);
         }
 
@@ -628,8 +628,8 @@ namespace ReqnrollProject1.StepDefinitions
                 CommonHelpers.WaitForPageLoading(Driver);
                 CommonHelpers.ScrollDown(Driver);
 
-                PG3_InvParty.FillHowDidThisExternalReferringPartyreportThisTextarea(data.involvedPartyType);
-                PG3_InvParty.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.detectedAs);
+                PG3InvPrtyNONEnum.FillHowDidThisExternalReferringPartyreportThisTextarea(data.involvedPartyType);
+                PG3InvPrtyNONEnum.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.detectedAs);
             }
 
         }
@@ -718,7 +718,7 @@ namespace ReqnrollProject1.StepDefinitions
         {
 
             var PG3 = new InvolvedParties_Page3(Driver);
-            PG3_InvParty.ClickProceedToNextSectionButton();
+            PG3.ClickProceedToNextSectionButton();
         }
 
 
@@ -1096,7 +1096,7 @@ namespace ReqnrollProject1.StepDefinitions
            
         }
 
-        [When("enter How witness or external party reported this ,any additional info as")]
+        [When("enter  how witness or external party reported this, any additional info")]
         public void WhenEnterHowWitnessOrExternalPartyReportedThisAsAnyAdditionalInfoAs(DataTable dataTable)
         {
 
@@ -1265,7 +1265,25 @@ namespace ReqnrollProject1.StepDefinitions
             Assert.That(PG1.IsLogoAtTopCenter(), Is.True, "Logo is not at top center: " +title);
         }
 
-        
+        // Instructions button validation
+
+        [Then("Instructions can open on any page of the portal and Validae the data configured")]
+        public void ThenInstructionsCanOpenOnAnyPageOfThePortalAndValidaeTheDataConfigured(DataTable dataTable)
+        {
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG1.clickInstructionsButton();
+            var actualText = PG1.validateInstructionsModalData().Trim();
+
+            Assert.That(actualText.Contains(data.InitialInstructionText),
+                    $"Expected text to contain '{data.InitialInstructionText}'");
+
+            Assert.That(actualText.Contains(data.EndInstructionText),
+                $"Expected text to contain '{data.EndInstructionText}'");
+            PG1.clickcloseInstructionsModalButton();
+            CommonHelpers.WaitForPageLoading(Driver);
+        }
+
+
 
         [Then(@"Logo should be aligned to the left of the header")]
         public void ThenLogoLeftAligned()
@@ -1444,9 +1462,9 @@ namespace ReqnrollProject1.StepDefinitions
         {
             //var PG3 = new InvolvedParties_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3_InvParty.ClickEditButton();
-            PG3_InvParty.updateOrganizationField(data.updatedOrgname);
-            PG3_InvParty.clickSaveButton();
+            PG3InvPrtyNONEnum.ClickEditButton();
+            PG3InvPrtyNONEnum.updateOrganizationField(data.updatedOrgname);
+            PG3InvPrtyNONEnum.clickSaveButton();
         }
 
         [When("Edit Primary InvovePartyType for member,Change the data and save the changes")]
@@ -1464,9 +1482,9 @@ namespace ReqnrollProject1.StepDefinitions
         {
             //var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3_InvParty.ClickEditButton();
-            PG3_InvParty.updateOrganizationField(data.updatedOrgname);
-            PG3_InvParty.clickSaveButton();
+            PG3InvPrtyNONEnum.ClickEditButton();
+            PG3InvPrtyNONEnum.updateOrganizationField(data.updatedOrgname);
+            PG3InvPrtyNONEnum.clickSaveButton();
         }
 
 
@@ -1516,9 +1534,9 @@ namespace ReqnrollProject1.StepDefinitions
             //var PG3 = new InvolvedParties_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
-            PG3_InvParty.clickGoToPreviousSectionButton();
-            Assert.That(PG3_InvParty.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
-            PG3_InvParty.ClickProceedToNextSectionButton();
+            PG3InvPrtyNONEnum.clickGoToPreviousSectionButton();
+            Assert.That(PG3InvPrtyNONEnum.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
+            PG3InvPrtyNONEnum.ClickProceedToNextSectionButton();
         }
 
         [Then("Validate the updated data of the Primary Subject type as member")]

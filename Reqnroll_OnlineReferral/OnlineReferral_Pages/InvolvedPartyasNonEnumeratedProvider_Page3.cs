@@ -213,6 +213,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
             js.ExecuteScript("window.scrollTo(0, 0);");
+            CommonHelpers.ScrollUp(Driver);
             CommonHelpers.WaitForElementVisiblity(Driver, SaveButton, 100);
             Driver.FindElement(SaveButton).Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
