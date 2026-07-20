@@ -1019,7 +1019,7 @@ namespace ReqnrollProject1.StepDefinitions
            
         }
 
-        [When("enter How witness or external party reported this ,any additional info as member")]
+        [When("enter How witness or external party reported this ,any additional info as")]
         public void WhenEnterHowWitnessOrExternalPartyReportedThisAsAnyAdditionalInfoAs(DataTable dataTable)
         {
 
@@ -1064,15 +1064,6 @@ namespace ReqnrollProject1.StepDefinitions
         {
             //var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            DateTime dateTime = DateTime.Now;
-            data.firstName = data.firstName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
-            data.lastName = data.lastName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
-            if (!_scenarioContext.ContainsKey("UserFN") || !_scenarioContext.ContainsKey("UserLN"))
-            {
-                _scenarioContext["UserFN"] = data.firstName;
-                _scenarioContext["UserLN"] = data.lastName;
-
-            }
             PG3_Member.FillPlanField(data.planType);
             PG3_Member.FillProgramField(data.Program);
             PG3_Member.FillLOBField(data.LOB);
@@ -1523,15 +1514,15 @@ namespace ReqnrollProject1.StepDefinitions
             Page_Organization.EnterOtherID(data.otherID);
         }
 
-        [When("enter  how witness or external party reported this, any additional info")]
-        public void WhenEnterNameprefixFirstnameMiddlenameLastnameDesignationHowWitnessOrExternalPartyReportedThisAnyAdditionalInfo(DataTable dataTable)
-        {
-            //var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
+        //[When("enter  how witness or external party reported this, any additional info")]
+        //public void WhenEnterNameprefixFirstnameMiddlenameLastnameDesignationHowWitnessOrExternalPartyReportedThisAnyAdditionalInfo(DataTable dataTable)
+        //{
+        //    //var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
+        //    var data = dataTable.CreateInstance<OnlineReferralData>();
            
-            Page_Organization.EnterHowDidThisExternalReferringPartyReportThis(data.detectedAs);
-            Page_Organization.EnterAnyAdditionalInformationRegardingTheWitnessOrExternalReferringParty(data.detectedAs);
-        }
+        //    Page_Organization.EnterHowDidThisExternalReferringPartyReportThis(data.detectedAs);
+        //    Page_Organization.EnterAnyAdditionalInformationRegardingTheWitnessOrExternalReferringParty(data.detectedAs);
+        //}
 
         [When("enter nameprefix,firstname, middlename, lastname, designation")]
         public void WhenEnterNameprefixFirstnameMiddlenameLastnameDesignation(DataTable dataTable)
