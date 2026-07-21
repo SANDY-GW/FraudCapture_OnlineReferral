@@ -827,7 +827,7 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 		| <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> |
 	And enter InvolvedParty Designation
 		| designation   |
-	#	| <designation> |
+		| <designation> |
 	#Then i enter invalid date of birth and validate for "<Involved Party>"
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
@@ -1357,20 +1357,11 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 		| orgname   | TIN   | licenseNumber   | other   | otherID   |
 		| <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> |
 
-
-
-	And enter nameprefix,firstname, middlename, lastname, designation
-		| name prefix  | first name   | middle name   | last name   | designation    | involvedPartyType | detectedAs   |
-		| <NamePrefix> | <FirstName1> | <middle name> | <LastName1> | <Designation1> | <detectedAs>      | <detectedAs> |
 	Then I enter the Text for How did this witness/external referring party report this? (Required) and Any Additonal Information regarding the witness or external referring party? (Optional)field on Second Time
 		| involvedPartyType   | detectedAs   |
 		| <involvedPartyType> | <detectedAs> |
 
-	When street address line one , street address line two, city , state , county , zip code, country, fax and email  for the involved party
-		| orgname   | TIN   | licenseNumber   | other   | otherID   |
-		| <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> |
-
-	And enter nameprefix,firstname, middlename, lastname, designation
+	When enter nameprefix,firstname, middlename, lastname, designation
 		| name prefix  | first name   | middle name   | last name   | designation    |
 		| <NamePrefix> | <FirstName1> | <middle name> | <LastName1> | <Designation1> |
 
@@ -1424,7 +1415,7 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> | <first name> | <last name> |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
 	Then validate the primary Subject edit form against referral data
 		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
 		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
@@ -6785,7 +6776,7 @@ Scenario Outline: 33_ [Online Referral End To End Scenario with Primary Subject 
 
 Examples:
 	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                                  | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | updatedOrgname        | updatedFirstName | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         |
-	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Caregiver w/o req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Gainwell Technologies | FN101            | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com |
+	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Caregiver w/o req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | sandeep.krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Gainwell Technologies | FN101            | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com |
 
 
 
@@ -6867,7 +6858,7 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 
 	And the following fields should be displayed:
 		| Organization1   | NamePrefix   | FirstName1   | MiddleName1   | LastName1   | NameSuffix   | Designation1   | DOB   | Ssn   | OtherId   | Other   | StreetAddress3   | StreetAddress4   | City   | State2   | City2   | Zip   | Country   | PrimaryPhone   | SecondaryPhone   | OtherId   | Email1   |
-		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <Country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
+		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
 
 	And enter  how witness or external party reported this, any additional info
 		| involvedPartyType   | detectedAs   |

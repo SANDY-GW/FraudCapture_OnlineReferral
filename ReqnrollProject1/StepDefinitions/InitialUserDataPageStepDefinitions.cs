@@ -17,7 +17,7 @@ namespace ReqnrollProject1.StepDefinitions
         InvolvedParties_Page3 PG3_InvParty;
         WitnessOrExternalRefParty_Page3 PG3Witness;
         InvolvedPartyTypeasMember_page3 PG3_Member;
-        InvolvedPartyasNonEnumeratedProvider_Page3 PG3InvPrtyNONEnum;
+        InvolvedPartyasNonEnumeratedProvider_Page3 PG3InvPrtyNONEnumProvider;
         OnlineReferral_Referral_Page_Organization Page_Organization;
         InvolvedPartyTypeInfo_Page4 PG4;
         additionalInvolvedParty_page4 PG4_AddtnlInvldParty;
@@ -33,7 +33,7 @@ namespace ReqnrollProject1.StepDefinitions
             PG3_InvParty = new InvolvedParties_Page3(Driver);
             PG3Witness = new WitnessOrExternalRefParty_Page3(Driver);
             PG3_Member = new InvolvedPartyTypeasMember_page3(Driver);
-            PG3InvPrtyNONEnum = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
+            PG3InvPrtyNONEnumProvider = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             Page_Organization = new OnlineReferral_Referral_Page_Organization(Driver);
             PG4 = new InvolvedPartyTypeInfo_Page4(Driver);
             PG4_AddtnlInvldParty = new additionalInvolvedParty_page4(Driver);
@@ -579,8 +579,8 @@ namespace ReqnrollProject1.StepDefinitions
             PG3_InvParty.FillDOBField(dob);
             PG3_InvParty.FillSSNField(ssn);
             PG3_InvParty.FillLicenseNumberField(licenseno);
-            PG3InvPrtyNONEnum.FillHowDidThisExternalReferringPartyreportThisTextarea(text);
-            PG3InvPrtyNONEnum.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(text);
+            PG3InvPrtyNONEnumProvider.FillHowDidThisExternalReferringPartyreportThisTextarea(text);
+            PG3InvPrtyNONEnumProvider.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(text);
             PG3_InvParty.FillIDTestField(idTest);
         }
 
@@ -628,8 +628,8 @@ namespace ReqnrollProject1.StepDefinitions
                 CommonHelpers.WaitForPageLoading(Driver);
                 CommonHelpers.ScrollDown(Driver);
 
-                PG3InvPrtyNONEnum.FillHowDidThisExternalReferringPartyreportThisTextarea(data.involvedPartyType);
-                PG3InvPrtyNONEnum.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.detectedAs);
+                PG3InvPrtyNONEnumProvider.FillHowDidThisExternalReferringPartyreportThisTextarea(data.involvedPartyType);
+                PG3InvPrtyNONEnumProvider.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.detectedAs);
             }
 
         }
@@ -1185,12 +1185,12 @@ namespace ReqnrollProject1.StepDefinitions
                 _scenarioContext["UserLN"] = data.lastName;
 
             }
-            PG3InvPrtyNONEnum.EnterOrganization(data.orgname);
-            PG3InvPrtyNONEnum.EnterNamePrefix(data.namePrefix);
-            PG3InvPrtyNONEnum.EnterFirstName(data.firstName);
-            PG3InvPrtyNONEnum.EnterMiddleName(data.middleName);
-            PG3InvPrtyNONEnum.EnterLastName(data.lastName);
-            PG3InvPrtyNONEnum.EnterNameSuffix(data.nameSuffix);
+            PG3InvPrtyNONEnumProvider.EnterOrganization(data.orgname);
+            PG3InvPrtyNONEnumProvider.EnterNamePrefix(data.namePrefix);
+            PG3InvPrtyNONEnumProvider.EnterFirstName(data.firstName);
+            PG3InvPrtyNONEnumProvider.EnterMiddleName(data.middleName);
+            PG3InvPrtyNONEnumProvider.EnterLastName(data.lastName);
+            PG3InvPrtyNONEnumProvider.EnterNameSuffix(data.nameSuffix);
 
         }
 
@@ -1200,13 +1200,13 @@ namespace ReqnrollProject1.StepDefinitions
         {
             //var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3InvPrtyNONEnum.EnterDesignation(data.designation);
-            PG3InvPrtyNONEnum.EnterDOB(data.DOB);
-            PG3InvPrtyNONEnum.EnterSSN(data.SSN);
+            PG3InvPrtyNONEnumProvider.EnterDesignation(data.designation);
+            PG3InvPrtyNONEnumProvider.EnterDOB(data.DOB);
+            PG3InvPrtyNONEnumProvider.EnterSSN(data.SSN);
             
-            PG3InvPrtyNONEnum.EnterLicenseNumber(data.licenseNumber);
-            PG3InvPrtyNONEnum.EnterOtherID(data.otherID);
-            PG3InvPrtyNONEnum.EnterOther(data.other);
+            PG3InvPrtyNONEnumProvider.EnterLicenseNumber(data.licenseNumber);
+            PG3InvPrtyNONEnumProvider.EnterOtherID(data.otherID);
+            PG3InvPrtyNONEnumProvider.EnterOther(data.other);
         }
 
         [When("How witness or external party reported this, any additional info  licenseNumber")]
@@ -1217,9 +1217,9 @@ namespace ReqnrollProject1.StepDefinitions
             //var PG4 = new InvolvedPartyTypeasMember_page3(Driver);
             if (PG3_Member.getWitnessDropdownValue().Equals("Yes"))
             {
-                PG3InvPrtyNONEnum.FillHowDidThisExternalReferringPartyreportThisTextarea(data.involvedPartyType);
-                PG3InvPrtyNONEnum.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.detectedAs);
-                PG3InvPrtyNONEnum.EnterLicenseNumber(data.licenseNumber);
+                PG3InvPrtyNONEnumProvider.FillHowDidThisExternalReferringPartyreportThisTextarea(data.involvedPartyType);
+                PG3InvPrtyNONEnumProvider.FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(data.detectedAs);
+                PG3InvPrtyNONEnumProvider.EnterLicenseNumber(data.licenseNumber);
             }
         }
 
@@ -1228,10 +1228,10 @@ namespace ReqnrollProject1.StepDefinitions
         {
             //var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3InvPrtyNONEnum.EnterPrimaryPhoneNumber(data.PrimaryPhone);
-            PG3InvPrtyNONEnum.EnterSecondaryPhoneNumber(data.SecondaryPhone);
-            PG3InvPrtyNONEnum.EnterFax(data.fax);
-            PG3InvPrtyNONEnum.EnterEmail(data.EmailAddress);
+            PG3InvPrtyNONEnumProvider.EnterPrimaryPhoneNumber(data.PrimaryPhone);
+            PG3InvPrtyNONEnumProvider.EnterSecondaryPhoneNumber(data.SecondaryPhone);
+            PG3InvPrtyNONEnumProvider.EnterFax(data.fax);
+            PG3InvPrtyNONEnumProvider.EnterEmail(data.EmailAddress);
         }
 
         [When("street address line one , street address line two, city , state , county , zip code and country for the involved party")]
@@ -1239,13 +1239,13 @@ namespace ReqnrollProject1.StepDefinitions
         {
             //var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3InvPrtyNONEnum.EnterAddress1(data.Address1);
-            PG3InvPrtyNONEnum.EnterAddress2(data.Address2);
-            PG3InvPrtyNONEnum.EnterCity(data.City);
-            PG3InvPrtyNONEnum.SelectState(data.State2);
-            PG3InvPrtyNONEnum.SelectCounty(data.City2);
-            PG3InvPrtyNONEnum.EnterZipCode(data.Zipcode);
-            PG3InvPrtyNONEnum.EnterCountry(data.Country);
+            PG3InvPrtyNONEnumProvider.EnterAddress1(data.Address1);
+            PG3InvPrtyNONEnumProvider.EnterAddress2(data.Address2);
+            PG3InvPrtyNONEnumProvider.EnterCity(data.City);
+            PG3InvPrtyNONEnumProvider.SelectState(data.State2);
+            PG3InvPrtyNONEnumProvider.SelectCounty(data.City2);
+            PG3InvPrtyNONEnumProvider.EnterZipCode(data.Zipcode);
+            PG3InvPrtyNONEnumProvider.EnterCountry(data.Country);
 
 
         }
@@ -1462,9 +1462,9 @@ namespace ReqnrollProject1.StepDefinitions
         {
             //var PG3 = new InvolvedParties_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3InvPrtyNONEnum.ClickEditButton();
-            PG3InvPrtyNONEnum.updateOrganizationField(data.updatedOrgname);
-            PG3InvPrtyNONEnum.clickSaveButton();
+            PG3_InvParty.ClickEditButton();
+            PG3_InvParty.updateOrganizationField(data.updatedOrgname);
+            PG3_InvParty.clickSaveButton();
         }
 
         [When("Edit Primary InvovePartyType for member,Change the data and save the changes")]
@@ -1482,9 +1482,9 @@ namespace ReqnrollProject1.StepDefinitions
         {
             //var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3InvPrtyNONEnum.ClickEditButton();
-            PG3InvPrtyNONEnum.updateOrganizationField(data.updatedOrgname);
-            PG3InvPrtyNONEnum.clickSaveButton();
+            PG3InvPrtyNONEnumProvider.ClickEditButton();
+            PG3InvPrtyNONEnumProvider.updateOrganizationField(data.updatedOrgname);
+            PG3InvPrtyNONEnumProvider.clickSaveButton();
         }
 
 
@@ -1534,9 +1534,9 @@ namespace ReqnrollProject1.StepDefinitions
             //var PG3 = new InvolvedParties_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
-            PG3InvPrtyNONEnum.clickGoToPreviousSectionButton();
-            Assert.That(PG3InvPrtyNONEnum.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
-            PG3InvPrtyNONEnum.ClickProceedToNextSectionButton();
+            PG3InvPrtyNONEnumProvider.clickGoToPreviousSectionButton();
+            Assert.That(PG3InvPrtyNONEnumProvider.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
+            PG3InvPrtyNONEnumProvider.ClickProceedToNextSectionButton();
         }
 
         [Then("Validate the updated data of the Primary Subject type as member")]
@@ -1556,9 +1556,9 @@ namespace ReqnrollProject1.StepDefinitions
             //var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
-            PG3InvPrtyNONEnum.clickGoToPreviousSectionButton();
-            Assert.That(PG3InvPrtyNONEnum.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
-            PG3InvPrtyNONEnum.ClickProceedToNextSectionButton();
+            PG3InvPrtyNONEnumProvider.clickGoToPreviousSectionButton();
+            Assert.That(PG3InvPrtyNONEnumProvider.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
+            PG3InvPrtyNONEnumProvider.ClickProceedToNextSectionButton();
         }
         [Then("Validate the updated data of the additional involved party Subject type as non-enumerated provider")]
         public void ThenValidateTheUpdatedDataOfTheAdditionalInvolvedPartySubjectTypeAsNonEnumeratedProvider(DataTable dataTable)
@@ -1566,9 +1566,9 @@ namespace ReqnrollProject1.StepDefinitions
             //var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
-            PG3InvPrtyNONEnum.ClickInvolvedPartyEditButton();
-            Assert.That(PG3InvPrtyNONEnum.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
-            PG3InvPrtyNONEnum.clickCancelButton();
+            PG3InvPrtyNONEnumProvider.ClickInvolvedPartyEditButton();
+            Assert.That(PG3InvPrtyNONEnumProvider.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
+            PG3InvPrtyNONEnumProvider.clickCancelButton();
 
         }
 
@@ -1685,12 +1685,12 @@ namespace ReqnrollProject1.StepDefinitions
         {
             //var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3InvPrtyNONEnum.EnterDesignation(data.designation);
-            PG3InvPrtyNONEnum.EnterDOB(data.DOB);
-            PG3InvPrtyNONEnum.EnterSSN(data.SSN);
-            PG3InvPrtyNONEnum.EnterLicenseNumber(data.licenseNumber);
-            PG3InvPrtyNONEnum.EnterOtherID(data.otherID);
-            PG3InvPrtyNONEnum.EnterOther(data.other);
+            PG3InvPrtyNONEnumProvider.EnterDesignation(data.designation);
+            PG3InvPrtyNONEnumProvider.EnterDOB(data.DOB);
+            PG3InvPrtyNONEnumProvider.EnterSSN(data.SSN);
+            PG3InvPrtyNONEnumProvider.EnterLicenseNumber(data.licenseNumber);
+            PG3InvPrtyNONEnumProvider.EnterOtherID(data.otherID);
+            PG3InvPrtyNONEnumProvider.EnterOther(data.other);
         }
 
 
