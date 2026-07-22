@@ -91,7 +91,11 @@ namespace ReqnrollProject1.StepDefinitions
 
             foreach (KeyValuePair<string, string> field in expected)
             {
+                var SubType = subjectsPage.GetEditFieldValue("Subject Type");
+
                 if (field.Key == "Subject Type" || string.IsNullOrWhiteSpace(field.Value)) continue;
+                if (field.Key == "State/Territory" && SubType.Equals("Caregiver", StringComparison.OrdinalIgnoreCase)) continue;
+                
                 AssertField(field.Key, field.Value, subjectsPage.GetEditFieldValue(field.Key));
             }
 

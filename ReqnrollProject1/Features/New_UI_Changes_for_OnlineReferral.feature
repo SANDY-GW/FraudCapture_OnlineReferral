@@ -826,8 +826,10 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 		| orgname   | name prefix   | first name   | middle name   | last name   | name suffix   |
 		| <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> |
 	And enter InvolvedParty Designation
-		| designation |
-	#	| <designation> |
+
+		| designation   |
+		| <designation> |
+
 	#Then i enter invalid date of birth and validate for "<Involved Party>"
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
@@ -1357,16 +1359,16 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 		| orgname   | TIN   | licenseNumber   | other   | otherID   |
 		| <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> |
 
-
-
-	And enter nameprefix,firstname, middlename, lastname, designation
-		| name prefix  | first name   | middle name   | last name   | designation    | involvedPartyType | detectedAs   |
-		| <NamePrefix> | <FirstName1> | <middle name> | <LastName1> | <Designation1> | <detectedAs>      | <detectedAs> |
 	Then I enter the Text for How did this witness/external referring party report this? (Required) and Any Additonal Information regarding the witness or external referring party? (Optional)field on Second Time
 		| involvedPartyType   | detectedAs   |
 		| <involvedPartyType> | <detectedAs> |
 
-	When street address line one , street address line two, city , state , county , zip code, country, fax and email  for the involved party
+
+	When enter nameprefix,firstname, middlename, lastname, designation
+		| name prefix  | first name   | middle name   | last name   | designation    |
+		| <NamePrefix> | <FirstName1> | <middle name> | <LastName1> | <Designation1> |
+
+	And street address line one , street address line two, city , state , county , zip code, country, fax and email  for the involved party
 		| Address1   | Address2   | City   | State2   | City2   | Zip   | Country   | fax   | Email address   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <Country> | <fax> | <Email address> |
 	And I continue with Involved Party Selection and proceed to the next page
@@ -1416,13 +1418,13 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <orgname>            | <first name>       | <last name>       |
-	And validate the primary Subject edit form against referral data
-		| Subject Type        | Organization Name | Name Prefix   | First Name   | Middle Name   | Last Name   | Name Suffix   | Designation/Title | Date of Birth | SSN   | License Number  | ID        | NPI   | TIN/EIN | Medicaid ID   | Medicare ID   | Other ID  | Provider Type   | Provider Specialty   | Taxonomy   | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Country   | Phone          | Fax   | Email           |
-		| <involvedPartyType> | <orgname>         | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN>   | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
-	And validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
-		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
+	Then validate the primary Subject edit form against referral data
+		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
+		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	Then validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
+
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -6684,7 +6686,6 @@ Scenario Outline: 33_ [Online Referral End To End Scenario with Primary Subject 
 		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> |
 
 	And enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other
-
 		| designation   | DOB   | SSN   | licenseNumber   | otherID   | other   |
 		| <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> |
 	And enter how witness or external party reported this, any additional info
@@ -6861,7 +6862,8 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 		| <witnessDropdown> |
 
 	And the following fields should be displayed:
-		| Organization1   | name prefix  | first name   | middle name   | last name   | NameSuffix   | Designation1   | DOB   | Ssn   | OtherId   | Other   | StreetAddress3   | StreetAddress4   | City   | State2   | City2   | Zip   | Country   | PrimaryPhone   | SecondaryPhone   | OtherId   | Email1   |
+
+		| Organization1   | name prefix  | first name   | MiddleName1   | last name   | NameSuffix   | Designation1   | DOB   | Ssn   | OtherId   | Other   | StreetAddress3   | StreetAddress4   | City   | State2   | City2   | Zip   | Country   | PrimaryPhone   | SecondaryPhone   | OtherId   | Email1   |
 		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
 
 	And enter  how witness or external party reported this, any additional info
@@ -6929,7 +6931,7 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <updatedOrgname>     | <first name>       | <last name>       |
 	And validate the primary Subject edit form against referral data
 		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Email    |
-		| <involvedPartyType> | <updatedOrgname>  | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1>    | <DOB>         | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+		| <involvedPartyType> | <updatedOrgname>  | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1>    | <DOB>         | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
 	And validate the Lead Referral tab details against referral data
 		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
 		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
@@ -7039,12 +7041,12 @@ Scenario Outline: 35_ [Online Referral End To End Scenario with Primary Subject 
 		| <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> |
 
 	And enter nameprefix,firstname, middlename, lastname, designation
-		| name prefix  | first name   | middle name   | last name   | designation    |
+		| name prefix  | first name   | middle name   | last name   | Designation1   |
 		| <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> |
 
 	And street address line one , street address line two, city , state , county , zip code, country, fax and email  for the involved party
 		| Address1   | Address2   | City   | State2   | City2   | Zip   | Country   | fax   | Email address   |
-		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <Country> | <fax> | <Email address> |
+		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
 
 	And I click on the continue button on the "<Involved Party>"
 	And I should be navigated to the "< Add Inv Party>"
@@ -7268,7 +7270,7 @@ Scenario Outline: 36_ [Online Referral End To End Scenario with editing addition
 		| isAnotherInvolvedPartyAvailable   | additionalInvolvedPartyType   | isAnotherExternalInvolvedPartyAvailable   |
 		| <isAnotherInvolvedPartyAvailable> | <additionalInvolvedPartyType> | <isAnotherExternalInvolvedPartyAvailable> |
 	And enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated party first name ,associated party middle name , associated party last name  and name suffix
-		| orgname         | name prefix  | first name   | middle name   | last name   | name suffix  |
+		| orgname         | name prefix  | first name   | MiddleName1   | last name   | name suffix  |
 		| <Organization1> | <NamePrefix> | <FirstName1> | <MiddleName1> | <LastName1> | <NameSuffix> |
 	And enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other
 		| designation   | DOB   | SSN   | licenseNumber   | otherID   | other   |

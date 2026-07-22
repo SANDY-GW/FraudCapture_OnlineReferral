@@ -267,6 +267,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             Driver.FindElement(organizationField).Clear();
             Driver.FindElement(organizationField).SendKeys(organizationName);
+            CommonHelpers.ScrollUp(Driver); 
 
         }
 

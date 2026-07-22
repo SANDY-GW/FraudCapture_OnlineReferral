@@ -270,11 +270,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             Driver.FindElement(OrganizationField).Clear();
             Driver.FindElement(OrganizationField).SendKeys(organization);
+            CommonHelpers.ScrollUp(Driver);
         }
 
         public void clickSaveButton()
         {
-            CommonHelpers.WaitForPageToLoad(Driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
             js.ExecuteScript("window.scrollTo(0, 0);");
             CommonHelpers.ScrollUp(Driver);

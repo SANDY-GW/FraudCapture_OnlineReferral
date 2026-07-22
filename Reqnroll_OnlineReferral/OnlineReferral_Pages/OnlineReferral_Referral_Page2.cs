@@ -145,7 +145,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void ClickProceedToNextSectionButton()
         {
             CommonHelpers.ScrollUp(Driver);
-            //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 500);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 70);
             CommonHelpers.ScrollToElement(Driver, proceed_To_Next_SectionButton);
             Driver.FindElement(proceed_To_Next_SectionButton).Click();
