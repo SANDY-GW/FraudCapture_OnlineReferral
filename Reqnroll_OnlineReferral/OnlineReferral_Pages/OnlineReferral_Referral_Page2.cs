@@ -125,13 +125,15 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void SelectState_Or_Territory(string State_Or_Territory)
 
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, state_Or_TerritoryDropdowm, 1000);
+            CommonHelpers.WaitForElementVisiblity(Driver, state_Or_TerritoryDropdowm, 30);
             CommonHelpers.selectOptionByValue(Driver.FindElement(state_Or_TerritoryDropdowm), State_Or_Territory);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
         }
         public void SelectCounty_Or_District(string County_Or_District)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, County_Or_DistrictDropdn, 10);
+            CommonHelpers.WaitForElementVisiblity(Driver, County_Or_DistrictDropdn, 30);
             CommonHelpers.selectOptionByValue(Driver.FindElement(County_Or_DistrictDropdn), County_Or_District);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
         }
 
         public void ClickGoToPreviousSectionButton()

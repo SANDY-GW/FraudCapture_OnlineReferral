@@ -118,7 +118,7 @@ Scenario Outline: 01_ [Online Referral End To End Scenario with Primary Subject 
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 	Then verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
 	And verify county Dropdown lists are in alphabetical order "<CountyDropdown>" on the page "<Involved Party>"
-	Then I enter the invalid email id  and validate for "<Involved Party>"
+	And I enter the invalid email id  and validate for "<Involved Party>"
 		| Invalid email   | Email validation error message   |
 		| <Invalid email> | <Email validation error message> |
 	When enter DOB
@@ -164,7 +164,7 @@ Scenario Outline: 01_ [Online Referral End To End Scenario with Primary Subject 
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -184,14 +184,14 @@ Scenario Outline: 01_ [Online Referral End To End Scenario with Primary Subject 
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
-		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
-		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <orgname>            | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix   | First Name   | Middle Name   | Last Name   | Name Suffix   | Designation/Title | Date of Birth | SSN   | License Number  | ID        | NPI   | TIN/EIN | Medicaid ID   | Medicare ID   | Other ID  | Provider Type   | Provider Specialty   | Taxonomy   | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Country   | Phone          | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN>   | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -321,7 +321,7 @@ Scenario Outline: 02_ [Online Referral End To End Scenario with Primary Subject 
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 	Then verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
 	And verify county Dropdown lists are in alphabetical order "<CountyDropdown>" on the page "<Involved Party>"
-	Then I enter the invalid email id  and validate for "<Involved Party>"
+	And I enter the invalid email id  and validate for "<Involved Party>"
 		| Invalid email   | Email validation error message   |
 		| <Invalid email> | <Email validation error message> |
 	When enter DOB
@@ -374,91 +374,91 @@ Scenario Outline: 02_ [Online Referral End To End Scenario with Primary Subject 
 		| TestFile   |
 		| <TestFile> |
 	Then click on proceed to next session button
-	Then validate Review and Submit Referral page displays all entered data
-		| Field                                      | Expected value                             |
-		| Submitting Party First Name                | <UserFirstName>                            |
-		| Submitting Party Last Name                 | <UserLastName>                             |
-		| Submitting Party Email                     | <Email address>                            |
-		| Submitting Party Phone Number              | <Phone number>                             |
-		| Organization or Agency Name                | <Org name>                                 |
-		| Submitting Party Title                     | <title>                                    |
-		| Submitting Party Street Address 1          | <Address1>                                 |
-		| Submitting Party Street Address 2          | <Address2>                                 |
-		| Submitting Party City                      | <City>                                     |
-		| Submitting Party State                     | <State>                                    |
-		| Submitting Party Zip Code                  | <Zipcode>                                  |
-		| Referral Type                              | <referralType>                             |
-		| Primary Involved Party Type                | <involvedPartyType>                        |
-		| Case or Reference Number                   | <caseOrReferenceNumber>                    |
-		| How Referral Was Detected                  | <detectedAs>                               |
-		| Referral Summary                          | <summary>                                  |
-		| Estimated Amount                          | <amount>                                   |
-		| Original Detection Date                   | <detectionDate>                            |
-		| Incident Start Date                       | <incidentValidStartDate>                   |
-		| Incident End Date                         | <incidentValidEndDate>                     |
-		| Incident State                            | <State2>                                   |
-		| Incident County                           | <City2>                                    |
-		| Primary Party External Referring Party    | <witnessDropdown>                          |
-		| Primary Party Organization                | <orgname>                                  |
-		| Primary Party Name Prefix                 | <name prefix>                              |
-		| Primary Party First Name                  | <first name>                               |
-		| Primary Party Middle Name                 | <middle name>                              |
-		| Primary Party Last Name                   | <last name>                                |
-		| Primary Party Name Suffix                 | <name suffix>                              |
-		| Primary Party Designation                 | <designation>                              |
-		| Primary Party Date of Birth               | <DOB>                                      |
-		| Primary Party SSN                         | <SSN>                                      |
-		| Primary Party License Number              | <licenseNumber>                            |
-		| Primary Party ID                          | <ID Test>                                  |
-		| Primary Party NPI                         | <NPI>                                      |
-		| Primary Party TIN                         | <TIN>                                      |
-		| Primary Party Medicaid ID                 | <medicaid ID>                              |
-		| Primary Party Medicare ID                 | <Medicare ID>                              |
-		| Primary Party Other ID                    | <otherID>                                  |
-		| Primary Party Provider Type               | <provider type>                            |
-		| Primary Party Provider Specialty          | <provider specialty>                       |
-		| Primary Party Taxonomy                    | <Taxonomy>                                 |
-		| Primary Party Other                       | <other>                                    |
-		| Primary Party Street Address 1            | <Address1>                                 |
-		| Primary Party Street Address 2            | <Address2>                                 |
-		| Primary Party City                        | <City>                                     |
-		| Primary Party State                       | <State2>                                   |
-		| Primary Party County                      | <City2>                                    |
-		| Primary Party Zip Code                    | <Zipcode>                                  |
-		| Primary Party Country                     | <country>                                  |
-		| Primary Party Phone                       | <Phone number>                             |
-		| Primary Party Fax                         | <fax>                                      |
-		| Primary Party Email                       | <Email address>                            |
-		| Additional Party Type                     | <additionalInvolvedPartyType>              |
-		| Additional Party External Referring Party | <isAnotherExternalInvolvedPartyAvailable>  |
-		| Additional Party Organization             | <Organization1>                            |
-		| Additional Party Name Prefix              | <NamePrefix>                               |
-		| Additional Party First Name               | <FirstName1>                               |
-		| Additional Party Middle Name              | <MiddleName1>                              |
-		| Additional Party Last Name                | <LastName1>                                |
-		| Additional Party Name Suffix              | <NameSuffix>                               |
-		| Additional Party Designation              | <Designation1>                             |
-		| Additional Party Date of Birth            | <DOB>                                      |
-		| Additional Party SSN                      | <Ssn>                                      |
-		| Additional Party Other ID                 | <OtherId>                                  |
-		| Additional Party Other                    | <Other>                                    |
-		| Additional Party Street Address 1         | <StreetAddress3>                           |
-		| Additional Party Street Address 2         | <StreetAddress4>                           |
-		| Additional Party City                     | <City>                                     |
-		| Additional Party State                    | <State2>                                   |
-		| Additional Party County                   | <City2>                                    |
-		| Additional Party Zip Code                 | <Zip>                                      |
-		| Additional Party Country                  | <Country>                                  |
-		| Additional Party Primary Phone            | <PrimaryPhone>                             |
-		| Additional Party Secondary Phone          | <SecondaryPhone>                           |
-		| Additional Party Email                    | <Email1>                                   |
-		| Question 1 Answer                         | <Question1>                                |
-		| Question 2 Answer                         | <Question2>                                |
-		| Question 3 Answer                         | <Question3>                                |
-		| Attachment                                | <TestFile>                                 |
+	And validate Review and Submit Referral page displays all entered data
+		| Field                                     | Expected value                            |
+		| Submitting Party First Name               | <UserFirstName>                           |
+		| Submitting Party Last Name                | <UserLastName>                            |
+		| Submitting Party Email                    | <Email address>                           |
+		| Submitting Party Phone Number             | <Phone number>                            |
+		| Organization or Agency Name               | <Org name>                                |
+		| Submitting Party Title                    | <title>                                   |
+		| Submitting Party Street Address 1         | <Address1>                                |
+		| Submitting Party Street Address 2         | <Address2>                                |
+		| Submitting Party City                     | <City>                                    |
+		| Submitting Party State                    | <State>                                   |
+		| Submitting Party Zip Code                 | <Zipcode>                                 |
+		| Referral Type                             | <referralType>                            |
+		| Primary Involved Party Type               | <involvedPartyType>                       |
+		| Case or Reference Number                  | <caseOrReferenceNumber>                   |
+		| How Referral Was Detected                 | <detectedAs>                              |
+		| Referral Summary                          | <summary>                                 |
+		| Estimated Amount                          | <amount>                                  |
+		| Original Detection Date                   | <detectionDate>                           |
+		| Incident Start Date                       | <incidentValidStartDate>                  |
+		| Incident End Date                         | <incidentValidEndDate>                    |
+		| Incident State                            | <State2>                                  |
+		| Incident County                           | <City2>                                   |
+		| Primary Party External Referring Party    | <witnessDropdown>                         |
+		| Primary Party Organization                | <orgname>                                 |
+		| Primary Party Name Prefix                 | <name prefix>                             |
+		| Primary Party First Name                  | <first name>                              |
+		| Primary Party Middle Name                 | <middle name>                             |
+		| Primary Party Last Name                   | <last name>                               |
+		| Primary Party Name Suffix                 | <name suffix>                             |
+		| Primary Party Designation                 | <designation>                             |
+		| Primary Party Date of Birth               | <DOB>                                     |
+		| Primary Party SSN                         | <SSN>                                     |
+		| Primary Party License Number              | <licenseNumber>                           |
+		| Primary Party ID                          | <ID Test>                                 |
+		| Primary Party NPI                         | <NPI>                                     |
+		| Primary Party TIN                         | <TIN>                                     |
+		| Primary Party Medicaid ID                 | <medicaid ID>                             |
+		| Primary Party Medicare ID                 | <Medicare ID>                             |
+		| Primary Party Other ID                    | <otherID>                                 |
+		| Primary Party Provider Type               | <provider type>                           |
+		| Primary Party Provider Specialty          | <provider specialty>                      |
+		| Primary Party Taxonomy                    | <Taxonomy>                                |
+		| Primary Party Other                       | <other>                                   |
+		| Primary Party Street Address 1            | <Address1>                                |
+		| Primary Party Street Address 2            | <Address2>                                |
+		| Primary Party City                        | <City>                                    |
+		| Primary Party State                       | <State2>                                  |
+		| Primary Party County                      | <City2>                                   |
+		| Primary Party Zip Code                    | <Zipcode>                                 |
+		| Primary Party Country                     | <country>                                 |
+		| Primary Party Phone                       | <Phone number>                            |
+		| Primary Party Fax                         | <fax>                                     |
+		| Primary Party Email                       | <Email address>                           |
+		| Additional Party Type                     | <additionalInvolvedPartyType>             |
+		| Additional Party External Referring Party | <isAnotherExternalInvolvedPartyAvailable> |
+		| Additional Party Organization             | <Organization1>                           |
+		| Additional Party Name Prefix              | <NamePrefix>                              |
+		| Additional Party First Name               | <FirstName1>                              |
+		| Additional Party Middle Name              | <MiddleName1>                             |
+		| Additional Party Last Name                | <LastName1>                               |
+		| Additional Party Name Suffix              | <NameSuffix>                              |
+		| Additional Party Designation              | <Designation1>                            |
+		| Additional Party Date of Birth            | <DOB>                                     |
+		| Additional Party SSN                      | <Ssn>                                     |
+		| Additional Party Other ID                 | <OtherId>                                 |
+		| Additional Party Other                    | <Other>                                   |
+		| Additional Party Street Address 1         | <StreetAddress3>                          |
+		| Additional Party Street Address 2         | <StreetAddress4>                          |
+		| Additional Party City                     | <City>                                    |
+		| Additional Party State                    | <State2>                                  |
+		| Additional Party County                   | <City2>                                   |
+		| Additional Party Zip Code                 | <Zip>                                     |
+		| Additional Party Country                  | <Country>                                 |
+		| Additional Party Primary Phone            | <PrimaryPhone>                            |
+		| Additional Party Secondary Phone          | <SecondaryPhone>                          |
+		| Additional Party Email                    | <Email1>                                  |
+		| Question 1 Answer                         | <Question1>                               |
+		| Question 2 Answer                         | <Question2>                               |
+		| Question 3 Answer                         | <Question3>                               |
+		| Attachment                                | <TestFile>                                |
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -478,14 +478,14 @@ Scenario Outline: 02_ [Online Referral End To End Scenario with Primary Subject 
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
-		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
-		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <orgname>            | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix   | First Name   | Middle Name   | Last Name   | Name Suffix   | Designation/Title | Date of Birth | SSN   | License Number  | ID        | NPI   | TIN/EIN | Medicaid ID   | Medicare ID   | Other ID  | Provider Type   | Provider Specialty   | Taxonomy   | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Country   | Phone          | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN>   | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -547,7 +547,7 @@ Scenario Outline: 03_ [Online Referral End To End Scenario with Primary Subject 
 	#And i check the required fields current page on the "<Referral>"
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -570,7 +570,7 @@ Scenario Outline: 03_ [Online Referral End To End Scenario with Primary Subject 
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -598,7 +598,7 @@ Scenario Outline: 03_ [Online Referral End To End Scenario with Primary Subject 
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
 	
-	When enter SSN , licenseNumber ,ID Test
+	And enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	And enter How witness or external party reported this ,any additional info
@@ -615,7 +615,7 @@ Scenario Outline: 03_ [Online Referral End To End Scenario with Primary Subject 
 	#	| <Invalid zipcode> | <Zipcode validation error message> |
 	#	
 	
-	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
+	And InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
 		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 
@@ -624,7 +624,7 @@ Scenario Outline: 03_ [Online Referral End To End Scenario with Primary Subject 
 	#Then I enter the invalid email id  and validate for "<Involved Party>"
 	#	| Invalid email   | Email validation error message   |
 	#	| <Invalid email> | <Email validation error message> |
-	When enter DOB
+	And enter DOB
 		| DOB   |
 		| <DOB> |
 						
@@ -692,7 +692,7 @@ Scenario Outline: 03_ [Online Referral End To End Scenario with Primary Subject 
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -712,14 +712,14 @@ Scenario Outline: 03_ [Online Referral End To End Scenario with Primary Subject 
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
-		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
-		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <orgname>            | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix   | First Name   | Middle Name   | Last Name   | Name Suffix   | Designation/Title | Date of Birth | SSN   | License Number  | ID        | NPI   | TIN/EIN | Medicaid ID   | Medicare ID   | Other ID  | Provider Type   | Provider Specialty   | Taxonomy   | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Country   | Phone          | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN>   | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -781,7 +781,7 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -804,7 +804,7 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -826,13 +826,13 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 		| orgname   | name prefix   | first name   | middle name   | last name   | name suffix   |
 		| <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> |
 	And enter InvolvedParty Designation
-		| designation   |
+		| designation |
 	#	| <designation> |
 	#Then i enter invalid date of birth and validate for "<Involved Party>"
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
 	
-	When enter SSN , licenseNumber ,ID Test
+	And enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	And enter How witness or external party reported this ,any additional info
@@ -849,7 +849,7 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 	#	| <Invalid zipcode> | <Zipcode validation error message> |
 		
 	
-	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
+	And InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
 		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 #And verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
@@ -858,7 +858,7 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 	#Then I enter the invalid email id  and validate for "<Involved Party>"
 	#	| Invalid email   | Email validation error message   |
 	#	| <Invalid email> | <Email validation error message> |
-	When enter DOB
+	And enter DOB
 		| DOB   |
 		| <DOB> |
 						
@@ -937,7 +937,7 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -959,12 +959,12 @@ Scenario Outline: 04_ [Online Referral End To End Scenario with Primary Subject 
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
 		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <orgname>            | <first name>       | <last name>       |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
-		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix   | First Name   | Middle Name   | Last Name   | Name Suffix   | Designation/Title | Date of Birth | SSN   | License Number  | ID        | NPI   | TIN/EIN | Medicaid ID   | Medicare ID   | Other ID  | Provider Type   | Provider Specialty   | Taxonomy   | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Country   | Phone          | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN>   | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -1027,7 +1027,7 @@ Scenario Outline: 05_ [Online Referral End To End Scenario with Primary Subject 
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -1050,7 +1050,7 @@ Scenario Outline: 05_ [Online Referral End To End Scenario with Primary Subject 
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -1078,7 +1078,7 @@ Scenario Outline: 05_ [Online Referral End To End Scenario with Primary Subject 
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
 	
-	When enter SSN , licenseNumber ,ID Test
+	And enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	And enter How witness or external party reported this ,any additional info
@@ -1095,7 +1095,7 @@ Scenario Outline: 05_ [Online Referral End To End Scenario with Primary Subject 
 	#	| <Invalid zipcode> | <Zipcode validation error message> |
 		
 	
-	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
+	And InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
 		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 #And verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
@@ -1104,7 +1104,7 @@ Scenario Outline: 05_ [Online Referral End To End Scenario with Primary Subject 
 	#Then I enter the invalid email id  and validate for "<Involved Party>"
 	#	| Invalid email   | Email validation error message   |
 	#	| <Invalid email> | <Email validation error message> |
-	When enter DOB
+	And enter DOB
 		| DOB   |
 		| <DOB> |
 						
@@ -1170,7 +1170,7 @@ Scenario Outline: 05_ [Online Referral End To End Scenario with Primary Subject 
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -1190,14 +1190,14 @@ Scenario Outline: 05_ [Online Referral End To End Scenario with Primary Subject 
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
-		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
-		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <orgname>            | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix   | First Name   | Middle Name   | Last Name   | Name Suffix   | Designation/Title | Date of Birth | SSN   | License Number  | ID        | NPI   | TIN/EIN | Medicaid ID   | Medicare ID   | Other ID  | Provider Type   | Provider Specialty   | Taxonomy   | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Country   | Phone          | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN>   | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -1256,7 +1256,7 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -1279,7 +1279,7 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -1307,7 +1307,7 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
 	
-	When enter SSN , licenseNumber ,ID Test
+	And enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	And enter How witness or external party reported this ,any additional info
@@ -1324,7 +1324,7 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 	#	| <Invalid zipcode> | <Zipcode validation error message> |
 		
 	
-	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
+	And InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
 		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 
@@ -1333,7 +1333,7 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 	#Then I enter the invalid email id  and validate for "<Involved Party>"
 	#	| Invalid email   | Email validation error message   |
 	#	| <Invalid email> | <Email validation error message> |
-	When enter DOB
+	And enter DOB
 		| DOB   |
 		| <DOB> |
 						
@@ -1367,14 +1367,6 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 		| <involvedPartyType> | <detectedAs> |
 
 	When street address line one , street address line two, city , state , county , zip code, country, fax and email  for the involved party
-		| orgname   | TIN   | licenseNumber   | other   | otherID   |
-		| <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> |
-
-	And enter nameprefix,firstname, middlename, lastname, designation
-		| name prefix  | first name   | middle name   | last name   | designation    |
-		| <NamePrefix> | <FirstName1> | <middle name> | <LastName1> | <Designation1> |
-
-	And street address line one , street address line two, city , state , county , zip code, country, fax and email  for the involved party
 		| Address1   | Address2   | City   | State2   | City2   | Zip   | Country   | fax   | Email address   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <Country> | <fax> | <Email address> |
 	And I continue with Involved Party Selection and proceed to the next page
@@ -1403,7 +1395,7 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -1424,13 +1416,13 @@ Scenario Outline: 06_ [Online Referral End To End Scenario with Primary Subject 
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
-		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <orgname>            | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix   | First Name   | Middle Name   | Last Name   | Name Suffix   | Designation/Title | Date of Birth | SSN   | License Number  | ID        | NPI   | TIN/EIN | Medicaid ID   | Medicare ID   | Other ID  | Provider Type   | Provider Specialty   | Taxonomy   | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Country   | Phone          | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN>   | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -1491,7 +1483,7 @@ Scenario Outline: 07_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -1514,7 +1506,7 @@ Scenario Outline: 07_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -1578,7 +1570,7 @@ Scenario Outline: 07_[Online Referral End To End Scenario with Primary Subject T
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
 
-	When enter SSN , licenseNumber ,ID Test
+	And enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	Then I enter the Text for How did this witness/external referring party report this? (Required) and Any Additonal Information regarding the witness or external referring party? (Optional)field on Second Time
@@ -1596,8 +1588,8 @@ Scenario Outline: 07_[Online Referral End To End Scenario with Primary Subject T
 	#	| <Invalid zipcode> | <Zipcode validation error message> |
 	
 	
-	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
-		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
+	And InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
+		| Address1 | Address2 | City | State2 | City2 | Zipcode |
 #		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 #		And verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
 #	And verify county Dropdown lists are in alphabetical order "<CountyDropdown>" on the page "<Involved Party>"
@@ -1605,7 +1597,7 @@ Scenario Outline: 07_[Online Referral End To End Scenario with Primary Subject T
 #	Then I enter the invalid email id  and validate for "<Involved Party>"
 #		| Invalid email   | Email validation error message   |
 #		| <Invalid email> | <Email validation error message> |
-	When enter DOB
+	And enter DOB
 		| DOB   |
 		| <DOB> |
 					
@@ -1641,7 +1633,7 @@ Scenario Outline: 07_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -1662,13 +1654,13 @@ Scenario Outline: 07_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Date of Birth | Gender   | Other   | ID      | SSN   | Medicaid ID   | Medicare ID   | Other ID  | Plan       | Program   | LOB   | Group   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Primary Phone  | Secondary Phone  | Email           |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB>         | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -1733,7 +1725,7 @@ Scenario Outline: 08_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -1756,9 +1748,9 @@ Scenario Outline: 08_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
-		| incidentValidStartDate   | incidentValidEndDate   |
-		| <Incident Start Date> | <Incident End Date> |
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+		| incidentValidStartDate | incidentValidEndDate |
+		| <Incident Start Date>  | <Incident End Date>  |
 	And enter state  and city  on the "<Referral>"
 		| State2   | City2   |
 		| <State2> | <City2> |
@@ -1841,7 +1833,7 @@ Scenario Outline: 08_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -1862,13 +1854,13 @@ Scenario Outline: 08_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Date of Birth | Gender   | Other   | ID      | SSN   | Medicaid ID   | Medicare ID   | Other ID  | Plan       | Program   | LOB   | Group   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Primary Phone  | Secondary Phone  | Email           |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB>         | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -1931,7 +1923,7 @@ Scenario Outline: 09_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -1954,7 +1946,7 @@ Scenario Outline: 09_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -2060,7 +2052,7 @@ Scenario Outline: 09_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -2081,13 +2073,13 @@ Scenario Outline: 09_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Date of Birth | Gender   | Other   | ID      | SSN   | Medicaid ID   | Medicare ID   | Other ID  | Plan       | Program   | LOB   | Group   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Primary Phone  | Secondary Phone  | Email           |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB>         | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -2150,7 +2142,7 @@ Scenario Outline: 10_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -2173,7 +2165,7 @@ Scenario Outline: 10_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -2275,7 +2267,7 @@ Scenario Outline: 10_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -2296,13 +2288,13 @@ Scenario Outline: 10_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Date of Birth | Gender   | Other   | ID      | SSN   | Medicaid ID   | Medicare ID   | Other ID  | Plan       | Program   | LOB   | Group   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Primary Phone  | Secondary Phone  | Email           |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB>         | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -2364,7 +2356,7 @@ Scenario Outline: 11_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -2387,7 +2379,7 @@ Scenario Outline: 11_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -2483,7 +2475,7 @@ Scenario Outline: 11_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -2504,13 +2496,13 @@ Scenario Outline: 11_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Date of Birth | Gender   | Other   | ID      | SSN   | Medicaid ID   | Medicare ID   | Other ID  | Plan       | Program   | LOB   | Group   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Primary Phone  | Secondary Phone  | Email           |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB>         | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -2572,7 +2564,7 @@ Scenario Outline: 12_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -2595,7 +2587,7 @@ Scenario Outline: 12_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -2672,7 +2664,7 @@ Scenario Outline: 12_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -2693,13 +2685,13 @@ Scenario Outline: 12_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB> | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Date of Birth | Gender   | Other   | ID      | SSN   | Medicaid ID   | Medicare ID   | Other ID  | Plan       | Program   | LOB   | Group   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Primary Phone  | Secondary Phone  | Email           |
+		| <involvedPartyType> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <DOB>         | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -2759,7 +2751,7 @@ Scenario Outline: 13_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -2782,7 +2774,7 @@ Scenario Outline: 13_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -2843,7 +2835,7 @@ Scenario Outline: 13_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -2864,13 +2856,13 @@ Scenario Outline: 13_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <state2> | <city2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Email    |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1>    | <DOB>         | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <state2>        | <city2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -2932,7 +2924,7 @@ Scenario Outline: 14_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -2955,7 +2947,7 @@ Scenario Outline: 14_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -2996,7 +2988,7 @@ Scenario Outline: 14_[Online Referral End To End Scenario with Primary Subject T
 
 	#Then Validate header appears aligned and not distorted on the "<Add Inv Party>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Add Inv Party>"
-	When is there anotherinvolved party dropdown is selected on the "<Add Inv Party>"
+	And is there anotherinvolved party dropdown is selected on the "<Add Inv Party>"
 		| Is there any Involved Party Dropdown   |
 		| <Is there any Involved Party Dropdown> |
 
@@ -3020,7 +3012,7 @@ Scenario Outline: 14_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -3041,13 +3033,13 @@ Scenario Outline: 14_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | License Number  | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Fax   | Email           |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -3112,7 +3104,7 @@ Scenario Outline: 15_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -3135,7 +3127,7 @@ Scenario Outline: 15_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -3205,7 +3197,7 @@ Scenario Outline: 15_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -3226,13 +3218,13 @@ Scenario Outline: 15_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
-		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <orgname>            |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | TIN/EIN | License Number  | Other   | Other ID  | Name Prefix  | First Name   | Middle Name   | Last Name   | Designation/Title | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <TIN>   | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1>    | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -3292,7 +3284,7 @@ Scenario Outline: 16_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -3315,7 +3307,7 @@ Scenario Outline: 16_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -3408,7 +3400,7 @@ Scenario Outline: 16_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -3429,13 +3421,13 @@ Scenario Outline: 16_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
-		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <orgname>            |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | TIN/EIN | License Number  | Other   | Other ID  | Name Prefix  | First Name   | Middle Name   | Last Name   | Designation/Title | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <TIN>   | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1>    | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -3494,7 +3486,7 @@ Scenario Outline: 17_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -3517,7 +3509,7 @@ Scenario Outline: 17_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -3566,7 +3558,7 @@ Scenario Outline: 17_[Online Referral End To End Scenario with Primary Subject T
 	#Then i enter invalid date of birth and validate for "<Involved Party>"
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
-	When enter SSN , licenseNumber ,ID Test
+	And enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	Then I enter the Text for How did this witness/external referring party report this? (Required) and Any Additonal Information regarding the witness or external referring party? (Optional)field on Second Time
@@ -3583,7 +3575,7 @@ Scenario Outline: 17_[Online Referral End To End Scenario with Primary Subject T
 	#	| <Invalid zipcode> | <Zipcode validation error message> |
 	
 	
-	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
+	And InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
 		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 	#	And verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
@@ -3591,7 +3583,7 @@ Scenario Outline: 17_[Online Referral End To End Scenario with Primary Subject T
 	#Then I enter the invalid email id  and validate for "<Involved Party>"
 	#	| Invalid email   | Email validation error message   |
 	#	| <Invalid email> | <Email validation error message> |
-	When enter DOB
+	And enter DOB
 		| DOB   |
 		| <DOB> |
 	And InvolvedParty country,  phone number , fax  and email address
@@ -3621,7 +3613,7 @@ Scenario Outline: 17_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -3642,13 +3634,13 @@ Scenario Outline: 17_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
-		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <orgname>            |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | TIN/EIN | License Number  | Other   | Other ID  | Name Prefix  | First Name   | Middle Name   | Last Name   | Designation/Title | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <TIN>   | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1>    | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -3706,7 +3698,7 @@ Scenario Outline: 18_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -3729,7 +3721,7 @@ Scenario Outline: 18_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -3816,7 +3808,7 @@ Scenario Outline: 18_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -3837,13 +3829,13 @@ Scenario Outline: 18_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
-		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <orgname>            |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | TIN/EIN | License Number  | Other   | Other ID  | Name Prefix  | First Name   | Middle Name   | Last Name   | Designation/Title | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <TIN>   | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1>    | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -3905,7 +3897,7 @@ Scenario Outline: 19_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -3928,7 +3920,7 @@ Scenario Outline: 19_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -4003,7 +3995,7 @@ Scenario Outline: 19_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -4024,13 +4016,13 @@ Scenario Outline: 19_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
-		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <orgname>            |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | TIN/EIN | License Number  | Other   | Other ID  | Name Prefix  | First Name   | Middle Name   | Last Name   | Designation/Title | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <TIN>   | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1>    | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -4090,7 +4082,7 @@ Scenario Outline: 20_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -4113,7 +4105,7 @@ Scenario Outline: 20_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -4198,7 +4190,7 @@ Scenario Outline: 20_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -4219,13 +4211,13 @@ Scenario Outline: 20_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <orgname> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
-		| <involvedPartyType> | <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <orgname>            |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | TIN/EIN | License Number  | Other   | Other ID  | Name Prefix  | First Name   | Middle Name   | Last Name   | Designation/Title | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <TIN>   | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1>    | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -4285,7 +4277,7 @@ Scenario Outline: 21_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -4308,7 +4300,7 @@ Scenario Outline: 21_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -4404,7 +4396,7 @@ Scenario Outline: 21_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -4425,13 +4417,13 @@ Scenario Outline: 21_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | License Number  | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Fax   | Email           |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -4493,7 +4485,7 @@ Scenario Outline: 22_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -4516,7 +4508,7 @@ Scenario Outline: 22_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -4574,7 +4566,7 @@ Scenario Outline: 22_[Online Referral End To End Scenario with Primary Subject T
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
 
-	When enter SSN , licenseNumber ,ID Test
+	And enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	Then I enter the Text for How did this witness/external referring party report this? (Required) and Any Additonal Information regarding the witness or external referring party? (Optional)field on Second Time
@@ -4593,7 +4585,7 @@ Scenario Outline: 22_[Online Referral End To End Scenario with Primary Subject T
 	
 	
 		
-	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
+	And InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
 		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 	#Then verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
@@ -4601,13 +4593,13 @@ Scenario Outline: 22_[Online Referral End To End Scenario with Primary Subject T
 	#Then I enter the invalid email id  and validate for "<Involved Party>"
 	#	| Invalid email   | Email validation error message   |
 	#	| <Invalid email> | <Email validation error message> |
-	When enter DOB
+	And enter DOB
 		| DOB   |
 		| <DOB> |
 	#Then I enter the invalid  fax  and validate for "<Involved Party>"
 	#	| Invalidfax   | FaxValidationErrorMessage   |
 	#	| <Invalidfax> | <FaxValidationErrorMessage> |
-	When InvolvedParty country,  phone number , fax  and email address
+	And InvolvedParty country,  phone number , fax  and email address
 		| country   | Phone number   | fax   | Email address   |
 		| <country> | <Phone number> | <fax> | <Email address> |
 	
@@ -4635,7 +4627,7 @@ Scenario Outline: 22_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -4656,13 +4648,13 @@ Scenario Outline: 22_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | License Number  | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Fax   | Email           |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -4722,7 +4714,7 @@ Scenario Outline: 23_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -4745,7 +4737,7 @@ Scenario Outline: 23_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -4838,7 +4830,7 @@ Scenario Outline: 23_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -4859,13 +4851,13 @@ Scenario Outline: 23_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | License Number  | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Fax   | Email           |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -4886,8 +4878,8 @@ Scenario Outline: 23_[Online Referral End To End Scenario with Primary Subject T
 
 
 Examples:
-| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                                  | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                        | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
-|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Caregiver w/o req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Caregiver w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
+	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                                  | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                        | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
+	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Caregiver w/o req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Caregiver w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
 
 
 
@@ -4924,7 +4916,7 @@ Scenario Outline: 24_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -4947,7 +4939,7 @@ Scenario Outline: 24_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -5028,7 +5020,7 @@ Scenario Outline: 24_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -5049,13 +5041,13 @@ Scenario Outline: 24_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | License Number  | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Fax   | Email           |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -5112,7 +5104,7 @@ Scenario Outline: 25_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -5135,7 +5127,7 @@ Scenario Outline: 25_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -5222,7 +5214,7 @@ Scenario Outline: 25_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -5243,13 +5235,13 @@ Scenario Outline: 25_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | License Number  | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Fax   | Email           |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -5305,7 +5297,7 @@ Scenario Outline: 26_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -5328,7 +5320,7 @@ Scenario Outline: 26_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -5411,7 +5403,7 @@ Scenario Outline: 26_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -5432,13 +5424,13 @@ Scenario Outline: 26_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Email    |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1>    | <DOB>         | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -5501,7 +5493,7 @@ Scenario Outline: 27_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -5524,7 +5516,7 @@ Scenario Outline: 27_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -5570,7 +5562,7 @@ Scenario Outline: 27_[Online Referral End To End Scenario with Primary Subject T
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
 
-	When enter SSN , licenseNumber ,ID Test
+	And enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	Then I enter the Text for How did this witness/external referring party report this? (Required) and Any Additonal Information regarding the witness or external referring party? (Optional)field on Second Time
@@ -5587,7 +5579,7 @@ Scenario Outline: 27_[Online Referral End To End Scenario with Primary Subject T
 	#	| Invalid zipcode   | Zipcode validation error message   |
 	#	| <Invalid zipcode> | <Zipcode validation error message> |
 	
-	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
+	And InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
 		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 	#	And verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
@@ -5595,7 +5587,7 @@ Scenario Outline: 27_[Online Referral End To End Scenario with Primary Subject T
 	#Then I enter the invalid email id  and validate for "<Involved Party>"
 	#	| Invalid email   | Email validation error message   |
 	#	| <Invalid email> | <Email validation error message> |
-	When enter DOB
+	And enter DOB
 		| DOB   |
 		| <DOB> |
 					
@@ -5626,7 +5618,7 @@ Scenario Outline: 27_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -5647,13 +5639,13 @@ Scenario Outline: 27_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Email    |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1>    | <DOB>         | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -5710,7 +5702,7 @@ Scenario Outline: 28_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -5733,7 +5725,7 @@ Scenario Outline: 28_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -5808,7 +5800,7 @@ Scenario Outline: 28_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -5829,13 +5821,13 @@ Scenario Outline: 28_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Email    |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1>    | <DOB>         | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -5856,8 +5848,8 @@ Scenario Outline: 28_[Online Referral End To End Scenario with Primary Subject T
 
 
 Examples:
-| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                             | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                        | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
-|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject-Lawyer w/ Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Caregiver w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
+	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                             | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                        | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
+	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject-Lawyer w/ Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Caregiver w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
 
 
 
@@ -5894,7 +5886,7 @@ Scenario Outline: 29_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -5917,7 +5909,7 @@ Scenario Outline: 29_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -5937,7 +5929,7 @@ Scenario Outline: 29_[Online Referral End To End Scenario with Primary Subject T
 		| <witnessDropdown> |
 	And the following fields should be displayed:
 		| Organization1   | NamePrefix   | FirstName1   | MiddleName1   | LastName1   | NameSuffix   | Designation1   | DOB   | Ssn   | OtherId   | Other   | StreetAddress3   | StreetAddress4   | City   | State2   | City2   | Zip   | Country   | PrimaryPhone   | SecondaryPhone   | OtherId   | Email1   |
-		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <Country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
+		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
 	And enter how witness or external party reported this, any additional info
 		| InvolvedPartyType   | detectedAs   |
 		| <involvedPartyType> | <detectedAs> |
@@ -5955,7 +5947,7 @@ Scenario Outline: 29_[Online Referral End To End Scenario with Primary Subject T
 		| <isAnotherInvolvedPartyAvailable> | <additionalInvolvedPartyType> | <isAnotherExternalInvolvedPartyAvailable> |
 	And the following fields should be displayed:
 		| Organization1   | NamePrefix   | FirstName1   | MiddleName1   | LastName1   | NameSuffix   | Designation1   | DOB   | Ssn   | OtherId   | Other   | StreetAddress3   | StreetAddress4   | City   | State2   | City2   | Zip   | Country   | PrimaryPhone   | SecondaryPhone   | OtherId   | Email1   |
-		| <Organization1> | <NamePrefix> | <FirstName1> | <MiddleName1> | <LastName1> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <Country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
+		| <Organization1> | <NamePrefix> | <FirstName1> | <MiddleName1> | <LastName1> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
 	Then I enter the Text for How did this witness/external referring party report this? (Required) and Any Additonal Information regarding the witness or external referring party? (Optional)field on Second Time
 		| involvedPartyType   | detectedAs   |
 		| <involvedPartyType> | <detectedAs> |
@@ -5985,7 +5977,7 @@ Scenario Outline: 29_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -6006,13 +5998,13 @@ Scenario Outline: 29_[Online Referral End To End Scenario with Primary Subject T
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| <incidentStartDate>   | <incidentEndDate>   | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Email    |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1>    | <DOB>         | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -6069,7 +6061,7 @@ Scenario Outline: 30_[Online Referral End To End Scenario with Primary Subject T
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -6092,7 +6084,7 @@ Scenario Outline: 30_[Online Referral End To End Scenario with Primary Subject T
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -6111,8 +6103,8 @@ Scenario Outline: 30_[Online Referral End To End Scenario with Primary Subject T
 		| witnessDropdown   |
 		| <witnessDropdown> |
 	And the following fields should be displayed:
-		| Organization1   | NamePrefix   | FirstName1   | MiddleName1   | LastName1   | NameSuffix   | Designation1   | DOB   | Ssn   | OtherId   | Other   | StreetAddress3   | StreetAddress4   | City   | State2   | City2   | Zip   | Country   | PrimaryPhone   | SecondaryPhone   | OtherId   | Email1   |
-		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <Country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
+		| Organization1   | NamePrefix   | firstName    | MiddleName1   | lastName    | NameSuffix   | Designation1   | DOB   | Ssn   | OtherId   | Other   | StreetAddress3   | StreetAddress4   | City   | State2   | City2   | Zip   | Country   | PrimaryPhone   | SecondaryPhone   | OtherId   | Email1   |
+		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
 	And enter how witness or external party reported this, any additional info
 		| InvolvedPartyType   | detectedAs   |
 		| <involvedPartyType> | <detectedAs> |
@@ -6132,15 +6124,15 @@ Scenario Outline: 30_[Online Referral End To End Scenario with Primary Subject T
 		| <orgname> | <TIN> | <licenseNumber> | <other> | <otherID> |
 
 	And enter nameprefix,firstname, middlename, lastname, designation
-		| NamePrefix   | FirstName1   | middle name   | LastName1   | Designation1   |
-		| <NamePrefix> | <FirstName1> | <middle name> | <LastName1> | <Designation1> |
+		| NamePrefix   | firstName    | middle name   | lastName    | Designation1   |
+		| <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> |
 	Then I enter the Text for How did this witness/external referring party report this? (Required) and Any Additonal Information regarding the witness or external referring party? (Optional)field on Second Time
 		| involvedPartyType   | detectedAs   |
 		| <involvedPartyType> | <detectedAs> |
 
 	When street address line one , street address line two, city , state , county , zip code, country, fax and email  for the involved party
 		| Address1   | Address2   | City   | State2   | City2   | Zip   | Country   | fax   | Email address   |
-		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <Country> | <fax> | <Email address> |
+		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
 	And I continue with Involved Party Selection and proceed to the next page
 	And I Select the  another involved Party from the drop down menu as NO
 		| isAnotherInvolvedPartyAvailable1   |
@@ -6165,7 +6157,7 @@ Scenario Outline: 30_[Online Referral End To End Scenario with Primary Subject T
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -6185,14 +6177,14 @@ Scenario Outline: 30_[Online Referral End To End Scenario with Primary Subject T
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
-		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <Organization1> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <Organization1>      | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Email    |
+		| <involvedPartyType> | <Organization1>   | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1>    | <DOB>         | <Ssn> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -6211,8 +6203,8 @@ Scenario Outline: 30_[Online Referral End To End Scenario with Primary Subject T
 	Then I should ne navigated to FC Logout confirmation Page
 
 Examples:
-	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                             | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                       | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
-	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject-Lawyer w/ Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Law Firm w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
+	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                             | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                       | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
+	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject-Lawyer w/ Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Law Firm w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
 
 	#Adding the Primary SubjectType as a  "Provider" and Editing the Primary Subject Type 
 
@@ -6250,7 +6242,7 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -6273,7 +6265,7 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -6292,7 +6284,7 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 		| witnessDropdown   |
 		| <witnessDropdown> |
 	And enter InvolvedParty orgname , name prefix , associated party first name ,associated party middle name , associated party last name  and name suffix  on the "<Involved Party>"
-		| orgname   | name prefix   | first name   | middle name   | last name   | name suffix   |
+		| orgname   | namePrefix    | firstName    | middleName    | lastName    | nameSuffix    |
 		| <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> |
 
 	And enter InvolvedParty Designation
@@ -6302,7 +6294,7 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
 
-	When enter SSN , licenseNumber ,ID Test
+	And enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	And enter How witness or external party reported this ,any additional info
@@ -6319,7 +6311,7 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 	#	| <Invalid zipcode> | <Zipcode validation error message> |
 	
 	
-	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
+	And InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
 		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 #And verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
@@ -6328,7 +6320,7 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 #	Then I enter the invalid email id  and validate for "<Involved Party>"
 #		| Invalid email   | Email validation error message   |
 #		| <Invalid email> | <Email validation error message> |
-	When enter DOB
+	And enter DOB
 		| DOB   |
 		| <DOB> |
 					
@@ -6346,11 +6338,11 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 	#When i check the required fields current page on the "<Add Inv Party>"
 
 
-	And Edit Primary InvovePartyType,Change the data and save the changes
+	And Edit Primary InvovePartyType,Change the data and save the changes as provider
 		| updatedOrgname   |
 		| <updatedOrgname> |
 
-	Then Validate the updated data of the Primary Subject type
+	Then Validate the updated data of the Primary Subject type as provider
 		| updatedOrgname   |
 		| <updatedOrgname> |
 
@@ -6378,7 +6370,7 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -6398,14 +6390,14 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
-		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <updatedOrgname> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
-		| <involvedPartyType> | <updatedOrgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <state2> | <city2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <updatedOrgname>     | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix   | First Name   | Middle Name   | Last Name   | Name Suffix   | Designation/Title | Date of Birth | SSN   | License Number  | ID        | NPI   | TIN/EIN | Medicaid ID   | Medicare ID   | Other ID  | Provider Type   | Provider Specialty   | Taxonomy   | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Country   | Phone          | Fax   | Email           |
+		| <involvedPartyType> | <updatedOrgname>  | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN>   | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -6424,8 +6416,8 @@ Scenario Outline: 31_ [Online Referral End To End Scenario with Primary Subject 
 	Then I should ne navigated to FC Logout confirmation Page
 
 Examples:
-	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | state2 | city2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | updatedOrgname        | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
-	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Gainwell Technologies | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
+	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | updatedOrgname        | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
+	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Gainwell Technologies | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
 
 
 Scenario Outline: 32_ [Online Referral End To End Scenario with Primary Subject Type as Member and Editing the Primary Subject Type]
@@ -6461,7 +6453,7 @@ Scenario Outline: 32_ [Online Referral End To End Scenario with Primary Subject 
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -6484,7 +6476,7 @@ Scenario Outline: 32_ [Online Referral End To End Scenario with Primary Subject 
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -6503,8 +6495,8 @@ Scenario Outline: 32_ [Online Referral End To End Scenario with Primary Subject 
 		| witnessDropdown   |
 		| <witnessDropdown> |
 	And enter InvolvedParty  name prefix , associated party first name ,associated party middle name , associated party last name and name suffix
-		| name prefix  | first name   | middle name   | last name   | name suffix  |
-		| <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> |
+		| namePrefix    | firstName    | middleName    | lastName    | nameSuffix    |
+		| <name prefix> | <first name> | <middle name> | <last name> | <name suffix> |
 	And enter InvolvedParty DOB , Gender , other
 		| DOB   | Gender   | other   |
 		| <DOB> | <Gender> | <other> |
@@ -6519,8 +6511,11 @@ Scenario Outline: 32_ [Online Referral End To End Scenario with Primary Subject 
 		| <planType> | <Program> | <LOB> | <Group> |
 
 	And InvolvedParty member street_Address_lineone , street_Address_linetwo , city , state  , county  and zip code
-		| Address1   | Address2   | City   | state2   | city2   | Zipcode   |
-		| <Address1> | <Address2> | <City> | <state2> | <city2> | <Zipcode> |
+		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
+		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
+	And InvolvedParty Primary phoneNo ,  Secondary phone number  and email address
+		| PrimaryPhone   | SecondaryPhone   | Email address   |
+		| <PrimaryPhone> | <SecondaryPhone> | <Email address> |
 	And I click on the continue button on the "<Involved Party>"
 	And I should be navigated to the "< Add Inv Party>"
 
@@ -6529,12 +6524,12 @@ Scenario Outline: 32_ [Online Referral End To End Scenario with Primary Subject 
 	#Then Validate header appears aligned and not distorted on the "<Add Inv Party>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Add Inv Party>"
 	#When i check the required fields current page on the "<Add Inv Party>"
-	And Edit Primary InvovePartyType,Change the data and save the changes
-		| updatedOrgname   |
-		| <updatedOrgname> |
-	Then Validate the updated data of the Primary Subject type
-		| updatedOrgname   |
-		| <updatedOrgname> |
+	And Edit Primary InvovePartyType for member,Change the data and save the changes as member
+		| updatedMiddleName   |
+		| <updatedMiddleName> |
+	Then Validate the updated data of the Primary Subject type as member
+		| updatedMiddleName   |
+		| <updatedMiddleName> |
 	When is there anotherinvolved party dropdown is selected on the "<Add Inv Party>"
 		| Is there any Involved Party Dropdown   |
 		| <Is there any Involved Party Dropdown> |
@@ -6558,7 +6553,7 @@ Scenario Outline: 32_ [Online Referral End To End Scenario with Primary Subject 
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -6578,14 +6573,14 @@ Scenario Outline: 32_ [Online Referral End To End Scenario with Primary Subject 
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
-		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject First Name | Subject Last Name |
-		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Date of Birth | Gender | Other | ID | SSN | Medicaid ID | Medicare ID | Other ID | Plan | Program | LOB | Group | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <DOB> |  | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> |  |  |  | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |  |  | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Name Prefix   | First Name   | Middle Name         | Last Name   | Name Suffix   | Date of Birth | Gender   | Other   | ID      | SSN   | Medicaid ID   | Medicare ID   | Other ID  | Plan       | Program   | LOB   | Group   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Primary Phone   | Secondary Phone  | Email           |
+		| <involvedPartyType> | <name prefix> | <first name> | <updatedMiddleName> | <last name> | <name suffix> | <DOB>         | <Gender> | <other> | <other> | <SSN> | <medicaid ID> | <Medicare ID> | <otherID> | <planType> | <Program> | <LOB> | <Group> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | < PrimaryPhone> | <SecondaryPhone> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -6604,8 +6599,8 @@ Scenario Outline: 32_ [Online Referral End To End Scenario with Primary Subject 
 	Then I should ne navigated to FC Logout confirmation Page
 
 Examples:
-	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                                 | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | updatedOrgname        | updatedFirstName | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
-	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Recipient w/ req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Gainwell Technologies | FN101            | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
+	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                                 | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | updatedOrgname        | updatedMiddleName | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads | Gender | Program | LOB  | Group  | PrimaryPhone | SecondaryPhone |
+	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Recipient w/ req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Gainwell Technologies | UserMN101         | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads | female | Program | LOB1 | Group1 |   8974512631 |     8974512645 |
 
 
 
@@ -6643,7 +6638,7 @@ Scenario Outline: 33_ [Online Referral End To End Scenario with Primary Subject 
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -6666,7 +6661,7 @@ Scenario Outline: 33_ [Online Referral End To End Scenario with Primary Subject 
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -6685,7 +6680,7 @@ Scenario Outline: 33_ [Online Referral End To End Scenario with Primary Subject 
 		| witnessDropdown   |
 		| <witnessDropdown> |
 	And enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated party first name ,associated party middle name , associated party last name  and name suffix
-		| orgname         | name prefix  | first name   | middle name   | last name   | name suffix  |
+		| orgname         | NamePrefix   | firstName    | MiddleName1   | lastName    | NameSuffix   |
 		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> |
 
 	And enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other
@@ -6709,10 +6704,10 @@ Scenario Outline: 33_ [Online Referral End To End Scenario with Primary Subject 
 	#Then Validate header appears aligned and not distorted on the "<Add Inv Party>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Add Inv Party>"
 	#When i check the required fields current page on the "<Add Inv Party>"
-	And Edit Primary InvovePartyType,Change the data and save the changes
+	And Edit Primary InvovePartyType for non-Enumerated provider,Change the data and save the changes
 		| updatedOrgname   |
 		| <updatedOrgname> |
-	Then Validate the updated data of the Primary Subject type
+	Then Validate the updated data of the Primary Subject type as non-enumerated provider
 		| updatedOrgname   |
 		| <updatedOrgname> |
 	When is there anotherinvolved party dropdown is selected on the "<Add Inv Party>"
@@ -6738,7 +6733,7 @@ Scenario Outline: 33_ [Online Referral End To End Scenario with Primary Subject 
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -6760,12 +6755,12 @@ Scenario Outline: 33_ [Online Referral End To End Scenario with Primary Subject 
 	Then validate the Lead Summary tab details against referral data
 		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
 		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <updatedOrgname>     | <first name>       | <last name>       |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Fax | Email |
-		| <involvedPartyType> | <updatedOrgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> |  |  | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix   | First Name   | Middle Name   | Last Name   | Name Suffix   | Designation/Title | Date of Birth | SSN   | License Number  | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Country   | Primary Phone  | Secondary Phone  | Fax   | Email           |
+		| <involvedPartyType> | <updatedOrgname>  | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <otherID> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <country> | <PrimaryPhone> | <SecondaryPhone> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -6823,7 +6818,7 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -6846,7 +6841,7 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -6866,8 +6861,8 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 		| <witnessDropdown> |
 
 	And the following fields should be displayed:
-		| Organization1   | NamePrefix   | FirstName1   | MiddleName1   | LastName1   | NameSuffix   | Designation1   | DOB   | Ssn   | OtherId   | Other   | StreetAddress3   | StreetAddress4   | City   | State2   | City2   | Zip   | Country   | PrimaryPhone   | SecondaryPhone   | OtherId   | Email1   |
-		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <Country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
+		| Organization1   | name prefix  | first name   | middle name   | last name   | NameSuffix   | Designation1   | DOB   | Ssn   | OtherId   | Other   | StreetAddress3   | StreetAddress4   | City   | State2   | City2   | Zip   | Country   | PrimaryPhone   | SecondaryPhone   | OtherId   | Email1   |
+		| <Organization1> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <Ssn> | <OtherId> | <Other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <OtherId> | <Email1> |
 
 	And enter  how witness or external party reported this, any additional info
 		| involvedPartyType   | detectedAs   |
@@ -6881,10 +6876,10 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 	#Then Validate header appears aligned and not distorted on the "<Add Inv Party>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Add Inv Party>"
 	#When i check the required fields current page on the "<Add Inv Party>"
-	And Edit Primary InvovePartyType,Change the data and save the changes
+	And Edit Primary InvovePartyType,Change the data and save the changes as Non-Enumerated Member
 		| updatedOrgname   |
 		| <updatedOrgname> |
-	Then Validate the updated data of the Primary Subject type
+	Then Validate the updated data of the Primary Subject type as non-enumerated member
 		| updatedOrgname   |
 		| <updatedOrgname> |
 	When is there anotherinvolved party dropdown is selected on the "<Add Inv Party>"
@@ -6910,7 +6905,7 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -6930,12 +6925,12 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
-		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentStartDate> | <incidentEndDate> | <amount> | <updatedOrgname> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | Other ID | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Primary Phone | Secondary Phone | Email |
-		| <involvedPartyType> | <updatedOrgname> | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1> | <DOB> | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2> | <City2> | <Zip> | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
-	Then validate the Lead Referral tab details against referral data
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <updatedOrgname>     | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix  | First Name   | Middle Name   | Last Name   | Name Suffix  | Designation/Title | Date of Birth | SSN   | Other ID  | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Primary Phone  | Secondary Phone  | Email    |
+		| <involvedPartyType> | <updatedOrgname>  | <NamePrefix> | <first name> | <middle name> | <last name> | <NameSuffix> | <Designation1>    | <DOB>         | <SSN> | <otherID> | <other> | <StreetAddress3> | <StreetAddress4> | <City> | <State2>        | <City2> | <Zip>    | <country> | <PrimaryPhone> | <SecondaryPhone> | <Email1> |
+	And validate the Lead Referral tab details against referral data
 		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
 		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
@@ -6957,8 +6952,8 @@ Scenario Outline: 34_ [Online Referral End To End Scenario with Primary Subject 
 	Then I should ne navigated to FC Logout confirmation Page
 	
 Examples:
-	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                 | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                       | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | updatedOrgname        | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
-	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | 12.1.25 Non enumerated Individual |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2026 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Law Firm w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Gainwell organization | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
+	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                 | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                       | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | updatedOrgname        | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
+	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | 12.1.25 Non enumerated Individual |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2026 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Law Firm w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Gainwell organization | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
 
 
 
@@ -6999,7 +6994,7 @@ Scenario Outline: 35_ [Online Referral End To End Scenario with Primary Subject 
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -7021,7 +7016,7 @@ Scenario Outline: 35_ [Online Referral End To End Scenario with Primary Subject 
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -7048,8 +7043,8 @@ Scenario Outline: 35_ [Online Referral End To End Scenario with Primary Subject 
 		| <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> |
 
 	And street address line one , street address line two, city , state , county , zip code, country, fax and email  for the involved party
-		| Address1   | Address2   | City   | state2   | city2   | Zip   | Country   | fax   | Email address   |
-		| <Address1> | <Address2> | <City> | <state2> | <city2> | <Zip> | <Country> | <fax> | <Email address> |
+		| Address1   | Address2   | City   | State2   | City2   | Zip   | Country   | fax   | Email address   |
+		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <Country> | <fax> | <Email address> |
 
 	And I click on the continue button on the "<Involved Party>"
 	And I should be navigated to the "< Add Inv Party>"
@@ -7059,10 +7054,10 @@ Scenario Outline: 35_ [Online Referral End To End Scenario with Primary Subject 
 	#Then Validate header appears aligned and not distorted on the "<Add Inv Party>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Add Inv Party>"
 	#When i check the required fields current page on the "<Add Inv Party>"
-	And Edit Primary InvovePartyType,Change the data and save the changes
+	And Edit Primary InvovePartyType for non-Enumerated organization,Change the data and save the changes
 		| updatedOrgname   |
 		| <updatedOrgname> |
-	Then Validate the updated data of the Primary Subject type
+	Then Validate the updated data of the Primary Subject type as non-enumerated Organization
 		| updatedOrgname   |
 		| <updatedOrgname> |
 	When is there anotherinvolved party dropdown is selected on the "<Add Inv Party>"
@@ -7088,7 +7083,7 @@ Scenario Outline: 35_ [Online Referral End To End Scenario with Primary Subject 
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -7108,14 +7103,14 @@ Scenario Outline: 35_ [Online Referral End To End Scenario with Primary Subject 
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
-		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization |
-		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <updatedOrgname> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | TIN/EIN | License Number | Other | Other ID | Name Prefix | First Name | Middle Name | Last Name | Designation/Title | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Fax | Email |
-		| <involvedPartyType> | <updatedOrgname> | <TIN> | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zip> | <country> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <updatedOrgname>     |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | TIN/EIN | License Number  | Other   | Other ID  | Name Prefix  | First Name   | Middle Name   | Last Name   | Designation/Title | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code | Country   | Fax   | Email           |
+		| <involvedPartyType> | <updatedOrgname>  | <TIN>   | <licenseNumber> | <other> | <otherID> | <NamePrefix> | <first name> | <middle name> | <last name> | <Designation1>    | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zip>    | <country> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -7135,8 +7130,8 @@ Scenario Outline: 35_ [Online Referral End To End Scenario with Primary Subject 
 	Then I should ne navigated to FC Logout confirmation Page
 	
 Examples:
-	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                                 | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                       | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | updatedOrgname        | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
-	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Law Firm w/o req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | No              | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | No                              | Involved Party Type - Associated Subject- Law Firm w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Gainwell Organization | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
+	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                                 | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                       | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | updatedOrgname        | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
+	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Law Firm w/o req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | No              | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | No                              | Involved Party Type - Associated Subject- Law Firm w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Gainwell Organization | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
 
 
 
@@ -7180,7 +7175,7 @@ Scenario Outline: 36_ [Online Referral End To End Scenario with editing addition
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -7203,7 +7198,7 @@ Scenario Outline: 36_ [Online Referral End To End Scenario with editing addition
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -7230,7 +7225,7 @@ Scenario Outline: 36_ [Online Referral End To End Scenario with editing addition
 	#	| InvalidDOB   | DOB validation error message   |
 	#	| <InvalidDOB> | <DOB validation error message> |
 	
-	When enter SSN , licenseNumber ,ID Test
+	And enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	And enter How witness or external party reported this ,any additional info
@@ -7247,7 +7242,7 @@ Scenario Outline: 36_ [Online Referral End To End Scenario with editing addition
 	#	| <Invalid zipcode> | <Zipcode validation error message> |
 		
 	
-	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
+	And InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
 		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
 	#	And verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
@@ -7255,7 +7250,7 @@ Scenario Outline: 36_ [Online Referral End To End Scenario with editing addition
 	#Then I enter the invalid email id  and validate for "<Involved Party>"
 	#	| Invalid email   | Email validation error message   |
 	#	| <Invalid email> | <Email validation error message> |
-	When enter DOB
+	And enter DOB
 		| DOB   |
 		| <DOB> |
 	And InvolvedParty country,  phone number , fax  and email address
@@ -7319,7 +7314,7 @@ Scenario Outline: 36_ [Online Referral End To End Scenario with editing addition
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -7339,14 +7334,14 @@ Scenario Outline: 36_ [Online Referral End To End Scenario with editing addition
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
-		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
-		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <orgname>            | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix   | First Name   | Middle Name   | Last Name   | Name Suffix   | Designation/Title | Date of Birth | SSN   | License Number  | ID        | NPI   | TIN/EIN | Medicaid ID   | Medicare ID   | Other ID  | Provider Type   | Provider Specialty   | Taxonomy   | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Country   | Phone          | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN>   | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -7365,8 +7360,8 @@ Scenario Outline: 36_ [Online Referral End To End Scenario with editing addition
 
 
 Examples:
-	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                        | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | updatedOrgname        | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
-	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Caregiver w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Gainwell Organization | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
+	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                        | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | updatedOrgname        | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
+	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Caregiver w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Gainwell Organization | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
 
 
 
@@ -7409,7 +7404,7 @@ Scenario Outline: 37_ [Online Referral End To End Scenario with deleting additio
 	#Then Validate header appears aligned and not distorted on the "<Referral>"
 	#And Required CSS glow appears with correct configured color controlled in Admin "<Referral>"
 	#And verify  referral Dropdown lists are in alphabetical order "<referralDropdown>" on the page "<Referral>"
-	When Referral Type is selected  on the second User Data Page
+	And Referral Type is selected  on the second User Data Page
 		| referralType   |
 		| <referralType> |
 	#And enter invalid incidentStartDate , incidentEndDate and validate the error message  on the "<Referral>"
@@ -7432,7 +7427,7 @@ Scenario Outline: 37_ [Online Referral End To End Scenario with deleting additio
 	#Then validate the  dollar symbol is displayed in the amount field on the "<Referral>"
 	#	| Dollar symbol in amount field validation message   |
 	#	| <Dollar symbol in amount field validation message> |
-	When enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
+	And enter valid incidentStartDate , incidentEndDate  on the "<Referral>"
 		| incidentValidStartDate   | incidentValidEndDate   |
 		| <incidentValidStartDate> | <incidentValidEndDate> |
 	And enter state  and city  on the "<Referral>"
@@ -7455,11 +7450,11 @@ Scenario Outline: 37_ [Online Referral End To End Scenario with deleting additio
 	And enter InvolvedParty Designation
 		| designation   |
 		| <designation> |
-	Then i enter invalid date of birth and validate for "<Involved Party>"
-		| InvalidDOB   | DOB validation error message   |
-		| <InvalidDOB> | <DOB validation error message> |
+	#Then i enter invalid date of birth and validate for "<Involved Party>"
+	#	| InvalidDOB   | DOB validation error message   |
+	#	| <InvalidDOB> | <DOB validation error message> |
 	
-	When enter SSN , licenseNumber ,ID Test
+	And enter SSN , licenseNumber ,ID Test
 		| SSN   | licenseNumber   | ID Test   |
 		| <SSN> | <licenseNumber> | <ID Test> |
 	And enter How witness or external party reported this ,any additional info
@@ -7471,19 +7466,19 @@ Scenario Outline: 37_ [Online Referral End To End Scenario with deleting additio
 	And enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on the "<Involved Party>"
 		| provider type   | provider specialty   | Taxonomy   | other   |
 		| <provider type> | <provider specialty> | <Taxonomy> | <other> |
-	Then I enter the invalid zipcode and validate for provider
-		| Invalid zipcode   | Zipcode validation error message   |
-		| <Invalid zipcode> | <Zipcode validation error message> |
+	#Then I enter the invalid zipcode and validate for provider
+	#	| Invalid zipcode   | Zipcode validation error message   |
+	#	| <Invalid zipcode> | <Zipcode validation error message> |
 		
-	And verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
-	And verify county Dropdown lists are in alphabetical order "<CountyDropdown>" on the page "<Involved Party>"
-	When InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
+	#And verify Dropdown lists are in alphabetical order "<stateDropdown>" on the "<Involved Party>" in involved party page
+	#And verify county Dropdown lists are in alphabetical order "<CountyDropdown>" on the page "<Involved Party>"
+	And InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  , county   and zip code
 		| Address1   | Address2   | City   | State2   | City2   | Zipcode   |
 		| <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> |
-	Then I enter the invalid email id  and validate for "<Involved Party>"
-		| Invalid email   | Email validation error message   |
-		| <Invalid email> | <Email validation error message> |
-	When enter DOB
+	#Then I enter the invalid email id  and validate for "<Involved Party>"
+	#	| Invalid email   | Email validation error message   |
+	#	| <Invalid email> | <Email validation error message> |
+	And enter DOB
 		| DOB   |
 		| <DOB> |
 	And InvolvedParty country,  phone number , fax  and email address
@@ -7542,7 +7537,7 @@ Scenario Outline: 37_ [Online Referral End To End Scenario with deleting additio
 	Then click on proceed to next session button
 	When Click on Submit Button
 	Then validate attachment upload progress and wait for the confirmation page
-	Then validate Enter New Referral is displayed
+	And validate Enter New Referral is displayed
 
 
 	##Lead is created 
@@ -7562,14 +7557,14 @@ Scenario Outline: 37_ [Online Referral End To End Scenario with deleting additio
 	And I click on the Begin Editing on the fraud capture Lead detials Page
 	And get the lead creation date
 	Then validate the Lead Summary tab details against referral data
-		| Suspect Activity From | Suspect Activity To | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
-		| <incidentValidStartDate> | <incidentValidEndDate> | <amount> | <orgname> | <first name> | <last name> |
-	Then validate the primary Subject edit form against referral data
-		| Subject Type | Organization Name | Name Prefix | First Name | Middle Name | Last Name | Name Suffix | Designation/Title | Date of Birth | SSN | License Number | ID | NPI | TIN/EIN | Medicaid ID | Medicare ID | Other ID | Provider Type | Provider Specialty | Taxonomy | Other | Street Address 1 | Street Address 2 | City | State/Territory | County | Zip Code | Country | Phone | Fax | Email |
-		| <involvedPartyType> | <orgname> | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation> | <DOB> | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN> | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1> | <Address2> | <City> | <State2> | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
-	Then validate the Lead Referral tab details against referral data
-		| Organization/Corporation Name | First Name | Last Name | Street Address 1 | Street Address 2 | City | State/Territory | Zip Code | Phone | Email |
-		| <Org name> | <UserFirstName> | <UserLastName> | <Address1> | <Address2> | <City> | <State> | <Zipcode> | <Phone number> | <Email address> |
+		| Suspect Activity From    | Suspect Activity To    | Potential Overpayment Amount | Subject Organization | Subject First Name | Subject Last Name |
+		| <incidentValidStartDate> | <incidentValidEndDate> | <amount>                     | <orgname>            | <first name>       | <last name>       |
+	And validate the primary Subject edit form against referral data
+		| Subject Type        | Organization Name | Name Prefix   | First Name   | Middle Name   | Last Name   | Name Suffix   | Designation/Title | Date of Birth | SSN   | License Number  | ID        | NPI   | TIN/EIN | Medicaid ID   | Medicare ID   | Other ID  | Provider Type   | Provider Specialty   | Taxonomy   | Other   | Street Address 1 | Street Address 2 | City   | State/Territory | County  | Zip Code  | Country   | Phone          | Fax   | Email           |
+		| <involvedPartyType> | <orgname>         | <name prefix> | <first name> | <middle name> | <last name> | <name suffix> | <designation>     | <DOB>         | <SSN> | <licenseNumber> | <ID Test> | <NPI> | <TIN>   | <medicaid ID> | <Medicare ID> | <otherID> | <provider type> | <provider specialty> | <Taxonomy> | <other> | <Address1>       | <Address2>       | <City> | <State2>        | <City2> | <Zipcode> | <country> | <Phone number> | <fax> | <Email address> |
+	And validate the Lead Referral tab details against referral data
+		| Organization/Corporation Name | First Name      | Last Name      | Street Address 1 | Street Address 2 | City   | State/Territory | Zip Code  | Phone          | Email           |
+		| <Org name>                    | <UserFirstName> | <UserLastName> | <Address1>       | <Address2>       | <City> | <State>         | <Zipcode> | <Phone number> | <Email address> |
 	When click on Activities tab and serach for the activity created through onlinereferral
 		| ActivityName   |
 		| <ActivityName> |
@@ -7590,6 +7585,6 @@ Scenario Outline: 37_ [Online Referral End To End Scenario with deleting additio
 
 
 Examples:
-	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                               | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                        | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | updatedOrgname        | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
-	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | Sandeep.Krishnan@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Caregiver w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Gainwell Organization | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
+	| Invalid zipcode | Zipcode validation error message                                   | Invalid email | Email validation error message                  | UserFirstName | UserLastName | Email address                             | Phone number | Org name                                       | title   | Address1           | Address2    | City   | State | Zipcode | InvalidIncidentStartDate | InvalidIncidentEndDate | Error message                                                                                | referralType                                           | involvedPartyType                                               | caseOrReferenceNumber | detectedAs   | summary        | amount       | detectionDate | incidentValidStartDate | incidentValidEndDate | State2 | City2      | witnessDropdown | referralFN     | referralLN     | referralOrgname | referralRelationship                                                                      | orgname | name prefix | first name | middle name | last name | name suffix | designation     | SSN         | licenseNumber | ID Test    | NPI        | TIN        | medicaid ID | Medicare ID | otherID    | provider type                                         | provider specialty                                         | Taxonomy | other | country       | fax        | rederral involve a specific member dropdown | Is the member the same person as the witness or external referring party? | FN       | LN       | memberID | DOB        | planType | Question1 | Question2 | Question3 | Question4 | Question5 | Question6 | associatedstate | TestFile     | Is there any Involved Party Dropdown | UserEmailID                           | ActivityName                                                  | DollarsymbolinAmountFieldValidationMessage | InvalidDOB | DOB validation error message  | isAnotherInvolvedPartyAvailable | additionalInvolvedPartyType                                        | isAnotherExternalInvolvedPartyAvailable | Organization1 | NamePrefix | FirstName1 | MiddleName1 | LastName1 | NameSuffix | StreetAddress3 | StreetAddress4     | City1 | Zip   | Designation1 | Country | PrimaryPhone | SecondaryPhone | Ssn       | OtherId | Email1         | Other | report1 | additionalInfo1 | isAnotherInvolvedPartyAvailable1 | Gender | Program | LOB  | Group  | County | updatedOrgname        | Sub Party Info                    | Referral              | Involved Party        | Add Inv Party                    | Questions      | Payor | Leads |
+	|            1234 | Not valid, use 5 or 9 digits or numbers in this format 12345-1234. | abc           | Enter a valid email. Example: email@address.com | UserFName     | UserLastName | Sandeep.Krishnan@gainwelltechnologies.com |   9999999999 | MCO Example 1- Mapped to Enrollment Department | QA_Test | 5615 High Point Dr | Unit 151029 | Irving | Texas |   75035 | 04/10/2026               | 04/05/2026             | Date cannot be in the future or Incident End Date cannot be prior to the Incident Start Date | Referral Type 1- Mapped to Dbl billing w/ distribution | Involved Party Type - Associated Subject- Provider w Req fields |             123456789 | Tested by QA | TestAutomation | 999999999.99 | 02/13/2026    | 02/13/2026             | 02/13/2026           | Texas  | Washington | Yes             | TestReferralFN | TestReferralLN | Gainwell        | Referral party relationship to the involved party - Mapped to Dbl billing w/ distribution | HMS     | Mr          | UserFN     | MN          | UserLN    | Jr          | TestDesignation | 123-45-6789 |    1234567890 | 1234567890 | 1234567890 | 12-3456789 |  1234567890 |  1234567890 | 1234567890 | Provider Type - Mapped to Dbl billing w/ distribution | Provider Specialty - Mapped to Dbl billing w/ distribution | Tester   | Test  | United States | 8888888888 | Yes                                         | No                                                                        | MemberFN | MemberLN |  1234567 | 02/13/1990 | Test     | No        | Test      | No        | Test      | No        | Test      | Texas           | TestFile.txt | No                                   | jayapradha.d@gainwelltechnologies.com | Test Lead Testing - Automated Only Activity 1 (Lead Creation) | $                                          | 06/26/2028 | Date cannot be in the future. | Yes                             | Involved Party Type - Associated Subject- Caregiver w/o req fields | Yes                                     | asv           | Mr.        | Tommy      | Josh        | S         | Jr.        | Car Street     | 456 StreetAddress4 | Texas | 11223 | Tester       | USA     |   8974512631 |     8974512645 | 789065432 |  234516 | josh@gmail.com | test  | Test3   | Test4           | No                               | female | Program | LOB1 | Group1 | Texas  | Gainwell Organization | Submitting Party Information Page | Referral Details page | Involved Parties page | Additional Involved Parties page | Questions page | DEMO  | Leads |
 

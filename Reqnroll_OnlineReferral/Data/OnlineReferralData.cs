@@ -140,7 +140,7 @@ namespace FC_OnlineReferral
         public string Group { get; set; } = string.Empty;
 
         public string updatedOrgname { get; set; } = string.Empty;
-        public string updatedFirstName { get; set; } = string.Empty;
+        public string updatedMiddleName { get; set; } = string.Empty;
 
         public string incidentValidStartDate { get; set; } = string.Empty;
         public string incidentValidEndDate { get; set; } = string.Empty;
