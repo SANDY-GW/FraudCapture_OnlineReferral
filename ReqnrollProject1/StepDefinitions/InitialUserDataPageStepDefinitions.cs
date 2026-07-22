@@ -1185,10 +1185,11 @@ namespace ReqnrollProject1.StepDefinitions
                 _scenarioContext["UserLN"] = data.lastName;
 
             }
+
             PG3InvPrtyNONEnumProvider.EnterOrganization(data.orgname);
             PG3InvPrtyNONEnumProvider.EnterNamePrefix(data.namePrefix);
             PG3InvPrtyNONEnumProvider.EnterFirstName(data.firstName);
-            PG3InvPrtyNONEnumProvider.EnterMiddleName(data.middleName);
+            PG3InvPrtyNONEnumProvider.EnterMiddleName(data.MiddleName1);
             PG3InvPrtyNONEnumProvider.EnterLastName(data.lastName);
             PG3InvPrtyNONEnumProvider.EnterNameSuffix(data.nameSuffix);
 
@@ -1357,10 +1358,19 @@ namespace ReqnrollProject1.StepDefinitions
         [When("the following fields should be displayed:")]
         public void WhenTheFollowingFieldsShouldBeDisplayed(DataTable dataTable)
         {
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            DateTime dateTime = DateTime.Now;
+            data.FirstName1 = data.firstName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            data.LastName1 = data.lastName + dateTime.ToString("HH:mm") + dateTime.ToString("MMddyyyy");
+            if (!_scenarioContext.ContainsKey("UserFN") || !_scenarioContext.ContainsKey("UserLN"))
+            {
+                _scenarioContext["UserFN"] = data.FirstName1;
+                _scenarioContext["UserLN"] = data.LastName1;
 
+            }
 
             //var PG3 = new additionalInvolvedParty_page4(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
+          
             PG4_AddtnlInvldParty.FillOrganizationField(data.Organization1);
             PG4_AddtnlInvldParty.FillNamePrefixField(data.NamePrefix);
             PG4_AddtnlInvldParty.FillFirstNameField(data.FirstName1);
@@ -1457,7 +1467,8 @@ namespace ReqnrollProject1.StepDefinitions
             Page_Organization.EnterOrganizationName(newOrganizationName);
         }
 
-        [When("Edit Primary InvovePartyType,Change the data and save the changes")]
+        // Edit and validate the updated data of the Primary Subject type as provider
+        [When("Edit Primary InvovePartyType,Change the data and save the changes as provider")]
         public void WhenEditPrimaryInvovePartyTypeChangeTheDataAndSaveTheChanges(DataTable dataTable)
         {
             //var PG3 = new InvolvedParties_Page3(Driver);
@@ -1467,15 +1478,65 @@ namespace ReqnrollProject1.StepDefinitions
             PG3_InvParty.clickSaveButton();
         }
 
-        [When("Edit Primary InvovePartyType for member,Change the data and save the changes")]
-        public void WhenEditPrimaryInvovePartyTypeForMemberChangeTheDataAndSaveTheChanges(DataTable dataTable)
+        [Then("Validate the updated data of the Primary Subject type as provider")]
+        public void ThenValidateTheUpdatedDataOfThePrimarySubjectTypeAsProvider(DataTable dataTable)
+        {
+            //var PG3 = new InvolvedParties_Page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
+            PG3_InvParty.clickGoToPreviousSectionButton();
+            Assert.That(PG3_InvParty.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
+            PG3_InvParty.ClickProceedToNextSectionButton();
+        }
+
+        // Edit and validate the updated data of the Primary Subject type as member
+
+        [When("Edit Primary InvovePartyType for member,Change the data and save the changes as member")]
+        public void WhenEditPrimaryInvovePartyTypeForMemberChangeTheDataAndSaveTheChangesAsMember(DataTable dataTable)
         {
             //var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
             PG3_Member.ClickEditButton();
-            PG3_Member.updateFirstNameField(data.updatedFirstName);
+            PG3_Member.updateMiddleNameField(data.updatedMiddleName);
             PG3_Member.clickSaveButton();
         }
+
+
+        [Then("Validate the updated data of the Primary Subject type as member")]
+        public void ThenValidateTheUpdatedDataOfThePrimarySubjectTypeAsMember(DataTable dataTable)
+        {
+            //var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
+            PG3_Member.clickGoToPreviousSectionButton();
+            Assert.That(PG3_Member.getMiddleName(), Is.EqualTo(data.updatedMiddleName), "Middle name was not updated correctly");
+            PG3_Member.ClickProceedToNextSectionButton();
+        }
+
+        // Edit and validate the updated data of the Primary Subject type as non-enumerated member
+
+        [When("Edit Primary InvovePartyType,Change the data and save the changes as Non-Enumerated Member")]
+        public void WhenEditPrimaryInvovePartyTypeChangeTheDataAndSaveTheChangesAsNonEnumeratedMember(DataTable dataTable)
+        {
+            //var PG3 = new InvolvedParties_Page3(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            PG4_AddtnlInvldParty.ClickEditButton();
+            PG4_AddtnlInvldParty.updateOrganizationField(data.updatedOrgname);
+            PG4_AddtnlInvldParty.clickSaveButton();
+        }
+
+        [Then("Validate the updated data of the Primary Subject type as non-enumerated member")]
+        public void ThenValidateTheUpdatedDataOfThePrimarySubjectTypeAsNonEnumeratedMember(DataTable dataTable)
+        {
+            //var PG3 = new additionalInvolvedParty_page4(Driver);
+            var data = dataTable.CreateInstance<OnlineReferralData>();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
+            PG4_AddtnlInvldParty.clickGoToPreviousSectionButton();
+            Assert.That(PG4_AddtnlInvldParty.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
+            PG4_AddtnlInvldParty.ClickProceedToNextSectionButton();
+        }
+
+        // Edit and validate the updated data of the Primary Subject type as non-enumerated provider
 
         [When("Edit Primary InvovePartyType for non-Enumerated provider,Change the data and save the changes")]
         public void WhenEditPrimaryInvovePartyTypeForNonEnumeratedProviderChangeTheDataAndSaveTheChanges(DataTable dataTable)
@@ -1487,36 +1548,18 @@ namespace ReqnrollProject1.StepDefinitions
             PG3InvPrtyNONEnumProvider.clickSaveButton();
         }
 
-
-        [When("Edit additionalInvolvedPartyType for non-Enumerated provider,Change the data and save the changes")]
-        public void WhenEditAdditionalInvolvedPartyTypeForNonEnumeratedProviderChangeTheDataAndSaveTheChanges(DataTable dataTable)
+        [Then("Validate the updated data of the Primary Subject type as non-enumerated provider")]
+        public void ThenValidateTheUpdatedDataOfThePrimarySubjectTypeAsNonEnumeratedProvider(DataTable dataTable)
         {
-            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
+           // var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.ClickInvolvedPartyEditButton();
-            PG3.updateOrganizationField(data.updatedOrgname);
-            PG3.clickSaveButton();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
+            PG3InvPrtyNONEnumProvider.clickGoToPreviousSectionButton();
+            Assert.That(PG3InvPrtyNONEnumProvider.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
+            PG3InvPrtyNONEnumProvider.ClickProceedToNextSectionButton();
         }
 
-        [When("Delete additionalInvolvedPartyType")]
-        public void WhenDeleteAdditionalInvolvedPartyType()
-        {
-            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
-            PG3.ClickInvolvedPartyDeleteButton();
-            
-        }
-
-        [When("Edit Primary InvovePartyType for non-Enumerated member,Change the data and save the changes")]
-        public void WhenEditPrimaryInvovePartyTypeForNonEnumeratedMemberChangeTheDataAndSaveTheChanges(DataTable dataTable)
-        {
-            var PG3 = new additionalInvolvedParty_page4(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
-            PG3.ClickEditButton();
-            PG3.updateOrganizationField(data.updatedOrgname);
-            PG3.clickSaveButton();
-        }
-
-
+        // Edit and validate the updated data of the additional involved party Subject type as non-enumerated organization
         [When("Edit Primary InvovePartyType for non-Enumerated organization,Change the data and save the changes")]
         public void WhenEditPrimaryInvovePartyTypeForNonEnumeratedOrganizationChangeTheDataAndSaveTheChanges(DataTable dataTable)
         {
@@ -1526,7 +1569,6 @@ namespace ReqnrollProject1.StepDefinitions
             Page_Organization.updateOrganizationField(data.updatedOrgname);
             Page_Organization.clickSaveButton();
         }
-
 
         [Then("Validate the updated data of the Primary Subject type")]
         public void ThenValidateTheUpdatedDataOfThePrimarySubjectType(DataTable dataTable)
@@ -1539,27 +1581,9 @@ namespace ReqnrollProject1.StepDefinitions
             PG3InvPrtyNONEnumProvider.ClickProceedToNextSectionButton();
         }
 
-        [Then("Validate the updated data of the Primary Subject type as member")]
-        public void ThenValidateTheUpdatedDataOfThePrimarySubjectTypeAsMember(DataTable dataTable)
-        {
-            //var PG3 = new InvolvedPartyTypeasMember_page3(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
-            PG3_Member.clickGoToPreviousSectionButton();
-            Assert.That(PG3_Member.getFirstName(), Is.EqualTo(data.updatedFirstName), "First name was not updated correctly");
-            PG3_Member.ClickProceedToNextSectionButton();
-        }
+       
 
-        [Then("Validate the updated data of the Primary Subject type as non-enumerated provider")]
-        public void ThenValidateTheUpdatedDataOfThePrimarySubjectTypeAsNonEnumeratedProvider(DataTable dataTable)
-        {
-            //var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
-            var data = dataTable.CreateInstance<OnlineReferralData>();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
-            PG3InvPrtyNONEnumProvider.clickGoToPreviousSectionButton();
-            Assert.That(PG3InvPrtyNONEnumProvider.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
-            PG3InvPrtyNONEnumProvider.ClickProceedToNextSectionButton();
-        }
+       
         [Then("Validate the updated data of the additional involved party Subject type as non-enumerated provider")]
         public void ThenValidateTheUpdatedDataOfTheAdditionalInvolvedPartySubjectTypeAsNonEnumeratedProvider(DataTable dataTable)
         {
@@ -1572,6 +1596,7 @@ namespace ReqnrollProject1.StepDefinitions
 
         }
 
+
         [Then("Validate the updated data of the Primary Subject type as non-enumerated Organization")]
         public void ThenValidateTheUpdatedDataOfThePrimarySubjectTypeAsNonEnumeratedOrganization(DataTable dataTable)
         {
@@ -1583,18 +1608,45 @@ namespace ReqnrollProject1.StepDefinitions
             Page_Organization.ClickProceedToNextSectionButton();
         }
 
-        [Then("Validate the updated data of the Primary Subject type as non-enumerated member")]
-        public void ThenValidateTheUpdatedDataOfThePrimarySubjectTypeAsNonEnumeratedMember(DataTable dataTable)
+        [When("Edit additionalInvolvedPartyType for non-Enumerated provider,Change the data and save the changes")]
+        public void WhenEditAdditionalInvolvedPartyTypeForNonEnumeratedProviderChangeTheDataAndSaveTheChanges(DataTable dataTable)
         {
-            var PG3 = new additionalInvolvedParty_page4(Driver);
+            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
             var data = dataTable.CreateInstance<OnlineReferralData>();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
-            PG3.clickGoToPreviousSectionButton();
-            Assert.That(PG3.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
-            PG3.ClickProceedToNextSectionButton();
+            PG3InvPrtyNONEnumProvider.ClickInvolvedPartyEditButton();
+            PG3InvPrtyNONEnumProvider.updateOrganizationField(data.updatedOrgname);
+            PG3InvPrtyNONEnumProvider.clickSaveButton();
         }
 
+        [When("Delete additionalInvolvedPartyType")]
+        public void WhenDeleteAdditionalInvolvedPartyType()
+        {
+            var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
+            PG3.ClickInvolvedPartyDeleteButton();
+            
+        }
 
+        //[When("Edit Primary InvovePartyType for non-Enumerated member,Change the data and save the changes")]
+        //public void WhenEditPrimaryInvovePartyTypeForNonEnumeratedMemberChangeTheDataAndSaveTheChanges(DataTable dataTable)
+        //{
+        //    var PG3 = new additionalInvolvedParty_page4(Driver);
+        //    var data = dataTable.CreateInstance<OnlineReferralData>();
+        //    PG3.ClickEditButton();
+        //    PG3.updateOrganizationField(data.updatedOrgname);
+        //    PG3.clickSaveButton();
+        //}
+
+        //[Then("Validate the updated data of the additional involved party Subject type as non-enumerated provider")]
+        //public void ThenValidateTheUpdatedDataOfTheAdditionalInvolvedPartySubjectTypeAsNonEnumeratedProvider(DataTable dataTable)
+        //{
+        //    //var PG3 = new InvolvedPartyasNonEnumeratedProvider_Page3(Driver);
+        //    var data = dataTable.CreateInstance<OnlineReferralData>();
+        //    CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 400);
+        //    PG3InvPrtyNONEnumProvider.ClickInvolvedPartyEditButton();
+        //    Assert.That(PG3InvPrtyNONEnumProvider.GetOrganizationFieldValue(), Is.EqualTo(data.updatedOrgname), "Organization name was not updated correctly");
+        //    PG3InvPrtyNONEnumProvider.clickCancelButton();
+
+        //}
 
 
         [When("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,other and other ID")]
@@ -1630,7 +1682,6 @@ namespace ReqnrollProject1.StepDefinitions
             {
                 _scenarioContext["UserFN"] = data.firstName;
                 _scenarioContext["UserLN"] = data.lastName;
-
             }
             //var PG3 = new OnlineReferral_Referral_Page_Organization(Driver);
             
@@ -1638,7 +1689,7 @@ namespace ReqnrollProject1.StepDefinitions
             Page_Organization.EnterContactFirstName(data.firstName);
             Page_Organization.EnterContactMiddleName(data.middleName);
             Page_Organization.EnterContactLastName(data.lastName);
-            Page_Organization.EnterContactDesignation(data.designation);
+            Page_Organization.EnterContactDesignation(data.Designation1);
             
         }
         [When("enter how witness or external party reported this, any additional info")]

@@ -25,9 +25,7 @@ namespace FC_OnlineReferral
         (StringComparer.OrdinalIgnoreCase)
         {
             { "Texas", "TX" },
-            { "Password", "password123" },
-            { "IsActive", "true" },
-            { "UserFN", "John" }
+            {"United States", "USA" }
         };
 
         public static Dictionary<string, string> dic = new Dictionary<string, string>

@@ -664,7 +664,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", invalidEmail),
                             string.Format("{0}", emailValidationErrorMessage)});
 #line 121
- await testRunner.ThenAsync(string.Format("I enter the invalid email id  and validate for \"{0}\"", involvedParty), ((string)(null)), table29, "Then ");
+ await testRunner.AndAsync(string.Format("I enter the invalid email id  and validate for \"{0}\"", involvedParty), ((string)(null)), table29, "And ");
 #line hidden
                 global::Reqnroll.Table table30 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
@@ -779,7 +779,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
 #line 167
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 171
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
@@ -903,7 +903,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
 #line 189
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table43, "Then ");
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table43, "And ");
 #line hidden
                 global::Reqnroll.Table table44 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -928,7 +928,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
 #line 192
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table44, "Then ");
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table44, "And ");
 #line hidden
                 global::Reqnroll.Table table45 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
@@ -1551,7 +1551,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", invalidEmail),
                             string.Format("{0}", emailValidationErrorMessage)});
 #line 324
- await testRunner.ThenAsync(string.Format("I enter the invalid email id  and validate for \"{0}\"", involvedParty), ((string)(null)), table73, "Then ");
+ await testRunner.AndAsync(string.Format("I enter the invalid email id  and validate for \"{0}\"", involvedParty), ((string)(null)), table73, "And ");
 #line hidden
                 global::Reqnroll.Table table74 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
@@ -1962,7 +1962,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Attachment",
                             string.Format("{0}", testFile)});
 #line 377
- await testRunner.ThenAsync("validate Review and Submit Referral page displays all entered data", ((string)(null)), table84, "Then ");
+ await testRunner.AndAsync("validate Review and Submit Referral page displays all entered data", ((string)(null)), table84, "And ");
 #line hidden
 #line 459
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
@@ -1971,7 +1971,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
 #line 461
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 465
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
@@ -2095,7 +2095,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
 #line 483
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table89, "Then ");
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table89, "And ");
 #line hidden
                 global::Reqnroll.Table table90 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -2120,7 +2120,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
 #line 486
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table90, "Then ");
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table90, "And ");
 #line hidden
                 global::Reqnroll.Table table91 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
@@ -2480,7 +2480,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table98.AddRow(new string[] {
                             string.Format("{0}", referralType)});
 #line 550
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table98, "When ");
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table98, "And ");
 #line hidden
                 global::Reqnroll.Table table99 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
@@ -2521,7 +2521,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
 #line 573
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table103, "When ");
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table103, "And ");
 #line hidden
                 global::Reqnroll.Table table104 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -2580,7 +2580,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
 #line 601
- await testRunner.WhenAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table108, "When ");
+ await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table108, "And ");
 #line hidden
                 global::Reqnroll.Table table109 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType",
@@ -2635,15 +2635,15 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
 #line 618
- await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
-                        " county   and zip code", ((string)(null)), table112, "When ");
+ await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table112, "And ");
 #line hidden
                 global::Reqnroll.Table table113 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
                 table113.AddRow(new string[] {
                             string.Format("{0}", dOB)});
 #line 627
- await testRunner.WhenAsync("enter DOB", ((string)(null)), table113, "When ");
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table113, "And ");
 #line hidden
                 global::Reqnroll.Table table114 = new global::Reqnroll.Table(new string[] {
                             "country",
@@ -2816,7 +2816,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
 #line 695
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 699
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
@@ -2940,7 +2940,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
 #line 717
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table131, "Then ");
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table131, "And ");
 #line hidden
                 global::Reqnroll.Table table132 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -2965,7 +2965,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
 #line 720
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table132, "Then ");
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table132, "And ");
 #line hidden
                 global::Reqnroll.Table table133 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
@@ -3325,7 +3325,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table140.AddRow(new string[] {
                             string.Format("{0}", referralType)});
 #line 784
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table140, "When ");
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table140, "And ");
 #line hidden
                 global::Reqnroll.Table table141 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
@@ -3366,7 +3366,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
 #line 807
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table145, "When ");
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table145, "And ");
 #line hidden
                 global::Reqnroll.Table table146 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -3411,6 +3411,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
                 global::Reqnroll.Table table149 = new global::Reqnroll.Table(new string[] {
                             "designation"});
+                table149.AddRow(new string[] {
+                            string.Format("{0}", designation)});
 #line 828
  await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table149, "And ");
 #line hidden
@@ -3422,8 +3424,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
-#line 835
- await testRunner.WhenAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table150, "When ");
+#line 837
+ await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table150, "And ");
 #line hidden
                 global::Reqnroll.Table table151 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType",
@@ -3431,7 +3433,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table151.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 838
+#line 840
  await testRunner.AndAsync("enter How witness or external party reported this ,any additional info", ((string)(null)), table151, "And ");
 #line hidden
                 global::Reqnroll.Table table152 = new global::Reqnroll.Table(new string[] {
@@ -3446,7 +3448,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 841
+#line 843
  await testRunner.AndAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", involvedParty), ((string)(null)), table152, "And ");
 #line hidden
                 global::Reqnroll.Table table153 = new global::Reqnroll.Table(new string[] {
@@ -3459,7 +3461,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", providerSpecialty),
                             string.Format("{0}", taxonomy),
                             string.Format("{0}", other)});
-#line 844
+#line 846
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
                             "he \"{0}\"", involvedParty), ((string)(null)), table153, "And ");
 #line hidden
@@ -3477,16 +3479,16 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 852
- await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
-                        " county   and zip code", ((string)(null)), table154, "When ");
+#line 854
+ await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table154, "And ");
 #line hidden
                 global::Reqnroll.Table table155 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
                 table155.AddRow(new string[] {
                             string.Format("{0}", dOB)});
-#line 861
- await testRunner.WhenAsync("enter DOB", ((string)(null)), table155, "When ");
+#line 863
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table155, "And ");
 #line hidden
                 global::Reqnroll.Table table156 = new global::Reqnroll.Table(new string[] {
                             "country",
@@ -3498,13 +3500,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 865
+#line 867
  await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table156, "And ");
 #line hidden
-#line 869
+#line 871
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 870
+#line 872
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table157 = new global::Reqnroll.Table(new string[] {
@@ -3515,7 +3517,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 877
+#line 879
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table157, "And ");
 #line hidden
                 global::Reqnroll.Table table158 = new global::Reqnroll.Table(new string[] {
@@ -3532,7 +3534,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix)});
-#line 881
+#line 883
  await testRunner.AndAsync(string.Format("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
                             "ed party middle name , associated party last name  and name suffix  on the \"{0}\"" +
                             "", addInvParty), ((string)(null)), table158, "And ");
@@ -3541,7 +3543,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "designation"});
                 table159.AddRow(new string[] {
                             string.Format("{0}", designation)});
-#line 885
+#line 887
  await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table159, "And ");
 #line hidden
                 global::Reqnroll.Table table160 = new global::Reqnroll.Table(new string[] {
@@ -3552,7 +3554,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
-#line 889
+#line 891
  await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table160, "And ");
 #line hidden
                 global::Reqnroll.Table table161 = new global::Reqnroll.Table(new string[] {
@@ -3561,7 +3563,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table161.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 893
+#line 895
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table161, "Then ");
@@ -3578,7 +3580,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 896
+#line 898
  await testRunner.WhenAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", addInvParty), ((string)(null)), table162, "When ");
 #line hidden
                 global::Reqnroll.Table table163 = new global::Reqnroll.Table(new string[] {
@@ -3591,7 +3593,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", providerSpecialty),
                             string.Format("{0}", taxonomy),
                             string.Format("{0}", other)});
-#line 899
+#line 901
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
                             "he \"{0}\"", addInvParty), ((string)(null)), table163, "And ");
 #line hidden
@@ -3609,7 +3611,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 903
+#line 905
  await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
                         " county   and zip code", ((string)(null)), table164, "And ");
 #line hidden
@@ -3623,34 +3625,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 907
+#line 909
  await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table165, "And ");
 #line hidden
                 global::Reqnroll.Table table166 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
                 table166.AddRow(new string[] {
                             string.Format("{0}", dOB)});
-#line 910
+#line 912
  await testRunner.AndAsync("enter DOB", ((string)(null)), table166, "And ");
 #line hidden
-#line 914
+#line 916
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table167 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table167.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 915
+#line 917
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table167, "And ");
 #line hidden
-#line 918
+#line 920
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table168 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table168.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 927
+#line 929
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table168, "When ");
 #line hidden
                 global::Reqnroll.Table table169 = new global::Reqnroll.Table(new string[] {
@@ -3659,66 +3661,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table169.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 931
+#line 933
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table169, "And ");
 #line hidden
                 global::Reqnroll.Table table170 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table170.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 934
+#line 936
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table170, "And ");
 #line hidden
-#line 937
+#line 939
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 938
+#line 940
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 939
+#line 941
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 940
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 942
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 944
+#line 946
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table171 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table171.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 945
+#line 947
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table171, "When ");
 #line hidden
-#line 948
+#line 950
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 949
+#line 951
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table172 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table172.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 950
+#line 952
  await testRunner.AndAsync("I select the payor", ((string)(null)), table172, "And ");
 #line hidden
                 global::Reqnroll.Table table173 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table173.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 953
+#line 955
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table173, "And ");
 #line hidden
-#line 956
+#line 958
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 957
+#line 959
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 958
+#line 960
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table174 = new global::Reqnroll.Table(new string[] {
@@ -3735,7 +3737,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", orgname),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 959
+#line 961
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table174, "Then ");
 #line hidden
                 global::Reqnroll.Table table175 = new global::Reqnroll.Table(new string[] {
@@ -3802,8 +3804,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 962
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table175, "Then ");
+#line 964
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table175, "And ");
 #line hidden
                 global::Reqnroll.Table table176 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -3827,14 +3829,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 965
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table176, "Then ");
+#line 967
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table176, "And ");
 #line hidden
                 global::Reqnroll.Table table177 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table177.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 968
+#line 970
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table177, "When ");
 #line hidden
@@ -3842,13 +3844,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table178.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 971
+#line 973
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table178, "Then ");
 #line hidden
-#line 974
+#line 976
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 975
+#line 977
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -3856,22 +3858,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table179.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 976
+#line 978
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table179, "When ");
 #line hidden
-#line 979
+#line 981
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 980
+#line 982
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 981
+#line 983
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 982
+#line 984
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 983
+#line 985
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -4121,7 +4123,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "f all the required fields ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 996
+#line 998
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -4131,14 +4133,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 999
+#line 1001
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table180 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table180.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 1007
+#line 1009
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table180, "When ");
 #line hidden
                 global::Reqnroll.Table table181 = new global::Reqnroll.Table(new string[] {
@@ -4151,7 +4153,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 1010
+#line 1012
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table181, "And ");
 #line hidden
@@ -4159,7 +4161,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table182.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 1013
+#line 1015
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table182, "And ");
 #line hidden
                 global::Reqnroll.Table table183 = new global::Reqnroll.Table(new string[] {
@@ -4174,34 +4176,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 1019
+#line 1021
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table183, "And ");
 #line hidden
-#line 1022
+#line 1024
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1023
+#line 1025
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table184 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table184.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 1030
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table184, "When ");
+#line 1032
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table184, "And ");
 #line hidden
                 global::Reqnroll.Table table185 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table185.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 1037
+#line 1039
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table185, "And ");
 #line hidden
                 global::Reqnroll.Table table186 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table186.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 1040
+#line 1042
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table186, "And ");
 #line hidden
                 global::Reqnroll.Table table187 = new global::Reqnroll.Table(new string[] {
@@ -4210,7 +4212,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table187.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 1043
+#line 1045
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table187, "And ");
 #line hidden
                 global::Reqnroll.Table table188 = new global::Reqnroll.Table(new string[] {
@@ -4219,7 +4221,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table188.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 1046
+#line 1048
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table188, "And ");
 #line hidden
                 global::Reqnroll.Table table189 = new global::Reqnroll.Table(new string[] {
@@ -4228,8 +4230,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table189.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 1053
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table189, "When ");
+#line 1055
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table189, "And ");
 #line hidden
                 global::Reqnroll.Table table190 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -4237,20 +4239,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table190.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 1056
+#line 1058
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table190, "And ");
 #line hidden
-#line 1061
+#line 1063
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1062
+#line 1064
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table191 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table191.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 1068
+#line 1070
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table191, "And ");
 #line hidden
                 global::Reqnroll.Table table192 = new global::Reqnroll.Table(new string[] {
@@ -4267,7 +4269,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix)});
-#line 1071
+#line 1073
  await testRunner.AndAsync("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
                         "ed party middle name , associated party last name  and name suffix  on the \"<Inv" +
                         "olved Parties page>\"", ((string)(null)), table192, "And ");
@@ -4276,7 +4278,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "designation"});
                 table193.AddRow(new string[] {
                             string.Format("{0}", designation)});
-#line 1074
+#line 1076
  await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table193, "And ");
 #line hidden
                 global::Reqnroll.Table table194 = new global::Reqnroll.Table(new string[] {
@@ -4287,8 +4289,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
-#line 1081
- await testRunner.WhenAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table194, "When ");
+#line 1083
+ await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table194, "And ");
 #line hidden
                 global::Reqnroll.Table table195 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType",
@@ -4296,7 +4298,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table195.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 1084
+#line 1086
  await testRunner.AndAsync("enter How witness or external party reported this ,any additional info", ((string)(null)), table195, "And ");
 #line hidden
                 global::Reqnroll.Table table196 = new global::Reqnroll.Table(new string[] {
@@ -4311,7 +4313,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 1087
+#line 1089
  await testRunner.AndAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", involvedParty), ((string)(null)), table196, "And ");
 #line hidden
                 global::Reqnroll.Table table197 = new global::Reqnroll.Table(new string[] {
@@ -4324,7 +4326,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", providerSpecialty),
                             string.Format("{0}", taxonomy),
                             string.Format("{0}", other)});
-#line 1090
+#line 1092
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
                             "he \"{0}\"", involvedParty), ((string)(null)), table197, "And ");
 #line hidden
@@ -4342,16 +4344,16 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 1098
- await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
-                        " county   and zip code", ((string)(null)), table198, "When ");
+#line 1100
+ await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table198, "And ");
 #line hidden
                 global::Reqnroll.Table table199 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
                 table199.AddRow(new string[] {
                             string.Format("{0}", dOB)});
-#line 1107
- await testRunner.WhenAsync("enter DOB", ((string)(null)), table199, "When ");
+#line 1109
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table199, "And ");
 #line hidden
                 global::Reqnroll.Table table200 = new global::Reqnroll.Table(new string[] {
                             "country",
@@ -4363,13 +4365,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 1111
+#line 1113
  await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table200, "And ");
 #line hidden
-#line 1115
+#line 1117
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1116
+#line 1118
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table201 = new global::Reqnroll.Table(new string[] {
@@ -4380,7 +4382,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 1123
+#line 1125
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table201, "And ");
 #line hidden
                 global::Reqnroll.Table table202 = new global::Reqnroll.Table(new string[] {
@@ -4397,7 +4399,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
-#line 1128
+#line 1130
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
                         "ame suffix", ((string)(null)), table202, "And ");
@@ -4416,7 +4418,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 1132
+#line 1134
  await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table203, "And ");
 #line hidden
                 global::Reqnroll.Table table204 = new global::Reqnroll.Table(new string[] {
@@ -4425,7 +4427,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table204.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 1137
+#line 1139
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table204, "Then ");
@@ -4440,7 +4442,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 1140
+#line 1142
  await testRunner.WhenAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
                         "the involved party", ((string)(null)), table205, "When ");
 #line hidden
@@ -4460,28 +4462,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country)});
-#line 1143
+#line 1145
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de and country for the involved party", ((string)(null)), table206, "And ");
 #line hidden
-#line 1147
+#line 1149
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table207 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table207.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 1148
+#line 1150
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table207, "And ");
 #line hidden
-#line 1151
+#line 1153
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table208 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table208.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 1160
+#line 1162
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table208, "When ");
 #line hidden
                 global::Reqnroll.Table table209 = new global::Reqnroll.Table(new string[] {
@@ -4490,66 +4492,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table209.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 1164
+#line 1166
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table209, "And ");
 #line hidden
                 global::Reqnroll.Table table210 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table210.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 1167
+#line 1169
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table210, "And ");
 #line hidden
-#line 1170
+#line 1172
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1171
+#line 1173
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 1172
+#line 1174
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1173
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 1175
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1177
+#line 1179
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table211 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table211.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 1178
+#line 1180
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table211, "When ");
 #line hidden
-#line 1181
+#line 1183
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1182
+#line 1184
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table212 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table212.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 1183
+#line 1185
  await testRunner.AndAsync("I select the payor", ((string)(null)), table212, "And ");
 #line hidden
                 global::Reqnroll.Table table213 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table213.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 1186
+#line 1188
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table213, "And ");
 #line hidden
-#line 1189
+#line 1191
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1190
+#line 1192
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1191
+#line 1193
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table214 = new global::Reqnroll.Table(new string[] {
@@ -4566,7 +4568,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", orgname),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 1192
+#line 1194
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table214, "Then ");
 #line hidden
                 global::Reqnroll.Table table215 = new global::Reqnroll.Table(new string[] {
@@ -4633,8 +4635,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 1195
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table215, "Then ");
+#line 1197
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table215, "And ");
 #line hidden
                 global::Reqnroll.Table table216 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -4658,14 +4660,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 1198
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table216, "Then ");
+#line 1200
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table216, "And ");
 #line hidden
                 global::Reqnroll.Table table217 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table217.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1201
+#line 1203
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table217, "When ");
 #line hidden
@@ -4673,13 +4675,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table218.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1204
+#line 1206
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table218, "Then ");
 #line hidden
-#line 1207
+#line 1209
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1208
+#line 1210
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -4687,22 +4689,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table219.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1209
+#line 1211
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table219, "When ");
 #line hidden
-#line 1212
+#line 1214
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1213
+#line 1215
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1214
+#line 1216
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1215
+#line 1217
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 1216
+#line 1218
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -4952,7 +4954,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "on of all the required fields ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 1225
+#line 1227
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -4962,14 +4964,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 1228
+#line 1230
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table220 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table220.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 1236
+#line 1238
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table220, "When ");
 #line hidden
                 global::Reqnroll.Table table221 = new global::Reqnroll.Table(new string[] {
@@ -4982,7 +4984,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 1239
+#line 1241
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table221, "And ");
 #line hidden
@@ -4990,7 +4992,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table222.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 1242
+#line 1244
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table222, "And ");
 #line hidden
                 global::Reqnroll.Table table223 = new global::Reqnroll.Table(new string[] {
@@ -5005,21 +5007,21 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 1248
+#line 1250
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table223, "And ");
 #line hidden
-#line 1251
+#line 1253
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1252
+#line 1254
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table224 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table224.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 1259
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table224, "When ");
+#line 1261
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table224, "And ");
 #line hidden
                 global::Reqnroll.Table table225 = new global::Reqnroll.Table(new string[] {
                             "InvalidIncidentStartDate",
@@ -5027,7 +5029,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table225.AddRow(new string[] {
                             string.Format("{0}", invalidIncidentStartDate),
                             string.Format("{0}", invalidIncidentEndDate)});
-#line 1262
+#line 1264
  await testRunner.AndAsync(string.Format("enter invalid incidentStartDate , incidentEndDate and validate the error message " +
                             " on the \"{0}\"", referral), ((string)(null)), table225, "And ");
 #line hidden
@@ -5035,14 +5037,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "involvedPartyType"});
                 table226.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 1266
+#line 1268
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table226, "And ");
 #line hidden
                 global::Reqnroll.Table table227 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table227.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 1269
+#line 1271
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table227, "And ");
 #line hidden
                 global::Reqnroll.Table table228 = new global::Reqnroll.Table(new string[] {
@@ -5051,7 +5053,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table228.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 1272
+#line 1274
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table228, "And ");
 #line hidden
                 global::Reqnroll.Table table229 = new global::Reqnroll.Table(new string[] {
@@ -5060,7 +5062,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table229.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 1275
+#line 1277
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table229, "And ");
 #line hidden
                 global::Reqnroll.Table table230 = new global::Reqnroll.Table(new string[] {
@@ -5069,8 +5071,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table230.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 1282
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table230, "When ");
+#line 1284
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table230, "And ");
 #line hidden
                 global::Reqnroll.Table table231 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -5078,20 +5080,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table231.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 1285
+#line 1287
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table231, "And ");
 #line hidden
-#line 1290
+#line 1292
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1291
+#line 1293
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table232 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table232.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 1297
+#line 1299
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table232, "And ");
 #line hidden
                 global::Reqnroll.Table table233 = new global::Reqnroll.Table(new string[] {
@@ -5108,7 +5110,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix)});
-#line 1300
+#line 1302
  await testRunner.AndAsync("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
                         "ed party middle name , associated party last name  and name suffix  on the \"<Inv" +
                         "olved Parties page>\"", ((string)(null)), table233, "And ");
@@ -5117,7 +5119,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "designation"});
                 table234.AddRow(new string[] {
                             string.Format("{0}", designation)});
-#line 1303
+#line 1305
  await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table234, "And ");
 #line hidden
                 global::Reqnroll.Table table235 = new global::Reqnroll.Table(new string[] {
@@ -5128,8 +5130,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
-#line 1310
- await testRunner.WhenAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table235, "When ");
+#line 1312
+ await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table235, "And ");
 #line hidden
                 global::Reqnroll.Table table236 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType",
@@ -5137,7 +5139,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table236.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 1313
+#line 1315
  await testRunner.AndAsync("enter How witness or external party reported this ,any additional info", ((string)(null)), table236, "And ");
 #line hidden
                 global::Reqnroll.Table table237 = new global::Reqnroll.Table(new string[] {
@@ -5152,7 +5154,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 1316
+#line 1318
  await testRunner.AndAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", involvedParty), ((string)(null)), table237, "And ");
 #line hidden
                 global::Reqnroll.Table table238 = new global::Reqnroll.Table(new string[] {
@@ -5165,7 +5167,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", providerSpecialty),
                             string.Format("{0}", taxonomy),
                             string.Format("{0}", other)});
-#line 1319
+#line 1321
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
                             "he \"{0}\"", involvedParty), ((string)(null)), table238, "And ");
 #line hidden
@@ -5183,16 +5185,16 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 1327
- await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
-                        " county   and zip code", ((string)(null)), table239, "When ");
+#line 1329
+ await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table239, "And ");
 #line hidden
                 global::Reqnroll.Table table240 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
                 table240.AddRow(new string[] {
                             string.Format("{0}", dOB)});
-#line 1336
- await testRunner.WhenAsync("enter DOB", ((string)(null)), table240, "When ");
+#line 1338
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table240, "And ");
 #line hidden
                 global::Reqnroll.Table table241 = new global::Reqnroll.Table(new string[] {
                             "country",
@@ -5204,13 +5206,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 1340
+#line 1342
  await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table241, "And ");
 #line hidden
-#line 1344
+#line 1346
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1345
+#line 1347
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table242 = new global::Reqnroll.Table(new string[] {
@@ -5221,7 +5223,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 1352
+#line 1354
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table242, "And ");
 #line hidden
                 global::Reqnroll.Table table243 = new global::Reqnroll.Table(new string[] {
@@ -5236,7 +5238,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 1356
+#line 1358
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
                         "her and other ID", ((string)(null)), table243, "And ");
 #line hidden
@@ -5246,7 +5248,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table244.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 1360
+#line 1362
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table244, "Then ");
@@ -5263,7 +5265,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", designation1)});
-#line 1364
+#line 1367
  await testRunner.WhenAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table245, "When ");
 #line hidden
                 global::Reqnroll.Table table246 = new global::Reqnroll.Table(new string[] {
@@ -5286,28 +5288,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country1),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 1368
+#line 1371
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table246, "And ");
 #line hidden
-#line 1371
+#line 1374
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table247 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table247.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 1372
+#line 1375
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table247, "And ");
 #line hidden
-#line 1375
+#line 1378
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table248 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table248.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 1384
+#line 1387
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table248, "When ");
 #line hidden
                 global::Reqnroll.Table table249 = new global::Reqnroll.Table(new string[] {
@@ -5316,66 +5318,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table249.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 1388
+#line 1391
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table249, "And ");
 #line hidden
                 global::Reqnroll.Table table250 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table250.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 1391
+#line 1394
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table250, "And ");
 #line hidden
-#line 1394
+#line 1397
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1395
+#line 1398
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 1396
+#line 1399
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1397
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 1400
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1401
+#line 1404
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table251 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table251.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 1402
+#line 1405
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table251, "When ");
 #line hidden
-#line 1405
+#line 1408
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1406
+#line 1409
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table252 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table252.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 1407
+#line 1410
  await testRunner.AndAsync("I select the payor", ((string)(null)), table252, "And ");
 #line hidden
                 global::Reqnroll.Table table253 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table253.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 1410
+#line 1413
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table253, "And ");
 #line hidden
-#line 1413
+#line 1416
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1414
+#line 1417
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1415
+#line 1418
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table254 = new global::Reqnroll.Table(new string[] {
@@ -5392,7 +5394,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", orgname),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 1416
+#line 1419
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table254, "Then ");
 #line hidden
                 global::Reqnroll.Table table255 = new global::Reqnroll.Table(new string[] {
@@ -5459,7 +5461,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 1419
+#line 1422
  await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table255, "Then ");
 #line hidden
                 global::Reqnroll.Table table256 = new global::Reqnroll.Table(new string[] {
@@ -5473,25 +5475,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Zip Code",
                             "Phone",
                             "Email"});
-                table256.AddRow(new string[] {
-                            string.Format("{0}", orgName),
-                            string.Format("{0}", userFirstName),
-                            string.Format("{0}", userLastName),
-                            string.Format("{0}", address1),
-                            string.Format("{0}", address2),
-                            string.Format("{0}", city),
-                            string.Format("{0}", state),
-                            string.Format("{0}", zipcode),
-                            string.Format("{0}", phoneNumber),
-                            string.Format("{0}", emailAddress)});
-#line 1422
+#line 1425
  await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table256, "Then ");
 #line hidden
                 global::Reqnroll.Table table257 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table257.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1425
+#line 1428
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table257, "When ");
 #line hidden
@@ -5499,13 +5490,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table258.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1428
+#line 1431
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table258, "Then ");
 #line hidden
-#line 1431
+#line 1434
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1432
+#line 1435
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -5513,22 +5504,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table259.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1433
+#line 1436
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table259, "When ");
 #line hidden
-#line 1436
+#line 1439
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1437
+#line 1440
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1438
+#line 1441
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1439
+#line 1442
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 1440
+#line 1443
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -5778,7 +5769,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     " fields ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 1451
+#line 1454
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -5788,14 +5779,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 1454
+#line 1457
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table260 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table260.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 1462
+#line 1465
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table260, "When ");
 #line hidden
                 global::Reqnroll.Table table261 = new global::Reqnroll.Table(new string[] {
@@ -5808,7 +5799,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 1465
+#line 1468
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table261, "And ");
 #line hidden
@@ -5816,7 +5807,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table262.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 1468
+#line 1471
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table262, "And ");
 #line hidden
                 global::Reqnroll.Table table263 = new global::Reqnroll.Table(new string[] {
@@ -5831,34 +5822,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 1474
+#line 1477
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table263, "And ");
 #line hidden
-#line 1477
+#line 1480
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1478
+#line 1481
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table264 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table264.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 1485
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table264, "When ");
+#line 1488
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table264, "And ");
 #line hidden
                 global::Reqnroll.Table table265 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table265.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 1492
+#line 1495
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table265, "And ");
 #line hidden
                 global::Reqnroll.Table table266 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table266.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 1495
+#line 1498
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table266, "And ");
 #line hidden
                 global::Reqnroll.Table table267 = new global::Reqnroll.Table(new string[] {
@@ -5867,7 +5858,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table267.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 1498
+#line 1501
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table267, "And ");
 #line hidden
                 global::Reqnroll.Table table268 = new global::Reqnroll.Table(new string[] {
@@ -5876,7 +5867,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table268.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 1501
+#line 1504
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table268, "And ");
 #line hidden
                 global::Reqnroll.Table table269 = new global::Reqnroll.Table(new string[] {
@@ -5885,8 +5876,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table269.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 1508
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table269, "When ");
+#line 1511
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table269, "And ");
 #line hidden
                 global::Reqnroll.Table table270 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -5894,20 +5885,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table270.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 1511
+#line 1514
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table270, "And ");
 #line hidden
-#line 1517
+#line 1520
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1518
+#line 1521
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table271 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table271.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 1524
+#line 1527
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table271, "And ");
 #line hidden
                 global::Reqnroll.Table table272 = new global::Reqnroll.Table(new string[] {
@@ -5922,7 +5913,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 1529
+#line 1532
  await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
                         "middle name , associated party last name and name suffix", ((string)(null)), table272, "And ");
 #line hidden
@@ -5934,7 +5925,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", dOB),
                             string.Format("{0}", gender),
                             string.Format("{0}", other)});
-#line 1532
+#line 1535
  await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other", ((string)(null)), table273, "And ");
 #line hidden
                 global::Reqnroll.Table table274 = new global::Reqnroll.Table(new string[] {
@@ -5943,7 +5934,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table274.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 1535
+#line 1538
  await testRunner.AndAsync("enter  how witness or external party reported this, any additional info", ((string)(null)), table274, "And ");
 #line hidden
                 global::Reqnroll.Table table275 = new global::Reqnroll.Table(new string[] {
@@ -5958,7 +5949,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 1538
+#line 1541
  await testRunner.AndAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table275, "And ");
 #line hidden
                 global::Reqnroll.Table table276 = new global::Reqnroll.Table(new string[] {
@@ -5971,7 +5962,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", program),
                             string.Format("{0}", lOB),
                             string.Format("{0}", group)});
-#line 1541
+#line 1544
  await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table276, "And ");
 #line hidden
                 global::Reqnroll.Table table277 = new global::Reqnroll.Table(new string[] {
@@ -5988,7 +5979,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 1545
+#line 1548
  await testRunner.AndAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
                         "te  , county  and zip code", ((string)(null)), table277, "And ");
 #line hidden
@@ -6000,13 +5991,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 1548
+#line 1551
  await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table278, "And ");
 #line hidden
-#line 1551
+#line 1554
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1552
+#line 1555
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table279 = new global::Reqnroll.Table(new string[] {
@@ -6017,7 +6008,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 1559
+#line 1562
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table279, "And ");
 #line hidden
                 global::Reqnroll.Table table280 = new global::Reqnroll.Table(new string[] {
@@ -6034,7 +6025,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix)});
-#line 1562
+#line 1565
  await testRunner.AndAsync("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
                         "ed party middle name , associated party last name  and name suffix  on the \"<Inv" +
                         "olved Parties page>\"", ((string)(null)), table280, "And ");
@@ -6043,7 +6034,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "designation"});
                 table281.AddRow(new string[] {
                             string.Format("{0}", designation)});
-#line 1565
+#line 1568
  await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table281, "And ");
 #line hidden
                 global::Reqnroll.Table table282 = new global::Reqnroll.Table(new string[] {
@@ -6054,8 +6045,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
-#line 1572
- await testRunner.WhenAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table282, "When ");
+#line 1575
+ await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table282, "And ");
 #line hidden
                 global::Reqnroll.Table table283 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType",
@@ -6063,7 +6054,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table283.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 1575
+#line 1578
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table283, "Then ");
@@ -6080,7 +6071,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 1579
+#line 1582
  await testRunner.WhenAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", involvedParty), ((string)(null)), table284, "When ");
 #line hidden
                 global::Reqnroll.Table table285 = new global::Reqnroll.Table(new string[] {
@@ -6093,7 +6084,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", providerSpecialty),
                             string.Format("{0}", taxonomy),
                             string.Format("{0}", other)});
-#line 1582
+#line 1585
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
                             "he \"{0}\"", involvedParty), ((string)(null)), table285, "And ");
 #line hidden
@@ -6104,16 +6095,16 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "State2",
                             "City2",
                             "Zipcode"});
-#line 1590
- await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
-                        " county   and zip code", ((string)(null)), table286, "When ");
+#line 1593
+ await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table286, "And ");
 #line hidden
                 global::Reqnroll.Table table287 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
                 table287.AddRow(new string[] {
                             string.Format("{0}", dOB)});
-#line 1599
- await testRunner.WhenAsync("enter DOB", ((string)(null)), table287, "When ");
+#line 1602
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table287, "And ");
 #line hidden
                 global::Reqnroll.Table table288 = new global::Reqnroll.Table(new string[] {
                             "country",
@@ -6125,27 +6116,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 1603
+#line 1606
  await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table288, "And ");
 #line hidden
-#line 1607
+#line 1610
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table289 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table289.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 1609
+#line 1612
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table289, "And ");
 #line hidden
-#line 1612
+#line 1615
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table290 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table290.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 1622
+#line 1625
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table290, "When ");
 #line hidden
                 global::Reqnroll.Table table291 = new global::Reqnroll.Table(new string[] {
@@ -6154,66 +6145,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table291.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 1626
+#line 1629
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table291, "And ");
 #line hidden
                 global::Reqnroll.Table table292 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table292.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 1629
+#line 1632
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table292, "And ");
 #line hidden
-#line 1632
+#line 1635
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1633
+#line 1636
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 1634
+#line 1637
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1635
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 1638
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1639
+#line 1642
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table293 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table293.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 1640
+#line 1643
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table293, "When ");
 #line hidden
-#line 1643
+#line 1646
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1644
+#line 1647
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table294 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table294.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 1645
+#line 1648
  await testRunner.AndAsync("I select the payor", ((string)(null)), table294, "And ");
 #line hidden
                 global::Reqnroll.Table table295 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table295.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 1648
+#line 1651
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table295, "And ");
 #line hidden
-#line 1651
+#line 1654
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1652
+#line 1655
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1653
+#line 1656
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table296 = new global::Reqnroll.Table(new string[] {
@@ -6228,7 +6219,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", amount),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 1654
+#line 1657
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table296, "Then ");
 #line hidden
                 global::Reqnroll.Table table297 = new global::Reqnroll.Table(new string[] {
@@ -6287,8 +6278,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 1657
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table297, "Then ");
+#line 1660
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table297, "And ");
 #line hidden
                 global::Reqnroll.Table table298 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -6312,14 +6303,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 1660
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table298, "Then ");
+#line 1663
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table298, "And ");
 #line hidden
                 global::Reqnroll.Table table299 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table299.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1663
+#line 1666
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table299, "When ");
 #line hidden
@@ -6327,13 +6318,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table300.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1666
+#line 1669
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table300, "Then ");
 #line hidden
-#line 1669
+#line 1672
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1670
+#line 1673
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -6341,22 +6332,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table301.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1671
+#line 1674
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table301, "When ");
 #line hidden
-#line 1674
+#line 1677
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1675
+#line 1678
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1676
+#line 1679
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1677
+#line 1680
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 1678
+#line 1681
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -6606,7 +6597,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     " the required fields ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 1694
+#line 1697
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -6616,14 +6607,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 1696
+#line 1699
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table302 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table302.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 1703
+#line 1706
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table302, "When ");
 #line hidden
                 global::Reqnroll.Table table303 = new global::Reqnroll.Table(new string[] {
@@ -6636,7 +6627,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 1706
+#line 1709
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table303, "And ");
 #line hidden
@@ -6644,7 +6635,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table304.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 1709
+#line 1712
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table304, "And ");
 #line hidden
                 global::Reqnroll.Table table305 = new global::Reqnroll.Table(new string[] {
@@ -6659,34 +6650,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 1715
+#line 1718
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table305, "And ");
 #line hidden
-#line 1719
+#line 1722
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1720
+#line 1723
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table306 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table306.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 1727
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table306, "When ");
+#line 1730
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table306, "And ");
 #line hidden
                 global::Reqnroll.Table table307 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table307.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 1734
+#line 1737
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table307, "And ");
 #line hidden
                 global::Reqnroll.Table table308 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table308.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 1737
+#line 1740
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table308, "And ");
 #line hidden
                 global::Reqnroll.Table table309 = new global::Reqnroll.Table(new string[] {
@@ -6695,7 +6686,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table309.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 1740
+#line 1743
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table309, "And ");
 #line hidden
                 global::Reqnroll.Table table310 = new global::Reqnroll.Table(new string[] {
@@ -6704,7 +6695,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table310.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 1743
+#line 1746
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table310, "And ");
 #line hidden
                 global::Reqnroll.Table table311 = new global::Reqnroll.Table(new string[] {
@@ -6713,8 +6704,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table311.AddRow(new string[] {
                             "<Incident Start Date>",
                             "<Incident End Date>"});
-#line 1750
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table311, "When ");
+#line 1753
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table311, "And ");
 #line hidden
                 global::Reqnroll.Table table312 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -6722,20 +6713,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table312.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 1753
+#line 1756
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table312, "And ");
 #line hidden
-#line 1758
+#line 1761
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1759
+#line 1762
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table313 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table313.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 1765
+#line 1768
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table313, "And ");
 #line hidden
                 global::Reqnroll.Table table314 = new global::Reqnroll.Table(new string[] {
@@ -6750,7 +6741,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 1770
+#line 1773
  await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
                         "middle name , associated party last name and name suffix", ((string)(null)), table314, "And ");
 #line hidden
@@ -6762,7 +6753,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", dOB),
                             string.Format("{0}", gender),
                             string.Format("{0}", other)});
-#line 1773
+#line 1776
  await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other", ((string)(null)), table315, "And ");
 #line hidden
                 global::Reqnroll.Table table316 = new global::Reqnroll.Table(new string[] {
@@ -6771,7 +6762,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table316.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 1776
+#line 1779
  await testRunner.AndAsync("enter  how witness or external party reported this, any additional info", ((string)(null)), table316, "And ");
 #line hidden
                 global::Reqnroll.Table table317 = new global::Reqnroll.Table(new string[] {
@@ -6786,7 +6777,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 1779
+#line 1782
  await testRunner.AndAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table317, "And ");
 #line hidden
                 global::Reqnroll.Table table318 = new global::Reqnroll.Table(new string[] {
@@ -6799,7 +6790,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", program),
                             string.Format("{0}", lOB),
                             string.Format("{0}", group)});
-#line 1782
+#line 1785
  await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table318, "And ");
 #line hidden
                 global::Reqnroll.Table table319 = new global::Reqnroll.Table(new string[] {
@@ -6816,7 +6807,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 1786
+#line 1789
  await testRunner.AndAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
                         "te  , county  and zip code", ((string)(null)), table319, "And ");
 #line hidden
@@ -6828,13 +6819,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 1789
+#line 1792
  await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table320, "And ");
 #line hidden
-#line 1793
+#line 1796
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1794
+#line 1797
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table321 = new global::Reqnroll.Table(new string[] {
@@ -6845,7 +6836,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 1801
+#line 1804
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table321, "And ");
 #line hidden
                 global::Reqnroll.Table table322 = new global::Reqnroll.Table(new string[] {
@@ -6894,7 +6885,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", otherId),
                             string.Format("{0}", email1)});
-#line 1804
+#line 1807
  await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table322, "And ");
 #line hidden
                 global::Reqnroll.Table table323 = new global::Reqnroll.Table(new string[] {
@@ -6903,29 +6894,29 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table323.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 1807
+#line 1810
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table323, "Then ");
 #line hidden
-#line 1810
+#line 1813
  await testRunner.WhenAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table324 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table324.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 1811
+#line 1814
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table324, "And ");
 #line hidden
-#line 1814
+#line 1817
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table325 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table325.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 1822
+#line 1825
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table325, "When ");
 #line hidden
                 global::Reqnroll.Table table326 = new global::Reqnroll.Table(new string[] {
@@ -6934,66 +6925,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table326.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 1826
+#line 1829
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table326, "And ");
 #line hidden
                 global::Reqnroll.Table table327 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table327.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 1829
+#line 1832
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table327, "And ");
 #line hidden
-#line 1832
+#line 1835
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1833
+#line 1836
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 1834
+#line 1837
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1835
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 1838
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1839
+#line 1842
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table328 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table328.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 1840
+#line 1843
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table328, "When ");
 #line hidden
-#line 1843
+#line 1846
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1844
+#line 1847
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table329 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table329.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 1845
+#line 1848
  await testRunner.AndAsync("I select the payor", ((string)(null)), table329, "And ");
 #line hidden
                 global::Reqnroll.Table table330 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table330.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 1848
+#line 1851
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table330, "And ");
 #line hidden
-#line 1851
+#line 1854
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1852
+#line 1855
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1853
+#line 1856
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table331 = new global::Reqnroll.Table(new string[] {
@@ -7008,7 +6999,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", amount),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 1854
+#line 1857
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table331, "Then ");
 #line hidden
                 global::Reqnroll.Table table332 = new global::Reqnroll.Table(new string[] {
@@ -7067,8 +7058,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 1857
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table332, "Then ");
+#line 1860
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table332, "And ");
 #line hidden
                 global::Reqnroll.Table table333 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -7092,14 +7083,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 1860
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table333, "Then ");
+#line 1863
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table333, "And ");
 #line hidden
                 global::Reqnroll.Table table334 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table334.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1863
+#line 1866
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table334, "When ");
 #line hidden
@@ -7107,13 +7098,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table335.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1866
+#line 1869
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table335, "Then ");
 #line hidden
-#line 1869
+#line 1872
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1870
+#line 1873
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -7121,22 +7112,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table336.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 1871
+#line 1874
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table336, "When ");
 #line hidden
-#line 1874
+#line 1877
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1875
+#line 1878
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1876
+#line 1879
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1877
+#line 1880
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 1878
+#line 1881
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -7386,7 +7377,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ields ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 1891
+#line 1894
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -7396,14 +7387,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 1894
+#line 1897
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table337 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table337.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 1901
+#line 1904
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table337, "When ");
 #line hidden
                 global::Reqnroll.Table table338 = new global::Reqnroll.Table(new string[] {
@@ -7416,7 +7407,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 1904
+#line 1907
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table338, "And ");
 #line hidden
@@ -7424,7 +7415,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table339.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 1907
+#line 1910
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table339, "And ");
 #line hidden
                 global::Reqnroll.Table table340 = new global::Reqnroll.Table(new string[] {
@@ -7439,34 +7430,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 1913
+#line 1916
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table340, "And ");
 #line hidden
-#line 1917
+#line 1920
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1918
+#line 1921
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table341 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table341.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 1925
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table341, "When ");
+#line 1928
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table341, "And ");
 #line hidden
                 global::Reqnroll.Table table342 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table342.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 1932
+#line 1935
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table342, "And ");
 #line hidden
                 global::Reqnroll.Table table343 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table343.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 1935
+#line 1938
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table343, "And ");
 #line hidden
                 global::Reqnroll.Table table344 = new global::Reqnroll.Table(new string[] {
@@ -7475,7 +7466,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table344.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 1938
+#line 1941
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table344, "And ");
 #line hidden
                 global::Reqnroll.Table table345 = new global::Reqnroll.Table(new string[] {
@@ -7484,7 +7475,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table345.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 1941
+#line 1944
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table345, "And ");
 #line hidden
                 global::Reqnroll.Table table346 = new global::Reqnroll.Table(new string[] {
@@ -7493,8 +7484,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table346.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 1948
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table346, "When ");
+#line 1951
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table346, "And ");
 #line hidden
                 global::Reqnroll.Table table347 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -7502,26 +7493,26 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table347.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 1951
+#line 1954
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table347, "And ");
 #line hidden
-#line 1956
+#line 1959
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1957
+#line 1960
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1960
+#line 1963
  await testRunner.ThenAsync(string.Format("Validate header appears aligned and not distorted on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 1962
+#line 1965
  await testRunner.WhenAsync(string.Format("i check the required fields current page on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table348 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table348.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 1963
+#line 1966
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table348, "And ");
 #line hidden
                 global::Reqnroll.Table table349 = new global::Reqnroll.Table(new string[] {
@@ -7536,7 +7527,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 1968
+#line 1971
  await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
                         "middle name , associated party last name and name suffix", ((string)(null)), table349, "And ");
 #line hidden
@@ -7548,7 +7539,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", dOB),
                             string.Format("{0}", gender),
                             string.Format("{0}", other)});
-#line 1971
+#line 1974
  await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other", ((string)(null)), table350, "And ");
 #line hidden
                 global::Reqnroll.Table table351 = new global::Reqnroll.Table(new string[] {
@@ -7557,7 +7548,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table351.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 1974
+#line 1977
  await testRunner.AndAsync("enter  how witness or external party reported this, any additional info", ((string)(null)), table351, "And ");
 #line hidden
                 global::Reqnroll.Table table352 = new global::Reqnroll.Table(new string[] {
@@ -7572,7 +7563,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 1977
+#line 1980
  await testRunner.AndAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table352, "And ");
 #line hidden
                 global::Reqnroll.Table table353 = new global::Reqnroll.Table(new string[] {
@@ -7585,7 +7576,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", program),
                             string.Format("{0}", lOB),
                             string.Format("{0}", group)});
-#line 1980
+#line 1983
  await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table353, "And ");
 #line hidden
                 global::Reqnroll.Table table354 = new global::Reqnroll.Table(new string[] {
@@ -7602,7 +7593,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 1984
+#line 1987
  await testRunner.AndAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
                         "te  , county  and zip code", ((string)(null)), table354, "And ");
 #line hidden
@@ -7614,13 +7605,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 1987
+#line 1990
  await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table355, "And ");
 #line hidden
-#line 1991
+#line 1994
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 1992
+#line 1995
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table356 = new global::Reqnroll.Table(new string[] {
@@ -7631,7 +7622,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 1999
+#line 2002
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table356, "And ");
 #line hidden
                 global::Reqnroll.Table table357 = new global::Reqnroll.Table(new string[] {
@@ -7646,7 +7637,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
-#line 2003
+#line 2006
  await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
                         "middle name , associated party last name and name suffix", ((string)(null)), table357, "And ");
 #line hidden
@@ -7658,7 +7649,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", dOB),
                             string.Format("{0}", gender),
                             string.Format("{0}", other)});
-#line 2006
+#line 2009
  await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other", ((string)(null)), table358, "And ");
 #line hidden
                 global::Reqnroll.Table table359 = new global::Reqnroll.Table(new string[] {
@@ -7667,7 +7658,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table359.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 2009
+#line 2012
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table359, "Then ");
@@ -7684,7 +7675,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 2012
+#line 2015
  await testRunner.WhenAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table360, "When ");
 #line hidden
                 global::Reqnroll.Table table361 = new global::Reqnroll.Table(new string[] {
@@ -7697,7 +7688,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", program),
                             string.Format("{0}", lOB),
                             string.Format("{0}", group)});
-#line 2015
+#line 2018
  await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table361, "And ");
 #line hidden
                 global::Reqnroll.Table table362 = new global::Reqnroll.Table(new string[] {
@@ -7714,7 +7705,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 2019
+#line 2022
  await testRunner.AndAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
                         "te  , county  and zip code", ((string)(null)), table362, "And ");
 #line hidden
@@ -7726,27 +7717,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 2022
+#line 2025
  await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table363, "And ");
 #line hidden
-#line 2026
+#line 2029
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table364 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table364.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 2027
+#line 2030
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table364, "And ");
 #line hidden
-#line 2030
+#line 2033
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table365 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table365.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 2041
+#line 2044
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table365, "When ");
 #line hidden
                 global::Reqnroll.Table table366 = new global::Reqnroll.Table(new string[] {
@@ -7755,66 +7746,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table366.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 2045
+#line 2048
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table366, "And ");
 #line hidden
                 global::Reqnroll.Table table367 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table367.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 2048
+#line 2051
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table367, "And ");
 #line hidden
-#line 2051
+#line 2054
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2052
+#line 2055
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 2053
+#line 2056
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2054
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 2057
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2058
+#line 2061
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table368 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table368.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 2059
+#line 2062
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table368, "When ");
 #line hidden
-#line 2062
+#line 2065
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2063
+#line 2066
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table369 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table369.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 2064
+#line 2067
  await testRunner.AndAsync("I select the payor", ((string)(null)), table369, "And ");
 #line hidden
                 global::Reqnroll.Table table370 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table370.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 2067
+#line 2070
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table370, "And ");
 #line hidden
-#line 2070
+#line 2073
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2071
+#line 2074
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2072
+#line 2075
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table371 = new global::Reqnroll.Table(new string[] {
@@ -7829,7 +7820,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", amount),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 2073
+#line 2076
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table371, "Then ");
 #line hidden
                 global::Reqnroll.Table table372 = new global::Reqnroll.Table(new string[] {
@@ -7888,8 +7879,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 2076
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table372, "Then ");
+#line 2079
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table372, "And ");
 #line hidden
                 global::Reqnroll.Table table373 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -7913,14 +7904,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 2079
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table373, "Then ");
+#line 2082
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table373, "And ");
 #line hidden
                 global::Reqnroll.Table table374 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table374.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2082
+#line 2085
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table374, "When ");
 #line hidden
@@ -7928,13 +7919,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table375.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2085
+#line 2088
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table375, "Then ");
 #line hidden
-#line 2088
+#line 2091
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2089
+#line 2092
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -7942,22 +7933,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table376.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2090
+#line 2093
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table376, "When ");
 #line hidden
-#line 2093
+#line 2096
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2094
+#line 2097
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2095
+#line 2098
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2097
+#line 2100
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 2098
+#line 2101
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -8207,7 +8198,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ll the required fields ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 2110
+#line 2113
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -8217,14 +8208,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 2113
+#line 2116
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table377 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table377.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 2120
+#line 2123
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table377, "When ");
 #line hidden
                 global::Reqnroll.Table table378 = new global::Reqnroll.Table(new string[] {
@@ -8237,7 +8228,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 2123
+#line 2126
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table378, "And ");
 #line hidden
@@ -8245,7 +8236,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table379.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 2126
+#line 2129
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table379, "And ");
 #line hidden
                 global::Reqnroll.Table table380 = new global::Reqnroll.Table(new string[] {
@@ -8260,34 +8251,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 2132
+#line 2135
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table380, "And ");
 #line hidden
-#line 2136
+#line 2139
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2137
+#line 2140
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table381 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table381.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 2144
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table381, "When ");
+#line 2147
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table381, "And ");
 #line hidden
                 global::Reqnroll.Table table382 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table382.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 2151
+#line 2154
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table382, "And ");
 #line hidden
                 global::Reqnroll.Table table383 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table383.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 2154
+#line 2157
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table383, "And ");
 #line hidden
                 global::Reqnroll.Table table384 = new global::Reqnroll.Table(new string[] {
@@ -8296,7 +8287,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table384.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 2157
+#line 2160
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table384, "And ");
 #line hidden
                 global::Reqnroll.Table table385 = new global::Reqnroll.Table(new string[] {
@@ -8305,7 +8296,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table385.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 2160
+#line 2163
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table385, "And ");
 #line hidden
                 global::Reqnroll.Table table386 = new global::Reqnroll.Table(new string[] {
@@ -8314,8 +8305,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table386.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 2167
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table386, "When ");
+#line 2170
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table386, "And ");
 #line hidden
                 global::Reqnroll.Table table387 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -8323,26 +8314,26 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table387.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 2170
+#line 2173
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table387, "And ");
 #line hidden
-#line 2175
+#line 2178
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2176
+#line 2179
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2179
+#line 2182
  await testRunner.ThenAsync(string.Format("Validate header appears aligned and not distorted on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2181
+#line 2184
  await testRunner.WhenAsync(string.Format("i check the required fields current page on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table388 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table388.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 2182
+#line 2185
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table388, "And ");
 #line hidden
                 global::Reqnroll.Table table389 = new global::Reqnroll.Table(new string[] {
@@ -8357,7 +8348,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 2187
+#line 2190
  await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
                         "middle name , associated party last name and name suffix", ((string)(null)), table389, "And ");
 #line hidden
@@ -8369,7 +8360,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", dOB),
                             string.Format("{0}", gender),
                             string.Format("{0}", other)});
-#line 2190
+#line 2193
  await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other", ((string)(null)), table390, "And ");
 #line hidden
                 global::Reqnroll.Table table391 = new global::Reqnroll.Table(new string[] {
@@ -8378,7 +8369,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table391.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 2193
+#line 2196
  await testRunner.AndAsync("enter  how witness or external party reported this, any additional info", ((string)(null)), table391, "And ");
 #line hidden
                 global::Reqnroll.Table table392 = new global::Reqnroll.Table(new string[] {
@@ -8393,7 +8384,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 2196
+#line 2199
  await testRunner.AndAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table392, "And ");
 #line hidden
                 global::Reqnroll.Table table393 = new global::Reqnroll.Table(new string[] {
@@ -8406,7 +8397,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", program),
                             string.Format("{0}", lOB),
                             string.Format("{0}", group)});
-#line 2199
+#line 2202
  await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table393, "And ");
 #line hidden
                 global::Reqnroll.Table table394 = new global::Reqnroll.Table(new string[] {
@@ -8423,7 +8414,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 2203
+#line 2206
  await testRunner.AndAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
                         "te  , county  and zip code", ((string)(null)), table394, "And ");
 #line hidden
@@ -8435,13 +8426,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 2206
+#line 2209
  await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table395, "And ");
 #line hidden
-#line 2210
+#line 2213
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2211
+#line 2214
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table396 = new global::Reqnroll.Table(new string[] {
@@ -8452,7 +8443,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 2218
+#line 2221
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table396, "And ");
 #line hidden
                 global::Reqnroll.Table table397 = new global::Reqnroll.Table(new string[] {
@@ -8469,7 +8460,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
-#line 2223
+#line 2226
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
                         "ame suffix", ((string)(null)), table397, "And ");
@@ -8492,7 +8483,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 2227
+#line 2230
  await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table398, "And ");
 #line hidden
                 global::Reqnroll.Table table399 = new global::Reqnroll.Table(new string[] {
@@ -8501,7 +8492,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table399.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 2231
+#line 2234
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table399, "Then ");
@@ -8516,7 +8507,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 2236
+#line 2239
  await testRunner.WhenAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
                         "the involved party", ((string)(null)), table400, "When ");
 #line hidden
@@ -8536,28 +8527,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country)});
-#line 2239
+#line 2242
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de and country for the involved party", ((string)(null)), table401, "And ");
 #line hidden
-#line 2242
+#line 2245
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table402 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table402.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 2243
+#line 2246
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table402, "And ");
 #line hidden
-#line 2246
+#line 2249
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table403 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table403.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 2256
+#line 2259
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table403, "When ");
 #line hidden
                 global::Reqnroll.Table table404 = new global::Reqnroll.Table(new string[] {
@@ -8566,66 +8557,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table404.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 2260
+#line 2263
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table404, "And ");
 #line hidden
                 global::Reqnroll.Table table405 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table405.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 2263
+#line 2266
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table405, "And ");
 #line hidden
-#line 2266
+#line 2269
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2267
+#line 2270
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 2268
+#line 2271
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2269
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 2272
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2273
+#line 2276
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table406 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table406.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 2274
+#line 2277
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table406, "When ");
 #line hidden
-#line 2277
+#line 2280
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2278
+#line 2281
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table407 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table407.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 2279
+#line 2282
  await testRunner.AndAsync("I select the payor", ((string)(null)), table407, "And ");
 #line hidden
                 global::Reqnroll.Table table408 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table408.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 2282
+#line 2285
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table408, "And ");
 #line hidden
-#line 2285
+#line 2288
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2286
+#line 2289
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2287
+#line 2290
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table409 = new global::Reqnroll.Table(new string[] {
@@ -8640,7 +8631,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", amount),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 2288
+#line 2291
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table409, "Then ");
 #line hidden
                 global::Reqnroll.Table table410 = new global::Reqnroll.Table(new string[] {
@@ -8699,8 +8690,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 2291
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table410, "Then ");
+#line 2294
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table410, "And ");
 #line hidden
                 global::Reqnroll.Table table411 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -8724,14 +8715,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 2294
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table411, "Then ");
+#line 2297
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table411, "And ");
 #line hidden
                 global::Reqnroll.Table table412 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table412.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2297
+#line 2300
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table412, "When ");
 #line hidden
@@ -8739,13 +8730,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table413.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2300
+#line 2303
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table413, "Then ");
 #line hidden
-#line 2303
+#line 2306
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2304
+#line 2307
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -8753,22 +8744,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table414.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2305
+#line 2308
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table414, "When ");
 #line hidden
-#line 2308
+#line 2311
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2309
+#line 2312
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2310
+#line 2313
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2312
+#line 2315
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 2313
+#line 2316
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -9018,7 +9009,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "of all the required fields ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 2324
+#line 2327
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -9028,14 +9019,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 2327
+#line 2330
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table415 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table415.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 2334
+#line 2337
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table415, "When ");
 #line hidden
                 global::Reqnroll.Table table416 = new global::Reqnroll.Table(new string[] {
@@ -9048,7 +9039,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 2337
+#line 2340
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table416, "And ");
 #line hidden
@@ -9056,7 +9047,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table417.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 2340
+#line 2343
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table417, "And ");
 #line hidden
                 global::Reqnroll.Table table418 = new global::Reqnroll.Table(new string[] {
@@ -9071,34 +9062,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 2346
+#line 2349
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table418, "And ");
 #line hidden
-#line 2350
+#line 2353
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2351
+#line 2354
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table419 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table419.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 2358
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table419, "When ");
+#line 2361
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table419, "And ");
 #line hidden
                 global::Reqnroll.Table table420 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table420.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 2365
+#line 2368
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table420, "And ");
 #line hidden
                 global::Reqnroll.Table table421 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table421.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 2368
+#line 2371
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table421, "And ");
 #line hidden
                 global::Reqnroll.Table table422 = new global::Reqnroll.Table(new string[] {
@@ -9107,7 +9098,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table422.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 2371
+#line 2374
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table422, "And ");
 #line hidden
                 global::Reqnroll.Table table423 = new global::Reqnroll.Table(new string[] {
@@ -9116,7 +9107,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table423.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 2374
+#line 2377
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table423, "And ");
 #line hidden
                 global::Reqnroll.Table table424 = new global::Reqnroll.Table(new string[] {
@@ -9125,8 +9116,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table424.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 2381
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table424, "When ");
+#line 2384
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table424, "And ");
 #line hidden
                 global::Reqnroll.Table table425 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -9134,20 +9125,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table425.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 2384
+#line 2387
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table425, "And ");
 #line hidden
-#line 2389
+#line 2392
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2390
+#line 2393
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table426 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table426.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 2396
+#line 2399
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table426, "And ");
 #line hidden
                 global::Reqnroll.Table table427 = new global::Reqnroll.Table(new string[] {
@@ -9162,7 +9153,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 2401
+#line 2404
  await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
                         "middle name , associated party last name and name suffix", ((string)(null)), table427, "And ");
 #line hidden
@@ -9174,7 +9165,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", dOB),
                             string.Format("{0}", gender),
                             string.Format("{0}", other)});
-#line 2404
+#line 2407
  await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other", ((string)(null)), table428, "And ");
 #line hidden
                 global::Reqnroll.Table table429 = new global::Reqnroll.Table(new string[] {
@@ -9183,7 +9174,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table429.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 2407
+#line 2410
  await testRunner.AndAsync("enter  how witness or external party reported this, any additional info", ((string)(null)), table429, "And ");
 #line hidden
                 global::Reqnroll.Table table430 = new global::Reqnroll.Table(new string[] {
@@ -9198,7 +9189,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 2410
+#line 2413
  await testRunner.AndAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table430, "And ");
 #line hidden
                 global::Reqnroll.Table table431 = new global::Reqnroll.Table(new string[] {
@@ -9211,7 +9202,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", program),
                             string.Format("{0}", lOB),
                             string.Format("{0}", group)});
-#line 2413
+#line 2416
  await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table431, "And ");
 #line hidden
                 global::Reqnroll.Table table432 = new global::Reqnroll.Table(new string[] {
@@ -9228,7 +9219,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 2417
+#line 2420
  await testRunner.AndAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
                         "te  , county  and zip code", ((string)(null)), table432, "And ");
 #line hidden
@@ -9240,13 +9231,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 2420
+#line 2423
  await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table433, "And ");
 #line hidden
-#line 2424
+#line 2427
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2425
+#line 2428
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table434 = new global::Reqnroll.Table(new string[] {
@@ -9257,7 +9248,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 2432
+#line 2435
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table434, "And ");
 #line hidden
                 global::Reqnroll.Table table435 = new global::Reqnroll.Table(new string[] {
@@ -9272,7 +9263,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 2437
+#line 2440
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
                         "her and other ID", ((string)(null)), table435, "And ");
 #line hidden
@@ -9288,7 +9279,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", designation1)});
-#line 2441
+#line 2444
  await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table436, "And ");
 #line hidden
                 global::Reqnroll.Table table437 = new global::Reqnroll.Table(new string[] {
@@ -9297,7 +9288,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table437.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 2444
+#line 2447
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table437, "Then ");
@@ -9322,28 +9313,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country1),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 2447
+#line 2450
  await testRunner.WhenAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table438, "When ");
 #line hidden
-#line 2450
+#line 2453
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table439 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table439.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 2451
+#line 2454
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table439, "And ");
 #line hidden
-#line 2454
+#line 2457
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table440 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table440.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 2464
+#line 2467
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table440, "When ");
 #line hidden
                 global::Reqnroll.Table table441 = new global::Reqnroll.Table(new string[] {
@@ -9352,66 +9343,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table441.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 2468
+#line 2471
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table441, "And ");
 #line hidden
                 global::Reqnroll.Table table442 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table442.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 2471
+#line 2474
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table442, "And ");
 #line hidden
-#line 2474
+#line 2477
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2475
+#line 2478
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 2476
+#line 2479
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2477
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 2480
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2481
+#line 2484
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table443 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table443.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 2482
+#line 2485
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table443, "When ");
 #line hidden
-#line 2485
+#line 2488
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2486
+#line 2489
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table444 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table444.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 2487
+#line 2490
  await testRunner.AndAsync("I select the payor", ((string)(null)), table444, "And ");
 #line hidden
                 global::Reqnroll.Table table445 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table445.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 2490
+#line 2493
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table445, "And ");
 #line hidden
-#line 2493
+#line 2496
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2494
+#line 2497
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2495
+#line 2498
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table446 = new global::Reqnroll.Table(new string[] {
@@ -9426,7 +9417,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", amount),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 2496
+#line 2499
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table446, "Then ");
 #line hidden
                 global::Reqnroll.Table table447 = new global::Reqnroll.Table(new string[] {
@@ -9485,8 +9476,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 2499
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table447, "Then ");
+#line 2502
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table447, "And ");
 #line hidden
                 global::Reqnroll.Table table448 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -9510,14 +9501,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 2502
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table448, "Then ");
+#line 2505
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table448, "And ");
 #line hidden
                 global::Reqnroll.Table table449 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table449.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2505
+#line 2508
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table449, "When ");
 #line hidden
@@ -9525,13 +9516,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table450.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2508
+#line 2511
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table450, "Then ");
 #line hidden
-#line 2511
+#line 2514
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2512
+#line 2515
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -9539,22 +9530,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table451.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2513
+#line 2516
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table451, "When ");
 #line hidden
-#line 2516
+#line 2519
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2517
+#line 2520
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2518
+#line 2521
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2520
+#line 2523
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 2521
+#line 2524
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -9804,7 +9795,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed party as \"No\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 2533
+#line 2536
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -9814,14 +9805,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 2535
+#line 2538
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table452 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table452.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 2542
+#line 2545
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table452, "When ");
 #line hidden
                 global::Reqnroll.Table table453 = new global::Reqnroll.Table(new string[] {
@@ -9834,7 +9825,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 2545
+#line 2548
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table453, "And ");
 #line hidden
@@ -9842,7 +9833,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table454.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 2548
+#line 2551
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table454, "And ");
 #line hidden
                 global::Reqnroll.Table table455 = new global::Reqnroll.Table(new string[] {
@@ -9857,34 +9848,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 2554
+#line 2557
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table455, "And ");
 #line hidden
-#line 2558
+#line 2561
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2559
+#line 2562
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table456 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table456.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 2566
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table456, "When ");
+#line 2569
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table456, "And ");
 #line hidden
                 global::Reqnroll.Table table457 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table457.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 2573
+#line 2576
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table457, "And ");
 #line hidden
                 global::Reqnroll.Table table458 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table458.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 2576
+#line 2579
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table458, "And ");
 #line hidden
                 global::Reqnroll.Table table459 = new global::Reqnroll.Table(new string[] {
@@ -9893,7 +9884,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table459.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 2579
+#line 2582
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table459, "And ");
 #line hidden
                 global::Reqnroll.Table table460 = new global::Reqnroll.Table(new string[] {
@@ -9902,7 +9893,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table460.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 2582
+#line 2585
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table460, "And ");
 #line hidden
                 global::Reqnroll.Table table461 = new global::Reqnroll.Table(new string[] {
@@ -9911,8 +9902,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table461.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 2589
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table461, "When ");
+#line 2592
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table461, "And ");
 #line hidden
                 global::Reqnroll.Table table462 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -9920,20 +9911,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table462.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 2592
+#line 2595
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table462, "And ");
 #line hidden
-#line 2597
+#line 2600
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2598
+#line 2601
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table463 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table463.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 2604
+#line 2607
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table463, "And ");
 #line hidden
                 global::Reqnroll.Table table464 = new global::Reqnroll.Table(new string[] {
@@ -9948,7 +9939,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 2608
+#line 2611
  await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
                         "middle name , associated party last name and name suffix", ((string)(null)), table464, "And ");
 #line hidden
@@ -9960,7 +9951,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", dOB),
                             string.Format("{0}", gender),
                             string.Format("{0}", other)});
-#line 2611
+#line 2614
  await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other", ((string)(null)), table465, "And ");
 #line hidden
                 global::Reqnroll.Table table466 = new global::Reqnroll.Table(new string[] {
@@ -9975,7 +9966,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 2614
+#line 2617
  await testRunner.AndAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table466, "And ");
 #line hidden
                 global::Reqnroll.Table table467 = new global::Reqnroll.Table(new string[] {
@@ -9984,7 +9975,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table467.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 2617
+#line 2620
  await testRunner.AndAsync("enter  how witness or external party reported this, any additional info", ((string)(null)), table467, "And ");
 #line hidden
                 global::Reqnroll.Table table468 = new global::Reqnroll.Table(new string[] {
@@ -9997,7 +9988,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", program),
                             string.Format("{0}", lOB),
                             string.Format("{0}", group)});
-#line 2620
+#line 2623
  await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table468, "And ");
 #line hidden
                 global::Reqnroll.Table table469 = new global::Reqnroll.Table(new string[] {
@@ -10014,7 +10005,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 2625
+#line 2628
  await testRunner.AndAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
                         "te  , county  and zip code", ((string)(null)), table469, "And ");
 #line hidden
@@ -10026,27 +10017,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 2628
+#line 2631
  await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table470, "And ");
 #line hidden
-#line 2632
+#line 2635
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2633
+#line 2636
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table471 = new global::Reqnroll.Table(new string[] {
                             "Is there any Involved Party Dropdown"});
                 table471.AddRow(new string[] {
                             string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
-#line 2642
+#line 2645
  await testRunner.AndAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table471, "And ");
 #line hidden
                 global::Reqnroll.Table table472 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table472.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 2653
+#line 2656
  await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table472, "And ");
 #line hidden
                 global::Reqnroll.Table table473 = new global::Reqnroll.Table(new string[] {
@@ -10055,66 +10046,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table473.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 2657
+#line 2660
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table473, "And ");
 #line hidden
                 global::Reqnroll.Table table474 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table474.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 2660
+#line 2663
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table474, "And ");
 #line hidden
-#line 2663
+#line 2666
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2664
+#line 2667
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 2665
+#line 2668
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2666
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 2669
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2670
+#line 2673
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table475 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table475.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 2671
+#line 2674
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table475, "When ");
 #line hidden
-#line 2674
+#line 2677
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2675
+#line 2678
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table476 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table476.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 2676
+#line 2679
  await testRunner.AndAsync("I select the payor", ((string)(null)), table476, "And ");
 #line hidden
                 global::Reqnroll.Table table477 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table477.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 2679
+#line 2682
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table477, "And ");
 #line hidden
-#line 2682
+#line 2685
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2683
+#line 2686
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2684
+#line 2687
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table478 = new global::Reqnroll.Table(new string[] {
@@ -10129,7 +10120,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", amount),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 2685
+#line 2688
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table478, "Then ");
 #line hidden
                 global::Reqnroll.Table table479 = new global::Reqnroll.Table(new string[] {
@@ -10188,8 +10179,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 2688
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table479, "Then ");
+#line 2691
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table479, "And ");
 #line hidden
                 global::Reqnroll.Table table480 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -10213,14 +10204,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 2691
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table480, "Then ");
+#line 2694
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table480, "And ");
 #line hidden
                 global::Reqnroll.Table table481 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table481.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2694
+#line 2697
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table481, "When ");
 #line hidden
@@ -10228,13 +10219,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table482.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2697
+#line 2700
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table482, "Then ");
 #line hidden
-#line 2700
+#line 2703
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2701
+#line 2704
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -10242,22 +10233,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table483.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2702
+#line 2705
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table483, "When ");
 #line hidden
-#line 2705
+#line 2708
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2706
+#line 2709
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2707
+#line 2710
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2709
+#line 2712
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 2710
+#line 2713
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -10493,7 +10484,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ditional involved party as \"No\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 2720
+#line 2723
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -10503,14 +10494,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 2722
+#line 2725
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table484 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table484.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 2729
+#line 2732
  await testRunner.WhenAsync("I enter the email  on the \"<Sub Party Info>\"", ((string)(null)), table484, "When ");
 #line hidden
                 global::Reqnroll.Table table485 = new global::Reqnroll.Table(new string[] {
@@ -10523,7 +10514,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 2732
+#line 2735
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table485, "And ");
 #line hidden
@@ -10531,7 +10522,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table486.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 2735
+#line 2738
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table486, "And ");
 #line hidden
                 global::Reqnroll.Table table487 = new global::Reqnroll.Table(new string[] {
@@ -10546,27 +10537,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 2741
+#line 2744
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table487, "And ");
 #line hidden
-#line 2745
+#line 2748
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2746
+#line 2749
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table488 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table488.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 2753
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table488, "When ");
+#line 2756
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table488, "And ");
 #line hidden
                 global::Reqnroll.Table table489 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table489.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 2760
+#line 2763
  await testRunner.AndAsync("Suspect or Subject or Involved Party Type dropdown is selected  on the \"<Referral" +
                         ">\"", ((string)(null)), table489, "And ");
 #line hidden
@@ -10574,7 +10565,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "caseOrReferenceNumber"});
                 table490.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 2763
+#line 2766
  await testRunner.AndAsync("enter case or reference number  on the \"<Referral>\"", ((string)(null)), table490, "And ");
 #line hidden
                 global::Reqnroll.Table table491 = new global::Reqnroll.Table(new string[] {
@@ -10583,7 +10574,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table491.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 2766
+#line 2769
  await testRunner.AndAsync("How was this detected  ,please provide  a Summary of this referral  on the \"<Refe" +
                         "rral>\"", ((string)(null)), table491, "And ");
 #line hidden
@@ -10593,7 +10584,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table492.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 2769
+#line 2772
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table492, "And ");
 #line hidden
                 global::Reqnroll.Table table493 = new global::Reqnroll.Table(new string[] {
@@ -10602,8 +10593,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table493.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 2776
- await testRunner.WhenAsync("enter valid incidentStartDate , incidentEndDate  on the \"<Referral>\"", ((string)(null)), table493, "When ");
+#line 2779
+ await testRunner.AndAsync("enter valid incidentStartDate , incidentEndDate  on the \"<Referral>\"", ((string)(null)), table493, "And ");
 #line hidden
                 global::Reqnroll.Table table494 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -10611,20 +10602,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table494.AddRow(new string[] {
                             "<State2>",
                             "<City2>"});
-#line 2779
+#line 2782
  await testRunner.AndAsync("enter state  and city  on the \"<Referral>\"", ((string)(null)), table494, "And ");
 #line hidden
-#line 2784
+#line 2787
  await testRunner.AndAsync("I click on the Next button on the \"<Referral>\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2785
+#line 2788
  await testRunner.AndAsync("I should be navigated to the \"<Involved Party>\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table495 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table495.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 2791
+#line 2794
  await testRunner.AndAsync("Is thisInvolved Party dropdown is selected  on the \"<Involved Party>\"", ((string)(null)), table495, "And ");
 #line hidden
                 global::Reqnroll.Table table496 = new global::Reqnroll.Table(new string[] {
@@ -10673,7 +10664,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", otherId),
                             string.Format("{0}", email1)});
-#line 2795
+#line 2798
  await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table496, "And ");
 #line hidden
                 global::Reqnroll.Table table497 = new global::Reqnroll.Table(new string[] {
@@ -10682,27 +10673,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table497.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 2798
+#line 2801
  await testRunner.AndAsync("enter How witness or external party reported this ,any additional info", ((string)(null)), table497, "And ");
 #line hidden
-#line 2802
+#line 2805
  await testRunner.AndAsync("I click on the continue button on the \"<Involved Party>\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2803
+#line 2806
  await testRunner.AndAsync("I should be navigated to the \"< Add Inv Party>\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table498 = new global::Reqnroll.Table(new string[] {
                             "Is there any Involved Party Dropdown"});
                 table498.AddRow(new string[] {
                             string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
-#line 2813
+#line 2816
  await testRunner.AndAsync("is there anotherinvolved party dropdown is selected on the \"<Add Inv Party>\"", ((string)(null)), table498, "And ");
 #line hidden
                 global::Reqnroll.Table table499 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table499.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 2824
+#line 2827
  await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table499, "And ");
 #line hidden
                 global::Reqnroll.Table table500 = new global::Reqnroll.Table(new string[] {
@@ -10711,66 +10702,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table500.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 2828
+#line 2831
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table500, "And ");
 #line hidden
                 global::Reqnroll.Table table501 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table501.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 2831
+#line 2834
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table501, "And ");
 #line hidden
-#line 2834
+#line 2837
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2835
+#line 2838
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 2836
+#line 2839
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2837
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 2840
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2841
+#line 2844
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table502 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table502.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 2842
+#line 2845
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table502, "When ");
 #line hidden
-#line 2845
+#line 2848
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2846
+#line 2849
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table503 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table503.AddRow(new string[] {
                             "<Payor>"});
-#line 2847
+#line 2850
  await testRunner.AndAsync("I select the payor", ((string)(null)), table503, "And ");
 #line hidden
                 global::Reqnroll.Table table504 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table504.AddRow(new string[] {
                             "<Leads>"});
-#line 2850
+#line 2853
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table504, "And ");
 #line hidden
-#line 2853
+#line 2856
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2854
+#line 2857
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2855
+#line 2858
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table505 = new global::Reqnroll.Table(new string[] {
@@ -10787,7 +10778,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 2856
+#line 2859
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table505, "Then ");
 #line hidden
                 global::Reqnroll.Table table506 = new global::Reqnroll.Table(new string[] {
@@ -10836,8 +10827,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", email1)});
-#line 2859
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table506, "Then ");
+#line 2862
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table506, "And ");
 #line hidden
                 global::Reqnroll.Table table507 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -10861,14 +10852,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 2862
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table507, "Then ");
+#line 2865
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table507, "And ");
 #line hidden
                 global::Reqnroll.Table table508 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table508.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2865
+#line 2868
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table508, "When ");
 #line hidden
@@ -10876,13 +10867,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table509.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2868
+#line 2871
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table509, "Then ");
 #line hidden
-#line 2871
+#line 2874
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2872
+#line 2875
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -10890,22 +10881,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table510.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 2873
+#line 2876
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table510, "When ");
 #line hidden
-#line 2876
+#line 2879
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 2877
+#line 2880
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2878
+#line 2881
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2880
+#line 2883
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 2881
+#line 2884
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -11155,7 +11146,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "additional involved party as \"No\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 2892
+#line 2895
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -11165,14 +11156,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 2895
+#line 2898
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table511 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table511.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 2902
+#line 2905
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table511, "When ");
 #line hidden
                 global::Reqnroll.Table table512 = new global::Reqnroll.Table(new string[] {
@@ -11185,7 +11176,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 2905
+#line 2908
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table512, "And ");
 #line hidden
@@ -11193,7 +11184,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table513.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 2908
+#line 2911
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table513, "And ");
 #line hidden
                 global::Reqnroll.Table table514 = new global::Reqnroll.Table(new string[] {
@@ -11208,34 +11199,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 2914
+#line 2917
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table514, "And ");
 #line hidden
-#line 2918
+#line 2921
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2919
+#line 2922
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table515 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table515.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 2926
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table515, "When ");
+#line 2929
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table515, "And ");
 #line hidden
                 global::Reqnroll.Table table516 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table516.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 2933
+#line 2936
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table516, "And ");
 #line hidden
                 global::Reqnroll.Table table517 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table517.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 2936
+#line 2939
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table517, "And ");
 #line hidden
                 global::Reqnroll.Table table518 = new global::Reqnroll.Table(new string[] {
@@ -11244,7 +11235,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table518.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 2939
+#line 2942
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table518, "And ");
 #line hidden
                 global::Reqnroll.Table table519 = new global::Reqnroll.Table(new string[] {
@@ -11253,7 +11244,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table519.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 2942
+#line 2945
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table519, "And ");
 #line hidden
                 global::Reqnroll.Table table520 = new global::Reqnroll.Table(new string[] {
@@ -11262,8 +11253,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table520.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 2949
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table520, "When ");
+#line 2952
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table520, "And ");
 #line hidden
                 global::Reqnroll.Table table521 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -11271,20 +11262,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table521.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 2952
+#line 2955
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table521, "And ");
 #line hidden
-#line 2957
+#line 2960
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2958
+#line 2961
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table522 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table522.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 2964
+#line 2967
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table522, "And ");
 #line hidden
                 global::Reqnroll.Table table523 = new global::Reqnroll.Table(new string[] {
@@ -11301,7 +11292,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 2968
+#line 2971
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
                         "ame suffix", ((string)(null)), table523, "And ");
@@ -11324,7 +11315,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 2972
+#line 2975
  await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table524, "And ");
 #line hidden
                 global::Reqnroll.Table table525 = new global::Reqnroll.Table(new string[] {
@@ -11337,7 +11328,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 2976
+#line 2979
  await testRunner.AndAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
                         "the involved party", ((string)(null)), table525, "And ");
 #line hidden
@@ -11357,28 +11348,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country1)});
-#line 2979
+#line 2982
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de and country for the involved party", ((string)(null)), table526, "And ");
 #line hidden
-#line 2983
+#line 2986
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 2984
+#line 2987
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table527 = new global::Reqnroll.Table(new string[] {
                             "Is there any Involved Party Dropdown"});
                 table527.AddRow(new string[] {
                             string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
-#line 2990
- await testRunner.WhenAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table527, "When ");
+#line 2993
+ await testRunner.AndAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table527, "And ");
 #line hidden
                 global::Reqnroll.Table table528 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table528.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 3001
+#line 3004
  await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table528, "And ");
 #line hidden
                 global::Reqnroll.Table table529 = new global::Reqnroll.Table(new string[] {
@@ -11387,66 +11378,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table529.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 3005
+#line 3008
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table529, "And ");
 #line hidden
                 global::Reqnroll.Table table530 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table530.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 3008
+#line 3011
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table530, "And ");
 #line hidden
-#line 3011
+#line 3014
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3012
+#line 3015
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 3013
+#line 3016
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3014
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 3017
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3018
+#line 3021
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table531 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table531.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 3019
+#line 3022
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table531, "When ");
 #line hidden
-#line 3022
+#line 3025
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3023
+#line 3026
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table532 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table532.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 3024
+#line 3027
  await testRunner.AndAsync("I select the payor", ((string)(null)), table532, "And ");
 #line hidden
                 global::Reqnroll.Table table533 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table533.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 3027
+#line 3030
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table533, "And ");
 #line hidden
-#line 3030
+#line 3033
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3031
+#line 3034
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3032
+#line 3035
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table534 = new global::Reqnroll.Table(new string[] {
@@ -11463,7 +11454,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 3033
+#line 3036
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table534, "Then ");
 #line hidden
                 global::Reqnroll.Table table535 = new global::Reqnroll.Table(new string[] {
@@ -11516,8 +11507,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3036
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table535, "Then ");
+#line 3039
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table535, "And ");
 #line hidden
                 global::Reqnroll.Table table536 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -11541,14 +11532,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 3039
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table536, "Then ");
+#line 3042
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table536, "And ");
 #line hidden
                 global::Reqnroll.Table table537 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table537.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3042
+#line 3045
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table537, "When ");
 #line hidden
@@ -11556,13 +11547,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table538.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3045
+#line 3048
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table538, "Then ");
 #line hidden
-#line 3048
+#line 3051
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3049
+#line 3052
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -11570,22 +11561,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table539.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3050
+#line 3053
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table539, "When ");
 #line hidden
-#line 3053
+#line 3056
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3054
+#line 3057
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3055
+#line 3058
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3057
+#line 3060
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 3058
+#line 3061
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -11835,7 +11826,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "and additional involved party as \"No\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 3073
+#line 3076
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -11845,14 +11836,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 3075
+#line 3078
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table540 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table540.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 3082
+#line 3085
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table540, "When ");
 #line hidden
                 global::Reqnroll.Table table541 = new global::Reqnroll.Table(new string[] {
@@ -11865,7 +11856,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 3085
+#line 3088
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table541, "And ");
 #line hidden
@@ -11873,7 +11864,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table542.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 3088
+#line 3091
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table542, "And ");
 #line hidden
                 global::Reqnroll.Table table543 = new global::Reqnroll.Table(new string[] {
@@ -11888,34 +11879,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 3094
+#line 3097
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table543, "And ");
 #line hidden
-#line 3098
+#line 3101
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3099
+#line 3102
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table544 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table544.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 3106
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table544, "When ");
+#line 3109
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table544, "And ");
 #line hidden
                 global::Reqnroll.Table table545 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table545.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 3113
+#line 3116
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table545, "And ");
 #line hidden
                 global::Reqnroll.Table table546 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table546.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 3116
+#line 3119
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table546, "And ");
 #line hidden
                 global::Reqnroll.Table table547 = new global::Reqnroll.Table(new string[] {
@@ -11924,7 +11915,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table547.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 3119
+#line 3122
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table547, "And ");
 #line hidden
                 global::Reqnroll.Table table548 = new global::Reqnroll.Table(new string[] {
@@ -11933,7 +11924,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table548.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 3122
+#line 3125
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table548, "And ");
 #line hidden
                 global::Reqnroll.Table table549 = new global::Reqnroll.Table(new string[] {
@@ -11942,8 +11933,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table549.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 3129
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table549, "When ");
+#line 3132
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table549, "And ");
 #line hidden
                 global::Reqnroll.Table table550 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -11951,20 +11942,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table550.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 3132
+#line 3135
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table550, "And ");
 #line hidden
-#line 3137
+#line 3140
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3138
+#line 3141
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table551 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table551.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 3144
+#line 3147
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table551, "And ");
 #line hidden
                 global::Reqnroll.Table table552 = new global::Reqnroll.Table(new string[] {
@@ -11979,7 +11970,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 3148
+#line 3151
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
                         "her and other ID", ((string)(null)), table552, "And ");
 #line hidden
@@ -11995,7 +11986,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", designation1)});
-#line 3152
+#line 3155
  await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table553, "And ");
 #line hidden
                 global::Reqnroll.Table table554 = new global::Reqnroll.Table(new string[] {
@@ -12004,7 +11995,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table554.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 3156
+#line 3159
  await testRunner.AndAsync("enter  how witness or external party reported this, any additional info", ((string)(null)), table554, "And ");
 #line hidden
                 global::Reqnroll.Table table555 = new global::Reqnroll.Table(new string[] {
@@ -12027,28 +12018,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country1),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3161
+#line 3164
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table555, "And ");
 #line hidden
-#line 3165
+#line 3168
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3166
+#line 3169
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table556 = new global::Reqnroll.Table(new string[] {
                             "Is there any Involved Party Dropdown"});
                 table556.AddRow(new string[] {
                             string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
-#line 3175
+#line 3178
  await testRunner.AndAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table556, "And ");
 #line hidden
                 global::Reqnroll.Table table557 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table557.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 3186
+#line 3189
  await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table557, "And ");
 #line hidden
                 global::Reqnroll.Table table558 = new global::Reqnroll.Table(new string[] {
@@ -12057,66 +12048,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table558.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 3190
+#line 3193
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table558, "And ");
 #line hidden
                 global::Reqnroll.Table table559 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table559.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 3193
+#line 3196
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table559, "And ");
 #line hidden
-#line 3196
+#line 3199
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3197
+#line 3200
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 3198
+#line 3201
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3199
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 3202
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3203
+#line 3206
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table560 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table560.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 3204
+#line 3207
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table560, "When ");
 #line hidden
-#line 3207
+#line 3210
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3208
+#line 3211
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table561 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table561.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 3209
+#line 3212
  await testRunner.AndAsync("I select the payor", ((string)(null)), table561, "And ");
 #line hidden
                 global::Reqnroll.Table table562 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table562.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 3212
+#line 3215
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table562, "And ");
 #line hidden
-#line 3215
+#line 3218
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3216
+#line 3219
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3217
+#line 3220
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table563 = new global::Reqnroll.Table(new string[] {
@@ -12129,7 +12120,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "<incidentEndDate>",
                             string.Format("{0}", amount),
                             string.Format("{0}", orgname)});
-#line 3218
+#line 3221
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table563, "Then ");
 #line hidden
                 global::Reqnroll.Table table564 = new global::Reqnroll.Table(new string[] {
@@ -12174,8 +12165,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3221
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table564, "Then ");
+#line 3224
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table564, "And ");
 #line hidden
                 global::Reqnroll.Table table565 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -12199,14 +12190,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 3224
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table565, "Then ");
+#line 3227
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table565, "And ");
 #line hidden
                 global::Reqnroll.Table table566 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table566.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3227
+#line 3230
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table566, "When ");
 #line hidden
@@ -12214,13 +12205,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table567.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3230
+#line 3233
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table567, "Then ");
 #line hidden
-#line 3233
+#line 3236
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3234
+#line 3237
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -12228,22 +12219,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table568.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3235
+#line 3238
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table568, "When ");
 #line hidden
-#line 3238
+#line 3241
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3239
+#line 3242
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3240
+#line 3243
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3242
+#line 3245
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 3243
+#line 3246
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -12491,7 +12482,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Organization with additional party type as \"Member\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 3253
+#line 3256
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -12501,14 +12492,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 3255
+#line 3258
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table569 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table569.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 3262
+#line 3265
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table569, "When ");
 #line hidden
                 global::Reqnroll.Table table570 = new global::Reqnroll.Table(new string[] {
@@ -12521,7 +12512,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 3265
+#line 3268
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table570, "And ");
 #line hidden
@@ -12529,7 +12520,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table571.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 3268
+#line 3271
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table571, "And ");
 #line hidden
                 global::Reqnroll.Table table572 = new global::Reqnroll.Table(new string[] {
@@ -12544,34 +12535,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 3274
+#line 3277
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table572, "And ");
 #line hidden
-#line 3278
+#line 3281
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3279
+#line 3282
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table573 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table573.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 3286
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table573, "When ");
+#line 3289
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table573, "And ");
 #line hidden
                 global::Reqnroll.Table table574 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table574.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 3293
+#line 3296
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table574, "And ");
 #line hidden
                 global::Reqnroll.Table table575 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table575.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 3296
+#line 3299
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table575, "And ");
 #line hidden
                 global::Reqnroll.Table table576 = new global::Reqnroll.Table(new string[] {
@@ -12580,7 +12571,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table576.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 3299
+#line 3302
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table576, "And ");
 #line hidden
                 global::Reqnroll.Table table577 = new global::Reqnroll.Table(new string[] {
@@ -12589,7 +12580,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table577.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 3302
+#line 3305
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table577, "And ");
 #line hidden
                 global::Reqnroll.Table table578 = new global::Reqnroll.Table(new string[] {
@@ -12598,8 +12589,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table578.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 3309
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table578, "When ");
+#line 3312
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table578, "And ");
 #line hidden
                 global::Reqnroll.Table table579 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -12607,20 +12598,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table579.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 3312
+#line 3315
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table579, "And ");
 #line hidden
-#line 3317
+#line 3320
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3318
+#line 3321
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table580 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table580.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 3324
+#line 3327
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table580, "And ");
 #line hidden
                 global::Reqnroll.Table table581 = new global::Reqnroll.Table(new string[] {
@@ -12635,7 +12626,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 3328
+#line 3331
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
                         "her and other ID", ((string)(null)), table581, "And ");
 #line hidden
@@ -12651,7 +12642,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", designation1)});
-#line 3332
+#line 3335
  await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table582, "And ");
 #line hidden
                 global::Reqnroll.Table table583 = new global::Reqnroll.Table(new string[] {
@@ -12660,7 +12651,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table583.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 3335
+#line 3338
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table583, "And ");
 #line hidden
                 global::Reqnroll.Table table584 = new global::Reqnroll.Table(new string[] {
@@ -12683,14 +12674,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country1),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3339
+#line 3342
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table584, "And ");
 #line hidden
-#line 3342
+#line 3345
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3343
+#line 3346
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table585 = new global::Reqnroll.Table(new string[] {
@@ -12701,7 +12692,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 3350
+#line 3353
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table585, "And ");
 #line hidden
                 global::Reqnroll.Table table586 = new global::Reqnroll.Table(new string[] {
@@ -12716,7 +12707,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
-#line 3355
+#line 3358
  await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
                         "middle name , associated party last name and name suffix", ((string)(null)), table586, "And ");
 #line hidden
@@ -12728,7 +12719,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", dOB),
                             string.Format("{0}", gender),
                             string.Format("{0}", other)});
-#line 3358
+#line 3361
  await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other", ((string)(null)), table587, "And ");
 #line hidden
                 global::Reqnroll.Table table588 = new global::Reqnroll.Table(new string[] {
@@ -12737,7 +12728,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table588.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 3361
+#line 3364
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table588, "Then ");
@@ -12754,7 +12745,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 3365
+#line 3368
  await testRunner.WhenAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table589, "When ");
 #line hidden
                 global::Reqnroll.Table table590 = new global::Reqnroll.Table(new string[] {
@@ -12767,7 +12758,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", program),
                             string.Format("{0}", lOB),
                             string.Format("{0}", group)});
-#line 3368
+#line 3371
  await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table590, "And ");
 #line hidden
                 global::Reqnroll.Table table591 = new global::Reqnroll.Table(new string[] {
@@ -12784,7 +12775,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 3372
+#line 3375
  await testRunner.AndAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
                         "te  , county  and zip code", ((string)(null)), table591, "And ");
 #line hidden
@@ -12796,27 +12787,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 3375
+#line 3378
  await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table592, "And ");
 #line hidden
-#line 3378
+#line 3381
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table593 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table593.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 3379
+#line 3382
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table593, "And ");
 #line hidden
-#line 3382
+#line 3385
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table594 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table594.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 3389
+#line 3392
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table594, "When ");
 #line hidden
                 global::Reqnroll.Table table595 = new global::Reqnroll.Table(new string[] {
@@ -12825,66 +12816,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table595.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 3393
+#line 3396
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table595, "And ");
 #line hidden
                 global::Reqnroll.Table table596 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table596.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 3396
+#line 3399
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table596, "And ");
 #line hidden
-#line 3399
+#line 3402
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3400
+#line 3403
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 3401
+#line 3404
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3402
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 3405
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3406
+#line 3409
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table597 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table597.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 3407
+#line 3410
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table597, "When ");
 #line hidden
-#line 3410
+#line 3413
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3411
+#line 3414
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table598 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table598.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 3412
+#line 3415
  await testRunner.AndAsync("I select the payor", ((string)(null)), table598, "And ");
 #line hidden
                 global::Reqnroll.Table table599 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table599.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 3415
+#line 3418
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table599, "And ");
 #line hidden
-#line 3418
+#line 3421
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3419
+#line 3422
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3420
+#line 3423
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table600 = new global::Reqnroll.Table(new string[] {
@@ -12897,7 +12888,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "<incidentEndDate>",
                             string.Format("{0}", amount),
                             string.Format("{0}", orgname)});
-#line 3421
+#line 3424
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table600, "Then ");
 #line hidden
                 global::Reqnroll.Table table601 = new global::Reqnroll.Table(new string[] {
@@ -12942,8 +12933,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3424
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table601, "Then ");
+#line 3427
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table601, "And ");
 #line hidden
                 global::Reqnroll.Table table602 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -12967,14 +12958,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 3427
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table602, "Then ");
+#line 3430
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table602, "And ");
 #line hidden
                 global::Reqnroll.Table table603 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table603.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3430
+#line 3433
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table603, "When ");
 #line hidden
@@ -12982,13 +12973,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table604.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3433
+#line 3436
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table604, "Then ");
 #line hidden
-#line 3436
+#line 3439
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3437
+#line 3440
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -12996,22 +12987,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table605.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3438
+#line 3441
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table605, "When ");
 #line hidden
-#line 3441
+#line 3444
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3442
+#line 3445
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3443
+#line 3446
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3444
+#line 3447
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 3445
+#line 3448
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -13259,7 +13250,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Organization with additional party type as \"Provider\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 3455
+#line 3458
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -13269,14 +13260,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 3457
+#line 3460
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table606 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table606.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 3464
+#line 3467
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table606, "When ");
 #line hidden
                 global::Reqnroll.Table table607 = new global::Reqnroll.Table(new string[] {
@@ -13289,7 +13280,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 3467
+#line 3470
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table607, "And ");
 #line hidden
@@ -13297,7 +13288,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table608.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 3470
+#line 3473
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table608, "And ");
 #line hidden
                 global::Reqnroll.Table table609 = new global::Reqnroll.Table(new string[] {
@@ -13312,34 +13303,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 3476
+#line 3479
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table609, "And ");
 #line hidden
-#line 3480
+#line 3483
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3481
+#line 3484
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table610 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table610.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 3488
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table610, "When ");
+#line 3491
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table610, "And ");
 #line hidden
                 global::Reqnroll.Table table611 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table611.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 3495
+#line 3498
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table611, "And ");
 #line hidden
                 global::Reqnroll.Table table612 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table612.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 3498
+#line 3501
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table612, "And ");
 #line hidden
                 global::Reqnroll.Table table613 = new global::Reqnroll.Table(new string[] {
@@ -13348,7 +13339,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table613.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 3501
+#line 3504
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table613, "And ");
 #line hidden
                 global::Reqnroll.Table table614 = new global::Reqnroll.Table(new string[] {
@@ -13357,7 +13348,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table614.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 3504
+#line 3507
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table614, "And ");
 #line hidden
                 global::Reqnroll.Table table615 = new global::Reqnroll.Table(new string[] {
@@ -13366,8 +13357,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table615.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 3511
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table615, "When ");
+#line 3514
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table615, "And ");
 #line hidden
                 global::Reqnroll.Table table616 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -13375,20 +13366,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table616.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 3514
+#line 3517
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table616, "And ");
 #line hidden
-#line 3519
+#line 3522
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3520
+#line 3523
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table617 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table617.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 3525
+#line 3528
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table617, "And ");
 #line hidden
                 global::Reqnroll.Table table618 = new global::Reqnroll.Table(new string[] {
@@ -13403,7 +13394,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 3528
+#line 3531
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
                         "her and other ID", ((string)(null)), table618, "And ");
 #line hidden
@@ -13419,7 +13410,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", designation1)});
-#line 3531
+#line 3534
  await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table619, "And ");
 #line hidden
                 global::Reqnroll.Table table620 = new global::Reqnroll.Table(new string[] {
@@ -13428,7 +13419,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table620.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 3534
+#line 3537
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table620, "And ");
 #line hidden
                 global::Reqnroll.Table table621 = new global::Reqnroll.Table(new string[] {
@@ -13451,14 +13442,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country1),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3537
+#line 3540
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table621, "And ");
 #line hidden
-#line 3540
+#line 3543
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3541
+#line 3544
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table622 = new global::Reqnroll.Table(new string[] {
@@ -13469,7 +13460,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 3548
+#line 3551
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table622, "And ");
 #line hidden
                 global::Reqnroll.Table table623 = new global::Reqnroll.Table(new string[] {
@@ -13486,7 +13477,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix)});
-#line 3551
+#line 3554
  await testRunner.AndAsync("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
                         "ed party middle name , associated party last name  and name suffix  on the \"<Inv" +
                         "olved Parties page>\"", ((string)(null)), table623, "And ");
@@ -13495,7 +13486,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "designation"});
                 table624.AddRow(new string[] {
                             string.Format("{0}", designation)});
-#line 3554
+#line 3557
  await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table624, "And ");
 #line hidden
                 global::Reqnroll.Table table625 = new global::Reqnroll.Table(new string[] {
@@ -13506,8 +13497,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
-#line 3560
- await testRunner.WhenAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table625, "When ");
+#line 3563
+ await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table625, "And ");
 #line hidden
                 global::Reqnroll.Table table626 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType",
@@ -13515,7 +13506,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table626.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 3563
+#line 3566
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table626, "Then ");
@@ -13532,7 +13523,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 3566
+#line 3569
  await testRunner.WhenAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", involvedParty), ((string)(null)), table627, "When ");
 #line hidden
                 global::Reqnroll.Table table628 = new global::Reqnroll.Table(new string[] {
@@ -13545,7 +13536,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", providerSpecialty),
                             string.Format("{0}", taxonomy),
                             string.Format("{0}", other)});
-#line 3569
+#line 3572
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
                             "he \"{0}\"", involvedParty), ((string)(null)), table628, "And ");
 #line hidden
@@ -13563,16 +13554,16 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 3577
- await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
-                        " county   and zip code", ((string)(null)), table629, "When ");
+#line 3580
+ await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table629, "And ");
 #line hidden
                 global::Reqnroll.Table table630 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
                 table630.AddRow(new string[] {
                             string.Format("{0}", dOB)});
-#line 3585
- await testRunner.WhenAsync("enter DOB", ((string)(null)), table630, "When ");
+#line 3588
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table630, "And ");
 #line hidden
                 global::Reqnroll.Table table631 = new global::Reqnroll.Table(new string[] {
                             "country",
@@ -13584,27 +13575,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3588
+#line 3591
  await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table631, "And ");
 #line hidden
-#line 3591
+#line 3594
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table632 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table632.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 3592
+#line 3595
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table632, "And ");
 #line hidden
-#line 3595
+#line 3598
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table633 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table633.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 3602
+#line 3605
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table633, "When ");
 #line hidden
                 global::Reqnroll.Table table634 = new global::Reqnroll.Table(new string[] {
@@ -13613,66 +13604,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table634.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 3606
+#line 3609
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table634, "And ");
 #line hidden
                 global::Reqnroll.Table table635 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table635.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 3609
+#line 3612
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table635, "And ");
 #line hidden
-#line 3612
+#line 3615
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3613
+#line 3616
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 3614
+#line 3617
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3615
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 3618
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3619
+#line 3622
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table636 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table636.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 3620
+#line 3623
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table636, "When ");
 #line hidden
-#line 3623
+#line 3626
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3624
+#line 3627
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table637 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table637.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 3625
+#line 3628
  await testRunner.AndAsync("I select the payor", ((string)(null)), table637, "And ");
 #line hidden
                 global::Reqnroll.Table table638 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table638.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 3628
+#line 3631
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table638, "And ");
 #line hidden
-#line 3631
+#line 3634
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3632
+#line 3635
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3633
+#line 3636
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table639 = new global::Reqnroll.Table(new string[] {
@@ -13685,7 +13676,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "<incidentEndDate>",
                             string.Format("{0}", amount),
                             string.Format("{0}", orgname)});
-#line 3634
+#line 3637
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table639, "Then ");
 #line hidden
                 global::Reqnroll.Table table640 = new global::Reqnroll.Table(new string[] {
@@ -13730,8 +13721,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3637
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table640, "Then ");
+#line 3640
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table640, "And ");
 #line hidden
                 global::Reqnroll.Table table641 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -13755,14 +13746,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 3640
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table641, "Then ");
+#line 3643
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table641, "And ");
 #line hidden
                 global::Reqnroll.Table table642 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table642.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3643
+#line 3646
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table642, "When ");
 #line hidden
@@ -13770,13 +13761,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table643.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3646
+#line 3649
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table643, "Then ");
 #line hidden
-#line 3649
+#line 3652
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3650
+#line 3653
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -13784,22 +13775,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table644.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3651
+#line 3654
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table644, "When ");
 #line hidden
-#line 3654
+#line 3657
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3655
+#line 3658
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3656
+#line 3659
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3658
+#line 3661
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 3659
+#line 3662
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -14047,7 +14038,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Organization with additional party type as \"Non-Enumertaed Provider\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 3667
+#line 3670
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -14057,14 +14048,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 3669
+#line 3672
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table645 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table645.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 3676
+#line 3679
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table645, "When ");
 #line hidden
                 global::Reqnroll.Table table646 = new global::Reqnroll.Table(new string[] {
@@ -14077,7 +14068,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 3679
+#line 3682
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table646, "And ");
 #line hidden
@@ -14085,7 +14076,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table647.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 3682
+#line 3685
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table647, "And ");
 #line hidden
                 global::Reqnroll.Table table648 = new global::Reqnroll.Table(new string[] {
@@ -14100,34 +14091,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 3688
+#line 3691
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table648, "And ");
 #line hidden
-#line 3692
+#line 3695
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3693
+#line 3696
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table649 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table649.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 3700
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table649, "When ");
+#line 3703
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table649, "And ");
 #line hidden
                 global::Reqnroll.Table table650 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table650.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 3707
+#line 3710
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table650, "And ");
 #line hidden
                 global::Reqnroll.Table table651 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table651.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 3710
+#line 3713
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table651, "And ");
 #line hidden
                 global::Reqnroll.Table table652 = new global::Reqnroll.Table(new string[] {
@@ -14136,7 +14127,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table652.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 3713
+#line 3716
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table652, "And ");
 #line hidden
                 global::Reqnroll.Table table653 = new global::Reqnroll.Table(new string[] {
@@ -14145,7 +14136,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table653.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 3716
+#line 3719
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table653, "And ");
 #line hidden
                 global::Reqnroll.Table table654 = new global::Reqnroll.Table(new string[] {
@@ -14154,8 +14145,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table654.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 3723
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table654, "When ");
+#line 3726
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table654, "And ");
 #line hidden
                 global::Reqnroll.Table table655 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -14163,20 +14154,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table655.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 3726
+#line 3729
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table655, "And ");
 #line hidden
-#line 3731
+#line 3734
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3732
+#line 3735
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table656 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table656.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 3738
+#line 3741
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table656, "And ");
 #line hidden
                 global::Reqnroll.Table table657 = new global::Reqnroll.Table(new string[] {
@@ -14191,7 +14182,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 3742
+#line 3745
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
                         "her and other ID", ((string)(null)), table657, "And ");
 #line hidden
@@ -14207,7 +14198,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", designation1)});
-#line 3746
+#line 3749
  await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table658, "And ");
 #line hidden
                 global::Reqnroll.Table table659 = new global::Reqnroll.Table(new string[] {
@@ -14216,7 +14207,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table659.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 3749
+#line 3752
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table659, "And ");
 #line hidden
                 global::Reqnroll.Table table660 = new global::Reqnroll.Table(new string[] {
@@ -14239,14 +14230,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country1),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3753
+#line 3756
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table660, "And ");
 #line hidden
-#line 3756
+#line 3759
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3757
+#line 3760
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table661 = new global::Reqnroll.Table(new string[] {
@@ -14257,7 +14248,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 3764
+#line 3767
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table661, "And ");
 #line hidden
                 global::Reqnroll.Table table662 = new global::Reqnroll.Table(new string[] {
@@ -14274,7 +14265,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
-#line 3767
+#line 3770
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
                         "ame suffix", ((string)(null)), table662, "And ");
@@ -14293,7 +14284,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 3771
+#line 3774
  await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table663, "And ");
 #line hidden
                 global::Reqnroll.Table table664 = new global::Reqnroll.Table(new string[] {
@@ -14302,7 +14293,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table664.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 3776
+#line 3779
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table664, "Then ");
@@ -14317,7 +14308,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3779
+#line 3782
  await testRunner.WhenAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
                         "the involved party", ((string)(null)), table665, "When ");
 #line hidden
@@ -14337,28 +14328,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country1)});
-#line 3782
+#line 3785
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de and country for the involved party", ((string)(null)), table666, "And ");
 #line hidden
-#line 3786
+#line 3789
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table667 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table667.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 3787
+#line 3790
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table667, "And ");
 #line hidden
-#line 3790
+#line 3793
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table668 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table668.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 3797
+#line 3800
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table668, "When ");
 #line hidden
                 global::Reqnroll.Table table669 = new global::Reqnroll.Table(new string[] {
@@ -14367,66 +14358,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table669.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 3801
+#line 3804
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table669, "And ");
 #line hidden
                 global::Reqnroll.Table table670 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table670.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 3804
+#line 3807
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table670, "And ");
 #line hidden
-#line 3807
+#line 3810
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3808
+#line 3811
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 3809
+#line 3812
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3810
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 3813
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3814
+#line 3817
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table671 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table671.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 3815
+#line 3818
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table671, "When ");
 #line hidden
-#line 3818
+#line 3821
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3819
+#line 3822
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table672 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table672.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 3820
+#line 3823
  await testRunner.AndAsync("I select the payor", ((string)(null)), table672, "And ");
 #line hidden
                 global::Reqnroll.Table table673 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table673.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 3823
+#line 3826
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table673, "And ");
 #line hidden
-#line 3826
+#line 3829
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3827
+#line 3830
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3828
+#line 3831
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table674 = new global::Reqnroll.Table(new string[] {
@@ -14439,7 +14430,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "<incidentEndDate>",
                             string.Format("{0}", amount),
                             string.Format("{0}", orgname)});
-#line 3829
+#line 3832
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table674, "Then ");
 #line hidden
                 global::Reqnroll.Table table675 = new global::Reqnroll.Table(new string[] {
@@ -14484,8 +14475,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3832
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table675, "Then ");
+#line 3835
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table675, "And ");
 #line hidden
                 global::Reqnroll.Table table676 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -14509,14 +14500,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 3835
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table676, "Then ");
+#line 3838
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table676, "And ");
 #line hidden
                 global::Reqnroll.Table table677 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table677.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3838
+#line 3841
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table677, "When ");
 #line hidden
@@ -14524,13 +14515,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table678.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3841
+#line 3844
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table678, "Then ");
 #line hidden
-#line 3844
+#line 3847
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3845
+#line 3848
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -14538,22 +14529,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table679.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 3846
+#line 3849
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table679, "When ");
 #line hidden
-#line 3849
+#line 3852
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3850
+#line 3853
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3851
+#line 3854
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3855
+#line 3858
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 3856
+#line 3859
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -14801,7 +14792,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Organization with additional party type as \"Non-Enumertaed Member\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 3866
+#line 3869
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -14811,14 +14802,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 3868
+#line 3871
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table680 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table680.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 3875
+#line 3878
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table680, "When ");
 #line hidden
                 global::Reqnroll.Table table681 = new global::Reqnroll.Table(new string[] {
@@ -14831,7 +14822,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 3878
+#line 3881
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table681, "And ");
 #line hidden
@@ -14839,7 +14830,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table682.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 3881
+#line 3884
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table682, "And ");
 #line hidden
                 global::Reqnroll.Table table683 = new global::Reqnroll.Table(new string[] {
@@ -14854,34 +14845,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 3887
+#line 3890
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table683, "And ");
 #line hidden
-#line 3891
+#line 3894
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3892
+#line 3895
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table684 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table684.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 3899
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table684, "When ");
+#line 3902
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table684, "And ");
 #line hidden
                 global::Reqnroll.Table table685 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table685.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 3906
+#line 3909
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table685, "And ");
 #line hidden
                 global::Reqnroll.Table table686 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table686.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 3909
+#line 3912
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table686, "And ");
 #line hidden
                 global::Reqnroll.Table table687 = new global::Reqnroll.Table(new string[] {
@@ -14890,7 +14881,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table687.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 3912
+#line 3915
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table687, "And ");
 #line hidden
                 global::Reqnroll.Table table688 = new global::Reqnroll.Table(new string[] {
@@ -14899,7 +14890,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table688.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 3915
+#line 3918
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table688, "And ");
 #line hidden
                 global::Reqnroll.Table table689 = new global::Reqnroll.Table(new string[] {
@@ -14908,8 +14899,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table689.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 3922
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table689, "When ");
+#line 3925
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table689, "And ");
 #line hidden
                 global::Reqnroll.Table table690 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -14917,20 +14908,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table690.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 3925
+#line 3928
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table690, "And ");
 #line hidden
-#line 3930
+#line 3933
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3931
+#line 3934
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table691 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table691.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 3937
+#line 3940
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table691, "And ");
 #line hidden
                 global::Reqnroll.Table table692 = new global::Reqnroll.Table(new string[] {
@@ -14945,7 +14936,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 3941
+#line 3944
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
                         "her and other ID", ((string)(null)), table692, "And ");
 #line hidden
@@ -14961,7 +14952,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", designation1)});
-#line 3945
+#line 3948
  await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table693, "And ");
 #line hidden
                 global::Reqnroll.Table table694 = new global::Reqnroll.Table(new string[] {
@@ -14970,7 +14961,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table694.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 3948
+#line 3951
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table694, "And ");
 #line hidden
                 global::Reqnroll.Table table695 = new global::Reqnroll.Table(new string[] {
@@ -14993,14 +14984,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country1),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 3952
+#line 3955
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table695, "And ");
 #line hidden
-#line 3955
+#line 3958
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 3956
+#line 3959
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table696 = new global::Reqnroll.Table(new string[] {
@@ -15011,7 +15002,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 3963
+#line 3966
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table696, "And ");
 #line hidden
                 global::Reqnroll.Table table697 = new global::Reqnroll.Table(new string[] {
@@ -15060,7 +15051,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", otherId),
                             string.Format("{0}", email1)});
-#line 3966
+#line 3969
  await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table697, "And ");
 #line hidden
                 global::Reqnroll.Table table698 = new global::Reqnroll.Table(new string[] {
@@ -15069,29 +15060,29 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table698.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 3969
+#line 3972
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table698, "Then ");
 #line hidden
-#line 3972
+#line 3975
  await testRunner.WhenAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table699 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table699.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 3973
+#line 3976
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table699, "And ");
 #line hidden
-#line 3976
+#line 3979
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table700 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table700.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 3984
+#line 3987
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table700, "When ");
 #line hidden
                 global::Reqnroll.Table table701 = new global::Reqnroll.Table(new string[] {
@@ -15100,66 +15091,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table701.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 3988
+#line 3991
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table701, "And ");
 #line hidden
                 global::Reqnroll.Table table702 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table702.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 3991
+#line 3994
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table702, "And ");
 #line hidden
-#line 3994
+#line 3997
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3995
+#line 3998
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 3996
+#line 3999
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 3997
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 4000
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4001
+#line 4004
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table703 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table703.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 4002
+#line 4005
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table703, "When ");
 #line hidden
-#line 4005
+#line 4008
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4006
+#line 4009
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table704 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table704.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 4007
+#line 4010
  await testRunner.AndAsync("I select the payor", ((string)(null)), table704, "And ");
 #line hidden
                 global::Reqnroll.Table table705 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table705.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 4010
+#line 4013
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table705, "And ");
 #line hidden
-#line 4013
+#line 4016
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4014
+#line 4017
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4015
+#line 4018
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table706 = new global::Reqnroll.Table(new string[] {
@@ -15172,7 +15163,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "<incidentEndDate>",
                             string.Format("{0}", amount),
                             string.Format("{0}", orgname)});
-#line 4016
+#line 4019
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table706, "Then ");
 #line hidden
                 global::Reqnroll.Table table707 = new global::Reqnroll.Table(new string[] {
@@ -15217,8 +15208,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4019
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table707, "Then ");
+#line 4022
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table707, "And ");
 #line hidden
                 global::Reqnroll.Table table708 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -15242,14 +15233,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 4022
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table708, "Then ");
+#line 4025
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table708, "And ");
 #line hidden
                 global::Reqnroll.Table table709 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table709.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4025
+#line 4028
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table709, "When ");
 #line hidden
@@ -15257,13 +15248,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table710.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4028
+#line 4031
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table710, "Then ");
 #line hidden
-#line 4031
+#line 4034
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4032
+#line 4035
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -15271,22 +15262,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table711.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4033
+#line 4036
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table711, "When ");
 #line hidden
-#line 4036
+#line 4039
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4037
+#line 4040
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4038
+#line 4041
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4040
+#line 4043
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 4041
+#line 4044
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -15534,7 +15525,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Organization with additional party type as \"Non-Enumertaed Organization\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 4051
+#line 4054
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -15544,14 +15535,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 4053
+#line 4056
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table712 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table712.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 4060
+#line 4063
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table712, "When ");
 #line hidden
                 global::Reqnroll.Table table713 = new global::Reqnroll.Table(new string[] {
@@ -15564,7 +15555,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 4063
+#line 4066
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table713, "And ");
 #line hidden
@@ -15572,7 +15563,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table714.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 4066
+#line 4069
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table714, "And ");
 #line hidden
                 global::Reqnroll.Table table715 = new global::Reqnroll.Table(new string[] {
@@ -15587,34 +15578,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 4072
+#line 4075
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table715, "And ");
 #line hidden
-#line 4076
+#line 4079
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4077
+#line 4080
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table716 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table716.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 4084
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table716, "When ");
+#line 4087
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table716, "And ");
 #line hidden
                 global::Reqnroll.Table table717 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table717.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 4091
+#line 4094
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table717, "And ");
 #line hidden
                 global::Reqnroll.Table table718 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table718.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 4094
+#line 4097
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table718, "And ");
 #line hidden
                 global::Reqnroll.Table table719 = new global::Reqnroll.Table(new string[] {
@@ -15623,7 +15614,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table719.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 4097
+#line 4100
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table719, "And ");
 #line hidden
                 global::Reqnroll.Table table720 = new global::Reqnroll.Table(new string[] {
@@ -15632,7 +15623,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table720.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 4100
+#line 4103
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table720, "And ");
 #line hidden
                 global::Reqnroll.Table table721 = new global::Reqnroll.Table(new string[] {
@@ -15641,8 +15632,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table721.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 4107
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table721, "When ");
+#line 4110
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table721, "And ");
 #line hidden
                 global::Reqnroll.Table table722 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -15650,20 +15641,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table722.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 4110
+#line 4113
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table722, "And ");
 #line hidden
-#line 4115
+#line 4118
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4116
+#line 4119
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table723 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table723.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 4122
+#line 4125
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table723, "And ");
 #line hidden
                 global::Reqnroll.Table table724 = new global::Reqnroll.Table(new string[] {
@@ -15678,7 +15669,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 4126
+#line 4129
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
                         "her and other ID", ((string)(null)), table724, "And ");
 #line hidden
@@ -15694,7 +15685,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", designation1)});
-#line 4130
+#line 4133
  await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table725, "And ");
 #line hidden
                 global::Reqnroll.Table table726 = new global::Reqnroll.Table(new string[] {
@@ -15703,7 +15694,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table726.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 4133
+#line 4136
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table726, "And ");
 #line hidden
                 global::Reqnroll.Table table727 = new global::Reqnroll.Table(new string[] {
@@ -15726,14 +15717,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country1),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4137
+#line 4140
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table727, "And ");
 #line hidden
-#line 4140
+#line 4143
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4141
+#line 4144
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table728 = new global::Reqnroll.Table(new string[] {
@@ -15744,7 +15735,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 4148
+#line 4151
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table728, "And ");
 #line hidden
                 global::Reqnroll.Table table729 = new global::Reqnroll.Table(new string[] {
@@ -15759,7 +15750,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 4151
+#line 4154
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
                         "her and other ID", ((string)(null)), table729, "And ");
 #line hidden
@@ -15775,7 +15766,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", designation1)});
-#line 4155
+#line 4158
  await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table730, "And ");
 #line hidden
                 global::Reqnroll.Table table731 = new global::Reqnroll.Table(new string[] {
@@ -15784,7 +15775,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table731.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 4159
+#line 4162
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table731, "Then ");
@@ -15809,28 +15800,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country1),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4165
+#line 4168
  await testRunner.WhenAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table732, "When ");
 #line hidden
-#line 4168
+#line 4171
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table733 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table733.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 4169
+#line 4172
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table733, "And ");
 #line hidden
-#line 4172
+#line 4175
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table734 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table734.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 4179
+#line 4182
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table734, "When ");
 #line hidden
                 global::Reqnroll.Table table735 = new global::Reqnroll.Table(new string[] {
@@ -15839,66 +15830,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table735.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 4183
+#line 4186
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table735, "And ");
 #line hidden
                 global::Reqnroll.Table table736 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table736.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 4186
+#line 4189
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table736, "And ");
 #line hidden
-#line 4189
+#line 4192
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4190
+#line 4193
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 4191
+#line 4194
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4192
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 4195
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4196
+#line 4199
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table737 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table737.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 4197
+#line 4200
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table737, "When ");
 #line hidden
-#line 4200
+#line 4203
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4201
+#line 4204
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table738 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table738.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 4202
+#line 4205
  await testRunner.AndAsync("I select the payor", ((string)(null)), table738, "And ");
 #line hidden
                 global::Reqnroll.Table table739 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table739.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 4205
+#line 4208
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table739, "And ");
 #line hidden
-#line 4208
+#line 4211
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4209
+#line 4212
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4210
+#line 4213
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table740 = new global::Reqnroll.Table(new string[] {
@@ -15911,7 +15902,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "<incidentEndDate>",
                             string.Format("{0}", amount),
                             string.Format("{0}", orgname)});
-#line 4211
+#line 4214
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table740, "Then ");
 #line hidden
                 global::Reqnroll.Table table741 = new global::Reqnroll.Table(new string[] {
@@ -15956,8 +15947,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4214
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table741, "Then ");
+#line 4217
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table741, "And ");
 #line hidden
                 global::Reqnroll.Table table742 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -15981,14 +15972,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 4217
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table742, "Then ");
+#line 4220
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table742, "And ");
 #line hidden
                 global::Reqnroll.Table table743 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table743.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4220
+#line 4223
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table743, "When ");
 #line hidden
@@ -15996,13 +15987,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table744.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4223
+#line 4226
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table744, "Then ");
 #line hidden
-#line 4226
+#line 4229
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4227
+#line 4230
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -16010,22 +16001,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table745.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4228
+#line 4231
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table745, "When ");
 #line hidden
-#line 4231
+#line 4234
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4232
+#line 4235
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4233
+#line 4236
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4235
+#line 4238
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 4236
+#line 4239
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -16273,7 +16264,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed provider with additional party type as \"Member\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 4246
+#line 4249
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -16283,14 +16274,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 4248
+#line 4251
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table746 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table746.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 4255
+#line 4258
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table746, "When ");
 #line hidden
                 global::Reqnroll.Table table747 = new global::Reqnroll.Table(new string[] {
@@ -16303,7 +16294,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 4258
+#line 4261
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table747, "And ");
 #line hidden
@@ -16311,7 +16302,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table748.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 4261
+#line 4264
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table748, "And ");
 #line hidden
                 global::Reqnroll.Table table749 = new global::Reqnroll.Table(new string[] {
@@ -16326,34 +16317,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 4267
+#line 4270
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table749, "And ");
 #line hidden
-#line 4271
+#line 4274
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4272
+#line 4275
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table750 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table750.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 4279
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table750, "When ");
+#line 4282
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table750, "And ");
 #line hidden
                 global::Reqnroll.Table table751 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table751.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 4286
+#line 4289
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table751, "And ");
 #line hidden
                 global::Reqnroll.Table table752 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table752.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 4289
+#line 4292
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table752, "And ");
 #line hidden
                 global::Reqnroll.Table table753 = new global::Reqnroll.Table(new string[] {
@@ -16362,7 +16353,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table753.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 4292
+#line 4295
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table753, "And ");
 #line hidden
                 global::Reqnroll.Table table754 = new global::Reqnroll.Table(new string[] {
@@ -16371,7 +16362,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table754.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 4295
+#line 4298
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table754, "And ");
 #line hidden
                 global::Reqnroll.Table table755 = new global::Reqnroll.Table(new string[] {
@@ -16380,8 +16371,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table755.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 4302
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table755, "When ");
+#line 4305
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table755, "And ");
 #line hidden
                 global::Reqnroll.Table table756 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -16389,20 +16380,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table756.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 4305
+#line 4308
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table756, "And ");
 #line hidden
-#line 4310
+#line 4313
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4311
+#line 4314
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table757 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table757.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 4317
+#line 4320
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table757, "And ");
 #line hidden
                 global::Reqnroll.Table table758 = new global::Reqnroll.Table(new string[] {
@@ -16419,7 +16410,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 4321
+#line 4324
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
                         "ame suffix", ((string)(null)), table758, "And ");
@@ -16438,7 +16429,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 4325
+#line 4328
  await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table759, "And ");
 #line hidden
                 global::Reqnroll.Table table760 = new global::Reqnroll.Table(new string[] {
@@ -16447,7 +16438,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table760.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 4330
+#line 4333
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table760, "And ");
 #line hidden
                 global::Reqnroll.Table table761 = new global::Reqnroll.Table(new string[] {
@@ -16460,7 +16451,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4333
+#line 4336
  await testRunner.AndAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
                         "the involved party", ((string)(null)), table761, "And ");
 #line hidden
@@ -16480,14 +16471,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country1)});
-#line 4336
+#line 4339
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de and country for the involved party", ((string)(null)), table762, "And ");
 #line hidden
-#line 4341
+#line 4344
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4342
+#line 4345
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table763 = new global::Reqnroll.Table(new string[] {
@@ -16498,7 +16489,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 4349
+#line 4352
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table763, "And ");
 #line hidden
                 global::Reqnroll.Table table764 = new global::Reqnroll.Table(new string[] {
@@ -16513,7 +16504,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
-#line 4352
+#line 4355
  await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
                         "middle name , associated party last name and name suffix", ((string)(null)), table764, "And ");
 #line hidden
@@ -16525,7 +16516,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", dOB),
                             string.Format("{0}", gender),
                             string.Format("{0}", other)});
-#line 4355
+#line 4358
  await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other", ((string)(null)), table765, "And ");
 #line hidden
                 global::Reqnroll.Table table766 = new global::Reqnroll.Table(new string[] {
@@ -16540,7 +16531,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 4358
+#line 4361
  await testRunner.AndAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table766, "And ");
 #line hidden
                 global::Reqnroll.Table table767 = new global::Reqnroll.Table(new string[] {
@@ -16553,7 +16544,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", program),
                             string.Format("{0}", lOB),
                             string.Format("{0}", group)});
-#line 4361
+#line 4364
  await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table767, "And ");
 #line hidden
                 global::Reqnroll.Table table768 = new global::Reqnroll.Table(new string[] {
@@ -16562,7 +16553,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table768.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 4364
+#line 4367
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table768, "Then ");
@@ -16581,7 +16572,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 4367
+#line 4370
  await testRunner.WhenAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
                         "te  , county  and zip code", ((string)(null)), table769, "When ");
 #line hidden
@@ -16593,27 +16584,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 4370
+#line 4373
  await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table770, "And ");
 #line hidden
-#line 4374
+#line 4377
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table771 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table771.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 4375
+#line 4378
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table771, "And ");
 #line hidden
-#line 4378
+#line 4381
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table772 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table772.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 4385
+#line 4388
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table772, "When ");
 #line hidden
                 global::Reqnroll.Table table773 = new global::Reqnroll.Table(new string[] {
@@ -16622,66 +16613,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table773.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 4389
+#line 4392
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table773, "And ");
 #line hidden
                 global::Reqnroll.Table table774 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table774.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 4392
+#line 4395
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table774, "And ");
 #line hidden
-#line 4395
+#line 4398
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4396
+#line 4399
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 4397
+#line 4400
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4398
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 4401
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4402
+#line 4405
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table775 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table775.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 4403
+#line 4406
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table775, "When ");
 #line hidden
-#line 4406
+#line 4409
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4407
+#line 4410
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table776 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table776.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 4408
+#line 4411
  await testRunner.AndAsync("I select the payor", ((string)(null)), table776, "And ");
 #line hidden
                 global::Reqnroll.Table table777 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table777.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 4411
+#line 4414
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table777, "And ");
 #line hidden
-#line 4414
+#line 4417
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4415
+#line 4418
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4416
+#line 4419
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table778 = new global::Reqnroll.Table(new string[] {
@@ -16698,7 +16689,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 4417
+#line 4420
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table778, "Then ");
 #line hidden
                 global::Reqnroll.Table table779 = new global::Reqnroll.Table(new string[] {
@@ -16751,8 +16742,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4420
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table779, "Then ");
+#line 4423
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table779, "And ");
 #line hidden
                 global::Reqnroll.Table table780 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -16776,14 +16767,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 4423
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table780, "Then ");
+#line 4426
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table780, "And ");
 #line hidden
                 global::Reqnroll.Table table781 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table781.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4426
+#line 4429
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table781, "When ");
 #line hidden
@@ -16791,13 +16782,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table782.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4429
+#line 4432
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table782, "Then ");
 #line hidden
-#line 4432
+#line 4435
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4433
+#line 4436
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -16805,22 +16796,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table783.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4434
+#line 4437
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table783, "When ");
 #line hidden
-#line 4437
+#line 4440
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4438
+#line 4441
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4439
+#line 4442
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4441
+#line 4444
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 4442
+#line 4445
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -17068,7 +17059,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Organization with additional party type as \"Provider\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 4454
+#line 4457
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -17078,14 +17069,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 4456
+#line 4459
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table784 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table784.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 4463
+#line 4466
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table784, "When ");
 #line hidden
                 global::Reqnroll.Table table785 = new global::Reqnroll.Table(new string[] {
@@ -17098,7 +17089,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 4466
+#line 4469
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table785, "And ");
 #line hidden
@@ -17106,7 +17097,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table786.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 4469
+#line 4472
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table786, "And ");
 #line hidden
                 global::Reqnroll.Table table787 = new global::Reqnroll.Table(new string[] {
@@ -17121,34 +17112,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 4475
+#line 4478
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table787, "And ");
 #line hidden
-#line 4479
+#line 4482
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4480
+#line 4483
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table788 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table788.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 4487
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table788, "When ");
+#line 4490
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table788, "And ");
 #line hidden
                 global::Reqnroll.Table table789 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table789.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 4494
+#line 4497
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table789, "And ");
 #line hidden
                 global::Reqnroll.Table table790 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table790.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 4497
+#line 4500
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table790, "And ");
 #line hidden
                 global::Reqnroll.Table table791 = new global::Reqnroll.Table(new string[] {
@@ -17157,7 +17148,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table791.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 4500
+#line 4503
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table791, "And ");
 #line hidden
                 global::Reqnroll.Table table792 = new global::Reqnroll.Table(new string[] {
@@ -17166,7 +17157,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table792.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 4503
+#line 4506
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table792, "And ");
 #line hidden
                 global::Reqnroll.Table table793 = new global::Reqnroll.Table(new string[] {
@@ -17175,8 +17166,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table793.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 4510
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table793, "When ");
+#line 4513
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table793, "And ");
 #line hidden
                 global::Reqnroll.Table table794 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -17184,20 +17175,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table794.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 4513
+#line 4516
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table794, "And ");
 #line hidden
-#line 4518
+#line 4521
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4519
+#line 4522
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table795 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table795.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 4525
+#line 4528
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table795, "And ");
 #line hidden
                 global::Reqnroll.Table table796 = new global::Reqnroll.Table(new string[] {
@@ -17214,7 +17205,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 4529
+#line 4532
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
                         "ame suffix", ((string)(null)), table796, "And ");
@@ -17233,7 +17224,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 4533
+#line 4536
  await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table797, "And ");
 #line hidden
                 global::Reqnroll.Table table798 = new global::Reqnroll.Table(new string[] {
@@ -17242,7 +17233,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table798.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 4538
+#line 4541
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table798, "And ");
 #line hidden
                 global::Reqnroll.Table table799 = new global::Reqnroll.Table(new string[] {
@@ -17255,7 +17246,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4541
+#line 4544
  await testRunner.AndAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
                         "the involved party", ((string)(null)), table799, "And ");
 #line hidden
@@ -17275,14 +17266,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country1)});
-#line 4544
+#line 4547
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de and country for the involved party", ((string)(null)), table800, "And ");
 #line hidden
-#line 4547
+#line 4550
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4548
+#line 4551
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table801 = new global::Reqnroll.Table(new string[] {
@@ -17293,7 +17284,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 4555
+#line 4558
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table801, "And ");
 #line hidden
                 global::Reqnroll.Table table802 = new global::Reqnroll.Table(new string[] {
@@ -17310,7 +17301,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix)});
-#line 4558
+#line 4561
  await testRunner.AndAsync("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
                         "ed party middle name , associated party last name  and name suffix  on the \"<Inv" +
                         "olved Parties page>\"", ((string)(null)), table802, "And ");
@@ -17319,7 +17310,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "designation"});
                 table803.AddRow(new string[] {
                             string.Format("{0}", designation)});
-#line 4561
+#line 4564
  await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table803, "And ");
 #line hidden
                 global::Reqnroll.Table table804 = new global::Reqnroll.Table(new string[] {
@@ -17330,8 +17321,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
-#line 4568
- await testRunner.WhenAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table804, "When ");
+#line 4571
+ await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table804, "And ");
 #line hidden
                 global::Reqnroll.Table table805 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType",
@@ -17339,7 +17330,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table805.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 4571
+#line 4574
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table805, "Then ");
@@ -17356,7 +17347,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 4575
+#line 4578
  await testRunner.WhenAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", involvedParty), ((string)(null)), table806, "When ");
 #line hidden
                 global::Reqnroll.Table table807 = new global::Reqnroll.Table(new string[] {
@@ -17369,7 +17360,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", providerSpecialty),
                             string.Format("{0}", taxonomy),
                             string.Format("{0}", other)});
-#line 4578
+#line 4581
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
                             "he \"{0}\"", involvedParty), ((string)(null)), table807, "And ");
 #line hidden
@@ -17387,16 +17378,16 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 4587
- await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
-                        " county   and zip code", ((string)(null)), table808, "When ");
+#line 4590
+ await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table808, "And ");
 #line hidden
                 global::Reqnroll.Table table809 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
                 table809.AddRow(new string[] {
                             string.Format("{0}", dOB)});
-#line 4595
- await testRunner.WhenAsync("enter DOB", ((string)(null)), table809, "When ");
+#line 4598
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table809, "And ");
 #line hidden
                 global::Reqnroll.Table table810 = new global::Reqnroll.Table(new string[] {
                             "country",
@@ -17408,27 +17399,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4601
- await testRunner.WhenAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table810, "When ");
+#line 4604
+ await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table810, "And ");
 #line hidden
-#line 4605
+#line 4608
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table811 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table811.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 4606
+#line 4609
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table811, "And ");
 #line hidden
-#line 4609
+#line 4612
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table812 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table812.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 4616
+#line 4619
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table812, "When ");
 #line hidden
                 global::Reqnroll.Table table813 = new global::Reqnroll.Table(new string[] {
@@ -17437,66 +17428,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table813.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 4620
+#line 4623
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table813, "And ");
 #line hidden
                 global::Reqnroll.Table table814 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table814.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 4623
+#line 4626
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table814, "And ");
 #line hidden
-#line 4626
+#line 4629
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4627
+#line 4630
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 4628
+#line 4631
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4629
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 4632
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4633
+#line 4636
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table815 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table815.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 4634
+#line 4637
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table815, "When ");
 #line hidden
-#line 4637
+#line 4640
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4638
+#line 4641
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table816 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table816.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 4639
+#line 4642
  await testRunner.AndAsync("I select the payor", ((string)(null)), table816, "And ");
 #line hidden
                 global::Reqnroll.Table table817 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table817.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 4642
+#line 4645
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table817, "And ");
 #line hidden
-#line 4645
+#line 4648
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4646
+#line 4649
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4647
+#line 4650
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table818 = new global::Reqnroll.Table(new string[] {
@@ -17513,7 +17504,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 4648
+#line 4651
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table818, "Then ");
 #line hidden
                 global::Reqnroll.Table table819 = new global::Reqnroll.Table(new string[] {
@@ -17566,8 +17557,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4651
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table819, "Then ");
+#line 4654
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table819, "And ");
 #line hidden
                 global::Reqnroll.Table table820 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -17591,14 +17582,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 4654
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table820, "Then ");
+#line 4657
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table820, "And ");
 #line hidden
                 global::Reqnroll.Table table821 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table821.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4657
+#line 4660
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table821, "When ");
 #line hidden
@@ -17606,13 +17597,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table822.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4660
+#line 4663
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table822, "Then ");
 #line hidden
-#line 4663
+#line 4666
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4664
+#line 4667
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -17620,22 +17611,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table823.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4665
+#line 4668
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table823, "When ");
 #line hidden
-#line 4668
+#line 4671
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4669
+#line 4672
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4670
+#line 4673
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4672
+#line 4675
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 4673
+#line 4676
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -17883,7 +17874,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Organization with additional party type as \"Non-Enumertaed Provider\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 4683
+#line 4686
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -17893,14 +17884,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 4685
+#line 4688
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table824 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table824.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 4692
+#line 4695
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table824, "When ");
 #line hidden
                 global::Reqnroll.Table table825 = new global::Reqnroll.Table(new string[] {
@@ -17913,7 +17904,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 4695
+#line 4698
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table825, "And ");
 #line hidden
@@ -17921,7 +17912,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table826.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 4698
+#line 4701
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table826, "And ");
 #line hidden
                 global::Reqnroll.Table table827 = new global::Reqnroll.Table(new string[] {
@@ -17936,34 +17927,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 4704
+#line 4707
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table827, "And ");
 #line hidden
-#line 4708
+#line 4711
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4709
+#line 4712
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table828 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table828.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 4716
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table828, "When ");
+#line 4719
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table828, "And ");
 #line hidden
                 global::Reqnroll.Table table829 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table829.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 4723
+#line 4726
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table829, "And ");
 #line hidden
                 global::Reqnroll.Table table830 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table830.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 4726
+#line 4729
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table830, "And ");
 #line hidden
                 global::Reqnroll.Table table831 = new global::Reqnroll.Table(new string[] {
@@ -17972,7 +17963,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table831.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 4729
+#line 4732
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table831, "And ");
 #line hidden
                 global::Reqnroll.Table table832 = new global::Reqnroll.Table(new string[] {
@@ -17981,7 +17972,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table832.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 4732
+#line 4735
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table832, "And ");
 #line hidden
                 global::Reqnroll.Table table833 = new global::Reqnroll.Table(new string[] {
@@ -17990,8 +17981,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table833.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 4739
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table833, "When ");
+#line 4742
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table833, "And ");
 #line hidden
                 global::Reqnroll.Table table834 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -17999,20 +17990,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table834.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 4742
+#line 4745
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table834, "And ");
 #line hidden
-#line 4748
+#line 4751
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4749
+#line 4752
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table835 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table835.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 4755
+#line 4758
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table835, "And ");
 #line hidden
                 global::Reqnroll.Table table836 = new global::Reqnroll.Table(new string[] {
@@ -18029,7 +18020,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 4758
+#line 4761
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
                         "ame suffix", ((string)(null)), table836, "And ");
@@ -18048,7 +18039,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 4762
+#line 4765
  await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table837, "And ");
 #line hidden
                 global::Reqnroll.Table table838 = new global::Reqnroll.Table(new string[] {
@@ -18057,7 +18048,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table838.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 4767
+#line 4770
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table838, "And ");
 #line hidden
                 global::Reqnroll.Table table839 = new global::Reqnroll.Table(new string[] {
@@ -18070,7 +18061,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4770
+#line 4773
  await testRunner.AndAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
                         "the involved party", ((string)(null)), table839, "And ");
 #line hidden
@@ -18090,14 +18081,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country1)});
-#line 4773
+#line 4776
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de and country for the involved party", ((string)(null)), table840, "And ");
 #line hidden
-#line 4777
+#line 4780
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4778
+#line 4781
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table841 = new global::Reqnroll.Table(new string[] {
@@ -18108,7 +18099,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 4785
+#line 4788
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table841, "And ");
 #line hidden
                 global::Reqnroll.Table table842 = new global::Reqnroll.Table(new string[] {
@@ -18125,7 +18116,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
-#line 4788
+#line 4791
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
                         "ame suffix", ((string)(null)), table842, "And ");
@@ -18144,7 +18135,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 4792
+#line 4795
  await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table843, "And ");
 #line hidden
                 global::Reqnroll.Table table844 = new global::Reqnroll.Table(new string[] {
@@ -18153,7 +18144,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table844.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 4797
+#line 4800
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table844, "Then ");
@@ -18168,7 +18159,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4800
+#line 4803
  await testRunner.WhenAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
                         "the involved party", ((string)(null)), table845, "When ");
 #line hidden
@@ -18188,28 +18179,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country1)});
-#line 4803
+#line 4806
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de and country for the involved party", ((string)(null)), table846, "And ");
 #line hidden
-#line 4808
+#line 4811
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table847 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table847.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 4809
+#line 4812
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table847, "And ");
 #line hidden
-#line 4812
+#line 4815
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table848 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table848.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 4819
+#line 4822
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table848, "When ");
 #line hidden
                 global::Reqnroll.Table table849 = new global::Reqnroll.Table(new string[] {
@@ -18218,66 +18209,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table849.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 4823
+#line 4826
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table849, "And ");
 #line hidden
                 global::Reqnroll.Table table850 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table850.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 4826
+#line 4829
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table850, "And ");
 #line hidden
-#line 4829
+#line 4832
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4830
+#line 4833
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 4831
+#line 4834
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4832
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 4835
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4836
+#line 4839
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table851 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table851.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 4837
+#line 4840
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table851, "When ");
 #line hidden
-#line 4840
+#line 4843
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4841
+#line 4844
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table852 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table852.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 4842
+#line 4845
  await testRunner.AndAsync("I select the payor", ((string)(null)), table852, "And ");
 #line hidden
                 global::Reqnroll.Table table853 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table853.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 4845
+#line 4848
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table853, "And ");
 #line hidden
-#line 4848
+#line 4851
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4849
+#line 4852
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4850
+#line 4853
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table854 = new global::Reqnroll.Table(new string[] {
@@ -18294,7 +18285,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 4851
+#line 4854
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table854, "Then ");
 #line hidden
                 global::Reqnroll.Table table855 = new global::Reqnroll.Table(new string[] {
@@ -18347,8 +18338,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4854
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table855, "Then ");
+#line 4857
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table855, "And ");
 #line hidden
                 global::Reqnroll.Table table856 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -18372,14 +18363,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 4857
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table856, "Then ");
+#line 4860
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table856, "And ");
 #line hidden
                 global::Reqnroll.Table table857 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table857.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4860
+#line 4863
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table857, "When ");
 #line hidden
@@ -18387,13 +18378,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table858.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4863
+#line 4866
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table858, "Then ");
 #line hidden
-#line 4866
+#line 4869
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4867
+#line 4870
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -18401,22 +18392,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table859.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 4868
+#line 4871
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table859, "When ");
 #line hidden
-#line 4871
+#line 4874
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 4872
+#line 4875
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4873
+#line 4876
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4875
+#line 4878
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 4876
+#line 4879
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -18664,7 +18655,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Organization with additional party type as \"Non-Enumertaed Member\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 4885
+#line 4888
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -18674,14 +18665,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 4887
+#line 4890
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table860 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table860.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 4894
+#line 4897
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table860, "When ");
 #line hidden
                 global::Reqnroll.Table table861 = new global::Reqnroll.Table(new string[] {
@@ -18694,7 +18685,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 4897
+#line 4900
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table861, "And ");
 #line hidden
@@ -18702,7 +18693,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table862.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 4900
+#line 4903
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table862, "And ");
 #line hidden
                 global::Reqnroll.Table table863 = new global::Reqnroll.Table(new string[] {
@@ -18717,34 +18708,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 4906
+#line 4909
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table863, "And ");
 #line hidden
-#line 4910
+#line 4913
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4911
+#line 4914
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table864 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table864.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 4918
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table864, "When ");
+#line 4921
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table864, "And ");
 #line hidden
                 global::Reqnroll.Table table865 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table865.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 4925
+#line 4928
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table865, "And ");
 #line hidden
                 global::Reqnroll.Table table866 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table866.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 4928
+#line 4931
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table866, "And ");
 #line hidden
                 global::Reqnroll.Table table867 = new global::Reqnroll.Table(new string[] {
@@ -18753,7 +18744,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table867.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 4931
+#line 4934
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table867, "And ");
 #line hidden
                 global::Reqnroll.Table table868 = new global::Reqnroll.Table(new string[] {
@@ -18762,7 +18753,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table868.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 4934
+#line 4937
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table868, "And ");
 #line hidden
                 global::Reqnroll.Table table869 = new global::Reqnroll.Table(new string[] {
@@ -18771,8 +18762,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table869.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 4941
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table869, "When ");
+#line 4944
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table869, "And ");
 #line hidden
                 global::Reqnroll.Table table870 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -18780,20 +18771,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table870.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 4944
+#line 4947
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table870, "And ");
 #line hidden
-#line 4950
+#line 4953
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4951
+#line 4954
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table871 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table871.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 4957
+#line 4960
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table871, "And ");
 #line hidden
                 global::Reqnroll.Table table872 = new global::Reqnroll.Table(new string[] {
@@ -18810,7 +18801,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 4960
+#line 4963
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
                         "ame suffix", ((string)(null)), table872, "And ");
@@ -18829,7 +18820,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 4964
+#line 4967
  await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table873, "And ");
 #line hidden
                 global::Reqnroll.Table table874 = new global::Reqnroll.Table(new string[] {
@@ -18838,7 +18829,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table874.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 4969
+#line 4972
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table874, "And ");
 #line hidden
                 global::Reqnroll.Table table875 = new global::Reqnroll.Table(new string[] {
@@ -18851,7 +18842,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 4972
+#line 4975
  await testRunner.AndAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
                         "the involved party", ((string)(null)), table875, "And ");
 #line hidden
@@ -18871,14 +18862,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country1)});
-#line 4975
+#line 4978
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de and country for the involved party", ((string)(null)), table876, "And ");
 #line hidden
-#line 4979
+#line 4982
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 4980
+#line 4983
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table877 = new global::Reqnroll.Table(new string[] {
@@ -18889,7 +18880,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 4987
+#line 4990
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table877, "And ");
 #line hidden
                 global::Reqnroll.Table table878 = new global::Reqnroll.Table(new string[] {
@@ -18938,7 +18929,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", otherId),
                             string.Format("{0}", email1)});
-#line 4990
+#line 4993
  await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table878, "And ");
 #line hidden
                 global::Reqnroll.Table table879 = new global::Reqnroll.Table(new string[] {
@@ -18947,29 +18938,29 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table879.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 4993
+#line 4996
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table879, "Then ");
 #line hidden
-#line 4996
+#line 4999
  await testRunner.WhenAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table880 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table880.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 4997
+#line 5000
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table880, "And ");
 #line hidden
-#line 5000
+#line 5003
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table881 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table881.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 5009
+#line 5012
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table881, "When ");
 #line hidden
                 global::Reqnroll.Table table882 = new global::Reqnroll.Table(new string[] {
@@ -18978,66 +18969,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table882.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 5013
+#line 5016
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table882, "And ");
 #line hidden
                 global::Reqnroll.Table table883 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table883.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 5016
+#line 5019
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table883, "And ");
 #line hidden
-#line 5019
+#line 5022
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5020
+#line 5023
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 5021
+#line 5024
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5022
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 5025
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5026
+#line 5029
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table884 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table884.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 5027
+#line 5030
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table884, "When ");
 #line hidden
-#line 5030
+#line 5033
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5031
+#line 5034
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table885 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table885.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 5032
+#line 5035
  await testRunner.AndAsync("I select the payor", ((string)(null)), table885, "And ");
 #line hidden
                 global::Reqnroll.Table table886 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table886.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 5035
+#line 5038
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table886, "And ");
 #line hidden
-#line 5038
+#line 5041
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5039
+#line 5042
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5040
+#line 5043
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table887 = new global::Reqnroll.Table(new string[] {
@@ -19054,7 +19045,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 5041
+#line 5044
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table887, "Then ");
 #line hidden
                 global::Reqnroll.Table table888 = new global::Reqnroll.Table(new string[] {
@@ -19107,8 +19098,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 5044
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table888, "Then ");
+#line 5047
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table888, "And ");
 #line hidden
                 global::Reqnroll.Table table889 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -19132,14 +19123,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 5047
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table889, "Then ");
+#line 5050
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table889, "And ");
 #line hidden
                 global::Reqnroll.Table table890 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table890.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5050
+#line 5053
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table890, "When ");
 #line hidden
@@ -19147,13 +19138,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table891.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5053
+#line 5056
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table891, "Then ");
 #line hidden
-#line 5056
+#line 5059
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5057
+#line 5060
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -19161,22 +19152,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table892.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5058
+#line 5061
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table892, "When ");
 #line hidden
-#line 5061
+#line 5064
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5062
+#line 5065
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5063
+#line 5066
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5064
+#line 5067
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 5065
+#line 5068
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -19424,7 +19415,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Organization with additional party type as \"Non-Enumertaed Organization\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 5073
+#line 5076
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -19434,14 +19425,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 5075
+#line 5078
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table893 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table893.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 5082
+#line 5085
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table893, "When ");
 #line hidden
                 global::Reqnroll.Table table894 = new global::Reqnroll.Table(new string[] {
@@ -19454,7 +19445,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 5085
+#line 5088
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table894, "And ");
 #line hidden
@@ -19462,7 +19453,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table895.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 5088
+#line 5091
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table895, "And ");
 #line hidden
                 global::Reqnroll.Table table896 = new global::Reqnroll.Table(new string[] {
@@ -19477,34 +19468,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 5094
+#line 5097
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table896, "And ");
 #line hidden
-#line 5098
+#line 5101
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5099
+#line 5102
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table897 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table897.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 5106
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table897, "When ");
+#line 5109
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table897, "And ");
 #line hidden
                 global::Reqnroll.Table table898 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table898.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 5113
+#line 5116
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table898, "And ");
 #line hidden
                 global::Reqnroll.Table table899 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table899.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 5116
+#line 5119
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table899, "And ");
 #line hidden
                 global::Reqnroll.Table table900 = new global::Reqnroll.Table(new string[] {
@@ -19513,7 +19504,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table900.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 5119
+#line 5122
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table900, "And ");
 #line hidden
                 global::Reqnroll.Table table901 = new global::Reqnroll.Table(new string[] {
@@ -19522,7 +19513,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table901.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 5122
+#line 5125
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table901, "And ");
 #line hidden
                 global::Reqnroll.Table table902 = new global::Reqnroll.Table(new string[] {
@@ -19531,8 +19522,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table902.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 5129
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table902, "When ");
+#line 5132
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table902, "And ");
 #line hidden
                 global::Reqnroll.Table table903 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -19540,20 +19531,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table903.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 5132
+#line 5135
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table903, "And ");
 #line hidden
-#line 5138
+#line 5141
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5139
+#line 5142
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table904 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table904.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 5145
+#line 5148
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table904, "And ");
 #line hidden
                 global::Reqnroll.Table table905 = new global::Reqnroll.Table(new string[] {
@@ -19570,7 +19561,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 5148
+#line 5151
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
                         "ame suffix", ((string)(null)), table905, "And ");
@@ -19589,7 +19580,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 5152
+#line 5155
  await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table906, "And ");
 #line hidden
                 global::Reqnroll.Table table907 = new global::Reqnroll.Table(new string[] {
@@ -19598,7 +19589,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table907.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 5157
+#line 5160
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table907, "And ");
 #line hidden
                 global::Reqnroll.Table table908 = new global::Reqnroll.Table(new string[] {
@@ -19611,7 +19602,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 5160
+#line 5163
  await testRunner.AndAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
                         "the involved party", ((string)(null)), table908, "And ");
 #line hidden
@@ -19631,14 +19622,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country1)});
-#line 5163
+#line 5166
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de and country for the involved party", ((string)(null)), table909, "And ");
 #line hidden
-#line 5167
+#line 5170
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5168
+#line 5171
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table910 = new global::Reqnroll.Table(new string[] {
@@ -19649,7 +19640,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 5175
+#line 5178
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table910, "And ");
 #line hidden
                 global::Reqnroll.Table table911 = new global::Reqnroll.Table(new string[] {
@@ -19664,7 +19655,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 5178
+#line 5181
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
                         "her and other ID", ((string)(null)), table911, "And ");
 #line hidden
@@ -19680,7 +19671,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", designation1)});
-#line 5182
+#line 5185
  await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table912, "And ");
 #line hidden
                 global::Reqnroll.Table table913 = new global::Reqnroll.Table(new string[] {
@@ -19689,7 +19680,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table913.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 5186
+#line 5189
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table913, "Then ");
@@ -19714,28 +19705,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country1),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 5189
+#line 5192
  await testRunner.WhenAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table914, "When ");
 #line hidden
-#line 5192
+#line 5195
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table915 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table915.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 5193
+#line 5196
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table915, "And ");
 #line hidden
-#line 5196
+#line 5199
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table916 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table916.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 5203
+#line 5206
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table916, "When ");
 #line hidden
                 global::Reqnroll.Table table917 = new global::Reqnroll.Table(new string[] {
@@ -19744,66 +19735,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table917.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 5207
+#line 5210
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table917, "And ");
 #line hidden
                 global::Reqnroll.Table table918 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table918.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 5210
+#line 5213
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table918, "And ");
 #line hidden
-#line 5213
+#line 5216
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5214
+#line 5217
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 5215
+#line 5218
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5216
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 5219
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5220
+#line 5223
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table919 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table919.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 5221
+#line 5224
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table919, "When ");
 #line hidden
-#line 5224
+#line 5227
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5225
+#line 5228
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table920 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table920.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 5226
+#line 5229
  await testRunner.AndAsync("I select the payor", ((string)(null)), table920, "And ");
 #line hidden
                 global::Reqnroll.Table table921 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table921.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 5229
+#line 5232
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table921, "And ");
 #line hidden
-#line 5232
+#line 5235
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5233
+#line 5236
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5234
+#line 5237
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table922 = new global::Reqnroll.Table(new string[] {
@@ -19820,7 +19811,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 5235
+#line 5238
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table922, "Then ");
 #line hidden
                 global::Reqnroll.Table table923 = new global::Reqnroll.Table(new string[] {
@@ -19873,8 +19864,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 5238
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table923, "Then ");
+#line 5241
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table923, "And ");
 #line hidden
                 global::Reqnroll.Table table924 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -19898,14 +19889,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 5241
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table924, "Then ");
+#line 5244
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table924, "And ");
 #line hidden
                 global::Reqnroll.Table table925 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table925.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5244
+#line 5247
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table925, "When ");
 #line hidden
@@ -19913,13 +19904,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table926.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5247
+#line 5250
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table926, "Then ");
 #line hidden
-#line 5250
+#line 5253
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5251
+#line 5254
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -19927,22 +19918,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table927.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5252
+#line 5255
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table927, "When ");
 #line hidden
-#line 5255
+#line 5258
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5256
+#line 5259
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5257
+#line 5260
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5258
+#line 5261
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 5259
+#line 5262
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -20190,7 +20181,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Member with additional party type as \"Member\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 5266
+#line 5269
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -20200,14 +20191,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 5268
+#line 5271
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table928 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table928.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 5275
+#line 5278
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table928, "When ");
 #line hidden
                 global::Reqnroll.Table table929 = new global::Reqnroll.Table(new string[] {
@@ -20220,7 +20211,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 5278
+#line 5281
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table929, "And ");
 #line hidden
@@ -20228,7 +20219,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table930.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 5281
+#line 5284
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table930, "And ");
 #line hidden
                 global::Reqnroll.Table table931 = new global::Reqnroll.Table(new string[] {
@@ -20243,34 +20234,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 5287
+#line 5290
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table931, "And ");
 #line hidden
-#line 5291
+#line 5294
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5292
+#line 5295
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table932 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table932.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 5299
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table932, "When ");
+#line 5302
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table932, "And ");
 #line hidden
                 global::Reqnroll.Table table933 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table933.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 5306
+#line 5309
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table933, "And ");
 #line hidden
                 global::Reqnroll.Table table934 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table934.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 5309
+#line 5312
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table934, "And ");
 #line hidden
                 global::Reqnroll.Table table935 = new global::Reqnroll.Table(new string[] {
@@ -20279,7 +20270,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table935.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 5312
+#line 5315
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table935, "And ");
 #line hidden
                 global::Reqnroll.Table table936 = new global::Reqnroll.Table(new string[] {
@@ -20288,7 +20279,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table936.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 5315
+#line 5318
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table936, "And ");
 #line hidden
                 global::Reqnroll.Table table937 = new global::Reqnroll.Table(new string[] {
@@ -20297,8 +20288,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table937.AddRow(new string[] {
                             "<incidentValidStartDate>",
                             "<incidentValidEndDate>"});
-#line 5322
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table937, "When ");
+#line 5325
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table937, "And ");
 #line hidden
                 global::Reqnroll.Table table938 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -20306,20 +20297,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table938.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 5325
+#line 5328
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table938, "And ");
 #line hidden
-#line 5331
+#line 5334
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5332
+#line 5335
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table939 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table939.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 5338
+#line 5341
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table939, "And ");
 #line hidden
                 global::Reqnroll.Table table940 = new global::Reqnroll.Table(new string[] {
@@ -20368,7 +20359,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", otherId),
                             string.Format("{0}", email1)});
-#line 5342
+#line 5345
  await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table940, "And ");
 #line hidden
                 global::Reqnroll.Table table941 = new global::Reqnroll.Table(new string[] {
@@ -20377,13 +20368,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table941.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 5345
+#line 5348
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table941, "And ");
 #line hidden
-#line 5348
+#line 5351
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5349
+#line 5352
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table942 = new global::Reqnroll.Table(new string[] {
@@ -20394,7 +20385,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 5356
+#line 5359
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table942, "And ");
 #line hidden
                 global::Reqnroll.Table table943 = new global::Reqnroll.Table(new string[] {
@@ -20409,7 +20400,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
-#line 5359
+#line 5362
  await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
                         "middle name , associated party last name and name suffix", ((string)(null)), table943, "And ");
 #line hidden
@@ -20421,7 +20412,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", dOB),
                             string.Format("{0}", gender),
                             string.Format("{0}", other)});
-#line 5362
+#line 5365
  await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other", ((string)(null)), table944, "And ");
 #line hidden
                 global::Reqnroll.Table table945 = new global::Reqnroll.Table(new string[] {
@@ -20436,7 +20427,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 5365
+#line 5368
  await testRunner.AndAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table945, "And ");
 #line hidden
                 global::Reqnroll.Table table946 = new global::Reqnroll.Table(new string[] {
@@ -20449,7 +20440,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", program),
                             string.Format("{0}", lOB),
                             string.Format("{0}", group)});
-#line 5368
+#line 5371
  await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table946, "And ");
 #line hidden
                 global::Reqnroll.Table table947 = new global::Reqnroll.Table(new string[] {
@@ -20458,7 +20449,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table947.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 5371
+#line 5374
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table947, "Then ");
@@ -20477,7 +20468,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 5374
+#line 5377
  await testRunner.WhenAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
                         "te  , county  and zip code", ((string)(null)), table948, "When ");
 #line hidden
@@ -20489,27 +20480,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 5377
+#line 5380
  await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table949, "And ");
 #line hidden
-#line 5381
+#line 5384
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table950 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table950.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 5382
+#line 5385
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table950, "And ");
 #line hidden
-#line 5385
+#line 5388
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table951 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table951.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 5392
+#line 5395
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table951, "When ");
 #line hidden
                 global::Reqnroll.Table table952 = new global::Reqnroll.Table(new string[] {
@@ -20518,66 +20509,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table952.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 5396
+#line 5399
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table952, "And ");
 #line hidden
                 global::Reqnroll.Table table953 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table953.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 5399
+#line 5402
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table953, "And ");
 #line hidden
-#line 5402
+#line 5405
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5403
+#line 5406
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 5404
+#line 5407
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5405
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 5408
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5409
+#line 5412
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table954 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table954.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 5410
+#line 5413
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table954, "When ");
 #line hidden
-#line 5413
+#line 5416
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5414
+#line 5417
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table955 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table955.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 5415
+#line 5418
  await testRunner.AndAsync("I select the payor", ((string)(null)), table955, "And ");
 #line hidden
                 global::Reqnroll.Table table956 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table956.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 5418
+#line 5421
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table956, "And ");
 #line hidden
-#line 5421
+#line 5424
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5422
+#line 5425
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5423
+#line 5426
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table957 = new global::Reqnroll.Table(new string[] {
@@ -20594,7 +20585,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 5424
+#line 5427
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table957, "Then ");
 #line hidden
                 global::Reqnroll.Table table958 = new global::Reqnroll.Table(new string[] {
@@ -20643,8 +20634,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", email1)});
-#line 5427
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table958, "Then ");
+#line 5430
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table958, "And ");
 #line hidden
                 global::Reqnroll.Table table959 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -20668,14 +20659,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 5430
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table959, "Then ");
+#line 5433
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table959, "And ");
 #line hidden
                 global::Reqnroll.Table table960 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table960.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5433
+#line 5436
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table960, "When ");
 #line hidden
@@ -20683,13 +20674,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table961.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5436
+#line 5439
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table961, "Then ");
 #line hidden
-#line 5439
+#line 5442
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5440
+#line 5443
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -20697,22 +20688,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table962.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5441
+#line 5444
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table962, "When ");
 #line hidden
-#line 5444
+#line 5447
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5445
+#line 5448
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5446
+#line 5449
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5448
+#line 5451
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 5449
+#line 5452
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -20960,7 +20951,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Member with additional party type as \"Provider\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 5462
+#line 5465
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -20970,14 +20961,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 5464
+#line 5467
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table963 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table963.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 5471
+#line 5474
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table963, "When ");
 #line hidden
                 global::Reqnroll.Table table964 = new global::Reqnroll.Table(new string[] {
@@ -20990,7 +20981,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 5474
+#line 5477
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table964, "And ");
 #line hidden
@@ -20998,7 +20989,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table965.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 5477
+#line 5480
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table965, "And ");
 #line hidden
                 global::Reqnroll.Table table966 = new global::Reqnroll.Table(new string[] {
@@ -21013,34 +21004,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 5483
+#line 5486
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table966, "And ");
 #line hidden
-#line 5487
+#line 5490
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5488
+#line 5491
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table967 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table967.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 5495
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table967, "When ");
+#line 5498
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table967, "And ");
 #line hidden
                 global::Reqnroll.Table table968 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table968.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 5502
+#line 5505
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table968, "And ");
 #line hidden
                 global::Reqnroll.Table table969 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table969.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 5505
+#line 5508
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table969, "And ");
 #line hidden
                 global::Reqnroll.Table table970 = new global::Reqnroll.Table(new string[] {
@@ -21049,7 +21040,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table970.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 5508
+#line 5511
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table970, "And ");
 #line hidden
                 global::Reqnroll.Table table971 = new global::Reqnroll.Table(new string[] {
@@ -21058,7 +21049,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table971.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 5511
+#line 5514
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table971, "And ");
 #line hidden
                 global::Reqnroll.Table table972 = new global::Reqnroll.Table(new string[] {
@@ -21067,8 +21058,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table972.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 5518
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table972, "When ");
+#line 5521
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table972, "And ");
 #line hidden
                 global::Reqnroll.Table table973 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -21076,20 +21067,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table973.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 5521
+#line 5524
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table973, "And ");
 #line hidden
-#line 5526
+#line 5529
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5527
+#line 5530
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table974 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table974.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 5533
+#line 5536
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table974, "And ");
 #line hidden
                 global::Reqnroll.Table table975 = new global::Reqnroll.Table(new string[] {
@@ -21138,7 +21129,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", otherId),
                             string.Format("{0}", email1)});
-#line 5537
+#line 5540
  await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table975, "And ");
 #line hidden
                 global::Reqnroll.Table table976 = new global::Reqnroll.Table(new string[] {
@@ -21147,13 +21138,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table976.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 5540
+#line 5543
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table976, "And ");
 #line hidden
-#line 5543
+#line 5546
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5544
+#line 5547
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table977 = new global::Reqnroll.Table(new string[] {
@@ -21164,7 +21155,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 5551
+#line 5554
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table977, "And ");
 #line hidden
                 global::Reqnroll.Table table978 = new global::Reqnroll.Table(new string[] {
@@ -21181,7 +21172,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix)});
-#line 5554
+#line 5557
  await testRunner.AndAsync("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
                         "ed party middle name , associated party last name  and name suffix  on the \"<Inv" +
                         "olved Parties page>\"", ((string)(null)), table978, "And ");
@@ -21190,7 +21181,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "designation"});
                 table979.AddRow(new string[] {
                             string.Format("{0}", designation)});
-#line 5557
+#line 5560
  await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table979, "And ");
 #line hidden
                 global::Reqnroll.Table table980 = new global::Reqnroll.Table(new string[] {
@@ -21201,8 +21192,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
-#line 5564
- await testRunner.WhenAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table980, "When ");
+#line 5567
+ await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table980, "And ");
 #line hidden
                 global::Reqnroll.Table table981 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType",
@@ -21210,7 +21201,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table981.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 5567
+#line 5570
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table981, "Then ");
@@ -21227,7 +21218,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 5571
+#line 5574
  await testRunner.WhenAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", involvedParty), ((string)(null)), table982, "When ");
 #line hidden
                 global::Reqnroll.Table table983 = new global::Reqnroll.Table(new string[] {
@@ -21240,7 +21231,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", providerSpecialty),
                             string.Format("{0}", taxonomy),
                             string.Format("{0}", other)});
-#line 5574
+#line 5577
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
                             "he \"{0}\"", involvedParty), ((string)(null)), table983, "And ");
 #line hidden
@@ -21258,16 +21249,16 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 5581
- await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
-                        " county   and zip code", ((string)(null)), table984, "When ");
+#line 5584
+ await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table984, "And ");
 #line hidden
                 global::Reqnroll.Table table985 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
                 table985.AddRow(new string[] {
                             string.Format("{0}", dOB)});
-#line 5589
- await testRunner.WhenAsync("enter DOB", ((string)(null)), table985, "When ");
+#line 5592
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table985, "And ");
 #line hidden
                 global::Reqnroll.Table table986 = new global::Reqnroll.Table(new string[] {
                             "country",
@@ -21279,27 +21270,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 5593
+#line 5596
  await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table986, "And ");
 #line hidden
-#line 5596
+#line 5599
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table987 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table987.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 5597
+#line 5600
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table987, "And ");
 #line hidden
-#line 5600
+#line 5603
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table988 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table988.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 5607
+#line 5610
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table988, "When ");
 #line hidden
                 global::Reqnroll.Table table989 = new global::Reqnroll.Table(new string[] {
@@ -21308,66 +21299,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table989.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 5611
+#line 5614
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table989, "And ");
 #line hidden
                 global::Reqnroll.Table table990 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table990.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 5614
+#line 5617
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table990, "And ");
 #line hidden
-#line 5617
+#line 5620
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5618
+#line 5621
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 5619
+#line 5622
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5620
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 5623
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5624
+#line 5627
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table991 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table991.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 5625
+#line 5628
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table991, "When ");
 #line hidden
-#line 5628
+#line 5631
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5629
+#line 5632
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table992 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table992.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 5630
+#line 5633
  await testRunner.AndAsync("I select the payor", ((string)(null)), table992, "And ");
 #line hidden
                 global::Reqnroll.Table table993 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table993.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 5633
+#line 5636
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table993, "And ");
 #line hidden
-#line 5636
+#line 5639
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5637
+#line 5640
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5638
+#line 5641
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table994 = new global::Reqnroll.Table(new string[] {
@@ -21384,7 +21375,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 5639
+#line 5642
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table994, "Then ");
 #line hidden
                 global::Reqnroll.Table table995 = new global::Reqnroll.Table(new string[] {
@@ -21433,8 +21424,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", email1)});
-#line 5642
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table995, "Then ");
+#line 5645
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table995, "And ");
 #line hidden
                 global::Reqnroll.Table table996 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -21458,14 +21449,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 5645
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table996, "Then ");
+#line 5648
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table996, "And ");
 #line hidden
                 global::Reqnroll.Table table997 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table997.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5648
+#line 5651
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table997, "When ");
 #line hidden
@@ -21473,13 +21464,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table998.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5651
+#line 5654
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table998, "Then ");
 #line hidden
-#line 5654
+#line 5657
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5655
+#line 5658
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -21487,22 +21478,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table999.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5656
+#line 5659
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table999, "When ");
 #line hidden
-#line 5659
+#line 5662
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5660
+#line 5663
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5661
+#line 5664
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5662
+#line 5665
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 5663
+#line 5666
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -21750,7 +21741,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Member with additional party type as \"Non-Enumertaed Provider\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 5671
+#line 5674
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -21760,14 +21751,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 5673
+#line 5676
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1000 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table1000.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 5680
+#line 5683
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1000, "When ");
 #line hidden
                 global::Reqnroll.Table table1001 = new global::Reqnroll.Table(new string[] {
@@ -21780,7 +21771,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 5683
+#line 5686
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table1001, "And ");
 #line hidden
@@ -21788,7 +21779,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table1002.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 5686
+#line 5689
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1002, "And ");
 #line hidden
                 global::Reqnroll.Table table1003 = new global::Reqnroll.Table(new string[] {
@@ -21803,34 +21794,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 5692
+#line 5695
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1003, "And ");
 #line hidden
-#line 5696
+#line 5699
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5697
+#line 5700
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1004 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table1004.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 5704
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1004, "When ");
+#line 5707
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1004, "And ");
 #line hidden
                 global::Reqnroll.Table table1005 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table1005.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 5711
+#line 5714
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1005, "And ");
 #line hidden
                 global::Reqnroll.Table table1006 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table1006.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 5714
+#line 5717
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1006, "And ");
 #line hidden
                 global::Reqnroll.Table table1007 = new global::Reqnroll.Table(new string[] {
@@ -21839,7 +21830,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1007.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 5717
+#line 5720
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1007, "And ");
 #line hidden
                 global::Reqnroll.Table table1008 = new global::Reqnroll.Table(new string[] {
@@ -21848,7 +21839,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1008.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 5720
+#line 5723
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1008, "And ");
 #line hidden
                 global::Reqnroll.Table table1009 = new global::Reqnroll.Table(new string[] {
@@ -21857,8 +21848,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1009.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 5727
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1009, "When ");
+#line 5730
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1009, "And ");
 #line hidden
                 global::Reqnroll.Table table1010 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -21866,20 +21857,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1010.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 5730
+#line 5733
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1010, "And ");
 #line hidden
-#line 5735
+#line 5738
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5736
+#line 5739
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1011 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table1011.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 5742
+#line 5745
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1011, "And ");
 #line hidden
                 global::Reqnroll.Table table1012 = new global::Reqnroll.Table(new string[] {
@@ -21928,7 +21919,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", otherId),
                             string.Format("{0}", email1)});
-#line 5745
+#line 5748
  await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table1012, "And ");
 #line hidden
                 global::Reqnroll.Table table1013 = new global::Reqnroll.Table(new string[] {
@@ -21937,13 +21928,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1013.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 5748
+#line 5751
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table1013, "And ");
 #line hidden
-#line 5752
+#line 5755
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5753
+#line 5756
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1014 = new global::Reqnroll.Table(new string[] {
@@ -21954,7 +21945,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 5760
+#line 5763
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table1014, "And ");
 #line hidden
                 global::Reqnroll.Table table1015 = new global::Reqnroll.Table(new string[] {
@@ -21971,7 +21962,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
-#line 5763
+#line 5766
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
                         "ame suffix", ((string)(null)), table1015, "And ");
@@ -21990,7 +21981,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 5766
+#line 5769
  await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table1016, "And ");
 #line hidden
                 global::Reqnroll.Table table1017 = new global::Reqnroll.Table(new string[] {
@@ -21999,7 +21990,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1017.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 5769
+#line 5772
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table1017, "Then ");
@@ -22014,7 +22005,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 5772
+#line 5775
  await testRunner.WhenAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
                         "the involved party", ((string)(null)), table1018, "When ");
 #line hidden
@@ -22034,28 +22025,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country1)});
-#line 5775
+#line 5778
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de and country for the involved party", ((string)(null)), table1019, "And ");
 #line hidden
-#line 5778
+#line 5781
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1020 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table1020.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 5779
+#line 5782
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table1020, "And ");
 #line hidden
-#line 5782
+#line 5785
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table1021 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table1021.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 5789
+#line 5792
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table1021, "When ");
 #line hidden
                 global::Reqnroll.Table table1022 = new global::Reqnroll.Table(new string[] {
@@ -22064,66 +22055,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1022.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 5793
+#line 5796
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1022, "And ");
 #line hidden
                 global::Reqnroll.Table table1023 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table1023.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 5796
+#line 5799
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1023, "And ");
 #line hidden
-#line 5799
+#line 5802
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5800
+#line 5803
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 5801
+#line 5804
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5802
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 5805
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5806
+#line 5809
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1024 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table1024.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 5807
+#line 5810
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1024, "When ");
 #line hidden
-#line 5810
+#line 5813
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5811
+#line 5814
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1025 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table1025.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 5812
+#line 5815
  await testRunner.AndAsync("I select the payor", ((string)(null)), table1025, "And ");
 #line hidden
                 global::Reqnroll.Table table1026 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table1026.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 5815
+#line 5818
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table1026, "And ");
 #line hidden
-#line 5818
+#line 5821
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5819
+#line 5822
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5820
+#line 5823
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1027 = new global::Reqnroll.Table(new string[] {
@@ -22140,7 +22131,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 5821
+#line 5824
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1027, "Then ");
 #line hidden
                 global::Reqnroll.Table table1028 = new global::Reqnroll.Table(new string[] {
@@ -22189,8 +22180,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", email1)});
-#line 5824
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1028, "Then ");
+#line 5827
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1028, "And ");
 #line hidden
                 global::Reqnroll.Table table1029 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -22214,14 +22205,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 5827
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1029, "Then ");
+#line 5830
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1029, "And ");
 #line hidden
                 global::Reqnroll.Table table1030 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1030.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5830
+#line 5833
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table1030, "When ");
 #line hidden
@@ -22229,13 +22220,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table1031.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5833
+#line 5836
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1031, "Then ");
 #line hidden
-#line 5836
+#line 5839
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5837
+#line 5840
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -22243,22 +22234,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table1032.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 5838
+#line 5841
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1032, "When ");
 #line hidden
-#line 5841
+#line 5844
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5842
+#line 5845
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5843
+#line 5846
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5845
+#line 5848
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 5846
+#line 5849
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -22506,7 +22497,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Member with additional party type as \"Non-Enumertaed Member\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 5855
+#line 5858
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -22516,14 +22507,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 5857
+#line 5860
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1033 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table1033.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 5864
+#line 5867
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1033, "When ");
 #line hidden
                 global::Reqnroll.Table table1034 = new global::Reqnroll.Table(new string[] {
@@ -22536,7 +22527,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 5867
+#line 5870
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table1034, "And ");
 #line hidden
@@ -22544,7 +22535,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table1035.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 5870
+#line 5873
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1035, "And ");
 #line hidden
                 global::Reqnroll.Table table1036 = new global::Reqnroll.Table(new string[] {
@@ -22559,34 +22550,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 5876
+#line 5879
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1036, "And ");
 #line hidden
-#line 5880
+#line 5883
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5881
+#line 5884
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1037 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table1037.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 5888
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1037, "When ");
+#line 5891
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1037, "And ");
 #line hidden
                 global::Reqnroll.Table table1038 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table1038.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 5895
+#line 5898
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1038, "And ");
 #line hidden
                 global::Reqnroll.Table table1039 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table1039.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 5898
+#line 5901
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1039, "And ");
 #line hidden
                 global::Reqnroll.Table table1040 = new global::Reqnroll.Table(new string[] {
@@ -22595,7 +22586,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1040.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 5901
+#line 5904
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1040, "And ");
 #line hidden
                 global::Reqnroll.Table table1041 = new global::Reqnroll.Table(new string[] {
@@ -22604,7 +22595,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1041.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 5904
+#line 5907
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1041, "And ");
 #line hidden
                 global::Reqnroll.Table table1042 = new global::Reqnroll.Table(new string[] {
@@ -22613,8 +22604,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1042.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 5911
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1042, "When ");
+#line 5914
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1042, "And ");
 #line hidden
                 global::Reqnroll.Table table1043 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -22622,20 +22613,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1043.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 5914
+#line 5917
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1043, "And ");
 #line hidden
-#line 5919
+#line 5922
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5920
+#line 5923
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1044 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table1044.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 5926
+#line 5929
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1044, "And ");
 #line hidden
                 global::Reqnroll.Table table1045 = new global::Reqnroll.Table(new string[] {
@@ -22679,12 +22670,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zip),
-                            string.Format("{0}", country1),
+                            string.Format("{0}", country),
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", otherId),
                             string.Format("{0}", email1)});
-#line 5929
+#line 5932
  await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table1045, "And ");
 #line hidden
                 global::Reqnroll.Table table1046 = new global::Reqnroll.Table(new string[] {
@@ -22693,13 +22684,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1046.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 5932
+#line 5935
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table1046, "And ");
 #line hidden
-#line 5936
+#line 5939
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5937
+#line 5940
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1047 = new global::Reqnroll.Table(new string[] {
@@ -22710,7 +22701,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 5944
+#line 5947
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table1047, "And ");
 #line hidden
                 global::Reqnroll.Table table1048 = new global::Reqnroll.Table(new string[] {
@@ -22754,12 +22745,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zip),
-                            string.Format("{0}", country1),
+                            string.Format("{0}", country),
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", otherId),
                             string.Format("{0}", email1)});
-#line 5947
+#line 5950
  await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table1048, "And ");
 #line hidden
                 global::Reqnroll.Table table1049 = new global::Reqnroll.Table(new string[] {
@@ -22768,29 +22759,29 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1049.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 5950
+#line 5953
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table1049, "Then ");
 #line hidden
-#line 5953
+#line 5956
  await testRunner.WhenAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table1050 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table1050.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 5954
+#line 5957
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table1050, "And ");
 #line hidden
-#line 5957
+#line 5960
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table1051 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table1051.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 5966
+#line 5969
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table1051, "When ");
 #line hidden
                 global::Reqnroll.Table table1052 = new global::Reqnroll.Table(new string[] {
@@ -22799,66 +22790,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1052.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 5970
+#line 5973
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1052, "And ");
 #line hidden
                 global::Reqnroll.Table table1053 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table1053.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 5973
+#line 5976
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1053, "And ");
 #line hidden
-#line 5976
+#line 5979
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5977
+#line 5980
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 5978
+#line 5981
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 5979
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 5982
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5983
+#line 5986
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1054 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table1054.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 5984
+#line 5987
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1054, "When ");
 #line hidden
-#line 5987
+#line 5990
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5988
+#line 5991
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1055 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table1055.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 5989
+#line 5992
  await testRunner.AndAsync("I select the payor", ((string)(null)), table1055, "And ");
 #line hidden
                 global::Reqnroll.Table table1056 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table1056.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 5992
+#line 5995
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table1056, "And ");
 #line hidden
-#line 5995
+#line 5998
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5996
+#line 5999
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 5997
+#line 6000
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1057 = new global::Reqnroll.Table(new string[] {
@@ -22875,7 +22866,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 5998
+#line 6001
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1057, "Then ");
 #line hidden
                 global::Reqnroll.Table table1058 = new global::Reqnroll.Table(new string[] {
@@ -22924,8 +22915,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", email1)});
-#line 6001
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1058, "Then ");
+#line 6004
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1058, "And ");
 #line hidden
                 global::Reqnroll.Table table1059 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -22949,14 +22940,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 6004
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1059, "Then ");
+#line 6007
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1059, "And ");
 #line hidden
                 global::Reqnroll.Table table1060 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1060.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6007
+#line 6010
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table1060, "When ");
 #line hidden
@@ -22964,13 +22955,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table1061.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6010
+#line 6013
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1061, "Then ");
 #line hidden
-#line 6013
+#line 6016
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6014
+#line 6017
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -22978,22 +22969,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table1062.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6015
+#line 6018
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1062, "When ");
 #line hidden
-#line 6018
+#line 6021
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 6019
+#line 6022
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6020
+#line 6023
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6021
+#line 6024
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 6022
+#line 6025
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -23005,7 +22996,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             "ed Member with additional party type as \"Non-Enumertaed Organization\" ]")]
         [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
             " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject-Lawyer w/ Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "Sandeep.Krishnan@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Yes", "Involved Party Type - Associated Subject- Law Firm w/o req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "29", null)]
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Yes", "Involved Party Type - Associated Subject- Law Firm w/o req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "29", null)]
         public async global::System.Threading.Tasks.Task _30_OnlineReferralEndToEndScenarioWithPrimarySubjectTypeAsNon_EnumeratedMemberWithAdditionalPartyTypeAsNon_EnumertaedOrganization(
                     string invalidZipcode, 
                     string zipcodeValidationErrorMessage, 
@@ -23241,7 +23232,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ed Member with additional party type as \"Non-Enumertaed Organization\" ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 6030
+#line 6033
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -23251,14 +23242,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 6032
+#line 6035
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1063 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table1063.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 6039
+#line 6042
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1063, "When ");
 #line hidden
                 global::Reqnroll.Table table1064 = new global::Reqnroll.Table(new string[] {
@@ -23271,7 +23262,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 6042
+#line 6045
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table1064, "And ");
 #line hidden
@@ -23279,7 +23270,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table1065.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 6045
+#line 6048
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1065, "And ");
 #line hidden
                 global::Reqnroll.Table table1066 = new global::Reqnroll.Table(new string[] {
@@ -23294,34 +23285,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 6051
+#line 6054
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1066, "And ");
 #line hidden
-#line 6055
+#line 6058
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6056
+#line 6059
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1067 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table1067.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 6063
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1067, "When ");
+#line 6066
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1067, "And ");
 #line hidden
                 global::Reqnroll.Table table1068 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table1068.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 6070
+#line 6073
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1068, "And ");
 #line hidden
                 global::Reqnroll.Table table1069 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table1069.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 6073
+#line 6076
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1069, "And ");
 #line hidden
                 global::Reqnroll.Table table1070 = new global::Reqnroll.Table(new string[] {
@@ -23330,7 +23321,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1070.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 6076
+#line 6079
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1070, "And ");
 #line hidden
                 global::Reqnroll.Table table1071 = new global::Reqnroll.Table(new string[] {
@@ -23339,7 +23330,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1071.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 6079
+#line 6082
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1071, "And ");
 #line hidden
                 global::Reqnroll.Table table1072 = new global::Reqnroll.Table(new string[] {
@@ -23348,8 +23339,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1072.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 6086
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1072, "When ");
+#line 6089
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1072, "And ");
 #line hidden
                 global::Reqnroll.Table table1073 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -23357,28 +23348,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1073.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 6089
+#line 6092
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1073, "And ");
 #line hidden
-#line 6094
+#line 6097
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6095
+#line 6098
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1074 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table1074.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 6101
+#line 6104
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1074, "And ");
 #line hidden
                 global::Reqnroll.Table table1075 = new global::Reqnroll.Table(new string[] {
                             "Organization1",
                             "NamePrefix",
-                            "FirstName1",
+                            "firstName",
                             "MiddleName1",
-                            "LastName1",
+                            "lastName",
                             "NameSuffix",
                             "Designation1",
                             "DOB",
@@ -23406,20 +23397,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", designation1),
                             string.Format("{0}", dOB),
                             string.Format("{0}", ssn),
-                            string.Format("{0}", otherId),
-                            string.Format("{0}", other1),
+                            string.Format("{0}", otherID),
+                            string.Format("{0}", other),
                             string.Format("{0}", streetAddress3),
                             string.Format("{0}", streetAddress4),
                             string.Format("{0}", city),
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zip),
-                            string.Format("{0}", country1),
+                            string.Format("{0}", country),
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", otherId),
                             string.Format("{0}", email1)});
-#line 6104
+#line 6107
  await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table1075, "And ");
 #line hidden
                 global::Reqnroll.Table table1076 = new global::Reqnroll.Table(new string[] {
@@ -23428,13 +23419,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1076.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 6107
+#line 6110
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table1076, "And ");
 #line hidden
-#line 6110
+#line 6113
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6111
+#line 6114
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1077 = new global::Reqnroll.Table(new string[] {
@@ -23445,7 +23436,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 6118
+#line 6121
  await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table1077, "And ");
 #line hidden
                 global::Reqnroll.Table table1078 = new global::Reqnroll.Table(new string[] {
@@ -23460,23 +23451,23 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 6121
+#line 6124
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
                         "her and other ID", ((string)(null)), table1078, "And ");
 #line hidden
                 global::Reqnroll.Table table1079 = new global::Reqnroll.Table(new string[] {
                             "NamePrefix",
-                            "FirstName1",
+                            "firstName",
                             "middle name",
-                            "LastName1",
+                            "lastName",
                             "Designation1"});
                 table1079.AddRow(new string[] {
                             string.Format("{0}", namePrefix1),
-                            string.Format("{0}", firstName1),
+                            string.Format("{0}", firstName),
                             string.Format("{0}", middleName),
-                            string.Format("{0}", lastName1),
+                            string.Format("{0}", lastName),
                             string.Format("{0}", designation1)});
-#line 6125
+#line 6128
  await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table1079, "And ");
 #line hidden
                 global::Reqnroll.Table table1080 = new global::Reqnroll.Table(new string[] {
@@ -23485,7 +23476,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1080.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 6128
+#line 6131
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
                         "ing party? (Optional)field on Second Time", ((string)(null)), table1080, "Then ");
@@ -23507,31 +23498,31 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zip),
-                            string.Format("{0}", country1),
+                            string.Format("{0}", country),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 6132
+#line 6135
  await testRunner.WhenAsync("street address line one , street address line two, city , state , county , zip co" +
                         "de, country, fax and email  for the involved party", ((string)(null)), table1081, "When ");
 #line hidden
-#line 6135
+#line 6138
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1082 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
                 table1082.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 6136
+#line 6139
  await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table1082, "And ");
 #line hidden
-#line 6139
+#line 6142
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table1083 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table1083.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 6146
+#line 6149
  await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table1083, "When ");
 #line hidden
                 global::Reqnroll.Table table1084 = new global::Reqnroll.Table(new string[] {
@@ -23540,66 +23531,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1084.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 6150
+#line 6153
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1084, "And ");
 #line hidden
                 global::Reqnroll.Table table1085 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table1085.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 6153
+#line 6156
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1085, "And ");
 #line hidden
-#line 6156
+#line 6159
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 6157
+#line 6160
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 6158
+#line 6161
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 6159
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 6162
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6163
+#line 6166
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1086 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table1086.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 6164
+#line 6167
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1086, "When ");
 #line hidden
-#line 6167
+#line 6170
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6168
+#line 6171
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1087 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table1087.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 6169
+#line 6172
  await testRunner.AndAsync("I select the payor", ((string)(null)), table1087, "And ");
 #line hidden
                 global::Reqnroll.Table table1088 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table1088.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 6172
+#line 6175
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table1088, "And ");
 #line hidden
-#line 6175
+#line 6178
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6176
+#line 6179
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6177
+#line 6180
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1089 = new global::Reqnroll.Table(new string[] {
@@ -23610,13 +23601,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Subject First Name",
                             "Subject Last Name"});
                 table1089.AddRow(new string[] {
-                            "<incidentStartDate>",
-                            "<incidentEndDate>",
+                            string.Format("{0}", incidentValidStartDate),
+                            string.Format("{0}", incidentValidEndDate),
                             string.Format("{0}", amount),
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 6178
+#line 6181
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1089, "Then ");
 #line hidden
                 global::Reqnroll.Table table1090 = new global::Reqnroll.Table(new string[] {
@@ -23652,7 +23643,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", nameSuffix1),
                             string.Format("{0}", designation1),
                             string.Format("{0}", dOB),
-                            string.Format("{0}", sSN),
+                            string.Format("{0}", ssn),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other),
                             string.Format("{0}", streetAddress3),
@@ -23665,8 +23656,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", email1)});
-#line 6181
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1090, "Then ");
+#line 6184
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1090, "And ");
 #line hidden
                 global::Reqnroll.Table table1091 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -23690,14 +23681,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 6184
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1091, "Then ");
+#line 6187
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1091, "And ");
 #line hidden
                 global::Reqnroll.Table table1092 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1092.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6187
+#line 6190
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table1092, "When ");
 #line hidden
@@ -23705,13 +23696,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table1093.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6190
+#line 6193
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1093, "Then ");
 #line hidden
-#line 6193
+#line 6196
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6194
+#line 6197
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -23719,22 +23710,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table1094.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6195
+#line 6198
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1094, "When ");
 #line hidden
-#line 6198
+#line 6201
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 6199
+#line 6202
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6200
+#line 6203
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6201
+#line 6204
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 6202
+#line 6205
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -23746,7 +23737,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             "d Editing the Primary Subject Type]")]
         [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
             " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "Sandeep.Krishnan@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Gainwell Technologies", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "30", null)]
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Gainwell Technologies", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "30", null)]
         public async global::System.Threading.Tasks.Task _31_OnlineReferralEndToEndScenarioWithPrimarySubjectTypeAsProviderAndEditingThePrimarySubjectType(
                     string invalidZipcode, 
                     string zipcodeValidationErrorMessage, 
@@ -23864,8 +23855,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             argumentsOfScenario.Add("detectionDate", detectionDate);
             argumentsOfScenario.Add("incidentValidStartDate", incidentValidStartDate);
             argumentsOfScenario.Add("incidentValidEndDate", incidentValidEndDate);
-            argumentsOfScenario.Add("state2", state2);
-            argumentsOfScenario.Add("city2", city2);
+            argumentsOfScenario.Add("State2", state2);
+            argumentsOfScenario.Add("City2", city2);
             argumentsOfScenario.Add("witnessDropdown", witnessDropdown);
             argumentsOfScenario.Add("referralFN", referralFN);
             argumentsOfScenario.Add("referralLN", referralLN);
@@ -23926,7 +23917,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "d Editing the Primary Subject Type]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 6211
+#line 6214
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -23936,14 +23927,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 6213
+#line 6216
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1095 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table1095.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 6220
+#line 6223
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1095, "When ");
 #line hidden
                 global::Reqnroll.Table table1096 = new global::Reqnroll.Table(new string[] {
@@ -23956,7 +23947,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 6223
+#line 6226
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table1096, "And ");
 #line hidden
@@ -23964,7 +23955,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table1097.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 6226
+#line 6229
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1097, "And ");
 #line hidden
                 global::Reqnroll.Table table1098 = new global::Reqnroll.Table(new string[] {
@@ -23979,34 +23970,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 6232
+#line 6235
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1098, "And ");
 #line hidden
-#line 6236
+#line 6239
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6237
+#line 6240
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1099 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table1099.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 6244
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1099, "When ");
+#line 6247
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1099, "And ");
 #line hidden
                 global::Reqnroll.Table table1100 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table1100.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 6251
+#line 6254
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1100, "And ");
 #line hidden
                 global::Reqnroll.Table table1101 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table1101.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 6254
+#line 6257
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1101, "And ");
 #line hidden
                 global::Reqnroll.Table table1102 = new global::Reqnroll.Table(new string[] {
@@ -24015,7 +24006,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1102.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 6257
+#line 6260
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1102, "And ");
 #line hidden
                 global::Reqnroll.Table table1103 = new global::Reqnroll.Table(new string[] {
@@ -24024,7 +24015,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1103.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 6260
+#line 6263
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1103, "And ");
 #line hidden
                 global::Reqnroll.Table table1104 = new global::Reqnroll.Table(new string[] {
@@ -24033,38 +24024,38 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1104.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 6267
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1104, "When ");
+#line 6270
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1104, "And ");
 #line hidden
                 global::Reqnroll.Table table1105 = new global::Reqnroll.Table(new string[] {
                             "State2",
                             "City2"});
                 table1105.AddRow(new string[] {
-                            "<State2>",
-                            "<City2>"});
-#line 6270
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2)});
+#line 6273
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1105, "And ");
 #line hidden
-#line 6275
+#line 6278
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6276
+#line 6279
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1106 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table1106.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 6282
+#line 6285
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1106, "And ");
 #line hidden
                 global::Reqnroll.Table table1107 = new global::Reqnroll.Table(new string[] {
                             "orgname",
-                            "name prefix",
-                            "first name",
-                            "middle name",
-                            "last name",
-                            "name suffix"});
+                            "namePrefix",
+                            "firstName",
+                            "middleName",
+                            "lastName",
+                            "nameSuffix"});
                 table1107.AddRow(new string[] {
                             string.Format("{0}", orgname),
                             string.Format("{0}", namePrefix),
@@ -24072,7 +24063,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix)});
-#line 6285
+#line 6288
  await testRunner.AndAsync(string.Format("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
                             "ed party middle name , associated party last name  and name suffix  on the \"{0}\"" +
                             "", involvedParty), ((string)(null)), table1107, "And ");
@@ -24081,7 +24072,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "designation"});
                 table1108.AddRow(new string[] {
                             string.Format("{0}", designation)});
-#line 6289
+#line 6292
  await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table1108, "And ");
 #line hidden
                 global::Reqnroll.Table table1109 = new global::Reqnroll.Table(new string[] {
@@ -24092,8 +24083,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
-#line 6296
- await testRunner.WhenAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table1109, "When ");
+#line 6299
+ await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table1109, "And ");
 #line hidden
                 global::Reqnroll.Table table1110 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType",
@@ -24101,7 +24092,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1110.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 6299
+#line 6302
  await testRunner.AndAsync("enter How witness or external party reported this ,any additional info", ((string)(null)), table1110, "And ");
 #line hidden
                 global::Reqnroll.Table table1111 = new global::Reqnroll.Table(new string[] {
@@ -24116,7 +24107,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 6302
+#line 6305
  await testRunner.AndAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", involvedParty), ((string)(null)), table1111, "And ");
 #line hidden
                 global::Reqnroll.Table table1112 = new global::Reqnroll.Table(new string[] {
@@ -24129,7 +24120,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", providerSpecialty),
                             string.Format("{0}", taxonomy),
                             string.Format("{0}", other)});
-#line 6305
+#line 6308
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
                             "he \"{0}\"", involvedParty), ((string)(null)), table1112, "And ");
 #line hidden
@@ -24144,19 +24135,19 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
-                            "<State2>",
-                            "<City2>",
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 6313
- await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
-                        " county   and zip code", ((string)(null)), table1113, "When ");
+#line 6316
+ await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table1113, "And ");
 #line hidden
                 global::Reqnroll.Table table1114 = new global::Reqnroll.Table(new string[] {
                             "DOB"});
                 table1114.AddRow(new string[] {
                             string.Format("{0}", dOB)});
-#line 6322
- await testRunner.WhenAsync("enter DOB", ((string)(null)), table1114, "When ");
+#line 6325
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table1114, "And ");
 #line hidden
                 global::Reqnroll.Table table1115 = new global::Reqnroll.Table(new string[] {
                             "country",
@@ -24168,41 +24159,41 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 6326
+#line 6329
  await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table1115, "And ");
 #line hidden
-#line 6330
+#line 6333
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6331
+#line 6334
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1116 = new global::Reqnroll.Table(new string[] {
                             "updatedOrgname"});
                 table1116.AddRow(new string[] {
                             string.Format("{0}", updatedOrgname)});
-#line 6340
- await testRunner.AndAsync("Edit Primary InvovePartyType,Change the data and save the changes", ((string)(null)), table1116, "And ");
+#line 6343
+ await testRunner.AndAsync("Edit Primary InvovePartyType,Change the data and save the changes as provider", ((string)(null)), table1116, "And ");
 #line hidden
                 global::Reqnroll.Table table1117 = new global::Reqnroll.Table(new string[] {
                             "updatedOrgname"});
                 table1117.AddRow(new string[] {
                             string.Format("{0}", updatedOrgname)});
-#line 6344
- await testRunner.ThenAsync("Validate the updated data of the Primary Subject type", ((string)(null)), table1117, "Then ");
+#line 6347
+ await testRunner.ThenAsync("Validate the updated data of the Primary Subject type as provider", ((string)(null)), table1117, "Then ");
 #line hidden
                 global::Reqnroll.Table table1118 = new global::Reqnroll.Table(new string[] {
                             "Is there any Involved Party Dropdown"});
                 table1118.AddRow(new string[] {
                             string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
-#line 6348
+#line 6351
  await testRunner.WhenAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table1118, "When ");
 #line hidden
                 global::Reqnroll.Table table1119 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
                 table1119.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 6359
+#line 6362
  await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table1119, "And ");
 #line hidden
                 global::Reqnroll.Table table1120 = new global::Reqnroll.Table(new string[] {
@@ -24211,66 +24202,66 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1120.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 6363
+#line 6366
  await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1120, "And ");
 #line hidden
                 global::Reqnroll.Table table1121 = new global::Reqnroll.Table(new string[] {
                             "TestFile"});
                 table1121.AddRow(new string[] {
                             string.Format("{0}", testFile)});
-#line 6366
+#line 6369
  await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1121, "And ");
 #line hidden
-#line 6369
+#line 6372
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 6370
+#line 6373
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 6371
+#line 6374
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 6372
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 6375
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6376
+#line 6379
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1122 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
                 table1122.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 6377
+#line 6380
  await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1122, "When ");
 #line hidden
-#line 6380
+#line 6383
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6381
+#line 6384
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1123 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
                 table1123.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 6382
+#line 6385
  await testRunner.AndAsync("I select the payor", ((string)(null)), table1123, "And ");
 #line hidden
                 global::Reqnroll.Table table1124 = new global::Reqnroll.Table(new string[] {
                             "Leads"});
                 table1124.AddRow(new string[] {
                             string.Format("{0}", leads)});
-#line 6385
+#line 6388
  await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
                         " page", ((string)(null)), table1124, "And ");
 #line hidden
-#line 6388
+#line 6391
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6389
+#line 6392
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6390
+#line 6393
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1125 = new global::Reqnroll.Table(new string[] {
@@ -24287,7 +24278,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", updatedOrgname),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 6391
+#line 6394
  await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1125, "Then ");
 #line hidden
                 global::Reqnroll.Table table1126 = new global::Reqnroll.Table(new string[] {
@@ -24354,8 +24345,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 6394
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1126, "Then ");
+#line 6397
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1126, "And ");
 #line hidden
                 global::Reqnroll.Table table1127 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
@@ -24379,14 +24370,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 6397
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1127, "Then ");
+#line 6400
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1127, "And ");
 #line hidden
                 global::Reqnroll.Table table1128 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1128.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6400
+#line 6403
  await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
                         "l", ((string)(null)), table1128, "When ");
 #line hidden
@@ -24394,13 +24385,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table1129.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6403
+#line 6406
  await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1129, "Then ");
 #line hidden
-#line 6406
+#line 6409
  await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6407
+#line 6410
  await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
                         "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
@@ -24408,22 +24399,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "ActivityName"});
                 table1130.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6408
+#line 6411
  await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1130, "When ");
 #line hidden
-#line 6411
+#line 6414
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 6412
+#line 6415
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6413
+#line 6416
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6414
+#line 6417
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 6415
+#line 6418
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -24435,7 +24426,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             "Editing the Primary Subject Type]")]
         [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
             " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Recipient w/ req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "Sandeep.Krishnan@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Gainwell Technologies", "FN101", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "31", null)]
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Gainwell Technologies", "UserMN101", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "female", "Program", "LOB1", "Group1", "8974512631", "8974512645", "31", null)]
         public async global::System.Threading.Tasks.Task _32_OnlineReferralEndToEndScenarioWithPrimarySubjectTypeAsMemberAndEditingThePrimarySubjectType(
                     string invalidZipcode, 
                     string zipcodeValidationErrorMessage, 
@@ -24514,7 +24505,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     string invalidDOB, 
                     string dOBValidationErrorMessage, 
                     string updatedOrgname, 
-                    string updatedFirstName, 
+                    string updatedMiddleName, 
                     string subPartyInfo, 
                     string referral, 
                     string involvedParty, 
@@ -24522,6 +24513,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     string questions, 
                     string payor, 
                     string leads, 
+                    string gender, 
+                    string program, 
+                    string lOB, 
+                    string group, 
+                    string primaryPhone, 
+                    string secondaryPhone, 
                     string @__pickleIndex, 
                     string[] exampleTags)
         {
@@ -24604,7 +24601,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             argumentsOfScenario.Add("InvalidDOB", invalidDOB);
             argumentsOfScenario.Add("DOB validation error message", dOBValidationErrorMessage);
             argumentsOfScenario.Add("updatedOrgname", updatedOrgname);
-            argumentsOfScenario.Add("updatedFirstName", updatedFirstName);
+            argumentsOfScenario.Add("updatedMiddleName", updatedMiddleName);
             argumentsOfScenario.Add("Sub Party Info", subPartyInfo);
             argumentsOfScenario.Add("Referral", referral);
             argumentsOfScenario.Add("Involved Party", involvedParty);
@@ -24612,12 +24609,18 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             argumentsOfScenario.Add("Questions", questions);
             argumentsOfScenario.Add("Payor", payor);
             argumentsOfScenario.Add("Leads", leads);
+            argumentsOfScenario.Add("Gender", gender);
+            argumentsOfScenario.Add("Program", program);
+            argumentsOfScenario.Add("LOB", lOB);
+            argumentsOfScenario.Add("Group", group);
+            argumentsOfScenario.Add("PrimaryPhone", primaryPhone);
+            argumentsOfScenario.Add("SecondaryPhone", secondaryPhone);
             string pickleIndex = @__pickleIndex;
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("32_ [Online Referral End To End Scenario with Primary Subject Type as Member and " +
                     "Editing the Primary Subject Type]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 6422
+#line 6425
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -24627,14 +24630,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 6424
+#line 6427
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1131 = new global::Reqnroll.Table(new string[] {
                             "Email address"});
                 table1131.AddRow(new string[] {
                             string.Format("{0}", emailAddress)});
-#line 6431
+#line 6434
  await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1131, "When ");
 #line hidden
                 global::Reqnroll.Table table1132 = new global::Reqnroll.Table(new string[] {
@@ -24647,7 +24650,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 6434
+#line 6437
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
                         "ata Page", ((string)(null)), table1132, "And ");
 #line hidden
@@ -24655,7 +24658,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone number"});
                 table1133.AddRow(new string[] {
                             string.Format("{0}", phoneNumber)});
-#line 6437
+#line 6440
  await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1133, "And ");
 #line hidden
                 global::Reqnroll.Table table1134 = new global::Reqnroll.Table(new string[] {
@@ -24670,34 +24673,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 6443
+#line 6446
  await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1134, "And ");
 #line hidden
-#line 6447
+#line 6450
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6448
+#line 6451
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1135 = new global::Reqnroll.Table(new string[] {
                             "referralType"});
                 table1135.AddRow(new string[] {
                             string.Format("{0}", referralType)});
-#line 6455
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1135, "When ");
+#line 6458
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1135, "And ");
 #line hidden
                 global::Reqnroll.Table table1136 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType"});
                 table1136.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType)});
-#line 6462
+#line 6465
  await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1136, "And ");
 #line hidden
                 global::Reqnroll.Table table1137 = new global::Reqnroll.Table(new string[] {
                             "caseOrReferenceNumber"});
                 table1137.AddRow(new string[] {
                             string.Format("{0}", caseOrReferenceNumber)});
-#line 6465
+#line 6468
  await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1137, "And ");
 #line hidden
                 global::Reqnroll.Table table1138 = new global::Reqnroll.Table(new string[] {
@@ -24706,7 +24709,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1138.AddRow(new string[] {
                             string.Format("{0}", detectedAs),
                             string.Format("{0}", summary)});
-#line 6468
+#line 6471
  await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1138, "And ");
 #line hidden
                 global::Reqnroll.Table table1139 = new global::Reqnroll.Table(new string[] {
@@ -24715,7 +24718,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1139.AddRow(new string[] {
                             string.Format("{0}", amount),
                             string.Format("{0}", detectionDate)});
-#line 6471
+#line 6474
  await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1139, "And ");
 #line hidden
                 global::Reqnroll.Table table1140 = new global::Reqnroll.Table(new string[] {
@@ -24724,8 +24727,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1140.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate)});
-#line 6478
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1140, "When ");
+#line 6481
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1140, "And ");
 #line hidden
                 global::Reqnroll.Table table1141 = new global::Reqnroll.Table(new string[] {
                             "State2",
@@ -24733,35 +24736,35 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1141.AddRow(new string[] {
                             string.Format("{0}", state2),
                             string.Format("{0}", city2)});
-#line 6481
+#line 6484
  await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1141, "And ");
 #line hidden
-#line 6486
+#line 6489
  await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6487
+#line 6490
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1142 = new global::Reqnroll.Table(new string[] {
                             "witnessDropdown"});
                 table1142.AddRow(new string[] {
                             string.Format("{0}", witnessDropdown)});
-#line 6493
+#line 6496
  await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1142, "And ");
 #line hidden
                 global::Reqnroll.Table table1143 = new global::Reqnroll.Table(new string[] {
-                            "name prefix",
-                            "first name",
-                            "middle name",
-                            "last name",
-                            "name suffix"});
+                            "namePrefix",
+                            "firstName",
+                            "middleName",
+                            "lastName",
+                            "nameSuffix"});
                 table1143.AddRow(new string[] {
-                            "<NamePrefix>",
+                            string.Format("{0}", namePrefix),
                             string.Format("{0}", firstName),
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
-                            "<NameSuffix>"});
-#line 6496
+                            string.Format("{0}", nameSuffix)});
+#line 6499
  await testRunner.AndAsync("enter InvolvedParty  name prefix , associated party first name ,associated party " +
                         "middle name , associated party last name and name suffix", ((string)(null)), table1143, "And ");
 #line hidden
@@ -24771,9 +24774,9 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "other"});
                 table1144.AddRow(new string[] {
                             string.Format("{0}", dOB),
-                            "<Gender>",
+                            string.Format("{0}", gender),
                             string.Format("{0}", other)});
-#line 6499
+#line 6502
  await testRunner.AndAsync("enter InvolvedParty DOB , Gender , other", ((string)(null)), table1144, "And ");
 #line hidden
                 global::Reqnroll.Table table1145 = new global::Reqnroll.Table(new string[] {
@@ -24782,7 +24785,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1145.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 6502
+#line 6505
  await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table1145, "And ");
 #line hidden
                 global::Reqnroll.Table table1146 = new global::Reqnroll.Table(new string[] {
@@ -24797,7 +24800,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 6505
+#line 6508
  await testRunner.AndAsync("enter InvolvedParty ID ,ssn  medicaid ID ,Medicare ID, otherID", ((string)(null)), table1146, "And ");
 #line hidden
                 global::Reqnroll.Table table1147 = new global::Reqnroll.Table(new string[] {
@@ -24807,148 +24810,160 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Group"});
                 table1147.AddRow(new string[] {
                             string.Format("{0}", planType),
-                            "<Program>",
-                            "<LOB>",
-                            "<Group>"});
-#line 6508
+                            string.Format("{0}", program),
+                            string.Format("{0}", lOB),
+                            string.Format("{0}", group)});
+#line 6511
  await testRunner.AndAsync("enter InvolvedParty plan , Program  ,LOB  and Group", ((string)(null)), table1147, "And ");
 #line hidden
                 global::Reqnroll.Table table1148 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
-                            "state2",
-                            "city2",
+                            "State2",
+                            "City2",
                             "Zipcode"});
                 table1148.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
-                            "<state2>",
-                            "<city2>",
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 6512
+#line 6515
  await testRunner.AndAsync("InvolvedParty member street_Address_lineone , street_Address_linetwo , city , sta" +
                         "te  , county  and zip code", ((string)(null)), table1148, "And ");
 #line hidden
-#line 6515
+                global::Reqnroll.Table table1149 = new global::Reqnroll.Table(new string[] {
+                            "PrimaryPhone",
+                            "SecondaryPhone",
+                            "Email address"});
+                table1149.AddRow(new string[] {
+                            string.Format("{0}", primaryPhone),
+                            string.Format("{0}", secondaryPhone),
+                            string.Format("{0}", emailAddress)});
+#line 6518
+ await testRunner.AndAsync("InvolvedParty Primary phoneNo ,  Secondary phone number  and email address", ((string)(null)), table1149, "And ");
+#line hidden
+#line 6521
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6516
+#line 6522
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table1149 = new global::Reqnroll.Table(new string[] {
-                            "updatedOrgname"});
-                table1149.AddRow(new string[] {
-                            string.Format("{0}", updatedOrgname)});
-#line 6523
- await testRunner.AndAsync("Edit Primary InvovePartyType,Change the data and save the changes", ((string)(null)), table1149, "And ");
-#line hidden
                 global::Reqnroll.Table table1150 = new global::Reqnroll.Table(new string[] {
-                            "updatedOrgname"});
+                            "updatedMiddleName"});
                 table1150.AddRow(new string[] {
-                            string.Format("{0}", updatedOrgname)});
-#line 6526
- await testRunner.ThenAsync("Validate the updated data of the Primary Subject type", ((string)(null)), table1150, "Then ");
+                            string.Format("{0}", updatedMiddleName)});
+#line 6529
+ await testRunner.AndAsync("Edit Primary InvovePartyType for member,Change the data and save the changes as m" +
+                        "ember", ((string)(null)), table1150, "And ");
 #line hidden
                 global::Reqnroll.Table table1151 = new global::Reqnroll.Table(new string[] {
-                            "Is there any Involved Party Dropdown"});
+                            "updatedMiddleName"});
                 table1151.AddRow(new string[] {
-                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
-#line 6529
- await testRunner.WhenAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table1151, "When ");
+                            string.Format("{0}", updatedMiddleName)});
+#line 6532
+ await testRunner.ThenAsync("Validate the updated data of the Primary Subject type as member", ((string)(null)), table1151, "Then ");
 #line hidden
                 global::Reqnroll.Table table1152 = new global::Reqnroll.Table(new string[] {
-                            "Question1"});
+                            "Is there any Involved Party Dropdown"});
                 table1152.AddRow(new string[] {
-                            string.Format("{0}", question1)});
-#line 6539
- await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table1152, "And ");
+                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
+#line 6535
+ await testRunner.WhenAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table1152, "When ");
 #line hidden
                 global::Reqnroll.Table table1153 = new global::Reqnroll.Table(new string[] {
-                            "Question2",
-                            "Question3"});
+                            "Question1"});
                 table1153.AddRow(new string[] {
-                            string.Format("{0}", question2),
-                            string.Format("{0}", question3)});
-#line 6543
- await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1153, "And ");
+                            string.Format("{0}", question1)});
+#line 6545
+ await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table1153, "And ");
 #line hidden
                 global::Reqnroll.Table table1154 = new global::Reqnroll.Table(new string[] {
-                            "TestFile"});
+                            "Question2",
+                            "Question3"});
                 table1154.AddRow(new string[] {
-                            string.Format("{0}", testFile)});
-#line 6546
- await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1154, "And ");
-#line hidden
+                            string.Format("{0}", question2),
+                            string.Format("{0}", question3)});
 #line 6549
- await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 6550
- await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 6551
- await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 6552
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 6556
- await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1154, "And ");
 #line hidden
                 global::Reqnroll.Table table1155 = new global::Reqnroll.Table(new string[] {
-                            "UserEmailID"});
+                            "TestFile"});
                 table1155.AddRow(new string[] {
-                            string.Format("{0}", userEmailID)});
+                            string.Format("{0}", testFile)});
+#line 6552
+ await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1155, "And ");
+#line hidden
+#line 6555
+ await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 6556
+ await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
 #line 6557
- await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1155, "When ");
+ await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 6560
- await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 6558
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6561
- await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 6562
+ await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1156 = new global::Reqnroll.Table(new string[] {
-                            "Payor"});
+                            "UserEmailID"});
                 table1156.AddRow(new string[] {
-                            string.Format("{0}", payor)});
-#line 6562
- await testRunner.AndAsync("I select the payor", ((string)(null)), table1156, "And ");
+                            string.Format("{0}", userEmailID)});
+#line 6563
+ await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1156, "When ");
+#line hidden
+#line 6566
+ await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6567
+ await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1157 = new global::Reqnroll.Table(new string[] {
-                            "Leads"});
+                            "Payor"});
                 table1157.AddRow(new string[] {
-                            string.Format("{0}", leads)});
-#line 6565
- await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
-                        " page", ((string)(null)), table1157, "And ");
-#line hidden
+                            string.Format("{0}", payor)});
 #line 6568
- await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6569
- await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6570
- await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("I select the payor", ((string)(null)), table1157, "And ");
 #line hidden
                 global::Reqnroll.Table table1158 = new global::Reqnroll.Table(new string[] {
+                            "Leads"});
+                table1158.AddRow(new string[] {
+                            string.Format("{0}", leads)});
+#line 6571
+ await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
+                        " page", ((string)(null)), table1158, "And ");
+#line hidden
+#line 6574
+ await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6575
+ await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6576
+ await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table1159 = new global::Reqnroll.Table(new string[] {
                             "Suspect Activity From",
                             "Suspect Activity To",
                             "Potential Overpayment Amount",
                             "Subject First Name",
                             "Subject Last Name"});
-                table1158.AddRow(new string[] {
+                table1159.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate),
                             string.Format("{0}", amount),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 6571
- await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1158, "Then ");
+#line 6577
+ await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1159, "Then ");
 #line hidden
-                global::Reqnroll.Table table1159 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1160 = new global::Reqnroll.Table(new string[] {
                             "Subject Type",
                             "Name Prefix",
                             "First Name",
@@ -24976,15 +24991,15 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Primary Phone",
                             "Secondary Phone",
                             "Email"});
-                table1159.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", namePrefix),
                             string.Format("{0}", firstName),
-                            string.Format("{0}", middleName),
+                            string.Format("{0}", updatedMiddleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix),
                             string.Format("{0}", dOB),
-                            "",
+                            string.Format("{0}", gender),
                             string.Format("{0}", other),
                             string.Format("{0}", other),
                             string.Format("{0}", sSN),
@@ -24992,22 +25007,22 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID),
                             string.Format("{0}", planType),
-                            "",
-                            "",
-                            "",
+                            string.Format("{0}", program),
+                            string.Format("{0}", lOB),
+                            string.Format("{0}", group),
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
-                            "",
-                            "",
+                            string.Format("{0}", primaryPhone),
+                            string.Format("{0}", secondaryPhone),
                             string.Format("{0}", emailAddress)});
-#line 6574
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1159, "Then ");
+#line 6580
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1160, "And ");
 #line hidden
-                global::Reqnroll.Table table1160 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1161 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
                             "First Name",
                             "Last Name",
@@ -25018,7 +25033,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Zip Code",
                             "Phone",
                             "Email"});
-                table1160.AddRow(new string[] {
+                table1161.AddRow(new string[] {
                             string.Format("{0}", orgName),
                             string.Format("{0}", userFirstName),
                             string.Format("{0}", userLastName),
@@ -25029,51 +25044,51 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 6577
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1160, "Then ");
-#line hidden
-                global::Reqnroll.Table table1161 = new global::Reqnroll.Table(new string[] {
-                            "ActivityName"});
-                table1161.AddRow(new string[] {
-                            string.Format("{0}", activityName)});
-#line 6580
- await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
-                        "l", ((string)(null)), table1161, "When ");
+#line 6583
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1161, "And ");
 #line hidden
                 global::Reqnroll.Table table1162 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1162.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6583
- await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1162, "Then ");
-#line hidden
 #line 6586
- await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6587
- await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
-                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
+                        "l", ((string)(null)), table1162, "When ");
 #line hidden
                 global::Reqnroll.Table table1163 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1163.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6588
- await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1163, "When ");
-#line hidden
-#line 6591
- await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 6589
+ await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1163, "Then ");
 #line hidden
 #line 6592
- await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 6593
+ await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
+                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table1164 = new global::Reqnroll.Table(new string[] {
+                            "ActivityName"});
+                table1164.AddRow(new string[] {
+                            string.Format("{0}", activityName)});
+#line 6594
+ await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1164, "When ");
+#line hidden
+#line 6597
+ await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 6598
+ await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6599
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6594
+#line 6600
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 6595
+#line 6601
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -25085,7 +25100,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             "ted Provider and Editing the Primary Subject Type]")]
         [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
             " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Caregiver w/o req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "sandeep.krishnan@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Gainwell Technologies", "FN101", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "32", null)]
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Gainwell Technologies", "FN101", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "32", null)]
         public async global::System.Threading.Tasks.Task _33_OnlineReferralEndToEndScenarioWithPrimarySubjectTypeAsNon_EnumeratedProviderAndEditingThePrimarySubjectType(
                     string invalidZipcode, 
                     string zipcodeValidationErrorMessage, 
@@ -25301,7 +25316,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ted Provider and Editing the Primary Subject Type]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 6603
+#line 6609
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -25311,188 +25326,188 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 6606
+#line 6612
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table1164 = new global::Reqnroll.Table(new string[] {
-                            "Email address"});
-                table1164.AddRow(new string[] {
-                            string.Format("{0}", emailAddress)});
-#line 6613
- await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1164, "When ");
-#line hidden
                 global::Reqnroll.Table table1165 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table1165.AddRow(new string[] {
+                            string.Format("{0}", emailAddress)});
+#line 6619
+ await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1165, "When ");
+#line hidden
+                global::Reqnroll.Table table1166 = new global::Reqnroll.Table(new string[] {
                             "UserFirstName",
                             "UserLastName",
                             "Org name",
                             "title"});
-                table1165.AddRow(new string[] {
+                table1166.AddRow(new string[] {
                             string.Format("{0}", userFirstName),
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 6616
+#line 6622
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
-                        "ata Page", ((string)(null)), table1165, "And ");
-#line hidden
-                global::Reqnroll.Table table1166 = new global::Reqnroll.Table(new string[] {
-                            "Phone number"});
-                table1166.AddRow(new string[] {
-                            string.Format("{0}", phoneNumber)});
-#line 6619
- await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1166, "And ");
+                        "ata Page", ((string)(null)), table1166, "And ");
 #line hidden
                 global::Reqnroll.Table table1167 = new global::Reqnroll.Table(new string[] {
+                            "Phone number"});
+                table1167.AddRow(new string[] {
+                            string.Format("{0}", phoneNumber)});
+#line 6625
+ await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1167, "And ");
+#line hidden
+                global::Reqnroll.Table table1168 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
                             "State",
                             "Zipcode"});
-                table1167.AddRow(new string[] {
+                table1168.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 6625
- await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1167, "And ");
+#line 6631
+ await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1168, "And ");
 #line hidden
-#line 6629
+#line 6635
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6630
+#line 6636
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table1168 = new global::Reqnroll.Table(new string[] {
-                            "referralType"});
-                table1168.AddRow(new string[] {
-                            string.Format("{0}", referralType)});
-#line 6637
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1168, "When ");
-#line hidden
                 global::Reqnroll.Table table1169 = new global::Reqnroll.Table(new string[] {
-                            "involvedPartyType"});
+                            "referralType"});
                 table1169.AddRow(new string[] {
-                            string.Format("{0}", involvedPartyType)});
-#line 6644
- await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1169, "And ");
+                            string.Format("{0}", referralType)});
+#line 6643
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1169, "And ");
 #line hidden
                 global::Reqnroll.Table table1170 = new global::Reqnroll.Table(new string[] {
-                            "caseOrReferenceNumber"});
+                            "involvedPartyType"});
                 table1170.AddRow(new string[] {
-                            string.Format("{0}", caseOrReferenceNumber)});
-#line 6647
- await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1170, "And ");
+                            string.Format("{0}", involvedPartyType)});
+#line 6650
+ await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1170, "And ");
 #line hidden
                 global::Reqnroll.Table table1171 = new global::Reqnroll.Table(new string[] {
-                            "detectedAs",
-                            "summary"});
+                            "caseOrReferenceNumber"});
                 table1171.AddRow(new string[] {
-                            string.Format("{0}", detectedAs),
-                            string.Format("{0}", summary)});
-#line 6650
- await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1171, "And ");
+                            string.Format("{0}", caseOrReferenceNumber)});
+#line 6653
+ await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1171, "And ");
 #line hidden
                 global::Reqnroll.Table table1172 = new global::Reqnroll.Table(new string[] {
-                            "amount",
-                            "detectionDate"});
+                            "detectedAs",
+                            "summary"});
                 table1172.AddRow(new string[] {
-                            string.Format("{0}", amount),
-                            string.Format("{0}", detectionDate)});
-#line 6653
- await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1172, "And ");
+                            string.Format("{0}", detectedAs),
+                            string.Format("{0}", summary)});
+#line 6656
+ await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1172, "And ");
 #line hidden
                 global::Reqnroll.Table table1173 = new global::Reqnroll.Table(new string[] {
-                            "incidentValidStartDate",
-                            "incidentValidEndDate"});
+                            "amount",
+                            "detectionDate"});
                 table1173.AddRow(new string[] {
-                            string.Format("{0}", incidentValidStartDate),
-                            string.Format("{0}", incidentValidEndDate)});
-#line 6660
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1173, "When ");
+                            string.Format("{0}", amount),
+                            string.Format("{0}", detectionDate)});
+#line 6659
+ await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1173, "And ");
 #line hidden
                 global::Reqnroll.Table table1174 = new global::Reqnroll.Table(new string[] {
-                            "State2",
-                            "City2"});
+                            "incidentValidStartDate",
+                            "incidentValidEndDate"});
                 table1174.AddRow(new string[] {
-                            string.Format("{0}", state2),
-                            string.Format("{0}", city2)});
-#line 6663
- await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1174, "And ");
-#line hidden
-#line 6668
- await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6669
- await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+                            string.Format("{0}", incidentValidStartDate),
+                            string.Format("{0}", incidentValidEndDate)});
+#line 6666
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1174, "And ");
 #line hidden
                 global::Reqnroll.Table table1175 = new global::Reqnroll.Table(new string[] {
-                            "witnessDropdown"});
+                            "State2",
+                            "City2"});
                 table1175.AddRow(new string[] {
-                            string.Format("{0}", witnessDropdown)});
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2)});
+#line 6669
+ await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1175, "And ");
+#line hidden
+#line 6674
+ await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
 #line 6675
- await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1175, "And ");
+ await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1176 = new global::Reqnroll.Table(new string[] {
-                            "orgname",
-                            "name prefix",
-                            "first name",
-                            "middle name",
-                            "last name",
-                            "name suffix"});
+                            "witnessDropdown"});
                 table1176.AddRow(new string[] {
+                            string.Format("{0}", witnessDropdown)});
+#line 6681
+ await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1176, "And ");
+#line hidden
+                global::Reqnroll.Table table1177 = new global::Reqnroll.Table(new string[] {
+                            "orgname",
+                            "NamePrefix",
+                            "firstName",
+                            "MiddleName1",
+                            "lastName",
+                            "NameSuffix"});
+                table1177.AddRow(new string[] {
                             string.Format("{0}", organization1),
                             string.Format("{0}", namePrefix1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1)});
-#line 6678
+#line 6684
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
-                        "ame suffix", ((string)(null)), table1176, "And ");
+                        "ame suffix", ((string)(null)), table1177, "And ");
 #line hidden
-                global::Reqnroll.Table table1177 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1178 = new global::Reqnroll.Table(new string[] {
                             "designation",
                             "DOB",
                             "SSN",
                             "licenseNumber",
                             "otherID",
                             "other"});
-                table1177.AddRow(new string[] {
+                table1178.AddRow(new string[] {
                             string.Format("{0}", designation),
                             string.Format("{0}", dOB),
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 6682
- await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table1177, "And ");
-#line hidden
-                global::Reqnroll.Table table1178 = new global::Reqnroll.Table(new string[] {
-                            "involvedPartyType",
-                            "detectedAs"});
-                table1178.AddRow(new string[] {
-                            string.Format("{0}", involvedPartyType),
-                            string.Format("{0}", detectedAs)});
-#line 6686
- await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table1178, "And ");
+#line 6688
+ await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table1178, "And ");
 #line hidden
                 global::Reqnroll.Table table1179 = new global::Reqnroll.Table(new string[] {
+                            "involvedPartyType",
+                            "detectedAs"});
+                table1179.AddRow(new string[] {
+                            string.Format("{0}", involvedPartyType),
+                            string.Format("{0}", detectedAs)});
+#line 6691
+ await testRunner.AndAsync("enter how witness or external party reported this, any additional info", ((string)(null)), table1179, "And ");
+#line hidden
+                global::Reqnroll.Table table1180 = new global::Reqnroll.Table(new string[] {
                             "PrimaryPhone",
                             "SecondaryPhone",
                             "fax",
                             "Email address"});
-                table1179.AddRow(new string[] {
+                table1180.AddRow(new string[] {
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 6689
+#line 6694
  await testRunner.AndAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
-                        "the involved party", ((string)(null)), table1179, "And ");
+                        "the involved party", ((string)(null)), table1180, "And ");
 #line hidden
-                global::Reqnroll.Table table1180 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1181 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
@@ -25500,7 +25515,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "City2",
                             "Zipcode",
                             "Country"});
-                table1180.AddRow(new string[] {
+                table1181.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
@@ -25508,130 +25523,131 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country)});
-#line 6692
+#line 6697
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
-                        "de and country for the involved party", ((string)(null)), table1180, "And ");
+                        "de and country for the involved party", ((string)(null)), table1181, "And ");
 #line hidden
-#line 6695
+#line 6700
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6696
+#line 6701
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-                global::Reqnroll.Table table1181 = new global::Reqnroll.Table(new string[] {
-                            "updatedOrgname"});
-                table1181.AddRow(new string[] {
-                            string.Format("{0}", updatedOrgname)});
-#line 6703
- await testRunner.AndAsync("Edit Primary InvovePartyType,Change the data and save the changes", ((string)(null)), table1181, "And ");
 #line hidden
                 global::Reqnroll.Table table1182 = new global::Reqnroll.Table(new string[] {
                             "updatedOrgname"});
                 table1182.AddRow(new string[] {
                             string.Format("{0}", updatedOrgname)});
-#line 6706
- await testRunner.ThenAsync("Validate the updated data of the Primary Subject type", ((string)(null)), table1182, "Then ");
+#line 6708
+ await testRunner.AndAsync("Edit Primary InvovePartyType for non-Enumerated provider,Change the data and save" +
+                        " the changes", ((string)(null)), table1182, "And ");
 #line hidden
                 global::Reqnroll.Table table1183 = new global::Reqnroll.Table(new string[] {
-                            "Is there any Involved Party Dropdown"});
+                            "updatedOrgname"});
                 table1183.AddRow(new string[] {
-                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
-#line 6709
- await testRunner.WhenAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table1183, "When ");
+                            string.Format("{0}", updatedOrgname)});
+#line 6711
+ await testRunner.ThenAsync("Validate the updated data of the Primary Subject type as non-enumerated provider", ((string)(null)), table1183, "Then ");
 #line hidden
                 global::Reqnroll.Table table1184 = new global::Reqnroll.Table(new string[] {
-                            "Question1"});
+                            "Is there any Involved Party Dropdown"});
                 table1184.AddRow(new string[] {
-                            string.Format("{0}", question1)});
-#line 6719
- await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table1184, "And ");
+                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
+#line 6714
+ await testRunner.WhenAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table1184, "When ");
 #line hidden
                 global::Reqnroll.Table table1185 = new global::Reqnroll.Table(new string[] {
-                            "Question2",
-                            "Question3"});
+                            "Question1"});
                 table1185.AddRow(new string[] {
-                            string.Format("{0}", question2),
-                            string.Format("{0}", question3)});
-#line 6723
- await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1185, "And ");
+                            string.Format("{0}", question1)});
+#line 6724
+ await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table1185, "And ");
 #line hidden
                 global::Reqnroll.Table table1186 = new global::Reqnroll.Table(new string[] {
-                            "TestFile"});
+                            "Question2",
+                            "Question3"});
                 table1186.AddRow(new string[] {
-                            string.Format("{0}", testFile)});
-#line 6726
- await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1186, "And ");
-#line hidden
-#line 6729
- await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 6730
- await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 6731
- await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 6732
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 6736
- await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+                            string.Format("{0}", question2),
+                            string.Format("{0}", question3)});
+#line 6728
+ await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1186, "And ");
 #line hidden
                 global::Reqnroll.Table table1187 = new global::Reqnroll.Table(new string[] {
-                            "UserEmailID"});
+                            "TestFile"});
                 table1187.AddRow(new string[] {
-                            string.Format("{0}", userEmailID)});
-#line 6737
- await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1187, "When ");
+                            string.Format("{0}", testFile)});
+#line 6731
+ await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1187, "And ");
 #line hidden
-#line 6740
- await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 6734
+ await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 6735
+ await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 6736
+ await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 6737
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 6741
- await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1188 = new global::Reqnroll.Table(new string[] {
-                            "Payor"});
+                            "UserEmailID"});
                 table1188.AddRow(new string[] {
-                            string.Format("{0}", payor)});
+                            string.Format("{0}", userEmailID)});
 #line 6742
- await testRunner.AndAsync("I select the payor", ((string)(null)), table1188, "And ");
+ await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1188, "When ");
+#line hidden
+#line 6745
+ await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6746
+ await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1189 = new global::Reqnroll.Table(new string[] {
-                            "Leads"});
+                            "Payor"});
                 table1189.AddRow(new string[] {
-                            string.Format("{0}", leads)});
-#line 6745
- await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
-                        " page", ((string)(null)), table1189, "And ");
-#line hidden
-#line 6748
- await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6749
- await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6750
- await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+                            string.Format("{0}", payor)});
+#line 6747
+ await testRunner.AndAsync("I select the payor", ((string)(null)), table1189, "And ");
 #line hidden
                 global::Reqnroll.Table table1190 = new global::Reqnroll.Table(new string[] {
+                            "Leads"});
+                table1190.AddRow(new string[] {
+                            string.Format("{0}", leads)});
+#line 6750
+ await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
+                        " page", ((string)(null)), table1190, "And ");
+#line hidden
+#line 6753
+ await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6754
+ await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6755
+ await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table1191 = new global::Reqnroll.Table(new string[] {
                             "Suspect Activity From",
                             "Suspect Activity To",
                             "Potential Overpayment Amount",
                             "Subject Organization",
                             "Subject First Name",
                             "Subject Last Name"});
-                table1190.AddRow(new string[] {
+                table1191.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate),
                             string.Format("{0}", amount),
                             string.Format("{0}", updatedOrgname),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 6751
- await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1190, "Then ");
+#line 6756
+ await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1191, "Then ");
 #line hidden
-                global::Reqnroll.Table table1191 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1192 = new global::Reqnroll.Table(new string[] {
                             "Subject Type",
                             "Organization Name",
                             "Name Prefix",
@@ -25656,7 +25672,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Secondary Phone",
                             "Fax",
                             "Email"});
-                table1191.AddRow(new string[] {
+                table1192.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", updatedOrgname),
                             string.Format("{0}", namePrefix),
@@ -25677,14 +25693,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country),
-                            "",
-                            "",
+                            string.Format("{0}", primaryPhone),
+                            string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 6754
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1191, "Then ");
+#line 6759
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1192, "And ");
 #line hidden
-                global::Reqnroll.Table table1192 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1193 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
                             "First Name",
                             "Last Name",
@@ -25695,7 +25711,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Zip Code",
                             "Phone",
                             "Email"});
-                table1192.AddRow(new string[] {
+                table1193.AddRow(new string[] {
                             string.Format("{0}", orgName),
                             string.Format("{0}", userFirstName),
                             string.Format("{0}", userLastName),
@@ -25706,51 +25722,51 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 6757
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1192, "Then ");
-#line hidden
-                global::Reqnroll.Table table1193 = new global::Reqnroll.Table(new string[] {
-                            "ActivityName"});
-                table1193.AddRow(new string[] {
-                            string.Format("{0}", activityName)});
-#line 6760
- await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
-                        "l", ((string)(null)), table1193, "When ");
+#line 6762
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1193, "And ");
 #line hidden
                 global::Reqnroll.Table table1194 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1194.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6763
- await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1194, "Then ");
-#line hidden
-#line 6766
- await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6767
- await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
-                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 6765
+ await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
+                        "l", ((string)(null)), table1194, "When ");
 #line hidden
                 global::Reqnroll.Table table1195 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1195.AddRow(new string[] {
                             string.Format("{0}", activityName)});
 #line 6768
- await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1195, "When ");
+ await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1195, "Then ");
 #line hidden
 #line 6771
- await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 6772
+ await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
+                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table1196 = new global::Reqnroll.Table(new string[] {
+                            "ActivityName"});
+                table1196.AddRow(new string[] {
+                            string.Format("{0}", activityName)});
+#line 6773
+ await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1196, "When ");
+#line hidden
+#line 6776
+ await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 6777
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6773
+#line 6778
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6774
+#line 6779
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 6775
+#line 6780
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -25762,7 +25778,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             "ted Member and Editing the Primary Subject Type]")]
         [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
             " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "12.1.25 Non enumerated Individual", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "Sandeep.Krishnan@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2026", "Date cannot be in the future.", "Yes", "Involved Party Type - Associated Subject- Law Firm w/o req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Gainwell organization", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "33", null)]
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2026", "Date cannot be in the future.", "Yes", "Involved Party Type - Associated Subject- Law Firm w/o req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Gainwell organization", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "33", null)]
         public async global::System.Threading.Tasks.Task _34_OnlineReferralEndToEndScenarioWithPrimarySubjectTypeAsNon_EnumeratedMemberAndEditingThePrimarySubjectType(
                     string invalidZipcode, 
                     string zipcodeValidationErrorMessage, 
@@ -26000,7 +26016,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ted Member and Editing the Primary Subject Type]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 6783
+#line 6788
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -26010,134 +26026,134 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 6786
+#line 6791
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table1196 = new global::Reqnroll.Table(new string[] {
-                            "Email address"});
-                table1196.AddRow(new string[] {
-                            string.Format("{0}", emailAddress)});
-#line 6793
- await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1196, "When ");
-#line hidden
                 global::Reqnroll.Table table1197 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table1197.AddRow(new string[] {
+                            string.Format("{0}", emailAddress)});
+#line 6798
+ await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1197, "When ");
+#line hidden
+                global::Reqnroll.Table table1198 = new global::Reqnroll.Table(new string[] {
                             "UserFirstName",
                             "UserLastName",
                             "Org name",
                             "title"});
-                table1197.AddRow(new string[] {
+                table1198.AddRow(new string[] {
                             string.Format("{0}", userFirstName),
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 6796
+#line 6801
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
-                        "ata Page", ((string)(null)), table1197, "And ");
-#line hidden
-                global::Reqnroll.Table table1198 = new global::Reqnroll.Table(new string[] {
-                            "Phone number"});
-                table1198.AddRow(new string[] {
-                            string.Format("{0}", phoneNumber)});
-#line 6799
- await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1198, "And ");
+                        "ata Page", ((string)(null)), table1198, "And ");
 #line hidden
                 global::Reqnroll.Table table1199 = new global::Reqnroll.Table(new string[] {
+                            "Phone number"});
+                table1199.AddRow(new string[] {
+                            string.Format("{0}", phoneNumber)});
+#line 6804
+ await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1199, "And ");
+#line hidden
+                global::Reqnroll.Table table1200 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
                             "State",
                             "Zipcode"});
-                table1199.AddRow(new string[] {
+                table1200.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 6805
- await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1199, "And ");
+#line 6810
+ await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1200, "And ");
 #line hidden
-#line 6809
+#line 6814
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6810
+#line 6815
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table1200 = new global::Reqnroll.Table(new string[] {
-                            "referralType"});
-                table1200.AddRow(new string[] {
-                            string.Format("{0}", referralType)});
-#line 6817
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1200, "When ");
-#line hidden
                 global::Reqnroll.Table table1201 = new global::Reqnroll.Table(new string[] {
-                            "involvedPartyType"});
+                            "referralType"});
                 table1201.AddRow(new string[] {
-                            string.Format("{0}", involvedPartyType)});
-#line 6824
- await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1201, "And ");
+                            string.Format("{0}", referralType)});
+#line 6822
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1201, "And ");
 #line hidden
                 global::Reqnroll.Table table1202 = new global::Reqnroll.Table(new string[] {
-                            "caseOrReferenceNumber"});
+                            "involvedPartyType"});
                 table1202.AddRow(new string[] {
-                            string.Format("{0}", caseOrReferenceNumber)});
-#line 6827
- await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1202, "And ");
+                            string.Format("{0}", involvedPartyType)});
+#line 6829
+ await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1202, "And ");
 #line hidden
                 global::Reqnroll.Table table1203 = new global::Reqnroll.Table(new string[] {
-                            "detectedAs",
-                            "summary"});
+                            "caseOrReferenceNumber"});
                 table1203.AddRow(new string[] {
-                            string.Format("{0}", detectedAs),
-                            string.Format("{0}", summary)});
-#line 6830
- await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1203, "And ");
+                            string.Format("{0}", caseOrReferenceNumber)});
+#line 6832
+ await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1203, "And ");
 #line hidden
                 global::Reqnroll.Table table1204 = new global::Reqnroll.Table(new string[] {
-                            "amount",
-                            "detectionDate"});
+                            "detectedAs",
+                            "summary"});
                 table1204.AddRow(new string[] {
-                            string.Format("{0}", amount),
-                            string.Format("{0}", detectionDate)});
-#line 6833
- await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1204, "And ");
+                            string.Format("{0}", detectedAs),
+                            string.Format("{0}", summary)});
+#line 6835
+ await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1204, "And ");
 #line hidden
                 global::Reqnroll.Table table1205 = new global::Reqnroll.Table(new string[] {
-                            "incidentValidStartDate",
-                            "incidentValidEndDate"});
+                            "amount",
+                            "detectionDate"});
                 table1205.AddRow(new string[] {
-                            string.Format("{0}", incidentValidStartDate),
-                            string.Format("{0}", incidentValidEndDate)});
-#line 6840
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1205, "When ");
+                            string.Format("{0}", amount),
+                            string.Format("{0}", detectionDate)});
+#line 6838
+ await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1205, "And ");
 #line hidden
                 global::Reqnroll.Table table1206 = new global::Reqnroll.Table(new string[] {
-                            "State2",
-                            "City2"});
+                            "incidentValidStartDate",
+                            "incidentValidEndDate"});
                 table1206.AddRow(new string[] {
-                            string.Format("{0}", state2),
-                            string.Format("{0}", city2)});
-#line 6843
- await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1206, "And ");
-#line hidden
-#line 6848
- await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6849
- await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+                            string.Format("{0}", incidentValidStartDate),
+                            string.Format("{0}", incidentValidEndDate)});
+#line 6845
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1206, "And ");
 #line hidden
                 global::Reqnroll.Table table1207 = new global::Reqnroll.Table(new string[] {
-                            "witnessDropdown"});
+                            "State2",
+                            "City2"});
                 table1207.AddRow(new string[] {
-                            string.Format("{0}", witnessDropdown)});
-#line 6855
- await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1207, "And ");
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2)});
+#line 6848
+ await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1207, "And ");
+#line hidden
+#line 6853
+ await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6854
+ await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1208 = new global::Reqnroll.Table(new string[] {
+                            "witnessDropdown"});
+                table1208.AddRow(new string[] {
+                            string.Format("{0}", witnessDropdown)});
+#line 6860
+ await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1208, "And ");
+#line hidden
+                global::Reqnroll.Table table1209 = new global::Reqnroll.Table(new string[] {
                             "Organization1",
-                            "NamePrefix",
-                            "FirstName1",
+                            "name prefix",
+                            "first name",
                             "MiddleName1",
-                            "LastName1",
+                            "last name",
                             "NameSuffix",
                             "Designation1",
                             "DOB",
@@ -26155,7 +26171,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "SecondaryPhone",
                             "OtherId",
                             "Email1"});
-                table1208.AddRow(new string[] {
+                table1209.AddRow(new string[] {
                             string.Format("{0}", organization1),
                             string.Format("{0}", namePrefix1),
                             string.Format("{0}", firstName),
@@ -26173,143 +26189,144 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zip),
-                            string.Format("{0}", country1),
+                            string.Format("{0}", country),
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", otherId),
                             string.Format("{0}", email1)});
-#line 6859
- await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table1208, "And ");
-#line hidden
-                global::Reqnroll.Table table1209 = new global::Reqnroll.Table(new string[] {
-                            "involvedPartyType",
-                            "detectedAs"});
-                table1209.AddRow(new string[] {
-                            string.Format("{0}", involvedPartyType),
-                            string.Format("{0}", detectedAs)});
-#line 6863
- await testRunner.AndAsync("enter  how witness or external party reported this, any additional info", ((string)(null)), table1209, "And ");
-#line hidden
-#line 6867
- await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6868
- await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 6864
+ await testRunner.AndAsync("the following fields should be displayed:", ((string)(null)), table1209, "And ");
 #line hidden
                 global::Reqnroll.Table table1210 = new global::Reqnroll.Table(new string[] {
-                            "updatedOrgname"});
+                            "involvedPartyType",
+                            "detectedAs"});
                 table1210.AddRow(new string[] {
-                            string.Format("{0}", updatedOrgname)});
-#line 6875
- await testRunner.AndAsync("Edit Primary InvovePartyType,Change the data and save the changes", ((string)(null)), table1210, "And ");
+                            string.Format("{0}", involvedPartyType),
+                            string.Format("{0}", detectedAs)});
+#line 6869
+ await testRunner.AndAsync("enter  how witness or external party reported this, any additional info", ((string)(null)), table1210, "And ");
+#line hidden
+#line 6873
+ await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6874
+ await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1211 = new global::Reqnroll.Table(new string[] {
                             "updatedOrgname"});
                 table1211.AddRow(new string[] {
                             string.Format("{0}", updatedOrgname)});
-#line 6878
- await testRunner.ThenAsync("Validate the updated data of the Primary Subject type", ((string)(null)), table1211, "Then ");
+#line 6881
+ await testRunner.AndAsync("Edit Primary InvovePartyType,Change the data and save the changes as Non-Enumerat" +
+                        "ed Member", ((string)(null)), table1211, "And ");
 #line hidden
                 global::Reqnroll.Table table1212 = new global::Reqnroll.Table(new string[] {
-                            "Is there any Involved Party Dropdown"});
+                            "updatedOrgname"});
                 table1212.AddRow(new string[] {
-                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
-#line 6881
- await testRunner.WhenAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table1212, "When ");
+                            string.Format("{0}", updatedOrgname)});
+#line 6884
+ await testRunner.ThenAsync("Validate the updated data of the Primary Subject type as non-enumerated member", ((string)(null)), table1212, "Then ");
 #line hidden
                 global::Reqnroll.Table table1213 = new global::Reqnroll.Table(new string[] {
-                            "Question1"});
+                            "Is there any Involved Party Dropdown"});
                 table1213.AddRow(new string[] {
-                            string.Format("{0}", question1)});
-#line 6891
- await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table1213, "And ");
+                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
+#line 6887
+ await testRunner.WhenAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table1213, "When ");
 #line hidden
                 global::Reqnroll.Table table1214 = new global::Reqnroll.Table(new string[] {
-                            "Question2",
-                            "Question3"});
+                            "Question1"});
                 table1214.AddRow(new string[] {
-                            string.Format("{0}", question2),
-                            string.Format("{0}", question3)});
-#line 6895
- await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1214, "And ");
+                            string.Format("{0}", question1)});
+#line 6897
+ await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table1214, "And ");
 #line hidden
                 global::Reqnroll.Table table1215 = new global::Reqnroll.Table(new string[] {
-                            "TestFile"});
+                            "Question2",
+                            "Question3"});
                 table1215.AddRow(new string[] {
-                            string.Format("{0}", testFile)});
-#line 6898
- await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1215, "And ");
-#line hidden
+                            string.Format("{0}", question2),
+                            string.Format("{0}", question3)});
 #line 6901
- await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 6902
- await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 6903
- await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 6904
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 6908
- await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1215, "And ");
 #line hidden
                 global::Reqnroll.Table table1216 = new global::Reqnroll.Table(new string[] {
-                            "UserEmailID"});
+                            "TestFile"});
                 table1216.AddRow(new string[] {
-                            string.Format("{0}", userEmailID)});
+                            string.Format("{0}", testFile)});
+#line 6904
+ await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1216, "And ");
+#line hidden
+#line 6907
+ await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 6908
+ await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
 #line 6909
- await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1216, "When ");
+ await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 6912
- await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 6910
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6913
- await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 6914
+ await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1217 = new global::Reqnroll.Table(new string[] {
-                            "Payor"});
+                            "UserEmailID"});
                 table1217.AddRow(new string[] {
-                            string.Format("{0}", payor)});
-#line 6914
- await testRunner.AndAsync("I select the payor", ((string)(null)), table1217, "And ");
+                            string.Format("{0}", userEmailID)});
+#line 6915
+ await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1217, "When ");
+#line hidden
+#line 6918
+ await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6919
+ await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1218 = new global::Reqnroll.Table(new string[] {
-                            "Leads"});
+                            "Payor"});
                 table1218.AddRow(new string[] {
-                            string.Format("{0}", leads)});
-#line 6917
- await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
-                        " page", ((string)(null)), table1218, "And ");
-#line hidden
+                            string.Format("{0}", payor)});
 #line 6920
- await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6921
- await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6922
- await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("I select the payor", ((string)(null)), table1218, "And ");
 #line hidden
                 global::Reqnroll.Table table1219 = new global::Reqnroll.Table(new string[] {
+                            "Leads"});
+                table1219.AddRow(new string[] {
+                            string.Format("{0}", leads)});
+#line 6923
+ await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
+                        " page", ((string)(null)), table1219, "And ");
+#line hidden
+#line 6926
+ await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6927
+ await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6928
+ await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table1220 = new global::Reqnroll.Table(new string[] {
                             "Suspect Activity From",
                             "Suspect Activity To",
                             "Potential Overpayment Amount",
                             "Subject Organization",
                             "Subject First Name",
                             "Subject Last Name"});
-                table1219.AddRow(new string[] {
-                            "<incidentStartDate>",
-                            "<incidentEndDate>",
+                table1220.AddRow(new string[] {
+                            string.Format("{0}", incidentValidStartDate),
+                            string.Format("{0}", incidentValidEndDate),
                             string.Format("{0}", amount),
                             string.Format("{0}", updatedOrgname),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 6923
- await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1219, "Then ");
+#line 6929
+ await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1220, "Then ");
 #line hidden
-                global::Reqnroll.Table table1220 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1221 = new global::Reqnroll.Table(new string[] {
                             "Subject Type",
                             "Organization Name",
                             "Name Prefix",
@@ -26332,7 +26349,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Primary Phone",
                             "Secondary Phone",
                             "Email"});
-                table1220.AddRow(new string[] {
+                table1221.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", updatedOrgname),
                             string.Format("{0}", namePrefix1),
@@ -26342,9 +26359,9 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", nameSuffix1),
                             string.Format("{0}", designation1),
                             string.Format("{0}", dOB),
-                            string.Format("{0}", sSN),
-                            string.Format("{0}", otherID),
-                            string.Format("{0}", other),
+                            string.Format("{0}", ssn),
+                            string.Format("{0}", otherId),
+                            string.Format("{0}", other1),
                             string.Format("{0}", streetAddress3),
                             string.Format("{0}", streetAddress4),
                             string.Format("{0}", city),
@@ -26355,10 +26372,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", email1)});
-#line 6926
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1220, "Then ");
+#line 6932
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1221, "And ");
 #line hidden
-                global::Reqnroll.Table table1221 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1222 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
                             "First Name",
                             "Last Name",
@@ -26369,7 +26386,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Zip Code",
                             "Phone",
                             "Email"});
-                table1221.AddRow(new string[] {
+                table1222.AddRow(new string[] {
                             string.Format("{0}", orgName),
                             string.Format("{0}", userFirstName),
                             string.Format("{0}", userLastName),
@@ -26380,51 +26397,51 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 6929
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1221, "Then ");
-#line hidden
-                global::Reqnroll.Table table1222 = new global::Reqnroll.Table(new string[] {
-                            "ActivityName"});
-                table1222.AddRow(new string[] {
-                            string.Format("{0}", activityName)});
-#line 6932
- await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
-                        "l", ((string)(null)), table1222, "When ");
+#line 6935
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1222, "And ");
 #line hidden
                 global::Reqnroll.Table table1223 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1223.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6935
- await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1223, "Then ");
-#line hidden
 #line 6938
- await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 6939
- await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
-                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
+                        "l", ((string)(null)), table1223, "When ");
 #line hidden
                 global::Reqnroll.Table table1224 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1224.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 6940
- await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1224, "When ");
-#line hidden
-#line 6943
- await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 6941
+ await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1224, "Then ");
 #line hidden
 #line 6944
- await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 6945
+ await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
+                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table1225 = new global::Reqnroll.Table(new string[] {
+                            "ActivityName"});
+                table1225.AddRow(new string[] {
+                            string.Format("{0}", activityName)});
+#line 6946
+ await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1225, "When ");
+#line hidden
+#line 6949
+ await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 6950
+ await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 6951
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6947
+#line 6953
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 6948
+#line 6954
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -26436,7 +26453,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             "ted Organization and Editing the Primary Subject Type]")]
         [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
             " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Law Firm w/o req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "No", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "Sandeep.Krishnan@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "No", "Involved Party Type - Associated Subject- Law Firm w/o req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Gainwell Organization", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "34", null)]
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "No", "Involved Party Type - Associated Subject- Law Firm w/o req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Gainwell Organization", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "34", null)]
         public async global::System.Threading.Tasks.Task _35_OnlineReferralEndToEndScenarioWithPrimarySubjectTypeAsNon_EnumeratedOrganizationAndEditingThePrimarySubjectType(
                     string invalidZipcode, 
                     string zipcodeValidationErrorMessage, 
@@ -26674,7 +26691,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "ted Organization and Editing the Primary Subject Type]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 6958
+#line 6964
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -26684,299 +26701,301 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 6961
+#line 6967
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table1225 = new global::Reqnroll.Table(new string[] {
-                            "Email address"});
-                table1225.AddRow(new string[] {
-                            string.Format("{0}", emailAddress)});
-#line 6968
- await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1225, "When ");
-#line hidden
                 global::Reqnroll.Table table1226 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table1226.AddRow(new string[] {
+                            string.Format("{0}", emailAddress)});
+#line 6974
+ await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1226, "When ");
+#line hidden
+                global::Reqnroll.Table table1227 = new global::Reqnroll.Table(new string[] {
                             "UserFirstName",
                             "UserLastName",
                             "Org name",
                             "title"});
-                table1226.AddRow(new string[] {
+                table1227.AddRow(new string[] {
                             string.Format("{0}", userFirstName),
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 6971
+#line 6977
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
-                        "ata Page", ((string)(null)), table1226, "And ");
-#line hidden
-                global::Reqnroll.Table table1227 = new global::Reqnroll.Table(new string[] {
-                            "Phone number"});
-                table1227.AddRow(new string[] {
-                            string.Format("{0}", phoneNumber)});
-#line 6974
- await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1227, "And ");
+                        "ata Page", ((string)(null)), table1227, "And ");
 #line hidden
                 global::Reqnroll.Table table1228 = new global::Reqnroll.Table(new string[] {
+                            "Phone number"});
+                table1228.AddRow(new string[] {
+                            string.Format("{0}", phoneNumber)});
+#line 6980
+ await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1228, "And ");
+#line hidden
+                global::Reqnroll.Table table1229 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
                             "State",
                             "Zipcode"});
-                table1228.AddRow(new string[] {
+                table1229.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 6980
- await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1228, "And ");
+#line 6986
+ await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1229, "And ");
 #line hidden
-#line 6984
+#line 6990
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 6985
+#line 6991
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table1229 = new global::Reqnroll.Table(new string[] {
-                            "referralType"});
-                table1229.AddRow(new string[] {
-                            string.Format("{0}", referralType)});
-#line 6993
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1229, "When ");
-#line hidden
                 global::Reqnroll.Table table1230 = new global::Reqnroll.Table(new string[] {
-                            "involvedPartyType"});
+                            "referralType"});
                 table1230.AddRow(new string[] {
-                            string.Format("{0}", involvedPartyType)});
+                            string.Format("{0}", referralType)});
 #line 6999
- await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1230, "And ");
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1230, "And ");
 #line hidden
                 global::Reqnroll.Table table1231 = new global::Reqnroll.Table(new string[] {
-                            "caseOrReferenceNumber"});
+                            "involvedPartyType"});
                 table1231.AddRow(new string[] {
-                            string.Format("{0}", caseOrReferenceNumber)});
-#line 7002
- await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1231, "And ");
+                            string.Format("{0}", involvedPartyType)});
+#line 7005
+ await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1231, "And ");
 #line hidden
                 global::Reqnroll.Table table1232 = new global::Reqnroll.Table(new string[] {
-                            "detectedAs",
-                            "summary"});
+                            "caseOrReferenceNumber"});
                 table1232.AddRow(new string[] {
-                            string.Format("{0}", detectedAs),
-                            string.Format("{0}", summary)});
-#line 7005
- await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1232, "And ");
+                            string.Format("{0}", caseOrReferenceNumber)});
+#line 7008
+ await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1232, "And ");
 #line hidden
                 global::Reqnroll.Table table1233 = new global::Reqnroll.Table(new string[] {
-                            "amount",
-                            "detectionDate"});
+                            "detectedAs",
+                            "summary"});
                 table1233.AddRow(new string[] {
-                            string.Format("{0}", amount),
-                            string.Format("{0}", detectionDate)});
-#line 7008
- await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1233, "And ");
+                            string.Format("{0}", detectedAs),
+                            string.Format("{0}", summary)});
+#line 7011
+ await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1233, "And ");
 #line hidden
                 global::Reqnroll.Table table1234 = new global::Reqnroll.Table(new string[] {
-                            "incidentValidStartDate",
-                            "incidentValidEndDate"});
+                            "amount",
+                            "detectionDate"});
                 table1234.AddRow(new string[] {
-                            string.Format("{0}", incidentValidStartDate),
-                            string.Format("{0}", incidentValidEndDate)});
-#line 7015
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1234, "When ");
+                            string.Format("{0}", amount),
+                            string.Format("{0}", detectionDate)});
+#line 7014
+ await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1234, "And ");
 #line hidden
                 global::Reqnroll.Table table1235 = new global::Reqnroll.Table(new string[] {
-                            "State2",
-                            "City2"});
+                            "incidentValidStartDate",
+                            "incidentValidEndDate"});
                 table1235.AddRow(new string[] {
-                            string.Format("{0}", state2),
-                            string.Format("{0}", city2)});
-#line 7018
- await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1235, "And ");
-#line hidden
-#line 7023
- await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 7024
- await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+                            string.Format("{0}", incidentValidStartDate),
+                            string.Format("{0}", incidentValidEndDate)});
+#line 7021
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1235, "And ");
 #line hidden
                 global::Reqnroll.Table table1236 = new global::Reqnroll.Table(new string[] {
-                            "witnessDropdown"});
+                            "State2",
+                            "City2"});
                 table1236.AddRow(new string[] {
-                            string.Format("{0}", witnessDropdown)});
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2)});
+#line 7024
+ await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1236, "And ");
+#line hidden
+#line 7029
+ await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
 #line 7030
- await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1236, "And ");
+ await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1237 = new global::Reqnroll.Table(new string[] {
+                            "witnessDropdown"});
+                table1237.AddRow(new string[] {
+                            string.Format("{0}", witnessDropdown)});
+#line 7036
+ await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1237, "And ");
+#line hidden
+                global::Reqnroll.Table table1238 = new global::Reqnroll.Table(new string[] {
                             "orgname",
                             "TIN",
                             "licenseNumber",
                             "other",
                             "otherID"});
-                table1237.AddRow(new string[] {
+                table1238.AddRow(new string[] {
                             string.Format("{0}", orgname),
                             string.Format("{0}", tIN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", other),
                             string.Format("{0}", otherID)});
-#line 7033
+#line 7039
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Organization orgname , Tin , LicenseNumber ,ot" +
-                        "her and other ID", ((string)(null)), table1237, "And ");
+                        "her and other ID", ((string)(null)), table1238, "And ");
 #line hidden
-                global::Reqnroll.Table table1238 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1239 = new global::Reqnroll.Table(new string[] {
                             "name prefix",
                             "first name",
                             "middle name",
                             "last name",
-                            "designation"});
-                table1238.AddRow(new string[] {
+                            "Designation1"});
+                table1239.AddRow(new string[] {
                             string.Format("{0}", namePrefix1),
                             string.Format("{0}", firstName),
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", designation1)});
-#line 7037
- await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table1238, "And ");
+#line 7043
+ await testRunner.AndAsync("enter nameprefix,firstname, middlename, lastname, designation", ((string)(null)), table1239, "And ");
 #line hidden
-                global::Reqnroll.Table table1239 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1240 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
-                            "state2",
-                            "city2",
+                            "State2",
+                            "City2",
                             "Zip",
                             "Country",
                             "fax",
                             "Email address"});
-                table1239.AddRow(new string[] {
+                table1240.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
-                            "<state2>",
-                            "<city2>",
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2),
                             string.Format("{0}", zip),
-                            string.Format("{0}", country1),
+                            string.Format("{0}", country),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 7041
+#line 7047
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
-                        "de, country, fax and email  for the involved party", ((string)(null)), table1239, "And ");
+                        "de, country, fax and email  for the involved party", ((string)(null)), table1240, "And ");
 #line hidden
-#line 7045
+#line 7051
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7046
+#line 7052
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-                global::Reqnroll.Table table1240 = new global::Reqnroll.Table(new string[] {
-                            "updatedOrgname"});
-                table1240.AddRow(new string[] {
-                            string.Format("{0}", updatedOrgname)});
-#line 7053
- await testRunner.AndAsync("Edit Primary InvovePartyType,Change the data and save the changes", ((string)(null)), table1240, "And ");
 #line hidden
                 global::Reqnroll.Table table1241 = new global::Reqnroll.Table(new string[] {
                             "updatedOrgname"});
                 table1241.AddRow(new string[] {
                             string.Format("{0}", updatedOrgname)});
-#line 7056
- await testRunner.ThenAsync("Validate the updated data of the Primary Subject type", ((string)(null)), table1241, "Then ");
+#line 7059
+ await testRunner.AndAsync("Edit Primary InvovePartyType for non-Enumerated organization,Change the data and " +
+                        "save the changes", ((string)(null)), table1241, "And ");
 #line hidden
                 global::Reqnroll.Table table1242 = new global::Reqnroll.Table(new string[] {
-                            "Is there any Involved Party Dropdown"});
+                            "updatedOrgname"});
                 table1242.AddRow(new string[] {
-                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
-#line 7059
- await testRunner.WhenAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table1242, "When ");
+                            string.Format("{0}", updatedOrgname)});
+#line 7062
+ await testRunner.ThenAsync("Validate the updated data of the Primary Subject type as non-enumerated Organizat" +
+                        "ion", ((string)(null)), table1242, "Then ");
 #line hidden
                 global::Reqnroll.Table table1243 = new global::Reqnroll.Table(new string[] {
-                            "Question1"});
+                            "Is there any Involved Party Dropdown"});
                 table1243.AddRow(new string[] {
-                            string.Format("{0}", question1)});
-#line 7069
- await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table1243, "And ");
+                            string.Format("{0}", isThereAnyInvolvedPartyDropdown)});
+#line 7065
+ await testRunner.WhenAsync(string.Format("is there anotherinvolved party dropdown is selected on the \"{0}\"", addInvParty), ((string)(null)), table1243, "When ");
 #line hidden
                 global::Reqnroll.Table table1244 = new global::Reqnroll.Table(new string[] {
-                            "Question2",
-                            "Question3"});
+                            "Question1"});
                 table1244.AddRow(new string[] {
-                            string.Format("{0}", question2),
-                            string.Format("{0}", question3)});
-#line 7073
- await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1244, "And ");
+                            string.Format("{0}", question1)});
+#line 7075
+ await testRunner.AndAsync("Questionone Is this a resubmission", ((string)(null)), table1244, "And ");
 #line hidden
                 global::Reqnroll.Table table1245 = new global::Reqnroll.Table(new string[] {
-                            "TestFile"});
+                            "Question2",
+                            "Question3"});
                 table1245.AddRow(new string[] {
-                            string.Format("{0}", testFile)});
-#line 7076
- await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1245, "And ");
-#line hidden
+                            string.Format("{0}", question2),
+                            string.Format("{0}", question3)});
 #line 7079
- await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 7080
- await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 7081
- await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 7082
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 7086
- await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1245, "And ");
 #line hidden
                 global::Reqnroll.Table table1246 = new global::Reqnroll.Table(new string[] {
-                            "UserEmailID"});
+                            "TestFile"});
                 table1246.AddRow(new string[] {
-                            string.Format("{0}", userEmailID)});
+                            string.Format("{0}", testFile)});
+#line 7082
+ await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1246, "And ");
+#line hidden
+#line 7085
+ await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 7086
+ await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
 #line 7087
- await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1246, "When ");
+ await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 7090
- await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 7088
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7091
- await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 7092
+ await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1247 = new global::Reqnroll.Table(new string[] {
-                            "Payor"});
+                            "UserEmailID"});
                 table1247.AddRow(new string[] {
-                            string.Format("{0}", payor)});
-#line 7092
- await testRunner.AndAsync("I select the payor", ((string)(null)), table1247, "And ");
+                            string.Format("{0}", userEmailID)});
+#line 7093
+ await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1247, "When ");
+#line hidden
+#line 7096
+ await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 7097
+ await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1248 = new global::Reqnroll.Table(new string[] {
-                            "Leads"});
+                            "Payor"});
                 table1248.AddRow(new string[] {
-                            string.Format("{0}", leads)});
-#line 7095
- await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
-                        " page", ((string)(null)), table1248, "And ");
-#line hidden
+                            string.Format("{0}", payor)});
 #line 7098
- await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 7099
- await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 7100
- await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("I select the payor", ((string)(null)), table1248, "And ");
 #line hidden
                 global::Reqnroll.Table table1249 = new global::Reqnroll.Table(new string[] {
+                            "Leads"});
+                table1249.AddRow(new string[] {
+                            string.Format("{0}", leads)});
+#line 7101
+ await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
+                        " page", ((string)(null)), table1249, "And ");
+#line hidden
+#line 7104
+ await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 7105
+ await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 7106
+ await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table1250 = new global::Reqnroll.Table(new string[] {
                             "Suspect Activity From",
                             "Suspect Activity To",
                             "Potential Overpayment Amount",
                             "Subject Organization"});
-                table1249.AddRow(new string[] {
+                table1250.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate),
                             string.Format("{0}", amount),
                             string.Format("{0}", updatedOrgname)});
-#line 7101
- await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1249, "Then ");
+#line 7107
+ await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1250, "Then ");
 #line hidden
-                global::Reqnroll.Table table1250 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1251 = new global::Reqnroll.Table(new string[] {
                             "Subject Type",
                             "Organization Name",
                             "TIN/EIN",
@@ -26997,7 +27016,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Country",
                             "Fax",
                             "Email"});
-                table1250.AddRow(new string[] {
+                table1251.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", updatedOrgname),
                             string.Format("{0}", tIN),
@@ -27018,10 +27037,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", country),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 7104
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1250, "Then ");
+#line 7110
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1251, "And ");
 #line hidden
-                global::Reqnroll.Table table1251 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1252 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
                             "First Name",
                             "Last Name",
@@ -27032,7 +27051,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Zip Code",
                             "Phone",
                             "Email"});
-                table1251.AddRow(new string[] {
+                table1252.AddRow(new string[] {
                             string.Format("{0}", orgName),
                             string.Format("{0}", userFirstName),
                             string.Format("{0}", userLastName),
@@ -27043,51 +27062,51 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 7107
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1251, "Then ");
-#line hidden
-                global::Reqnroll.Table table1252 = new global::Reqnroll.Table(new string[] {
-                            "ActivityName"});
-                table1252.AddRow(new string[] {
-                            string.Format("{0}", activityName)});
-#line 7110
- await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
-                        "l", ((string)(null)), table1252, "When ");
+#line 7113
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1252, "And ");
 #line hidden
                 global::Reqnroll.Table table1253 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1253.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 7113
- await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1253, "Then ");
-#line hidden
 #line 7116
- await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 7117
- await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
-                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
+                        "l", ((string)(null)), table1253, "When ");
 #line hidden
                 global::Reqnroll.Table table1254 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1254.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 7118
- await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1254, "When ");
-#line hidden
-#line 7121
- await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 7119
+ await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1254, "Then ");
 #line hidden
 #line 7122
- await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 7123
+ await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
+                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table1255 = new global::Reqnroll.Table(new string[] {
+                            "ActivityName"});
+                table1255.AddRow(new string[] {
+                            string.Format("{0}", activityName)});
+#line 7124
+ await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1255, "When ");
+#line hidden
+#line 7127
+ await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 7128
+ await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 7129
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7125
+#line 7131
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 7126
+#line 7132
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -27100,7 +27119,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             " Provider\" along with Validation of all the required fields ]")]
         [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
             " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "Sandeep.Krishnan@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Yes", "Involved Party Type - Associated Subject- Caregiver w/o req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Gainwell Organization", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "35", null)]
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Yes", "Involved Party Type - Associated Subject- Caregiver w/o req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Gainwell Organization", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "35", null)]
         public async global::System.Threading.Tasks.Task _36_OnlineReferralEndToEndScenarioWithEditingAdditionalInvolvedPartyPrimarySubjectTypeAsProviderAndAdditionalInvolvedPartyAsNon_EnumeratedProviderAlongWithValidationOfAllTheRequiredFields(
                     string invalidZipcode, 
                     string zipcodeValidationErrorMessage, 
@@ -27339,7 +27358,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     " Provider\" along with Validation of all the required fields ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 7140
+#line 7146
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -27349,320 +27368,320 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 7143
+#line 7149
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table1255 = new global::Reqnroll.Table(new string[] {
-                            "Email address"});
-                table1255.AddRow(new string[] {
-                            string.Format("{0}", emailAddress)});
-#line 7150
- await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1255, "When ");
-#line hidden
                 global::Reqnroll.Table table1256 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table1256.AddRow(new string[] {
+                            string.Format("{0}", emailAddress)});
+#line 7156
+ await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1256, "When ");
+#line hidden
+                global::Reqnroll.Table table1257 = new global::Reqnroll.Table(new string[] {
                             "UserFirstName",
                             "UserLastName",
                             "Org name",
                             "title"});
-                table1256.AddRow(new string[] {
+                table1257.AddRow(new string[] {
                             string.Format("{0}", userFirstName),
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 7153
+#line 7159
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
-                        "ata Page", ((string)(null)), table1256, "And ");
-#line hidden
-                global::Reqnroll.Table table1257 = new global::Reqnroll.Table(new string[] {
-                            "Phone number"});
-                table1257.AddRow(new string[] {
-                            string.Format("{0}", phoneNumber)});
-#line 7156
- await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1257, "And ");
+                        "ata Page", ((string)(null)), table1257, "And ");
 #line hidden
                 global::Reqnroll.Table table1258 = new global::Reqnroll.Table(new string[] {
+                            "Phone number"});
+                table1258.AddRow(new string[] {
+                            string.Format("{0}", phoneNumber)});
+#line 7162
+ await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1258, "And ");
+#line hidden
+                global::Reqnroll.Table table1259 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
                             "State",
                             "Zipcode"});
-                table1258.AddRow(new string[] {
+                table1259.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 7162
- await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1258, "And ");
+#line 7168
+ await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1259, "And ");
 #line hidden
-#line 7166
+#line 7172
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7167
+#line 7173
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table1259 = new global::Reqnroll.Table(new string[] {
-                            "referralType"});
-                table1259.AddRow(new string[] {
-                            string.Format("{0}", referralType)});
-#line 7174
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1259, "When ");
-#line hidden
                 global::Reqnroll.Table table1260 = new global::Reqnroll.Table(new string[] {
-                            "involvedPartyType"});
+                            "referralType"});
                 table1260.AddRow(new string[] {
-                            string.Format("{0}", involvedPartyType)});
-#line 7181
- await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1260, "And ");
+                            string.Format("{0}", referralType)});
+#line 7180
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1260, "And ");
 #line hidden
                 global::Reqnroll.Table table1261 = new global::Reqnroll.Table(new string[] {
-                            "caseOrReferenceNumber"});
+                            "involvedPartyType"});
                 table1261.AddRow(new string[] {
-                            string.Format("{0}", caseOrReferenceNumber)});
-#line 7184
- await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1261, "And ");
+                            string.Format("{0}", involvedPartyType)});
+#line 7187
+ await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1261, "And ");
 #line hidden
                 global::Reqnroll.Table table1262 = new global::Reqnroll.Table(new string[] {
-                            "detectedAs",
-                            "summary"});
+                            "caseOrReferenceNumber"});
                 table1262.AddRow(new string[] {
-                            string.Format("{0}", detectedAs),
-                            string.Format("{0}", summary)});
-#line 7187
- await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1262, "And ");
+                            string.Format("{0}", caseOrReferenceNumber)});
+#line 7190
+ await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1262, "And ");
 #line hidden
                 global::Reqnroll.Table table1263 = new global::Reqnroll.Table(new string[] {
-                            "amount",
-                            "detectionDate"});
+                            "detectedAs",
+                            "summary"});
                 table1263.AddRow(new string[] {
-                            string.Format("{0}", amount),
-                            string.Format("{0}", detectionDate)});
-#line 7190
- await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1263, "And ");
+                            string.Format("{0}", detectedAs),
+                            string.Format("{0}", summary)});
+#line 7193
+ await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1263, "And ");
 #line hidden
                 global::Reqnroll.Table table1264 = new global::Reqnroll.Table(new string[] {
-                            "incidentValidStartDate",
-                            "incidentValidEndDate"});
+                            "amount",
+                            "detectionDate"});
                 table1264.AddRow(new string[] {
-                            string.Format("{0}", incidentValidStartDate),
-                            string.Format("{0}", incidentValidEndDate)});
-#line 7197
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1264, "When ");
+                            string.Format("{0}", amount),
+                            string.Format("{0}", detectionDate)});
+#line 7196
+ await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1264, "And ");
 #line hidden
                 global::Reqnroll.Table table1265 = new global::Reqnroll.Table(new string[] {
-                            "State2",
-                            "City2"});
+                            "incidentValidStartDate",
+                            "incidentValidEndDate"});
                 table1265.AddRow(new string[] {
-                            string.Format("{0}", state2),
-                            string.Format("{0}", city2)});
-#line 7200
- await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1265, "And ");
-#line hidden
-#line 7205
- await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 7206
- await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+                            string.Format("{0}", incidentValidStartDate),
+                            string.Format("{0}", incidentValidEndDate)});
+#line 7203
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1265, "And ");
 #line hidden
                 global::Reqnroll.Table table1266 = new global::Reqnroll.Table(new string[] {
-                            "witnessDropdown"});
+                            "State2",
+                            "City2"});
                 table1266.AddRow(new string[] {
-                            string.Format("{0}", witnessDropdown)});
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2)});
+#line 7206
+ await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1266, "And ");
+#line hidden
 #line 7211
- await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1266, "And ");
+ await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 7212
+ await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1267 = new global::Reqnroll.Table(new string[] {
+                            "witnessDropdown"});
+                table1267.AddRow(new string[] {
+                            string.Format("{0}", witnessDropdown)});
+#line 7217
+ await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1267, "And ");
+#line hidden
+                global::Reqnroll.Table table1268 = new global::Reqnroll.Table(new string[] {
                             "orgname",
                             "name prefix",
                             "first name",
                             "middle name",
                             "last name",
                             "name suffix"});
-                table1267.AddRow(new string[] {
+                table1268.AddRow(new string[] {
                             string.Format("{0}", orgname),
                             string.Format("{0}", namePrefix),
                             string.Format("{0}", firstName),
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix)});
-#line 7214
+#line 7220
  await testRunner.AndAsync("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
                         "ed party middle name , associated party last name  and name suffix  on the \"<Inv" +
-                        "olved Parties page>\"", ((string)(null)), table1267, "And ");
-#line hidden
-                global::Reqnroll.Table table1268 = new global::Reqnroll.Table(new string[] {
-                            "designation"});
-                table1268.AddRow(new string[] {
-                            string.Format("{0}", designation)});
-#line 7217
- await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table1268, "And ");
+                        "olved Parties page>\"", ((string)(null)), table1268, "And ");
 #line hidden
                 global::Reqnroll.Table table1269 = new global::Reqnroll.Table(new string[] {
+                            "designation"});
+                table1269.AddRow(new string[] {
+                            string.Format("{0}", designation)});
+#line 7223
+ await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table1269, "And ");
+#line hidden
+                global::Reqnroll.Table table1270 = new global::Reqnroll.Table(new string[] {
                             "SSN",
                             "licenseNumber",
                             "ID Test"});
-                table1269.AddRow(new string[] {
+                table1270.AddRow(new string[] {
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
-#line 7224
- await testRunner.WhenAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table1269, "When ");
-#line hidden
-                global::Reqnroll.Table table1270 = new global::Reqnroll.Table(new string[] {
-                            "involvedPartyType",
-                            "detectedAs"});
-                table1270.AddRow(new string[] {
-                            string.Format("{0}", involvedPartyType),
-                            string.Format("{0}", detectedAs)});
-#line 7227
- await testRunner.AndAsync("enter How witness or external party reported this ,any additional info", ((string)(null)), table1270, "And ");
+#line 7230
+ await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table1270, "And ");
 #line hidden
                 global::Reqnroll.Table table1271 = new global::Reqnroll.Table(new string[] {
+                            "involvedPartyType",
+                            "detectedAs"});
+                table1271.AddRow(new string[] {
+                            string.Format("{0}", involvedPartyType),
+                            string.Format("{0}", detectedAs)});
+#line 7233
+ await testRunner.AndAsync("enter How witness or external party reported this ,any additional info", ((string)(null)), table1271, "And ");
+#line hidden
+                global::Reqnroll.Table table1272 = new global::Reqnroll.Table(new string[] {
                             "NPI",
                             "TIN",
                             "medicaid ID",
                             "Medicare ID",
                             "otherID"});
-                table1271.AddRow(new string[] {
+                table1272.AddRow(new string[] {
                             string.Format("{0}", nPI),
                             string.Format("{0}", tIN),
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 7230
- await testRunner.AndAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", involvedParty), ((string)(null)), table1271, "And ");
+#line 7236
+ await testRunner.AndAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", involvedParty), ((string)(null)), table1272, "And ");
 #line hidden
-                global::Reqnroll.Table table1272 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1273 = new global::Reqnroll.Table(new string[] {
                             "provider type",
                             "provider specialty",
                             "Taxonomy",
                             "other"});
-                table1272.AddRow(new string[] {
+                table1273.AddRow(new string[] {
                             string.Format("{0}", providerType),
                             string.Format("{0}", providerSpecialty),
                             string.Format("{0}", taxonomy),
                             string.Format("{0}", other)});
-#line 7233
+#line 7239
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
-                            "he \"{0}\"", involvedParty), ((string)(null)), table1272, "And ");
+                            "he \"{0}\"", involvedParty), ((string)(null)), table1273, "And ");
 #line hidden
-                global::Reqnroll.Table table1273 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1274 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
                             "State2",
                             "City2",
                             "Zipcode"});
-                table1273.AddRow(new string[] {
+                table1274.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 7241
- await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
-                        " county   and zip code", ((string)(null)), table1273, "When ");
-#line hidden
-                global::Reqnroll.Table table1274 = new global::Reqnroll.Table(new string[] {
-                            "DOB"});
-                table1274.AddRow(new string[] {
-                            string.Format("{0}", dOB)});
-#line 7249
- await testRunner.WhenAsync("enter DOB", ((string)(null)), table1274, "When ");
+#line 7247
+ await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table1274, "And ");
 #line hidden
                 global::Reqnroll.Table table1275 = new global::Reqnroll.Table(new string[] {
+                            "DOB"});
+                table1275.AddRow(new string[] {
+                            string.Format("{0}", dOB)});
+#line 7255
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table1275, "And ");
+#line hidden
+                global::Reqnroll.Table table1276 = new global::Reqnroll.Table(new string[] {
                             "country",
                             "Phone number",
                             "fax",
                             "Email address"});
-                table1275.AddRow(new string[] {
+                table1276.AddRow(new string[] {
                             string.Format("{0}", country),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 7252
- await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table1275, "And ");
+#line 7258
+ await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table1276, "And ");
 #line hidden
-#line 7255
+#line 7261
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7256
+#line 7262
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table1276 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1277 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable",
                             "additionalInvolvedPartyType",
                             "isAnotherExternalInvolvedPartyAvailable"});
-                table1276.AddRow(new string[] {
+                table1277.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 7263
- await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table1276, "And ");
+#line 7269
+ await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table1277, "And ");
 #line hidden
-                global::Reqnroll.Table table1277 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1278 = new global::Reqnroll.Table(new string[] {
                             "orgname",
                             "name prefix",
                             "first name",
-                            "middle name",
+                            "MiddleName1",
                             "last name",
                             "name suffix"});
-                table1277.AddRow(new string[] {
+                table1278.AddRow(new string[] {
                             string.Format("{0}", organization1),
                             string.Format("{0}", namePrefix1),
                             string.Format("{0}", firstName1),
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
-#line 7266
+#line 7272
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
-                        "ame suffix", ((string)(null)), table1277, "And ");
+                        "ame suffix", ((string)(null)), table1278, "And ");
 #line hidden
-                global::Reqnroll.Table table1278 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1279 = new global::Reqnroll.Table(new string[] {
                             "designation",
                             "DOB",
                             "SSN",
                             "licenseNumber",
                             "otherID",
                             "other"});
-                table1278.AddRow(new string[] {
+                table1279.AddRow(new string[] {
                             string.Format("{0}", designation),
                             string.Format("{0}", dOB),
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 7269
- await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table1278, "And ");
-#line hidden
-                global::Reqnroll.Table table1279 = new global::Reqnroll.Table(new string[] {
-                            "involvedPartyType",
-                            "detectedAs"});
-                table1279.AddRow(new string[] {
-                            string.Format("{0}", involvedPartyType),
-                            string.Format("{0}", detectedAs)});
-#line 7272
- await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
-                        "Required) and Any Additonal Information regarding the witness or external referr" +
-                        "ing party? (Optional)field on Second Time", ((string)(null)), table1279, "Then ");
+#line 7275
+ await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table1279, "And ");
 #line hidden
                 global::Reqnroll.Table table1280 = new global::Reqnroll.Table(new string[] {
+                            "involvedPartyType",
+                            "detectedAs"});
+                table1280.AddRow(new string[] {
+                            string.Format("{0}", involvedPartyType),
+                            string.Format("{0}", detectedAs)});
+#line 7278
+ await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
+                        "Required) and Any Additonal Information regarding the witness or external referr" +
+                        "ing party? (Optional)field on Second Time", ((string)(null)), table1280, "Then ");
+#line hidden
+                global::Reqnroll.Table table1281 = new global::Reqnroll.Table(new string[] {
                             "PrimaryPhone",
                             "SecondaryPhone",
                             "fax",
                             "Email address"});
-                table1280.AddRow(new string[] {
+                table1281.AddRow(new string[] {
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 7275
+#line 7281
  await testRunner.WhenAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
-                        "the involved party", ((string)(null)), table1280, "When ");
+                        "the involved party", ((string)(null)), table1281, "When ");
 #line hidden
-                global::Reqnroll.Table table1281 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1282 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
@@ -27670,7 +27689,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "City2",
                             "Zipcode",
                             "Country"});
-                table1281.AddRow(new string[] {
+                table1282.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
@@ -27678,132 +27697,132 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country1)});
-#line 7278
+#line 7284
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
-                        "de and country for the involved party", ((string)(null)), table1281, "And ");
+                        "de and country for the involved party", ((string)(null)), table1282, "And ");
 #line hidden
-#line 7281
+#line 7287
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-                global::Reqnroll.Table table1282 = new global::Reqnroll.Table(new string[] {
-                            "updatedOrgname"});
-                table1282.AddRow(new string[] {
-                            string.Format("{0}", updatedOrgname)});
-#line 7282
- await testRunner.AndAsync("Edit additionalInvolvedPartyType for non-Enumerated provider,Change the data and " +
-                        "save the changes", ((string)(null)), table1282, "And ");
 #line hidden
                 global::Reqnroll.Table table1283 = new global::Reqnroll.Table(new string[] {
                             "updatedOrgname"});
                 table1283.AddRow(new string[] {
                             string.Format("{0}", updatedOrgname)});
-#line 7285
- await testRunner.ThenAsync("Validate the updated data of the additional involved party Subject type as non-en" +
-                        "umerated provider", ((string)(null)), table1283, "Then ");
+#line 7288
+ await testRunner.AndAsync("Edit additionalInvolvedPartyType for non-Enumerated provider,Change the data and " +
+                        "save the changes", ((string)(null)), table1283, "And ");
 #line hidden
                 global::Reqnroll.Table table1284 = new global::Reqnroll.Table(new string[] {
-                            "isAnotherInvolvedPartyAvailable1"});
+                            "updatedOrgname"});
                 table1284.AddRow(new string[] {
-                            string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 7288
- await testRunner.WhenAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table1284, "When ");
-#line hidden
+                            string.Format("{0}", updatedOrgname)});
 #line 7291
- await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.ThenAsync("Validate the updated data of the additional involved party Subject type as non-en" +
+                        "umerated provider", ((string)(null)), table1284, "Then ");
 #line hidden
                 global::Reqnroll.Table table1285 = new global::Reqnroll.Table(new string[] {
-                            "Question1"});
+                            "isAnotherInvolvedPartyAvailable1"});
                 table1285.AddRow(new string[] {
-                            string.Format("{0}", question1)});
-#line 7300
- await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table1285, "When ");
+                            string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
+#line 7294
+ await testRunner.WhenAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table1285, "When ");
+#line hidden
+#line 7297
+ await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
                 global::Reqnroll.Table table1286 = new global::Reqnroll.Table(new string[] {
-                            "Question2",
-                            "Question3"});
+                            "Question1"});
                 table1286.AddRow(new string[] {
-                            string.Format("{0}", question2),
-                            string.Format("{0}", question3)});
-#line 7304
- await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1286, "And ");
+                            string.Format("{0}", question1)});
+#line 7306
+ await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table1286, "When ");
 #line hidden
                 global::Reqnroll.Table table1287 = new global::Reqnroll.Table(new string[] {
-                            "TestFile"});
+                            "Question2",
+                            "Question3"});
                 table1287.AddRow(new string[] {
-                            string.Format("{0}", testFile)});
-#line 7307
- await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1287, "And ");
-#line hidden
+                            string.Format("{0}", question2),
+                            string.Format("{0}", question3)});
 #line 7310
- await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 7311
- await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
-#line hidden
-#line 7312
- await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 7313
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 7317
- await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1287, "And ");
 #line hidden
                 global::Reqnroll.Table table1288 = new global::Reqnroll.Table(new string[] {
-                            "UserEmailID"});
+                            "TestFile"});
                 table1288.AddRow(new string[] {
-                            string.Format("{0}", userEmailID)});
+                            string.Format("{0}", testFile)});
+#line 7313
+ await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1288, "And ");
+#line hidden
+#line 7316
+ await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 7317
+ await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
 #line 7318
- await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1288, "When ");
+ await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 7321
- await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 7319
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7322
- await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line 7323
+ await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1289 = new global::Reqnroll.Table(new string[] {
-                            "Payor"});
+                            "UserEmailID"});
                 table1289.AddRow(new string[] {
-                            string.Format("{0}", payor)});
-#line 7323
- await testRunner.AndAsync("I select the payor", ((string)(null)), table1289, "And ");
+                            string.Format("{0}", userEmailID)});
+#line 7324
+ await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1289, "When ");
+#line hidden
+#line 7327
+ await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 7328
+ await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1290 = new global::Reqnroll.Table(new string[] {
-                            "Leads"});
+                            "Payor"});
                 table1290.AddRow(new string[] {
-                            string.Format("{0}", leads)});
-#line 7326
- await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
-                        " page", ((string)(null)), table1290, "And ");
-#line hidden
+                            string.Format("{0}", payor)});
 #line 7329
- await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 7330
- await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 7331
- await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("I select the payor", ((string)(null)), table1290, "And ");
 #line hidden
                 global::Reqnroll.Table table1291 = new global::Reqnroll.Table(new string[] {
+                            "Leads"});
+                table1291.AddRow(new string[] {
+                            string.Format("{0}", leads)});
+#line 7332
+ await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
+                        " page", ((string)(null)), table1291, "And ");
+#line hidden
+#line 7335
+ await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 7336
+ await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 7337
+ await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table1292 = new global::Reqnroll.Table(new string[] {
                             "Suspect Activity From",
                             "Suspect Activity To",
                             "Potential Overpayment Amount",
                             "Subject Organization",
                             "Subject First Name",
                             "Subject Last Name"});
-                table1291.AddRow(new string[] {
+                table1292.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate),
                             string.Format("{0}", amount),
                             string.Format("{0}", orgname),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 7332
- await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1291, "Then ");
+#line 7338
+ await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1292, "Then ");
 #line hidden
-                global::Reqnroll.Table table1292 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1293 = new global::Reqnroll.Table(new string[] {
                             "Subject Type",
                             "Organization Name",
                             "Name Prefix",
@@ -27835,7 +27854,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone",
                             "Fax",
                             "Email"});
-                table1292.AddRow(new string[] {
+                table1293.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", orgname),
                             string.Format("{0}", namePrefix),
@@ -27867,10 +27886,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 7335
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1292, "Then ");
+#line 7341
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1293, "And ");
 #line hidden
-                global::Reqnroll.Table table1293 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1294 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
                             "First Name",
                             "Last Name",
@@ -27881,7 +27900,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Zip Code",
                             "Phone",
                             "Email"});
-                table1293.AddRow(new string[] {
+                table1294.AddRow(new string[] {
                             string.Format("{0}", orgName),
                             string.Format("{0}", userFirstName),
                             string.Format("{0}", userLastName),
@@ -27892,45 +27911,45 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 7338
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1293, "Then ");
-#line hidden
-                global::Reqnroll.Table table1294 = new global::Reqnroll.Table(new string[] {
-                            "ActivityName"});
-                table1294.AddRow(new string[] {
-                            string.Format("{0}", activityName)});
-#line 7341
- await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
-                        "l", ((string)(null)), table1294, "When ");
+#line 7344
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1294, "And ");
 #line hidden
                 global::Reqnroll.Table table1295 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1295.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 7344
- await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1295, "Then ");
-#line hidden
 #line 7347
- await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 7348
- await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
-                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
+                        "l", ((string)(null)), table1295, "When ");
 #line hidden
                 global::Reqnroll.Table table1296 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1296.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 7349
- await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1296, "When ");
-#line hidden
-#line 7352
- await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 7350
+ await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1296, "Then ");
 #line hidden
 #line 7353
- await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 7354
+ await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
+                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table1297 = new global::Reqnroll.Table(new string[] {
+                            "ActivityName"});
+                table1297.AddRow(new string[] {
+                            string.Format("{0}", activityName)});
+#line 7355
+ await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1297, "When ");
+#line hidden
+#line 7358
+ await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 7359
+ await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 7360
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
@@ -27943,7 +27962,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             "d Provider\" along with Validation of all the required fields ]")]
         [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
             " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject- Provider w Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "Sandeep.Krishnan@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Yes", "Involved Party Type - Associated Subject- Caregiver w/o req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Gainwell Organization", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "36", null)]
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Yes", "Involved Party Type - Associated Subject- Caregiver w/o req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Gainwell Organization", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "36", null)]
         public async global::System.Threading.Tasks.Task _37_OnlineReferralEndToEndScenarioWithDeletingAdditionalInvolvedPartyPrimarySubjectTypeAsProviderAndAdditionalInvolvedPartyAsNon_EnumeratedProviderAlongWithValidationOfAllTheRequiredFields(
                     string invalidZipcode, 
                     string zipcodeValidationErrorMessage, 
@@ -28182,7 +28201,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                     "d Provider\" along with Validation of all the required fields ]", "", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 7369
+#line 7375
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -28192,162 +28211,153 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 7372
+#line 7378
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table1297 = new global::Reqnroll.Table(new string[] {
-                            "Email address"});
-                table1297.AddRow(new string[] {
-                            string.Format("{0}", emailAddress)});
-#line 7379
- await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1297, "When ");
-#line hidden
                 global::Reqnroll.Table table1298 = new global::Reqnroll.Table(new string[] {
+                            "Email address"});
+                table1298.AddRow(new string[] {
+                            string.Format("{0}", emailAddress)});
+#line 7385
+ await testRunner.WhenAsync(string.Format("I enter the email  on the \"{0}\"", subPartyInfo), ((string)(null)), table1298, "When ");
+#line hidden
+                global::Reqnroll.Table table1299 = new global::Reqnroll.Table(new string[] {
                             "UserFirstName",
                             "UserLastName",
                             "Org name",
                             "title"});
-                table1298.AddRow(new string[] {
+                table1299.AddRow(new string[] {
                             string.Format("{0}", userFirstName),
                             string.Format("{0}", userLastName),
                             string.Format("{0}", orgName),
                             string.Format("{0}", title)});
-#line 7382
+#line 7388
  await testRunner.AndAsync("I enter the userFN ,User lastname ,Org name ,title   filled on the Initial User D" +
-                        "ata Page", ((string)(null)), table1298, "And ");
-#line hidden
-                global::Reqnroll.Table table1299 = new global::Reqnroll.Table(new string[] {
-                            "Phone number"});
-                table1299.AddRow(new string[] {
-                            string.Format("{0}", phoneNumber)});
-#line 7385
- await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1299, "And ");
+                        "ata Page", ((string)(null)), table1299, "And ");
 #line hidden
                 global::Reqnroll.Table table1300 = new global::Reqnroll.Table(new string[] {
+                            "Phone number"});
+                table1300.AddRow(new string[] {
+                            string.Format("{0}", phoneNumber)});
+#line 7391
+ await testRunner.AndAsync("I enter the Phone number on the Initial User Data Page", ((string)(null)), table1300, "And ");
+#line hidden
+                global::Reqnroll.Table table1301 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
                             "State",
                             "Zipcode"});
-                table1300.AddRow(new string[] {
+                table1301.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
                             string.Format("{0}", state),
                             string.Format("{0}", zipcode)});
-#line 7391
- await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1300, "And ");
+#line 7397
+ await testRunner.AndAsync("I enter Address section yon the Initial User Data Page", ((string)(null)), table1301, "And ");
 #line hidden
-#line 7395
+#line 7401
  await testRunner.AndAsync("I click on the emailverification button on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7396
+#line 7402
  await testRunner.AndAsync("I should be navigated to the \"Referral Details page\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table1301 = new global::Reqnroll.Table(new string[] {
-                            "referralType"});
-                table1301.AddRow(new string[] {
-                            string.Format("{0}", referralType)});
-#line 7403
- await testRunner.WhenAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1301, "When ");
-#line hidden
                 global::Reqnroll.Table table1302 = new global::Reqnroll.Table(new string[] {
-                            "involvedPartyType"});
+                            "referralType"});
                 table1302.AddRow(new string[] {
-                            string.Format("{0}", involvedPartyType)});
-#line 7410
- await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1302, "And ");
+                            string.Format("{0}", referralType)});
+#line 7409
+ await testRunner.AndAsync("Referral Type is selected  on the second User Data Page", ((string)(null)), table1302, "And ");
 #line hidden
                 global::Reqnroll.Table table1303 = new global::Reqnroll.Table(new string[] {
-                            "caseOrReferenceNumber"});
+                            "involvedPartyType"});
                 table1303.AddRow(new string[] {
-                            string.Format("{0}", caseOrReferenceNumber)});
-#line 7413
- await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1303, "And ");
+                            string.Format("{0}", involvedPartyType)});
+#line 7416
+ await testRunner.AndAsync(string.Format("Suspect or Subject or Involved Party Type dropdown is selected  on the \"{0}\"", referral), ((string)(null)), table1303, "And ");
 #line hidden
                 global::Reqnroll.Table table1304 = new global::Reqnroll.Table(new string[] {
-                            "detectedAs",
-                            "summary"});
+                            "caseOrReferenceNumber"});
                 table1304.AddRow(new string[] {
-                            string.Format("{0}", detectedAs),
-                            string.Format("{0}", summary)});
-#line 7416
- await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1304, "And ");
+                            string.Format("{0}", caseOrReferenceNumber)});
+#line 7419
+ await testRunner.AndAsync(string.Format("enter case or reference number  on the \"{0}\"", referral), ((string)(null)), table1304, "And ");
 #line hidden
                 global::Reqnroll.Table table1305 = new global::Reqnroll.Table(new string[] {
-                            "amount",
-                            "detectionDate"});
+                            "detectedAs",
+                            "summary"});
                 table1305.AddRow(new string[] {
-                            string.Format("{0}", amount),
-                            string.Format("{0}", detectionDate)});
-#line 7419
- await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1305, "And ");
+                            string.Format("{0}", detectedAs),
+                            string.Format("{0}", summary)});
+#line 7422
+ await testRunner.AndAsync(string.Format("How was this detected  ,please provide  a Summary of this referral  on the \"{0}\"", referral), ((string)(null)), table1305, "And ");
 #line hidden
                 global::Reqnroll.Table table1306 = new global::Reqnroll.Table(new string[] {
-                            "incidentValidStartDate",
-                            "incidentValidEndDate"});
+                            "amount",
+                            "detectionDate"});
                 table1306.AddRow(new string[] {
-                            string.Format("{0}", incidentValidStartDate),
-                            string.Format("{0}", incidentValidEndDate)});
-#line 7426
- await testRunner.WhenAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1306, "When ");
+                            string.Format("{0}", amount),
+                            string.Format("{0}", detectionDate)});
+#line 7425
+ await testRunner.AndAsync("enter Amount ,detectiondate", ((string)(null)), table1306, "And ");
 #line hidden
                 global::Reqnroll.Table table1307 = new global::Reqnroll.Table(new string[] {
-                            "State2",
-                            "City2"});
+                            "incidentValidStartDate",
+                            "incidentValidEndDate"});
                 table1307.AddRow(new string[] {
-                            string.Format("{0}", state2),
-                            string.Format("{0}", city2)});
-#line 7429
- await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1307, "And ");
-#line hidden
-#line 7434
- await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 7435
- await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+                            string.Format("{0}", incidentValidStartDate),
+                            string.Format("{0}", incidentValidEndDate)});
+#line 7432
+ await testRunner.AndAsync(string.Format("enter valid incidentStartDate , incidentEndDate  on the \"{0}\"", referral), ((string)(null)), table1307, "And ");
 #line hidden
                 global::Reqnroll.Table table1308 = new global::Reqnroll.Table(new string[] {
-                            "witnessDropdown"});
+                            "State2",
+                            "City2"});
                 table1308.AddRow(new string[] {
-                            string.Format("{0}", witnessDropdown)});
+                            string.Format("{0}", state2),
+                            string.Format("{0}", city2)});
+#line 7435
+ await testRunner.AndAsync(string.Format("enter state  and city  on the \"{0}\"", referral), ((string)(null)), table1308, "And ");
+#line hidden
 #line 7440
- await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1308, "And ");
+ await testRunner.AndAsync(string.Format("I click on the Next button on the \"{0}\"", referral), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 7441
+ await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1309 = new global::Reqnroll.Table(new string[] {
+                            "witnessDropdown"});
+                table1309.AddRow(new string[] {
+                            string.Format("{0}", witnessDropdown)});
+#line 7446
+ await testRunner.AndAsync(string.Format("Is thisInvolved Party dropdown is selected  on the \"{0}\"", involvedParty), ((string)(null)), table1309, "And ");
+#line hidden
+                global::Reqnroll.Table table1310 = new global::Reqnroll.Table(new string[] {
                             "orgname",
                             "name prefix",
                             "first name",
                             "middle name",
                             "last name",
                             "name suffix"});
-                table1309.AddRow(new string[] {
+                table1310.AddRow(new string[] {
                             string.Format("{0}", orgname),
                             string.Format("{0}", namePrefix),
                             string.Format("{0}", firstName),
                             string.Format("{0}", middleName),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix)});
-#line 7443
+#line 7449
  await testRunner.AndAsync("enter InvolvedParty orgname , name prefix , associated party first name ,associat" +
                         "ed party middle name , associated party last name  and name suffix  on the \"<Inv" +
-                        "olved Parties page>\"", ((string)(null)), table1309, "And ");
-#line hidden
-                global::Reqnroll.Table table1310 = new global::Reqnroll.Table(new string[] {
-                            "designation"});
-                table1310.AddRow(new string[] {
-                            string.Format("{0}", designation)});
-#line 7446
- await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table1310, "And ");
+                        "olved Parties page>\"", ((string)(null)), table1310, "And ");
 #line hidden
                 global::Reqnroll.Table table1311 = new global::Reqnroll.Table(new string[] {
-                            "InvalidDOB",
-                            "DOB validation error message"});
+                            "designation"});
                 table1311.AddRow(new string[] {
-                            string.Format("{0}", invalidDOB),
-                            string.Format("{0}", dOBValidationErrorMessage)});
-#line 7449
- await testRunner.ThenAsync(string.Format("i enter invalid date of birth and validate for \"{0}\"", involvedParty), ((string)(null)), table1311, "Then ");
+                            string.Format("{0}", designation)});
+#line 7452
+ await testRunner.AndAsync("enter InvolvedParty Designation", ((string)(null)), table1311, "And ");
 #line hidden
                 global::Reqnroll.Table table1312 = new global::Reqnroll.Table(new string[] {
                             "SSN",
@@ -28357,8 +28367,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", iDTest)});
-#line 7453
- await testRunner.WhenAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table1312, "When ");
+#line 7459
+ await testRunner.AndAsync("enter SSN , licenseNumber ,ID Test", ((string)(null)), table1312, "And ");
 #line hidden
                 global::Reqnroll.Table table1313 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType",
@@ -28366,7 +28376,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                 table1313.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 7456
+#line 7462
  await testRunner.AndAsync("enter How witness or external party reported this ,any additional info", ((string)(null)), table1313, "And ");
 #line hidden
                 global::Reqnroll.Table table1314 = new global::Reqnroll.Table(new string[] {
@@ -28381,7 +28391,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", medicaidID),
                             string.Format("{0}", medicareID),
                             string.Format("{0}", otherID)});
-#line 7459
+#line 7465
  await testRunner.AndAsync(string.Format("enter InvolvedParty NPI , TIN ,medicaid ID ,Medicare ID , otherID on the \"{0}\"", involvedParty), ((string)(null)), table1314, "And ");
 #line hidden
                 global::Reqnroll.Table table1315 = new global::Reqnroll.Table(new string[] {
@@ -28394,153 +28404,127 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", providerSpecialty),
                             string.Format("{0}", taxonomy),
                             string.Format("{0}", other)});
-#line 7462
+#line 7468
  await testRunner.AndAsync(string.Format("enter InvolvedParty provider type , provider specialty ,Taxonomy  and other  on t" +
                             "he \"{0}\"", involvedParty), ((string)(null)), table1315, "And ");
 #line hidden
                 global::Reqnroll.Table table1316 = new global::Reqnroll.Table(new string[] {
-                            "Invalid zipcode",
-                            "Zipcode validation error message"});
-                table1316.AddRow(new string[] {
-                            string.Format("{0}", invalidZipcode),
-                            string.Format("{0}", zipcodeValidationErrorMessage)});
-#line 7465
- await testRunner.ThenAsync("I enter the invalid zipcode and validate for provider", ((string)(null)), table1316, "Then ");
-#line hidden
-#line 7469
- await testRunner.AndAsync(string.Format("verify Dropdown lists are in alphabetical order \"<stateDropdown>\" on the \"{0}\" in" +
-                            " involved party page", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 7470
- await testRunner.AndAsync(string.Format("verify county Dropdown lists are in alphabetical order \"<CountyDropdown>\" on the " +
-                            "page \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-                global::Reqnroll.Table table1317 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
                             "State2",
                             "City2",
                             "Zipcode"});
-                table1317.AddRow(new string[] {
+                table1316.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
                             string.Format("{0}", state2),
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode)});
-#line 7471
- await testRunner.WhenAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
-                        " county   and zip code", ((string)(null)), table1317, "When ");
+#line 7477
+ await testRunner.AndAsync("InvolvedParty street_Address_lineone , street_Address_linetwo , city as, state  ," +
+                        " county   and zip code", ((string)(null)), table1316, "And ");
+#line hidden
+                global::Reqnroll.Table table1317 = new global::Reqnroll.Table(new string[] {
+                            "DOB"});
+                table1317.AddRow(new string[] {
+                            string.Format("{0}", dOB)});
+#line 7483
+ await testRunner.AndAsync("enter DOB", ((string)(null)), table1317, "And ");
 #line hidden
                 global::Reqnroll.Table table1318 = new global::Reqnroll.Table(new string[] {
-                            "Invalid email",
-                            "Email validation error message"});
-                table1318.AddRow(new string[] {
-                            string.Format("{0}", invalidEmail),
-                            string.Format("{0}", emailValidationErrorMessage)});
-#line 7474
- await testRunner.ThenAsync(string.Format("I enter the invalid email id  and validate for \"{0}\"", involvedParty), ((string)(null)), table1318, "Then ");
-#line hidden
-                global::Reqnroll.Table table1319 = new global::Reqnroll.Table(new string[] {
-                            "DOB"});
-                table1319.AddRow(new string[] {
-                            string.Format("{0}", dOB)});
-#line 7477
- await testRunner.WhenAsync("enter DOB", ((string)(null)), table1319, "When ");
-#line hidden
-                global::Reqnroll.Table table1320 = new global::Reqnroll.Table(new string[] {
                             "country",
                             "Phone number",
                             "fax",
                             "Email address"});
-                table1320.AddRow(new string[] {
+                table1318.AddRow(new string[] {
                             string.Format("{0}", country),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 7480
- await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table1320, "And ");
+#line 7486
+ await testRunner.AndAsync("InvolvedParty country,  phone number , fax  and email address", ((string)(null)), table1318, "And ");
 #line hidden
-#line 7483
+#line 7489
  await testRunner.AndAsync(string.Format("I click on the continue button on the \"{0}\"", involvedParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7484
+#line 7490
  await testRunner.AndAsync(string.Format("I should be navigated to the \"{0}\"", addInvParty), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table1321 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1319 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable",
                             "additionalInvolvedPartyType",
                             "isAnotherExternalInvolvedPartyAvailable"});
-                table1321.AddRow(new string[] {
+                table1319.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable),
                             string.Format("{0}", additionalInvolvedPartyType),
                             string.Format("{0}", isAnotherExternalInvolvedPartyAvailable)});
-#line 7491
- await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table1321, "And ");
+#line 7497
+ await testRunner.AndAsync("I select the another involved Party from the drop down menu", ((string)(null)), table1319, "And ");
 #line hidden
-                global::Reqnroll.Table table1322 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1320 = new global::Reqnroll.Table(new string[] {
                             "orgname",
                             "name prefix",
                             "first name",
                             "middle name",
                             "last name",
                             "name suffix"});
-                table1322.AddRow(new string[] {
+                table1320.AddRow(new string[] {
                             string.Format("{0}", organization1),
                             string.Format("{0}", namePrefix1),
                             string.Format("{0}", firstName1),
                             string.Format("{0}", middleName1),
                             string.Format("{0}", lastName1),
                             string.Format("{0}", nameSuffix1)});
-#line 7494
+#line 7500
  await testRunner.AndAsync("enter InvolvedParty Non-Enumertaed Provider orgname , name prefix , associated pa" +
                         "rty first name ,associated party middle name , associated party last name  and n" +
-                        "ame suffix", ((string)(null)), table1322, "And ");
+                        "ame suffix", ((string)(null)), table1320, "And ");
 #line hidden
-                global::Reqnroll.Table table1323 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1321 = new global::Reqnroll.Table(new string[] {
                             "designation",
                             "DOB",
                             "SSN",
                             "licenseNumber",
                             "otherID",
                             "other"});
-                table1323.AddRow(new string[] {
+                table1321.AddRow(new string[] {
                             string.Format("{0}", designation),
                             string.Format("{0}", dOB),
                             string.Format("{0}", sSN),
                             string.Format("{0}", licenseNumber),
                             string.Format("{0}", otherID),
                             string.Format("{0}", other)});
-#line 7497
- await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table1323, "And ");
+#line 7503
+ await testRunner.AndAsync("enter InvolvedParty Designation  ,DOB , SSN ,  licenseNumber ,other ID ,other", ((string)(null)), table1321, "And ");
 #line hidden
-                global::Reqnroll.Table table1324 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1322 = new global::Reqnroll.Table(new string[] {
                             "involvedPartyType",
                             "detectedAs"});
-                table1324.AddRow(new string[] {
+                table1322.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", detectedAs)});
-#line 7500
+#line 7506
  await testRunner.ThenAsync("I enter the Text for How did this witness/external referring party report this? (" +
                         "Required) and Any Additonal Information regarding the witness or external referr" +
-                        "ing party? (Optional)field on Second Time", ((string)(null)), table1324, "Then ");
+                        "ing party? (Optional)field on Second Time", ((string)(null)), table1322, "Then ");
 #line hidden
-                global::Reqnroll.Table table1325 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1323 = new global::Reqnroll.Table(new string[] {
                             "PrimaryPhone",
                             "SecondaryPhone",
                             "fax",
                             "Email address"});
-                table1325.AddRow(new string[] {
+                table1323.AddRow(new string[] {
                             string.Format("{0}", primaryPhone),
                             string.Format("{0}", secondaryPhone),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 7503
+#line 7509
  await testRunner.WhenAsync("enter primary phone number ,secondary phone number , fax aand email address  for " +
-                        "the involved party", ((string)(null)), table1325, "When ");
+                        "the involved party", ((string)(null)), table1323, "When ");
 #line hidden
-                global::Reqnroll.Table table1326 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1324 = new global::Reqnroll.Table(new string[] {
                             "Address1",
                             "Address2",
                             "City",
@@ -28548,7 +28532,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "City2",
                             "Zipcode",
                             "Country"});
-                table1326.AddRow(new string[] {
+                table1324.AddRow(new string[] {
                             string.Format("{0}", address1),
                             string.Format("{0}", address2),
                             string.Format("{0}", city),
@@ -28556,119 +28540,119 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", city2),
                             string.Format("{0}", zipcode),
                             string.Format("{0}", country1)});
-#line 7506
+#line 7512
  await testRunner.AndAsync("street address line one , street address line two, city , state , county , zip co" +
-                        "de and country for the involved party", ((string)(null)), table1326, "And ");
+                        "de and country for the involved party", ((string)(null)), table1324, "And ");
 #line hidden
-#line 7509
+#line 7515
  await testRunner.AndAsync("I continue with Involved Party Selection and proceed to the next page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7510
+#line 7516
  await testRunner.AndAsync("Delete additionalInvolvedPartyType", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table1327 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1325 = new global::Reqnroll.Table(new string[] {
                             "isAnotherInvolvedPartyAvailable1"});
-                table1327.AddRow(new string[] {
+                table1325.AddRow(new string[] {
                             string.Format("{0}", isAnotherInvolvedPartyAvailable1)});
-#line 7511
- await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table1327, "And ");
+#line 7517
+ await testRunner.AndAsync("I Select the  another involved Party from the drop down menu as NO", ((string)(null)), table1325, "And ");
 #line hidden
-#line 7514
+#line 7520
  await testRunner.ThenAsync("I Click Finish Involved Party Selection and Proceed to Next Section button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-                global::Reqnroll.Table table1328 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1326 = new global::Reqnroll.Table(new string[] {
                             "Question1"});
-                table1328.AddRow(new string[] {
+                table1326.AddRow(new string[] {
                             string.Format("{0}", question1)});
-#line 7523
- await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table1328, "When ");
+#line 7529
+ await testRunner.WhenAsync("Questionone Is this a resubmission", ((string)(null)), table1326, "When ");
 #line hidden
-                global::Reqnroll.Table table1329 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1327 = new global::Reqnroll.Table(new string[] {
                             "Question2",
                             "Question3"});
-                table1329.AddRow(new string[] {
+                table1327.AddRow(new string[] {
                             string.Format("{0}", question2),
                             string.Format("{0}", question3)});
-#line 7527
- await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1329, "And ");
-#line hidden
-                global::Reqnroll.Table table1330 = new global::Reqnroll.Table(new string[] {
-                            "TestFile"});
-                table1330.AddRow(new string[] {
-                            string.Format("{0}", testFile)});
-#line 7530
- await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1330, "And ");
-#line hidden
 #line 7533
+ await testRunner.AndAsync("Questiontwo, QuestionThree", ((string)(null)), table1327, "And ");
+#line hidden
+                global::Reqnroll.Table table1328 = new global::Reqnroll.Table(new string[] {
+                            "TestFile"});
+                table1328.AddRow(new string[] {
+                            string.Format("{0}", testFile)});
+#line 7536
+ await testRunner.AndAsync("then uploading a file using file path", ((string)(null)), table1328, "And ");
+#line hidden
+#line 7539
  await testRunner.ThenAsync("click on proceed to next session button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 7534
+#line 7540
  await testRunner.WhenAsync("Click on Submit Button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 7535
+#line 7541
  await testRunner.ThenAsync("validate attachment upload progress and wait for the confirmation page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 7536
- await testRunner.ThenAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 7542
+ await testRunner.AndAsync("validate Enter New Referral is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7540
+#line 7546
  await testRunner.GivenAsync("when I open the fraud capture  application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table1331 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1329 = new global::Reqnroll.Table(new string[] {
                             "UserEmailID"});
-                table1331.AddRow(new string[] {
+                table1329.AddRow(new string[] {
                             string.Format("{0}", userEmailID)});
-#line 7541
- await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1331, "When ");
+#line 7547
+ await testRunner.WhenAsync("I enter the user email id  on the welcome fraude capture page", ((string)(null)), table1329, "When ");
 #line hidden
-#line 7544
+#line 7550
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7545
+#line 7551
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table1332 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1330 = new global::Reqnroll.Table(new string[] {
                             "Payor"});
-                table1332.AddRow(new string[] {
+                table1330.AddRow(new string[] {
                             string.Format("{0}", payor)});
-#line 7546
- await testRunner.AndAsync("I select the payor", ((string)(null)), table1332, "And ");
-#line hidden
-                global::Reqnroll.Table table1333 = new global::Reqnroll.Table(new string[] {
-                            "Leads"});
-                table1333.AddRow(new string[] {
-                            string.Format("{0}", leads)});
-#line 7549
- await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
-                        " page", ((string)(null)), table1333, "And ");
-#line hidden
 #line 7552
+ await testRunner.AndAsync("I select the payor", ((string)(null)), table1330, "And ");
+#line hidden
+                global::Reqnroll.Table table1331 = new global::Reqnroll.Table(new string[] {
+                            "Leads"});
+                table1331.AddRow(new string[] {
+                            string.Format("{0}", leads)});
+#line 7555
+ await testRunner.AndAsync("I click on CaseTracking and select the leads tab option on the fraud capture home" +
+                        " page", ((string)(null)), table1331, "And ");
+#line hidden
+#line 7558
  await testRunner.AndAsync("I Verify first and Last Name and click on the Latest created lead", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7553
+#line 7559
  await testRunner.AndAsync("I click on the Begin Editing on the fraud capture Lead detials Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7554
+#line 7560
  await testRunner.AndAsync("get the lead creation date", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table1334 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1332 = new global::Reqnroll.Table(new string[] {
                             "Suspect Activity From",
                             "Suspect Activity To",
                             "Potential Overpayment Amount",
                             "Subject Organization",
                             "Subject First Name",
                             "Subject Last Name"});
-                table1334.AddRow(new string[] {
+                table1332.AddRow(new string[] {
                             string.Format("{0}", incidentValidStartDate),
                             string.Format("{0}", incidentValidEndDate),
                             string.Format("{0}", amount),
                             string.Format("{0}", orgname),
                             string.Format("{0}", firstName),
                             string.Format("{0}", lastName)});
-#line 7555
- await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1334, "Then ");
+#line 7561
+ await testRunner.ThenAsync("validate the Lead Summary tab details against referral data", ((string)(null)), table1332, "Then ");
 #line hidden
-                global::Reqnroll.Table table1335 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1333 = new global::Reqnroll.Table(new string[] {
                             "Subject Type",
                             "Organization Name",
                             "Name Prefix",
@@ -28700,7 +28684,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Phone",
                             "Fax",
                             "Email"});
-                table1335.AddRow(new string[] {
+                table1333.AddRow(new string[] {
                             string.Format("{0}", involvedPartyType),
                             string.Format("{0}", orgname),
                             string.Format("{0}", namePrefix),
@@ -28732,10 +28716,10 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", fax),
                             string.Format("{0}", emailAddress)});
-#line 7558
- await testRunner.ThenAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1335, "Then ");
+#line 7564
+ await testRunner.AndAsync("validate the primary Subject edit form against referral data", ((string)(null)), table1333, "And ");
 #line hidden
-                global::Reqnroll.Table table1336 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table1334 = new global::Reqnroll.Table(new string[] {
                             "Organization/Corporation Name",
                             "First Name",
                             "Last Name",
@@ -28746,7 +28730,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Zip Code",
                             "Phone",
                             "Email"});
-                table1336.AddRow(new string[] {
+                table1334.AddRow(new string[] {
                             string.Format("{0}", orgName),
                             string.Format("{0}", userFirstName),
                             string.Format("{0}", userLastName),
@@ -28757,51 +28741,51 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", zipcode),
                             string.Format("{0}", phoneNumber),
                             string.Format("{0}", emailAddress)});
-#line 7561
- await testRunner.ThenAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1336, "Then ");
+#line 7567
+ await testRunner.AndAsync("validate the Lead Referral tab details against referral data", ((string)(null)), table1334, "And ");
+#line hidden
+                global::Reqnroll.Table table1335 = new global::Reqnroll.Table(new string[] {
+                            "ActivityName"});
+                table1335.AddRow(new string[] {
+                            string.Format("{0}", activityName)});
+#line 7570
+ await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
+                        "l", ((string)(null)), table1335, "When ");
+#line hidden
+                global::Reqnroll.Table table1336 = new global::Reqnroll.Table(new string[] {
+                            "ActivityName"});
+                table1336.AddRow(new string[] {
+                            string.Format("{0}", activityName)});
+#line 7573
+ await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1336, "Then ");
+#line hidden
+#line 7576
+ await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 7577
+ await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
+                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
                 global::Reqnroll.Table table1337 = new global::Reqnroll.Table(new string[] {
                             "ActivityName"});
                 table1337.AddRow(new string[] {
                             string.Format("{0}", activityName)});
-#line 7564
- await testRunner.WhenAsync("click on Activities tab and serach for the activity created through onlinereferra" +
-                        "l", ((string)(null)), table1337, "When ");
+#line 7578
+ await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1337, "When ");
 #line hidden
-                global::Reqnroll.Table table1338 = new global::Reqnroll.Table(new string[] {
-                            "ActivityName"});
-                table1338.AddRow(new string[] {
-                            string.Format("{0}", activityName)});
-#line 7567
- await testRunner.ThenAsync("the searched activity should be displayed in the activity list", ((string)(null)), table1338, "Then ");
-#line hidden
-#line 7570
- await testRunner.AndAsync("get the Activitydate created through online", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-#line 7571
- await testRunner.AndAsync("verify Due Date of the activity generated through an Online Referral submission i" +
-                        "s based on the Due Date configuration for that activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
-#line hidden
-                global::Reqnroll.Table table1339 = new global::Reqnroll.Table(new string[] {
-                            "ActivityName"});
-                table1339.AddRow(new string[] {
-                            string.Format("{0}", activityName)});
-#line 7572
- await testRunner.WhenAsync("user clicks on Edit button for an existing activity", ((string)(null)), table1339, "When ");
-#line hidden
-#line 7575
+#line 7581
  await testRunner.ThenAsync("Edit Activity page should be displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 7576
+#line 7582
  await testRunner.AndAsync("click on Attachment tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7577
+#line 7583
  await testRunner.AndAsync("verify summary, confirmation and test files are displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-#line 7579
+#line 7585
  await testRunner.WhenAsync("I click Logout Option to close the Fraud Capture Application", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 7580
+#line 7586
  await testRunner.ThenAsync("I should ne navigated to FC Logout confirmation Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }

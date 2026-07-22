@@ -37,9 +37,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDe
         #endregion
         public void ClickSummaryTab()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, summaryTab, 30);
+            CommonHelpers.WaitForElementVisiblity(Driver, summaryTab, 100);
             Driver.FindElement(summaryTab).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
         }
 
         public string GetLeadCreatedDate() => GetValue(leadCreatedDate);

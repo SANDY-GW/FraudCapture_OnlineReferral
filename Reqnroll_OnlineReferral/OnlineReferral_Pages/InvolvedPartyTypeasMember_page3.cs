@@ -312,12 +312,13 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         }
         public void ClickEditButton()
         {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             CommonHelpers.WaitForElementVisiblity(Driver, EditButton, 100);
             Driver.FindElement(EditButton).Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
         }
 
-        public void updateFirstNameField(string firstName)
+        public void updateMiddleNameField(string firstName)
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
 
@@ -325,14 +326,15 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             CommonHelpers.WaitForElementVisiblity(Driver, firstNameField, 1000);
 
 
-            Driver.FindElement(firstNameField).Clear();
-            Driver.FindElement(firstNameField).SendKeys(firstName);
-           
+            Driver.FindElement(middleNameField).Clear();
+            Driver.FindElement(middleNameField).SendKeys(firstName);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.ScrollUp(Driver);
         }
 
         public void clickSaveButton()
         {
-            CommonHelpers.WaitForPageToLoad(Driver, 200);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             CommonHelpers.ScrollUp(Driver);
             
            
@@ -340,15 +342,15 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             Driver.FindElement(SaveButton).Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
         }
-        public string getFirstName()
+        public string getMiddleName()
         {
-            Console.WriteLine("First Name: " + Driver.FindElement(firstNameField).GetAttribute("value"));
-            return Driver.FindElement(firstNameField).GetAttribute("value");
+            Console.WriteLine("Middle Name: " + Driver.FindElement(middleNameField).GetAttribute("value"));
+            return Driver.FindElement(middleNameField).GetAttribute("value");
         }
 
         public string GetFirstNameFieldValue()
         {
-            return getFirstName();
+            return getMiddleName();
         }
 
         public void clickGoToPreviousSectionButton()
