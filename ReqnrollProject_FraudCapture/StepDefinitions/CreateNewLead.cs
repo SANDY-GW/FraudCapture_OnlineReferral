@@ -65,7 +65,7 @@ namespace FraudCapture_BDD.StepDefinitions
             var leadsTabBUtton = Driver.FindElement(By.XPath("//a[@id='allLeadsTabId']"));
             var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + TabToSelect + "')]"));
             tabToSelect.Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
         }
         [When("I click CreateNewLead button to go to Lead Creation Page")]
         public void WhenIClickCreateNewLeadButtonToGoToLeadCreationPage()

@@ -22261,7 +22261,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             "ed Member with additional party type as \"Non-Enumertaed Member\" ]")]
         [global::NUnit.Framework.TestCaseAttribute("1234", "Not valid, use 5 or 9 digits or numbers in this format 12345-1234.", "abc", "Enter a valid email. Example: email@address.com", "UserFName", "UserLastName", "Sandeep.Krishnan@gainwelltechnologies.com", "9999999999", "MCO Example 1- Mapped to Enrollment Department", "QA_Test", "5615 High Point Dr", "Unit 151029", "Irving", "Texas", "75035", "04/10/2026", "04/05/2026", "Date cannot be in the future or Incident End Date cannot be prior to the Incident" +
             " Start Date", "Referral Type 1- Mapped to Dbl billing w/ distribution", "Involved Party Type - Associated Subject-Lawyer w/ Req fields", "123456789", "Tested by QA", "TestAutomation", "999999999.99", "02/13/2026", "02/13/2026", "02/13/2026", "Texas", "Washington", "Yes", "TestReferralFN", "TestReferralLN", "Gainwell", "Referral party relationship to the involved party - Mapped to Dbl billing w/ dist" +
-            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "Sandeep.Krishnan@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Yes", "Involved Party Type - Associated Subject-Lawyer w/ Req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "28", null)]
+            "ribution", "HMS", "Mr", "UserFN", "MN", "UserLN", "Jr", "TestDesignation", "123-45-6789", "1234567890", "1234567890", "1234567890", "12-3456789", "1234567890", "1234567890", "1234567890", "Provider Type - Mapped to Dbl billing w/ distribution", "Provider Specialty - Mapped to Dbl billing w/ distribution", "Tester", "Test", "United States", "8888888888", "Yes", "No", "MemberFN", "MemberLN", "1234567", "02/13/1990", "Test", "No", "Test", "No", "Test", "No", "Test", "Texas", "TestFile.txt", "No", "jayapradha.d@gainwelltechnologies.com", "Test Lead Testing - Automated Only Activity 1 (Lead Creation)", "$", "06/26/2028", "Date cannot be in the future.", "Yes", "Involved Party Type - Associated Subject-Lawyer w/ Req fields", "Yes", "asv", "Mr.", "Tommy", "Josh", "S", "Jr.", "Car Street", "456 StreetAddress4", "Texas", "11223", "Tester", "USA", "8974512631", "8974512645", "789065432", "234516", "josh@gmail.com", "test", "Test3", "Test4", "No", "female", "Program", "LOB1", "Group1", "Texas", "Submitting Party Information Page", "Referral Details page", "Involved Parties page", "Additional Involved Parties page", "Questions page", "DEMO", "Leads", "28", null)]
         public async global::System.Threading.Tasks.Task _29_OnlineReferralEndToEndScenarioWithPrimarySubjectTypeAsNon_EnumeratedMemberWithAdditionalPartyTypeAsNon_EnumertaedMember(
                     string invalidZipcode, 
                     string zipcodeValidationErrorMessage, 
@@ -22860,8 +22860,8 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             "Subject First Name",
                             "Subject Last Name"});
                 table1057.AddRow(new string[] {
-                            "<incidentStartDate>",
-                            "<incidentEndDate>",
+                            string.Format("{0}", incidentValidStartDate),
+                            string.Format("{0}", incidentValidEndDate),
                             string.Format("{0}", amount),
                             string.Format("{0}", organization1),
                             string.Format("{0}", firstName),
@@ -22897,14 +22897,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", organization1),
                             string.Format("{0}", namePrefix1),
                             string.Format("{0}", firstName),
-                            string.Format("{0}", middleName),
+                            string.Format("{0}", middleName1),
                             string.Format("{0}", lastName),
                             string.Format("{0}", nameSuffix1),
                             string.Format("{0}", designation1),
                             string.Format("{0}", dOB),
-                            string.Format("{0}", sSN),
-                            string.Format("{0}", otherID),
-                            string.Format("{0}", other),
+                            string.Format("{0}", ssn),
+                            "<OtherID>",
+                            string.Format("{0}", other1),
                             string.Format("{0}", streetAddress3),
                             string.Format("{0}", streetAddress4),
                             string.Format("{0}", city),

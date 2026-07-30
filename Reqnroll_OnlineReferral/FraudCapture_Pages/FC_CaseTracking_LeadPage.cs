@@ -310,7 +310,8 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             }
             catch (NoSuchElementException)
             {
-                //already in Edit mode, move along
+              
+                
             }
         }
         public void ExitLeadActivity()
@@ -418,6 +419,28 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             return activityduedate;
         }
 
+
+        //public void SelectLead(string leadId)
+        //{
+        //    var tableRows = Driver.FindElements(By.XPath("//*[@id='allLeadlist-wrapper']//table/tbody/tr"));
+
+        //    try
+        //    {
+        //        var selectedRow = tableRows.Where(row =>
+        //        {
+        //            var selectedLeadId = row.FindElements(By.TagName("small"))[1].Text.Trim();
+        //            return leadId == selectedLeadId;
+        //        }).First();
+
+        //        var viewLeadButton = selectedRow.FindElements(By.TagName("small"))[1];
+        //        CommonHelpers.ScrollByElementCoordinates(Driver, viewLeadButton);
+        //        viewLeadButton.Click();
+        //        CommonHelpers.SwitchtoNewWindow(Driver);
+        //    }
+        //    catch (NoSuchElementException) { }
+
+        //    CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+        //}
     }
 }
 
