@@ -1,4 +1,4 @@
-﻿using OpenQA.Selenium;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 
@@ -10,6 +10,78 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         protected readonly WebDriverWait Wait;
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
+
+        private void ClickWithFallback(params By[] locators)
+        {
+            var timeoutAt = DateTime.UtcNow.AddSeconds(40);
+            Exception? lastError = null;
+
+            while (DateTime.UtcNow < timeoutAt)
+            {
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 5);
+
+                foreach (var locator in locators)
+                {
+                    var elements = Driver.FindElements(locator);
+                    foreach (var element in elements)
+                    {
+                        try
+                        {
+                            if (!element.Displayed)
+                            {
+                                continue;
+                            }
+
+                            ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", element);
+                            System.Threading.Thread.Sleep(150);
+
+                            if (element.Enabled)
+                            {
+                                try
+                                {
+                                    element.Click();
+                                    return;
+                                }
+                                catch (WebDriverException ex)
+                                {
+                                    lastError = ex;
+                                }
+                            }
+
+                            ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", element);
+                            return;
+                        }
+                        catch (StaleElementReferenceException ex)
+                        {
+                            lastError = ex;
+                        }
+                        catch (ElementNotInteractableException ex)
+                        {
+                            lastError = ex;
+                            try
+                            {
+                                ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", element);
+                                return;
+                            }
+                            catch (WebDriverException jsEx)
+                            {
+                                lastError = jsEx;
+                            }
+                        }
+                        catch (WebDriverException ex)
+                        {
+                            lastError = ex;
+                        }
+                    }
+                }
+
+                System.Threading.Thread.Sleep(250);
+            }
+
+            var locatorDetails = string.Join(" | ", locators.Select(l => l.ToString()));
+            var errorDetails = lastError != null ? $" Last error: {lastError.Message}" : string.Empty;
+            throw new ElementNotInteractableException($"Unable to click element using the provided locators. Tried: {locatorDetails}.{errorDetails}");
+        }
 
         #region Elements
         //Add xpath here
@@ -47,7 +119,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         private readonly By ActivitiesDetailsTab = By.XPath("//a[@id='activitiesDetailsTabId']");
         private readonly By ActivitiesBeginEditing = By.XPath("//button[@id='leadViewEditEndButton']");
-
+        private readonly By LeadDetailsTab = By.XPath("//a[@id='leadDetailsId']");
+        private readonly By LeadDescriptionEditor = By.XPath("//div[contains(@class,'fr-element') and @contenteditable='true']");
+        private readonly By LeadSaveButton = By.XPath("//button[@id='leadSaveButton']");
         private readonly By ActivitiesEditButton = By.XPath("(//button[@id='editActivityId'])[1]");
         private readonly By ActivitiesViewButton = By.XPath("//button[@id='editActivityId']//following-sibling::button[contains(text(),'View')]");
         private readonly By AddBtnNotes = By.XPath("(//button[contains(text(),' Add ')])[1]");
@@ -56,8 +130,12 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         private readonly By AddSaveConfirmYesbtn = By.XPath("//button[(text()='Yes' )]");
         private readonly By ActivitiesAttachmentTab = By.XPath("//a[@id='attachmentTabId']");
         private readonly By ActivitiesAddAttachmentBtn = By.XPath("//button[contains(text(),'Add Attachment')]");
+        private readonly By AddActivityButton = By.XPath("//a[@id='addActivityId']");
+        private readonly By AddActivityNameDropdown = By.XPath("//select[@id='name']");
+        private readonly By AddActivityContinueButton = By.XPath("//div[@id='activitydetail']//button[normalize-space()='Continue' or .//span[normalize-space()='Continue']]");
+        private readonly By AddActivityAddButton = By.XPath("//div[@id='activitydetail']//button[normalize-space()='Add' or .//span[normalize-space()='Add']]");
         private readonly By uploadFileArrow = By.XPath("//label[contains(text(),'Choose a File or Drag Files To Upload')]");
-        private readonly By ActivityAttachmentCloseBtn= By.XPath("//img[@class='ActivityIndicator float-end ng-star-inserted']");
+        private readonly By ActivityAttachmentCloseBtn = By.XPath("//img[@alt='Activity Image' and contains(@class,'ActivityIndicator') and (contains(@class,'pointer') or contains(@src,'x-circle-fill.svg'))]");
 
         private readonly By AttachmentTab = By.XPath("//div[@id='noteAttachmentList']/descendant::ul//li/a[contains(text(),'Attachments')]");
         private readonly By ExitActivityButton = By.XPath("//div[@id='attachment']/descendant::button[text()='Exit Activity']");
@@ -71,7 +149,15 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         private By assignedToDropdown = By.XPath("//div[@id='activitiesContentId']/descendant::label[contains(text(),'Assigned To')]/following::div[1]");
 
-
+        private readonly By DownloadAttachmentManagerButton = By.XPath("//button[@title='Download Attachment Manager']");
+        private readonly By DownloadAttachmentManagerPopup = By.XPath("//div[contains(@class, 'modal') or contains(@class, 'dialog') or contains(@class, 'popup')]");
+        private readonly By DownloadAllAttachmentsButton = By.XPath("//div[contains(@class,'modal') or contains(@class,'dialog') or contains(@class,'popup')]//button[normalize-space()='Download All Attachments']");
+        private readonly By DownloadButtonInAttachmentManagerPopup = By.XPath("//div[contains(@class,'modal') or contains(@class,'dialog') or contains(@class,'popup')]//button[contains(@id,'allAttachmentManagerTbl') and contains(normalize-space(),'Download')]");
+        private readonly By DownloadConfirmYesButton = By.XPath("//div[contains(@class,'modal') or contains(@class,'dialog') or contains(@class,'popup')]//button[normalize-space()='Yes']");
+        private readonly By DownloadAttachmentManagerCloseButton = By.XPath("//div[contains(@class,'modal') or contains(@class,'dialog') or contains(@class,'popup')]//button[contains(normalize-space(),'Close') or contains(@class,'close') or contains(@aria-label,'close')]");
+        private readonly By ViewAttachmentButton = By.XPath("//button[@title='View Attachment']");
+        private readonly By BackAttachmentButton = By.XPath("//button[@id='noteAttachmentBackButton']");
+        private readonly By BackAttachmentButtonFallback = By.XPath("//button[@id='noteAttachmentBackButton' or normalize-space()='Back' or contains(@title,'Back')]");
 
         #endregion
 
@@ -211,10 +297,19 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         }
         public void ClickAddBtnNotes()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
-            //CommonHelpers.WaitForPageLoading(Driver);
-            CommonHelpers.WaitForElementVisiblity(Driver, AddBtnNotes, 50);
-            Driver.FindElement(AddBtnNotes).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            CommonHelpers.WaitForPageLoading(Driver);
+
+            ClickWithFallback(
+                By.XPath("//trix-editor[@id='notes']/ancestor::fc-activity-note-attachment//button[@title='Add' or normalize-space()='Add' or .//span[normalize-space()='Add'] ]"),
+                By.XPath("//trix-editor[@id='notes']/ancestor::div[contains(@id,'activity') or contains(@id,'note')][1]//button[@title='Add' or normalize-space()='Add' or .//span[normalize-space()='Add'] ]"),
+                By.XPath("//div[@id='activitydetail']//button[@title='Add']"),
+                By.XPath("//button[@title='Add' and contains(@class,'orangeBtn') and not(contains(@class,'disabled'))]"),
+                AddBtnNotes,
+                By.XPath("(//button[normalize-space()='Add' and not(@disabled)])[last()]")
+            );
+
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
         }
         public void ClickAddNotesTextArea(string AddNotes)
         {
@@ -254,7 +349,6 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         }
         public void ClickLeadIDFirstLink()
         {
-           
             CommonHelpers.WaitForElementVisiblity(Driver, LeadIDFirstLink, 120);
             Driver.FindElement(LeadIDFirstLink).Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
@@ -283,69 +377,205 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
             CommonHelpers.WaitForElementVisiblity(Driver, ActivitiesAddAttachmentBtn, 20);
-            Driver.FindElement(ActivitiesAddAttachmentBtn).Click();
+            ClickWithFallback(
+                ActivitiesAddAttachmentBtn,
+                By.XPath("//button[contains(normalize-space(),'Add Attachment') or .//span[contains(normalize-space(),'Add Attachment')]]")
+            );
         }
+
+        public void ClickAddActivityButton()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+
+            var locators = new List<By>
+            {
+                By.XPath("//a[@id='addActivityId']"),
+                By.XPath("//button[@id='addActivityId']"),
+                By.XPath("//*[contains(@id,'addActivity') and (self::a or self::button)]"),
+                By.XPath("//button[contains(normalize-space(),'Add Activity') or .//span[contains(normalize-space(),'Add Activity')]]"),
+                By.XPath("//a[contains(normalize-space(),'Add Activity')]")
+            };
+
+            foreach (var locator in locators)
+            {
+                var elements = Driver.FindElements(locator);
+                var element = elements.FirstOrDefault(e => e.Displayed && e.Enabled);
+                if (element != null)
+                {
+                    ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", element);
+                    try
+                    {
+                        element.Click();
+                    }
+                    catch
+                    {
+                        ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", element);
+                    }
+                    CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+                    return;
+                }
+            }
+
+            throw new NoSuchElementException("Unable to locate Add Activity button using known locators.");
+        }
+
+        public void SelectAddActivityName(string activityName)
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            CommonHelpers.WaitForElementVisiblity(Driver, AddActivityNameDropdown, 30);
+
+            var requested = (activityName ?? string.Empty).Trim();
+            var dropdownElement = Driver.FindElement(AddActivityNameDropdown);
+            var dropdown = new SelectElement(dropdownElement);
+
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(20));
+            wait.Until(_ => dropdown.Options.Count > 1);
+
+            static string Normalize(string text)
+            {
+                return string.Join(" ", (text ?? string.Empty)
+                    .Split(new[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries))
+                    .Trim()
+                    .ToLowerInvariant();
+            }
+
+            if (!string.IsNullOrWhiteSpace(requested))
+            {
+                var byValue = dropdown.Options.FirstOrDefault(o =>
+                    string.Equals((o.GetAttribute("value") ?? string.Empty).Trim(), requested, StringComparison.OrdinalIgnoreCase));
+
+                if (byValue != null)
+                {
+                    byValue.Click();
+                    return;
+                }
+
+                var normalizedRequested = Normalize(requested);
+
+                var byExactText = dropdown.Options.FirstOrDefault(o =>
+                    Normalize(o.Text) == normalizedRequested);
+
+                if (byExactText != null)
+                {
+                    byExactText.Click();
+                    return;
+                }
+
+                var byContainsText = dropdown.Options.FirstOrDefault(o =>
+                    Normalize(o.Text).Contains(normalizedRequested));
+
+                if (byContainsText != null)
+                {
+                    byContainsText.Click();
+                    return;
+                }
+            }
+
+            var availableOptions = string.Join(" | ", dropdown.Options.Select(o => o.Text.Trim()));
+            throw new NoSuchElementException($"Activity name/value '{requested}' not found in dropdown. Available options: {availableOptions}");
+        }
+
+        public void ClickAddActivityContinueButton()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            CommonHelpers.WaitForElementVisiblity(Driver, AddActivityContinueButton, 30);
+            ClickWithFallback(
+                AddActivityContinueButton,
+                By.XPath("//div[@id='activitydetail']//button[.//span[normalize-space()='Continue']]"),
+                By.XPath("//div[@id='activitydetail']//button[contains(normalize-space(),'Continue')]"),
+                By.XPath("//button[contains(@id,'continue') and not(@disabled)]")
+            );
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+        }
+
+        public void ClickAddActivityAddButton()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            CommonHelpers.WaitForElementVisiblity(Driver, AddActivityAddButton, 30);
+            ClickWithFallback(
+                AddActivityAddButton,
+                By.XPath("//div[@id='activitydetail']//button[.//span[normalize-space()='Add']]"),
+                By.XPath("//div[@id='activitydetail']//button[contains(normalize-space(),'Add')]"),
+                By.XPath("//button[contains(@id,'add') and not(@disabled)]")
+            );
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+        }
+
+        public void ClickLeadDetailsTab()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            ClickWithFallback(LeadDetailsTab, By.XPath("//a[@id='leadDetailsId' or normalize-space()='Lead']"));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+        }
+
+        public void EnterLeadDescription(string leadDescription)
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            CommonHelpers.WaitForElementVisiblity(Driver, LeadDescriptionEditor, 30);
+
+            var editor = Driver.FindElement(LeadDescriptionEditor);
+            ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", editor);
+            editor.Click();
+            editor.SendKeys(Keys.Control + "a");
+            editor.SendKeys(Keys.Delete);
+            editor.SendKeys(leadDescription);
+        }
+
+        public void ClickLeadSaveButton()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            ClickWithFallback(LeadSaveButton, By.XPath("//button[@id='leadSaveButton' or @title='Save' or normalize-space()='Save']"));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+        }
+
         public void ClickActivityAttachmentCloseBtn()
         {
             Driver.FindElement(ActivityAttachmentCloseBtn).Click();
             CommonHelpers.WaitForPageLoading(Driver);
         }
+
         public void ClickLeadcreateDateFilter()
         {
             CommonHelpers.WaitForPageToLoad(Driver, 100);
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             CommonHelpers.ScrollDown(Driver);
             Driver.FindElement(LeadCreateDateFilter).Click();
-
-
-
         }
+
         public string getLeadFirstRowOrganizatioName()
         {
-
-
             var subjectname = Driver.FindElement(LeadOrgName).Text.Split(':')[1];
             var firsRowOrgName = subjectname.Split('-')[0];
             return firsRowOrgName;
-
-
         }
+
         public string getLeadSecondRowOrganizatioName()
         {
-
-
-
             var subjectname = Driver.FindElement(LeadOrgNameSecondRow).Text.Split(':')[1];
             var secondRowOrgName = subjectname.Split('-')[0];
             return secondRowOrgName;
-
-
-
         }
 
         public string getLeadFirstRowFirstAndLastNameName()
         {
             return Driver.FindElement(LeadSubFirstNameLastNameFirstRow).Text;
         }
+
         public string getLeadSecondRowFirstAndLastNameName()
         {
             return Driver.FindElement(LeadSubFirstNameLastNameSecondRow).Text;
-
         }
+
         public void waitForLeadTab()
         {
             CommonHelpers.WaitForElementVisiblity(Driver, LeadTab, 120);
-
-            // CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 15000);
-
         }
+
         public void waitForLeadLink()
         {
             CommonHelpers.WaitForElementVisiblity(Driver, LeadIDLink, 120);
-
-            // CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 15000);
-
         }
+
         public void SelectLead(string selectleadId)
         {
             var tableRows = Driver.FindElements(By.XPath("//table/tbody/tr"));
@@ -358,22 +588,19 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                     return selectleadId == selectedLeadId;
                 }).First();
 
-                var viewLeadButton = selectedRow.FindElements(By.TagName("small"))[1];                
+                var viewLeadButton = selectedRow.FindElements(By.TagName("small"))[1];
                 CommonHelpers.ScrollByElementCoordinates(Driver, viewLeadButton);
                 viewLeadButton.Click();
             }
             catch (NoSuchElementException) { }
-          //  var common = new CommonHelpers(Driver);
-          //common.WaitForLoadingOverlayToDisappear();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);  
+
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
         }
-        
+
         public void BeginEditingLead()
         {
-
             try
             {
-
                 if (Driver.FindElement(BeginEditing).Displayed)
                 {
                     Driver.FindElement(BeginEditing).Click();
@@ -382,15 +609,14 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             }
             catch (NoSuchElementException)
             {
-                //already in Edit mode, move along
+                // already in Edit mode
             }
         }
+
         public void ExitLeadActivity()
         {
-
             try
             {
-
                 if (Driver.FindElement(ExitLead).Displayed)
                 {
                     Driver.FindElement(ExitLead).Click();
@@ -399,36 +625,31 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             }
             catch (NoSuchElementException)
             {
-                //already in Edit mode, move along
+                // already closed
             }
         }
+
         public void ClickLeadActivityTab()
         {
-            //  WaitForPageLoading();
             CommonHelpers.WaitForPageLoading(Driver);
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             Driver.FindElement(ActivitiesDetailsTab).Click();
-           
         }
-
-
-        //serach for the activity created through online referral
 
         public void SearchActivityName(string activityName)
         {
             var selectCriteria = Driver.FindElement(By.XPath("//form[@id='activityForm']/descendant::input[@name='searchtext']"));
             selectCriteria.Clear();
             selectCriteria.SendKeys(activityName);
-             Driver.FindElement(By.XPath("//form[@id='activityForm']/descendant::button[@id='searchStartButton']")).Click();
-             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            Driver.FindElement(By.XPath("//form[@id='activityForm']/descendant::button[@id='searchStartButton']")).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
         }
+
         public void SearchByLeadID(string searchleadid)
         {
-
             var selectCriteria = new SelectElement(Driver.FindElement(By.Id("leadSearchCriteria")));
-            searchleadid=searchleadid.Trim('"');
+            searchleadid = searchleadid.Trim('"');
             selectCriteria.SelectByValue(searchleadid);
-
         }
 
         public void EnterLeadID(string leadID)
@@ -436,50 +657,46 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             Driver.FindElement(LeadGridSearchInput).SendKeys(leadID);
             CommonHelpers.WaitForPageLoading(Driver);
         }
+
         public void ClickSearchButton()
         {
-
             Driver.FindElement(LeadGridSearchButton).Click();
             CommonHelpers.WaitForPageLoading(Driver);
         }
 
         public bool ClickOnEditActivity(string activityNme)
         {
-            var fc = new FC_CaseTracking_LeadPage(Driver);           
             CommonHelpers.WaitForPageLoading(Driver);
             var countRows = Driver.FindElements(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr")).Count;
-            
+
             for (int i = 0; i < countRows; i++)
             {
-               // var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[" + (i + 1) + "]/td[1]")).Text;
-                var activityName = Driver.FindElement(ActivityNameByRow(i+1)).Text;               
+                var activityName = Driver.FindElement(ActivityNameByRow(i + 1)).Text;
                 if (activityName.Equals(activityNme))
                 {
-                    Driver.FindElement(LeadEditBtnByRow(i+1)).Click();           
-                    CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,50);
-                    return true;                    
+                    Driver.FindElement(LeadEditBtnByRow(i + 1)).Click();
+                    CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+                    return true;
                 }
             }
+
             return false;
-           // var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[1]/td[1]")).Text;
-            
         }
+
         public string GetActivityName()
         {
-            var fc = new FC_CaseTracking_LeadPage(Driver);
-            CommonHelpers.WaitForPageLoading(Driver);            
+            CommonHelpers.WaitForPageLoading(Driver);
             var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr[1]/td[1]")).Text;
             return activityName;
-
         }
 
         public string getActivityDueDate()
         {
-            var fc = new FC_CaseTracking_LeadPage(Driver);
             CommonHelpers.WaitForPageLoading(Driver);
             var activityduedate = Driver.FindElement(By.XPath("//*[@id='activityForm']//table[@rules='groups']/tbody/tr/td[4]")).Text;
             return activityduedate;
         }
+
         public void ClickUploadFileArrow(string filepath)
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
@@ -489,20 +706,232 @@ namespace FC_OnlineReferral.FraudCapture_Pages
             DropFile(fileUploadArea, filepath);
             js.ExecuteScript("window.scrollBy(0, 700);");
             CommonHelpers.WaitForPageLoading(Driver);
-
         }
+
         const string JS_DROP_FILE = "for(var b=arguments[0],k=arguments[1],l=arguments[2],c=b.ownerDocument,m=0;;){var e=b.getBoundingClientRect(),g=e.left+(k||e.width/2),h=e.top+(l||e.height/2),f=c.elementFromPoint(g,h);if(f&&b.contains(f))break;if(1<++m)throw b=Error('Element not interractable'),b.code=15,b;b.scrollIntoView({behavior:'instant',block:'center',inline:'center'})}var a=c.createElement('INPUT');a.setAttribute('type','file');a.setAttribute('style','position:fixed;z-index:2147483647;left:0;top:0;');a.onchange=function(){var b={effectAllowed:'all',dropEffect:'none',types:['Files'],files:this.files,setData:function(){},getData:function(){},clearData:function(){},setDragImage:function(){}};window.DataTransferItemList&&(b.items=Object.setPrototypeOf([Object.setPrototypeOf({kind:'file',type:this.files[0].type,file:this.files[0],getAsFile:function(){return this.file},getAsString:function(b){var a=new FileReader;a.onload=function(a){b(a.target.result)};a.readAsText(this.file)}},DataTransferItem.prototype)],DataTransferItemList.prototype));Object.setPrototypeOf(b,DataTransfer.prototype);['dragenter','dragover','drop'].forEach(function(a){var d=c.createEvent('DragEvent');d.initMouseEvent(a,!0,!0,c.defaultView,0,0,0,g,h,!1,!1,!1,!1,0,null);Object.setPrototypeOf(d,null);d.dataTransfer=b;Object.setPrototypeOf(d,DragEvent.prototype);f.dispatchEvent(d)});a.parentElement.removeChild(a)};c.documentElement.appendChild(a);a.getBoundingClientRect();return a;";
+
         public void DropFile(IWebElement target, string filePath, double offsetX = 0, double offsetY = 0)
         {
             if (!File.Exists(filePath))
                 throw new FileNotFoundException(filePath);
 
             IJavaScriptExecutor jse = (IJavaScriptExecutor)Driver;
-
             IWebElement input = (IWebElement)jse.ExecuteScript(JS_DROP_FILE, target, offsetX, offsetY);
             input.SendKeys(filePath);
         }
 
+        public void ClickDownloadAttachmentManagerButton()
+        {
+            try
+            {
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+                var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var element = wait.Until(ExpectedConditions.ElementToBeClickable(DownloadAttachmentManagerButton));
+                ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", element);
+                System.Threading.Thread.Sleep(500);
+                element.Click();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            }
+            catch (TimeoutException ex)
+            {
+                throw new InvalidOperationException("Download Attachment Manager button was not clickable.", ex);
+            }
+        }
+
+        public bool IsDownloadAttachmentManagerPopupDisplayed()
+        {
+            try
+            {
+                var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(40));
+                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(DownloadAttachmentManagerPopup));
+                return Driver.FindElements(DownloadAttachmentManagerPopup).Count > 0;
+            }
+            catch (TimeoutException)
+            {
+                return false;
+            }
+        }
+
+        public void ClickDownloadAllAttachments()
+        {
+            try
+            {
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+                var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
+                var element = wait.Until(ExpectedConditions.ElementToBeClickable(DownloadAllAttachmentsButton));
+                ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", element);
+                System.Threading.Thread.Sleep(300);
+                element.Click();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            }
+            catch (TimeoutException ex)
+            {
+                throw new InvalidOperationException("Download All Attachments button not clickable/available.", ex);
+            }
+        }
+
+        public void ConfirmDownloadYes()
+        {
+            try
+            {
+                var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
+                var yes = wait.Until(ExpectedConditions.ElementToBeClickable(DownloadConfirmYesButton));
+                ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", yes);
+                System.Threading.Thread.Sleep(200);
+                yes.Click();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            }
+            catch (TimeoutException ex)
+            {
+                throw new InvalidOperationException("Confirmation 'Yes' button not clickable/available.", ex);
+            }
+        }
+
+        public void CloseDownloadAttachmentManagerPopup()
+        {
+            try
+            {
+                var closeButtons = Driver.FindElements(DownloadAttachmentManagerCloseButton);
+                if (closeButtons.Any())
+                {
+                    closeButtons.First().Click();
+                }
+                else
+                {
+                    var actions = new OpenQA.Selenium.Interactions.Actions(Driver);
+                    actions.SendKeys(OpenQA.Selenium.Keys.Escape).Perform();
+                }
+
+                var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
+                wait.Until(ExpectedConditions.InvisibilityOfElementLocated(DownloadAttachmentManagerPopup));
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            }
+            catch (WebDriverTimeoutException)
+            {
+                // ignore if popup still present
+            }
+        }
+
+        public void ClickViewAttachmentButton()
+        {
+            try
+            {
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+                var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
+                var element = wait.Until(ExpectedConditions.ElementToBeClickable(ViewAttachmentButton));
+                ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", element);
+                System.Threading.Thread.Sleep(300);
+                element.Click();
+                CommonHelpers.WaitForPageLoading(Driver);
+            }
+            catch (TimeoutException ex)
+            {
+                throw new InvalidOperationException("View Attachment button was not clickable/available.", ex);
+            }
+        }
+
+        public bool IsAttachmentDetailsPageDisplayed()
+        {
+            try
+            {
+                var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(20));
+                wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(BackAttachmentButton));
+                return Driver.FindElements(BackAttachmentButton).Count > 0;
+            }
+            catch (TimeoutException)
+            {
+                Console.WriteLine("Attachment Details Page not displayed within 20 seconds");
+                return false;
+            }
+        }
+
+        public void ClickBackButton()
+        {
+            try
+            {
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 40);
+
+                var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(40));
+                var element = wait.Until(d =>
+                {
+                    var candidates = d.FindElements(BackAttachmentButton);
+                    if (!candidates.Any())
+                    {
+                        candidates = d.FindElements(BackAttachmentButtonFallback);
+                    }
+
+                    var btn = candidates.FirstOrDefault();
+                    return (btn != null && btn.Displayed && btn.Enabled) ? btn : null;
+                });
+
+                ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", element);
+                System.Threading.Thread.Sleep(300);
+
+                try
+                {
+                    element.Click();
+                }
+                catch (ElementClickInterceptedException)
+                {
+                    ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", element);
+                }
+                catch (WebDriverException)
+                {
+                    ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", element);
+                }
+
+                wait.Until(ExpectedConditions.InvisibilityOfElementLocated(BackAttachmentButton));
+                CommonHelpers.WaitForPageLoading(Driver);
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            }
+            catch (TimeoutException ex)
+            {
+                throw new InvalidOperationException("Back button was not clickable/available after 40 seconds.", ex);
+            }
+        }
+
+        public bool IsAttachmentListViewDisplayed()
+        {
+            try
+            {
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+                var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(20));
+
+                wait.Until(d =>
+                {
+                    var hasViewButton = d.FindElements(ViewAttachmentButton).Any();
+                    var hasBackButton = d.FindElements(BackAttachmentButton).Any();
+                    return hasViewButton && !hasBackButton;
+                });
+
+                return Driver.FindElements(ViewAttachmentButton).Any()
+                    && !Driver.FindElements(BackAttachmentButton).Any();
+            }
+            catch (TimeoutException)
+            {
+                Console.WriteLine("Attachment List View not displayed within 20 seconds");
+                return false;
+            }
+        }
+
+        public void ClickDownloadButtonInAttachmentManagerPopup()
+        {
+            try
+            {
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+                var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
+                var element = wait.Until(ExpectedConditions.ElementToBeClickable(DownloadButtonInAttachmentManagerPopup));
+                ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", element);
+                System.Threading.Thread.Sleep(300);
+                element.Click();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            }
+            catch (TimeoutException ex)
+            {
+                throw new InvalidOperationException("Download button in Download Attachment Manager popup was not clickable/available.", ex);
+            }
+        }
     }
 }
+
 
