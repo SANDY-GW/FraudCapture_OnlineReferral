@@ -2,6 +2,7 @@
 using FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab;
 using FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDetails.Lead;
 using FC_OnlineReferral.OnlineReferral_Pages;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,8 @@ namespace FraudCapture_BDD.StepDefinitions
             CommonHelpers.WaitForPageToLoad(Driver, 100);
         }
         
-        [When("I enter the {string} on the welcome fraude capture page:")]
-        public void WhenIEnterTheOnTheWelcomeFraudeCapturePage(string UserEmail, DataTable dataTable)
+        [When("I enter the UserEmail on the welcome fraude capture page:")]
+        public void WhenIEnterTheOnTheWelcomeFraudeCapturePage(DataTable dataTable)
         {
             var fc = new FC_LoginPage(Driver);
             var data = dataTable.CreateInstance <FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
@@ -52,9 +53,10 @@ namespace FraudCapture_BDD.StepDefinitions
             homePage.AcceptDisclosure();
         }
 
-        [When("I click on CaseTracking and select the {string} option on the fraud capture home page")]
-        public void WhenIClickOnCaseTrackingAndSelectTheOptionOnTheFraudCaptureHomePage(string TabToSelect)
+        [When("I click on CaseTracking and select the required option on the fraud capture home page")]
+        public void WhenIClickOnCaseTrackingAndSelectTheRequiredOptionOnTheFraudCaptureHomePage(DataTable dataTable)
         {
+            var data = dataTable.CreateInstance<FC_CaseSummary.Data.CaseSummaryData>();
             var navigateBtn = Driver.FindElement(By.XPath("//button[@id='navigationMenuId']"));
             navigateBtn.Click();
 
@@ -63,7 +65,23 @@ namespace FraudCapture_BDD.StepDefinitions
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
 
             var leadsTabBUtton = Driver.FindElement(By.XPath("//a[@id='allLeadsTabId']"));
-            var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + TabToSelect + "')]"));
+            var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + data.LeadsTab + "')]"));
+            tabToSelect.Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
+        }
+        [When("I click on CaseTracking and select the Case option on the fraud capture home page")]
+        public void WhenIClickOnCaseTrackingAndSelectTheCaseOptionOnTheFraudCaptureHomePage(DataTable dataTable)
+        {
+            var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
+            var navigateBtn = Driver.FindElement(By.XPath("//button[@id='navigationMenuId']"));
+            navigateBtn.Click();
+
+            var caseTrackingLink = Driver.FindElement(By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking']"));
+            caseTrackingLink.Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+
+            var casesTabButton = Driver.FindElement(By.XPath("//a[@id='allCasesTabId']"));
+            var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + data.CasesTab + "')]"));
             tabToSelect.Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
         }
@@ -82,7 +100,8 @@ namespace FraudCapture_BDD.StepDefinitions
             fc.SelectDetectionMethod(data.DetectionMethod);
             fc.SelectSourceType(data.SourceType);
             fc.SelectReason(data.Reason);
-            fc.SelectAssignedTo(data.AssignedTo);
+            //fc.SelectAssignedTo(data.AssignedTo);
+            
         }
         [When("I Click the Next button in the first page of CreateNewLead Page")]
         public void WhenIClickTheNextButtonInTheFirstPageOfCreateNewLeadPage()
@@ -439,9 +458,23 @@ namespace FraudCapture_BDD.StepDefinitions
             fc.ClickCreateLeadBtninPrioritizationTab();
         }
 
+        [When("Get the lead ID for the newly created lead")]
+        public void WhenGetTheLeadIDForTheNewlyCreatedLead()
+        {
+            var fc = new CreateNewLeadPage(Driver);
+            string capturedLeadId = fc.CaptureleadID();
+
+            // Store in scenario context for later use
+            _scenarioContext["CapturedLeadId"] = capturedLeadId;
+
+            Assert.That(capturedLeadId, Is.Not.Null.And.Not.Empty,
+                "Lead ID was not captured successfully");
+        }
 
 
-       
+
+
+
 
 
 

@@ -23,7 +23,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.ActivityTab.Ac
         #endregion
         public void ClickWorkLoadReassignment()
         {
-            Driver.FindElement(WorkLoadReassignment).Click();
+            driver.FindElement(WorkLoadReassignment).Click();
         }
     }
 }

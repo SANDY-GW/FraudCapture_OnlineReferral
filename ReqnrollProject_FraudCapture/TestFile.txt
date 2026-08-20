@@ -1,0 +1,2 @@
+This is an automated test attachment file used for FraudCapture UI automated testing.
+Do not delete or modify.

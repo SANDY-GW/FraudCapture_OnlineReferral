@@ -24,7 +24,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
 
         public void ClickNewFindingsBtn()
         {
-            Driver.FindElement(newFindingBtn).Click();
+            driver.FindElement(newFindingBtn).Click();
         }
     }
 }

@@ -26,27 +26,27 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.Reports.SelfServi
         #endregion
         public void ClickReportsTab()
         {
-            Driver.FindElement(ReportsTab).Click();
+            driver.FindElement(ReportsTab).Click();
         }
         public void ClickSelfServiceTab()
         {
-            Driver.FindElement(SelfServiceAnalyticsTab).Click();
+            driver.FindElement(SelfServiceAnalyticsTab).Click();
         }
         public void ClickOptionsButton()
         {
-            Driver.FindElement(OptionsButton).Click();
+            driver.FindElement(OptionsButton).Click();
         }
         public void ClickOpenGraphValue()
         {
-            Driver.FindElement(OpenGraphValue).Click();
+            driver.FindElement(OpenGraphValue).Click();
         }
         public void ClickEditGraphSettings()
         {
-            Driver.FindElement(EditGraphSettings).Click();
+            driver.FindElement(EditGraphSettings).Click();
         }
         public void ClickDelete()
         {
-            Driver.FindElement(Delete).Click();
+            driver.FindElement(Delete).Click();
         }
 
 

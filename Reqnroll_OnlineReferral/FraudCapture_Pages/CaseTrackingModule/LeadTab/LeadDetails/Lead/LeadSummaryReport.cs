@@ -25,12 +25,12 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDe
 
         public void ClickReport()
         {
-            Driver.FindElement(reportsDropdown).Click();
+            driver.FindElement(reportsDropdown).Click();
         }
 
         public void ClickLeadSummaryReport()
         {
-            Driver.FindElement(LedSummaryReportBtn).Click();
+            driver.FindElement(LedSummaryReportBtn).Click();
         }
 
       

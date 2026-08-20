@@ -32,43 +32,43 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadSe
         #endregion
         public void EnterSearchInputField(string value)
         {
-            Driver.FindElement(searchInputFieldTxt).SendKeys(value);
+            driver.FindElement(searchInputFieldTxt).SendKeys(value);
         }
         public void ClickCaseExportListBtn()
         {
-            Driver.FindElement(caseExportListBtn).Click();
+            driver.FindElement(caseExportListBtn).Click();
         }
         public void ClickSearcBtn()
         {
-            Driver.FindElement(searchStartBtn).Click();
+            driver.FindElement(searchStartBtn).Click();
         }
         public void ClickClearBtn()
         {
-            Driver.FindElement(searchClearBtn).Click();
+            driver.FindElement(searchClearBtn).Click();
         }
         public void EnterSearchInputFieldNumeric(string numericValue)
         {
-            Driver.FindElement(searchInputFieldNumericTxt).SendKeys(numericValue);
+            driver.FindElement(searchInputFieldNumericTxt).SendKeys(numericValue);
         }
         public void SelectLeadSearchYears(string years)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(leadSearchYearsDDL), years);
+            CommonHelpers.selectOptionByValue(driver.FindElement(leadSearchYearsDDL), years);
         }
         public void SelectLeadSearchDates(string dates)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(leadSearchDatesDDL), dates);
+            CommonHelpers.selectOptionByValue(driver.FindElement(leadSearchDatesDDL), dates);
         }
         public void SelectLeadSearchMonths(string months)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(leadSearchMonthsDDL), months);
+            CommonHelpers.selectOptionByValue(driver.FindElement(leadSearchMonthsDDL), months);
         }
         public void SelectLeadSearchNumericOperator(string numericOperator)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(leadSearchNumericOpertorDDL), numericOperator);
+            CommonHelpers.selectOptionByValue(driver.FindElement(leadSearchNumericOpertorDDL), numericOperator);
         }
         public void SelectLeadCriteria(string criteria)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(leadSearchCriteriaDDL), criteria);
+            CommonHelpers.selectOptionByValue(driver.FindElement(leadSearchCriteriaDDL), criteria);
         }
     }
 }

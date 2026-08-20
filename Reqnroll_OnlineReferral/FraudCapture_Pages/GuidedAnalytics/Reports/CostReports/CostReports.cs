@@ -27,40 +27,40 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.Reports.CostRepor
         #endregion
         public void ClickReportsTab()
         {
-            Driver.FindElement(ReportsTab).Click();
+            driver.FindElement(ReportsTab).Click();
         }
         public void ClickCostReportsTab()
         {
-            Driver.FindElement(CostReportsTab).Click();
+            driver.FindElement(CostReportsTab).Click();
         }
         public void EnterCostReportsSearchTextbox(string searchTextboxValue)
         {
-            Driver.FindElement(CostReportsSearchTextbox).SendKeys(searchTextboxValue);
+            driver.FindElement(CostReportsSearchTextbox).SendKeys(searchTextboxValue);
         }
         public void ClickCostReportsSearch()
         {
-            Driver.FindElement(CostReportsSearch).Click();
+            driver.FindElement(CostReportsSearch).Click();
         }
         public void ClickCostReportsClear()
         {
-            Driver.FindElement(CostReportsClear).Click();
+            driver.FindElement(CostReportsClear).Click();
         }
         public void ClickReportTitle()
         {
-            Driver.FindElement(ReportTitle).Click();
+            driver.FindElement(ReportTitle).Click();
         }
         public void ClickDescription()
         {
-            Driver.FindElement(Description).Click();
+            driver.FindElement(Description).Click();
         }
         public void ClickReportType()
         {
-            Driver.FindElement(ReportType).Click();
+            driver.FindElement(ReportType).Click();
         }
         public void ClickLoadButton()
         {
-            CommonHelpers.WaitForElementClickable(Driver, By.XPath("//button[contains(text(),'Load')]"), 10);
-            Driver.FindElement(By.XPath("//button[contains(text(),'Load')]")).Click();
+            CommonHelpers.WaitForElementClickable(driver, By.XPath("//button[contains(text(),'Load')]"), 10);
+            driver.FindElement(By.XPath("//button[contains(text(),'Load')]")).Click();
         }
 
     }

@@ -60,155 +60,155 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void SelectWitness_Or_ExternalReferringParty(string witness_Or_ExternalReferringParty)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, witness_Or_ExternalReferringPartydrp, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(witness_Or_ExternalReferringPartydrp), witness_Or_ExternalReferringParty);
+            CommonHelpers.WaitForElementVisiblity(driver, witness_Or_ExternalReferringPartydrp, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(witness_Or_ExternalReferringPartydrp), witness_Or_ExternalReferringParty);
         }
         public void EnterOrgName(string orgName)
         {
           
           
-            CommonHelpers.WaitForElementVisiblity(Driver, orgNameField, 10);
+            CommonHelpers.WaitForElementVisiblity(driver, orgNameField, 10);
 
-            Driver.FindElement(orgNameField).SendKeys(orgName);
+            driver.FindElement(orgNameField).SendKeys(orgName);
 
         }
         public void EnterNamePrefix(string namePrefix)
         {
-            Driver.FindElement(namePrefixField).SendKeys(namePrefix);
+            driver.FindElement(namePrefixField).SendKeys(namePrefix);
         }
 
         public void EnterFirstName(string firstName)
         {
            
             
-            CommonHelpers.WaitForElementVisiblity(Driver, orgNameField, 10);
-            Driver.FindElement(firstNameField).SendKeys(firstName);
+            CommonHelpers.WaitForElementVisiblity(driver, orgNameField, 10);
+            driver.FindElement(firstNameField).SendKeys(firstName);
 
 
         }
         public void EnterLastName(string lastName)
         {
             
-            Driver.FindElement(lastNameField).SendKeys(lastName);
+            driver.FindElement(lastNameField).SendKeys(lastName);
         }
         public void EnterMiddleName(string middleName)
         {
-            Driver.FindElement(middleNameField).SendKeys(middleName);
+            driver.FindElement(middleNameField).SendKeys(middleName);
         }
         public void EnterNameSuffix(string nameSuffix)
         {
-            Driver.FindElement(nameSuffixField).SendKeys(nameSuffix);
+            driver.FindElement(nameSuffixField).SendKeys(nameSuffix);
         }
         public void EnterDesignation_or_Title(string designation_or_Title)
         {
-            Driver.FindElement(Designation_or_TitleField).SendKeys(designation_or_Title);
+            driver.FindElement(Designation_or_TitleField).SendKeys(designation_or_Title);
         }
         public void EnterDOB(string dob)
         {
-            Driver.FindElement(dobField).SendKeys(dob);
+            driver.FindElement(dobField).SendKeys(dob);
         }
         public void EnterSSN(string ssn)
         {
-            Driver.FindElement(SSNField).SendKeys(ssn);
+            driver.FindElement(SSNField).SendKeys(ssn);
         }
         public void EnterOtherID(string otherID)
         {
-            Driver.FindElement(otherIDField).SendKeys(otherID);
+            driver.FindElement(otherIDField).SendKeys(otherID);
         }
 
         public void EnterOther(string other)
         {
-            Driver.FindElement(otherField).SendKeys(other);
+            driver.FindElement(otherField).SendKeys(other);
         }
         public void EnterPhoneNumber(string primaryPhoneNumber)
         {
-            Driver.FindElement(PhoneNumberField).SendKeys(primaryPhoneNumber);
+            driver.FindElement(PhoneNumberField).SendKeys(primaryPhoneNumber);
         }
 
         public void EnterFax(string fax)
         {
-            Driver.FindElement(faxField).SendKeys(fax);
+            driver.FindElement(faxField).SendKeys(fax);
         }
         public void EnterEmail(string email)
         {
-            Driver.FindElement(emailField).SendKeys(email);
+            driver.FindElement(emailField).SendKeys(email);
         }
         public void EnterAddress1(string address1)
         {
-            Driver.FindElement(address1Field).SendKeys(address1);
+            driver.FindElement(address1Field).SendKeys(address1);
         }
         public void EnterAddress2(string address2)
         {
-            Driver.FindElement(address2Field).SendKeys(address2);
+            driver.FindElement(address2Field).SendKeys(address2);
         }
         public void EnterCity(string city)
         {
-            Driver.FindElement(cityField).SendKeys(city);
+            driver.FindElement(cityField).SendKeys(city);
         }
         public void SelectState(string state)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(stateDropdown), state);
+            CommonHelpers.selectOptionByValue(driver.FindElement(stateDropdown), state);
         }
         public void SelectCounty(string county)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(countyDropdown), county);
+            CommonHelpers.selectOptionByValue(driver.FindElement(countyDropdown), county);
         }
         public void EnterZipCode(string zipCode)
         {
-            Driver.FindElement(zipCodeField).SendKeys(zipCode);
+            driver.FindElement(zipCodeField).SendKeys(zipCode);
         }
         public void EnterCountry(string country)
         {
-            Driver.FindElement(countryField).SendKeys(country);
+            driver.FindElement(countryField).SendKeys(country);
         }
 
         public void ClickGoToPreviousSection()
         {
-            Driver.FindElement(Go_To_Previous_SectionButton).Click();
+            driver.FindElement(Go_To_Previous_SectionButton).Click();
         }
         public void ClickProceedToNextSection()
         {
-            Driver.FindElement(proceed_To_Next_SectionButton).Click();
+            driver.FindElement(proceed_To_Next_SectionButton).Click();
 
         }
         public void EnterLicenseNo(string licenseNo)
         {
-            Driver.FindElement(LicenseNofield).SendKeys(licenseNo);
+            driver.FindElement(LicenseNofield).SendKeys(licenseNo);
         }
         public void EnterIDTest(string idTest)
         {
-            Driver.FindElement(IDTestfield).SendKeys(idTest);
+            driver.FindElement(IDTestfield).SendKeys(idTest);
         }
         public void EnterNPI(string npi)
         {
-            Driver.FindElement(NPIfield).SendKeys(npi);
+            driver.FindElement(NPIfield).SendKeys(npi);
         }
         public void EnterTIN(string tin)
         {
-            Driver.FindElement(TINfield).SendKeys(tin);
+            driver.FindElement(TINfield).SendKeys(tin);
         }
 
         public void EnterMedicaidID(string medicaidID)
         {
-            Driver.FindElement(MedicaidIDfield).SendKeys(medicaidID);
+            driver.FindElement(MedicaidIDfield).SendKeys(medicaidID);
         }
         public void EnterMedicareID(string medicareID)
         {
-            Driver.FindElement(MedicareIDfield).SendKeys(medicareID);
+            driver.FindElement(MedicareIDfield).SendKeys(medicareID);
         }
 
         public void EnterProviderType(string providerType)
         {
-            Driver.FindElement(ProviderTypeField).SendKeys(providerType);
+            driver.FindElement(ProviderTypeField).SendKeys(providerType);
         }
 
         public void EnterProviderSpecialty(string providerSpecialty)
         {
-            Driver.FindElement(ProviderSpecialtyField).SendKeys(providerSpecialty);
+            driver.FindElement(ProviderSpecialtyField).SendKeys(providerSpecialty);
         }
         public void EnterTaxonomy(string taxonomy)
         {
-            Driver.FindElement(TaxonomyField).SendKeys(taxonomy);
+            driver.FindElement(TaxonomyField).SendKeys(taxonomy);
         }
 
     }

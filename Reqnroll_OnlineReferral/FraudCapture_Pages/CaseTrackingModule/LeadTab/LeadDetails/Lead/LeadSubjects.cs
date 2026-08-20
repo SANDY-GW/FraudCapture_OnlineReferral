@@ -14,21 +14,21 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDe
 
         public void ClickSubjectsTab()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, subjectsTab, 30);
-            Driver.FindElement(subjectsTab).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            CommonHelpers.WaitForElementVisiblity(driver, subjectsTab, 30);
+            driver.FindElement(subjectsTab).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
         }
 
         public void ClickPrimarySubjectEdit()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, primarySubjectEditButton, 30);
-            Driver.FindElement(primarySubjectEditButton).Click();
-            CommonHelpers.WaitForElementVisiblity(Driver, editSubjectHeader, 30);
+            CommonHelpers.WaitForElementVisiblity(driver, primarySubjectEditButton, 30);
+            driver.FindElement(primarySubjectEditButton).Click();
+            CommonHelpers.WaitForElementVisiblity(driver, editSubjectHeader, 30);
         }
 
         public bool IsEditSubjectFormDisplayed()
         {
-            return Driver.FindElements(editSubjectHeader).Any(element => element.Displayed);
+            return driver.FindElements(editSubjectHeader).Any(element => element.Displayed);
         }
 
         public string GetEditFieldValue(string fieldLabel)
@@ -43,16 +43,16 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDe
                 $"(//form[@id='LeadSubjectForm']//label[{condition}][1]/following::*[self::input or self::textarea or self::select])[1]");
 
                 //By field2 = By.XPath("(//form[@id='LeadSubjectForm']//label[normalize-space()=" + ToXPathLiteral(fieldLabel) + " or contains(.," + ToXPathLiteral(fieldLabel) + ")][1]//following::*[self::input or self::textarea or self::select])[1]");
-                CommonHelpers.WaitForElementVisiblity(Driver, locator, 30);
-                return GetElementValue(Driver.FindElement(locator));
+                CommonHelpers.WaitForElementVisiblity(driver, locator, 30);
+                return GetElementValue(driver.FindElement(locator));
                             
         }
         
 
         public void CloseEditSubjectForm()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, cancelButton, 30);
-            Driver.FindElement(cancelButton).Click();
+            CommonHelpers.WaitForElementVisiblity(driver, cancelButton, 30);
+            driver.FindElement(cancelButton).Click();
         }
 
         private static string GetElementValue(IWebElement element)

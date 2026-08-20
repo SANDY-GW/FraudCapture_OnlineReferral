@@ -21,11 +21,11 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.TopTargets.Patien
         #endregion
         public void ClickTopTargetsBtn()
         {
-            Driver.FindElement(TopTargets).Click();
+            driver.FindElement(TopTargets).Click();
         }
         public void ClickPatientScoring()
         {
-            Driver.FindElement(PatientScoringTab).Click();
+            driver.FindElement(PatientScoringTab).Click();
         }
     }
     

@@ -28,39 +28,39 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         public void FC_Login(string URL = "https://test.fraudcapture.hms.com")
         {
-            Driver.Navigate().GoToUrl(URL);
+            driver.Navigate().GoToUrl(URL);
             //CommonHelpers.WaitForPageToLoad(Driver, 10);
         }
 
         public void FC_SelectPayor(string payorName)
         {
             var payorDropField = By.XPath("//ul[@id='payorSelector']");
-            CommonHelpers.WaitForElementVisiblity(Driver, payorDropField, 120);
-            Driver.FindElement(payorDropField).Click();
-            Driver.FindElement(By.XPath($"//ul[@id='payorSelector']//a[normalize-space(.)='{payorName}']")).Click();
+            CommonHelpers.WaitForElementVisiblity(driver, payorDropField, 120);
+            driver.FindElement(payorDropField).Click();
+            driver.FindElement(By.XPath($"//ul[@id='payorSelector']//a[normalize-space(.)='{payorName}']")).Click();
         }
         public void FC_UserSelect(string UserSelectoption)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, UserSelect, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(UserSelect), UserSelectoption);
+            CommonHelpers.WaitForElementVisiblity(driver, UserSelect, 120);
+            CommonHelpers.selectOptionByValue(driver.FindElement(UserSelect), UserSelectoption);
             //Driver.FindElement(PayorSelect).Click();
         }
         public void FC_Settings()
         {
-            Driver.FindElement(Settings).Click();
+            driver.FindElement(Settings).Click();
         }
         public void FC_HelpIcon()
         {
-            Driver.FindElement(HelpIcon).Click();
+            driver.FindElement(HelpIcon).Click();
         }
 
         public void FC_Logout()
         {
             try
             {
-                Driver.FindElement(UserLogout).Click();
-                Driver.FindElement(LogOutButton).Click();
-                CommonHelpers.WaitForPageToLoad(Driver, 10);
+                driver.FindElement(UserLogout).Click();
+                driver.FindElement(LogOutButton).Click();
+                CommonHelpers.WaitForPageToLoad(driver, 10);
             }
             catch (Exception)
             {
@@ -72,10 +72,10 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             try
             {
-                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(60));
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
                 wait.Until(ExpectedConditions.ElementExists(LogoutConfirmationMessage));
 
-                return Driver.FindElement(LogoutConfirmationMessage).Displayed ? true : false;
+                return driver.FindElement(LogoutConfirmationMessage).Displayed ? true : false;
                 
             }
             catch(Exception ex)
@@ -87,9 +87,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
         public string GetActivityName()
         {
-            var fc = new FC_CaseTracking_LeadPage(Driver);
-            CommonHelpers.WaitForPageLoading(Driver);
-            var activityName = Driver.FindElement(By.XPath("//*[@id='activityForm']/div/div[2]/div[2]/cdk-virtual-scroll-viewport/div[1]/div/table/tbody/tr/td[1]")).Text;
+            var fc = new FC_CaseTracking_LeadPage(driver);
+            CommonHelpers.WaitForPageLoading(driver);
+            var activityName = driver.FindElement(By.XPath("//*[@id='activityForm']/div/div[2]/div[2]/cdk-virtual-scroll-viewport/div[1]/div/table/tbody/tr/td[1]")).Text;
 
             Console.WriteLine(activityName);
             return activityName;

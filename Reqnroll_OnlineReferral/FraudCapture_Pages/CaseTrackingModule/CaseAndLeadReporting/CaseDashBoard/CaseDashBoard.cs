@@ -25,7 +25,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseAndLeadRep
         public void ClickCaseAndLeadReporting()
         {
 
-            Driver.FindElement(caseDashBoardBtn).Click();
+            driver.FindElement(caseDashBoardBtn).Click();
         }
     }
 }

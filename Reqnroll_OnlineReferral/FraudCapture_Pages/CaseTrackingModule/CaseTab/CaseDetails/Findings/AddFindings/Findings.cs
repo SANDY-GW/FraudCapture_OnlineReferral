@@ -44,73 +44,73 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         #endregion
         public void ClickAddFinding()
         {
-            Driver.FindElement(addFindingsBtn).Click();
+            driver.FindElement(addFindingsBtn).Click();
         }
         public void ClickfindingsEntityBreakDown()
         {
-            Driver.FindElement(findingsEntityBreakDown).Click();
+            driver.FindElement(findingsEntityBreakDown).Click();
         }
         public void ClickfindingDetailsSubjectName()
         {
-            Driver.FindElement(findingDetailsSubjectName).Click();
+            driver.FindElement(findingDetailsSubjectName).Click();
         }
         public void ClickfindingDetailsFinding()
         {
-            Driver.FindElement(findingDetailsFinding).Click();
+            driver.FindElement(findingDetailsFinding).Click();
         }
         public void ClickfindingDetailsFindingDate()
         {
-            Driver.FindElement(findingDetailsFindingDate).Click();
+            driver.FindElement(findingDetailsFindingDate).Click();
         }
         public void ClickfindingDetailsUnderPayment()
         {
-            Driver.FindElement(findingDetailsUnderPayment).Click();
+            driver.FindElement(findingDetailsUnderPayment).Click();
         }
 
         public void ClickfindingDetailsOverPayament()
         {
-            Driver.FindElement(findingDetailsOverPayament).Click();
+            driver.FindElement(findingDetailsOverPayament).Click();
         }
 
         public void ClickfindingsEntitySoftSaving()
         {
-            Driver.FindElement(findingsEntitySoftSaving).Click();
+            driver.FindElement(findingsEntitySoftSaving).Click();
         }
 
         public void SelectSubject(string subject)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(subjectDDL), subject);
+            CommonHelpers.selectOptionByValue(driver.FindElement(subjectDDL), subject);
 
         }
         public void ClickCancel()
         {
-            Driver.FindElement(cancleBtn).Click();
+            driver.FindElement(cancleBtn).Click();
         }
         public void ClickSave()
         {
-            Driver.FindElement(saveBtn).Click();
+            driver.FindElement(saveBtn).Click();
         }
         public void SelectLOB(string lob)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(LOBDDL), lob);
+            CommonHelpers.selectOptionByValue(driver.FindElement(LOBDDL), lob);
 
         }
         public void SelectFindingReason(string reason)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(findingReason), reason);
+            CommonHelpers.selectOptionByValue(driver.FindElement(findingReason), reason);
 
         }
         public void ClickFinalizeFindings()
         {
-            Driver.FindElement(finalizeFindingsBtn).Click();
+            driver.FindElement(finalizeFindingsBtn).Click();
         }
         public void ClickUndoFinalize()
         {
-            Driver.FindElement(undoFinalizeBtn).Click();
+            driver.FindElement(undoFinalizeBtn).Click();
         }
         public void selectStaticsticsLOB(string lob)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(staticsticsByLOBDDL), lob);
+            CommonHelpers.selectOptionByValue(driver.FindElement(staticsticsByLOBDDL), lob);
            
         }
     }

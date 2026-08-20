@@ -12,7 +12,7 @@ namespace FC_OnlineReferral
     {
 
         //protected readonly IWebDriver _driver;
-        protected readonly IWebDriver Driver;
+        protected readonly IWebDriver driver;
         protected readonly WebDriverWait Wait;
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
 
@@ -24,15 +24,15 @@ namespace FC_OnlineReferral
         //}
         public BaseSettings(IWebDriver driver)
         {
-            Driver = driver;
+            this.driver = driver;
         }
 
         public void FC_OnlineReferralLogin(string URL= "https://fc-referrals-test.gainwelltechnologies.com/#/DEMO-AD2B")
         {
             //Driver.Navigate().GoToUrl("https://test.fraudcapture.hms.com");
             
-            Driver.Navigate().GoToUrl(URL);
-            Driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl(URL);
+            driver.Manage().Window.Maximize();
         }
 
         public void FC_OnlineLogin(string URL = "https://test.fraudcapture.hms.com/#/")
@@ -40,12 +40,12 @@ namespace FC_OnlineReferral
             //Driver.Navigate().GoToUrl("https://dev.fraudcapture.hms.com");
             try
             {
-                Driver.Navigate().GoToUrl(URL);
-                Driver.Manage().Window.Maximize();
+                driver.Navigate().GoToUrl(URL);
+                driver.Manage().Window.Maximize();
             }
             catch (Exception ex)
             {
-                Driver.Navigate().Refresh();
+                driver.Navigate().Refresh();
 
             }
 
@@ -102,7 +102,7 @@ namespace FC_OnlineReferral
 
         public void Login_OnlineReferral()
         {
-            BaseSettings baseSettings = new BaseSettings(Driver);
+            BaseSettings baseSettings = new BaseSettings(driver);
             baseSettings.FC_OnlineReferralLogin();
         }
 
@@ -127,7 +127,7 @@ namespace FC_OnlineReferral
                 return el.Displayed ? el : null;
             });
         }
-        public void NavigateTo(string url) => Driver.Navigate().GoToUrl(url);
+        public void NavigateTo(string url) => driver.Navigate().GoToUrl(url);
 
         
     }

@@ -27,40 +27,40 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.Reports.ClaimRepo
         #endregion
         public void ClickReportsTab()
         {
-            Driver.FindElement(ReportsTab).Click();
+            driver.FindElement(ReportsTab).Click();
         }
         public void ClickClaimReportsTab()
         {
-            Driver.FindElement(ClaimReportsTab).Click();
+            driver.FindElement(ClaimReportsTab).Click();
         }
         public void EnterClaimReportsSearchTextbox(string searchTextboxValue)
         {
-            Driver.FindElement(ClaimReportsSearchTextbox).SendKeys(searchTextboxValue);
+            driver.FindElement(ClaimReportsSearchTextbox).SendKeys(searchTextboxValue);
         }
         public void ClickClaimReportsSearch()
         {
-            Driver.FindElement(ClaimReportsSearch).Click();
+            driver.FindElement(ClaimReportsSearch).Click();
         }
         public void ClickClaimReportsClear()
         {
-            Driver.FindElement(ClaimReportsClear).Click();
+            driver.FindElement(ClaimReportsClear).Click();
         }
         public void ClickReportTitle()
         {
-            Driver.FindElement(ReportTitle).Click();
+            driver.FindElement(ReportTitle).Click();
         }
         public void ClickDescription()
         {
-            Driver.FindElement(Description).Click();
+            driver.FindElement(Description).Click();
         }
         public void ClickReportType()
         {
-            Driver.FindElement(ReportType).Click();
+            driver.FindElement(ReportType).Click();
         }
         public void ClickLoadButton()
         {
-            CommonHelpers.WaitForElementClickable(Driver, By.XPath("//button[contains(text(),'Load')]"), 10);
-            Driver.FindElement(By.XPath("//button[contains(text(),'Load')]")).Click();
+            CommonHelpers.WaitForElementClickable(driver, By.XPath("//button[contains(text(),'Load')]"), 10);
+            driver.FindElement(By.XPath("//button[contains(text(),'Load')]")).Click();
         }
     }
     

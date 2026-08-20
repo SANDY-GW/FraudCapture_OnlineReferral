@@ -27,31 +27,31 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics
         #endregion
         public void ClickRankingReportsBtn()
         {
-            Driver.FindElement(RankingReportsBtn).Click();
+            driver.FindElement(RankingReportsBtn).Click();
         }
         public void ClickCostReportsBtn()
         {
-            Driver.FindElement(CostReportsBtn).Click();
+            driver.FindElement(CostReportsBtn).Click();
         }
         public void ClickClaimREportsBtn()
         {
-            Driver.FindElement(ClaimReportsBtn).Click();
+            driver.FindElement(ClaimReportsBtn).Click();
         }
         public void ClickPeerGroupingReportsBtn()
         {
-            Driver.FindElement(PeerGroupingReportsBtn).Click();
+            driver.FindElement(PeerGroupingReportsBtn).Click();
         }
         public void EnterReportSearchDetails(string value)
         {
-            Driver.FindElement(ReportsSearchTxt).SendKeys(value);
+            driver.FindElement(ReportsSearchTxt).SendKeys(value);
         }
         public void ClickReportSearchBtn()
         {
-            Driver.FindElement(ReportsSearchBtn).Click();
+            driver.FindElement(ReportsSearchBtn).Click();
         }
         public void ClickReportsSearchClearBtn()
         {
-            Driver.FindElement(ReportsSearchClearBtn).Click();
+            driver.FindElement(ReportsSearchClearBtn).Click();
         }
     }
 }

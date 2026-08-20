@@ -25,24 +25,24 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.LinkAnalysis.Opti
         #endregion
         public void ClickLinkAnalysisTab()
         {
-            Driver.FindElement(LinkAnalysisTab).Click();
+            driver.FindElement(LinkAnalysisTab).Click();
         }
         
         public void ClickOptionsButton()
         {
-            Driver.FindElement(OptionsButton).Click();
+            driver.FindElement(OptionsButton).Click();
         }
         public void ClickOpenGraphValue()
         {
-            Driver.FindElement(OpenGraphValue).Click();
+            driver.FindElement(OpenGraphValue).Click();
         }
         public void ClickEditGraphSettings()
         {
-            Driver.FindElement(EditGraphSettings).Click();
+            driver.FindElement(EditGraphSettings).Click();
         }
         public void ClickDelete()
         {
-            Driver.FindElement(Delete).Click();
+            driver.FindElement(Delete).Click();
         }
     }
 }
