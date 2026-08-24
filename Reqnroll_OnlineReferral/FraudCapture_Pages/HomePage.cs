@@ -17,23 +17,65 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
         private readonly By CloseAlertButton = By.XPath("//*[@id='HelpContentViewForm']//button[contains(text(),'Close')]");
         private readonly By MainNavigationBtn = By.XPath("//button[@id='navigationMenuId']");
-        private readonly By CaseTrackingOption = By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking']");
-        private readonly By SelectLeadsTab = By.XPath("//a[@id='allLeadsTabId']");
+        private readonly By CaseTrackingOption = By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking' or normalize-space()='Case Tracking' or contains(normalize-space(),'Case Tracking')]");
+        private readonly By SelectLeadsTab = By.XPath("//a[@id='allLeadsTabId' or normalize-space()='Leads' or contains(normalize-space(),'Leads')]");
         
         public void ClickMainNavigationBtn()
         {
-            //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
-            Driver.FindElement(MainNavigationBtn).Click();
+            ClickWithRetry(MainNavigationBtn, 30);
         }
         public void ClickCaseTrackingOption()
         {
-            //CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
-            Driver.FindElement(CaseTrackingOption).Click();
+            ClickWithRetry(CaseTrackingOption, 30);
         }
         public void ClickSelectLeadsTab()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
-            Driver.FindElement(SelectLeadsTab).Click();
+            ClickWithRetry(SelectLeadsTab, 30);
+        }
+
+        private void ClickWithRetry(By locator, int timeoutInSeconds)
+        {
+            var timeoutAt = DateTime.UtcNow.AddSeconds(timeoutInSeconds);
+
+            while (DateTime.UtcNow < timeoutAt)
+            {
+                try
+                {
+                    CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 5);
+                    CommonHelpers.WaitForElementClickable(Driver, locator, 5);
+
+                    var element = Driver.FindElements(locator).FirstOrDefault(e => e.Displayed);
+                    if (element == null)
+                    {
+                        Thread.Sleep(250);
+                        continue;
+                    }
+
+                    try
+                    {
+                        element.Click();
+                    }
+                    catch (ElementClickInterceptedException)
+                    {
+                        ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", element);
+                    }
+
+                    return;
+                }
+                catch (NoSuchElementException)
+                {
+                }
+                catch (StaleElementReferenceException)
+                {
+                }
+                catch (WebDriverTimeoutException)
+                {
+                }
+
+                Thread.Sleep(250);
+            }
+
+            throw new WebDriverTimeoutException($"Timed out after {timeoutInSeconds} seconds while clicking element: {locator}");
         }
 
 

@@ -12,6 +12,52 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
     {
         public CreateNewLeadPage(IWebDriver driver) : base(driver) { }
 
+        private void SelectDropdownOption(By locator, string optionText)
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
+            CommonHelpers.WaitForElementVisiblity(Driver, locator, 120);
+
+            var selectElement = new SelectElement(Driver.FindElement(locator));
+            var requested = (optionText ?? string.Empty).Trim();
+
+            try
+            {
+                selectElement.SelectByText(requested);
+                return;
+            }
+            catch
+            {
+            }
+
+            var matchingOption = selectElement.Options.FirstOrDefault(o =>
+                string.Equals(o.Text.Trim(), requested, StringComparison.OrdinalIgnoreCase)
+                || string.Equals((o.GetAttribute("value") ?? string.Empty).Trim(), requested, StringComparison.OrdinalIgnoreCase)
+                || o.Text.Trim().Contains(requested, StringComparison.OrdinalIgnoreCase));
+
+            if (matchingOption == null)
+            {
+                throw new NoSuchElementException($"Option '{requested}' was not found for locator {locator}.");
+            }
+
+            matchingOption.Click();
+        }
+
+        private void ClickElement(By locator)
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
+            CommonHelpers.WaitForElementClickable(Driver, locator, 120);
+
+            var element = Driver.FindElement(locator);
+            try
+            {
+                element.Click();
+            }
+            catch
+            {
+                ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", element);
+            }
+        }
+
         #region Elements
         
         private readonly By LeadWorkflowTypeDropDown = By.XPath("//select[@id='leadCaseType']");
@@ -19,14 +65,14 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         private readonly By SourceTypeDropDown = By.XPath("//select[@id='leadSource']");
         private readonly By ReasonDropDown = By.XPath("//select[@id='leadReason']");
         private readonly By AssignedToDropDown = By.XPath("//select[@id='leadAssignedTo']");
-        private readonly By NextBtn = By.XPath("//button[@id='next']");
+        private readonly By NextBtn = By.XPath("//button[@id='next' or normalize-space()='Next']");
         
-        private readonly By NextBtnforPrimarySubjectPage = By.XPath("//button[@id='next']");
+        private readonly By NextBtnforPrimarySubjectPage = By.XPath("//button[@id='next' or normalize-space()='Next']");
         private readonly By DescriptionTab = By.XPath("//a[@id='descriptionTabId']");
-        private readonly By DescriptionField = By.XPath("//div[@class='fr-element fr-view fr-element-scroll-visible']/p");
-        private readonly By NextBtnforDescriptionPage = By.XPath("//button[@id='next']");
+        private readonly By DescriptionField = By.XPath("//div[contains(@class,'fr-element') and @contenteditable='true']");
+        private readonly By NextBtnforDescriptionPage = By.XPath("//button[@id='next' or normalize-space()='Next']");
         private readonly By ReferringPartyDropDown = By.XPath("//select[@id='referringPartyVal']");
-        private readonly By NextBtnforReferringPartyPage = By.XPath("//button[@id='next']");
+        private readonly By NextBtnforReferringPartyPage = By.XPath("//button[@id='next' or normalize-space()='Next']");
         private readonly By CreateLeadBtninPrioritizationTab = By.XPath("//button[@id='createLeadBtninPrioritizationTab']");
         //Member-Manually add the subject
         private readonly By SubjectTypeDropDown = By.XPath("//select[@id='subjectTypeVal']");
@@ -56,7 +102,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         private readonly By ManuallyAddBySubjectZipCode = By.XPath("//input[@id='ViewSubjectZipCode']");
         private readonly By ManuallyAddByViewSubjectPhone = By.XPath("//input[@id='ViewSubjectPhone']");
         private readonly By ManuallyAddBySecondaryPhone = By.XPath("//input[@id='SecondaryPhone']");
-        private readonly By ManuallyAddBySubjectEmail = By.XPath("//input[@id='ProviderViewSubjectEmail']");
+        private readonly By ManuallyAddBySubjectEmail = By.XPath("//input[@id='ViewSubjectEmail' or @id='ProviderViewSubjectEmail']");
         
 
         //Search By ID Search Elements for Member
@@ -156,50 +202,38 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         #endregion
         public void SelectLeadWorkflowType(string workflowType)
         {
-            
             CommonHelpers.WaitForElementVisiblity(Driver, LeadWorkflowTypeDropDown, 120);
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(LeadWorkflowTypeDropDown).Click();
-            CommonHelpers.selectOptionByValue(Driver.FindElement(LeadWorkflowTypeDropDown), workflowType);
+            SelectDropdownOption(LeadWorkflowTypeDropDown, workflowType);
         }
         public void SelectDetectionMethod(string detectionMethod)
         {
-            
-            Driver.FindElement(DetectionMethodDropDown);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(DetectionMethodDropDown), detectionMethod);
-
+            SelectDropdownOption(DetectionMethodDropDown, detectionMethod);
         }
         public void SelectSourceType(string sourceType)
         {
-            
-            Driver.FindElement(SourceTypeDropDown);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SourceTypeDropDown), sourceType);
+            SelectDropdownOption(SourceTypeDropDown, sourceType);
         }
         public void SelectReason(string reason)
         {
-            
-            Driver.FindElement(ReasonDropDown);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(ReasonDropDown), reason);
+            SelectDropdownOption(ReasonDropDown, reason);
         }
         public void SelectAssignedTo(string assignedTo)
         {
-           
-            Driver.FindElement(AssignedToDropDown);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(AssignedToDropDown), assignedTo);
+            SelectDropdownOption(AssignedToDropDown, assignedTo);
         }
         public void ClickNextBtn()
         {
-            Driver.FindElement(NextBtn).Click();
+            ClickElement(NextBtn);
         }
         public void SelectSubjectType(string subjectType)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SubjectTypeDropDown), subjectType);
+            SelectDropdownOption(SubjectTypeDropDown, subjectType);
         }
-        // Renamed to avoid name collision with the PrimarySubjectDropDown field (method group -> By conversion error)
         public void SelectPrimarySubject(string subjectTypeselect)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, PrimarySubjectDropDown, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(PrimarySubjectDropDown), subjectTypeselect);
+            SelectDropdownOption(PrimarySubjectDropDown, subjectTypeselect);
         }
         public void ClickManuallyAddBySubjectPrefix(string namePrefix)
         {
@@ -308,14 +342,13 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         }
         public void SelectManuallyAddBySubjectState(string State)
         {
-
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(ManuallyAddBySubjectState), State);
+            SelectDropdownOption(ManuallyAddBySubjectState, State);
         }
         public void SelectManuallyAddBySubjectCounty(string County)
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(ManuallyAddBySubjectCounty), County);
+            SelectDropdownOption(ManuallyAddBySubjectCounty, County);
 
         }
         public void ClickManuallyAddBySubjectZipCode(string ZipCode)
@@ -427,13 +460,12 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         
         public void SelectSubjectTypeDropDownProvider(string subjectTypeprovider)
         {
-            //CommonHelpers.WaitForElementVisiblity(Driver, SubjectTypeDropDownProvider, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SubjectTypeDropDownProvider), subjectTypeprovider);
+            SelectDropdownOption(SubjectTypeDropDownProvider, subjectTypeprovider);
         }
         public void SelectPrimarySubjectDropDownProvider(string subjectTypeselectprovider)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, PrimarySubjectDropDownProvider, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(PrimarySubjectDropDownProvider), subjectTypeselectprovider);
+            SelectDropdownOption(PrimarySubjectDropDownProvider, subjectTypeselectprovider);
         }
         //public void ClickProviderOrganizationName(string organization)
         //{
@@ -532,35 +564,29 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         
         public void ClickNextBtnforPrimarySubjectPage()
         {
-            Driver.FindElement(NextBtnforPrimarySubjectPage).Click();
+            ClickElement(NextBtnforPrimarySubjectPage);
         }
-        //Description Tab
         public void ClickDescriptionTab()
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(DescriptionTab).Click();
+            ClickElement(DescriptionTab);
         }
         public void ClickDescriptionField(string description)
         {
             CommonHelpers.WaitForElementVisiblity(Driver, DescriptionField, 120);
-            var DescriptionTextArea = Driver.FindElement(DescriptionField);
-            DescriptionTextArea.Click();
-            DescriptionTextArea.SendKeys(description);
-            
-
+            var descriptionTextArea = Driver.FindElement(DescriptionField);
+            descriptionTextArea.Click();
+            descriptionTextArea.SendKeys(Keys.Control + "a");
+            descriptionTextArea.SendKeys(Keys.Delete);
+            descriptionTextArea.SendKeys(description);
         }
         public void ClickNextBtnforDescriptionPage()
         {
-            Driver.FindElement(NextBtnforDescriptionPage).Click();
-            
+            ClickElement(NextBtnforDescriptionPage);
         }
-        //Referring Party
         public void SelectReferringParty(string referringParty)
         {
-            Driver.FindElement(ReferringPartyDropDown);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(ReferringPartyDropDown), referringParty);
-            
-
+            SelectDropdownOption(ReferringPartyDropDown, referringParty);
         }
         public void ClickReferringPartySearchByID(string memberIdRefParty)
         {
@@ -686,9 +712,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         public void ClickNextBtnforReferringPartyPage()
         {
             Driver.FindElement(NextBtnforReferringPartyPage).Click();
-            
-
-
+           
         }
         public void ClickCreateLeadBtninPrioritizationTab()
         {

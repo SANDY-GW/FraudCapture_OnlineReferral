@@ -193,13 +193,13 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 28
  await testRunner.GivenAsync("when I open the Online referral application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table111 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table143 = new global::Reqnroll.Table(new string[] {
                             "UserFName",
                             "USerLName",
                             "TestSource",
                             "Email",
                             ""});
-                table111.AddRow(new string[] {
+                table143.AddRow(new string[] {
                             "UserFName",
                             "UserLastName",
                             "Test Source 1",
@@ -207,7 +207,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             ""});
 #line 29
  await testRunner.AndAsync("I enter the \"UserFName\",\"UserLastName\",\"Test Source 1\",\"sandeep.krishnan@gainwell" +
-                        "technologies.com\" filled on the Initial User Data Page", ((string)(null)), table111, "And ");
+                        "technologies.com\" filled on the Initial User Data Page", ((string)(null)), table143, "And ");
 #line hidden
 #line 32
  await testRunner.AndAsync("I enter the \"Email address\" on the Initial User Data Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");

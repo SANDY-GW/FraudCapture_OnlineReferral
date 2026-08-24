@@ -54,14 +54,23 @@ namespace ReqnrollProject_FraudCapture.StepDefinitions
             var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureLeadData>();
             fc.ClickSearchButton();
             fc.SelectLead(data.selectleadId);
+            CommonHelpers.SwitchtoNewWindow(Driver);
         }
 
+
+        [Then("i click Begin Editing button to Edit the Lead Details")]
+        public void ThenIClickBeginEditingButtonToEditTheLeadDetails()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.ClickLeadBeginEditing();
+            
+        }
         [Then("i click Activity Tab and click Begin Editing on the Fraud Capture Page")]
         public void ThenIClickActivityTabAndClickBeginEditingOnTheFraudCapturePage()
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
             fc.ClickLeadActivitiesDetailsTab();
-            fc.ClickBeginEditing();
+            fc.ClickLeadBeginEditing();
         }
 
         [Then("i click Edit button to edit the activity on the Fraud Capture Page")]
@@ -137,14 +146,14 @@ namespace ReqnrollProject_FraudCapture.StepDefinitions
         }
 
 
-        //[Then("I Select the Activity Tab and click Begin Editing on the fraud capture lead page")]
-        //public void ThenISelectTheActivityTabAndClickBeginEditingOnTheFraudCaptureLeadPage()
-        //{
-        //    var fc = new FC_CaseTracking_LeadPage(Driver);
-        //    fc.ClickLeadActivitiesDetailsTab();
-        //    fc.ClickActivitiesBeginEditing();
+        [Then("I Select the Activity Tab and click Begin Editing on the fraud capture lead page")]
+        public void ThenISelectTheActivityTabAndClickBeginEditingOnTheFraudCaptureLeadPage()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.ClickLeadActivitiesDetailsTab();
+            fc.ClickActivitiesBeginEditing();
 
-        //}
+        }
         [Then("I click Edit button to edit the Lead on the fraud capture lead page")]
         public void ThenIClickEditButtonToEditTheLeadOnTheFraudCaptureLeadPage()
         {
@@ -303,12 +312,11 @@ namespace ReqnrollProject_FraudCapture.StepDefinitions
             Assert.That(fc.IsAttachmentListViewDisplayed(), Is.True, "Should be navigated back to attachment list view");
         }
 
-        [Then("I click Lead tab and click Begin Editing button on the fraud capture lead page")]
+        [Then("click Begin Editing button on the fraud capture lead page")]
         public void ThenIClickLeadTabAndClickBeginEditingButtonOnTheFraudCaptureLeadPage()
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
-            fc.ClickLeadDetailsTab();
-            fc.ClickActivitiesBeginEditing();
+            fc.ClickLeadBeginEditing();
         }
 
         [Then("I enter {string} in Lead Description area on the fraud capture lead page")]
@@ -323,6 +331,97 @@ namespace ReqnrollProject_FraudCapture.StepDefinitions
         {
             var fc = new FC_CaseTracking_LeadPage(Driver);
             fc.ClickLeadSaveButton();
+        }
+
+        [Then("I select Lead Type as {string} on the fraud capture lead page")]
+        public void ThenISelectLeadTypeAsOnTheFraudCaptureLeadPage(string leadType)
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.SelectLeadType(leadType);
+        }
+
+        [Then("I select Lead Status as {string} on the fraud capture lead page")]
+        public void ThenISelectLeadStatusAsOnTheFraudCaptureLeadPage(string leadStatus)
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.SelectLeadStatus(leadStatus);
+        }
+
+        [Then("I click Reason tab on the fraud capture lead page")]
+        public void ThenIClickReasonTabOnTheFraudCaptureLeadPage()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.ClickLeadReasonTab();
+        }
+
+        [Then("I click Add button on the Lead Reason section on the fraud capture lead page")]
+        public void ThenIClickAddButtonOnTheLeadReasonSectionOnTheFraudCaptureLeadPage()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.ClickLeadReasonAddButton();
+        }
+
+        [Then("I select Detection Method as {string} on the fraud capture lead page")]
+        public void ThenISelectDetectionMethodAsOnTheFraudCaptureLeadPage(string detectionMethod)
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.SelectLeadReasonDetectionMethod(detectionMethod);
+        }
+
+        [Then("I select Source Type as {string} on the fraud capture lead page")]
+        public void ThenISelectSourceTypeAsOnTheFraudCaptureLeadPage(string sourceType)
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.SelectLeadReasonSourceType(sourceType);
+        }
+
+        [Then("I select Reason as {string} on the fraud capture lead page")]
+        public void ThenISelectReasonAsOnTheFraudCaptureLeadPage(string reason)
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.SelectLeadReasonReason(reason);
+        }
+
+        [Then("I enter {string} in Reason Description area on the fraud capture lead page")]
+        public void ThenIEnterInReasonDescriptionAreaOnTheFraudCaptureLeadPage(string reasonDescription)
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.EnterLeadReasonDescription(reasonDescription);
+        }
+
+        [Then("I click Save button on the lead reason section on the fraud capture lead page")]
+        public void ThenIClickSaveButtonOnTheLeadReasonSectionOnTheFraudCaptureLeadPage()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.ClickLeadReasonSaveButton();
+        }
+
+        [Then("I select Assigned To as {string} on the fraud capture lead page")]
+        public void ThenISelectAssignedToAsOnTheFraudCaptureLeadPage(string assignedTo)
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.SelectLeadAssignedTo(assignedTo);
+        }
+
+        [Then("I select Department/Division as {string} on the fraud capture lead page")]
+        public void ThenISelectDepartmentDivisionAsOnTheFraudCaptureLeadPage(string departmentDivision)
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.SelectLeadDepartmentDivision(departmentDivision);
+        }
+
+        [Then("I select Section/Team as {string} on the fraud capture lead page")]
+        public void ThenISelectSectionTeamAsOnTheFraudCaptureLeadPage(string sectionTeam)
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.SelectLeadSectionTeam(sectionTeam);
+        }
+
+        [Then("I click Save button on the fraud capture lead page and click Subjects tab")]
+        public void ThenIClickSaveButtonOnTheFraudCaptureLeadPageAndClickSubjectsTab()
+        {
+            var fc = new FC_CaseTracking_LeadPage(Driver);
+            fc.ClickSaveAndNavigateToSubjectTab();
         }
 
     }

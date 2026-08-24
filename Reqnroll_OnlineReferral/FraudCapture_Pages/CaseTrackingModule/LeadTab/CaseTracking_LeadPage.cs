@@ -99,7 +99,50 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         }
         public void ClickLeadActivitiesEdit()
         {
-            Driver.FindElement(ActivitiesEditButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+            CommonHelpers.WaitForPageLoading(Driver);
+
+            var timeoutAt = DateTime.UtcNow.AddSeconds(20);
+            Exception? lastError = null;
+
+            while (DateTime.UtcNow < timeoutAt)
+            {
+                try
+                {
+                    var button = Driver.FindElements(By.XPath("(//button[@id='editActivityId' and not(@disabled)])[1]"))
+                        .FirstOrDefault(x => x.Displayed);
+
+                    if (button == null)
+                    {
+                        System.Threading.Thread.Sleep(200);
+                        continue;
+                    }
+
+                    ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].scrollIntoView({block:'center'});", button);
+                    System.Threading.Thread.Sleep(100);
+
+                    try
+                    {
+                        button.Click();
+                    }
+                    catch
+                    {
+                        ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", button);
+                    }
+
+                    CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    lastError = ex;
+                }
+
+                System.Threading.Thread.Sleep(200);
+            }
+
+            throw new WebDriverTimeoutException("Unable to click first activity Edit button." +
+                (lastError != null ? $" Last error: {lastError.Message}" : string.Empty));
         }
 
         public void ClickLeadActivitiesDetailsTab()
