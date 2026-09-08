@@ -112,7 +112,6 @@ namespace FC_OnlineReferral.FraudCapture_Pages
                         //Common.WaitForLoadingOverlayToDisappear();
 
                         Driver.FindElement(CloseAlertButton).Click();
-                        Driver.Close();
                     }
                 }
                 catch (NoSuchElementException)
