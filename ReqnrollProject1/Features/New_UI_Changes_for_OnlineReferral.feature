@@ -1746,7 +1746,7 @@ Scenario Outline: 07_ [Online Referral End To End Scenario with Primary Subject 
 	Then Required CSS glow appears with correct configured color controlled in Admin.
 	When i check the required fields current page
 	And Questionone Is this a resubmission
-		| <Question1  |
+		| Question1 |
 		| <Question1> |
 	And Questiontwo, QuestionThree
 		| Question2   | Question3   |
