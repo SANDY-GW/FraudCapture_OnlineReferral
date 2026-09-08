@@ -25,7 +25,7 @@ And I click Attachment to add the attachment on the fraud capture lead page
 
 Examples:	
 
-	| UserEmail                         | leadid  | leadID         | selectleadId   | filepath     |
+	| UserEmail                         | leadid  | leadID         | selectleadId   | filePath     |
 	| yamuna.c@gainwelltechnologies.com | Lead ID | DEMO0715202637 | DEMO0715202637 | TestFile.txt |
 
 
