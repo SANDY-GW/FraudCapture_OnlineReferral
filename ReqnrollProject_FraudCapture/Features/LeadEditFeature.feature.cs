@@ -27,9 +27,9 @@ namespace FraudCapture_BDD.Features
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Lead Edit workflow validation", "  As a case tracking user\r\n  I want to manage leads in Lead Edit\r\n  So that lead " +
-                "lifecycle, activities, reasons, subjects, referrals, attachments, reports, and s" +
-                "tatus automation are validated", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Lead Edit workflow validation", "  As a case tracking user\n  I want to manage leads in Lead Edit\n  So that lead li" +
+                "fecycle, activities, reasons, subjects, referrals, attachments, reports, and sta" +
+                "tus automation are validated", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
 #line 1 "LeadEditFeature.feature"
 #line hidden
@@ -112,14 +112,14 @@ namespace FraudCapture_BDD.Features
 #line 7
     await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-            global::Reqnroll.Table table153 = new global::Reqnroll.Table(new string[] {
+            global::Reqnroll.Table table154 = new global::Reqnroll.Table(new string[] {
                         "Field",
                         "Value"});
-            table153.AddRow(new string[] {
+            table154.AddRow(new string[] {
                         "UserEmail",
                         "yamuna.c@gainwelltechnologies.com"});
 #line 8
-    await testRunner.WhenAsync("I enter the following credential to login to the fraud capture main page", ((string)(null)), table153, "When ");
+    await testRunner.WhenAsync("I enter the following credential to login to the fraud capture main page", ((string)(null)), table154, "When ");
 #line hidden
 #line 11
     await testRunner.AndAsync("i click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -194,50 +194,50 @@ namespace FraudCapture_BDD.Features
 #line 16
     await testRunner.WhenAsync("I click the Create New Lead button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-                global::Reqnroll.Table table154 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table155 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
-                table154.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "Workflow Type",
                             string.Format("{0}", searchKeyword)});
-                table154.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "Detection Method",
                             string.Format("{0}", detectionMethod)});
-                table154.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "Source Type",
                             string.Format("{0}", sourceType)});
-                table154.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "Reason",
                             string.Format("{0}", reason)});
-                table154.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "Suspect Activity From Date",
                             string.Format("{0}", activityFromDate)});
-                table154.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "Suspect Activity To Date",
                             string.Format("{0}", activityToDate)});
-                table154.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "Assigned Section/Teams",
                             string.Format("{0}", sectionTeams)});
-                table154.AddRow(new string[] {
+                table155.AddRow(new string[] {
                             "Potential Overpayment",
                             string.Format("{0}", overpaymentAmount)});
 #line 17
-    await testRunner.AndAsync("I enter the following lead details:", ((string)(null)), table154, "And ");
+    await testRunner.AndAsync("I enter the following lead details:", ((string)(null)), table155, "And ");
 #line hidden
 #line 27
     await testRunner.AndAsync("I Click the Next button in the first page of CreateNewLead Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table155 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table156 = new global::Reqnroll.Table(new string[] {
                             "Subject Type",
                             string.Format("{0}", subjectType)});
-                table155.AddRow(new string[] {
+                table156.AddRow(new string[] {
                             "Search Criteria",
                             string.Format("{0}", searchCriteria)});
-                table155.AddRow(new string[] {
+                table156.AddRow(new string[] {
                             "Subject ID",
                             string.Format("{0}", subjectId)});
 #line 28
-    await testRunner.AndAsync("I add a subject with the following details:", ((string)(null)), table155, "And ");
+    await testRunner.AndAsync("I add a subject with the following details:", ((string)(null)), table156, "And ");
 #line hidden
 #line 32
     await testRunner.AndAsync(string.Format("I enter lead description \"{0}\"", leadDescription), ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");

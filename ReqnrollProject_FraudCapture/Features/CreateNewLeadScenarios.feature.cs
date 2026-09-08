@@ -27,8 +27,8 @@ namespace FraudCapture_BDD.Features
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Create New Lead", "  As a fraud investigator\r\n  I want to create and manage leads in the FWA PI Port" +
-                "al\r\n  So that I can track potential fraud cases", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Create New Lead", "  As a fraud investigator\n  I want to create and manage leads in the FWA PI Porta" +
+                "l\n  So that I can track potential fraud cases", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
 #line 1 "CreateNewLeadScenarios.feature"
 #line hidden
