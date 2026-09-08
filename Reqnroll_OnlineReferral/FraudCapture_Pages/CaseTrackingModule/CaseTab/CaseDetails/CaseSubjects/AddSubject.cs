@@ -205,8 +205,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
 
             if (isPresent)
             {
-                Console.WriteLine($"Subject '{firstName} {lastName}' is already present. Deleting it.");
-                DeleteSubject(firstName, lastName);
+                Console.WriteLine($"Subject '{firstName} {lastName}' was present and has been deleted.");
             }
             else
             {
