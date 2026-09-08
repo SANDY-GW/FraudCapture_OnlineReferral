@@ -133,12 +133,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 16
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table205 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table380 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table205.AddRow(new string[] {
+                table380.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 17
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table205, "When ");
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page:", userEmail), ((string)(null)), table380, "When ");
 #line hidden
 #line 20
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -179,12 +179,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 30
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table206 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table381 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table206.AddRow(new string[] {
+                table381.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 31
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table206, "When ");
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table381, "When ");
 #line hidden
 #line 34
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
@@ -222,12 +222,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 42
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table207 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table382 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table207.AddRow(new string[] {
+                table382.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 43
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table207, "When ");
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table382, "When ");
 #line hidden
 #line 46
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
@@ -270,12 +270,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 55
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table208 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table383 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table208.AddRow(new string[] {
+                table383.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 56
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table208, "When ");
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table383, "When ");
 #line hidden
 #line 59
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
@@ -284,12 +284,12 @@ await testRunner.AndAsync("I click on the Procced to login button on the welcome
 #line 60
 await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page for General Tests", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table209 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table384 = new global::Reqnroll.Table(new string[] {
                             "PayorName"});
-                table209.AddRow(new string[] {
+                table384.AddRow(new string[] {
                             string.Format("{0}", payorName)});
 #line 61
-await testRunner.AndAsync(string.Format("I can switch the Payor to \"{0}\" on the fraud capture Page for General Tests", payorName), ((string)(null)), table209, "And ");
+await testRunner.AndAsync(string.Format("I can switch the Payor to \"{0}\" on the fraud capture Page for General Tests", payorName), ((string)(null)), table384, "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -320,12 +320,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 70
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table210 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table385 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table210.AddRow(new string[] {
+                table385.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 71
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table210, "When ");
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table385, "When ");
 #line hidden
 #line 74
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
@@ -366,12 +366,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 83
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table211 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table386 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table211.AddRow(new string[] {
+                table386.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 84
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table211, "When ");
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table386, "When ");
 #line hidden
 #line 87
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
@@ -412,12 +412,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 96
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table212 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table387 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table212.AddRow(new string[] {
+                table387.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 97
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table212, "When ");
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table387, "When ");
 #line hidden
 #line 100
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +
@@ -459,12 +459,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 110
 await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table213 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table388 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table213.AddRow(new string[] {
+                table388.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 111
-await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table213, "When ");
+await testRunner.WhenAsync(string.Format("I enter the \"{0}\" on the welcome fraude capture page for General Test:", userEmail), ((string)(null)), table388, "When ");
 #line hidden
 #line 114
 await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page for Gen" +

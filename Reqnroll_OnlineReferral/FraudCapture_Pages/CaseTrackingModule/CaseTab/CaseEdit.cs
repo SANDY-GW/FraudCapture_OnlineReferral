@@ -5,9 +5,12 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
-using static System.Net.Mime.MediaTypeNames;
+using System.Threading;
+using System.Threading.Tasks;
 using HeaderComponentType = FC_OnlineReferral.FraudCapture_Pages.HeaderComponent.HeaderComponent;
 
 namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab
@@ -467,6 +470,13 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab
             return false;
         }
 
+        public void exitActivityButton()
+        {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver,100);
+            CommonHelpers.WaitForElementVisiblity(driver, ExitActivityButton, 30);
+            driver.FindElement(ExitActivityButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+        }
         public void ShowCaseSummary()
         {
             driver.FindElement(CaseSummaryTab).Click();
@@ -2415,6 +2425,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab
 
             firstRowData.ElementAt(10).FindElement(By.XPath("small")).FindElement(By.XPath("//button[contains(text(),'Delete')]")).Click();
             driver.FindElement(ConfirmationPopup).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
         }
 
         public bool reviewCaseClaimReview()

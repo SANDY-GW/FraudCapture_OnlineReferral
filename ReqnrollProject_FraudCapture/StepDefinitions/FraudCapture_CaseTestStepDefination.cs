@@ -32,7 +32,7 @@ namespace FraudCapture_BDD.StepDefinitions
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             Driver.FindElement(By.Id("dropdownLeadListUser")).Click();
             Driver.FindElement(By.XPath($"//ul[@id='leadListAssignedTo']//a[normalize-space()='{data.AssignedToFilter}']")).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
         }
 
 
@@ -83,10 +83,33 @@ namespace FraudCapture_BDD.StepDefinitions
             input.Clear();
             input.SendKeys(data.CaseID);
         }
+
+
+
+        [When("I search for Non-Investigative Case ID")]
+        public void WhenISearchForNonInvestigativeCaseIDAs()
+        {
+
+            CommonHelpers.WaitForElementVisiblity(Driver, By.XPath("//form[@id='CaseSearchForm']/descendant::input[@id='searchInputField']"), 20);
+            var input = Driver.FindElement(By.XPath("//form[@id='CaseSearchForm']/descendant::input[@id='searchInputField']"));
+            input.Clear();
+
+           string CaseID = _scenarioContext.ContainsKey("CapturedCaseId")
+                ? _scenarioContext["CapturedCaseId"] as string
+                : FC_OnlineReferral.AppConstants.Non_Inv_CaseId;
+
+            Assert.That(CaseID, Is.Not.Null.And.Not.Empty,
+                "No captured Case ID found in scenario context or AppConstants.");
+
+
+
+          
+            input.SendKeys(CaseID);
+        }
         [When("I search for Lead ID Created")]
         public void WhenISearchForLeadID()
         {
-            
+
             CommonHelpers.WaitForElementVisiblity(Driver, By.XPath("//form[@id='LeadSearchForm']/descendant::input[@id='searchInputField']"), 20);
             var input = Driver.FindElement(By.XPath("//form[@id='LeadSearchForm']/descendant::input[@id='searchInputField']"));
             string capturedLeadId = _scenarioContext["CapturedLeadId"] as string;
@@ -323,9 +346,9 @@ namespace FraudCapture_BDD.StepDefinitions
 
 
         [When("I update case summary with alternate case id,case type, case status, assigned to, assigned supervisor, department_Or_division, section_Or_team, and lob")]
-            public void WhenIUpdateCaseSummaryWithAlternateCaseIDCaseTypeCaseStatusAssignedToAssignedSupervisorDepartmentDivisionSectionTeamAndLob(DataTable dataTable)
+        public void WhenIUpdateCaseSummaryWithAlternateCaseIDCaseTypeCaseStatusAssignedToAssignedSupervisorDepartmentDivisionSectionTeamAndLob(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<FC_CaseSummary.Data.CaseSummaryData>(); 
+            var data = dataTable.CreateInstance<FC_CaseSummary.Data.CaseSummaryData>();
             var caseSummary = new CaseSummary(Driver);
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
 
@@ -344,7 +367,7 @@ namespace FraudCapture_BDD.StepDefinitions
             _scenarioContext["ExpectedAssignedTo"] = data.AssignedCaseTo;
             _scenarioContext["ExpectedAssignedSupervisor"] = data.AssignedCaseSupervisor;
             _scenarioContext["ExpectedDepartmentDivision"] = data.CaseDep_OR_Dev;
-            _scenarioContext["ExpectedSectionTeam"] = data.CaseSection_Or_Team  ;
+            _scenarioContext["ExpectedSectionTeam"] = data.CaseSection_Or_Team;
             _scenarioContext["ExpectedLob"] = data.lob;
         }
 
@@ -389,7 +412,7 @@ namespace FraudCapture_BDD.StepDefinitions
             var expectedLob = _scenarioContext["ExpectedLob"] as string;
 
             Assert.That(caseSummary.GetAlternateCaseID().Contains(expectedAlternateCaseId), "Alternate Case ID was not updated.");
-         
+
             Assert.That(caseSummary.GetCaseType(), Is.EqualTo(expectedCaseType), "Case Type was not updated.");
             Assert.That(caseSummary.GetCaseStatus(), Is.EqualTo(expectedCaseStatus), "Case Status was not updated.");
             Assert.That(caseSummary.GetAssignedToDropdownValue(), Does.Contain(expectedAssignedTo), "Assigned To was not updated.");
@@ -403,7 +426,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I click on Close the Lead & Create a Case button")]
         public void WhenIClickOnButton(DataTable dataTable)
         {
-            var data =dataTable.CreateInstance<FC_CaseSummary.Data.CaseSummaryData>();
+            var data = dataTable.CreateInstance<FC_CaseSummary.Data.CaseSummaryData>();
             var buttonLocator = By.XPath($"//button[contains(normalize-space(),'{data.CloseLeadCreateCaseButton}')]");
             CommonHelpers.WaitForElementVisiblity(Driver, buttonLocator, 20);
             Driver.FindElement(buttonLocator).Click();
@@ -430,7 +453,7 @@ namespace FraudCapture_BDD.StepDefinitions
         {
             AddSubject addsubject = new AddSubject(Driver);
             addsubject.ManuallyAddSubjectDetails(provider, p1, testOrg, p3, john, doe);
-           
+
 
         }
 

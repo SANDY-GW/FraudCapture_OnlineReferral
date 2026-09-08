@@ -7,6 +7,7 @@ using FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDetail
 using FC_OnlineReferral.OnlineReferral_Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using System;
 
 namespace FraudCapture_BDD.StepDefinitions
 {
@@ -150,6 +151,13 @@ namespace FraudCapture_BDD.StepDefinitions
         public void WhenTheUserSelectsTheFirstActivity()
         {
             caseEditPage.SelectFirstActivity();
+        }
+
+        [When("Delete the note added")]
+        public void WhenDeleteTheNoteAdded()
+        {
+            caseEditPage.DeleteNote();
+            caseEditPage.exitActivityButton();
         }
 
         /// <summary>
