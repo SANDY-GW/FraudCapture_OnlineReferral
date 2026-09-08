@@ -8,9 +8,9 @@ namespace FC_OnlineReferral.Data
     {
         public class CaseTrackingData
         {
-            public string User_1 { get; set; }
-            public string CaseId_2 { get; set; }
-            public string CaseId_3 { get; set; }
+            public string User_1 { get; set; } = System.Environment.GetEnvironmentVariable("TEST_USERNAME") ?? "Test_Username";
+            public string CaseId_2 { get; set; } = System.Environment.GetEnvironmentVariable("CASE_TRACKING_CASE_ID_2") ?? "DEMO0804202614";
+            public string CaseId_3 { get; set; } = System.Environment.GetEnvironmentVariable("CASE_TRACKING_CASE_ID_3") ?? "DEMO0720202611";
             public string InvestigativeCaseActivityManual_Title { get; set; } = string.Empty;
             public string ActivityAssignedTo { get; set; } = string.Empty;
             public string CaseActivityManual_Title { get; set; } = string.Empty;
