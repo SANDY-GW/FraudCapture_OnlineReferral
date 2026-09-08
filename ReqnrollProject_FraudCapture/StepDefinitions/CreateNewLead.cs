@@ -100,7 +100,7 @@ namespace FraudCapture_BDD.StepDefinitions
             fc.SelectDetectionMethod(data.DetectionMethod);
             fc.SelectSourceType(data.SourceType);
             fc.SelectReason(data.Reason);
-            //fc.SelectAssignedTo(data.AssignedTo);
+            fc.SelectAssignedTo(data.AssignedTo);
             
         }
         [When("I Click the Next button in the first page of CreateNewLead Page")]
