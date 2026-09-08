@@ -46,7 +46,6 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 20);
             Driver.FindElement(Useroption).Click();
-            CommonHelpers.selectOptionByValue(Driver.FindElement(Useroption), UserOption);
         }
         public void FC_Settings()
         {
