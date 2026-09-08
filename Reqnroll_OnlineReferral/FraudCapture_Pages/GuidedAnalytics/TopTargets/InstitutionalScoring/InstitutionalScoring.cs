@@ -22,11 +22,11 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.TopTargets.Instit
         #endregion
         public void ClickTopTargetsBtn()
         {
-            Driver.FindElement(TopTargets).Click();
+            driver.FindElement(TopTargets).Click();
         }
         public void ClickInstitutionalScoring()
         {
-            Driver.FindElement(InstitutionalScoringTab).Click();
+            driver.FindElement(InstitutionalScoringTab).Click();
         }
         
     }

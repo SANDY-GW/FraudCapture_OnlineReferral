@@ -28,27 +28,27 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         #endregion
         public void ClickActivityTab()
         {
-            Driver.FindElement(activityTab).Click();
+            driver.FindElement(activityTab).Click();
         }
         public void EnterSearchInput(string value)
         {
-            Driver.FindElement(searchInputTxt).SendKeys(value);
+            driver.FindElement(searchInputTxt).SendKeys(value);
         }
         public void SelectActivityTableTools(string tools)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(activityTableToolsDDL), tools);
+            CommonHelpers.selectOptionByValue(driver.FindElement(activityTableToolsDDL), tools);
         }
         public void ClickAddActivityBtn()
         {
-            Driver.FindElement(addActivityBtn).Click();
+            driver.FindElement(addActivityBtn).Click();
         }
         public void ClickSearchBtn()
         {
-            Driver.FindElement(searchStartBtn).Click();
+            driver.FindElement(searchStartBtn).Click();
         }
         public void ClickClearBtn()
         {
-            Driver.FindElement(searchClearBtn).Click();
+            driver.FindElement(searchClearBtn).Click();
         }
     }
 }

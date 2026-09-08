@@ -20,9 +20,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         public void SelectPayor(string Payor)
         {
             var payorDropField = By.XPath("//li[@id='payorSelector']");
-            CommonHelpers.WaitForElementVisiblity(Driver, payorDropField, 10);
-            Driver.FindElement(payorDropField).Click();
-            var payorOption = Driver.FindElement(By.XPath("//a[@id='"+ Payor +"']"));
+            CommonHelpers.WaitForElementVisiblity(driver, payorDropField, 10);
+            driver.FindElement(payorDropField).Click();
+            var payorOption = driver.FindElement(By.XPath("//a[@id='"+ Payor +"']"));
             payorOption.Click();
         }
     }

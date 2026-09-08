@@ -47,89 +47,89 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDe
         #endregion
         public void ClickLeadReason()
         {
-            Driver.FindElement(leadReasonBtn).Click();
+            driver.FindElement(leadReasonBtn).Click();
         }
         public void ClickCancel()
         {
-            Driver.FindElement(cancelBtn).Click();
+            driver.FindElement(cancelBtn).Click();
         }
         public void ClickSave()
         {
-            Driver.FindElement(saveBtn).Click();
+            driver.FindElement(saveBtn).Click();
 
         }
         public void ClickEditCancel()
         {
-            Driver.FindElement(editCancelBtn).Click();
+            driver.FindElement(editCancelBtn).Click();
         }
         public void ClickEditSave()
         {
-            Driver.FindElement(editSaveBtn).Click();
+            driver.FindElement(editSaveBtn).Click();
 
         }
         public void EnterDescription(string description)
         {
-            Driver.FindElement(descriptionTxt).SendKeys(description);
+            driver.FindElement(descriptionTxt).SendKeys(description);
         }
         public void EnterComment(string comment)
         {
-            Driver.FindElement(commentTxt).SendKeys(comment);
+            driver.FindElement(commentTxt).SendKeys(comment);
         }
         public void SelectReason(string reason)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(reasonDDL), reason);
+            CommonHelpers.selectOptionByValue(driver.FindElement(reasonDDL), reason);
         }
         public void SelectEditReason(string reason)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(editReasonDDL), reason);
+            CommonHelpers.selectOptionByValue(driver.FindElement(editReasonDDL), reason);
         }
         public void SelectEditDetection(string detection)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(editDetectionDDL), detection);
+            CommonHelpers.selectOptionByValue(driver.FindElement(editDetectionDDL), detection);
         }
         public void SelectEditSourceType(string sourceType)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(editSourceTypeDDL), sourceType);
+            CommonHelpers.selectOptionByValue(driver.FindElement(editSourceTypeDDL), sourceType);
         }
         public void SelectSourceType(string sourceType)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(sourceTypeDDL), sourceType);
+            CommonHelpers.selectOptionByValue(driver.FindElement(sourceTypeDDL), sourceType);
         }
         public void SelectDetection(string detection)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(detectionDDL), detection);
+            CommonHelpers.selectOptionByValue(driver.FindElement(detectionDDL), detection);
         }
         public void ClickAddReason()
         {
-            Driver.FindElement(addReasongBtn).Click();
+            driver.FindElement(addReasongBtn).Click();
         }
         public void ClickDetectionMethod()
         {
-            Driver.FindElement(detectionMethodField).Click();
+            driver.FindElement(detectionMethodField).Click();
         }
         public void ClickReason()
         {
-            Driver.FindElement(reasonField).Click();
+            driver.FindElement(reasonField).Click();
         }
         public void ClickCreator()
         {
-            Driver.FindElement(creatorField).Click();
+            driver.FindElement(creatorField).Click();
         }
         public void ClickDescription()
         {
-            Driver.FindElement(descriptionField).Click();
+            driver.FindElement(descriptionField).Click();
         }
         public void ClickSource()
         {
-            Driver.FindElement(sourceField).Click();
+            driver.FindElement(sourceField).Click();
         }
         public void ClickReasonID()
         {
-            Driver.FindElement(reasonIdField).Click();
+            driver.FindElement(reasonIdField).Click();
         }
         public void ClickCreated()
         {
-            Driver.FindElement(createdField).Click();
+            driver.FindElement(createdField).Click();
         }
        
     }

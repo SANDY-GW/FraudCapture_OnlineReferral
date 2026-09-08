@@ -34,56 +34,56 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.Reports.SelfServi
         #endregion
         public void ClickReportsTab()
         {
-            Driver.FindElement(ReportsTab).Click();
+            driver.FindElement(ReportsTab).Click();
         }
         public void ClickSelfServiceTab()
         {
-            Driver.FindElement(SelfServiceAnalyticsTab).Click();
+            driver.FindElement(SelfServiceAnalyticsTab).Click();
         }
             public void SelectCreatedByUserList(string CreatedByUser )
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, CreatedByUserList, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(CreatedByUserList), CreatedByUser);
+            CommonHelpers.WaitForElementVisiblity(driver, CreatedByUserList, 120);
+            CommonHelpers.selectOptionByValue(driver.FindElement(CreatedByUserList), CreatedByUser);
 
         }
         public void SelectAccessByList(string AccessByList)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, CreatedByUserList, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(AccessBy), AccessByList);
+            CommonHelpers.WaitForElementVisiblity(driver, CreatedByUserList, 120);
+            CommonHelpers.selectOptionByValue(driver.FindElement(AccessBy), AccessByList);
 
         }
 
         public void EnterSelfServiceAnalyticsTextbox(string searchTextboxValue)
         {
-            Driver.FindElement(SelfServiceAnalyticsSearchTextbox).SendKeys(searchTextboxValue);
+            driver.FindElement(SelfServiceAnalyticsSearchTextbox).SendKeys(searchTextboxValue);
         }
         public void ClickSelfServiceAnalyticsSearch()
         {
-            Driver.FindElement(SelfServiceAnalyticsSearch).Click();
+            driver.FindElement(SelfServiceAnalyticsSearch).Click();
         }
         public void ClickSelfServiceAnalyticsClear()
         {
-            Driver.FindElement(SelfServiceAnalyticsClear).Click();
+            driver.FindElement(SelfServiceAnalyticsClear).Click();
         }
         public void ClickTitle()
         {
-            Driver.FindElement(Title).Click();
+            driver.FindElement(Title).Click();
         }
         public void ClickAccess()
         {
-            Driver.FindElement(Access).Click();
+            driver.FindElement(Access).Click();
         }
         public void ClickCreatedBy()
         {
-            Driver.FindElement(CreatedBy).Click();
+            driver.FindElement(CreatedBy).Click();
         }
         public void ClickLastModifiedBy()
         {
-            Driver.FindElement(LastModifiedBy).Click();
+            driver.FindElement(LastModifiedBy).Click();
         }
         public void ClickLastModifiedOn()
         {
-            Driver.FindElement(LastModifiedOn).Click();
+            driver.FindElement(LastModifiedOn).Click();
         }
 
 

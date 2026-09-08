@@ -32,35 +32,35 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.ActivityTab.Wo
         #endregion
         public void ClickWorkLoadREassignmentBtn()
         {
-            Driver.FindElement(WorkLoadReassignment).Click();
+            driver.FindElement(WorkLoadReassignment).Click();
         }
         public void ClickCancle()
         {
-            Driver.FindElement(CancelBtn).Click();
+            driver.FindElement(CancelBtn).Click();
         }
         public void ClickYes()
         {
-            Driver.FindElement(YesBtn).Click();
+            driver.FindElement(YesBtn).Click();
         }
         public void ClickPopupCancel()
         {
-            Driver.FindElement(PopUpCancelBtn).Click();
+            driver.FindElement(PopUpCancelBtn).Click();
         }
         public void ClickReassign()
         {
-            Driver.FindElement(ReassignBtn).Click();
+            driver.FindElement(ReassignBtn).Click();
         }
         public void SelectWorkLoadReassignmentOption(string option)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SelectWorkLoadReassignmentOptionDDL), option);
+            CommonHelpers.selectOptionByValue(driver.FindElement(SelectWorkLoadReassignmentOptionDDL), option);
         }
         public void SelectWorkLoadReassignmentAssignedTo(string assignedTo)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SelectWorkLoadReassignmentAssignedToDDL), assignedTo);
+            CommonHelpers.selectOptionByValue(driver.FindElement(SelectWorkLoadReassignmentAssignedToDDL), assignedTo);
         }
         public void SelectWorkLoadReassignmentCaseUser(string caseUser)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SelectWorkLoadReassignmentCaseUserDDL), caseUser);
+            CommonHelpers.selectOptionByValue(driver.FindElement(SelectWorkLoadReassignmentCaseUserDDL), caseUser);
         }
     }
 }

@@ -24,19 +24,19 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics
 
         public void ClickProfessionalScoringBtn()
         {
-            Driver.FindElement(ProfessionalScoringBtn).Click();
+            driver.FindElement(ProfessionalScoringBtn).Click();
         }
         public void ClickInstitutionalScoringBtn()
         {
-            Driver.FindElement(InstitutionalScoring).Click();
+            driver.FindElement(InstitutionalScoring).Click();
         }
         public void ClickPharmacyScoringBtn()
         {
-            Driver.FindElement(PharmacyScoringBtn).Click();
+            driver.FindElement(PharmacyScoringBtn).Click();
         }
         public void ClickPatientScoringBtn()
         {
-            Driver.FindElement(PatientScoringBtn).Click();
+            driver.FindElement(PatientScoringBtn).Click();
         }
     }
 }

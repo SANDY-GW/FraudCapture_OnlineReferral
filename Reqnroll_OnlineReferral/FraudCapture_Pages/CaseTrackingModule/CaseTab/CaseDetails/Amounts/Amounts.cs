@@ -36,48 +36,48 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         #endregion
         public void ClickAmountTab()
         {
-            Driver.FindElement(amountTab).Click();
+            driver.FindElement(amountTab).Click();
         }
 
         public void SortamountTableDateModified()
         {
-            Driver.FindElement(amountTableDateModified).Click();
+            driver.FindElement(amountTableDateModified).Click();
         }
         public void SortamountTableModifiedBy()
         {
-            Driver.FindElement(amountTableModifiedBy).Click();
+            driver.FindElement(amountTableModifiedBy).Click();
         }
         public void SortamountTableDateEntered()
         {
-            Driver.FindElement(amountTableDateEntered).Click();
+            driver.FindElement(amountTableDateEntered).Click();
         }
         public void SortamountTableSubjectName()
         {
-            Driver.FindElement(amountTableSubjectName).Click();
+            driver.FindElement(amountTableSubjectName).Click();
         }
         public void SortamountTableEnteredBy()
         {
-            Driver.FindElement(amountTableEnteredBy).Click();
+            driver.FindElement(amountTableEnteredBy).Click();
         }
         public void SortamountTableComments()
         {
-            Driver.FindElement(amountTableComments).Click();
+            driver.FindElement(amountTableComments).Click();
         }
         public void SortamountTableAmount()
         {
-            Driver.FindElement(amountTableAmount).Click();
+            driver.FindElement(amountTableAmount).Click();
         }
         public void SortamountTableAmountCategory()
         {
-            Driver.FindElement(amountTableAmountCategory).Click();
+            driver.FindElement(amountTableAmountCategory).Click();
         }
         public void SortamountTableAmountType()
         {
-            Driver.FindElement(amountTableAmountType).Click();
+            driver.FindElement(amountTableAmountType).Click();
         }
         public void SortamountTableLOB()
         {
-            Driver.FindElement(amountTableLOB).Click();
+            driver.FindElement(amountTableLOB).Click();
         }
     }
 }

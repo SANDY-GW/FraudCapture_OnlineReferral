@@ -16,19 +16,23 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDe
         protected readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
         #region Elements
 
-
         //Add xpath here
         private readonly By reportsDropdown = By.XPath("//*[@id=\"leadcomponent\"]/div[1]/div/span/button");
         private readonly By LedSummaryReportBtn = By.XPath("//a[contains(text(),'Lead Summary Report  ')]");
-
+        
+        
         #endregion
+
         public void ClickReport()
         {
-            Driver.FindElement(reportsDropdown).Click();
+            driver.FindElement(reportsDropdown).Click();
         }
+
         public void ClickLeadSummaryReport()
         {
-            Driver.FindElement(LedSummaryReportBtn).Click();
+            driver.FindElement(LedSummaryReportBtn).Click();
         }
+
+      
     }
 }

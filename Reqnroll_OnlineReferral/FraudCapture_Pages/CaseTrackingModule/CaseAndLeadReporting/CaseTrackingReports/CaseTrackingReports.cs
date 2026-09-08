@@ -33,43 +33,43 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseAndLeadRep
         public void ClickCaseTrackingReprots()
         {
 
-            Driver.FindElement(caseTrackingReportsBtn).Click();
+            driver.FindElement(caseTrackingReportsBtn).Click();
         }
         public void ClickClear()
         {
 
-            Driver.FindElement(clearBtn).Click();
+            driver.FindElement(clearBtn).Click();
         }
         public void ClickReportTitle()
         {
 
-            Driver.FindElement(reportTitleField).Click();
+            driver.FindElement(reportTitleField).Click();
         }
         public void ClickReportType()
         {
 
-            Driver.FindElement(reportTypeField).Click();
+            driver.FindElement(reportTypeField).Click();
         }
         public void ClickDescription()
         {
 
-            Driver.FindElement(descriptionField).Click();
+            driver.FindElement(descriptionField).Click();
         }
 
         public void ClickSearch()
         {
 
-            Driver.FindElement(searchBtn).Click();
+            driver.FindElement(searchBtn).Click();
         }
         public void EnterSearchValue(string value)
         {
 
-            Driver.FindElement(searchTableTxt).SendKeys(value);
+            driver.FindElement(searchTableTxt).SendKeys(value);
         }
         public void ClickCaseAndLeadReporting()
         {
 
-            Driver.FindElement(caseAndLeadReportingTab).Click();
+            driver.FindElement(caseAndLeadReportingTab).Click();
         }
 
        

@@ -54,185 +54,185 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void EnterOrganization(string Organization)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, organizationField, 10);
-            Driver.FindElement(organizationField).Clear();
-            Driver.FindElement(organizationField).SendKeys(Organization);
+            CommonHelpers.WaitForElementVisiblity(driver, organizationField, 10);
+            driver.FindElement(organizationField).Clear();
+            driver.FindElement(organizationField).SendKeys(Organization);
         }
         public void EnterNamePrefix(string NamePrefix)
         {
-            Driver.FindElement(namePrefixField).Clear();
-            Driver.FindElement(namePrefixField).SendKeys(NamePrefix);
+            driver.FindElement(namePrefixField).Clear();
+            driver.FindElement(namePrefixField).SendKeys(NamePrefix);
         }
         public void EnterFirstName(string FirstName)
         {
-            Driver.FindElement(firstNameField).Clear();
-            Driver.FindElement(firstNameField).SendKeys(FirstName);
+            driver.FindElement(firstNameField).Clear();
+            driver.FindElement(firstNameField).SendKeys(FirstName);
         }
         public void EnterMiddleName(string MiddleName)
         {
-            Driver.FindElement(middleNameField).Clear();
-            Driver.FindElement(middleNameField).SendKeys(MiddleName);
+            driver.FindElement(middleNameField).Clear();
+            driver.FindElement(middleNameField).SendKeys(MiddleName);
         }
         public void EnterLastName(string LastName)
         {
-            Driver.FindElement(lastNameField).Clear();
-            Driver.FindElement(lastNameField).SendKeys(LastName);
+            driver.FindElement(lastNameField).Clear();
+            driver.FindElement(lastNameField).SendKeys(LastName);
         }
         public void EnterNameSuffix(string NameSuffix)
         {
-            Driver.FindElement(nameSuffixField).Clear();
-            Driver.FindElement(nameSuffixField).SendKeys(NameSuffix);
+            driver.FindElement(nameSuffixField).Clear();
+            driver.FindElement(nameSuffixField).SendKeys(NameSuffix);
         }
         public void EnterDesignation(string Designation)
         {
-            Driver.FindElement(DesignationField).Clear();
-            Driver.FindElement(DesignationField).SendKeys(Designation);
+            driver.FindElement(DesignationField).Clear();
+            driver.FindElement(DesignationField).SendKeys(Designation);
         }
         public void EnterDOB(string DOB)
         {
-            Driver.FindElement(DOBField).Clear();
-            Driver.FindElement(DOBField).SendKeys(DOB);
+            driver.FindElement(DOBField).Clear();
+            driver.FindElement(DOBField).SendKeys(DOB);
         }
 
         //How did this external referring party report this? 
         public void FillHowDidThisExternalReferringPartyreportThisTextarea(string report)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, HowDidThisExternalReferringPartyreportThisTextarea, 100);
-            Driver.FindElement(HowDidThisExternalReferringPartyreportThisTextarea).Clear();
-            Driver.FindElement(HowDidThisExternalReferringPartyreportThisTextarea).SendKeys(report);
+            CommonHelpers.WaitForElementVisiblity(driver, HowDidThisExternalReferringPartyreportThisTextarea, 100);
+            driver.FindElement(HowDidThisExternalReferringPartyreportThisTextarea).Clear();
+            driver.FindElement(HowDidThisExternalReferringPartyreportThisTextarea).SendKeys(report);
         }
         //Any additional information regarding the witness or external referring party
         public void FillAnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea(string additionalInfo)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea, 100);
-            Driver.FindElement(AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea).Clear();
-            Driver.FindElement(AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea).SendKeys(additionalInfo);
+            CommonHelpers.WaitForElementVisiblity(driver, AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea, 100);
+            driver.FindElement(AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea).Clear();
+            driver.FindElement(AnyAdditionalInformationRegardingTheWitnessOrExternalReferringPartyTextarea).SendKeys(additionalInfo);
         }
         public void EnterSSN(string SSN)
         {
-            Driver.FindElement(SSNField).Clear();
-            Driver.FindElement(SSNField).SendKeys(SSN);
+            driver.FindElement(SSNField).Clear();
+            driver.FindElement(SSNField).SendKeys(SSN);
         }
         public void EnterLicenseNumber(string LicenseNumber)
         {
-            Driver.FindElement(LicenseNumberField).Clear();
-            Driver.FindElement(LicenseNumberField).SendKeys(LicenseNumber);
+            driver.FindElement(LicenseNumberField).Clear();
+            driver.FindElement(LicenseNumberField).SendKeys(LicenseNumber);
 
         }
 
 
         public void EnterOtherID(string OtherID)
         {
-            Driver.FindElement(otherIDField).Clear();
-            Driver.FindElement(otherIDField).SendKeys(OtherID);
+            driver.FindElement(otherIDField).Clear();
+            driver.FindElement(otherIDField).SendKeys(OtherID);
         }
 
         public void EnterOther(string Other)
         {
-            Driver.FindElement(otherField).Clear();
-            Driver.FindElement(otherField).SendKeys(Other);
+            driver.FindElement(otherField).Clear();
+            driver.FindElement(otherField).SendKeys(Other);
         }
 
         public void EnterPrimaryPhoneNumber(string PrimaryPhoneNumber)
         {
-            Driver.FindElement(primaryphoneNumberField).Clear();
-            Driver.FindElement(primaryphoneNumberField).SendKeys(PrimaryPhoneNumber);
+            driver.FindElement(primaryphoneNumberField).Clear();
+            driver.FindElement(primaryphoneNumberField).SendKeys(PrimaryPhoneNumber);
         }
 
         public void EnterSecondaryPhoneNumber(string SecondaryPhoneNumber)
         {
-            Driver.FindElement(secondaryphoneNumberField).Clear();
-            Driver.FindElement(secondaryphoneNumberField).SendKeys(SecondaryPhoneNumber);
+            driver.FindElement(secondaryphoneNumberField).Clear();
+            driver.FindElement(secondaryphoneNumberField).SendKeys(SecondaryPhoneNumber);
         }
 
         public void EnterFax(string Fax)
         {
-            Driver.FindElement(faxField).Clear();
-            Driver.FindElement(faxField).SendKeys(Fax);
+            driver.FindElement(faxField).Clear();
+            driver.FindElement(faxField).SendKeys(Fax);
         }
         public void EnterEmail(string Email)
         {
-            Driver.FindElement(emailField).Clear();
-            Driver.FindElement(emailField).SendKeys(Email);
+            driver.FindElement(emailField).Clear();
+            driver.FindElement(emailField).SendKeys(Email);
         }
         public void EnterAddress1(string Address1)
         {
-            Driver.FindElement(address1Field).Clear();
-            Driver.FindElement(address1Field).SendKeys(Address1);
+            driver.FindElement(address1Field).Clear();
+            driver.FindElement(address1Field).SendKeys(Address1);
         }
         public void EnterAddress2(string Address2)
         {
-            Driver.FindElement(address2Field).Clear();
-            Driver.FindElement(address2Field).SendKeys(Address2);
+            driver.FindElement(address2Field).Clear();
+            driver.FindElement(address2Field).SendKeys(Address2);
         }
         public void EnterCity(string City)
         {
-            Driver.FindElement(cityField).Clear();
-            Driver.FindElement(cityField).SendKeys(City);
+            driver.FindElement(cityField).Clear();
+            driver.FindElement(cityField).SendKeys(City);
         }
         public void SelectState(string State)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(stateDrpdn), State);
+            CommonHelpers.selectOptionByValue(driver.FindElement(stateDrpdn), State);
         }
         public void SelectCounty(string County)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(countyDrpdn), County);
+            CommonHelpers.selectOptionByValue(driver.FindElement(countyDrpdn), County);
         }
         public void EnterZipCode(string ZipCode)
         {
-            Driver.FindElement(zipCodeField).Clear();
-            Driver.FindElement(zipCodeField).SendKeys(ZipCode);
+            driver.FindElement(zipCodeField).Clear();
+            driver.FindElement(zipCodeField).SendKeys(ZipCode);
         }
         public void EnterCountry(string Country)
         {
-            Driver.FindElement(countryField).Clear();
-            Driver.FindElement(countryField).SendKeys(Country);
+            driver.FindElement(countryField).Clear();
+            driver.FindElement(countryField).SendKeys(Country);
         }
 
         public void ClickEditButton()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, EditButton, 100);
-            Driver.FindElement(EditButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, EditButton, 100);
+            driver.FindElement(EditButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
         }
 
         public void updateOrganizationField(string organization)
         {
-            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 
             js.ExecuteScript("window.scrollBy(0, 300);");
-            CommonHelpers.WaitForElementVisiblity(Driver, organizationField, 1000);
+            CommonHelpers.WaitForElementVisiblity(driver, organizationField, 1000);
 
 
-            Driver.FindElement(organizationField).Clear();
-            Driver.FindElement(organizationField).SendKeys(organization);
-            CommonHelpers.ScrollUp(Driver);
+            driver.FindElement(organizationField).Clear();
+            driver.FindElement(organizationField).SendKeys(organization);
+            CommonHelpers.ScrollUp(driver);
         }
 
         public void clickSaveButton()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
-            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("window.scrollTo(0, 0);");
-            CommonHelpers.ScrollUp(Driver);
-            CommonHelpers.WaitForElementVisiblity(Driver, SaveButton, 100);
-            Driver.FindElement(SaveButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.ScrollUp(driver);
+            CommonHelpers.WaitForElementVisiblity(driver, SaveButton, 100);
+            driver.FindElement(SaveButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
         }
 
         public void clickCancelButton()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
-            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("window.scrollTo(0, 0);");
-            CommonHelpers.WaitForElementVisiblity(Driver, CancelButton, 100);
-            Driver.FindElement(CancelButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, CancelButton, 100);
+            driver.FindElement(CancelButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
         }
         public string getOrganizationName()
         {
-            Console.WriteLine("Organization Name: " + Driver.FindElement(organizationField).GetAttribute("value"));
-            return Driver.FindElement(organizationField).GetAttribute("value");
+            Console.WriteLine("Organization Name: " + driver.FindElement(organizationField).GetAttribute("value"));
+            return driver.FindElement(organizationField).GetAttribute("value");
         }
 
         public string GetOrganizationFieldValue()
@@ -242,39 +242,39 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void clickGoToPreviousSectionButton()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
-            Driver.FindElement(Go_To_Previous_SectionButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
-            CommonHelpers.WaitForElementVisiblity(Driver, continue_with_Involved_Party_Selection_Button, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, Go_To_Previous_SectionButton, 100);
+            driver.FindElement(Go_To_Previous_SectionButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, continue_with_Involved_Party_Selection_Button, 100);
         }
 
         public void ClickProceedToNextSectionButton()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 300);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 300);
 
             //CommonHelpers.WaitForElementVisiblity(Driver, HowDidThisExternalReferringPartyreportThisTextarea, 100);
-            CommonHelpers.ScrollToElement(Driver, continue_with_Involved_Party_Selection_Button);
-            Driver.FindElement(continue_with_Involved_Party_Selection_Button).Click();
+            CommonHelpers.ScrollToElement(driver, continue_with_Involved_Party_Selection_Button);
+            driver.FindElement(continue_with_Involved_Party_Selection_Button).Click();
             //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 100);
 
         }
 
         public void ClickInvolvedPartyEditButton()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
-            CommonHelpers.WaitForElementVisiblity(Driver, involvedPartyEditButton, 100);
-            Driver.FindElement(involvedPartyEditButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, involvedPartyEditButton, 100);
+            driver.FindElement(involvedPartyEditButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
         }
 
         public void ClickInvolvedPartyDeleteButton()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
-            CommonHelpers.WaitForElementVisiblity(Driver, involvedPartyDeleteButton, 100);
-            Driver.FindElement(involvedPartyDeleteButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
-            Driver.FindElement(confirmDeletion).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, involvedPartyDeleteButton, 100);
+            driver.FindElement(involvedPartyDeleteButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            driver.FindElement(confirmDeletion).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
         }
 
        

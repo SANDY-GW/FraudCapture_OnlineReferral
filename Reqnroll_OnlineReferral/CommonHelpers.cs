@@ -40,14 +40,14 @@ namespace FC_OnlineReferral
 
         public void WaitForPageToLoad(int timeoutInSeconds)
         {
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(timeoutInSeconds));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
             wait.Until(webDriver => ((IJavaScriptExecutor)webDriver).ExecuteScript("return document.readyState").Equals("complete"));
         }
         public bool VerifyBGColorOnRequiredFields()
         {
 
-            var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
-            var allReqFieldsID = Driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
+            var eleList = driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
+            var allReqFieldsID = driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
 
             foreach (IWebElement elem in allReqFieldsID)
             {
@@ -98,12 +98,55 @@ namespace FC_OnlineReferral
             wait.Until(webDriver => ((IJavaScriptExecutor)webDriver).ExecuteScript("return document.readyState").Equals("complete"));
         }
 
+        /// <summary>
+        /// Waits for search results to load.
+        /// </summary>
+        public static void WaitForSearchResultsLoading(IWebDriver driver,int seconds)
+        {
+            try
+            {
+                WebDriverWait waitForSearchAlert = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
+                waitForSearchAlert.Until(d =>
+                {
+                    try
+                    {
+                        var searchAlert = d.FindElement(By.XPath("//*[@id='content-wrapper']/div/div[2]/fc-notification-center/div/div"));
+                        return searchAlert.Displayed;
+                    }
+                    catch (NoSuchElementException)
+                    {
+                        return false;
+                    }
+                    catch (StaleElementReferenceException)
+                    {
+                        return false;
+                    }
+                });
+
+                driver.FindElement(By.XPath("//button[@aria-label='Close']")).Click();
+                //driver.FindElement(By.XPath("//button[contains(text(),' x ')]")).Click();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                // no Search Alert found, move along
+            }
+        }
+
         public static void WaitForInstructionsButton(IWebDriver driver, int timeoutInSeconds)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
             wait.Until(ExpectedConditions.ElementExists(By.XPath("//button[contains(.,'Instructions')]")));
         }
+        public static void WaitForReportLoading(IWebDriver driver, int timeout)
+        {
+            var loadingOverlay = By.XPath("//span[contains(text(),'Loading...')]");
 
+            if (IsLoadingSpinnerDisplayed(driver))
+            {
+                new WebDriverWait(driver, TimeSpan.FromSeconds(timeout)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
+            }
+            WaitForPageLoading(driver);
+        }
         public static void WaitForElementVisiblity(IWebDriver driver, By element, int timeoutInSeconds)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
@@ -116,13 +159,63 @@ namespace FC_OnlineReferral
             // Scroll to the top of the page (coordinates 0, 0)
             js.ExecuteScript("window.scrollTo(0, 0);");
         }
-
+        /// <summary>
+        /// Scrolls to the element and centers it for interactions.
+        /// </summary>
+        public void ScrollAndCenterElement(IWebElement element)
+        {
+            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
+            jsExec.ExecuteScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
+        }
+        public static void CommonScrollAndCenterElement(IWebDriver driver, IWebElement element)
+        {
+            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
+            jsExec.ExecuteScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
+        }
         public static void WaitForElementClickable(IWebDriver driver, By element, int timeoutInSeconds)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
             wait.Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
+        /// <summary>
+        /// Closes the displayed alert.
+        /// </summary>
+        public static void CloseAlert(IWebDriver Driver)
+        {
+            var alert = By.ClassName("close");
+
+            if (IsAlertDisplayed(Driver))
+            {
+                Driver.FindElement(alert).Click();
+            }
+        }
+        /// <summary>
+        /// Checks to see if the alert is displayed.
+        /// </summary>
+        public static bool IsAlertDisplayed(IWebDriver driver)
+        {
+            var alert = By.ClassName("close");
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+
+            try
+            {
+                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(alert));
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (StaleElementReferenceException)
+            {
+                return false;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
+        }
         public static void selectOptionByValue(IWebElement ele, string selectText)
         {
             Thread.Sleep(2000);
@@ -140,7 +233,13 @@ namespace FC_OnlineReferral
 
 
         }
-
+        public static void WaitForWindowHandles(IWebDriver driver)
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(100));
+            wait.Until(d => d.WindowHandles.Count >= 2);
+            driver.SwitchTo().Window(driver.WindowHandles[driver.WindowHandles.Count - 1]);
+            //driver.SwitchTo().Window(windowName: "Configuration Summary Report");
+        }
 
         public static void selectOptionByIndex(IWebElement ele, int index)
         {
@@ -156,10 +255,10 @@ namespace FC_OnlineReferral
         /// <summary>
         /// Checks to see if the loading spinner is displayed.
         /// </summary>
-        public bool IsLoadingSpinnerDisplayed()
+        public static bool IsLoadingSpinnerDisplayed(IWebDriver driver)
         {
             var loadingOverlay = By.XPath("//span[contains(text(),'Loading...')]");
-            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
 
             try
             {
@@ -188,7 +287,7 @@ namespace FC_OnlineReferral
 
             if (IsAlertDisplayed())
             {
-                Driver.FindElement(alert).Click();
+                driver.FindElement(alert).Click();
             }
         }
         /// <summary>
@@ -217,7 +316,11 @@ namespace FC_OnlineReferral
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("window.scrollBy(0, 500)");
         }
-
+        public static void ScrollAndCenterElement(IWebDriver driver, IWebElement element)
+        {
+            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
+            jsExec.ExecuteScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
+        }
         public static void ScrollDownToPageEnd(IWebDriver driver)
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
@@ -236,7 +339,7 @@ namespace FC_OnlineReferral
         private void WaitForAttachmentUpload(int seconds)
         {
             By alertDismissBtn = By.ClassName("close");
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(seconds));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
             wait.Until(ExpectedConditions.ElementToBeClickable(alertDismissBtn));
             CloseAlert();
         }
@@ -248,7 +351,7 @@ namespace FC_OnlineReferral
         public bool IsAlertDisplayed()
         {
             var alert = By.ClassName("close");
-            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
 
             try
             {
@@ -269,6 +372,12 @@ namespace FC_OnlineReferral
             }
         }
 
+        public static void CloseWindowHandles(IWebDriver driver)
+        {
+            driver.SwitchTo().Window(driver.WindowHandles[driver.WindowHandles.Count - 1]);
+            driver.Close();
+            driver.SwitchTo().Window(driver.WindowHandles[0]);
+        }
 
         public static void SwitchtoNewWindow(IWebDriver driver)
         {
@@ -310,22 +419,12 @@ namespace FC_OnlineReferral
             var loadingOverlay = By.ClassName("inProgressClass");
             //var loadingOverlay = By.XPath(".//span[contains(text(),'Loading...')]");
 
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
             try
             {
-                    wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(loadingOverlay));
-                return true;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
+                var elements = driver.FindElements(loadingOverlay);
+                return elements.Any(e => e.Displayed);
             }
             catch (StaleElementReferenceException)
-            {
-                return false;
-            }
-            catch (WebDriverTimeoutException)
             {
                 return false;
             }
@@ -359,7 +458,7 @@ namespace FC_OnlineReferral
         {
             //Driver.Navigate().GoToUrl("https://dev.fraudcapture.hms.com");
 
-            Driver.Navigate().GoToUrl(URL);
+            driver.Navigate().GoToUrl(URL);
         }
         public static void WaitForLoadingOverlayToDisappear(IWebDriver driver, int timeout)
         {

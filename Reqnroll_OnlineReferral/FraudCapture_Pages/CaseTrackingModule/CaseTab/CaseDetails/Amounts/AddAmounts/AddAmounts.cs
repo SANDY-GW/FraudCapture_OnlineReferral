@@ -29,35 +29,35 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         #endregion
         public void SelectAmountType(string type)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(amountTypeDDL), type);
+            CommonHelpers.selectOptionByValue(driver.FindElement(amountTypeDDL), type);
         }
         public void ClickFinalRecoup()
         {
-            Driver.FindElement(finalRecoupChk).Click();
+            driver.FindElement(finalRecoupChk).Click();
         }
         public void ClickCancel()
         {
-            Driver.FindElement(cancleBtn).Click();
+            driver.FindElement(cancleBtn).Click();
         }
         public void ClickSave()
         {
-            Driver.FindElement(saveBtn).Click();
+            driver.FindElement(saveBtn).Click();
         }
         public void SelectSubject(string subject)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(subjectDDL), subject);
+            CommonHelpers.selectOptionByValue(driver.FindElement(subjectDDL), subject);
         }
         public void SelectLineOfBusiness(string LOB)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(lineOfBusinessDDL), LOB);
+            CommonHelpers.selectOptionByValue(driver.FindElement(lineOfBusinessDDL), LOB);
         }
         public void EnterAmountEffectiveDate(string date)
         {
-            Driver.FindElement(amountEffectiveDate).SendKeys(date);
+            driver.FindElement(amountEffectiveDate).SendKeys(date);
         }
         public void EnterPaymentAmount(string paymentAmount)
         {
-            Driver.FindElement(amountEffectiveDate).SendKeys(paymentAmount);
+            driver.FindElement(amountEffectiveDate).SendKeys(paymentAmount);
         }
     }
 }

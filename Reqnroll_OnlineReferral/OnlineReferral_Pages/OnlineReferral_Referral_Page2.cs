@@ -47,9 +47,9 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             var value = "";
             if (originalDetectionDateField != null)
             {
-                CommonHelpers.WaitForElementVisiblity(Driver, originalDetectionDateField, 30);
+                CommonHelpers.WaitForElementVisiblity(driver, originalDetectionDateField, 30);
 
-                value = Driver.FindElement(originalDetectionDateField).GetAttribute("value")?.Trim();
+                value = driver.FindElement(originalDetectionDateField).GetAttribute("value")?.Trim();
                 Console.WriteLine($"Original Detection Date field value: '{value}'");
 
             }
@@ -60,9 +60,9 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void SelectRefType(string RefType)
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
-            CommonHelpers.WaitForElementVisiblity(Driver, refTypeDropdn, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(refTypeDropdn), RefType);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForElementVisiblity(driver, refTypeDropdn, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(refTypeDropdn), RefType);
 
         }
 
@@ -70,94 +70,94 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void SelectInvolvedPartyType(string InvolvedPartyType)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(involvedPartyTypeDropdn), InvolvedPartyType);
+            CommonHelpers.selectOptionByValue(driver.FindElement(involvedPartyTypeDropdn), InvolvedPartyType);
         }
 
         public void EnterHowWasThisDetected(string Detected)
         {
-            Driver.FindElement(detectedField).Clear();
-            Driver.FindElement(detectedField).SendKeys(Detected);
+            driver.FindElement(detectedField).Clear();
+            driver.FindElement(detectedField).SendKeys(Detected);
         }
         public void EnterReferralSummary(string ReferralSummary)
         {
-            Driver.FindElement(referralSummaryField).Clear();
-            Driver.FindElement(referralSummaryField).SendKeys(ReferralSummary);
+            driver.FindElement(referralSummaryField).Clear();
+            driver.FindElement(referralSummaryField).SendKeys(ReferralSummary);
         }
         public void EnterCase_Or_Reference_Or_TrackingNumber(string Case_Or_Reference_Or_TrackingNumber)
         {
-            Driver.FindElement(case_Or_Reference_Or_TrackingNumberField).Clear();
-            Driver.FindElement(case_Or_Reference_Or_TrackingNumberField).SendKeys(Case_Or_Reference_Or_TrackingNumber);
+            driver.FindElement(case_Or_Reference_Or_TrackingNumberField).Clear();
+            driver.FindElement(case_Or_Reference_Or_TrackingNumberField).SendKeys(Case_Or_Reference_Or_TrackingNumber);
         }
         public bool VerifyIfCountyDropdownIsInAlphabeticalOrder()
         {
-            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(County_Or_DistrictDropdn));
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(driver, driver.FindElement(County_Or_DistrictDropdn));
         }
 
         public void EnterEstimatedAmount(string EstimatedAmount)
         {
-            Driver.FindElement(estimatedAmountField).Clear();
-            Driver.FindElement(estimatedAmountField).SendKeys(EstimatedAmount);
+            driver.FindElement(estimatedAmountField).Clear();
+            driver.FindElement(estimatedAmountField).SendKeys(EstimatedAmount);
         }
 
         public void EnterOriginalDetectionDate(string OriginalDetectionDate)
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
-            Driver.FindElement(originalDetectionDateField).Click();
-            var element = Driver.FindElement(originalDetectionDateField);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 60);
+            driver.FindElement(originalDetectionDateField).Click();
+            var element = driver.FindElement(originalDetectionDateField);
             element.SendKeys(Keys.Control + "a");
             element.SendKeys(Keys.Delete);
-            Driver.FindElement(originalDetectionDateField).SendKeys(OriginalDetectionDate);
+            driver.FindElement(originalDetectionDateField).SendKeys(OriginalDetectionDate);
         }
         public void EnterIncidentStartDate(string IncidentStartDate)
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
-            CommonHelpers.EnterDate(Driver.FindElement(incidentStartDateField), IncidentStartDate);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 60);
+            CommonHelpers.EnterDate(driver.FindElement(incidentStartDateField), IncidentStartDate);
         }
 
         public void EnterIncidentEndDate(string IncidentEndDate)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, incidentEndDateField, 60);
+            CommonHelpers.WaitForElementVisiblity(driver, incidentEndDateField, 60);
 
-            CommonHelpers.EnterDate(Driver.FindElement(incidentEndDateField), IncidentEndDate);
+            CommonHelpers.EnterDate(driver.FindElement(incidentEndDateField), IncidentEndDate);
         }
 
 
         public void SelectState_Or_Territory(string State_Or_Territory)
 
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, state_Or_TerritoryDropdowm, 30);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(state_Or_TerritoryDropdowm), State_Or_Territory);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            CommonHelpers.WaitForElementVisiblity(driver, state_Or_TerritoryDropdowm, 30);
+            CommonHelpers.selectOptionByValue(driver.FindElement(state_Or_TerritoryDropdowm), State_Or_Territory);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
         }
         public void SelectCounty_Or_District(string County_Or_District)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, County_Or_DistrictDropdn, 30);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(County_Or_DistrictDropdn), County_Or_District);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            CommonHelpers.WaitForElementVisiblity(driver, County_Or_DistrictDropdn, 30);
+            CommonHelpers.selectOptionByValue(driver.FindElement(County_Or_DistrictDropdn), County_Or_District);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
         }
 
         public void ClickGoToPreviousSectionButton()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 20);
-            Driver.FindElement(Go_To_Previous_SectionButton).Click();
+            CommonHelpers.WaitForElementVisiblity(driver, Go_To_Previous_SectionButton, 20);
+            driver.FindElement(Go_To_Previous_SectionButton).Click();
         }
 
         public void ClickProceedToNextSectionButton()
         {
-            CommonHelpers.ScrollUp(Driver);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
-            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 70);
-            CommonHelpers.ScrollToElement(Driver, proceed_To_Next_SectionButton);
-            Driver.FindElement(proceed_To_Next_SectionButton).Click();
-            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 70);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 70);
+            CommonHelpers.ScrollUp(driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, proceed_To_Next_SectionButton, 70);
+            CommonHelpers.ScrollToElement(driver, proceed_To_Next_SectionButton);
+            driver.FindElement(proceed_To_Next_SectionButton).Click();
+            CommonHelpers.WaitForElementVisiblity(driver, Go_To_Previous_SectionButton, 70);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 70);
         }
 
 
         public void ClickInstructionsButton()
         {
-            CommonHelpers.WaitForInstructionsButton(Driver, 10);
-            Driver.FindElement(instructionsButton).Click();
+            CommonHelpers.WaitForInstructionsButton(driver, 10);
+            driver.FindElement(instructionsButton).Click();
         }
 
         //Error Message Validation for Referral Incident Start Date and End Date
@@ -165,12 +165,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public string GetErrorMessage()
         {
-            return Driver.FindElement(errorMessage).Text;
+            return driver.FindElement(errorMessage).Text;
         }
 
         public string GetErrorMessageStartDate()
         {
-            return Driver.FindElement(errorMessageStartDate).Text;
+            return driver.FindElement(errorMessageStartDate).Text;
         }
 
 
@@ -178,28 +178,28 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         // Method to get field value
         public string GetAmountValue()
         {
-            return Driver.FindElement(estimatedAmountField).GetAttribute("value");
+            return driver.FindElement(estimatedAmountField).GetAttribute("value");
         }
         public bool ValidateTheAmountField()
         {
-            var PG2 = new OnlineReferral_Referral_Page2(Driver);
+            var PG2 = new OnlineReferral_Referral_Page2(driver);
             string value = PG2.GetAmountValue();
             return value.Contains("$");
         }
 
         public string GetValidationDateErrorMessage()
         {
-            return CommonHelpers.GetValidationDateErrorText(Driver);
+            return CommonHelpers.GetValidationDateErrorText(driver);
         }
 
         public bool IsValidationDateErrorDisplayed()
         {
-            return CommonHelpers.ValidationDateerrorExists(Driver);
+            return CommonHelpers.ValidationDateerrorExists(driver);
         }
 
         public bool VerifyIfReferralDropdownIsInAlphabeticalOrder()
         {
-            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(refTypeDropdn));
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(driver, driver.FindElement(refTypeDropdn));
         }
 
     }
