@@ -557,7 +557,7 @@ namespace ReqnrollProject1.StepDefinitions
             var data = dataTable.CreateInstance<OnlineReferralData>();
             PG3.FillAddress1Field(data.Address1);
             PG3.FillAddress2Field(data.Address2);
-            PG3.FillCityField(data.CityMember);
+            PG3.FillCityField(data.City);
             PG3.SelectStateFromDropdown(data.State2);
             PG3.SelectCountyFromDropdown(data.City2);
             PG3.FillZipCodeField(data.Zipcode);
