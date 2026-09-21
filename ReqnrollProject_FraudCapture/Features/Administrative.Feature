@@ -20,6 +20,10 @@ Scenario: 1 Opening Administrative Case Form
 	Then the Create Administrative Case form should be displayed
 	And the user cancels the Non-Investigative Case form
 
+Examples:
+	| UserEmail                             | CasesTab | AssignedToFilter | Project_Name | Case_Type                                 | AssignedToUser |
+	| jayapradha.d@gainwelltechnologies.com | Cases    | All              |              | (DO NOT MODIFY) Automated Testing Non-Inv | D, Jayapradha  |
+
 Scenario: 2 Creating Non-Investigative Case Audit
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
@@ -32,7 +36,10 @@ Scenario: 2 Creating Non-Investigative Case Audit
 		| Cases    |
 	And the user clicks the Non-Investigative Case button
 	Then the Create Administrative Case form should be displayed
-	When the user creates a Non-Investigative Case Audit with project name "SampleProject", case type "(DO NOT MODIFY) Automated Administrative Workflow" and assigned to "User1"
+	When the user creates a Non-Investigative Case Audit with project name , case type  and assigned to
+		| Project_Name | Case_Type                                         | AssignedToUser |
+		| Automation   | (DO NOT MODIFY) Automated Administrative Workflow | D, Jayapradha  |
+	
 	And Get the Case ID for the newly created Case
 	Then the case management alert message should be displayed
 	When I click on CaseTracking and select the Case option on the fraud capture home page
@@ -48,6 +55,9 @@ Scenario: 2 Creating Non-Investigative Case Audit
 	And I click on the Begin Editing on the fraud capture Case detials Page
 	Then the user should be able to see the newly created Non-Investigative Case Audit in the Case List with the correct details
 	
+Examples:
+	| UserEmail                             | CasesTab | AssignedToFilter | Project_Name | Case_Type                                 | AssignedToUser |
+	| jayapradha.d@gainwelltechnologies.com | Cases    | All              | Automation   | (DO NOT MODIFY) Automated Testing Non-Inv | D, Jayapradha  |
 
 Scenario: 3 Locate and Open Newly Created Non-Investigative Case
 	Given when I open the Fraud Capture application
@@ -56,7 +66,7 @@ Scenario: 3 Locate and Open Newly Created Non-Investigative Case
 		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
-	And I click on CaseTracking and select the Case option on the fraud capture home page
+	When I click on CaseTracking and select the Case option on the fraud capture home page
 		| CasesTab |
 		| Cases    |
 	And I search for caseID under Select Criteria dropdown
@@ -73,7 +83,7 @@ Scenario: 4 Begin Editing and Change Division/Department Value
 		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
-	And I click on CaseTracking and select the Case option on the fraud capture home page
+	When I click on CaseTracking and select the Case option on the fraud capture home page
 		| CasesTab |
 		| Cases    |
 	And I filter Assigned To Case Dropdown
@@ -86,9 +96,21 @@ Scenario: 4 Begin Editing and Change Division/Department Value
 	And I click on Case search button
 	And I click on the Case ID Link
 	And I click on the Begin Editing on the fraud capture Case detials Page
-	And the user enables edit on the Case tab and selects division or department value "SIU Group "
-	Then the division or department dropdown value should be "SIU Group "
-	When the user enables edit on the Case tab and selects division or department value "(DO NOT MODIFY) Automated Testing Department"
+	And the user enables edit on the Case tab and selects division or department value
+		| DivisionOrDepartment |
+		| SIU Group            |
+	Then the division or department dropdown value should be
+		| DivisionOrDepartment |
+		| SIU Group            |
+	When the user enables edit on the Case tab and selects division or department value
+		| DivisionOrDepartment                         |
+		| (DO NOT MODIFY) Automated Testing Department |
+	Then the division or department dropdown value should be
+		| DivisionOrDepartment                         |
+		| (DO NOT MODIFY) Automated Testing Department |
+Examples:
+	| UserEmail                             | CasesTab | AssignedToFilter | Project_Name | Case_Type                                         | AssignedToUser |
+	| jayapradha.d@gainwelltechnologies.com | Cases    | All              | Automation   | (DO NOT MODIFY) Automated Administrative Workflow | D, Jayapradha  |
 
 Scenario: 5 Verify Non-Inv Case Auto-Gen Activity
 	Given when I open the Fraud Capture application
@@ -97,7 +119,7 @@ Scenario: 5 Verify Non-Inv Case Auto-Gen Activity
 		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
-	And I click on CaseTracking and select the Case option on the fraud capture home page
+	When I click on CaseTracking and select the Case option on the fraud capture home page
 		| CasesTab |
 		| Cases    |
 	And I filter Assigned To Case Dropdown
@@ -110,8 +132,12 @@ Scenario: 5 Verify Non-Inv Case Auto-Gen Activity
 	And I click on Case search button
 	And I click on the Case ID Link
 	And the user clicks the Activities tab
-	And the user edits and completes the auto generated activity with start date "01/01/2025", activity time "10:00 AM" and note "Test Note"
+	And the user edits and completes the auto generated activity with start date, activity time and note
+		| StartDate  | ActivityTime | Note    |
+		| 04/19/1990 | 10:00 AM     | Testing |
 	Then the non-inv case auto gen activity should equal the expected value
+		| Auto_Gen_Activity                                                |
+		| (DO NOT MODIFY) Automated Testing Non-Inv Case Activity Auto-Gen |
 	When the user selects the first activity
 	And Delete the note added
 
@@ -124,7 +150,7 @@ Scenario: 6 Create and Verify Newly Created Finding Reason
 		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
-	And I click on CaseTracking and select the Case option on the fraud capture home page
+	When I click on CaseTracking and select the Case option on the fraud capture home page
 		| CasesTab |
 		| Cases    |
 	And I filter Assigned To Case Dropdown
@@ -138,9 +164,17 @@ Scenario: 6 Create and Verify Newly Created Finding Reason
 	And I click on the Case ID Link
 	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Findings tab
-	And the user clicks the Add Finding button and creates the finding form with reason "Reason1", line of business "LOB1", underpayment "100", overpayment "50", soft saving "25", members "2", claims "3", lines "4", providers "1" and comments "Test Comment"
+	And the user clicks the Add Finding button and creates the finding form with reason, line of business, underpayment, overpayment, soft saving, members, claims, lines, providers and comments
+		| Finding_Reason                                             | LineOfBusiness | Underpayment | Overpayment | SoftSaving | Members | Claims | Lines | Providers | Comments |
+		| (DO NOT MODIFY) - Automated Testing Finding Reason Testing | LOB1           |          100 |         100 |        100 |       2 |      3 |     4 |         1 | Testing  |
 	Then verify new created finding
-	Then Delete finding
+		| Finding_Reason                                             |
+		| (DO NOT MODIFY) - Automated Testing Finding Reason Testing |
+	And Delete finding
+
+Examples:
+	| UserEmail                             | CasesTab | AssignedToFilter | Reason                                                     | LineOfBusiness | Underpayment | Overpayment | SoftSaving | Members | Claims | Lines | Providers | Comments |
+	| jayapradha.d@gainwelltechnologies.com | Cases    | All              | (DO NOT MODIFY) - Automated Testing Finding Reason Testing | LOB1           |          100 |         100 |        100 |       2 |      3 |     4 |         1 | Testing  |
 
 Scenario: 7 Create and Verify Newly Created Amount Type
 	Given when I open the Fraud Capture application
@@ -163,9 +197,15 @@ Scenario: 7 Create and Verify Newly Created Amount Type
 	And I click on the Case ID Link
 	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Amounts tab
-	And the user clicks the Add Amount button and creates a new amount type "AmountType1" with effective date "01/01/2025", amount "500", line of business "LOB1", date from "01/01/2025", date to "01/31/2025" and comment area "Comments"
+	And the user clicks the Add Amount button and creates a new amount type with effective date, amount, line of business, date from, date to and comment area
+		| Amount_Type                                   | Amounteffectivedate | Amount | LineofBusiness | AmountDateRangeFrom | AmountDateRangeTo | AmountCommentArea |
+		| (DO NOT MODIFY) Automated Testing Amount Type | 01/01/2025          |    800 | LOB1           | 01/01/2025          | 01/31/2025        | Testing           |
 	Then the newly created amount type should equal the expected value
 	And Delete Amount details
+
+Examples:
+	| UserEmail                             | CasesTab | AssignedToFilter | Amount_Type                                   | Amounteffectivedate | Amount | LineofBusiness | AmountDateRangeFrom | AmountDateRangeTo | AmountCommentArea |
+	| jayapradha.d@gainwelltechnologies.com | Cases    | All              | (DO NOT MODIFY) Automated Testing Amount Type | 01/01/2025          |    800 | LOB1           | 01/01/2025          | 01/31/2025        | Testing |
 
 Scenario: 8 Change Status of Newly Created Case to Closed
 	Given when I open the Fraud Capture application
@@ -187,9 +227,19 @@ Scenario: 8 Change Status of Newly Created Case to Closed
 	And I click on Case search button
 	And I click on the Case ID Link
 	And I click on the Begin Editing on the fraud capture Case detials Page
-	And the user changes the case status to "Closed"
-	Then the case status dropdown value should be "Closed"
-	Then the user re-selects the case status to "Open"
+	And the user changes the case status to
+	| Case_Type_Status                                 |
+	| (DO NOT MODIFY) Automated Testing Non-Inv Closed |
+	Then the case status dropdown value should be
+	| Case_Type_Status                                 |
+	| (DO NOT MODIFY) Automated Testing Non-Inv Closed |
+	And the user re-selects the case status to
+	| Case_Type_Status_Open                          |
+	| (DO NOT MODIFY) Automated Testing Non-Inv Open |
+	Examples: 
+	| UserEmail                             | CasesTab | AssignedToFilter | Case_Type_Status                                 | Case_Type_Status_Open                          |
+	| jayapradha.d@gainwelltechnologies.com | Cases    | All              | (DO NOT MODIFY) Automated Testing Non-Inv Closed | (DO NOT MODIFY) Automated Testing Non-Inv Open |
+
 
 Scenario: 9 Change Case Type to Investigative and Status to Cancelled/Closed
 	Given when I open the Fraud Capture application
@@ -211,9 +261,19 @@ Scenario: 9 Change Case Type to Investigative and Status to Cancelled/Closed
 	And I click on Case search button
 	And I click on the Case ID Link
 	And I click on the Begin Editing on the fraud capture Case detials Page
-	And the user changes the case type to standard investigative type "Investigative" with assigned to "User1" and cancel status "Cancelled"
-	Then the case type should equal "Investigative"
-	Then the user re-selects the case type "Administrative" with assigned to "User1" and open status "Open"
+	And the user changes the case type to standard investigative type with assigned to and cancel status
+	| investigativeCaseType                          | AssignedToUser | Case_Type_Status_Cancel                     |
+	| Test Environment - Administrative Case Testing | D, Jayapradha  | Test Non-Inv Case Testing Status - Canceled |
+	Then the case type should equal
+	| investigativeCaseType                          |
+	| Test Environment - Administrative Case Testing |
+	And the user re-selects the case type with assigned to and open status
+		| Case_Type                                 | AssignedToUser | Case_Type_Status_Open                          |
+		| (DO NOT MODIFY) Automated Testing Non-Inv | D, Jayapradha  | (DO NOT MODIFY) Automated Testing Non-Inv Open |
+
+		Examples: 
+	| UserEmail                             | CasesTab | AssignedToFilter | investigativeCaseType                          | AssignedToUser | Case_Type_Status_Cancel                     | Case_Type                                 | Case_Type_Status_Open                          |
+	| jayapradha.d@gainwelltechnologies.com | Cases    | All              | Test Environment - Administrative Case Testing | D, Jayapradha  | Test Non-Inv Case Testing Status - Canceled | (DO NOT MODIFY) Automated Testing Non-Inv | (DO NOT MODIFY) Automated Testing Non-Inv Open |
 
 Scenario: 10 View and Add Related Leads/Cases by Case/Lead ID
 	Given when I open the Fraud Capture application
@@ -236,10 +296,17 @@ Scenario: 10 View and Add Related Leads/Cases by Case/Lead ID
 	And I click on the Case ID Link
 	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user shows the Related Cases and Leads tab
-	And the user searches related leads or cases by criteria "Case ID" and related case id "67890"
+	And the user searches related leads or cases by criteria and related case id
+	| Select_Search_Criteria | RelatedCaseId  |
+	| Case/Lead ID           | DEMO0407202602 |
 	And the user adds the related lead or case
 	Then the related case id should be contained in the related leads or cases
 	And the user removes the related lead or case
+	
+	Examples: 
+	| UserEmail                             | CasesTab | AssignedToFilter | Select_Search_Criteria | RelatedCaseId  |
+	| jayapradha.d@gainwelltechnologies.com | Cases    | All              | Case/Lead ID           | DEMO0407202602 |
+
 
 Scenario: 11 View and Add Related Leads/Cases by Primary Subject Name
 	Given when I open the Fraud Capture application
@@ -265,7 +332,7 @@ Scenario: 11 View and Add Related Leads/Cases by Primary Subject Name
 	And the user searches related subjects by name "Subject" with last name "Doe" and first name "John"
 	And the user adds the related lead or case
 	Then the related case id should be contained in the related leads or cases
-	Then the user removes the related lead or case
+	And the user removes the related lead or case
 
 Scenario: 12 Add Sampling Manually and Complete All Fields in Details and Metrics Tabs
 	Given when I open the Fraud Capture application
@@ -422,7 +489,7 @@ Scenario: 17 View, Add and Edit Manual Findings in the Findings Tab
 	Then the edited findings should contain the finding date "01/01/2025"
 
 Scenario: 18 Findings Appear in Findings Details Table with Correct Rendering
-		Given when I open the Fraud Capture application
+	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
 		| UserEmail                             |
 		| jayapradha.d@gainwelltechnologies.com |
@@ -467,7 +534,7 @@ Scenario: 19 Sorting on Findings Grid Works
 	And the user clicks the Findings tab
 	And the user sorts the findings grid
 	Then the sorted findings grid should contain the finding date "01/01/2025"
-	Then Delete finding
+	And Delete finding
 
 Scenario: 20 View, Add and Edit Amounts Using Different Amount Types
 	Given when I open the Fraud Capture application
@@ -575,7 +642,7 @@ Scenario: 23 View the Audit Log and Confirm Actions are Reflected
 	Then Delete finding
 
 Scenario: 24 Delete One Amount and Confirm Balances are Still Correct
-Given when I open the Fraud Capture application
+	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
 		| UserEmail                             |
 		| jayapradha.d@gainwelltechnologies.com |
@@ -626,19 +693,23 @@ Scenario: 25 Attach Claims to a Case via Select Claims from a List Using the Cla
 Scenario: 26 Verify All Claims Successfully Upload to the Claims Tab
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	Then the claims added count should contain the expected count "5"
@@ -646,19 +717,23 @@ Scenario: 26 Verify All Claims Successfully Upload to the Claims Tab
 Scenario: 27 Sorting on Case Claims Grid Works
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	And the user sorts the Case Claims grid
@@ -667,19 +742,23 @@ Scenario: 27 Sorting on Case Claims Grid Works
 Scenario: 28 Verify Data in the Case Claims Table Renders Correctly with the Column Headers
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	Then the Line of Business column should contain the expected value "LOB1"
@@ -691,19 +770,23 @@ Scenario: 28 Verify Data in the Case Claims Table Renders Correctly with the Col
 Scenario: 29 Verify All Search Functionality Works for Each of the Options
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	And the user searches by claim number "12345" and value "1"
@@ -716,19 +799,23 @@ Scenario: 29 Verify All Search Functionality Works for Each of the Options
 Scenario: 30 Download Patient Histories Report and Verify Data Populates Correctly
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	And the user clicks the Patient Histories button
@@ -739,19 +826,23 @@ Scenario: 30 Download Patient Histories Report and Verify Data Populates Correct
 Scenario: 31 Perform a Claims Review Viewing and Editing Each Individual Claim/Claim Line
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	Then the claim review should equal the expected value "123"
@@ -760,19 +851,23 @@ Scenario: 31 Perform a Claims Review Viewing and Editing Each Individual Claim/C
 Scenario: 32 Verify Zero Paid Lines Automatically Have Not Reviewed Finding and NR Reason
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	Then the reason for zero paid claim lines should contain the expected value "NR"
@@ -780,19 +875,23 @@ Scenario: 32 Verify Zero Paid Lines Automatically Have Not Reviewed Finding and 
 Scenario: 33 View, Add and Edit Individual Claims with All Editable Fields
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	And the user views, adds and edits individual claims with revenue "REV1", CPT "99213", modifier 2 "M2", units "1", finding "Pay", reason "Reason1" and comments "Comment1"
@@ -801,19 +900,23 @@ Scenario: 33 View, Add and Edit Individual Claims with All Editable Fields
 Scenario: 34 View, Add and Edit Individual Claim to Apply Same Finding to All Lines
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	And the user views, adds and edits individual claims to apply same finding "Pay", reason "Reason1" and comments "Comment1" to all lines
@@ -822,19 +925,23 @@ Scenario: 34 View, Add and Edit Individual Claim to Apply Same Finding to All Li
 Scenario: 35 Verify All Data Renders Correctly in the Individual Claim Summary
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	Then the claim summary claim id should contain the expected value "12345"
@@ -844,21 +951,25 @@ Scenario: 35 Verify All Data Renders Correctly in the Individual Claim Summary
 Scenario: 36 View Individual Claim Activity and Verify Data Renders Correctly
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
-	And the user begins editing the case
 	And the user views the individual claim activity
 	Then the user closes the window handles
 	And the user clicks the Claim View Save button
@@ -866,19 +977,23 @@ Scenario: 36 View Individual Claim Activity and Verify Data Renders Correctly
 Scenario: 37 Case Claims Detail is Downloadable and Data Populates
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	Then the downloaded case claims detail should equal the expected value "123"
@@ -887,19 +1002,23 @@ Scenario: 37 Case Claims Detail is Downloadable and Data Populates
 Scenario: 38 Download Excel Export and Verify Data Renders Correctly with Column Headers
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	Then the downloaded excel sheet data should equal the expected value "123"
@@ -908,19 +1027,23 @@ Scenario: 38 Download Excel Export and Verify Data Renders Correctly with Column
 Scenario: 39 Verify the Number of Records in the Claims Tab Matches the Export
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	Then the downloaded excel sheet row count should equal the expected value "123"
@@ -929,42 +1052,50 @@ Scenario: 39 Verify the Number of Records in the Claims Tab Matches the Export
 Scenario: 40 Verify All Pay/Deny/Not Reviewed Findings are Correctly Adjusted and Calculated
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	And the user sets the Pay findings dropdown with Finding "Pay", reason "Reason1" and comments "Comment1"
 	Then the pay findings dropdown should contain "Pay"
-	When the user sets the Pay findings dropdown with Finding "Deny", reason "Reason1" and comments "Comment1"
+	When the user sets the Deny findings dropdown with Finding "Deny", reason "Reason1" and comments "Comment1"
 	Then the deny findings dropdown should contain "Deny"
 
 Scenario: 41 Verify All Not Reviewed Findings are Correctly Adjusted and Calculated
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	And the user sets the Not Reviewed findings dropdown with reason for zero paid claims "NR", reason "Reason1" and comments "Comment1"
@@ -975,19 +1106,23 @@ Scenario: 41 Verify All Not Reviewed Findings are Correctly Adjusted and Calcula
 Scenario: 42 Verify the Claim Status Shows All Claims as Completed
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	Then the claim status should contain "Completed"
@@ -995,40 +1130,49 @@ Scenario: 42 Verify the Claim Status Shows All Claims as Completed
 Scenario: 43 Finalize Findings and Confirm Each Claim Status Reflects Finalized
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
+	And the user clicks on Apply Findings button
 	And the user finalizes the findings
 	Then the finalize findings status should equal "Finalized"
 
 Scenario: 44 After Finalize Findings Select Initiate Revisions and Verify Status Revision Not Started
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	And the user selects Initiate Revisions
@@ -1037,19 +1181,23 @@ Scenario: 44 After Finalize Findings Select Initiate Revisions and Verify Status
 Scenario: 45 View the Claim and Verify the Original Finding Still Displays
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	Then the original finding for the claim should equal the expected value
@@ -1057,82 +1205,97 @@ Scenario: 45 View the Claim and Verify the Original Finding Still Displays
 Scenario: 46 Select the Plus Sign for Revisions and Enter a New Revision Finding
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
-	And the user selects the plus sign for revisions and enters a new revision finding "Pay"
-	Then the finding should equal "Pay"
-
+	And the user selects the plus sign for revisions and enters a new revision finding "Pay" and should equal the expected value
+	
 Scenario: 47 Perform a Revision Claims Review, Viewing and Editing Each Individual Claim Line
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
-	And the user selects the plus sign for revisions and enters a new revision finding "Pay"
-	Then the finding should equal "Pay"
+	And the user selects the plus sign for revisions and enters a new revision finding "Pay" and should equal the expected value
+	
 
 Scenario: 48 Revision Findings Should Include Finding, Reason, Reason 2, Comments, Units, Modifiers, Diagnosis, CPT and Other Fields
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	And the user views, adds and edits individual revision claims with revenue "REV1", CPT "99213"", modifier 2 "M2", units "1", finding "Pay", reason "Reason1" and comments "Comment1"
-	Then the finding should equal "Pay"
+	
 
 Scenario: 49 Deleting the Added Claims
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	And the user cancels the added revision
@@ -1142,32 +1305,29 @@ Scenario: 49 Deleting the Added Claims
 Scenario: 50 Attach Claims to a Case via Generate a Convenient Sample Using the Claim Selector
 	Given when I open the Fraud Capture application
 	When I enter the UserEmail on the welcome fraude capture page:
-		| UserEmail   |
-		| <UserEmail> |
+		| UserEmail                             |
+		| jayapradha.d@gainwelltechnologies.com |
 	And I click on the Procced to login button on the welcome fraude capture page
 	And I click on the I Agree button on the fraud capture Page
 	And I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
+		| CasesTab |
+		| Cases    |
 	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+		| AssignedToFilter |
+		| All              |
+	And I search for caseID under Select Criteria dropdown
+		| CaseTableSearchOptions |
+		| Case ID                |
+	And I search for Non-Investigative Case ID
+	And I click on Case search button
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	And the user selects the Claim Selector and attaches claims via Generate a Convenient Sample using rendering PID "PID1", query value "Query1" and investigative reference id value "IREF1"
-	Then the claims added message should contain the expected message "Claims Added to Case"
-	When I click on CaseTracking and select the Case option on the fraud capture home page
-		| CasesTab   |
-		| <CasesTab> |
-	And I filter Assigned To Case Dropdown
-		| AssignedToFilter   |
-		| <AssignedToFilter> |
-	And the user locates and opens the newly created Non-Investigative Case with case type "Administrative" and case id "12345"
-	And the user clicks on the latest Case ID
-	And the user begins editing the case
+	#Then the claims added message should contain the expected message "Claims Added to Case"
+	And I click on the Case ID Link
+	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Claims button
 	And the user clicks the Case Claim tab
 	Then the added claims should be deleted

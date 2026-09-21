@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.AdministrativeCases
 {
     public class AdministrativeCases : BaseSettings
@@ -179,11 +180,11 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         private readonly By claimsHeadTable = By.XPath("//table[@id='caseClaimsTable']/thead/tr");
         private readonly By claimsBodyTable = By.XPath("//table[@id='caseClaimsTable']/tbody/tr");
         private readonly By claimsSearchDropDowm = By.XPath("//select[@name='selectedCriteria']");
-        private readonly By SearchInput = By.XPath("//input[@id='searchId']");
+        private readonly By SearchInput = By.XPath("//form[@name='claimForm']/descendant::input[@id='searchId']");
         private readonly By SearchButton = By.XPath("//div[@id='ClaimId']/descendant::button[@id='searchStartButton']");
-        private readonly By claimViewButton = By.XPath("//button[contains(text(),'View')]");
+        private readonly By claimViewButton = By.XPath("//table[@id='caseClaimsTable']/tbody/tr/td[12]/small/button[contains(text(),'View')]");
         private readonly By getClaimID = By.XPath("//div[@id='claimSidebar']/descendant::a");
-        private readonly By clainReviewProfessionalCancelButton = By.XPath("//div[@class='well well-sm HmsInsideContainer']/button[text()='Cancel']");
+        private readonly By clainReviewProfessionalCancelButton = By.XPath("//div/fc-case-claim-review/div/div[2]/div[1]/button[1]");
         private readonly By SearchLastName = By.XPath("//div[@id='ClaimId']/descendant::input[@id='searchLname']");
         private readonly By SearchFirstName = By.XPath("//div[@id='ClaimId']/descendant::input[@id='searchFname']");
         private readonly By patientname = By.XPath("//div[@id='claimSidebar']/descendant::b[8]");
@@ -197,22 +198,22 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         private readonly By caseClaimDetailsReportViewExcel = By.XPath("//*[@id='reportViewer_ctl09_ctl04_ctl00_ButtonLink']");
         private readonly By caseClaimDetailsReportViewExcelData = By.XPath("//*[@id='reportViewer_ctl09_ctl04_ctl00_Menu']/child::div/a[text()='Excel']");
         private readonly By caseClaimDetailsReportViewExcelProviderID = By.XPath("//div[@id='reportViewer_ctl13']/descendant::table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr[3]/td[2]/div");
-        private readonly By ClaimReviewProfessionalEditButton = By.XPath("//div[@class='well well-sm HmsInsideContainer']/button[text()='Edit']");
-        private readonly By claimsViewButton = By.XPath("//table[@id='caseClaimsTable']/tbody/tr[3]/td/small/span/button[contains(text(),'View')]");
-        private readonly By ClaimReviewProfessionalEditingFirstTable = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[7]/input");
-        private readonly By ClaimReviewProfessionalEditingFourthTable = By.XPath("//div[@class='row claimLineDiv']/div[4]/child::div/table/tbody/tr[2]/td[5]/input");
-        private readonly By ClaimReviewProfessionalSaveButton = By.XPath("//div[@class='well well-sm HmsInsideContainer']/button[text()='Save']");
-        private readonly By ClaimReviewProfessionalCancelButton = By.XPath("//div[@class='well well-sm HmsInsideContainer']/button[text()='Cancel']");
+        private readonly By ClaimReviewProfessionalEditButton = By.XPath("*//fc-case-claim-review/div/div[2]/div[1]/button[contains(.,'Edit')]");
+        private readonly By claimsViewButton = By.XPath("//table[@id='caseClaimsTable']/tbody/tr[3]/td/small/button[contains(text(),'View')]");
+        private readonly By ClaimReviewProfessionalEditingFirstTable = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[9]/input");
+        private readonly By ClaimReviewProfessionalEditingFourthTable = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[7]/input");
+        private readonly By ClaimReviewProfessionalSaveButton = By.XPath("//div[2]/div/fc-case-claim-review/div/div[2]/div[1]/button[text()='Save']");
+        private readonly By ClaimReviewProfessionalCancelButton = By.XPath("//div[2]/div/fc-case-claim-review/div/div[2]/div[1]/button[text()='Cancel']");
         private readonly By zeroPaidClaimLines = By.XPath("//div[@class='row claimLineDiv']/div[2]/child::div/table/tbody/tr[1]/td[15]");
-        private readonly By reasonForZeroPaidClaims = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[16]/select");
+        private readonly By reasonForZeroPaidClaims = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[18]/select");
         private readonly By reasonForPaidClaims = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[18]/select");
         private readonly By claimLinesRev = By.XPath("//div[@class='row claimLineDiv']/div[2]/child::div/table/tbody/tr[2]/td[5]/input");
-        private readonly By claimLinesCPTORHCPCSORRatesORHIPPS = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[6]/input");
-        private readonly By claimLinesMod2 = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[8]/input");
-        private readonly By claimLinesUnits = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[11]/input");
-        private readonly By claimLinesFindingDropDown = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[16]/select");
-        private readonly By claimLinesReasonDropDown = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[17]/select");
-        private readonly By claimLinesComments = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[19]/textarea");
+        private readonly By claimLinesCPTORHCPCSORRatesORHIPPS = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[7]/input");
+        private readonly By claimLinesMod2 = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[10]/input");
+        private readonly By claimLinesUnits = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[13]/input");
+        private readonly By claimLinesFindingDropDown = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[18]/select");
+        private readonly By claimLinesReasonDropDown = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[19]/select");
+        private readonly By claimLinesComments = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[21]/textarea");
         private readonly By claimLinesFindings = By.XPath("//select[@id='finding']");
         private readonly By claimLinesFindingsReason = By.XPath("//*[@id='CaseClaimReviewForm']/descendant::p-multiselect");
         private readonly By claimLinesFindingsReasonValue = By.XPath("//div/label[text()='(DO NOT MODIFY) - Automated Testing Finding Reason Testing']");
@@ -223,12 +224,12 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         private readonly By viewClaimActivityButton = By.XPath("//button[@id='patientClaimActivityButton']");
         private readonly By getPatientNamefromViewClaimActivityPage = By.XPath("//*[@id='patientName']/b");
         private readonly By caseClaimDetailButton = By.XPath("//*[contains(text(),'Case Claims Detail')]");
-        private readonly By caseClaimDetailData = By.XPath("//div[@id='reportViewer_ctl13']/descendant::table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr[10]/td[5]/div");
+        private readonly By caseClaimDetailData = By.XPath("//form/div[3]/div/div/table/tbody/tr[4]/td[3]/div/div[1]/div/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr[5]/td[5]/div/div");
         private readonly By caseClaimStatusAsCompleted = By.XPath("//table[@id='caseClaimsTable']/tbody/tr[1]/td[11]");
-        private readonly By claimsPayViewButton = By.XPath("//table[@id='caseClaimsTable']/tbody/tr[1]/td/small/span/button[contains(text(),'View')]");
-        private readonly By claimsNRViewButton = By.XPath("//table[@id='caseClaimsTable']/tbody/tr[5]/td/small/span/button[contains(text(),'View')]");
-        private readonly By claimsDenyViewButton = By.XPath("//table[@id='caseClaimsTable']/tbody/tr[4]/td/small/span/button[contains(text(),'View')]");
-        private readonly By finalizeFindingsButton = By.XPath("//button[text()='Finalize Findings']");
+        private readonly By claimsPayViewButton = By.XPath("//table[@id='caseClaimsTable']/tbody/tr[1]/td[12]/small/button[contains(text(),'View')]");
+        private readonly By claimsNRViewButton = By.XPath("//table[@id='caseClaimsTable']/tbody/tr[5]/td[12]/small/button[contains(text(),'View')]");
+        private readonly By claimsDenyViewButton = By.XPath("//table[@id='caseClaimsTable']/tbody/tr[4]/td[12]/small/button[contains(text(),'View')]");
+        private readonly By finalizeFindingsButton = By.XPath("//form[@name='claimForm']/descendant::button[text()='Finalize Findings']");
         private readonly By ApplyFindingstoCaseLevelButton = By.XPath("//button[text()='Apply Same Findings to Case Level']");
         private readonly By ApplySameLineLevelFindingtoAllClaimsinCase = By.XPath("//select[@id='finding']");
         private readonly By ApplySameLineLevelFindingtoAllClaimsinCaseReason = By.XPath("//*[@id='caseClaimFindingsForm']/descendant::p-multiselect");
@@ -236,15 +237,15 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         private readonly By ApplySameLineLevelFindingtoAllClaimsinCaseReasonConfirm = By.XPath("//button[text()='Confirm']");
         private readonly By finalizeFindingsPopup = By.XPath("//button[text()='Yes']");
         private readonly By initiateRevisionsButton = By.XPath("//button[text()='Initiate Revisions']");
-        private readonly By findingsRevisionPlusButton = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[20]/button");
-        private readonly By findingRevisionFindingDropdown = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[3]/td[16]/select");
+        private readonly By findingsRevisionPlusButton = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[2]/td[22]/button");
+        private readonly By findingRevisionFindingDropdown = By.XPath("//div[@class='row claimLineDiv']/div[1]/child::div/table/tbody/tr[3]/td[18]/select");
         private readonly By revisionClaimLinesRev = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[5]/input");
-        private readonly By revisionclaimLinesCPTORHCPCSORRatesORHIPPS = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[6]/input");
-        private readonly By revisionclaimLinesMod2 = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[8]/input");
-        private readonly By revisionclaimLinesUnits = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[11]/input");
-        private readonly By revisionclaimLinesFindingDropDown = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[16]/select");
-        private readonly By revisionclaimLinesReasonDropDown = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[17]/select");
-        private readonly By revisionclaimLinesComments = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[19]/textarea");
+        private readonly By revisionclaimLinesCPTORHCPCSORRatesORHIPPS = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[7]/input");
+        private readonly By revisionclaimLinesMod2 = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[10]/input");
+        private readonly By revisionclaimLinesUnits = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[13]/input");
+        private readonly By revisionclaimLinesFindingDropDown = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[18]/select");
+        private readonly By revisionclaimLinesReasonDropDown = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[19]/select");
+        private readonly By revisionclaimLinesComments = By.XPath("//div[@class='row claimLineDiv'][1]/child::div/div/table/tbody/tr[3]/td[21]/textarea");
         private readonly By revisionRefreshButton = By.XPath("//button[text()='Refresh']");
         private readonly By cancelRevisionhButton = By.XPath("//button[text()='Cancel Revision']");
         private readonly By cancelRevisionhButtonPopupConfirmation = By.XPath("//button[text()='OK']");
@@ -252,6 +253,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         private readonly By claimsNVViewButton = By.XPath("//table[@id='caseClaimsTable']/tbody/tr[2]/td/small/span/button[contains(text(),'View')]");
         private readonly By CaseIdField = By.XPath("//*[@id='caseViewSummaryCaseId']");
         private readonly By ConfirmationPopup = By.XPath("//button[text()='Yes']");
+
 
 
         #endregion
@@ -330,7 +332,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             CommonHelpers.WaitForElementVisiblity(driver, projectName, 100);
             driver.FindElement(projectName).Click();
-            driver.FindElement(projectName).SendKeys("Automation");
+            driver.FindElement(projectName).SendKeys(Projectname);
             driver.FindElement(selectAdministrativeworkflowTypeDropdown).Click();
             //selectAdministrativeworkflowTypeDropdownvalue.Click();
             IList<IWebElement> options = driver.FindElements(By.XPath("//div[@id='caseWorkflowType']/child::ul/li/a"));
@@ -719,7 +721,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
         }
 
-        public void editAndCompleteAutoGenActivity(string starttime, string activityTime, string note)
+        public void editAndCompleteAutoGenActivity(string startdate, string activityTime, string note)
         {
 
 
@@ -740,11 +742,13 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             CommonHelpers.WaitForElementVisiblity(driver, editActivityConfirmSaveAddedNotes, 30);
             driver.FindElement(editActivityConfirmSaveAddedNotes).Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
-            CommonHelpers.WaitForElementVisiblity(driver, activitesStartDate, 30);
-            driver.FindElement(activitesStartDate).Clear();
-            driver.FindElement(activitesStartDate).SendKeys(starttime);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
-            CommonHelpers.WaitForElementVisiblity(driver, editActivityTime, 30);
+            CommonHelpers.WaitForElementVisiblity(driver, activitesStartDate, 100);
+            CommonHelpers.EnterDate(driver.FindElement(activitesStartDate), startdate);
+            //driver.FindElement(activitesStartDate).Clear();
+            //driver.FindElement(activitesStartDate).SendKeys(starttime);
+            //driver.FindElement(activitesStartDate).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
+            CommonHelpers.WaitForElementVisiblity(driver, editActivityTime, 100);
             driver.FindElement(editActivityTime).Clear();
             driver.FindElement(editActivityTime).SendKeys(activityTime);
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
@@ -754,11 +758,11 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
             //activitesStartDate.Click();
             // driver.FindElement(activitesStartDatevalue).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
 
             CommonHelpers.WaitForElementVisiblity(driver, exitActivity, 30);
             driver.FindElement(exitActivity).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
 
 
         }
@@ -900,11 +904,11 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
                     //addAmountButton.Click();
                 }
 
-               CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
                 SelectElement amountTypeDropDown = new SelectElement(driver.FindElement(amountType));
                 amountTypeDropDown.SelectByText(Amount_Type);
-               CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
                 CommonHelpers.WaitForElementVisiblity(driver, amounteffectiveDateGrid, 30);
                 driver.FindElement(amounteffectiveDateGrid).Click();
                 driver.FindElement(amounteffectiveTodayDate).Click();
@@ -1237,7 +1241,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             var firstRowData = firstRow.FindElements(By.TagName("td"));
 
 
-            var CaseID=firstRowData.ElementAt(0).FindElement(By.XPath(".//a")).Text;
+            var CaseID = firstRowData.ElementAt(0).FindElement(By.XPath(".//a")).Text;
             Console.WriteLine("Related Case ID is: " + CaseID);
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
@@ -1295,7 +1299,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
 
         }
-        
+
 
 
         ///<summary>
@@ -1307,7 +1311,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
         public void clickClaimsButton()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(claimsButton).Click();
 
         }
@@ -1366,7 +1370,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             }
             catch (Exception ex) { }
         }
-       
+
         public void addSamplingDetailsForDataTab(string SampleDate, string UnitDescription, string seedDateforSample, string obtaineddate, string description)
         {
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
@@ -1428,7 +1432,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             var firstRow = driver.FindElement(tableRows);
             var firstRowData = firstRow.FindElements(By.TagName("td"));
             CommonHelpers.EnterDate(firstRowData.ElementAt(0).FindElement(By.XPath(".//input")), PaidFrom);
-          //  firstRowData.ElementAt(0).FindElement(By.XPath(".//input")).Click();
+            //  firstRowData.ElementAt(0).FindElement(By.XPath(".//input")).Click();
             CommonHelpers.WaitForElementVisiblity(driver, amounteffectiveTodayDate, 60);
             driver.FindElement(amounteffectiveTodayDate).Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
@@ -1440,7 +1444,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             WaitForPageLoading();
             CommonHelpers.EnterDate(firstRowData.ElementAt(2).FindElement(By.XPath(".//input")), DOSFrom);
-          //  firstRowData.ElementAt(2).FindElement(By.XPath(".//input")).Click();
+            //  firstRowData.ElementAt(2).FindElement(By.XPath(".//input")).Click();
             CommonHelpers.WaitForElementVisiblity(driver, amounteffectiveTodayDate, 60);
             driver.FindElement(amounteffectiveTodayDate).Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
@@ -1453,7 +1457,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         }
 
 
-        public void addSamplingDetailsForMetricsTabForSampleTableTwo(string UniqueDOCount, string ProviderCount, string PatientCount, string ClaimCount, string ClaimLineCount, string CodesIncluded, string TotalBilled, string TotalAllowed, string    TotalPaid)
+        public void addSamplingDetailsForMetricsTabForSampleTableTwo(string UniqueDOCount, string ProviderCount, string PatientCount, string ClaimCount, string ClaimLineCount, string CodesIncluded, string TotalBilled, string TotalAllowed, string TotalPaid)
         {
 
 
@@ -1485,17 +1489,17 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
             var firstRow = driver.FindElement(tableRows);
             var firstRowData = firstRow.FindElements(By.TagName("td"));
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver,100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             WaitForPageLoading();
             CommonHelpers.EnterDate(firstRowData.ElementAt(0).FindElement(By.XPath(".//input")), PaidFrom);
-           // firstRowData.ElementAt(0).FindElement(By.XPath(".//input")).Click();
-           CommonHelpers.WaitForElementVisiblity(driver, amounteffectiveTodayDate, 60);
+            // firstRowData.ElementAt(0).FindElement(By.XPath(".//input")).Click();
+            CommonHelpers.WaitForElementVisiblity(driver, amounteffectiveTodayDate, 60);
             driver.FindElement(amounteffectiveTodayDate).Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
             WaitForPageLoading();
             CommonHelpers.EnterDate(firstRowData.ElementAt(1).FindElement(By.XPath(".//input")), PaidTo);
-           // firstRowData.ElementAt(1).FindElement(By.XPath(".//input")).Click();
-           CommonHelpers.WaitForElementVisiblity(driver, amounteffectiveTodayDate, 60);
+            // firstRowData.ElementAt(1).FindElement(By.XPath(".//input")).Click();
+            CommonHelpers.WaitForElementVisiblity(driver, amounteffectiveTodayDate, 60);
             driver.FindElement(amounteffectiveTodayDate).Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
             WaitForPageLoading();
@@ -1632,7 +1636,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             //ScrollByElementCoordinates(firstRowData.ElementAt(8).FindElement(By.XPath(".//small/span/button[contains(text(),'Delete')]")));
             firstRowData.ElementAt(8).FindElement(By.XPath(".//button[contains(text(),'Delete')]")).Click();
 
-           CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
             return text;
 
@@ -1640,7 +1644,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
         public void confirmSampleDeletion()
         {
-            
+
             CommonHelpers.WaitForElementVisiblity(driver, confirmDeletionOfSampling, 60);
             driver.FindElement(confirmDeletionOfSampling).Click();
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
@@ -1669,7 +1673,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
                 Console.WriteLine(editsampledate);
                 CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
                 CommonHelpers.WaitForElementVisiblity(driver, samplingDate, 30);
-                
+
                 driver.FindElement(samplingDate).Clear();
 
                 //samplingDate.SendKeys(editsampledate);
@@ -1800,32 +1804,38 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         }
         //Perform a Claims Review, viewing and editing each individual claim/claim line
 
-        public void reviewingClaimsAndEditingEachIndividualClaimLine(String mod1, String Rev)
+        public void reviewingClaimsAndEditingEachIndividualClaimLine(string mod1, string Rev)
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            WaitForPageLoading();
             Actions action = new Actions(Driver);
             action.SendKeys(Keys.PageDown).Perform();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            WaitForPageLoading();
             driver.FindElement(claimsViewButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-            driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            WaitForPageLoading();
             driver.FindElement(ClaimReviewProfessionalEditingFirstTable).Clear();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(ClaimReviewProfessionalEditingFirstTable).SendKeys(mod1);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             action.SendKeys(Keys.PageDown).Perform();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(ClaimReviewProfessionalEditingFourthTable).Clear();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(ClaimReviewProfessionalEditingFourthTable).SendKeys(Rev);
             //WaitForPageLoading();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalSaveButton, 100);
             driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
 
             //WaitForPageLoading();
             //driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
 
 
@@ -1835,52 +1845,49 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         //View, Add & Edit individual claims to add a Finding, Reason, Reason 2, Comments, Units, Modifiers, Diagnosis, CPT, or any other fields that are editable
         public string ViewAddAndEditIndividualClaims(string rev, string Cptvalue, string Mod2, string claimsunit, string pay, string reason, string comments)
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             Actions action = new Actions(Driver);
             action.SendKeys(Keys.PageDown).Perform();
             WaitForPageLoading();
             driver.FindElement(claimsViewButton).Click();
             WaitForLoaderToDisappear();
-            driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-            WaitForLoadingOverlayToDisappear();
-
-
-
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            WaitForPageLoading();
             //claimLinesRev.Clear();
             //claimLinesRev.SendKeys(rev);
-
+            CommonHelpers.WaitForElementVisiblity(driver, claimLinesCPTORHCPCSORRatesORHIPPS, 100);
             driver.FindElement(claimLinesCPTORHCPCSORRatesORHIPPS).Clear();
             driver.FindElement(claimLinesCPTORHCPCSORRatesORHIPPS).SendKeys(Cptvalue);
-
+            CommonHelpers.WaitForElementVisiblity(driver, claimLinesMod2, 100);
             driver.FindElement(claimLinesMod2).Clear();
             driver.FindElement(claimLinesMod2).SendKeys(Mod2);
-
+            CommonHelpers.WaitForElementVisiblity(driver, claimLinesUnits, 100);
             driver.FindElement(claimLinesUnits).Clear();
             driver.FindElement(claimLinesUnits).SendKeys(claimsunit);
-
-
+            CommonHelpers.WaitForElementVisiblity(driver, claimLinesFindingDropDown, 100);
             SelectElement findingDropDown = new SelectElement(driver.FindElement(claimLinesFindingDropDown));
             findingDropDown.SelectByText(pay);
             IWebElement divisionText = findingDropDown.SelectedOption;
 
             string divisionText1 = findingDropDown.SelectedOption.Text;
             Console.WriteLine(divisionText1);
-
+            CommonHelpers.WaitForElementVisiblity(driver, claimLinesReasonDropDown, 100);
             SelectElement ReasonDropDown = new SelectElement(driver.FindElement(claimLinesReasonDropDown));
             ReasonDropDown.SelectByText(reason);
-
+            CommonHelpers.WaitForElementVisiblity(driver, claimLinesComments, 100);
             driver.FindElement(claimLinesComments).Clear();
             driver.FindElement(claimLinesComments).SendKeys(comments);
 
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalSaveButton, 100);
             driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
-
-            WaitForPageLoading();
-
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             return divisionText1;
-
         }
         //View, Add & Edit individual claim to Apply Same Finding to All Lines
 
@@ -1888,15 +1895,19 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
         public void ViewAddAndEditIndividualClaimsToApplySameFindingToAllLines(String ClaimReviewFinding, String primaryreason, string comment)
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-            Actions action = new Actions(driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            Actions action = new Actions(Driver);
             action.SendKeys(Keys.PageDown).Perform();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            WaitForPageLoading();
             driver.FindElement(claimsViewButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-            driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-            Thread.Sleep(2000);
+            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            WaitForPageLoading();
 
             SelectElement findingDropDown = new SelectElement(driver.FindElement(claimLinesFindings));
             findingDropDown.SelectByText(ClaimReviewFinding);
@@ -2111,7 +2122,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             var tableRows = FindingBody;
             var firstRow = driver.FindElement(tableRows);
             var firstRowData = firstRow.FindElements(By.TagName("td"));
-          CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             var data = firstRowData.ElementAt(1).FindElement(By.XPath(".//small")).Text;
             Console.WriteLine(data);
 
@@ -2244,20 +2255,20 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
         public string SearchByCaseId(string claimnumber, string claimvalue)
         {
-            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(claimsSearchDropDowm).Click();
             SelectDropDownOption(driver.FindElement(claimsSearchDropDowm), claimnumber);
             driver.FindElement(SearchInput).Clear();
             driver.FindElement(SearchInput).SendKeys(claimvalue);
-            Thread.Sleep(5000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(SearchButton).Click();
             WaitForSearchResultsLoading(30);
             driver.FindElement(claimViewButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             var claimid = driver.FindElement(getClaimID).Text;
             Console.WriteLine(claimid);
             driver.FindElement(clainReviewProfessionalCancelButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             return claimid;
         }
 
@@ -2272,15 +2283,16 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             driver.FindElement(SearchLastName).SendKeys(lastname);
             driver.FindElement(SearchFirstName).Clear();
             driver.FindElement(SearchFirstName).SendKeys(firstname);
-            Thread.Sleep(5000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(SearchButton).Click();
             WaitForSearchResultsLoading(30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(claimViewButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             var name = driver.FindElement(patientname).Text.Substring(9, 9);
             Console.WriteLine(name);
             driver.FindElement(clainReviewProfessionalCancelButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
             return name;
         }
@@ -2294,46 +2306,45 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             SelectDropDownOption(driver.FindElement(claimsSearchDropDowm), Patientid);
             driver.FindElement(SearchInput).Clear();
             driver.FindElement(SearchInput).SendKeys(patientidvalue);
-            Thread.Sleep(5000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(SearchButton).Click();
             WaitForSearchResultsLoading(30);
             driver.FindElement(claimViewButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             var patientid = driver.FindElement(getpatientid).Text;
             Console.WriteLine(patientid);
             driver.FindElement(clainReviewProfessionalCancelButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             return patientid;
         }
 
         //searching for CPT/HCPC(s)
 
-        public String SearchByCPTORHCPC(String CPTORHCPC, String CPTORHCPCvalue)
+        public string SearchByCPTORHCPC(string CPTORHCPC, string CPTORHCPCvalue)
         {
-            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(claimsSearchDropDowm).Click();
             SelectDropDownOption(driver.FindElement(claimsSearchDropDowm), "CPT/HCPC(s)");
             driver.FindElement(SearchInput).Clear();
             driver.FindElement(SearchInput).SendKeys(CPTORHCPCvalue);
-            Thread.Sleep(5000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(SearchButton).Click();
-            WaitForLoaderToDisappear();
-            //WaitForSearchResultsLoading(30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(claimViewButton).Click();
-            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             var patientid = driver.FindElement(getCPTorHCPCvalue).Text.Trim();
             Console.WriteLine(patientid);
             driver.FindElement(clainReviewProfessionalCancelButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             return patientid;
         }
 
         //searching for DateOfServiceFrom
-        public String SearchByDateOfServiceFrom(String DateOfServiceFrom, String startdate, String enddate)
+        public string SearchByDateOfServiceFrom(string DateOfServiceFrom, string startdate, string enddate)
         {
-            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(claimsSearchDropDowm).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             var selectCriteria = new SelectElement(driver.FindElement(claimsSearchDropDowm));
             selectCriteria.SelectByText(DateOfServiceFrom);
             driver.FindElement(SearchStartDate).Clear();
@@ -2421,19 +2432,25 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
         public string verifingDataRendersCorrectlyInClaimSummaryPatientID()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-            Actions action = new Actions(driver);
+            WaitForPageLoading();
+            Actions action = new Actions(Driver);
             action.SendKeys(Keys.PageDown).Perform();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            WaitForPageLoading();
             driver.FindElement(claimsViewButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-            driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-
-
+            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            WaitForLoadingOverlayToDisappear();
+            action.SendKeys(Keys.PageDown).Perform();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
+            CommonHelpers.WaitForElementVisiblity(driver, getpatientid, 100);
             var patientID = driver.FindElement(getpatientid).Text;
             Console.WriteLine(patientID);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
 
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
@@ -2442,47 +2459,51 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
         public String verifingDataRendersCorrectlyInClaimSummaryPatientname()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             Actions action = new Actions(driver);
             action.SendKeys(Keys.PageDown).Perform();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(claimsViewButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
-
+            CommonHelpers.WaitForElementVisiblity(driver, patientname, 100);
             var patientName = driver.FindElement(patientname).Text;
             Console.WriteLine(patientName);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             return patientName;
         }
 
         //View Individual Claim Activity, verify data renders correctly
 
-        public String viewClaimActivity()
+        public string viewClaimActivity()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-            Actions action = new Actions(driver);
+            Actions action = new Actions(Driver);
             action.SendKeys(Keys.PageDown).Perform();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            WaitForPageLoading();
             driver.FindElement(claimsViewButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-            driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-
-
+            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            WaitForLoadingOverlayToDisappear();
+            action.SendKeys(Keys.PageDown).Perform();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
             //action.SendKeys(Keys.PageDown).Perform();
-
+            CommonHelpers.WaitForElementVisiblity(driver, viewClaimActivityButton, 100);
             driver.FindElement(viewClaimActivityButton).Click();
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
             CommonHelpers.SwitchtoNewWindow(driver);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             var text = driver.FindElement(getPatientNamefromViewClaimActivityPage).Text;
             Console.WriteLine(text);
 
@@ -2493,24 +2514,24 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
         public void clickClaimViewSaveButton()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalSaveButton, 100);
             driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
         }
 
         //Case Claims Detail downloadable and data populates
 
 
-        public String downloadCaseClaimsDetailAndValidateDataPopulates()
+        public string downloadCaseClaimsDetailAndValidateDataPopulates()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, caseClaimDetailButton, 100);
             driver.FindElement(caseClaimDetailButton).Click();
             CommonHelpers.SwitchtoNewWindow(driver);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
+            CommonHelpers.WaitForElementVisiblity(driver, caseClaimDetailData, 100);
             var text = driver.FindElement(caseClaimDetailData).Text.Substring(1);
             Console.WriteLine(text);
             return text;
@@ -2520,20 +2541,21 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
         public String downloadExcelsheetAndVerfyData()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, caseClaimDetailButton, 100);
             driver.FindElement(caseClaimDetailButton).Click();
             CommonHelpers.SwitchtoNewWindow(driver);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, caseClaimDetailData, 100);
             var text = driver.FindElement(caseClaimDetailData).Text.Substring(1);
             Console.WriteLine(text);
 
             driver.FindElement(caseClaimDetailsReportViewExcel).Click();
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(caseClaimDetailsReportViewExcelData).Click();
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
 
             return text;
@@ -2541,19 +2563,16 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
         //count the number of claims
 
-        public String downloadExcelsheetAndVerifyRowCount()
+        public string downloadExcelsheetAndVerifyRowCount()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
             driver.FindElement(caseClaimDetailButton).Click();
             CommonHelpers.SwitchtoNewWindow(driver);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             var tableRows = driver.FindElements(By.XPath("//div[@id='reportViewer_ctl13']/descendant::table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr"));
             string count = tableRows.Count().ToString();
-
             Console.WriteLine(tableRows.Count());
-
-
             return count;
         }
 
@@ -2572,70 +2591,75 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         public void PayFidingsDropdown(string ClaimReviewFinding, string primaryreason, string comment)
         {
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             Actions action = new Actions(driver);
             action.SendKeys(Keys.PageDown).Perform();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(claimsPayViewButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            WaitForPageLoading();
+
+            SelectElement findingDropDown = new SelectElement(driver.FindElement(claimLinesFindings));
+            findingDropDown.SelectByText(ClaimReviewFinding);
+            IWebElement divisionText = findingDropDown.SelectedOption;
+
+            driver.FindElement(claimLinesFindingsReason).Click();
+
+
+            IList<IWebElement> options = driver.FindElements(By.XPath("//*[@id='CaseClaimReviewForm']/descendant::p-multiselect//span[text()='(DO NOT MODIFY) - Automated Testing Finding Reason Testing']"));
+
+            foreach (IWebElement option in options)
+
+            {
+
+                Console.WriteLine(option.Text);
+
+                if (option.Text.Contains(primaryreason))
+
+                {
+
+                    option.Click();
+
+                    break;
+
+                }
+
+            }
+            CommonHelpers.WaitForElementVisiblity(driver, claimLinesFindingsComment, 100);
+            driver.FindElement(claimLinesFindingsComment).Clear();
+            driver.FindElement(claimLinesFindingsComment).SendKeys(comment);
+            CommonHelpers.WaitForElementVisiblity(driver, applySameFindingtoAllLines, 100);
+            driver.FindElement(applySameFindingtoAllLines).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             try
             {
-
-                driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-                Thread.Sleep(2000);
-
-                SelectElement findingDropDown = new SelectElement(driver.FindElement(claimLinesFindings));
-                findingDropDown.SelectByText(ClaimReviewFinding);
-                IWebElement divisionText = findingDropDown.SelectedOption;
-
-                driver.FindElement(claimLinesFindingsReason).Click();
-
-                IList<IWebElement> options = driver.FindElements(By.XPath("//*[@id='CaseClaimReviewForm']/descendant::p-multiselect//span[text()='(DO NOT MODIFY) - Automated Testing Finding Reason Testing']"));
-
-                foreach (IWebElement option in options)
-
-                {
-
-                    Console.WriteLine(option.Text);
-
-                    if (option.Text.Contains(primaryreason))
-
-                    {
-
-                        option.Click();
-
-                        break;
-
-                    }
-
-                }
-
-                driver.FindElement(claimLinesFindingsComment).Clear();
-                driver.FindElement(claimLinesFindingsComment).SendKeys(comment);
-
-                driver.FindElement(applySameFindingtoAllLines).Click();
-                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-                try
-                {
-                    driver.FindElement(applySameFindingtoAllLinesPopUp).Click();
-                    CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-                }
-                catch (Exception ex) { }
-                try
-                {
-                    driver.FindElement(applySameFindingtoAllLinesConfirmPopUp).Click();
-                    CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-                }
-                catch (Exception ex) { }
+                CommonHelpers.WaitForElementVisiblity(driver, applySameFindingtoAllLinesPopUp, 100);
+                driver.FindElement(applySameFindingtoAllLinesPopUp).Click();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             }
-            catch (Exception ex)
+            catch (Exception ex) { }
+            try
             {
-                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-                driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
+                CommonHelpers.WaitForElementVisiblity(driver, applySameFindingtoAllLinesConfirmPopUp, 100);
+                driver.FindElement(applySameFindingtoAllLinesConfirmPopUp).Click();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             }
+            catch (Exception ex) { }
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+
+
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalCancelButton, 100);
+            driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
+
+
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
         }
 
@@ -2644,34 +2668,39 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         public string verifyPayFidingsDropdown()
         {
             string divisionText1 = "";
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
             Actions action = new Actions(driver);
             action.SendKeys(Keys.PageDown).Perform();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
             driver.FindElement(claimsPayViewButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             try
             {
-                driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+                CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+                action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+                IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+                js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+                WaitForLoadingOverlayToDisappear();
+                action.SendKeys(Keys.PageDown).Perform();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
 
-
+                CommonHelpers.WaitForElementVisiblity(driver, reasonForPaidClaims, 100);
                 SelectElement divisionDropDown = new SelectElement(driver.FindElement(reasonForPaidClaims));
 
 
                 divisionText1 = divisionDropDown.SelectedOption.Text;
                 Console.WriteLine(divisionText1);
-                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
                 driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
             }
             catch (Exception ex)
             {
-                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+                CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalCancelButton, 100);
                 driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
             }
 
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             return divisionText1;
         }
 
@@ -2679,79 +2708,70 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         public void DenyFidingsDropdown(string ClaimReviewFinding, string primaryreason, string comment)
         {
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             Actions action = new Actions(driver);
             action.SendKeys(Keys.PageDown).Perform();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(claimsDenyViewButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
+            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            WaitForPageLoading();
+
+            SelectElement findingDropDown = new SelectElement(driver.FindElement(claimLinesFindings));
+            findingDropDown.SelectByText(ClaimReviewFinding);
+            IWebElement divisionText = findingDropDown.SelectedOption;
+
+            driver.FindElement(claimLinesFindingsReason).Click();
+
+
+            IList<IWebElement> options = driver.FindElements(By.XPath("//*[@id='CaseClaimReviewForm']/descendant::p-multiselect//span[text()='(DO NOT MODIFY) - Automated Testing Finding Reason Testing']"));
+
+            foreach (IWebElement option in options)
+
+            {
+
+                Console.WriteLine(option.Text);
+
+                if (option.Text.Contains(primaryreason))
+
+                {
+
+                    option.Click();
+
+                    break;
+
+                }
+
+            }
+            CommonHelpers.WaitForElementVisiblity(driver, claimLinesFindingsComment, 100);
+            driver.FindElement(claimLinesFindingsComment).Clear();
+            driver.FindElement(claimLinesFindingsComment).SendKeys(comment);
+            CommonHelpers.WaitForElementVisiblity(driver, applySameFindingtoAllLines, 100);
+            driver.FindElement(applySameFindingtoAllLines).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             try
             {
-                driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
-
-
-                SelectElement findingDropDown = new SelectElement(driver.FindElement(claimLinesFindings));
-                findingDropDown.SelectByText(ClaimReviewFinding);
-                IWebElement divisionText = findingDropDown.SelectedOption;
-
-                //claimLinesFindingsReason.Clear();
-                //claimLinesFindingsReason.SendKeys(primaryreason);
-                //claimLinesFindingsReason.SendKeys(Keys.Enter);
-
-                driver.FindElement(claimLinesFindingsReason).Click();
-
-                IList<IWebElement> options = driver.FindElements(By.XPath("//*[@id='CaseClaimReviewForm']/descendant::p-multiselect//span[text()='(DO NOT MODIFY) - Automated Testing Finding Reason Testing']"));
-
-                foreach (IWebElement option in options)
-
-                {
-
-                    Console.WriteLine(option.Text);
-
-                    if (option.Text.Contains(primaryreason))
-
-                    {
-
-                        option.Click();
-
-                        break;
-
-                    }
-
-                }
-
-                driver.FindElement(claimLinesFindingsComment).Clear();
-                driver.FindElement(claimLinesFindingsComment).SendKeys(comment);
-
-                driver.FindElement(claimLinesFindingsComment).Clear();
-                driver.FindElement(claimLinesFindingsComment).SendKeys(comment);
-
-                driver.FindElement(applySameFindingtoAllLines).Click();
-                WaitForPageLoading();
-                try
-                {
-                    driver.FindElement(applySameFindingtoAllLinesPopUp).Click();
-                    WaitForPageLoading();
-                }
-                catch (Exception ex) { }
-                try
-                {
-                    driver.FindElement(applySameFindingtoAllLinesConfirmPopUp).Click();
-                    WaitForPageLoading();
-                }
-                catch (Exception ex) { }
+                CommonHelpers.WaitForElementVisiblity(driver, applySameFindingtoAllLinesPopUp, 100);
+                driver.FindElement(applySameFindingtoAllLinesPopUp).Click();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             }
-            catch (Exception ex)
+            catch (Exception ex) { }
+            try
             {
-                WaitForLoaderToDisappear();
-                driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
+                CommonHelpers.WaitForElementVisiblity(driver, applySameFindingtoAllLinesConfirmPopUp, 100);
+                driver.FindElement(applySameFindingtoAllLinesConfirmPopUp).Click();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             }
-
-
-            WaitForLoaderToDisappear();
-
-
+            catch (Exception ex) { }
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalCancelButton, 100);
+            driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
         }
 
@@ -2760,29 +2780,32 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         public string verifyDenyFidingsDropdown()
         {
             string divisionText1 = "";
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             Actions action = new Actions(driver);
             action.SendKeys(Keys.PageDown).Perform();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(claimsDenyViewButton).Click();
-            WaitForPageLoading();
+            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             try
             {
                 driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-                WaitForLoadingOverlayToDisappear();
-
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+                CommonHelpers.WaitForElementVisiblity(driver, reasonForZeroPaidClaims, 100);
                 SelectElement divisionDropDown = new SelectElement(driver.FindElement(reasonForZeroPaidClaims));
 
                 divisionText1 = divisionDropDown.SelectedOption.Text;
                 Console.WriteLine(divisionText1);
-                WaitForPageLoading();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+                CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalSaveButton, 100);
                 driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
 
-                WaitForLoaderToDisappear();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             }
             catch (Exception ex)
             {
-                WaitForLoaderToDisappear();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+                CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalCancelButton, 100);
                 driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
             }
             return divisionText1;
@@ -2798,68 +2821,64 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             action.SendKeys(Keys.PageDown).Perform();
             WaitForPageLoading();
             driver.FindElement(claimsNRViewButton).Click();
+            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            WaitForPageLoading();
+            CommonHelpers.WaitForElementVisiblity(driver, claimLinesFindings, 100);
+            SelectElement findingDropDown = new SelectElement(driver.FindElement(claimLinesFindings));
+            findingDropDown.SelectByText(reasonforzeropaidclaims);
+            IWebElement divisionText = findingDropDown.SelectedOption;
+            CommonHelpers.WaitForElementVisiblity(driver, claimLinesFindingsReason, 100);
+            driver.FindElement(claimLinesFindingsReason).Click();
+
+            IList<IWebElement> options = driver.FindElements(By.XPath("//*[@id='CaseClaimReviewForm']/descendant::p-multiselect//span[text()='(DO NOT MODIFY) - Automated Testing Finding Reason Testing']"));
+
+            foreach (IWebElement option in options)
+
+            {
+
+                Console.WriteLine(option.Text);
+
+                if (option.Text.Contains(primaryreason))
+
+                {
+
+                    option.Click();
+
+                    break;
+
+                }
+
+            }
+            //claimLinesFindingsReason.SendKeys(primaryreason);
+            //claimLinesFindingsReason.SendKeys(Keys.Enter);
+            CommonHelpers.WaitForElementVisiblity(driver, claimLinesFindingsComment, 100);
+            driver.FindElement(claimLinesFindingsComment).Clear();
+            driver.FindElement(claimLinesFindingsComment).SendKeys(comment);
+            CommonHelpers.WaitForElementVisiblity(driver, applySameFindingtoAllLines, 100);
+            driver.FindElement(applySameFindingtoAllLines).Click();
+            WaitForPageLoading();
             try
             {
-                WaitForLoaderToDisappear();
-                driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-                WaitForLoadingOverlayToDisappear();
-
-
-                SelectElement findingDropDown = new SelectElement(driver.FindElement(claimLinesFindings));
-                findingDropDown.SelectByText(reasonforzeropaidclaims);
-                IWebElement divisionText = findingDropDown.SelectedOption;
-
-
-                //claimLinesFindingsReason.SendKeys(primaryreason);
-                //claimLinesFindingsReason.SendKeys(Keys.Enter);
-                driver.FindElement(claimLinesFindingsReason).Click();
-
-                IList<IWebElement> options = driver.FindElements(By.XPath("//*[@id='CaseClaimReviewForm']/descendant::p-multiselect//span[text()='(DO NOT MODIFY) - Automated Testing Finding Reason Testing']"));
-
-                foreach (IWebElement option in options)
-
-                {
-
-                    Console.WriteLine(option.Text);
-
-                    if (option.Text.Contains(primaryreason))
-
-                    {
-
-                        option.Click();
-
-                        break;
-
-                    }
-
-                }
-
-                driver.FindElement(claimLinesFindingsComment).Clear();
-                driver.FindElement(claimLinesFindingsComment).SendKeys(comment);
-
-                driver.FindElement(applySameFindingtoAllLines).Click();
+                CommonHelpers.WaitForElementVisiblity(driver, applySameFindingtoAllLinesPopUp, 100);
+                driver.FindElement(applySameFindingtoAllLinesPopUp).Click();
                 WaitForPageLoading();
-                try
-                {
-                    driver.FindElement(applySameFindingtoAllLinesPopUp).Click();
-                    WaitForPageLoading();
-                }
-                catch (Exception ex) { }
-                try
-                {
-                    driver.FindElement(applySameFindingtoAllLinesConfirmPopUp).Click();
-                    WaitForPageLoading();
-                }
-                catch (Exception ex) { }
             }
-            catch (Exception ex)
+            catch (Exception ex) { }
+            try
             {
-                WaitForLoaderToDisappear();
-                driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
+                CommonHelpers.WaitForElementVisiblity(driver, applySameFindingtoAllLinesConfirmPopUp, 100);
+                driver.FindElement(applySameFindingtoAllLinesConfirmPopUp).Click();
+                WaitForPageLoading();
             }
+            catch (Exception ex) { }
 
-            WaitForLoaderToDisappear();
-
+            WaitForPageLoading();
         }
 
 
@@ -2881,12 +2900,14 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
                 driver.FindElement(ClaimReviewProfessionalEditButton).Click();
                 WaitForLoadingOverlayToDisappear();
 
+                CommonHelpers.WaitForElementVisiblity(driver, reasonForPaidClaims, 100);
                 SelectElement divisionDropDown = new SelectElement(driver.FindElement(reasonForPaidClaims));
 
                 divisionText1 = divisionDropDown.SelectedOption.Text;
                 Console.WriteLine(divisionText1);
                 WaitForPageLoading();
 
+                CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalSaveButton, 100);
                 driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
 
                 WaitForLoaderToDisappear();
@@ -2897,6 +2918,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             catch
             {
                 WaitForLoaderToDisappear();
+                CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalCancelButton, 100);
                 driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
             }
             return divisionText1;
@@ -2986,11 +3008,14 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
         public void ApplySameLineLevelFindingstoAllClaimsInCase(string pay, string Casename)
         {
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ApplyFindingstoCaseLevelButton, 100);
             driver.FindElement(ApplyFindingstoCaseLevelButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ApplySameLineLevelFindingtoAllClaimsinCase, 100);
             SelectElement findingDropDown = new SelectElement(driver.FindElement(ApplySameLineLevelFindingtoAllClaimsinCase));
             findingDropDown.SelectByText(pay);
+            CommonHelpers.WaitForElementVisiblity(driver, ApplySameLineLevelFindingtoAllClaimsinCaseReason, 100);
             driver.FindElement(ApplySameLineLevelFindingtoAllClaimsinCaseReason).Click();
 
             IList<IWebElement> options = driver.FindElements(By.XPath("//*[@id='caseClaimFindingsForm']/descendant::ul/li//div[@class='p-checkbox-box']"));
@@ -3012,29 +3037,31 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
                 }
 
             }
+            CommonHelpers.WaitForElementVisiblity(driver, ApplySameLineLevelFindingtoAllClaimsinCaseReasonSave, 100);
             driver.FindElement(ApplySameLineLevelFindingtoAllClaimsinCaseReasonSave).Click();
-
+            CommonHelpers.WaitForElementVisiblity(driver, ApplySameLineLevelFindingtoAllClaimsinCaseReasonConfirm, 100);
             driver.FindElement(ApplySameLineLevelFindingtoAllClaimsinCaseReasonConfirm).Click();
-
-            WaitForLoaderToDisappear();
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
+            WaitForPageLoading();
+            CommonHelpers.WaitForElementVisiblity(driver, finalizeFindingsButton, 100);
         }
 
         //Finalize Findings- Once you are completely finished with the Claim Line Review, select Finalize Findings and confirm each claim status reflects 'Finalized'
 
         public void finalizeFindings()
         {
-
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, finalizeFindingsButton, 100);
             driver.FindElement(finalizeFindingsButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, finalizeFindingsPopup, 100);
             driver.FindElement(finalizeFindingsPopup).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
         }
 
-        public String verifyfinalizeFindingsStatus()
+        public string verifyfinalizeFindingsStatus()
         {
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             var text = driver.FindElement(caseClaimStatusAsCompleted).Text;
             Console.WriteLine(text);
             return text;
@@ -3046,19 +3073,18 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         public void selectInitiateRevisions()
         {
 
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, initiateRevisionsButton, 100);
             driver.FindElement(initiateRevisionsButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
         }
 
 
-        public String verifyselectInitiateRevisions()
+        public string verifyselectInitiateRevisions()
         {
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             var text = driver.FindElement(caseClaimStatusAsCompleted).Text;
-            Console.WriteLine(text);
             return text;
-
         }
 
         //View the claim and verify the original finding still displays
@@ -3072,21 +3098,26 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             action.SendKeys(Keys.PageDown).Perform();
             WaitForPageLoading();
             driver.FindElement(claimsPayViewButton).Click();
-            WaitForPageLoading();
+            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+
             try
             {
 
-                WaitForLoaderToDisappear();
-                driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-                WaitForLoadingOverlayToDisappear();
-
+                CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+                action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+                IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+                js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+                WaitForPageLoading();
 
                 SelectElement divisionDropDown = new SelectElement(driver.FindElement(reasonForPaidClaims));
 
                 divisionText1 = divisionDropDown.SelectedOption.Text;
                 Console.WriteLine(divisionText1);
-                WaitForPageLoading();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
                 driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             }
 
             catch (Exception ex)
@@ -3095,8 +3126,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
                 driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
             }
 
-
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             return divisionText1;
         }
 
@@ -3105,21 +3135,23 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         public string selectPlusSignAndEnterANewRevisionFinding(string pay)
         {
             string divisionText1 = "";
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             Actions action = new Actions(Driver);
             action.SendKeys(Keys.PageDown).Perform();
-            WaitForPageLoading();
+            CommonHelpers.WaitForElementVisiblity(driver, claimsDenyViewButton, 100);
             driver.FindElement(claimsDenyViewButton).Click();
-            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             try
             {
-                driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-                WaitForLoadingOverlayToDisappear();
-
-
+                CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+                action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+                IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+                js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+                CommonHelpers.WaitForElementVisiblity(driver, findingsRevisionPlusButton, 100);
                 driver.FindElement(findingsRevisionPlusButton).Click();
 
-                WaitForPageLoading();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
                 SelectElement findingDropDown = new SelectElement(driver.FindElement(findingRevisionFindingDropdown));
                 findingDropDown.SelectByText(pay);
@@ -3128,12 +3160,12 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
                 divisionText1 = findingDropDown.SelectedOption.Text;
                 Console.WriteLine(divisionText1);
 
-                WaitForPageLoading();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
                 driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
             }
             catch (Exception ex)
             {
-                WaitForPageLoading();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
                 driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
             }
             return divisionText1;
@@ -3150,51 +3182,55 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             action.SendKeys(Keys.PageDown).Perform();
             WaitForPageLoading();
             driver.FindElement(claimsDenyViewButton).Click();
-            WaitForLoaderToDisappear();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             try
             {
-                driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-                WaitForLoadingOverlayToDisappear();
-
-
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+                CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+                action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+                IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+                js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
+                CommonHelpers.WaitForElementVisiblity(driver, findingsRevisionPlusButton, 100);
                 driver.FindElement(findingsRevisionPlusButton).Click();
 
-                WaitForPageLoading();
-
-                driver.FindElement(revisionClaimLinesRev).Clear();
-                driver.FindElement(revisionClaimLinesRev).SendKeys(rev);
-
+               CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+                //CommonHelpers.WaitForElementVisiblity(driver, revisionClaimLinesRev, 100);
+                //driver.FindElement(revisionClaimLinesRev).Clear();
+                //driver.FindElement(revisionClaimLinesRev).SendKeys(rev);
+                CommonHelpers.WaitForElementVisiblity(driver, revisionclaimLinesCPTORHCPCSORRatesORHIPPS, 100);
                 driver.FindElement(revisionclaimLinesCPTORHCPCSORRatesORHIPPS).Clear();
                 driver.FindElement(revisionclaimLinesCPTORHCPCSORRatesORHIPPS).SendKeys(Cptvalue);
-
+                CommonHelpers.WaitForElementVisiblity(driver, revisionclaimLinesMod2, 100);
                 driver.FindElement(revisionclaimLinesMod2).Clear();
                 driver.FindElement(revisionclaimLinesMod2).SendKeys(Mod2);
 
+                CommonHelpers.WaitForElementVisiblity(driver, revisionclaimLinesUnits, 100);
                 driver.FindElement(revisionclaimLinesUnits).Clear();
                 driver.FindElement(revisionclaimLinesUnits).SendKeys(claimsunit);
-
+                CommonHelpers.WaitForElementVisiblity(driver, revisionclaimLinesFindingDropDown, 100);
 
                 SelectElement findingDropDown = new SelectElement(driver.FindElement(revisionclaimLinesFindingDropDown));
                 findingDropDown.SelectByText(pay);
-                IWebElement divisionText = findingDropDown.SelectedOption;
+// IWebElement divisionText = findingDropDown.SelectedOption;
 
                 divisionText1 = findingDropDown.SelectedOption.Text;
                 Console.WriteLine(divisionText1);
+                //CommonHelpers.WaitForElementVisiblity(driver, revisionclaimLinesReasonDropDown, 100);
+                //SelectElement ReasonDropDown = new SelectElement(driver.FindElement(revisionclaimLinesReasonDropDown));
+                //ReasonDropDown.SelectByText(reason);
+                
+                //CommonHelpers.WaitForElementVisiblity(driver, revisionclaimLinesComments, 100);
+                //driver.FindElement(revisionclaimLinesComments).Clear();
+                //driver.FindElement(revisionclaimLinesComments).SendKeys(comments);
 
-                SelectElement ReasonDropDown = new SelectElement(driver.FindElement(revisionclaimLinesReasonDropDown));
-                ReasonDropDown.SelectByText(reason);
-
-                driver.FindElement(revisionclaimLinesComments).Clear();
-                driver.FindElement(revisionclaimLinesComments).SendKeys(comments);
-
-
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
                 driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
-
-                WaitForPageLoading();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             }
             catch (Exception ex)
             {
-                WaitForPageLoading();
+                CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
                 driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
             }
 
@@ -3238,20 +3274,20 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             try
             {
                 WaitForPageLoading();
-                var tableRows = Driver.WrappedDriver.FindElements(By.XPath("//table[@id='caseClaimsTable']/tbody/tr[@class='ng-star-inserted']"));
+                var tableRows = Driver.WrappedDriver.FindElements(By.XPath("//table[@id='caseClaimsTable']/tbody/tr"));
 
                 for (int i = tableRows.Count; i > 0; i--)
                 {
-                    tableRows = Driver.WrappedDriver.FindElements(By.XPath("//table[@id='caseClaimsTable']/tbody/tr[@class='ng-star-inserted']"));
+                    tableRows = Driver.WrappedDriver.FindElements(By.XPath("//table[@id='caseClaimsTable']/tbody/tr"));
                     // var firstRow = tableRows[0];
                     //var firstRowData = firstRow.FindElements(By.TagName("td"));
-                    var element = tableRows[0].FindElement(By.XPath("//button[contains(text(),'Delete')]"));
+                    var element = tableRows[0].FindElement(By.XPath(".//small/button[contains(text(),'Delete')]"));
                     int rowcount1 = tableRows.Count();
                     Console.WriteLine(rowcount1);
                     element.Click();
-                    CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+                    CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
                     driver.FindElement(finalizeFindingsPopup).Click();
-                    CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+                    CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
                 }
             }
             catch (Exception e)
@@ -3267,12 +3303,13 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
         public void selectingTheClaimSelectorAndAttachingTheClaimshViaGenerateAConvenientSample(string renderingPID, string equal, string renderingPIDvalue)
         {
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, claimSelector, 100);
             driver.FindElement(claimSelector).Click();
-            WaitForPageLoading();
-
+           CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, queryParameter, 100);
             driver.FindElement(queryParameter).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
             IList<IWebElement> options = Driver.WrappedDriver.FindElements(By.XPath("//div[@id='claimQueryColumnDiv']/child::ul/li/a"));
 
@@ -3294,32 +3331,34 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
 
             }
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, queryparametervalue, 100);
             driver.FindElement(queryparametervalue).Click();
             var selectCriteria = new SelectElement(driver.FindElement(queryparametervalue));
             selectCriteria.SelectByText(equal);
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(queryparameterIdValue).SendKeys(renderingPIDvalue);
-
+            CommonHelpers.WaitForElementVisiblity(driver, selectClaimsFromTheConvenientSample, 100);
             driver.FindElement(selectClaimsFromTheConvenientSample).Click();
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, getSampleSizeButton, 100);
             driver.FindElement(getSampleSizeButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, runOrGetSampleButton, 100);
             driver.FindElement(runOrGetSampleButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100  );
 
             Actions action = new Actions(Driver);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
 
             action.SendKeys(Keys.PageUp).Perform();
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, addSelectedCaseToClaim, 100);
             driver.FindElement(addSelectedCaseToClaim).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
         }
 
         public void validateAuditLogBasedOnActionsPerformed()
@@ -3350,7 +3389,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
         }
         public string ClickCaseClaimDetailsReportViewExcel()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             var text = driver.FindElement(caseClaimDetailsReportViewExcelProviderID).Text;
 
             driver.FindElement(caseClaimDetailsReportViewExcel).Click();
@@ -3395,51 +3434,53 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             WaitForPageLoading();
             driver.FindElement(claimsViewButton).Click();
             WaitForLoaderToDisappear();
-            driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            WaitForLoadingOverlayToDisappear();
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalSaveButton, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, alertMessage, 100);
             var text = driver.FindElement(alertMessage).Text;
-            Console.WriteLine(text);
-            //WaitForPageLoading();
-            //action.SendKeys(Keys.PageUp).Perform();
-            //var text = alertMessage.Text;
-            //Console.WriteLine(text);
-
-
             return text;
-
         }
 
         public string VerifyNotPaidClaimLineReasonAsNR(string reasonforzeropaidclaims)
         {
             WaitForPageLoading();
-            Actions action = new Actions(driver);
+            Actions action = new Actions(Driver);
             action.SendKeys(Keys.PageDown).Perform();
             WaitForPageLoading();
             driver.FindElement(claimsViewButton).Click();
             WaitForLoaderToDisappear();
-            driver.FindElement(ClaimReviewProfessionalEditButton).Click();
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            WaitForLoadingOverlayToDisappear();
             action.SendKeys(Keys.PageDown).Perform();
-            Thread.Sleep(5000);
+            CommonHelpers.WaitForElementVisiblity(driver, reasonForZeroPaidClaims, 100);
             SelectElement divisionDropDown = new SelectElement(driver.FindElement(reasonForZeroPaidClaims));
             divisionDropDown.SelectByText(reasonforzeropaidclaims);
 
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             string divisionText1 = divisionDropDown.SelectedOption.Text;
             Console.WriteLine(divisionText1);
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
 
             //driver.FindElement(ClaimReviewProfessionalCancelButton).Click();
 
-            WaitForPageLoading();
-
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             return divisionText1;
-
         }
 
         //verifing same findings is applied to all the claims or not
@@ -3453,8 +3494,14 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             WaitForPageLoading();
             driver.FindElement(claimsViewButton).Click();
             WaitForLoaderToDisappear();
-            driver.FindElement(ClaimReviewProfessionalEditButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             WaitForLoadingOverlayToDisappear();
+            action.SendKeys(Keys.PageDown).Perform();
             CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
 
             SelectElement divisionDropDown = new SelectElement(driver.FindElement(reasonForZeroPaidClaims));
@@ -3482,16 +3529,22 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.Administrative
             WaitForPageLoading();
             driver.FindElement(claimsViewButton).Click();
             WaitForLoaderToDisappear();
-            driver.FindElement(ClaimReviewProfessionalEditButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalEditButton, 100);
+            action.MoveToElement(driver.FindElement(ClaimReviewProfessionalEditButton)).Perform();
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].click();", driver.FindElement(ClaimReviewProfessionalEditButton));
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
             WaitForLoadingOverlayToDisappear();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 50);
-
+            action.SendKeys(Keys.PageDown).Perform();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, getClaimID, 100);
             var claimID = driver.FindElement(getClaimID).Text;
             Console.WriteLine(claimID);
-
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, ClaimReviewProfessionalSaveButton, 100);
             driver.FindElement(ClaimReviewProfessionalSaveButton).Click();
-
-            WaitForPageLoading();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
             return claimID;
         }
 

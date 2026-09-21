@@ -140,12 +140,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 18
  await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table176 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table216 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table176.AddRow(new string[] {
+                table216.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 19
- await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table176, "When ");
+ await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table216, "When ");
 #line hidden
 #line 22
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -153,34 +153,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 23
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table177 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table217 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table177.AddRow(new string[] {
+                table217.AddRow(new string[] {
                             string.Format("{0}", casesTab)});
 #line 24
  await testRunner.AndAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table177, "And ");
+                        "", ((string)(null)), table217, "And ");
 #line hidden
-                global::Reqnroll.Table table178 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table218 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table178.AddRow(new string[] {
+                table218.AddRow(new string[] {
                             string.Format("{0}", assignedToFilter)});
 #line 27
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table178, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table218, "And ");
 #line hidden
-                global::Reqnroll.Table table179 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table219 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table179.AddRow(new string[] {
+                table219.AddRow(new string[] {
                             string.Format("{0}", caseTableSearchOptions)});
 #line 30
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table179, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table219, "And ");
 #line hidden
-                global::Reqnroll.Table table180 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table220 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table180.AddRow(new string[] {
+                table220.AddRow(new string[] {
                             string.Format("{0}", caseID)});
 #line 33
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table180, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table220, "And ");
 #line hidden
 #line 36
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -194,24 +194,24 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 39
  await testRunner.AndAsync("the user shows activities", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table181 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table221 = new global::Reqnroll.Table(new string[] {
                             "InvestigativeCaseActivityManual_Title",
                             "AssignedTo"});
-                table181.AddRow(new string[] {
+                table221.AddRow(new string[] {
                             string.Format("{0}", investigativeCaseActivityManual_Title),
                             string.Format("{0}", assignedTo)});
 #line 40
- await testRunner.AndAsync("the user adds activity with title and assigned to", ((string)(null)), table181, "And ");
+ await testRunner.AndAsync("the user adds activity with title and assigned to", ((string)(null)), table221, "And ");
 #line hidden
 #line 43
  await testRunner.AndAsync("the user sorts activities by created date column", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table182 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table222 = new global::Reqnroll.Table(new string[] {
                             "InvestigativeCaseActivityManual_Title"});
-                table182.AddRow(new string[] {
+                table222.AddRow(new string[] {
                             string.Format("{0}", investigativeCaseActivityManual_Title)});
 #line 44
- await testRunner.ThenAsync("the new activity should appear in the activities list", ((string)(null)), table182, "Then ");
+ await testRunner.ThenAsync("the new activity should appear in the activities list", ((string)(null)), table222, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -247,34 +247,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 54
  await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table183 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table223 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table183.AddRow(new string[] {
+                table223.AddRow(new string[] {
                             string.Format("{0}", casesTab)});
 #line 60
  await testRunner.WhenAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table183, "When ");
+                        "", ((string)(null)), table223, "When ");
 #line hidden
-                global::Reqnroll.Table table184 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table224 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table184.AddRow(new string[] {
+                table224.AddRow(new string[] {
                             string.Format("{0}", assignedToFilter)});
 #line 63
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table184, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table224, "And ");
 #line hidden
-                global::Reqnroll.Table table185 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table225 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table185.AddRow(new string[] {
+                table225.AddRow(new string[] {
                             string.Format("{0}", caseTableSearchOptions)});
 #line 66
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table185, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table225, "And ");
 #line hidden
-                global::Reqnroll.Table table186 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table226 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table186.AddRow(new string[] {
+                table226.AddRow(new string[] {
                             string.Format("{0}", caseID)});
 #line 69
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table186, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table226, "And ");
 #line hidden
 #line 72
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -294,12 +294,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 77
  await testRunner.AndAsync("the user adds a new attachment", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table187 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table227 = new global::Reqnroll.Table(new string[] {
                             "AttachmentTitle"});
-                table187.AddRow(new string[] {
+                table227.AddRow(new string[] {
                             string.Format("{0}", attachmentTitle)});
 #line 78
- await testRunner.ThenAsync("the new attachment should appear in the list", ((string)(null)), table187, "Then ");
+ await testRunner.ThenAsync("the new attachment should appear in the list", ((string)(null)), table227, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -335,34 +335,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 88
  await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table188 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table228 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table188.AddRow(new string[] {
+                table228.AddRow(new string[] {
                             string.Format("{0}", casesTab)});
 #line 94
  await testRunner.WhenAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table188, "When ");
+                        "", ((string)(null)), table228, "When ");
 #line hidden
-                global::Reqnroll.Table table189 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table229 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table189.AddRow(new string[] {
+                table229.AddRow(new string[] {
                             string.Format("{0}", assignedToFilter)});
 #line 97
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table189, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table229, "And ");
 #line hidden
-                global::Reqnroll.Table table190 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table230 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table190.AddRow(new string[] {
+                table230.AddRow(new string[] {
                             string.Format("{0}", caseTableSearchOptions)});
 #line 100
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table190, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table230, "And ");
 #line hidden
-                global::Reqnroll.Table table191 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table231 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table191.AddRow(new string[] {
+                table231.AddRow(new string[] {
                             string.Format("{0}", caseID)});
 #line 103
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table191, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table231, "And ");
 #line hidden
 #line 106
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -379,19 +379,19 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 110
  await testRunner.AndAsync("the user selects the first activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table192 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table232 = new global::Reqnroll.Table(new string[] {
                             "CaseActivityManual_Title"});
-                table192.AddRow(new string[] {
+                table232.AddRow(new string[] {
                             string.Format("{0}", caseActivityManual_Title)});
 #line 111
- await testRunner.AndAsync("the user adds a new note with text", ((string)(null)), table192, "And ");
+ await testRunner.AndAsync("the user adds a new note with text", ((string)(null)), table232, "And ");
 #line hidden
-                global::Reqnroll.Table table193 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table233 = new global::Reqnroll.Table(new string[] {
                             "CaseActivityManual_Title"});
-                table193.AddRow(new string[] {
+                table233.AddRow(new string[] {
                             string.Format("{0}", caseActivityManual_Title)});
 #line 114
- await testRunner.ThenAsync("the activity note should match", ((string)(null)), table193, "Then ");
+ await testRunner.ThenAsync("the activity note should match", ((string)(null)), table233, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -427,12 +427,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 122
  await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table194 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table234 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table194.AddRow(new string[] {
+                table234.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 123
- await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table194, "When ");
+ await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table234, "When ");
 #line hidden
 #line 126
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -440,34 +440,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 127
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table195 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table235 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table195.AddRow(new string[] {
+                table235.AddRow(new string[] {
                             string.Format("{0}", casesTab)});
 #line 128
  await testRunner.AndAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table195, "And ");
+                        "", ((string)(null)), table235, "And ");
 #line hidden
-                global::Reqnroll.Table table196 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table236 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table196.AddRow(new string[] {
+                table236.AddRow(new string[] {
                             string.Format("{0}", assignedToFilter)});
 #line 131
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table196, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table236, "And ");
 #line hidden
-                global::Reqnroll.Table table197 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table237 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table197.AddRow(new string[] {
+                table237.AddRow(new string[] {
                             string.Format("{0}", caseTableSearchOptions)});
 #line 134
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table197, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table237, "And ");
 #line hidden
-                global::Reqnroll.Table table198 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table238 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table198.AddRow(new string[] {
+                table238.AddRow(new string[] {
                             string.Format("{0}", caseID)});
 #line 137
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table198, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table238, "And ");
 #line hidden
 #line 140
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -490,12 +490,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 146
  await testRunner.AndAsync("the user downloads from activity level download attachment manager", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table199 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table239 = new global::Reqnroll.Table(new string[] {
                             "InvestigativeCaseActivityManual_Title"});
-                table199.AddRow(new string[] {
+                table239.AddRow(new string[] {
                             string.Format("{0}", investigativeCaseActivityManual_Title)});
 #line 147
- await testRunner.ThenAsync("the new download should appear in download attachment manager", ((string)(null)), table199, "Then ");
+ await testRunner.ThenAsync("the new download should appear in download attachment manager", ((string)(null)), table239, "Then ");
 #line hidden
 #line 150
  await testRunner.AndAsync("the user closes the activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -534,12 +534,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 157
  await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table200 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table240 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table200.AddRow(new string[] {
+                table240.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 158
- await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table200, "When ");
+ await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table240, "When ");
 #line hidden
 #line 161
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -547,34 +547,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 162
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table201 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table241 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table201.AddRow(new string[] {
+                table241.AddRow(new string[] {
                             string.Format("{0}", casesTab)});
 #line 163
  await testRunner.AndAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table201, "And ");
+                        "", ((string)(null)), table241, "And ");
 #line hidden
-                global::Reqnroll.Table table202 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table242 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table202.AddRow(new string[] {
+                table242.AddRow(new string[] {
                             string.Format("{0}", assignedToFilter)});
 #line 166
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table202, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table242, "And ");
 #line hidden
-                global::Reqnroll.Table table203 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table243 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table203.AddRow(new string[] {
+                table243.AddRow(new string[] {
                             string.Format("{0}", caseTableSearchOptions)});
 #line 169
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table203, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table243, "And ");
 #line hidden
-                global::Reqnroll.Table table204 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table244 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table204.AddRow(new string[] {
+                table244.AddRow(new string[] {
                             string.Format("{0}", caseID)});
 #line 172
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table204, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table244, "And ");
 #line hidden
 #line 175
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -600,12 +600,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 182
  await testRunner.AndAsync("the user downloads from case level download attachment manager", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table205 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table245 = new global::Reqnroll.Table(new string[] {
                             "ActivityName_2"});
-                table205.AddRow(new string[] {
+                table245.AddRow(new string[] {
                             string.Format("{0}", activityName_2)});
 #line 183
- await testRunner.ThenAsync("the new case download should appear in download attachment manager", ((string)(null)), table205, "Then ");
+ await testRunner.ThenAsync("the new case download should appear in download attachment manager", ((string)(null)), table245, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -642,12 +642,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 192
  await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table206 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table246 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table206.AddRow(new string[] {
+                table246.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 193
- await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table206, "When ");
+ await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table246, "When ");
 #line hidden
 #line 196
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -655,34 +655,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 197
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table207 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table247 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table207.AddRow(new string[] {
+                table247.AddRow(new string[] {
                             string.Format("{0}", casesTab)});
 #line 198
  await testRunner.WhenAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table207, "When ");
+                        "", ((string)(null)), table247, "When ");
 #line hidden
-                global::Reqnroll.Table table208 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table248 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table208.AddRow(new string[] {
+                table248.AddRow(new string[] {
                             string.Format("{0}", assignedToFilter)});
 #line 201
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table208, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table248, "And ");
 #line hidden
-                global::Reqnroll.Table table209 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table249 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table209.AddRow(new string[] {
+                table249.AddRow(new string[] {
                             string.Format("{0}", caseTableSearchOptions)});
 #line 204
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table209, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table249, "And ");
 #line hidden
-                global::Reqnroll.Table table210 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table250 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table210.AddRow(new string[] {
+                table250.AddRow(new string[] {
                             string.Format("{0}", caseID)});
 #line 207
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table210, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table250, "And ");
 #line hidden
 #line 210
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -699,14 +699,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 214
  await testRunner.AndAsync("the user clicks case claim tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table211 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table251 = new global::Reqnroll.Table(new string[] {
                             "ClaimDropdownValue",
                             "claimvalue1"});
-                table211.AddRow(new string[] {
+                table251.AddRow(new string[] {
                             string.Format("{0}", claimDropdownValue),
                             string.Format("{0}", claimvalue1)});
 #line 215
- await testRunner.AndAsync("the user searches by case claim number with value", ((string)(null)), table211, "And ");
+ await testRunner.AndAsync("the user searches by case claim number with value", ((string)(null)), table251, "And ");
 #line hidden
 #line 218
  await testRunner.ThenAsync("the case claim search button should be enabled", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
@@ -742,34 +742,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-                global::Reqnroll.Table table212 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table252 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table212.AddRow(new string[] {
+                table252.AddRow(new string[] {
                             string.Format("{0}", casesTab)});
 #line 231
  await testRunner.WhenAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table212, "When ");
+                        "", ((string)(null)), table252, "When ");
 #line hidden
-                global::Reqnroll.Table table213 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table253 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table213.AddRow(new string[] {
+                table253.AddRow(new string[] {
                             string.Format("{0}", assignedToFilter)});
 #line 234
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table213, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table253, "And ");
 #line hidden
-                global::Reqnroll.Table table214 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table254 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table214.AddRow(new string[] {
+                table254.AddRow(new string[] {
                             string.Format("{0}", caseTableSearchOptions)});
 #line 237
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table214, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table254, "And ");
 #line hidden
-                global::Reqnroll.Table table215 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table255 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table215.AddRow(new string[] {
+                table255.AddRow(new string[] {
                             string.Format("{0}", caseID)});
 #line 240
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table215, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table255, "And ");
 #line hidden
 #line 243
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -789,12 +789,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 248
  await testRunner.AndAsync("the user adds a new attachment", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table216 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table256 = new global::Reqnroll.Table(new string[] {
                             "CaseActivityManual_Title"});
-                table216.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             string.Format("{0}", caseActivityManual_Title)});
 #line 249
- await testRunner.AndAsync("the user adds a new note with text", ((string)(null)), table216, "And ");
+ await testRunner.AndAsync("the user adds a new note with text", ((string)(null)), table256, "And ");
 #line hidden
 #line 252
  await testRunner.AndAsync("the user closes the activity", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -875,34 +875,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-                global::Reqnroll.Table table217 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table257 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table217.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             string.Format("{0}", casesTab)});
 #line 270
  await testRunner.WhenAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table217, "When ");
+                        "", ((string)(null)), table257, "When ");
 #line hidden
-                global::Reqnroll.Table table218 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table258 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table218.AddRow(new string[] {
+                table258.AddRow(new string[] {
                             string.Format("{0}", assignedToFilter)});
 #line 273
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table218, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table258, "And ");
 #line hidden
-                global::Reqnroll.Table table219 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table259 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table219.AddRow(new string[] {
+                table259.AddRow(new string[] {
                             string.Format("{0}", caseTableSearchOptions)});
 #line 276
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table219, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table259, "And ");
 #line hidden
-                global::Reqnroll.Table table220 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table260 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table220.AddRow(new string[] {
+                table260.AddRow(new string[] {
                             string.Format("{0}", caseID)});
 #line 279
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table220, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table260, "And ");
 #line hidden
 #line 282
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -919,44 +919,44 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 286
  await testRunner.AndAsync("the user clicks findings tab", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table221 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table261 = new global::Reqnroll.Table(new string[] {
                             "Field",
                             "Value"});
-                table221.AddRow(new string[] {
+                table261.AddRow(new string[] {
                             "FindingSubject",
                             string.Format("{0}", findingSubject)});
-                table221.AddRow(new string[] {
+                table261.AddRow(new string[] {
                             "FindingReason",
                             string.Format("{0}", findingReason)});
-                table221.AddRow(new string[] {
+                table261.AddRow(new string[] {
                             "LineOfBusiness",
                             string.Format("{0}", lineOfBusiness)});
-                table221.AddRow(new string[] {
+                table261.AddRow(new string[] {
                             "UnderpaymentAmount",
                             string.Format("{0}", underpaymentAmount)});
-                table221.AddRow(new string[] {
+                table261.AddRow(new string[] {
                             "OverpaymentAmount",
                             string.Format("{0}", overpaymentAmount)});
-                table221.AddRow(new string[] {
+                table261.AddRow(new string[] {
                             "SoftSavingAmount",
                             string.Format("{0}", softSavingAmount)});
-                table221.AddRow(new string[] {
+                table261.AddRow(new string[] {
                             "MembersCount",
                             string.Format("{0}", membersCount)});
-                table221.AddRow(new string[] {
+                table261.AddRow(new string[] {
                             "ClaimsCount",
                             string.Format("{0}", claimsCount)});
-                table221.AddRow(new string[] {
+                table261.AddRow(new string[] {
                             "LinesCount",
                             string.Format("{0}", linesCount)});
-                table221.AddRow(new string[] {
+                table261.AddRow(new string[] {
                             "ProvidersCount",
                             string.Format("{0}", providersCount)});
-                table221.AddRow(new string[] {
+                table261.AddRow(new string[] {
                             "Comments",
                             string.Format("{0}", comments)});
 #line 287
- await testRunner.AndAsync("the user adds findings with the following details:", ((string)(null)), table221, "And ");
+ await testRunner.AndAsync("the user adds findings with the following details:", ((string)(null)), table261, "And ");
 #line hidden
 #line 300
  await testRunner.ThenAsync("the total underpayment value should be displayed correctly", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
@@ -997,12 +997,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 309
  await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table222 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table262 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table222.AddRow(new string[] {
+                table262.AddRow(new string[] {
                             "jayapradha.d@gainwelltechnologies.com"});
 #line 310
- await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table222, "When ");
+ await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table262, "When ");
 #line hidden
 #line 313
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -1010,34 +1010,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 314
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table223 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table263 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table223.AddRow(new string[] {
+                table263.AddRow(new string[] {
                             "Cases"});
 #line 315
  await testRunner.AndAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table223, "And ");
+                        "", ((string)(null)), table263, "And ");
 #line hidden
-                global::Reqnroll.Table table224 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table264 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table224.AddRow(new string[] {
+                table264.AddRow(new string[] {
                             "All"});
 #line 318
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table224, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table264, "And ");
 #line hidden
-                global::Reqnroll.Table table225 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table265 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table225.AddRow(new string[] {
+                table265.AddRow(new string[] {
                             "Case ID"});
 #line 321
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table225, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table265, "And ");
 #line hidden
-                global::Reqnroll.Table table226 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table266 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table226.AddRow(new string[] {
+                table266.AddRow(new string[] {
                             "DEMO0804202614"});
 #line 324
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table226, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table266, "And ");
 #line hidden
 #line 327
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -1099,12 +1099,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 343
  await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table227 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table267 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table227.AddRow(new string[] {
+                table267.AddRow(new string[] {
                             "jayapradha.d@gainwelltechnologies.com"});
 #line 344
- await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table227, "When ");
+ await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table267, "When ");
 #line hidden
 #line 347
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -1112,34 +1112,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 348
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table228 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table268 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table228.AddRow(new string[] {
+                table268.AddRow(new string[] {
                             "Cases"});
 #line 349
  await testRunner.AndAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table228, "And ");
+                        "", ((string)(null)), table268, "And ");
 #line hidden
-                global::Reqnroll.Table table229 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table269 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table229.AddRow(new string[] {
+                table269.AddRow(new string[] {
                             "All"});
 #line 352
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table229, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table269, "And ");
 #line hidden
-                global::Reqnroll.Table table230 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table270 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table230.AddRow(new string[] {
+                table270.AddRow(new string[] {
                             "Case ID"});
 #line 355
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table230, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table270, "And ");
 #line hidden
-                global::Reqnroll.Table table231 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table271 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table231.AddRow(new string[] {
+                table271.AddRow(new string[] {
                             "DEMO0804202614"});
 #line 358
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table231, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table271, "And ");
 #line hidden
 #line 361
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -1205,12 +1205,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 377
  await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table232 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table272 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table232.AddRow(new string[] {
+                table272.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 378
- await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table232, "When ");
+ await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table272, "When ");
 #line hidden
 #line 381
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -1218,34 +1218,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 382
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table233 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table273 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table233.AddRow(new string[] {
+                table273.AddRow(new string[] {
                             string.Format("{0}", casesTab)});
 #line 383
  await testRunner.WhenAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table233, "When ");
+                        "", ((string)(null)), table273, "When ");
 #line hidden
-                global::Reqnroll.Table table234 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table274 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table234.AddRow(new string[] {
+                table274.AddRow(new string[] {
                             string.Format("{0}", assignedToFilter)});
 #line 386
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table234, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table274, "And ");
 #line hidden
-                global::Reqnroll.Table table235 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table275 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table235.AddRow(new string[] {
+                table275.AddRow(new string[] {
                             string.Format("{0}", caseTableSearchOptions)});
 #line 389
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table235, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table275, "And ");
 #line hidden
-                global::Reqnroll.Table table236 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table276 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table236.AddRow(new string[] {
+                table276.AddRow(new string[] {
                             string.Format("{0}", caseID)});
 #line 392
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table236, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table276, "And ");
 #line hidden
 #line 395
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -1265,12 +1265,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 400
  await testRunner.AndAsync("the user downloads case claims detail", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table237 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table277 = new global::Reqnroll.Table(new string[] {
                             "ClaimSummaryClaimIDforInvestigativecase"});
-                table237.AddRow(new string[] {
+                table277.AddRow(new string[] {
                             string.Format("{0}", claimSummaryClaimIDforInvestigativecase)});
 #line 401
- await testRunner.ThenAsync("the downloaded claim summary should match", ((string)(null)), table237, "Then ");
+ await testRunner.ThenAsync("the downloaded claim summary should match", ((string)(null)), table277, "Then ");
 #line hidden
 #line 404
  await testRunner.AndAsync("the user closes window handles", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -1309,12 +1309,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 411
  await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table238 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table278 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table238.AddRow(new string[] {
+                table278.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 412
- await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table238, "When ");
+ await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table278, "When ");
 #line hidden
 #line 415
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -1322,34 +1322,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 416
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table239 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table279 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table239.AddRow(new string[] {
+                table279.AddRow(new string[] {
                             string.Format("{0}", casesTab)});
 #line 417
  await testRunner.AndAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table239, "And ");
+                        "", ((string)(null)), table279, "And ");
 #line hidden
-                global::Reqnroll.Table table240 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table280 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table240.AddRow(new string[] {
+                table280.AddRow(new string[] {
                             string.Format("{0}", assignedToFilter)});
 #line 420
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table240, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table280, "And ");
 #line hidden
-                global::Reqnroll.Table table241 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table281 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table241.AddRow(new string[] {
+                table281.AddRow(new string[] {
                             string.Format("{0}", caseTableSearchOptions)});
 #line 423
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table241, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table281, "And ");
 #line hidden
-                global::Reqnroll.Table table242 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table282 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table242.AddRow(new string[] {
+                table282.AddRow(new string[] {
                             string.Format("{0}", caseID)});
 #line 426
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table242, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table282, "And ");
 #line hidden
 #line 429
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -1369,12 +1369,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 434
  await testRunner.AndAsync("the user runs patient histories report with expected data", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table243 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table283 = new global::Reqnroll.Table(new string[] {
                             "PatientHistoriesReport_ExpectedData"});
-                table243.AddRow(new string[] {
+                table283.AddRow(new string[] {
                             string.Format("{0}", patientHistoriesReport_ExpectedData)});
 #line 435
- await testRunner.ThenAsync("the patient histories report should run successfully", ((string)(null)), table243, "Then ");
+ await testRunner.ThenAsync("the patient histories report should run successfully", ((string)(null)), table283, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -1410,12 +1410,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 444
  await testRunner.GivenAsync("when I open the Fraud Capture application", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table244 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table284 = new global::Reqnroll.Table(new string[] {
                             "UserEmail"});
-                table244.AddRow(new string[] {
+                table284.AddRow(new string[] {
                             string.Format("{0}", userEmail)});
 #line 445
- await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table244, "When ");
+ await testRunner.WhenAsync("I enter the UserEmail on the welcome fraude capture page:", ((string)(null)), table284, "When ");
 #line hidden
 #line 448
  await testRunner.AndAsync("I click on the Procced to login button on the welcome fraude capture page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -1423,34 +1423,34 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 449
  await testRunner.AndAsync("I click on the I Agree button on the fraud capture Page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table245 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table285 = new global::Reqnroll.Table(new string[] {
                             "CasesTab"});
-                table245.AddRow(new string[] {
+                table285.AddRow(new string[] {
                             string.Format("{0}", casesTab)});
 #line 450
  await testRunner.WhenAsync("I click on CaseTracking and select the Case option on the fraud capture home page" +
-                        "", ((string)(null)), table245, "When ");
+                        "", ((string)(null)), table285, "When ");
 #line hidden
-                global::Reqnroll.Table table246 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table286 = new global::Reqnroll.Table(new string[] {
                             "AssignedToFilter"});
-                table246.AddRow(new string[] {
+                table286.AddRow(new string[] {
                             string.Format("{0}", assignedToFilter)});
 #line 453
- await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table246, "And ");
+ await testRunner.AndAsync("I filter Assigned To Case Dropdown", ((string)(null)), table286, "And ");
 #line hidden
-                global::Reqnroll.Table table247 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table287 = new global::Reqnroll.Table(new string[] {
                             "CaseTableSearchOptions"});
-                table247.AddRow(new string[] {
+                table287.AddRow(new string[] {
                             string.Format("{0}", caseTableSearchOptions)});
 #line 456
- await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table247, "And ");
+ await testRunner.AndAsync("I search for caseID under Select Criteria dropdown", ((string)(null)), table287, "And ");
 #line hidden
-                global::Reqnroll.Table table248 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table288 = new global::Reqnroll.Table(new string[] {
                             "CaseID"});
-                table248.AddRow(new string[] {
+                table288.AddRow(new string[] {
                             string.Format("{0}", caseID)});
 #line 459
- await testRunner.AndAsync("I search for Case ID", ((string)(null)), table248, "And ");
+ await testRunner.AndAsync("I search for Case ID", ((string)(null)), table288, "And ");
 #line hidden
 #line 462
  await testRunner.AndAsync("I click on Case search button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
@@ -1470,12 +1470,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line 467
  await testRunner.AndAsync("the user downloads patient histories excel report with expected data", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
-                global::Reqnroll.Table table249 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table289 = new global::Reqnroll.Table(new string[] {
                             "PatientHistoriesReport_ExpectedData"});
-                table249.AddRow(new string[] {
+                table289.AddRow(new string[] {
                             string.Format("{0}", patientHistoriesReport_ExpectedData)});
 #line 468
- await testRunner.ThenAsync("the excel report should be downloaded and data should render properly", ((string)(null)), table249, "Then ");
+ await testRunner.ThenAsync("the excel report should be downloaded and data should render properly", ((string)(null)), table289, "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

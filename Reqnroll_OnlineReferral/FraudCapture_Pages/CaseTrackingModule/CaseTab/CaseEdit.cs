@@ -2444,7 +2444,9 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab
 
         public void CloseWindowHandles()
         {
-            CommonHelpers.CloseWindowHandles(driver);
+            Driver.WrappedDriver.SwitchTo().Window(Driver.WrappedDriver.WindowHandles[Driver.WrappedDriver.WindowHandles.Count - 1]);
+            Driver.WrappedDriver.Close();
+            Driver.WrappedDriver.SwitchTo().Window(Driver.WrappedDriver.WindowHandles[1]);
         }
         #endregion
         #endregion

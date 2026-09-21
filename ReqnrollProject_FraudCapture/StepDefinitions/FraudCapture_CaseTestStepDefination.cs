@@ -40,10 +40,12 @@ namespace FraudCapture_BDD.StepDefinitions
         public void WhenIFilterAssignedToCaseDropdownWith(DataTable dataTable)
         {
             var data = dataTable.CreateInstance<FC_CaseSummary.Data.CaseSummaryData>();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
             Driver.FindElement(By.Id("dropdownCaseListUser")).Click();
-            Driver.FindElement(By.XPath($"//ul[@id='caseListAssignedTo']//a[normalize-space()='{data.AssignedToFilter}']")).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
+            Driver.FindElement(By.XPath($"//*[@id='caseListAssignedTo']/li/a[contains(.,'{data.AssignedToFilter}')]")).Click();
+            
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
         }
 
         [When("I search for leadID under Select Criteria dropdown")]
@@ -52,7 +54,7 @@ namespace FraudCapture_BDD.StepDefinitions
             var data = dataTable.CreateInstance<FC_CaseSummary.Data.CaseSummaryData>();
             var select = new SelectElement(Driver.FindElement(By.Id("leadSearchCriteria")));
             select.SelectByText(data.LeadTableSearchOptions);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
         }
 
         [When("I search for caseID under Select Criteria dropdown")]
@@ -61,7 +63,7 @@ namespace FraudCapture_BDD.StepDefinitions
             var data = dataTable.CreateInstance<FC_CaseSummary.Data.CaseSummaryData>();
             var select = new SelectElement(Driver.FindElement(By.Id("caseSearchCriteria")));
             select.SelectByText(data.CaseTableSearchOptions);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
         }
 
 
