@@ -72,13 +72,14 @@ namespace FraudCapture_BDD.StepDefinitions
         [When("I click on CaseTracking and select the Case option on the fraud capture home page")]
         public void WhenIClickOnCaseTrackingAndSelectTheCaseOptionOnTheFraudCaptureHomePage(DataTable dataTable)
         {
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
             var data = dataTable.CreateInstance<FC_OnlineReferral.Data.FraudCaptureCreateNewLead>();
             var navigateBtn = Driver.FindElement(By.XPath("//button[@id='navigationMenuId']"));
             navigateBtn.Click();
 
             var caseTrackingLink = Driver.FindElement(By.XPath("//ul[@id='menuDropdownOptions']//a[@id='Case Tracking']"));
             caseTrackingLink.Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 50);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
 
             var casesTabButton = Driver.FindElement(By.XPath("//a[@id='allCasesTabId']"));
             var tabToSelect = Driver.FindElement(By.XPath("//a[contains(@id,'" + data.CasesTab + "')]"));

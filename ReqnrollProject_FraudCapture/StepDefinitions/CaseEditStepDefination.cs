@@ -1,5 +1,5 @@
 ﻿using FC_OnlineReferral.Data;
-using FC_OnlineReferral.Data.CaseTrackingData.Data;
+using FC_CaseTrackingData.Data;
 using FC_OnlineReferral.FraudCapture_Pages;
 using FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab;
 using FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab;
@@ -7,6 +7,7 @@ using FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDetail
 using FC_OnlineReferral.OnlineReferral_Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using System;
 
 namespace FraudCapture_BDD.StepDefinitions
 {
@@ -150,6 +151,13 @@ namespace FraudCapture_BDD.StepDefinitions
         public void WhenTheUserSelectsTheFirstActivity()
         {
             caseEditPage.SelectFirstActivity();
+        }
+
+        [When("Delete the note added")]
+        public void WhenDeleteTheNoteAdded()
+        {
+            caseEditPage.DeleteNote();
+            caseEditPage.exitActivityButton();
         }
 
         /// <summary>
@@ -526,7 +534,7 @@ namespace FraudCapture_BDD.StepDefinitions
         [Then("the excel report should be downloaded and data should render properly")]
         public void ThenTheExcelReportShouldBeDownloadedAndDataShouldRenderProperly(DataTable dataTable)
         {
-            var data = dataTable.CreateInstance<CaseTrackingData>();
+            var data = dataTable.CreateInstance<FC_CaseTrackingData.Data.CaseTrackingData>();
             var success = _scenarioContext["ExcelReportSuccess"].ToString();
             var expected = data.PatientHistoriesReport_ExpectedData;
             Assert.AreEqual(expected,success, "Could not download excel report and data doesn't render properly");

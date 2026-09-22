@@ -449,7 +449,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.HeaderComponent
         public bool FileIsPresent(string fileName)
         {
             var fileDownloadButtonElement = driver.FindElement(FileDownloadButton);
-            CommonHelpers.CommonScrollAndCenterElement(driver, fileDownloadButtonElement);
+            CommonHelpers.ScrollAndCenterElement(driver, fileDownloadButtonElement);
             IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
             jsExec.ExecuteScript("arguments[0].click();", fileDownloadButtonElement);
             Task.Delay(15000).Wait();

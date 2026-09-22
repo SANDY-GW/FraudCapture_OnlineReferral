@@ -167,7 +167,7 @@ namespace FC_OnlineReferral
             IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
             jsExec.ExecuteScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
         }
-        public static void CommonScrollAndCenterElement(IWebDriver driver, IWebElement element)
+        public static void ScrollAndCenterElement(IWebDriver driver, IWebElement element)
         {
             IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
             jsExec.ExecuteScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
@@ -315,11 +315,6 @@ namespace FC_OnlineReferral
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("window.scrollBy(0, 500)");
-        }
-        public static void ScrollAndCenterElement(IWebDriver driver, IWebElement element)
-        {
-            IJavaScriptExecutor jsExec = (IJavaScriptExecutor)driver;
-            jsExec.ExecuteScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
         }
         public static void ScrollDownToPageEnd(IWebDriver driver)
         {
