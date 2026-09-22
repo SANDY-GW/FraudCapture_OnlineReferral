@@ -484,7 +484,9 @@ Scenario: 17 View, Add and Edit Manual Findings in the Findings Tab
 	And I click on the Case ID Link
 	And I click on the Begin Editing on the fraud capture Case detials Page
 	And the user clicks the Findings tab
-	And the user clicks the Add Finding button and creates the finding form with reason "Reason1", line of business "LOB1", underpayment "100", overpayment "50", soft saving "25", members "2", claims "3", lines "4", providers "1" and comments "Test Comment"
+	And the user clicks the Add Finding button and creates the finding form with reason, line of business, underpayment, overpayment, soft saving, members, claims, lines, providers and comments
+	| Finding_Reason | LineofBusiness | Total_Underpayment_Amount | TotalOverpaymentAmount | TotalSoftSavingAmount | Number_of_Members_in_Population_With_Findings | Number_ofClaims_in_Population_With_Findings | Number_ofLines_inPopulation_With_Findings | Number_ofProviders_in_Population_With_Findings | Comments  |
+	| Reason1        | LOB1           |                       100 |                    200 |                   300 |                                             1 |                                           2 |                                         3 |                                              4 | Comments1 |
 	And the user edits the finding details with members in population "5"
 	Then the edited findings should contain the finding date "01/01/2025"
 
