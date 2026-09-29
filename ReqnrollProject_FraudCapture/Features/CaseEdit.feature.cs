@@ -27,8 +27,8 @@ namespace FraudCapture_BDD.Features
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Case Edit Functionality", "  As a user of the FWA PI Portal\r\n  I want to be able to edit cases and manage ca" +
-                "se activities\r\n  So that I can track and update case information effectively", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "Case Edit Functionality", "  As a user of the FWA PI Portal\n  I want to be able to edit cases and manage cas" +
+                "e activities\n  So that I can track and update case information effectively", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
 #line 1 "CaseEdit.Feature"
 #line hidden

@@ -27,11 +27,10 @@ namespace FraudCapture_BDD.Features
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "FraudCapture_LeadTests", @"A short summary of the feature
-	And I enter the ""qwqw"" on the Initial User Data Page 
-	And I enter the ""Phone number"" on the Initial User Data Page
-	When I click on the Next button on the Initial User Data Page
-	Then I should be navigated to the Next Page", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Features", "FraudCapture_LeadTests", "A short summary of the feature\n\tAnd I enter the \"qwqw\" on the Initial User Data P" +
+                "age \n\tAnd I enter the \"Phone number\" on the Initial User Data Page\n\tWhen I click" +
+                " on the Next button on the Initial User Data Page\n\tThen I should be navigated to" +
+                " the Next Page", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
 #line 1 "FraudCapture_LeadTests.feature"
 #line hidden
