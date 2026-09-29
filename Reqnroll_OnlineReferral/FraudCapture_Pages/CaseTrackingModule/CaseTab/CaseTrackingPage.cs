@@ -1,5 +1,4 @@
 using OpenQA.Selenium;
-using System;
 
 namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab
 {
@@ -10,34 +9,41 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab
     {
         public CaseTrackingPage(IWebDriver driver) : base(driver) { }
 
-        //public void GoTo()
-        //{
-        //    throw new NotImplementedException();
-        //}
+
+        public void GoTo()
+        {
+            new CaseTracking_CasePage(driver).ClickCaseTab();
+        }
+
 
         public void ShowCases()
         {
-            throw new NotImplementedException();
+            new CaseTracking_CasePage(driver).ClickCaseTab();
         }
 
         public void SwitchCasesUser(string userData)
         {
-            throw new NotImplementedException();
+            new CaseTracking_CasePage(driver).SelectCaseAssignedTo(userData);
         }
 
         public void SearchByCaseID()
         {
-            throw new NotImplementedException();
+            new CaseTracking_CasePage(driver).SelectCaseSearchCriteriaOption("Case ID");
         }
 
         public void SearchOnAllCasesGrid(string caseIdData)
         {
-            throw new NotImplementedException();
+            var casePage = new CaseTracking_CasePage(driver);
+            casePage.EnterCaseSearchCriteria(caseIdData);
+            casePage.ClickCaseSearchCriteriaSearchBtn();
         }
 
         public void SelectCase(string caseIdData, CaseEditPage caseEditPage)
         {
-            throw new NotImplementedException();
+            CommonHelpers.WaitForPageLoading(driver);
+            var caseIdLink = By.XPath($"//*[@id='allCaselist-wrapper']//div[1]/table//tr/td[2]//a[normalize-space()='{caseIdData}']");
+            driver.FindElement(caseIdLink).Click();
+            CommonHelpers.SwitchtoNewWindow(driver);
         }
 
         public void ClickOnLatestCaseID()

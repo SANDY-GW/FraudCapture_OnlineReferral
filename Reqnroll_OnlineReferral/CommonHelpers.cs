@@ -460,11 +460,18 @@ namespace FC_OnlineReferral
         {
             var loadingOverlay = By.ClassName("inProgressClass");
             //var loadingOverlay = By.XPath(".//span[contains(text(),'Loading...')]");
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
 
-            if (IsLoadingOverlayDisplayed(driver))
+            try
             {
-                new WebDriverWait(driver, TimeSpan.FromSeconds(timeout)).Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
+                wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(loadingOverlay));
             }
+            catch (WebDriverTimeoutException)
+            {
+                return;
+            }
+
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(loadingOverlay));
         }
 
         public static void EnterDate(IWebElement DateElement, string IncidentStartDate)

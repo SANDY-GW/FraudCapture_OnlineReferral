@@ -22903,7 +22903,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
                             string.Format("{0}", designation1),
                             string.Format("{0}", dOB),
                             string.Format("{0}", ssn),
-                            "<OtherID>",
+                            string.Format("{0}", otherId),
                             string.Format("{0}", other1),
                             string.Format("{0}", streetAddress3),
                             string.Format("{0}", streetAddress4),
