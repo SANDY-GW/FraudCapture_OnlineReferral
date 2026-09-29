@@ -416,6 +416,7 @@ namespace FC_OnlineReferral
 
             try
             {
+                WaitForElementVisiblity(driver, loadingOverlay, 10);
                 var elements = driver.FindElements(loadingOverlay);
                 return elements.Any(e => e.Displayed);
             }

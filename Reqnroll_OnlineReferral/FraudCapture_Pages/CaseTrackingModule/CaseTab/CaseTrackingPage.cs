@@ -10,10 +10,10 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab
     {
         public CaseTrackingPage(IWebDriver driver) : base(driver) { }
 
-        public void GoTo()
-        {
-            throw new NotImplementedException();
-        }
+        //public void GoTo()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public void ShowCases()
         {

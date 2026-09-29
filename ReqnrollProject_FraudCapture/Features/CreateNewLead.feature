@@ -3,12 +3,12 @@ Feature: FraudCapture_CreateNewLead
 A short summary of the feature
 Scenario Outline: Creating_NewLead_With_SubjectType_As_Member_And_Adding_Manually
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
-And I click on CaseTracking and select the "Leads" option on the fraud capture home page
+When I click on CaseTracking and select the "Leads" option on the fraud capture home page
 And I click CreateNewLead button to go to Lead Creation Page
 When I enter initial user details in Lead Creation Tab: 
 | WorkflowType | DetectionMethod | SourceType | Reason | AssignedTo |
@@ -37,9 +37,9 @@ Examples:
 
 Scenario Outline: Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByID
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page
@@ -72,9 +72,9 @@ Examples:
 
 Scenario Outline: Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByName
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page
@@ -107,9 +107,9 @@ Examples:
 
 Scenario Outline: Creating_NewLead_With_SubjectType_As_Member_And_Adding_Through_SearchByAddress
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page
@@ -143,9 +143,9 @@ Examples:
 Scenario Outline: Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Manually
 
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page
@@ -176,9 +176,9 @@ Examples:
 
 Scenario Outline: Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_SearchByID
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page
@@ -213,9 +213,9 @@ Examples:
 Scenario Outline: Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_TIN_OR_EIN 
 
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page
@@ -249,9 +249,9 @@ Examples:
 
 Scenario Outline: Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_NPI 
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page
@@ -285,9 +285,9 @@ Examples:
 
 Scenario Outline: Creating_NewLead_With_SubjectType_As_Provider_And_Adding_Through_Name 
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page
@@ -395,9 +395,9 @@ Examples:
 Scenario Outline: Creating_NewLead_With_adding_the_Referring_Party_Details_Through_Member_Name
 
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page
@@ -433,9 +433,9 @@ Examples:
 
 Scenario Outline: Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_ProviderID
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page
@@ -471,9 +471,9 @@ Examples:
 
 Scenario Outline: Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_ProviderName
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page
@@ -509,9 +509,9 @@ Examples:
 
 Scenario Outline: Creating_NewLead_With_adding_the_Referring_Party_Details_Through_SearchBy_ProviderNPI
 Given when I open the Fraud Capture application
-When I enter the "<UserEmail>" on the welcome fraude capture page:
-| UserEmail |
-| <UserEmail> |
+When I enter the UserEmail on the welcome fraude capture page:
+		| UserEmail   |
+		| <UserEmail> |
 And I click on the Procced to login button on the welcome fraude capture page
 And I click on the I Agree button on the fraud capture Page
 And I click on CaseTracking and select the "Leads" option on the fraud capture home page

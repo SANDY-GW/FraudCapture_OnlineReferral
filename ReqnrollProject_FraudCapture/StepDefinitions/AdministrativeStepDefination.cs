@@ -35,11 +35,11 @@ namespace FraudCapture_BDD.StepDefinitions
 
         #region Given Steps - Setup and Preconditions
 
-        [Given("the user navigates to the Case Tracking page")]
-        public void GivenTheUserNavigatesToTheCaseTrackingPage()
-        {
-            caseTrackingPage.GoTo();
-        }
+        //[Given("the user navigates to the Case Tracking page")]
+        //public void GivenTheUserNavigatesToTheCaseTrackingPage()
+        //{
+        //    caseTrackingPage.GoTo();
+        //}
 
         [Given("the user is on the Cases tab")]
         public void GivenTheUserIsOnTheCasesTab()

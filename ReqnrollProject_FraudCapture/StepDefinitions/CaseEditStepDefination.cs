@@ -35,11 +35,11 @@ namespace FraudCapture_BDD.StepDefinitions
         /// <summary>
         /// Step: Given the user navigates to the Case Tracking page
         /// </summary>
-        [Given("the user navigates to the Case Tracking page")]
-        public void GivenTheUserNavigatesToTheCaseTrackingPage()
-        {
-            caseTrackingPage.GoTo();
-        }
+        //[Given("the user navigates to the Case Tracking page")]
+        //public void GivenTheUserNavigatesToTheCaseTrackingPage()
+        //{
+        //    caseTrackingPage.GoTo();
+        //}
 
         /// <summary>
         /// Step: Given the user shows cases
