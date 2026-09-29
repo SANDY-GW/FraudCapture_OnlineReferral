@@ -41,73 +41,73 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void SelectisExtRefType(string isExtRefAvailable)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, isExtRefDropdn, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(isExtRefDropdn), isExtRefAvailable);
+            CommonHelpers.WaitForElementVisiblity(driver, isExtRefDropdn, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(isExtRefDropdn), isExtRefAvailable);
 
         }
 
         public void EnterWitnessFirstName(string firstName)
         {
-            Driver.FindElement(witnessFirstNameField).SendKeys(firstName);
+            driver.FindElement(witnessFirstNameField).SendKeys(firstName);
         }
 
 
         public void EnterWitnessLastName(string lastName)
         {
-            Driver.FindElement(witnessLastNameField).SendKeys(lastName);
+            driver.FindElement(witnessLastNameField).SendKeys(lastName);
 
         }
         public void EnterWitnessOrgAgencyName(string orgAgencyName)
         {
-            Driver.FindElement(witnessorg_Or_AgencyNameField).SendKeys(orgAgencyName);
+            driver.FindElement(witnessorg_Or_AgencyNameField).SendKeys(orgAgencyName);
         }
         public void EnterWitnessRelationship(string relationship)
         {
-            Driver.FindElement(witnessRelationshipField).SendKeys(relationship);
+            driver.FindElement(witnessRelationshipField).SendKeys(relationship);
         }
         public void EnterWitnessPhoneNumber(string phoneNumber)
         {
-            Driver.FindElement(witnessPhoneNumberField).SendKeys(phoneNumber);
+            driver.FindElement(witnessPhoneNumberField).SendKeys(phoneNumber);
         }
         public void EnterWitnessEmail(string email)
         {
-            Driver.FindElement(witnessEmailField).SendKeys(email);
+            driver.FindElement(witnessEmailField).SendKeys(email);
         }
         public void EnterWitnessAddress1(string address1)
         {
-            Driver.FindElement(witnessAddress1).SendKeys(address1);
+            driver.FindElement(witnessAddress1).SendKeys(address1);
         }
         public void EnterWitnessAddress2(string address2)
         {
-            Driver.FindElement(witnessAddress2).SendKeys(address2);
+            driver.FindElement(witnessAddress2).SendKeys(address2);
 
         }
         public void EnterWitnessCity(string city)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, witnessCity, 10);
-            Driver.FindElement(witnessCity).SendKeys(city);
+            CommonHelpers.WaitForElementVisiblity(driver, witnessCity, 10);
+            driver.FindElement(witnessCity).SendKeys(city);
         }
 
         public void SelectWitnessState(string state)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, witnessState, 100);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(witnessState), state);
+            CommonHelpers.WaitForElementVisiblity(driver, witnessState, 100);
+            CommonHelpers.selectOptionByValue(driver.FindElement(witnessState), state);
 
         }
         public void EnterWitnessZipCode(string zipCode)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, witnessZipCode, 100);
-            Driver.FindElement(witnessZipCode).SendKeys(zipCode);
+            CommonHelpers.WaitForElementVisiblity(driver, witnessZipCode, 100);
+            driver.FindElement(witnessZipCode).SendKeys(zipCode);
 
         }
         public void ClickProceedToNextSectionButton()
         {
 
-            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 500);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 500);
-            CommonHelpers.ScrollToElement(Driver, proceed_To_Next_SectionButton);
-            Driver.FindElement(proceed_To_Next_SectionButton).Click();
-            CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 5000);
+            CommonHelpers.WaitForElementVisiblity(driver, proceed_To_Next_SectionButton, 500);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 500);
+            CommonHelpers.ScrollToElement(driver, proceed_To_Next_SectionButton);
+            driver.FindElement(proceed_To_Next_SectionButton).Click();
+            CommonHelpers.WaitForElementVisiblity(driver, Go_To_Previous_SectionButton, 5000);
 
         }
 

@@ -45,39 +45,39 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void Login(string URL)
         {
             FC_OnlineReferralLogin(URL);
-            IWebElement dashboardElement = WaitUntilElementClickable(Driver, By.Id("welcomeMessage"), 20);
+            IWebElement dashboardElement = WaitUntilElementClickable(driver, By.Id("welcomeMessage"), 20);
         }
 
         public void EnterUserFName(string UserFN)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, userFnameField, 10);
-            Driver.FindElement(userFnameField).Clear();
-            Driver.FindElement(userFnameField).SendKeys(UserFN);
+            CommonHelpers.WaitForElementVisiblity(driver, userFnameField, 10);
+            driver.FindElement(userFnameField).Clear();
+            driver.FindElement(userFnameField).SendKeys(UserFN);
 
         }
         public void EnterUserLastName(string UserLN)
         {
-            Driver.FindElement(userLnameField).Clear();
-            Driver.FindElement(userLnameField).SendKeys(UserLN);
+            driver.FindElement(userLnameField).Clear();
+            driver.FindElement(userLnameField).SendKeys(UserLN);
 
         }
         public bool VerifyIfStateOrTerritoryDropdownIsInAlphabeticalOrder()
         {
-            return CommonHelpers.IsDropdoenListInAlphabeticOrder(Driver, Driver.FindElement(mailingAddressstate_Or_Territorydropdown));
+            return CommonHelpers.IsDropdoenListInAlphabeticOrder(driver, driver.FindElement(mailingAddressstate_Or_Territorydropdown));
         }
 
 
         public void SelectOrgAgency(string OrgAgency)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, userFnameField, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(orgAgencyDropdn), OrgAgency);
+            CommonHelpers.WaitForElementVisiblity(driver, userFnameField, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(orgAgencyDropdn), OrgAgency);
 
         }
         public bool VerifyBGColorOnRequiredFields()
         {
 
-            var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
-            var allReqFieldsID = Driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
+            var eleList = driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
+            var allReqFieldsID = driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
 
             foreach (IWebElement elem in allReqFieldsID)
             {
@@ -122,67 +122,67 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void EnterUserEmailName(string emailValue)
         {
-            Driver.FindElement(emailtxtbx).Clear();
-            Driver.FindElement(emailtxtbx).SendKeys(emailValue);
-            ((IJavaScriptExecutor)Driver).ExecuteScript("window.localStorage.setItem('useTestData', 'true');localStorage.setItem('validatedEmail', '" + emailValue + "');localStorage.setItem('emailValidated', 'true')");
+            driver.FindElement(emailtxtbx).Clear();
+            driver.FindElement(emailtxtbx).SendKeys(emailValue);
+            ((IJavaScriptExecutor)driver).ExecuteScript("window.localStorage.setItem('useTestData', 'true');localStorage.setItem('validatedEmail', '" + emailValue + "');localStorage.setItem('emailValidated', 'true')");
 
         }
         public void EnterUserTitle(string UserTitle)
         {
-            Driver.FindElement(titletxtbx).Clear();
-            Driver.FindElement(titletxtbx).SendKeys(UserTitle);
+            driver.FindElement(titletxtbx).Clear();
+            driver.FindElement(titletxtbx).SendKeys(UserTitle);
         }
 
         public void EnterPhoneNumberAndExtension(string PhoneNumber)
         {
-            Driver.FindElement(phonenumber_And_ExtensionField).Clear();
-            Driver.FindElement(phonenumber_And_ExtensionField).SendKeys(PhoneNumber);
+            driver.FindElement(phonenumber_And_ExtensionField).Clear();
+            driver.FindElement(phonenumber_And_ExtensionField).SendKeys(PhoneNumber);
         }
         public void EnterMailingStreetAddress1(string StreetAddress1)
         {
-            Driver.FindElement(mailingStreetAddress1Field).Clear();
-            Driver.FindElement(mailingStreetAddress1Field).SendKeys(StreetAddress1);
+            driver.FindElement(mailingStreetAddress1Field).Clear();
+            driver.FindElement(mailingStreetAddress1Field).SendKeys(StreetAddress1);
         }
         public void EnterMailingStreetAddress2(string StreetAddress2)
         {
-            Driver.FindElement(mailingStreetAddress2Field).Clear();
-            Driver.FindElement(mailingStreetAddress2Field).SendKeys(StreetAddress2);
+            driver.FindElement(mailingStreetAddress2Field).Clear();
+            driver.FindElement(mailingStreetAddress2Field).SendKeys(StreetAddress2);
         }
         public void EnterMailingAddressCity(string CityName)
         {
-            Driver.FindElement(mailingAddressCityField).Clear();
-            Driver.FindElement(mailingAddressCityField).SendKeys(CityName);
+            driver.FindElement(mailingAddressCityField).Clear();
+            driver.FindElement(mailingAddressCityField).SendKeys(CityName);
         }
         public void SelectState_Or_Territory(string StateName)
         {
 
 
-            Driver.FindElement(mailingAddressstate_Or_Territorydropdown).Click();
-            CommonHelpers.selectOptionByValue(Driver.FindElement(mailingAddressstate_Or_Territorydropdown), StateName);
+            driver.FindElement(mailingAddressstate_Or_Territorydropdown).Click();
+            CommonHelpers.selectOptionByValue(driver.FindElement(mailingAddressstate_Or_Territorydropdown), StateName);
         }
         public void EnterMailingAddressZipCode(string ZipCode)
         {
-            Driver.FindElement(mailingAddresszipCodeField).Clear();
-            Driver.FindElement(mailingAddresszipCodeField).SendKeys(ZipCode);
+            driver.FindElement(mailingAddresszipCodeField).Clear();
+            driver.FindElement(mailingAddresszipCodeField).SendKeys(ZipCode);
 
         }
 
         public void clickEmailAddressVerificationButton()
         {
-            Driver.FindElement(emailVerificationBtn).Click();
+            driver.FindElement(emailVerificationBtn).Click();
         }
 
         public void clickProceedToNextSectionButton()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, proceed_To_Next_SectionButton, 10);
-            Driver.FindElement(proceed_To_Next_SectionButton).Click();
+            CommonHelpers.WaitForElementVisiblity(driver, proceed_To_Next_SectionButton, 10);
+            driver.FindElement(proceed_To_Next_SectionButton).Click();
         }
 
         public void waitForEmailNotification()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, emailverification, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, emailverification, 100);
 
-            CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 120);
+            CommonHelpers.WaitForElementVisiblity(driver, goToPreviousSectionButton, 120);
 
         }
 
@@ -190,22 +190,22 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void clickInstructionsButton()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, instructionsButton, 30);
-            Driver.FindElement(instructionsButton).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver,30);
+            CommonHelpers.WaitForElementVisiblity(driver, instructionsButton, 30);
+            driver.FindElement(instructionsButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver,30);
         }
 
         public string validateInstructionsModalData()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, By.XPath("//div[@class='modal-content']"), 10);
-         var modaltext= Driver.FindElement(By.XPath("//div[@class='modal-content']")).Text;
+            CommonHelpers.WaitForElementVisiblity(driver, By.XPath("//div[@class='modal-content']"), 10);
+         var modaltext= driver.FindElement(By.XPath("//div[@class='modal-content']")).Text;
             Console.WriteLine(modaltext);
-            CommonHelpers.ScrollDown(Driver);
+            CommonHelpers.ScrollDown(driver);
 
-            IWebElement downloadButton = Driver.FindElement(
+            IWebElement downloadButton = driver.FindElement(
                 By.XPath("//button[contains(text(),'Download')]"));
 
-            ((IJavaScriptExecutor)Driver).ExecuteScript(
+            ((IJavaScriptExecutor)driver).ExecuteScript(
                 "arguments[0].scrollIntoView({block:'center'});",
                 downloadButton);
 
@@ -215,9 +215,9 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         }
         public void clickcloseInstructionsModalButton()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, By.XPath("//button[contains(text(),'Close')]"), 10);
-            Driver.FindElement(By.XPath("//button[contains(text(),'Close')]")).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            CommonHelpers.WaitForElementVisiblity(driver, By.XPath("//button[contains(text(),'Close')]"), 10);
+            driver.FindElement(By.XPath("//button[contains(text(),'Close')]")).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
         }
 
 
@@ -226,21 +226,21 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public IWebElement GetLogo()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, logo, 10);
-            return Driver.FindElement(logo);
+            CommonHelpers.WaitForElementVisiblity(driver, logo, 10);
+            return driver.FindElement(logo);
         }
 
         public bool IsLogoDisplayed()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 70);
-            CommonHelpers.ScrollUp(Driver);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 70);
+            CommonHelpers.ScrollUp(driver);
             return GetLogo().Displayed;
         }
 
         //getting the title of the page
         public string GetPageTitle()
         {
-            return Driver.Title;
+            return driver.Title;
         }
 
         // ✅ Check if logo is at TOP CENTER
@@ -250,7 +250,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             int logoCenterX = logoElement.Location.X + (logoElement.Size.Width / 2);
             
-            int pageCenterX = Driver.Manage().Window.Size.Width / 2;
+            int pageCenterX = driver.Manage().Window.Size.Width / 2;
             
 
             int logoTopY = logoElement.Location.Y;
@@ -275,7 +275,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public bool verifyrequiredfieldsinpage1()
         {
-            var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
+            var eleList = driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
             if (eleList.Count > 0)
             {
                 foreach (IWebElement elem in eleList)
@@ -304,8 +304,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public bool VerifyBGColorOnRequiredFieldsPage1()
         {
 
-            var eleList = Driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
-            var allReqFieldsID = Driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
+            var eleList = driver.FindElements(By.XPath("//label[contains(.,'(Required)')]"));
+            var allReqFieldsID = driver.FindElements(By.XPath("//*[@id=//label[contains(.,'(Required)') and @for]/@for]"));
             bool bgcolormatch = true;
 
             if (eleList.Count > 0)
@@ -317,7 +317,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
                     {
                         if (elem.GetCssValue("border-color").Equals("rgb(0, 134, 113)"))//Green Color
                         {
-                            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+                            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 
                             js.ExecuteScript(
                                 "window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });");
@@ -364,12 +364,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public string GetValidationErrorMessage()
         {
-            return CommonHelpers.GetValidationErrorText(Driver);
+            return CommonHelpers.GetValidationErrorText(driver);
         }
 
         public bool IsValidationErrorDisplayed()
         {
-            return CommonHelpers.ValidationerrorExists(Driver);
+            return CommonHelpers.ValidationerrorExists(driver);
         }
     }
 }

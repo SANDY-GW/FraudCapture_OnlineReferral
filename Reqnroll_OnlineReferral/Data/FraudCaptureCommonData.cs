@@ -51,7 +51,7 @@ namespace FC_OnlineReferral.Data
         public string providerNPI { get; set; }
         public string providerTIN { get; set; }
         public string memberIdRefParty { get; set; }
-
+        public string CasesTab { get; set; } = string.Empty;
 
 
 

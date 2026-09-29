@@ -51,109 +51,109 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab
 
         public void ClickCaseTab()
         {
-            Driver.FindElement(CasesTab).Click();
+            driver.FindElement(CasesTab).Click();
         }
         public void ClickCaseCreateAdministrationCase()
         {
-            Driver.FindElement(CaseCreateAdministrativeCase).Click();
+            driver.FindElement(CaseCreateAdministrativeCase).Click();
         }
         public void ClickCaseWorkLoadReassignment()
         {
-            Driver.FindElement(CaseWorkloadReassignment).Click();
+            driver.FindElement(CaseWorkloadReassignment).Click();
         }
         public void ClickCaseApplyCaseDynamicFiltering()
         {
-            Driver.FindElement(CaseApplyCaseDynamicFiltering).Click();
+            driver.FindElement(CaseApplyCaseDynamicFiltering).Click();
         }
         public void SelectCaseAssignedTo(string assignedTo)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, CaseAssignedTo, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(CaseAssignedTo), assignedTo);
+            CommonHelpers.WaitForElementVisiblity(driver, CaseAssignedTo, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(CaseAssignedTo), assignedTo);
         }
         public void SelectCaseAssignedSupervisor(string assignedSupervisor)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, CaseAssignedSupervisor, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(CaseAssignedSupervisor), assignedSupervisor);
+            CommonHelpers.WaitForElementVisiblity(driver, CaseAssignedSupervisor, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(CaseAssignedSupervisor), assignedSupervisor);
         }
         public void SelectCaseDivisionDept(string divDept)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, CaseDivisionDepartmentDDL, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(CaseDivisionDepartmentDDL), divDept);
+            CommonHelpers.WaitForElementVisiblity(driver, CaseDivisionDepartmentDDL, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(CaseDivisionDepartmentDDL), divDept);
         }
         public void SelectCaseType(string caseType)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, CaseTypeDDL, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(CaseTypeDDL), caseType);
+            CommonHelpers.WaitForElementVisiblity(driver, CaseTypeDDL, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(CaseTypeDDL), caseType);
         }
         public void SelectCaseStatus(string caseStatus)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, CaseStatus, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(CaseStatus), caseStatus);
+            CommonHelpers.WaitForElementVisiblity(driver, CaseStatus, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(CaseStatus), caseStatus);
         }
         public void SelectCaseSearchCriteriaOption(string searchCriteria)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, CaseSearchCriteria, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(CaseSearchCriteria), searchCriteria);
+            CommonHelpers.WaitForElementVisiblity(driver, CaseSearchCriteria, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(CaseSearchCriteria), searchCriteria);
         }
         public void EnterCaseSearchCriteria(string searchCriteriaValue)
         {
-            Driver.FindElement(CaseSearchCriteriaTxtBox).SendKeys(searchCriteriaValue);
+            driver.FindElement(CaseSearchCriteriaTxtBox).SendKeys(searchCriteriaValue);
         }
         public void ClickCaseSearchCriteriaSearchBtn()
         {
-            Driver.FindElement(CaseSearchCriteriaSearchBtn).Click();
+            driver.FindElement(CaseSearchCriteriaSearchBtn).Click();
         }
         public void ClickCaseSearchCriteriaClearBtn()
         {
-            Driver.FindElement(CaseSearchCriteriaClearBtn).Click();
+            driver.FindElement(CaseSearchCriteriaClearBtn).Click();
         }
         public void ClickCaseExportList()
         {
-            Driver.FindElement(CaseExportList).Click();
+            driver.FindElement(CaseExportList).Click();
         }
         public void ClickHeaderCaseType()
         {
-            Driver.FindElement(CaseHeaderCaseType).Click();
+            driver.FindElement(CaseHeaderCaseType).Click();
         }
         public void ClickHeaderCaseID()
         {
-            Driver.FindElement(CaseHeaderCaseRelatedCaseOrLeads).Click();
+            driver.FindElement(CaseHeaderCaseRelatedCaseOrLeads).Click();
         }
         public void ClickHeaderAltCaseID()
         {
-            Driver.FindElement(CaseHeaderCaseAltCaseID).Click();
+            driver.FindElement(CaseHeaderCaseAltCaseID).Click();
         }
         public void ClickHeaderRelatedCaseLeads()
         {
-            Driver.FindElement(CaseHeaderCaseRelatedCaseOrLeads).Click();
+            driver.FindElement(CaseHeaderCaseRelatedCaseOrLeads).Click();
         }
         public void ClickHeaderAssignedTo()
         {
-            Driver.FindElement(CaseHeaderAssignedTo).Click();
+            driver.FindElement(CaseHeaderAssignedTo).Click();
         }
         public void ClickHeaderAssignedSupervisor()
         {
-            Driver.FindElement(CaseHeaderAssignedSupervisor).Click();
+            driver.FindElement(CaseHeaderAssignedSupervisor).Click();
         }
         public void ClickHeaderDivDept()
         {
-            Driver.FindElement(CaseHeaderDivDept).Click();
+            driver.FindElement(CaseHeaderDivDept).Click();
         }
         public void ClickHeaderCreatedDate()
         {
-            Driver.FindElement(CaseHeaderCreatedDate).Click();
+            driver.FindElement(CaseHeaderCreatedDate).Click();
         }
         public void ClickHeaderClosedDate()
         {
-            Driver.FindElement(CaseHeaderClosedDate).Click();
+            driver.FindElement(CaseHeaderClosedDate).Click();
         }
         public void ClickHeaderStatus()
         {
-            Driver.FindElement(CaseHeaderStatus).Click();
+            driver.FindElement(CaseHeaderStatus).Click();
         }
         public void ClickHeaderOverPayment()
         {
-            Driver.FindElement(CaseHeaderOverPayment).Click();
+            driver.FindElement(CaseHeaderOverPayment).Click();
         }
 
     }

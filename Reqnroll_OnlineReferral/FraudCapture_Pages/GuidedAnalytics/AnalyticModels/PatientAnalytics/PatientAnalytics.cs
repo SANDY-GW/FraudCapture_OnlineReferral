@@ -34,55 +34,55 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.AnalyticModels.Pa
         #endregion
         public void ClickAnalyticModelsBtn()
         {
-            Driver.FindElement(AnalyticModelsBtn).Click();
+            driver.FindElement(AnalyticModelsBtn).Click();
         }
         public void ClickPatientAnalytics()
         {
-            Driver.FindElement(PatientAnalyticsBtn).Click();
+            driver.FindElement(PatientAnalyticsBtn).Click();
         }
         public void ClickSearchBtn()
         {
-            Driver.FindElement(SearchBtn).Click();
+            driver.FindElement(SearchBtn).Click();
         }
         public void ClickClearBtn()
         {
-            Driver.FindElement(ClearBtn).Click();
+            driver.FindElement(ClearBtn).Click();
         }
         public void ClickSearchTextBox()
         {
-            Driver.FindElement(SearchTextBox).Click();
+            driver.FindElement(SearchTextBox).Click();
         }
         public void ClickTitle()
         {
-            Driver.FindElement(Title).Click();
+            driver.FindElement(Title).Click();
         }
         public void ClickDescription()
         {
-            Driver.FindElement(Description).Click();
+            driver.FindElement(Description).Click();
         }
         public void ClickCategory()
         {
-            Driver.FindElement(Category).Click();
+            driver.FindElement(Category).Click();
         }
         public void ClickPatientsIdentified()
         {
-            Driver.FindElement(PatientsIdentified).Click();
+            driver.FindElement(PatientsIdentified).Click();
         }
         public void ClickProviderIdentified()
         {
-            Driver.FindElement(ProviderIdentified).Click();
+            driver.FindElement(ProviderIdentified).Click();
         }
         public void ClickAssociated()
         {
-            Driver.FindElement(Associated).Click();
+            driver.FindElement(Associated).Click();
         }
         public void ClickViewBtn()
         {
-            Driver.FindElement(ViewBtn).Click();
+            driver.FindElement(ViewBtn).Click();
         }
         public void ClickOpenBtn()
         {
-            Driver.FindElement(OpenBtn).Click();
+            driver.FindElement(OpenBtn).Click();
         }
 
     }

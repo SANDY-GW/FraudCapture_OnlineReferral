@@ -36,8 +36,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void SelectQuestion1Option(string option)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, Question1Dropdn, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(Question1Dropdn), option);
+            CommonHelpers.WaitForElementVisiblity(driver, Question1Dropdn, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(Question1Dropdn), option);
         }
 
         public void EnterAllQuestionAnswers()
@@ -45,8 +45,8 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             //get all text area elements
             //Run a for loop for all the elements(count) identified above
             //if element exists then enter value in the text area
-            var allTextFields= Driver.FindElements(By.XPath("//textarea[starts-with(@id,'questionTxt')]"));
-            var allDropDowns = Driver.FindElements(By.XPath("//select[starts-with(@id,'questiondDrDown')]"));
+            var allTextFields= driver.FindElements(By.XPath("//textarea[starts-with(@id,'questionTxt')]"));
+            var allDropDowns = driver.FindElements(By.XPath("//select[starts-with(@id,'questiondDrDown')]"));
             int n = 0;
 
             foreach (IWebElement ele in allTextFields)
@@ -72,18 +72,18 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
         public void EnterQuestion2Answer(string question2)
         {
-            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 
             js.ExecuteScript("window.scrollBy(0, 500);");
-            Driver.FindElement(Question2).SendKeys(question2);
+            driver.FindElement(Question2).SendKeys(question2);
         }
 
         public void EnterQuestion3Answer(string question3)
         {
            
-            Driver.FindElement(Question3).SendKeys(question3);
+            driver.FindElement(Question3).SendKeys(question3);
 
-            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 
             js.ExecuteScript("window.scrollBy(0, 700);");
         }
@@ -95,7 +95,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             if (!File.Exists(filePath))
                 throw new FileNotFoundException(filePath);
 
-            IJavaScriptExecutor jse = (IJavaScriptExecutor)Driver;
+            IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
 
             IWebElement input = (IWebElement)jse.ExecuteScript(JS_DROP_FILE, target, offsetX, offsetY);
             input.SendKeys(filePath);
@@ -106,7 +106,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public bool IsAlertDisplayed()
         {
             var alert = By.ClassName("close");
-            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
 
             try
             {
@@ -132,26 +132,26 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
 
             if (IsAlertDisplayed())
             {
-                Driver.FindElement(alert).Click();
+                driver.FindElement(alert).Click();
             }
         }
         private void WaitForAttachmentUpload(int seconds)
         {
             By alertDismissBtn = By.ClassName("close");
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(seconds));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(seconds));
             wait.Until(ExpectedConditions.ElementToBeClickable(alertDismissBtn));
             CloseAlert();
         }
         public void ClickUploadFileArrow(string filepath)
         {
-            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
 
             js.ExecuteScript("window.scrollBy(0, 700);");
 
-            CommonHelpers.WaitForElementVisiblity(Driver, uploadFileArrow,500);
+            CommonHelpers.WaitForElementVisiblity(driver, uploadFileArrow,500);
            // Driver.FindElement(uploadFileArrow).Click();
 
-            var fileUploadArea = Driver.FindElement(By.Id("fileLabel"));
+            var fileUploadArea = driver.FindElement(By.Id("fileLabel"));
            // var path = "C:/Users/jd/SourceQaDevelopment/Repos/FraudCapture_OnlineReferral/ReqnrollProject1/Attachments/";
             //Console.WriteLine(path);
             //var fileName = Path.Combine(path, "TestFile.txt");
@@ -159,7 +159,7 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             //CommonHelpers.WaitForPageToLoad(Driver, 10000);
             
             js.ExecuteScript("window.scrollBy(0, 700);");
-             CommonHelpers.WaitForPageLoading(Driver);
+             CommonHelpers.WaitForPageLoading(driver);
            
 
 
@@ -167,12 +167,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
         public void ClickProceedToNextSessionButton()
         {
             Thread.Sleep(5000);
-            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight);");
             //js.ExecuteScript("window.scrollTo(0, 0);");
             //CommonHelpers.WaitForElementVisiblity(Driver, proceedToNextSessionButton, 10000);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
-            Driver.FindElement(proceedToNextSessionButton).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 10);
+            driver.FindElement(proceedToNextSessionButton).Click();
             
             //CommonHelpers.WaitForElementVisiblity(Driver, Go_To_Previous_SectionButton, 50000);
             //new CommonHelpers(Driver).WaitForPageLoading();

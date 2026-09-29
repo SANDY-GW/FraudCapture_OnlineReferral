@@ -29,7 +29,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDe
         #endregion
         public void SelectSectionTeam(string sectionId)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(leadSectionTeamDDL), sectionId);
+            CommonHelpers.selectOptionByValue(driver.FindElement(leadSectionTeamDDL), sectionId);
         }
     }
 }

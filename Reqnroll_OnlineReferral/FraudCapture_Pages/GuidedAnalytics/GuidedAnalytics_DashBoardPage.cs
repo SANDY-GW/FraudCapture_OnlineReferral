@@ -20,7 +20,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics
         #endregion
         public void ClickDashaBoardBtn()
         {
-            Driver.FindElement(DashBoardBtn).Click();
+            driver.FindElement(DashBoardBtn).Click();
         }
     }
 }

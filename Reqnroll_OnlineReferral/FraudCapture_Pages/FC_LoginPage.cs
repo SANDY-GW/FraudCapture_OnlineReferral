@@ -28,14 +28,14 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         #endregion
         public void EnterLoginUserEmail(string userEmail)
         {
-            CommonHelpers.WaitForPageToLoad(Driver, 100);
+            CommonHelpers.WaitForPageToLoad(driver, 100);
 
-            var emailInput = Driver.FindElement(Login_UserEmail);
+            var emailInput = driver.FindElement(Login_UserEmail);
            
                 emailInput.Click();
                 emailInput.Clear();
-                CommonHelpers.WaitForElementVisiblity(Driver, Login_UserEmail, 100);
-                emailInput = Driver.FindElement(Login_UserEmail);
+                CommonHelpers.WaitForElementVisiblity(driver, Login_UserEmail, 100);
+                emailInput = driver.FindElement(Login_UserEmail);
                 emailInput.SendKeys(userEmail);
                 
             
@@ -43,51 +43,51 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         }
         public void EnterPingUsername(string pingUsername)
         {
-            Driver.FindElement(Login_PingUsername).SendKeys(pingUsername);
+            driver.FindElement(Login_PingUsername).SendKeys(pingUsername);
         }
         public void EnterPingPassword(string pingPassword)
         {
-            Driver.FindElement(Login_PingPswd).SendKeys(pingPassword);
+            driver.FindElement(Login_PingPswd).SendKeys(pingPassword);
         }
         public void EnterPingPassCode(string pingPassCode)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, Login_PassCode, 100);
-            Driver.FindElement(Login_PassCode).SendKeys(pingPassCode);
+            CommonHelpers.WaitForElementVisiblity(driver, Login_PassCode, 100);
+            driver.FindElement(Login_PassCode).SendKeys(pingPassCode);
         }
 
         public void ClickProceedToLogin()
         {
-            Driver.FindElement(Login_ProceedToLogin).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
+            driver.FindElement(Login_ProceedToLogin).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
 
         }
         public void ClickAmaIAgree()
         {
-            Driver.FindElement(Login_AmaIAgree).Click();
+            driver.FindElement(Login_AmaIAgree).Click();
         }
         public void ClickAmaCancel()
         {
-            Driver.FindElement(Login_AmaCancel).Click();
+            driver.FindElement(Login_AmaCancel).Click();
         }
         public void ClickPingOneSignOnButton()
         {
-            Driver.FindElement(Login_PingOneSignOnButton).Click();
+            driver.FindElement(Login_PingOneSignOnButton).Click();
         }
         public void ClickPingOnePassCodeSignOnButton()
         {
-            Driver.FindElement(Login_PingOnePassCodeSignOnButton).Click();
+            driver.FindElement(Login_PingOnePassCodeSignOnButton).Click();
         }
 
         public void waitForPingOnePassCodeSignOnButton()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, Login_PingOnePassCodeSignOnButton, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, Login_PingOnePassCodeSignOnButton, 100);
 
             // CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 15000);
 
         }
         public void waitForIAgreeButton()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, Login_AmaIAgree, 100);
+            CommonHelpers.WaitForElementVisiblity(driver, Login_AmaIAgree, 100);
 
             // CommonHelpers.WaitForElementVisiblity(Driver, goToPreviousSectionButton, 15000);
 

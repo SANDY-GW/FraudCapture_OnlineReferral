@@ -30,48 +30,48 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.LinkAnalysis
         #endregion
         public void ClickLinkAnalysisTab()
         {
-            Driver.FindElement(LinkAnalysisTab).Click();
+            driver.FindElement(LinkAnalysisTab).Click();
         }
 
         public void ClickCreatedByDropDown()
         {
-            Driver.FindElement(CreatedBy).Click();
+            driver.FindElement(CreatedBy).Click();
         }
         public void ClickAccessTypeDropDown()
         {
-            Driver.FindElement(AccessType).Click();
+            driver.FindElement(AccessType).Click();
         }
         public void ClickLinkAnalysisSearchBtn()
         {
-            Driver.FindElement(LinkAnalysisSearch).Click();
+            driver.FindElement(LinkAnalysisSearch).Click();
         }
         public void ClickLinkAnalysisClearBtn()
         {
-            Driver.FindElement(LinkAnalysisClear).Click();
+            driver.FindElement(LinkAnalysisClear).Click();
         }
         public void EnterLinkAnalysisSearchTextbox(string searchTextboxValue)
         {
-            Driver.FindElement(LinkAnalysisSearchTextbox).SendKeys(searchTextboxValue);
+            driver.FindElement(LinkAnalysisSearchTextbox).SendKeys(searchTextboxValue);
         }
          public void ClickTitleLabel()
         {
-            Driver.FindElement(TitleLabel).Click();
+            driver.FindElement(TitleLabel).Click();
         }
         public void ClickCreatedByLabel()
         {
-            Driver.FindElement(CreatedByLabel).Click();
+            driver.FindElement(CreatedByLabel).Click();
         }
         public void ClickAccessTypeLabel()
         {
-            Driver.FindElement(AccessLabel).Click();
+            driver.FindElement(AccessLabel).Click();
         }
         public void ClickLastModifiedByLabel()
         {
-            Driver.FindElement(LastModifiedByLabel).Click();
+            driver.FindElement(LastModifiedByLabel).Click();
         }
         public void ClickLastModifiedDateLabel()
         {
-            Driver.FindElement(LastModifiedDateLabel).Click();
+            driver.FindElement(LastModifiedDateLabel).Click();
         }
          
 

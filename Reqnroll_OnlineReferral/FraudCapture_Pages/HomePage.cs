@@ -21,21 +21,21 @@ namespace FC_OnlineReferral.FraudCapture_Pages
         {
             //var common = new CommonHelpers(Driver);
             //common.WaitForLoadingOverlayToDisappear();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 2000);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 2000);
             //WaitForWidgetLoading();
             //Driver.WrappedDriver.FindElement(By.XPath("//button[@id='btnAmaEulaAgree']")).Click();
 
             By acceptAMAButton = By.XPath("//button[@id='btnAmaEulaAgree']");
-            CommonHelpers.WaitForElementClickable(Driver, acceptAMAButton, 60);
+            CommonHelpers.WaitForElementClickable(driver, acceptAMAButton, 60);
             //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(180));
 
             //wait.Until(ExpectedConditions.ElementToBeClickable(acceptAMAButton));
-            Driver.FindElement(acceptAMAButton).Click();
+            driver.FindElement(acceptAMAButton).Click();
 
             // check for Help Content Alerts
             try
             {
-                var waitForAlerts = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
+                var waitForAlerts = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
                 waitForAlerts.Until(d =>
                 {
                     try
@@ -51,12 +51,12 @@ namespace FC_OnlineReferral.FraudCapture_Pages
 
                 try
                 {
-                    while (Driver.FindElements(CloseAlertButton).Any())                    
+                    while (driver.FindElements(CloseAlertButton).Any())                    
                     {
-                       CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 10);
+                       CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 10);
                         //Common.WaitForLoadingOverlayToDisappear();
 
-                        Driver.FindElement(CloseAlertButton).Click();
+                        driver.FindElement(CloseAlertButton).Click();
                     }
                 }
                 catch (NoSuchElementException)

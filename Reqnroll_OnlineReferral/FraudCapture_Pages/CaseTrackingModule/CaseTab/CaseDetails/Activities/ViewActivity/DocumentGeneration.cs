@@ -25,17 +25,17 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         #endregion
         public void ClickCreateDocument()
         {
-            Driver.FindElement(createDocument).Click();
+            driver.FindElement(createDocument).Click();
         }
 
 
         public void ClickSaveDocumentStatus()
         {
-            Driver.FindElement(saveDocumentStatus).Click();
+            driver.FindElement(saveDocumentStatus).Click();
         }
         public void ClickExitActivity()
         {
-            Driver.FindElement(exitActivity).Click();
+            driver.FindElement(exitActivity).Click();
         }
 
 

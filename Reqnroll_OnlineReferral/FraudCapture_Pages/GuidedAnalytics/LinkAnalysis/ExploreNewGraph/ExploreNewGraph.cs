@@ -47,113 +47,113 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.LinkAnalysis.Expl
         #endregion
         public void ClickLinkAnalysisTab()
         {
-            Driver.FindElement(LinkAnalysisTab).Click();
+            driver.FindElement(LinkAnalysisTab).Click();
         }
         public void ClickExploreNewGraphBtn()
         {
-            Driver.FindElement(ExploreNewGraphBtn).Click();
+            driver.FindElement(ExploreNewGraphBtn).Click();
         }
         public void ClickRefreshBtn()
         {
-            Driver.FindElement(RefreshBtn).Click();
+            driver.FindElement(RefreshBtn).Click();
         }
         public void ClickSearchCriteriaDropDown(string searchCriteria)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, SearchCriteriaDropDown, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SearchCriteriaDropDown), searchCriteria);
+            CommonHelpers.WaitForElementVisiblity(driver, SearchCriteriaDropDown, 120);
+            CommonHelpers.selectOptionByValue(driver.FindElement(SearchCriteriaDropDown), searchCriteria);
         }
         public void EnterProviderIDValue(string providerID)
         {
-            Driver.FindElement(ProviderIDValue).SendKeys(providerID);
+            driver.FindElement(ProviderIDValue).SendKeys(providerID);
         }
         public void ClickPlusSymbol()
         {
-            Driver.FindElement(PlusSymbol).Click();
+            driver.FindElement(PlusSymbol).Click();
         }
         public void ClickBackButton()
         {
-            Driver.FindElement(BackButton).Click();
+            driver.FindElement(BackButton).Click();
 
         }
         public void ClickSaveButton()
         {
-            Driver.FindElement(SaveButton).Click();
+            driver.FindElement(SaveButton).Click();
         }
         public void UndoButtonClick()
         {
-            Driver.FindElement(UndoButton).Click();
+            driver.FindElement(UndoButton).Click();
         }
         public void RedoButtonClick()
         {
-            Driver.FindElement(RedoButton).Click();
+            driver.FindElement(RedoButton).Click();
         }
         public void ClearButtonClick()
         {
-            Driver.FindElement(ClearButton).Click();
+            driver.FindElement(ClearButton).Click();
         }
         public void ShowHiddenTimeBarClick()
         {
-            Driver.FindElement(ShowHiddenTimeBar).Click();
+            driver.FindElement(ShowHiddenTimeBar).Click();
         }
         public void ClickExportDropDown()
         {
-            Driver.FindElement(ExportDropDown).Click();
+            driver.FindElement(ExportDropDown).Click();
         }
         public void ClickMemberListValue()
         {
-            Driver.FindElement(MemberListValue).Click();
+            driver.FindElement(MemberListValue).Click();
         }
         public void ClickProviderListValue()
         {
-            Driver.FindElement(ProviderListValue).Click();
+            driver.FindElement(ProviderListValue).Click();
         }
         public void ClickFullScreenButton()
         {
-            Driver.FindElement(FullScreenButton).Click();
+            driver.FindElement(FullScreenButton).Click();
         }
         public void ClickStandardViewButton()
         {
-            Driver.FindElement(StandardViewButton).Click();
+            driver.FindElement(StandardViewButton).Click();
         }
         public void ClickHierarchyViewButton()
         {
-            Driver.FindElement(HierarchyViewButton).Click();
+            driver.FindElement(HierarchyViewButton).Click();
         }
         public void ClickRadialViewButton()
         {
-            Driver.FindElement(RadialViewButton).Click();
+            driver.FindElement(RadialViewButton).Click();
         }
         public void ClickLensViewButton()
         {
-            Driver.FindElement(LensViewButton).Click();
+            driver.FindElement(LensViewButton).Click();
         }
         public void ClickSequentialViewButton()
         {
-            Driver.FindElement(SequentialViewButton).Click();
+            driver.FindElement(SequentialViewButton).Click();
         }
         public void ClickMapViewButton()
         {
-            Driver.FindElement(MapViewButton).Click();
+            driver.FindElement(MapViewButton).Click();
         }
         public void ClickHighlightButton()
         {
-            Driver.FindElement(HighlightButton).Click();
+            driver.FindElement(HighlightButton).Click();
         }
         public void ClickRegularViewButton()
         {
-            Driver.FindElement(RegularViewButton).Click();
+            driver.FindElement(RegularViewButton).Click();
         }
         public void ClickCustomViewButton()
         {
-            Driver.FindElement(CustomViewButton).Click();
+            driver.FindElement(CustomViewButton).Click();
         }
         public void ClickCombineButton()
         {
-            Driver.FindElement(CombineButton).Click();
+            driver.FindElement(CombineButton).Click();
         }
         public void ClickUnCombineButton()
         {
-            Driver.FindElement(UnCombineButton).Click();
+            driver.FindElement(UnCombineButton).Click();
         }
 
     }

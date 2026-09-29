@@ -25,7 +25,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.DataQueryExtraction
         public void ClickLeadDashBoard()
         {
 
-            Driver.FindElement(leadDashBoard).Click();
+            driver.FindElement(leadDashBoard).Click();
         }
     }
 }

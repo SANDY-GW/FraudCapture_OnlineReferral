@@ -129,157 +129,160 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         private readonly By ReferringPartySearchBtnProviderName = By.XPath("//button[@id='btnSearch']");
         private readonly By ReferringPartyClearBtnProviderName = By.XPath("//button[text()='Clear Search Fields']");
         private readonly By ReferringPartySelectBtnProviderName = By.XPath("//button[@id='btnAddReferral']");
+
+        // getting the leadID
+        private readonly By leadIdField = By.XPath("//input[@id='leadId']");
         #endregion
         public void SelectLeadWorkflowType(string workflowType)
         {
             
-            CommonHelpers.WaitForElementVisiblity(Driver, LeadWorkflowTypeDropDown, 120);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(LeadWorkflowTypeDropDown).Click();
-            CommonHelpers.selectOptionByValue(Driver.FindElement(LeadWorkflowTypeDropDown), workflowType);
+            CommonHelpers.WaitForElementVisiblity(driver, LeadWorkflowTypeDropDown, 120);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(LeadWorkflowTypeDropDown).Click();
+            CommonHelpers.selectOptionByValue(driver.FindElement(LeadWorkflowTypeDropDown), workflowType);
         }
         public void SelectDetectionMethod(string detectionMethod)
         {
             
-            Driver.FindElement(DetectionMethodDropDown);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(DetectionMethodDropDown), detectionMethod);
+            driver.FindElement(DetectionMethodDropDown);
+            CommonHelpers.selectOptionByValue(driver.FindElement(DetectionMethodDropDown), detectionMethod);
 
         }
         public void SelectSourceType(string sourceType)
         {
             
-            Driver.FindElement(SourceTypeDropDown);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SourceTypeDropDown), sourceType);
+            driver.FindElement(SourceTypeDropDown);
+            CommonHelpers.selectOptionByValue(driver.FindElement(SourceTypeDropDown), sourceType);
         }
         public void SelectReason(string reason)
         {
             
-            Driver.FindElement(ReasonDropDown);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(ReasonDropDown), reason);
+            driver.FindElement(ReasonDropDown);
+            CommonHelpers.selectOptionByValue(driver.FindElement(ReasonDropDown), reason);
         }
         public void SelectAssignedTo(string assignedTo)
         {
            
-            Driver.FindElement(AssignedToDropDown);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(AssignedToDropDown), assignedTo);
+            driver.FindElement(AssignedToDropDown);
+            CommonHelpers.selectOptionByValue(driver.FindElement(AssignedToDropDown), assignedTo);
         }
         public void ClickNextBtn()
         {
-            Driver.FindElement(NextBtn).Click();
+            driver.FindElement(NextBtn).Click();
         }
         public void SelectSubjectType(string subjectType)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SubjectTypeDropDown), subjectType);
+            CommonHelpers.selectOptionByValue(driver.FindElement(SubjectTypeDropDown), subjectType);
         }
         // Renamed to avoid name collision with the PrimarySubjectDropDown field (method group -> By conversion error)
         public void SelectPrimarySubject(string subjectTypeselect)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, PrimarySubjectDropDown, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(PrimarySubjectDropDown), subjectTypeselect);
+            CommonHelpers.WaitForElementVisiblity(driver, PrimarySubjectDropDown, 120);
+            CommonHelpers.selectOptionByValue(driver.FindElement(PrimarySubjectDropDown), subjectTypeselect);
         }
         public void ClickManuallyAddBySubjectPrefix(string namePrefix)
         {
-            Driver.FindElement(ManuallyAddBySubjectPrefix).SendKeys(namePrefix);
+            driver.FindElement(ManuallyAddBySubjectPrefix).SendKeys(namePrefix);
         }
         public void ClickManuallyAddBySubjectFirstName(string firstName)
         {
-            Driver.FindElement(ManuallyAddBySubjectFirstName).SendKeys(firstName);
+            driver.FindElement(ManuallyAddBySubjectFirstName).SendKeys(firstName);
         }
         public void ClickManuallyAddBySubjectLastName(string lastName)
         {
-            Driver.FindElement(ManuallyAddBySubjectLastName).SendKeys(lastName);
+            driver.FindElement(ManuallyAddBySubjectLastName).SendKeys(lastName);
         }
         //Search By ID for Member
         public void ClickSearchByIDSelectionDropDown(string searchByIdOption)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, SearchByIDSelectionDropDown, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SearchByIDSelectionDropDown), searchByIdOption);
+            CommonHelpers.WaitForElementVisiblity(driver, SearchByIDSelectionDropDown, 120);
+            CommonHelpers.selectOptionByValue(driver.FindElement(SearchByIDSelectionDropDown), searchByIdOption);
         }
         public void ClickMemberSearchByID(string memberId)
         {
-            Driver.FindElement(MemberSearchByID).SendKeys(memberId);
+            driver.FindElement(MemberSearchByID).SendKeys(memberId);
         }
         public void ClickMemberSearchBtn()
         {
             
-            Driver.FindElement(MemberSearchBtn).Click();
+            driver.FindElement(MemberSearchBtn).Click();
         }
         public void ClickMemberClearBtn()
         {
-            Driver.FindElement(MemberClearBtn).Click();
+            driver.FindElement(MemberClearBtn).Click();
         }
         public void ClickMemberSelectBtn()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(MemberSelectBtn).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(MemberSelectBtn).Click();
         }
         //Search By Name for Member
         public void ClickSearchByNameSelectionDropDown(string searchByNameOption)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, SearchByNameSelectionDropDown, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SearchByNameSelectionDropDown), searchByNameOption);
+            CommonHelpers.WaitForElementVisiblity(driver, SearchByNameSelectionDropDown, 120);
+            CommonHelpers.selectOptionByValue(driver.FindElement(SearchByNameSelectionDropDown), searchByNameOption);
         }
         public void ClickMemberSearchByFirstName(string firstName)
         {
-            Driver.FindElement(MemberSearchByFirstName).SendKeys(firstName);
+            driver.FindElement(MemberSearchByFirstName).SendKeys(firstName);
         }
         public void ClickMemberSearchByLastName(string lastName)
         {
-            Driver.FindElement(MemberSearchByLastName).SendKeys(lastName);
+            driver.FindElement(MemberSearchByLastName).SendKeys(lastName);
         }
         public void ClickMemberSearchByNameSearchBtn()
         {
-            Driver.FindElement(MemberSearchByNameSearchBtn).Click();
+            driver.FindElement(MemberSearchByNameSearchBtn).Click();
         }
         public void ClickMemberSearchByNameSearchClearBtn()
         {
-            Driver.FindElement(MemberSearchByNameSearchClearBtn).Click();
+            driver.FindElement(MemberSearchByNameSearchClearBtn).Click();
         }
         public void ClickMemberSearchByNameSelectBtn()
         {
 
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120); 
-            Driver.FindElement(MemberSearchByNameSelectBtn).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120); 
+            driver.FindElement(MemberSearchByNameSelectBtn).Click();
         }
         //Search By Address for Member
         public void ClickSearchByAddressSelectionDropDown(string searchByAddressOption)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, SearchByAddressSelectionDropDown, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SearchByAddressSelectionDropDown), searchByAddressOption);
+            CommonHelpers.WaitForElementVisiblity(driver, SearchByAddressSelectionDropDown, 120);
+            CommonHelpers.selectOptionByValue(driver.FindElement(SearchByAddressSelectionDropDown), searchByAddressOption);
         }
         
         public void ClickMemberSearchByAddressfield(string addressField)
         {
-            Driver.FindElement(MemberSearchByAddressfield).SendKeys(addressField);
+            driver.FindElement(MemberSearchByAddressfield).SendKeys(addressField);
         }
         public void ClickMemberSearchByCity(string city)
         {
-            Driver.FindElement(MemberSearchByCity).SendKeys(city);
+            driver.FindElement(MemberSearchByCity).SendKeys(city);
         }
         public void ClickMemberSearchByAddressSearchBtn()
         {
-            Driver.FindElement(MemberSearchByAddressSearchBtn).Click();
+            driver.FindElement(MemberSearchByAddressSearchBtn).Click();
         }
         public void ClickMemberSearchByAddressClearBtn()
         {
-            Driver.FindElement(MemberSearchByAddressSearchClearBtn).Click();
+            driver.FindElement(MemberSearchByAddressSearchClearBtn).Click();
         }
         public void ClickMemberSearchByAddressSelectBtn()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(MemberSearchByAddressSelectBtn).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(MemberSearchByAddressSelectBtn).Click();
         }
         //Provider-Manually Add Subject
         
         public void SelectSubjectTypeDropDownProvider(string subjectTypeprovider)
         {
             //CommonHelpers.WaitForElementVisiblity(Driver, SubjectTypeDropDownProvider, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(SubjectTypeDropDownProvider), subjectTypeprovider);
+            CommonHelpers.selectOptionByValue(driver.FindElement(SubjectTypeDropDownProvider), subjectTypeprovider);
         }
         public void SelectPrimarySubjectDropDownProvider(string subjectTypeselectprovider)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, PrimarySubjectDropDownProvider, 120);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(PrimarySubjectDropDownProvider), subjectTypeselectprovider);
+            CommonHelpers.WaitForElementVisiblity(driver, PrimarySubjectDropDownProvider, 120);
+            CommonHelpers.selectOptionByValue(driver.FindElement(PrimarySubjectDropDownProvider), subjectTypeselectprovider);
         }
         //public void ClickProviderOrganizationName(string organization)
         //{
@@ -302,94 +305,94 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         
         public void ClickProviderSearchByID(string providerId1)
         {
-            Driver.FindElement(ProviderSearchByID).SendKeys(providerId1);
+            driver.FindElement(ProviderSearchByID).SendKeys(providerId1);
         }
         public void ClickProviderSearchBtn()
         {
-            Driver.FindElement(ProviderSearchBtn).Click();
+            driver.FindElement(ProviderSearchBtn).Click();
         }
         public void ClickProviderClearBtn()
         {
-            Driver.FindElement(ProviderClearBtn).Click();
+            driver.FindElement(ProviderClearBtn).Click();
         }
         public void ClickProviderSelectBtn()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(ProviderSelectBtn).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(ProviderSelectBtn).Click();
         }
         //Search By TIN/EIN for Provider
         public void ClickProviderSearchByTIN(string tin)
         {
-            Driver.FindElement(ProviderSearchByTIN).SendKeys(tin);
+            driver.FindElement(ProviderSearchByTIN).SendKeys(tin);
         }
         public void ClickProviderSearchBtnforTIN()
         {
-            Driver.FindElement(ProviderSearchBtnforTIN).Click();
+            driver.FindElement(ProviderSearchBtnforTIN).Click();
         }
         public void ClickProviderClearBtnforTIN()
         {
-            Driver.FindElement(ProviderClearBtnforTIN).Click();
+            driver.FindElement(ProviderClearBtnforTIN).Click();
         }
         public void ClickProviderSelectBtnforTIN()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(ProviderSelectBtnforTIN).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(ProviderSelectBtnforTIN).Click();
         }
         //Search By NPI for Provider
         public void ClickProviderSearchByNPI(string npi)
         {
-            Driver.FindElement(ProviderSearchByNPI).SendKeys(npi);
+            driver.FindElement(ProviderSearchByNPI).SendKeys(npi);
         }
         public void ClickProviderSearchBtnforNPI()
         {
-            Driver.FindElement(ProviderSearchBtnforNPI).Click();
+            driver.FindElement(ProviderSearchBtnforNPI).Click();
         }
         public void ClickProviderClearBtnforNPI()
         {
-            Driver.FindElement(ProviderClearBtnforNPI).Click();
+            driver.FindElement(ProviderClearBtnforNPI).Click();
         }
         public void ClickProviderSelectBtnforNPI()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(ProviderSelectBtnforNPI).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(ProviderSelectBtnforNPI).Click();
         }
         //Search By Organization for Provider
         public void ClickProviderSearchByOrganization(string organization)
         {
-            Driver.FindElement(ProviderSearchByOrganization).SendKeys(organization);
+            driver.FindElement(ProviderSearchByOrganization).SendKeys(organization);
         }
         public void ClickProviderSelectBtnforName()
         {
-            Driver.FindElement(ProviderSelectBtnforName).Click();
+            driver.FindElement(ProviderSelectBtnforName).Click();
         }
         //Search By Address for Provider
         public void ClickProviderSearchByAddress(string provideraddressField)
         {
-            Driver.FindElement(ProviderSearchByAddress).SendKeys(provideraddressField);
+            driver.FindElement(ProviderSearchByAddress).SendKeys(provideraddressField);
         }
         public void ClickProviderSearchByCity(string providercity)
         {
-            Driver.FindElement(ProviderSearchByCity).SendKeys(providercity);
+            driver.FindElement(ProviderSearchByCity).SendKeys(providercity);
         }
         public void ClickProviderSearchByAddressSelectBtn()
         {
-            Driver.FindElement(ProviderSearchByAddressSelectBtn).Click();
+            driver.FindElement(ProviderSearchByAddressSelectBtn).Click();
         }
         
         public void ClickNextBtnforPrimarySubjectPage()
         {
-            Driver.FindElement(NextBtnforPrimarySubjectPage).Click();
+            driver.FindElement(NextBtnforPrimarySubjectPage).Click();
         }
         //Description Tab
         public void ClickDescriptionTab()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(DescriptionTab).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(DescriptionTab).Click();
         }
         public void ClickDescriptionField(string description)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, DescriptionField, 120);
-            var DescriptionTextArea = Driver.FindElement(DescriptionField);
+            CommonHelpers.WaitForElementVisiblity(driver, DescriptionField, 120);
+            var DescriptionTextArea = driver.FindElement(DescriptionField);
             DescriptionTextArea.Click();
             DescriptionTextArea.SendKeys(description);
             
@@ -397,151 +400,167 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab
         }
         public void ClickNextBtnforDescriptionPage()
         {
-            Driver.FindElement(NextBtnforDescriptionPage).Click();
+            driver.FindElement(NextBtnforDescriptionPage).Click();
             
         }
         //Referring Party
         public void SelectReferringParty(string referringParty)
         {
-            Driver.FindElement(ReferringPartyDropDown);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(ReferringPartyDropDown), referringParty);
+            driver.FindElement(ReferringPartyDropDown);
+            CommonHelpers.selectOptionByValue(driver.FindElement(ReferringPartyDropDown), referringParty);
             
 
         }
         public void ClickReferringPartySearchByID(string memberIdRefParty)
         {
-            Driver.FindElement(ReferringPartySearchByID).SendKeys(memberIdRefParty);
+            driver.FindElement(ReferringPartySearchByID).SendKeys(memberIdRefParty);
         }
         public void ClickReferringPartySearchBtn()
         {
-            Driver.FindElement(ReferringPartySearchBtn).Click();
+            driver.FindElement(ReferringPartySearchBtn).Click();
         }
         public void ClickReferringPartyClearBtn()
         {
-            Driver.FindElement(ReferringPartyClearBtn).Click();
+            driver.FindElement(ReferringPartyClearBtn).Click();
         }
         public void ClickReferringPartySelectBtn()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(ReferringPartySelectBtn).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(ReferringPartySelectBtn).Click();
         }
         public void ClickReferringPartySearchByFirstname(string Firstname)
         {
-            Driver.FindElement(ReferringPartySearchByFirstname).SendKeys(Firstname);
+            driver.FindElement(ReferringPartySearchByFirstname).SendKeys(Firstname);
         }
         public void ClickReferringPartySearchBtnFirstname()
         {
-            Driver.FindElement(ReferringPartySearchBtnFirstname).Click();
+            driver.FindElement(ReferringPartySearchBtnFirstname).Click();
         }
         public void ClickReferringPartyClearBtnFirstname()
         {
-            Driver.FindElement(ReferringPartyClearBtnFirstname).Click();
+            driver.FindElement(ReferringPartyClearBtnFirstname).Click();
         }
         public void ClickReferringPartySelectBtnFirstname()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(ReferringPartySelectBtnFirstname).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(ReferringPartySelectBtnFirstname).Click();
         }
         public void ClickReferringPartySearchByProviderID(string providerId)
         {
-            Driver.FindElement(ReferringPartySearchByProviderID).SendKeys(providerId);
+            driver.FindElement(ReferringPartySearchByProviderID).SendKeys(providerId);
         }
         public void ClickReferringPartySearchBtnProviderID()
         {
-            Driver.FindElement(ReferringPartySearchBtnProviderID).Click();
+            driver.FindElement(ReferringPartySearchBtnProviderID).Click();
         }
         public void ClickReferringPartyClearBtnProviderID()
         {
-            Driver.FindElement(ReferringPartyClearBtnProviderID).Click();
+            driver.FindElement(ReferringPartyClearBtnProviderID).Click();
         }
         public void ClickReferringPartySelectBtnProviderID()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(ReferringPartySelectBtnProviderID).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(ReferringPartySelectBtnProviderID).Click();
         }
         public void ClickReferringPartySearchByProviderTIN(string providerTIN)
         {
-            Driver.FindElement(ReferringPartySearchByProviderTIN).SendKeys(providerTIN);
+            driver.FindElement(ReferringPartySearchByProviderTIN).SendKeys(providerTIN);
         }
         public void ClickReferringPartySearchBtnProviderTIN()
         {
-            Driver.FindElement(ReferringPartySearchBtnProviderTIN).Click();
+            driver.FindElement(ReferringPartySearchBtnProviderTIN).Click();
         }
         public void ClickReferringPartyClearBtnProviderTIN()
         {
-            Driver.FindElement(ReferringPartyClearBtnProviderTIN).Click();
+            driver.FindElement(ReferringPartyClearBtnProviderTIN).Click();
         }
         public void ClickReferringPartySelectBtnProviderTIN()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(ReferringPartySelectBtnProviderTIN).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(ReferringPartySelectBtnProviderTIN).Click();
         }
         public void ClickReferringPartySearchByProviderName(string providerName)
         {
-            Driver.FindElement(ReferringPartySearchByProviderName).SendKeys(providerName);
+            driver.FindElement(ReferringPartySearchByProviderName).SendKeys(providerName);
         }
         public void ClickReferringPartySearchBtnProviderName()
         {
-            Driver.FindElement(ReferringPartySearchBtnProviderName).Click();
+            driver.FindElement(ReferringPartySearchBtnProviderName).Click();
         }
         public void ClickReferringPartyClearBtnProviderName()
         {
-            Driver.FindElement(ReferringPartyClearBtnProviderName).Click();
+            driver.FindElement(ReferringPartyClearBtnProviderName).Click();
         }
         public void ClickReferringPartySelectBtnProviderName()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(ReferringPartySelectBtnProviderName).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(ReferringPartySelectBtnProviderName).Click();
         }
         public void ClickSelectBtnforReferringPartyByName()
         {
-            Driver.FindElement(ReferringPartySelectBtnFirstname).Click();
+            driver.FindElement(ReferringPartySelectBtnFirstname).Click();
         }
         
         public void ClickClearBtnforReferringParty()
         {
-            Driver.FindElement(ReferringPartyClearBtn).Click();
+            driver.FindElement(ReferringPartyClearBtn).Click();
         }
         public void ClickSearchBtnforReferringParty()
         {
-            Driver.FindElement(ReferringPartySearchBtn).Click();
+            driver.FindElement(ReferringPartySearchBtn).Click();
         }
         public void ClickSearchByIDforReferringParty(string memberId)
         {
-            Driver.FindElement(ReferringPartySearchByID).SendKeys(memberId);
+            driver.FindElement(ReferringPartySearchByID).SendKeys(memberId);
         }
         public void ClickReferringPartySearchByProviderNPI(string providerNPI)
         {
-            Driver.FindElement(ReferringPartySearchByProviderNPI).SendKeys(providerNPI);
+            driver.FindElement(ReferringPartySearchByProviderNPI).SendKeys(providerNPI);
         }
         public void ClickReferringPartySearchBtnProviderNPI()
         {
-            Driver.FindElement(ReferringPartySearchBtnProviderNPI).Click();
+            driver.FindElement(ReferringPartySearchBtnProviderNPI).Click();
         }
         public void ClickReferringPartyClearBtnProviderNPI()
         {
-            Driver.FindElement(ReferringPartyClearBtnProviderNPI).Click();
+            driver.FindElement(ReferringPartyClearBtnProviderNPI).Click();
         }
         public void ClickReferringPartySelectBtnProviderNPI()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 120);
-            Driver.FindElement(ReferringPartySelectBtnProviderNPI).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 120);
+            driver.FindElement(ReferringPartySelectBtnProviderNPI).Click();
         }
         
 
         public void ClickNextBtnforReferringPartyPage()
         {
-            Driver.FindElement(NextBtnforReferringPartyPage).Click();
+            driver.FindElement(NextBtnforReferringPartyPage).Click();
             
 
 
         }
         public void ClickCreateLeadBtninPrioritizationTab()
         {
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 100);
-            Driver.FindElement(CreateLeadBtninPrioritizationTab).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 200);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 100);
+            driver.FindElement(CreateLeadBtninPrioritizationTab).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 200);
         }
+        public string CaptureleadID()
+        {
+            try
+            {
+                CommonHelpers.WaitForElementVisiblity(driver, leadIdField, 30);
+                string capturedLeadId = driver.FindElement(leadIdField).GetAttribute("value")?.Trim();
+                Console.WriteLine("Captured Lead ID: " + capturedLeadId);
+                return capturedLeadId;
+            }
+            catch (NoSuchElementException ex)
+            {
+                Console.WriteLine("Lead ID field not found: " + ex.Message);
+                return null;
+            }
+        }
+
 
     }
 

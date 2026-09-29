@@ -52,104 +52,104 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.ActivityTab
 
         public void ClickActivitiesTab()
         {
-            Driver.FindElement(ActivitiesTab).Click();
+            driver.FindElement(ActivitiesTab).Click();
         }
 
         
         public void ClickWorkLoadREassignmentBtn()
         {
-            Driver.FindElement(WorkLoadReassignment).Click();
+            driver.FindElement(WorkLoadReassignment).Click();
         }
         public void ClickApplyDynamicFilteringBtn()
         {
-            Driver.FindElement(ApplyDynamicFiltering).Click();
+            driver.FindElement(ApplyDynamicFiltering).Click();
         }
         public void ClickActivityEditBtn()
         {
-            Driver.FindElement(ActivityEditBtn).Click();
+            driver.FindElement(ActivityEditBtn).Click();
         }
         public void ClickHeaderActivityName()
         {
-            Driver.FindElement(HeaderTableActivityName).Click();
+            driver.FindElement(HeaderTableActivityName).Click();
         }
         public void ClickHeaderActivityStatus()
         {
-            Driver.FindElement(HeaderTableActivityStatus).Click();
+            driver.FindElement(HeaderTableActivityStatus).Click();
         }
         public void ClickHeaderActivityAssignedTo()
         {
-            Driver.FindElement(HeaderTableActivityAssignedTo).Click();
+            driver.FindElement(HeaderTableActivityAssignedTo).Click();
         }
         public void ClickHeaderActivityDueDate()
         {
-            Driver.FindElement(HeaderTableActivityDueDate).Click();
+            driver.FindElement(HeaderTableActivityDueDate).Click();
         }
         public void ClickHeaderActivitySupervisor()
         {
-            Driver.FindElement(HeaderTableActivityAssignedSupervisor).Click();
+            driver.FindElement(HeaderTableActivityAssignedSupervisor).Click();
         }
         public void ClickHeaderActivityDivisionDept()
         {
-            Driver.FindElement(HeaderTableActivityDivDept).Click();
+            driver.FindElement(HeaderTableActivityDivDept).Click();
         }
         public void ClickHeaderActivityCaseLeadID()
         {
-            Driver.FindElement(HeaderTableActivityCaseLeadID).Click();
+            driver.FindElement(HeaderTableActivityCaseLeadID).Click();
         }
         public void ClickHeaderActivitySubjectName()
         {
-            Driver.FindElement(HeaderTableActivitySubjectName).Click();
+            driver.FindElement(HeaderTableActivitySubjectName).Click();
         }
 
         public void ClickActivitySearchBtn()
         {
-            Driver.FindElement(ActivitySearchBtn).Click();
+            driver.FindElement(ActivitySearchBtn).Click();
         }
         public void ClickActivitySearchClearBtn()
         {
-            Driver.FindElement(ActivitySearchClearBtn).Click();
+            driver.FindElement(ActivitySearchClearBtn).Click();
         }
         public void ClickActivityExportListBtn()
         {
-            Driver.FindElement(ActivityExportListBtn).Click();
+            driver.FindElement(ActivityExportListBtn).Click();
         }
 
 
         public void EnteryActivitySearchTxt(string activitySearchCriteria)
         {
-            Driver.FindElement(ActivitySearchTxtBox).SendKeys(activitySearchCriteria);
+            driver.FindElement(ActivitySearchTxtBox).SendKeys(activitySearchCriteria);
         }
         public void SelectActivitySearchCriteria(string searchCriteria)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, ActivitySearchCriteria, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(ActivitySearchCriteria), searchCriteria);
+            CommonHelpers.WaitForElementVisiblity(driver, ActivitySearchCriteria, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(ActivitySearchCriteria), searchCriteria);
 
         }
         public void ClickAddActivitiesTab()
         {
-            Driver.FindElement(AddActivityButton).Click();
+            driver.FindElement(AddActivityButton).Click();
         }
         public void SelectActivityName(string activityName)
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, ActivityNameDropdown, 10);
-            CommonHelpers.selectOptionByValue(Driver.FindElement(ActivityNameDropdown), activityName);
+            CommonHelpers.WaitForElementVisiblity(driver, ActivityNameDropdown, 10);
+            CommonHelpers.selectOptionByValue(driver.FindElement(ActivityNameDropdown), activityName);
 
         }
         public void ClickCreateActivitiesBtn()
         {
-            Driver.FindElement(CreateActivityButton).Click();
+            driver.FindElement(CreateActivityButton).Click();
         }
         public void ClickSaveActivitiesBtn()
         {
-            Driver.FindElement(SaveActivityButton).Click();
+            driver.FindElement(SaveActivityButton).Click();
         }
         public void ClickExitActivitiesBtn()
         {
-            Driver.FindElement(ExitActivityButton).Click();
+            driver.FindElement(ExitActivityButton).Click();
         }
         public void ClickCloseActivitiesBtn()
         {
-            Driver.FindElement(CloseActivityButton).Click();
+            driver.FindElement(CloseActivityButton).Click();
         }
     }
 }

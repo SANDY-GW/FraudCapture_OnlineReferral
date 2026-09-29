@@ -25,27 +25,27 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDe
         #endregion
         public void ClickLeadReason()
         {
-            Driver.FindElement(leadReasonBtn).Click();
+            driver.FindElement(leadReasonBtn).Click();
         }
 
         public void ClickReferralTab()
         {
-            CommonHelpers.WaitForElementVisiblity(Driver, referralTab, 30);
-            Driver.FindElement(referralTab).Click();
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 30);
+            CommonHelpers.WaitForElementVisiblity(driver, referralTab, 30);
+            driver.FindElement(referralTab).Click();
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 30);
         }
 
         public string GetReferralReceivedDate()
         {
-            return GetElementValue(Driver.FindElement(referralReceivedDate));
+            return GetElementValue(driver.FindElement(referralReceivedDate));
         }
 
         public string GetFieldValue(string fieldLabel)
         {
             By field = By.XPath("//label[normalize-space(.)=" + ToXPathLiteral(fieldLabel) + "]/following::*[self::input or self::textarea or self::select][1]");
             By field1 = By.XPath("//label[contains(.," + ToXPathLiteral(fieldLabel) + ")]//following::*[self::input or self::textarea or self::select][1]");
-            CommonHelpers.WaitForElementVisiblity(Driver, field1, 30);
-            return GetElementValue(Driver.FindElement(field1));
+            CommonHelpers.WaitForElementVisiblity(driver, field1, 30);
+            return GetElementValue(driver.FindElement(field1));
         }
 
         private static string GetElementValue(IWebElement element)

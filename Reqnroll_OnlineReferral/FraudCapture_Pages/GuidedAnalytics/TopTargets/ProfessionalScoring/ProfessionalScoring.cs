@@ -22,12 +22,12 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.TopTargets.Profes
         #endregion
         public void ClickTopTargetsBtn()
         {
-            Driver.FindElement(TopTargets).Click();
+            driver.FindElement(TopTargets).Click();
         }
 
         public void ClickProfessionalScoring()
         {
-            Driver.FindElement(ProfessScoring).Click();
+            driver.FindElement(ProfessScoring).Click();
         }
        
         

@@ -24,11 +24,11 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         #endregion
         public void ClickReport()
         {
-            Driver.FindElement(reportsDropdown).Click();
+            driver.FindElement(reportsDropdown).Click();
         }
         public void ClickChronologyReport()
         {
-            Driver.FindElement(ChronologyReportButton).Click();
+            driver.FindElement(ChronologyReportButton).Click();
         }
     }
 }

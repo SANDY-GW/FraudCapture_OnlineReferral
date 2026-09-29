@@ -23,7 +23,7 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         #endregion
         public void ClickAmountTab()
         {
-            Driver.FindElement(amountTab).Click();
+            driver.FindElement(amountTab).Click();
         }
     }
 }

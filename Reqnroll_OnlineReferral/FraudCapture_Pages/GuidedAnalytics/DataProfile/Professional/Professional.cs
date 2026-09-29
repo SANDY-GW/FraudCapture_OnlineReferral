@@ -23,11 +23,11 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.DataProfile.Profe
         #endregion
         public void ClickDataProfileTab()
         {
-            Driver.FindElement(DataProfileTab).Click();
+            driver.FindElement(DataProfileTab).Click();
         }
         public void ClickProfessionalTab()
         {
-            Driver.FindElement(ProfessionalTab).Click();
+            driver.FindElement(ProfessionalTab).Click();
         }
     
     }

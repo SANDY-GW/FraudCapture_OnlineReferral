@@ -36,44 +36,44 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.Create
 
         public void SelectAssignSectionOrTeam(string assignSectionOrTeam)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(assignSectionOrTeamDDL), assignSectionOrTeam);
+            CommonHelpers.selectOptionByValue(driver.FindElement(assignSectionOrTeamDDL), assignSectionOrTeam);
         }
         public void SelectAssignDeptDiv(string assignDeptDiv)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(assignDeptDivDDL), assignDeptDiv);
+            CommonHelpers.selectOptionByValue(driver.FindElement(assignDeptDivDDL), assignDeptDiv);
         }
         public void SelectAssignSuperVisor(string assignSupervisor)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(assignSupervisorDDL), assignSupervisor);
+            CommonHelpers.selectOptionByValue(driver.FindElement(assignSupervisorDDL), assignSupervisor);
         }
 
         public void SelectAssignedWorkFlow(string assignedWorkFlow)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(assignedWorkflowToDDL), assignedWorkFlow);
+            CommonHelpers.selectOptionByValue(driver.FindElement(assignedWorkflowToDDL), assignedWorkFlow);
         }
         public void SelectworkflowType(string workFlowType)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(workflowTypeDDL), workFlowType);
+            CommonHelpers.selectOptionByValue(driver.FindElement(workflowTypeDDL), workFlowType);
         }
         public void ClickCase()
         {
-            Driver.FindElement(caseTab).Click();
+            driver.FindElement(caseTab).Click();
         }
         public void ClickCreateAdministrationCase()
         {
-            Driver.FindElement(creatAdministrativeCaseBtn).Click();
+            driver.FindElement(creatAdministrativeCaseBtn).Click();
         }
         public void ClickCancel()
         {
-            Driver.FindElement(cancelBtn).Click();
+            driver.FindElement(cancelBtn).Click();
         }
         public void ClickCreateNewCase()
         {
-            Driver.FindElement(createNewCaseBtn).Click();
+            driver.FindElement(createNewCaseBtn).Click();
         }
         public void EnterProjectName(string projectName)
         {
-            Driver.FindElement(projectNameTxt).SendKeys(projectName);
+            driver.FindElement(projectNameTxt).SendKeys(projectName);
         }
     }
 }

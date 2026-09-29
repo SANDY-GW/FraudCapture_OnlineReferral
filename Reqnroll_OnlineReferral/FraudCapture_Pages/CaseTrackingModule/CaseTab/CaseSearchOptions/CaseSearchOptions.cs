@@ -32,43 +32,43 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseSe
         #endregion
         public void EnterSearchInputField(string value)
         {
-            Driver.FindElement(searchInputFieldTxt).SendKeys(value);
+            driver.FindElement(searchInputFieldTxt).SendKeys(value);
         }
         public void ClickCaseExpoertListBtn()
         {
-            Driver.FindElement(caseExportListBtn).Click();
+            driver.FindElement(caseExportListBtn).Click();
         }
         public void ClickSearcBtn()
         {
-            Driver.FindElement(searchStartBtn).Click();
+            driver.FindElement(searchStartBtn).Click();
         }
         public void ClickClearBtn()
         {
-            Driver.FindElement(searchClearBtn).Click();
+            driver.FindElement(searchClearBtn).Click();
         }
         public void EnterSearchInputFieldNumeric(string numericValue)
         {
-            Driver.FindElement(searchInputFieldNumericTxt).SendKeys(numericValue);
+            driver.FindElement(searchInputFieldNumericTxt).SendKeys(numericValue);
         }
         public void SelectCaseSearchYears(string years)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(caseSearchYearsDDL), years);
+            CommonHelpers.selectOptionByValue(driver.FindElement(caseSearchYearsDDL), years);
         }
         public void SelectCaseSearchDates(string dates)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(caseSearchDatesDDL), dates);
+            CommonHelpers.selectOptionByValue(driver.FindElement(caseSearchDatesDDL), dates);
         }
         public void SelectCaseSearchMonths(string months)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(caseSearchMonthsDDL), months);
+            CommonHelpers.selectOptionByValue(driver.FindElement(caseSearchMonthsDDL), months);
         }
         public void SelectCaseSearchNumericOperator(string numericOperator)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(caseSearchNumericOpertorDDL), numericOperator);
+            CommonHelpers.selectOptionByValue(driver.FindElement(caseSearchNumericOpertorDDL), numericOperator);
         }
         public void SelectCaseCriteria(string criteria)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(caseSearchCriteriaDDL), criteria);
+            CommonHelpers.selectOptionByValue(driver.FindElement(caseSearchCriteriaDDL), criteria);
         }
     }
 }

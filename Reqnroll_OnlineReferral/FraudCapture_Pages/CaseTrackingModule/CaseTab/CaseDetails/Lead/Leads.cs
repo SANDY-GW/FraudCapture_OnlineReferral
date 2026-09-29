@@ -52,100 +52,100 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         #endregion
         public void ClickBeginEditing()
         {
-            Driver.FindElement(BeginEditingBtn).Click();
+            driver.FindElement(BeginEditingBtn).Click();
         }
         public void SortReason()
         {
-            Driver.FindElement(reasonField).Click();
+            driver.FindElement(reasonField).Click();
         }
         public void SortSource()
         {
-            Driver.FindElement(sourceField).Click();
+            driver.FindElement(sourceField).Click();
         }
         public void SortDetectionMethod()
         {
-            Driver.FindElement(detectionMethodField).Click();
+            driver.FindElement(detectionMethodField).Click();
         }
         public void SortDescription()
         {
-            Driver.FindElement(descriptionField).Click();
+            driver.FindElement(descriptionField).Click();
         }
         public void SortCreator()
         {
-            Driver.FindElement(creatorField).Click();
+            driver.FindElement(creatorField).Click();
         }
         public void SortPrimarySubject()
         {
-            Driver.FindElement(primarySubject).Click();
+            driver.FindElement(primarySubject).Click();
         }
         public void SortSubjectType()
         {
-            Driver.FindElement(subjectType).Click();
+            driver.FindElement(subjectType).Click();
 
         }
         public void SortSubjectName()
         {
-            Driver.FindElement(subjectName).Click();
+            driver.FindElement(subjectName).Click();
         }
         public void SortStreetAddress1()
         {
-            Driver.FindElement(streetAddress1).Click();
+            driver.FindElement(streetAddress1).Click();
 
         }
 
         public void SortStreetAddress2()
         {
-            Driver.FindElement(streetAddress2).Click();
+            driver.FindElement(streetAddress2).Click();
         }
         public void SortCity()
         {
-            Driver.FindElement(city).Click();
+            driver.FindElement(city).Click();
 
         }
         public void SortStateOrTerritory()
         {
-            Driver.FindElement(stateOrTerritory).Click();
+            driver.FindElement(stateOrTerritory).Click();
 
         }
         public void SortID()
         {
-            Driver.FindElement(id).Click();
+            driver.FindElement(id).Click();
 
         }
         public void SortMasterID()
         {
-            Driver.FindElement(masterId).Click();
+            driver.FindElement(masterId).Click();
 
         }
         public void SortZipCode()
         {
-            Driver.FindElement(zipcode).Click();
+            driver.FindElement(zipcode).Click();
 
         }
 
         public void SortCreated()
         {
-            Driver.FindElement(createField).Click();
+            driver.FindElement(createField).Click();
         }
         public void ClickLeadTab()
         {
-            Driver.FindElement(leadTab).Click();
+            driver.FindElement(leadTab).Click();
         }
         public void ClickLeadReasonTab()
         {
-            Driver.FindElement(leadReasonTab).Click();
+            driver.FindElement(leadReasonTab).Click();
         }
         public void ClickLeadSubjectTab()
         {
-            Driver.FindElement(leadSubjectTab).Click();
+            driver.FindElement(leadSubjectTab).Click();
         }
         public void ClickLeadReferralTab()
         {
-            Driver.FindElement(leadReferralTab).Click();
+            driver.FindElement(leadReferralTab).Click();
         }
         public void ClickLeadPriorityTab()
         {
-            Driver.FindElement(leadPriorityTab).Click();
+            driver.FindElement(leadPriorityTab).Click();
         }
     }
 }

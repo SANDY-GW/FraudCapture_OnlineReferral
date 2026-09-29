@@ -28,24 +28,24 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.LeadTab.LeadDe
         #endregion
         public void ClickActivity()
         {
-            Driver.FindElement(activityBtn).Click();
+            driver.FindElement(activityBtn).Click();
         }
         public void ClickAttachment()
         {
-            Driver.FindElement(attachmentBtn).Click();
+            driver.FindElement(attachmentBtn).Click();
         }
         
         public void ClickDocumentGeneration()
         {
-            Driver.FindElement(documentGenerationBtn).Click();
+            driver.FindElement(documentGenerationBtn).Click();
         }
         public void ClickExitActivity()
         {
-            Driver.FindElement(exitActivity).Click();
+            driver.FindElement(exitActivity).Click();
         }
         public void SelectOtherActivityOptions(string options)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(otherActivityOptions), options);
+            CommonHelpers.selectOptionByValue(driver.FindElement(otherActivityOptions), options);
         }
     }
 }

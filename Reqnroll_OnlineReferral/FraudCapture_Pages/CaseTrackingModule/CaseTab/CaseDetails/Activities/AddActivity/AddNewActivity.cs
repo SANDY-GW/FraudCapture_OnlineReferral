@@ -36,53 +36,53 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
         public void SelectActivityName(string activityName)
         {
 
-            CommonHelpers.selectOptionByValue(Driver.FindElement(activityNameDDL), activityName);
+            CommonHelpers.selectOptionByValue(driver.FindElement(activityNameDDL), activityName);
         }
         public void ClickContinue()
         {
-            Driver.FindElement(continueBtn).Click();
+            driver.FindElement(continueBtn).Click();
         }
 
         public void ClickCancel()
         {
-            Driver.FindElement(cancelBtn).Click();
+            driver.FindElement(cancelBtn).Click();
         }
         public void ClickExitActivity()
         {
-            Driver.FindElement(exitActivity).Click();
+            driver.FindElement(exitActivity).Click();
         }
         public void SelectOtherActivityOptions(string options)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(otherActivityOptions), options);
+            CommonHelpers.selectOptionByValue(driver.FindElement(otherActivityOptions), options);
         }
         public void ClickCreateDocument()
         {
-            Driver.FindElement(createDocument).Click();
+            driver.FindElement(createDocument).Click();
         }
 
 
         public void ClickSaveDocumentStatus()
         {
-            Driver.FindElement(saveDocumentStatus).Click();
+            driver.FindElement(saveDocumentStatus).Click();
         }
 
         public void ClickCsvExport()
         {
-            Driver.FindElement(csvExport).Click();
+            driver.FindElement(csvExport).Click();
         }
         public void ClickAttachment()
         {
-            Driver.FindElement(referesh).Click();
+            driver.FindElement(referesh).Click();
         }
 
         public void ClickDownloadAttachmentManager()
         {
-            Driver.FindElement(downloadAttachmentManager).Click();
+            driver.FindElement(downloadAttachmentManager).Click();
         }
        
         public void ClickAddAttachment()
         {
-            Driver.FindElement(addAttachment).Click();
+            driver.FindElement(addAttachment).Click();
         }
        
     }

@@ -45,64 +45,64 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.CaseTab.CaseDe
 
         public void ClickApplySameFindingsToCaseLevel()
         {
-            Driver.FindElement(applySameFindingsToCaseLevel).Click();
+            driver.FindElement(applySameFindingsToCaseLevel).Click();
         }
         public void ClickReSelectClaims()
         {
-            Driver.FindElement(ReSelectClaims).Click();
+            driver.FindElement(ReSelectClaims).Click();
         }
         public void ClickClaimsReviewAssignment()
         {
-            Driver.FindElement(ClaimsReviewAssignment).Click();
+            driver.FindElement(ClaimsReviewAssignment).Click();
         }
         public void SelectClaimsCriteria(string criteria)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(claimsCriteriaDDL), criteria);
+            CommonHelpers.selectOptionByValue(driver.FindElement(claimsCriteriaDDL), criteria);
         }
         public void ClickReApplyDefaultFilters()
         {
-            Driver.FindElement(reApplyDefaultFilters).Click();
+            driver.FindElement(reApplyDefaultFilters).Click();
         }
         public void SelectStatus(string status)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(statusDDL), status);
+            CommonHelpers.selectOptionByValue(driver.FindElement(statusDDL), status);
         }
 
         public void SelectSubject(string subject)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(subjectDDL), subject);
+            CommonHelpers.selectOptionByValue(driver.FindElement(subjectDDL), subject);
         }
         public void SelectAssignedTo(string assignedTo)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(assignedToDDL), assignedTo);
+            CommonHelpers.selectOptionByValue(driver.FindElement(assignedToDDL), assignedTo);
         }
         public void ClickRefresh()
         {
-            Driver.FindElement(refresh).Click();
+            driver.FindElement(refresh).Click();
         }
         public void ClickSubjectAndClaimsSelection()
         {
-            Driver.FindElement(subjectAndClaimsSelectionBtn).Click();
+            driver.FindElement(subjectAndClaimsSelectionBtn).Click();
         }
         public void ClickThreeYearsPatientClaimsHistory()
         {
-            Driver.FindElement(ThreeYearsPatientClaimsHistory).Click();
+            driver.FindElement(ThreeYearsPatientClaimsHistory).Click();
         }
         public void ClickCaseClaimsDetailsAndFindings()
         {
-            Driver.FindElement(caseClaimsDetailsAndFindingsBtn).Click();
+            driver.FindElement(caseClaimsDetailsAndFindingsBtn).Click();
         }
         public void ClickSamplingAndSelectionHistory()
         {
-            Driver.FindElement(samplingAndSelectionHistoryBtn).Click();
+            driver.FindElement(samplingAndSelectionHistoryBtn).Click();
         }
         public void ClickClaims()
         {
-            Driver.FindElement(claimsBtn).Click();
+            driver.FindElement(claimsBtn).Click();
         }
         public void ClickNewClaimsBtn()
         {
-            Driver.FindElement(newClaimsBtn).Click();
+            driver.FindElement(newClaimsBtn).Click();
         }
     }
 }

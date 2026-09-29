@@ -23,11 +23,11 @@ namespace FC_OnlineReferral.FraudCapture_Pages.GuidedAnalytics.DataProfile.Patie
         #endregion
         public void ClickDataProfileTab()
         {
-            Driver.FindElement(DataProfileTab).Click();
+            driver.FindElement(DataProfileTab).Click();
         }
         public void ClickPatientTab()
         {
-            Driver.FindElement(PatientTab).Click();
+            driver.FindElement(PatientTab).Click();
         }
     
     }

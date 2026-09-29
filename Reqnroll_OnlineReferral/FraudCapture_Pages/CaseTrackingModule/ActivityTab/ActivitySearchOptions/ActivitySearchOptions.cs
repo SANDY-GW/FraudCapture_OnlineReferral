@@ -30,37 +30,37 @@ namespace FC_OnlineReferral.FraudCapture_Pages.CaseTrackingModule.ActivityTab.Ac
         #endregion
         public void EnterSearchInputField(string value)
         {
-            Driver.FindElement(searchInputFieldTxt).SendKeys(value);
+            driver.FindElement(searchInputFieldTxt).SendKeys(value);
         }
         public void ClickSearcBtn()
         {
-            Driver.FindElement(searchStartBtn).Click();
+            driver.FindElement(searchStartBtn).Click();
         }
         public void ClickActivityExportListBtn()
         {
-            Driver.FindElement(activityExportListBtn).Click();
+            driver.FindElement(activityExportListBtn).Click();
         }
         public void ClickClearBtn()
         {
-            Driver.FindElement(searchClearBtn).Click();
+            driver.FindElement(searchClearBtn).Click();
         }
        
         public void SelectActivitySearchYears(string years)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(activitySearchYearsDDL), years);
+            CommonHelpers.selectOptionByValue(driver.FindElement(activitySearchYearsDDL), years);
         }
         public void SelectActivitySearchDates(string dates)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(activitySearchDatesDDL), dates);
+            CommonHelpers.selectOptionByValue(driver.FindElement(activitySearchDatesDDL), dates);
         }
         public void SelectActivitySearchMonths(string months)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(activitySearchMonthsDDL), months);
+            CommonHelpers.selectOptionByValue(driver.FindElement(activitySearchMonthsDDL), months);
         }
        
         public void SelectActivityCriteria(string criteria)
         {
-            CommonHelpers.selectOptionByValue(Driver.FindElement(activitySearchCriteria), criteria);
+            CommonHelpers.selectOptionByValue(driver.FindElement(activitySearchCriteria), criteria);
         }
     }
 

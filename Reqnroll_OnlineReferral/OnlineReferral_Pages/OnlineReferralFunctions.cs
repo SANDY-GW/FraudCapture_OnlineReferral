@@ -20,12 +20,12 @@ namespace FC_OnlineReferral.OnlineReferral_Pages
             FC_OnlineReferralLogin();
             
             
-            CommonHelpers.WaitForPageToLoad(Driver, 10);
-            CommonHelpers.WaitForInstructionsButton(Driver, 180);
+            CommonHelpers.WaitForPageToLoad(driver, 10);
+            CommonHelpers.WaitForInstructionsButton(driver, 180);
 
-            CommonHelpers.WaitForElementVisiblity(Driver, By.XPath("//button[contains(.,'Instructions')]"), 120);
-            CommonHelpers.WaitForLoadingOverlayToDisappear(Driver, 60);
-            CommonHelpers.CloseAllOtherTabs(Driver);
+            CommonHelpers.WaitForElementVisiblity(driver, By.XPath("//button[contains(.,'Instructions')]"), 120);
+            CommonHelpers.WaitForLoadingOverlayToDisappear(driver, 60);
+            CommonHelpers.CloseAllOtherTabs(driver);
         }
 
 
